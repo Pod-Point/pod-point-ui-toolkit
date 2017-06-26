@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE 9]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 ie"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9 ie"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -11,6 +13,7 @@
 
 	<link href="assets/css/styles.css" rel="stylesheet">
 	<link href="assets/css/demo.css" rel="stylesheet">
+	<script src="assets/js/modernizr.js"></script>
 
 
 
@@ -41,7 +44,8 @@
 					<img src="assets/img/toolkit/logos/pod-point-logo.svg" alt="POD Point">
 				</a>
 			</div>
-		</header><div data-page="address-lookup">
+		</header>
+<div data-page="address-lookup">
 	<header class="demo-section-heading">
 		<div class="container content-block">
 			<h2>Address lookup</h2>
@@ -62,13 +66,13 @@
 					<div class="grid-wrap m-t-lg">
 						<div class="grid-row grid-row--no-space">
 							<div class="grid-col grid-col--md-6 grid-col--no-space-md">
-								<label class="label--block">Street number</label>
+								<label class="form__label">Street number</label>
 								<div class="form-field-wrapper">
 									<input id="street_number" class="field" type="text" disabled="true"></input>
 								</div>
 							</div>
 							<div class="grid-col grid-col--md-6 grid-col--no-space-md">
-								<label class="label--block">Street address</label>
+								<label class="form__label">Street address</label>
 								<div class="form-field-wrapper">
 									<input id="route" class="field" type="text" disabled="true"></input>
 								</div>
@@ -76,13 +80,13 @@
 						</div>
 						<div class="grid-row grid-row--no-space">
 							<div class="grid-col grid-col--md-6 grid-col--no-space-md">
-								<label class="label--block">City</label>
+								<label class="form__label">City</label>
 								<div class="form-field-wrapper">
 									<input id="locality" class="field" type="text" disabled="true"></input>
 								</div>
 							</div>
 							<div class="grid-col grid-col--md-6 grid-col--no-space-md">
-								<label class="label--block">County</label>
+								<label class="form__label">County</label>
 								<div class="form-field-wrapper">
 									<input id="administrative_area_level_1" class="field" type="text" disabled="true"></input>
 								</div>
@@ -90,13 +94,13 @@
 						</div>
 						<div class="grid-row grid-row--no-space">
 							<div class="grid-col grid-col--md-6 grid-col--no-space-md">
-								<label class="label--block">Post code</label>
+								<label class="form__label">Post code</label>
 								<div class="form-field-wrapper">
 									<input id="postal_code" class="field" type="text" disabled="true"></input>
 								</div>
 							</div>
 							<div class="grid-col grid-col--md-6 grid-col--no-space">
-								<label class="label--block">Country</label>
+								<label class="form__label">Country</label>
 								<div class="form-field-wrapper">
 									<input id="country" class="field" type="text" disabled="true"></input>
 								</div>
@@ -104,7 +108,8 @@
 						</div>
 					</div>
 				</div>
-			</div>		</div>
+			</div>
+		</div>
 	</section>
 
 </div>

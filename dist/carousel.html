@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE 9]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 ie"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9 ie"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -11,6 +13,7 @@
 
 	<link href="assets/css/styles.css" rel="stylesheet">
 	<link href="assets/css/demo.css" rel="stylesheet">
+	<script src="assets/js/modernizr.js"></script>
 
 
 
@@ -41,14 +44,15 @@
 					<img src="assets/img/toolkit/logos/pod-point-logo.svg" alt="POD Point">
 				</a>
 			</div>
-		</header><div data-page="carousel">
+		</header>
+<div data-page="carousel">
 	<header class="demo-section-heading">
 		<div class="container content-block">
 			<h2>Carousel</h2>
 		</div>
 	</header>
 
-	<section class="text-center bg--very-dark-gray">
+	<section class="text-center bg--dark-gray">
 		<div class="carousel-section">
 			<div class="container">
 				<h2>5/5 star rating, 1965 reviews on Reviews.co.uk</h2>
@@ -60,27 +64,31 @@
 						<div class="rich-text">
 							<h3>John Smith</h3>
 							<p>Suspendisse potenti. Nullam lacinia urna ex, vitae maximus massa ultricies ut. Quisque cursus magna sit amet turpis tempor sodales. Ut egestas, felis quis sagittis rhoncus, purus purus congue orci, sed mollis diam metus sed orci. Duis a lacus lectus. Curabitur ante massa, consectetur luctus arcu non, vehicula elementum orci.</p>
-							<span class="svg-wrap max-width--xxs marg-center m-t-sm m-t-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 23"><path fill="#8cc63f" stroke="#8cc63f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M15.8 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2L8 13.9 3.1 9.2l6.7-1.1 2.9-6zM44.2 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2 1.1-6.6-4.9-4.7 6.7-1.1 3-6zM72.6 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2 1.1-6.6L60 9.2l6.6-1.1 3-6zM101.1 8.1l6.7.9-4.9 4.8 1.2 6.6-6-3.1-5.9 3.2 1.1-6.6-4.9-4.7 6.7-1.1 2.9-6zM129.1 8.1l6.7.9-4.9 4.8 1.2 6.6-6-3.1-5.9 3.2 1.1-6.6-4.9-4.7 6.7-1.1 2.9-6z"/></svg></span>
+							<span class="svg-wrap max-width--xxs marg-center m-t-sm m-t-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 23" width="100" height="17"><path fill="#8cc63f" stroke="#8cc63f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M15.8 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2L8 13.9 3.1 9.2l6.7-1.1 2.9-6zM44.2 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2 1.1-6.6-4.9-4.7 6.7-1.1 3-6zM72.6 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2 1.1-6.6L60 9.2l6.6-1.1 3-6zM101.1 8.1l6.7.9-4.9 4.8 1.2 6.6-6-3.1-5.9 3.2 1.1-6.6-4.9-4.7 6.7-1.1 2.9-6zM129.1 8.1l6.7.9-4.9 4.8 1.2 6.6-6-3.1-5.9 3.2 1.1-6.6-4.9-4.7 6.7-1.1 2.9-6z"/></svg>
+</span>
 						</div>
 					</div>
 					<div class="carousel-cell">
 						<div class="rich-text">
 							<h3>Anna Doyle</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-							<span class="svg-wrap max-width--xxs marg-center m-t-sm m-t-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 23"><path fill="#8cc63f" stroke="#8cc63f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M15.8 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2L8 13.9 3.1 9.2l6.7-1.1 2.9-6zM44.2 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2 1.1-6.6-4.9-4.7 6.7-1.1 3-6zM72.6 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2 1.1-6.6L60 9.2l6.6-1.1 3-6zM101.1 8.1l6.7.9-4.9 4.8 1.2 6.6-6-3.1-5.9 3.2 1.1-6.6-4.9-4.7 6.7-1.1 2.9-6z"/><path d="M129.7 19.4l-2.9-1.5h-.3l-5.5 3c-.2.1-.5-.1-.5-.3l1-6.2c0-.1 0-.2-.1-.3l-4.5-4.4c-.2-.2-.1-.5.2-.6l6.2-1c.1 0 .2-.1.2-.2l2.7-5.7c.1-.2.5-.2.6 0l2.9 5.8" fill="#8cc63f"/><path d="M129.7 8.1l6.4.9c.3 0 .4.4.2.6l-4.5 4.4c-.1.1-.1.2-.1.3l1.1 6.2c0 .3-.2.5-.5.3l-2.7-1.4" fill="#e6e6e6"/></svg></span>
+							<span class="svg-wrap max-width--xxs marg-center m-t-sm m-t-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 23" width="100" height="17"><path fill="#8cc63f" stroke="#8cc63f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M15.8 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2L8 13.9 3.1 9.2l6.7-1.1 2.9-6zM44.2 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2 1.1-6.6-4.9-4.7 6.7-1.1 3-6zM72.6 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2 1.1-6.6L60 9.2l6.6-1.1 3-6zM101.1 8.1l6.7.9-4.9 4.8 1.2 6.6-6-3.1-5.9 3.2 1.1-6.6-4.9-4.7 6.7-1.1 2.9-6z"/><path d="M129.7 19.4l-2.9-1.5h-.3l-5.5 3c-.2.1-.5-.1-.5-.3l1-6.2c0-.1 0-.2-.1-.3l-4.5-4.4c-.2-.2-.1-.5.2-.6l6.2-1c.1 0 .2-.1.2-.2l2.7-5.7c.1-.2.5-.2.6 0l2.9 5.8" fill="#8cc63f"/><path d="M129.7 8.1l6.4.9c.3 0 .4.4.2.6l-4.5 4.4c-.1.1-.1.2-.1.3l1.1 6.2c0 .3-.2.5-.5.3l-2.7-1.4" fill="#e6e6e6"/></svg>
+</span>
 						</div>
 					</div>
 					<div class="carousel-cell">
 						<div class="rich-text">
 							<h3>Carol Lorem</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-							<span class="svg-wrap max-width--xxs marg-center m-t-sm m-t-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 23"><path fill="#8cc63f" stroke="#8cc63f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M15.8 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2L8 13.9 3.1 9.2l6.7-1.1 2.9-6zM44.2 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2 1.1-6.6-4.9-4.7 6.7-1.1 3-6zM72.6 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2 1.1-6.6L60 9.2l6.6-1.1 3-6zM101.1 8.1l6.7.9-4.9 4.8 1.2 6.6-6-3.1-5.9 3.2 1.1-6.6-4.9-4.7 6.7-1.1 2.9-6zM129.1 8.1l6.7.9-4.9 4.8 1.2 6.6-6-3.1-5.9 3.2 1.1-6.6-4.9-4.7 6.7-1.1 2.9-6z"/></svg></span>
+							<span class="svg-wrap max-width--xxs marg-center m-t-sm m-t-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 23" width="100" height="17"><path fill="#8cc63f" stroke="#8cc63f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M15.8 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2L8 13.9 3.1 9.2l6.7-1.1 2.9-6zM44.2 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2 1.1-6.6-4.9-4.7 6.7-1.1 3-6zM72.6 8.1l6.7.9-4.8 4.8 1.2 6.6-6-3.1-6 3.2 1.1-6.6L60 9.2l6.6-1.1 3-6zM101.1 8.1l6.7.9-4.9 4.8 1.2 6.6-6-3.1-5.9 3.2 1.1-6.6-4.9-4.7 6.7-1.1 2.9-6zM129.1 8.1l6.7.9-4.9 4.8 1.2 6.6-6-3.1-5.9 3.2 1.1-6.6-4.9-4.7 6.7-1.1 2.9-6z"/></svg>
+</span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="container">
-				<p class="font-style-large"><span class="reviews-from-text hidden inline-block-md">Reviews from:</span><a class="reviews-logo" href="reviews.co.uk"><span class="inline-block svg-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165 33"><circle cx="15.3" cy="16.4" r="11.6" fill="#fff"/><circle cx="15.3" cy="16.2" r="12.2" fill="#fff"/><path fill="#8fc043" d="M21 24.7l-5.7-4.4-5.7 4.4 2.2-7.2-5.6-4.4H13l2.3-6.8 2.3 6.8h6.9l-5.7 4.4z"/><g fill="#fff"><path d="M33 7.4c0-.6.5-1.1 1.1-1.1h7.3c2.4 0 4.3.7 5.6 2 1 1 1.5 2.3 1.5 3.9v.1c0 3.2-2.2 5.1-5.2 5.7l4.9 6.3c.2.3.4.5.4.8 0 .6-.6 1.1-1.1 1.1-.4 0-.8-.3-1-.6L41 18.4h-5.6V25c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1V7.4H33zm8.3 8.9c2.9 0 5-1.5 5-4v-.1c0-2.4-1.9-3.9-5-3.9h-6.1v8h6.1zM53 24.8V7.4c0-.6.5-1.1 1.1-1.1h12.2c.6 0 1 .4 1 1s-.4 1-1 1H55.2V15H65c.6 0 1 .5 1 1 0 .6-.4 1-1 1h-9.8v6.9h11.2c.6 0 1 .4 1 1s-.4 1-1 1H54.1c-.6 0-1.1-.5-1.1-1.1zM77.8 25.2L70.2 7.8c-.1-.2-.1-.3-.1-.5 0-.6.5-1.1 1.1-1.1s1 .4 1.1.8l6.8 16.3L86 6.9c.2-.4.6-.8 1.1-.8.6 0 1.1.5 1.1 1.1 0 .2 0 .3-.1.4l-7.6 17.6c-.3.6-.6.9-1.3.9h-.1c-.6.1-1.1-.3-1.3-.9zM92.3 7.3c0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1V25c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1V7.3zM100 24.8V7.4c0-.6.5-1.1 1.1-1.1h12.2c.6 0 1 .4 1 1s-.4 1-1 1h-11.1V15h9.8c.6 0 1 .5 1 1 0 .6-.4 1-1 1h-9.8v6.9h11.2c.6 0 1 .4 1 1s-.4 1-1 1h-12.3c-.6 0-1.1-.5-1.1-1.1zM117.3 7.8c-.1-.2-.1-.3-.1-.5 0-.6.5-1.1 1.1-1.1s1 .4 1.1.9l5.4 15.6L130 7c.2-.5.5-.9 1.1-.9h.1c.6 0 .9.4 1.1.9l5.1 15.6L142.9 7c.2-.5.5-.9 1.1-.9s1.1.5 1.1 1.1c0 .2-.1.4-.1.5l-6.3 17.4c-.2.6-.6 1-1.1 1h-.2c-.6 0-1-.4-1.1-1L131.2 10 126 25.2c-.2.6-.6 1-1.1 1h-.2c-.6 0-1-.4-1.1-1l-6.3-17.4zM147.9 23.6c-.3-.2-.4-.5-.4-.8 0-.6.5-1.1 1.1-1.1.3 0 .5.1.7.3 1.9 1.6 3.7 2.3 6.2 2.3 2.6 0 4.4-1.4 4.4-3.3v-.1c0-1.8-1-2.9-5.1-3.7-4.5-1-6.6-2.4-6.6-5.7v-.1c0-3.1 2.7-5.4 6.4-5.4 2.6 0 4.5.6 6.3 1.9.2.2.5.5.5.9 0 .6-.5 1.1-1.1 1.1-.3 0-.4-.1-.6-.2-1.7-1.2-3.3-1.7-5.1-1.7-2.6 0-4.2 1.4-4.2 3.2v.1c0 1.9 1 2.9 5.3 3.8 4.4 1 6.4 2.6 6.4 5.6v.1c0 3.4-2.8 5.6-6.7 5.6-3-.2-5.3-1.1-7.5-2.8z"/></g></svg></span></a>
+				<p class="font-style-large"><span class="reviews-from-text hidden inline-block-md">Reviews from:</span><a class="reviews-logo" href="reviews.co.uk"><span class="inline-block svg-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165 33" width="130" height="26"><circle cx="15.3" cy="16.4" r="11.6" fill="#fff"/><circle cx="15.3" cy="16.2" r="12.2" fill="#fff"/><path fill="#8fc043" d="M21 24.7l-5.7-4.4-5.7 4.4 2.2-7.2-5.6-4.4H13l2.3-6.8 2.3 6.8h6.9l-5.7 4.4z"/><g fill="#fff"><path d="M33 7.4c0-.6.5-1.1 1.1-1.1h7.3c2.4 0 4.3.7 5.6 2 1 1 1.5 2.3 1.5 3.9v.1c0 3.2-2.2 5.1-5.2 5.7l4.9 6.3c.2.3.4.5.4.8 0 .6-.6 1.1-1.1 1.1-.4 0-.8-.3-1-.6L41 18.4h-5.6V25c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1V7.4H33zm8.3 8.9c2.9 0 5-1.5 5-4v-.1c0-2.4-1.9-3.9-5-3.9h-6.1v8h6.1zM53 24.8V7.4c0-.6.5-1.1 1.1-1.1h12.2c.6 0 1 .4 1 1s-.4 1-1 1H55.2V15H65c.6 0 1 .5 1 1 0 .6-.4 1-1 1h-9.8v6.9h11.2c.6 0 1 .4 1 1s-.4 1-1 1H54.1c-.6 0-1.1-.5-1.1-1.1zM77.8 25.2L70.2 7.8c-.1-.2-.1-.3-.1-.5 0-.6.5-1.1 1.1-1.1s1 .4 1.1.8l6.8 16.3L86 6.9c.2-.4.6-.8 1.1-.8.6 0 1.1.5 1.1 1.1 0 .2 0 .3-.1.4l-7.6 17.6c-.3.6-.6.9-1.3.9h-.1c-.6.1-1.1-.3-1.3-.9zM92.3 7.3c0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1V25c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1V7.3zM100 24.8V7.4c0-.6.5-1.1 1.1-1.1h12.2c.6 0 1 .4 1 1s-.4 1-1 1h-11.1V15h9.8c.6 0 1 .5 1 1 0 .6-.4 1-1 1h-9.8v6.9h11.2c.6 0 1 .4 1 1s-.4 1-1 1h-12.3c-.6 0-1.1-.5-1.1-1.1zM117.3 7.8c-.1-.2-.1-.3-.1-.5 0-.6.5-1.1 1.1-1.1s1 .4 1.1.9l5.4 15.6L130 7c.2-.5.5-.9 1.1-.9h.1c.6 0 .9.4 1.1.9l5.1 15.6L142.9 7c.2-.5.5-.9 1.1-.9s1.1.5 1.1 1.1c0 .2-.1.4-.1.5l-6.3 17.4c-.2.6-.6 1-1.1 1h-.2c-.6 0-1-.4-1.1-1L131.2 10 126 25.2c-.2.6-.6 1-1.1 1h-.2c-.6 0-1-.4-1.1-1l-6.3-17.4zM147.9 23.6c-.3-.2-.4-.5-.4-.8 0-.6.5-1.1 1.1-1.1.3 0 .5.1.7.3 1.9 1.6 3.7 2.3 6.2 2.3 2.6 0 4.4-1.4 4.4-3.3v-.1c0-1.8-1-2.9-5.1-3.7-4.5-1-6.6-2.4-6.6-5.7v-.1c0-3.1 2.7-5.4 6.4-5.4 2.6 0 4.5.6 6.3 1.9.2.2.5.5.5.9 0 .6-.5 1.1-1.1 1.1-.3 0-.4-.1-.6-.2-1.7-1.2-3.3-1.7-5.1-1.7-2.6 0-4.2 1.4-4.2 3.2v.1c0 1.9 1 2.9 5.3 3.8 4.4 1 6.4 2.6 6.4 5.6v.1c0 3.4-2.8 5.6-6.7 5.6-3-.2-5.3-1.1-7.5-2.8z"/></g></svg>
+</span></a>
 			</div>
 		</div>
 	</section>

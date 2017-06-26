@@ -1,15 +1,13 @@
 import { Delegate } from 'dom-delegate';
-import { selectFirst } from '@pod-point/dom-ops';
-import { isVisible, hide, show } from './../utilities';
 
 let instances = [];
 
 class GallerySimple {
 
     /**
-     * Creates a gallery element.
+     * Creates a gallery element
      *
-     * @param element
+     * @param {element}
      */
     constructor(element) {
         this.element = element;
@@ -18,7 +16,7 @@ class GallerySimple {
     }
 
     /**
-     * Get first thumbnail and pass to function to display as the main image.
+     * Get first thumbnail and pass to function to display as the main image
      */
     getFirstThumbnail() {
         const firstThumbnail = this.element.querySelector('.gallery-simple__thumbnails li a');
@@ -38,14 +36,15 @@ class GallerySimple {
     }
 
     /**
-     * Unbinds the event listeners from the elements.
+     * Unbinds the event listeners from the elements
      */
     unbindEvents() {
         this.listener.destroy();
     }
 
     /**
-     * Display thumbnail as main image.
+     * Display thumbnail as main image
+     * @param {element} thumbnail
      */
     displayThumbnailAsImage(thumbnail) {
         const thumbnailSrc = thumbnail.querySelector('img').src;
@@ -56,12 +55,12 @@ class GallerySimple {
 }
 
 export default {
-    init: function(element) {
+    init: element => {
         instances.push(new GallerySimple(element));
     },
 
-    destroy: function() {
-        instances.forEach((instance) => instance.unbindEvents());
+    destroy: () => {
+        instances.forEach(instance => instance.unbindEvents());
         instances = [];
-    }
+    },
 };

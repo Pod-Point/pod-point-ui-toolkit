@@ -2,24 +2,17 @@
 //	SVGs
 // =============================================================================
 
-@mixin svg-bg-steps-divider-desktop($color: $gray) {
-	background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 436 107" style="enable-background:new 0 0 436 107;" xml:space="preserve"><style type="text/css">.st0{fill:none;stroke:#{$color};stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:12;}</style><path class="st0" d="M2,0v5c0,29.3,23.7,53,53,53h326c29.3,0,53,23.7,53,53v0"/></svg>');
-}
-@mixin svg-bg-divider-repeater($color: $gray) {
+// IMPORTANT NOTE: BECAUSE OF FIREFOX, THE FOLLOWING MIXINS NEED TO BE PASSED IN THE HEX CODE COLORS WITH THE CHARACTER ENCODED. THE '#' NEEDS TO BE '%23'.
+
+@mixin svg-bg-divider-repeater($color: $gray-encoded) {
 	background-image: url('data:image/svg+xml;utf8,<svg style="enable-background:new 0 0 3 20" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 3 20" version="1.1" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">.st0{fill:none;stroke:#{$color};stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5;}</style><line y1=".5" x2="1.5" x1="1.5" y2="20.2" class="st0"/></svg>');
 }
-@mixin svg-bg-divider-repeater-horizontal($color: $gray) {
+@mixin svg-bg-divider-repeater-horizontal($color: $gray-encoded) {
 	background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 3" style="enable-background:new 0 0 20 3;" xml:space="preserve"><style type="text/css">.st0{fill:none;stroke:#{$color};stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5;}</style><line class="st0" x1="19.9" y1="1.9" x2="0.1" y2="1.9"/></svg>');
 }
-@mixin svg-bg-cheveron($color: $font-color-base) {
+@mixin svg-bg-cheveron($color: $font-color-base-encoded) {
 	background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve"><path fill="#{$color}" d="M249,407c-8.2,0-16-3.6-21.4-9.8L14.9,151.8c-10.2-11.8-9-29.7,2.8-39.9c11.8-10.2,29.6-9,39.9,2.8L249,335.5l191.3-220.8c10.3-11.8,28.1-13.1,39.9-2.8c11.8,10.2,13.1,28.1,2.8,39.9L270.4,397.2C265,403.4,257.2,407,249,407z"/></svg>');
 }
-@mixin svg-bg-tick($color: $font-color-base) {
+@mixin svg-bg-tick($color: $font-color-base-encoded) {
 	background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve"><path fill="#{$color}" d="M168.5,472c-4,0-7.9-1.7-10.7-4.7l-141-154c-5.4-5.9-5-15.1,0.9-20.5c5.8-5.4,15.1-5,20.5,0.9l129.1,141L462.2,35c4.7-6.4,13.8-7.7,20.2-3.1c6.4,4.7,7.8,13.8,3.1,20.2L180.1,466.1c-2.6,3.5-6.6,5.6-10.9,5.8C169,472,168.8,472,168.5,472z"/></svg>');
-}
-@mixin svg-bg-cross($color: $font-color-base) {
-	background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve"><path fill="#{$color}" d="M281.9,249L479.6,51.2c9-9,9-23.5,0-32.4s-23.5-9-32.4,0L249.5,216.5L51.7,18.8c-9-9-23.5-9-32.4,0s-9,23.5,0,32.4L217.1,249L19.3,446.7c-9,9-9,23.5,0,32.4c4.5,4.5,10.3,6.7,16.2,6.7c5.9,0,11.7-2.2,16.2-6.7l197.8-197.8l197.8,197.8c4.5,4.5,10.3,6.7,16.2,6.7c5.9,0,11.7-2.2,16.2-6.7c9-9,9-23.5,0-32.4L281.9,249z"/></svg>');
-}
-@mixin svg-bg-star($color: $font-color-base) {
-	background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve"> <polygon fill="#{$color}" points="250.4,16.4 325.7,169 494,193.5 372.2,312.2 400.9,479.9 250.4,400.7 99.8,479.9 128.6,312.2 6.7,193.5 175.1,169"/></svg>');
 }

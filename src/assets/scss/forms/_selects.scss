@@ -1,0 +1,38 @@
+// =============================================================================
+//  SELECTS
+// =============================================================================
+
+.select-wrapper {
+	position: relative;
+	display: block;
+	vertical-align: middle;
+	width: 100%;
+	cursor: pointer;
+	margin-top: 0;
+	height: $input-height;
+	max-width: $form-field-max-width;
+	cursor: pointer;
+	&:after {
+		content: '';
+		@include position(absolute, 35% $input-padding null null);
+		width: rem(15);
+		height: rem(15);
+		@include svg-bg-cheveron();
+	}
+	select {
+		-moz-appearance: none;
+		position: relative;
+		z-index: 1;
+		@include input-styles;
+		@include input-border;
+		@include font-style-forms;
+		cursor: pointer;
+		background-color: transparent;
+		&:focus {
+			@include input-border--focus;
+		}
+		&:hover {
+			@include input-border--hover;
+		}
+	}
+}

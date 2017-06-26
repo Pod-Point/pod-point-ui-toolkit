@@ -17,20 +17,19 @@ var instances = [];
 var Collapse = function () {
 
     /**
-     * Creates a new collapsible element.
+     * Creates a new collapsible element
      *
-     * @param element
+     * @param {element}
      */
     function Collapse(element) {
         _classCallCheck(this, Collapse);
 
         this.element = element;
-
         this.bindEvents();
     }
 
     /**
-     * Bind any event listeners to the elements.
+     * Bind any event listeners to the elements
      */
 
 
@@ -47,19 +46,10 @@ var Collapse = function () {
         }
 
         /**
-         * Unbinds the event listeners from the elements.
-         */
-
-    }, {
-        key: 'unbindEvents',
-        value: function unbindEvents() {
-            this.listener.destroy();
-        }
-
-        /**
          * Collapses the element
-         * @param {Event} event
-         * @param {Element} trigger
+         *
+         * @param {event}
+         * @param {element} trigger
          */
 
     }, {
@@ -75,6 +65,16 @@ var Collapse = function () {
             } else {
                 (0, _utilities.show)(element, trigger);
             }
+        }
+
+        /**
+         * Unbinds the event listeners from the elements
+         */
+
+    }, {
+        key: 'unbindEvents',
+        value: function unbindEvents() {
+            this.listener.destroy();
         }
     }]);
 

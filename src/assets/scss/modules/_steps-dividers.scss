@@ -1,0 +1,18 @@
+// =============================================================================
+//  STEPS DIVIDERS
+// =============================================================================
+
+.divider--steps {
+	@include clearfix;
+	@include margin(20px auto);
+	width: 6px;
+	height: 60px;
+	& + .grid-row {
+		margin-top: 0;
+	}
+	@include medium-and-up {
+		@include margin(0 auto);
+		width: 70%;
+		height: 110px;
+	}
+}

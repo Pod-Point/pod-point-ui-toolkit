@@ -81,7 +81,7 @@ $typography-vertical-spacing: 0.5em;
 				&:before {
 					content: '';
 					@include position(absolute, 4px null null 0);
-					@include svg-bg-tick($primary-color);
+					@include svg-bg-tick($primary-color-encoded);
 					background-size: cover;
 					width: 18px;
 					height: 18px;

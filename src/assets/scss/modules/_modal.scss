@@ -14,29 +14,41 @@
 	width: 100%;
 	min-height: 100%;
 	.circle-icon--close {
-		@include position(absolute, $horizontal-spacing-mobile $horizontal-spacing-mobile null null);
+		@include position(absolute, -50px $horizontal-spacing-mobile null null);
 		@include medium-and-up {
-			@include position(absolute, $horizontal-spacing $horizontal-spacing null null);
+			@include position(absolute, -70px $horizontal-spacing null null);
 		}
 	}
 	&__content {
+		position: relative;
 		@include container;
 		@include margin(80px null);
 		@include medium-and-up {
 			@include margin(100px null);
 		}
-	}
-}
-
-.panel {
-	text-align: center;
-	color: white;
-	&__title {
-		color: white;
-		@include font-style-h1;
-	}
-	&__text-content {
-		max-width: $max-width-text;
-		@include margin(null auto);
+		.panel {
+			text-align: center;
+			color: white;
+			&__title {
+				color: white;
+				@include font-style-h1;
+			}
+			&__text-content {
+				max-width: $max-width-text;
+				@include margin(null auto);
+			}
+		}
+		&--white {
+			background-color: white;
+			.panel {
+				color: $font-color-base;
+				&__title {
+					color: $font-color-base;
+				}
+			}
+		}
+		&--narrow {
+			max-width: 700px;
+		}
 	}
 }

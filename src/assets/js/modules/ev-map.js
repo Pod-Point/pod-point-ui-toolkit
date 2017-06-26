@@ -1,53 +1,57 @@
+/* eslint class-methods-use-this: ["error", { "exceptMethods": ["ready"] }] */
+
+import * as d3 from 'd3';
+import * as topojson from 'topojson';
 import { getRandomInt, roundNumberTo } from './../utilities';
 import chargeData from './../data/chargeData';
-import * as d3 from "d3";
-import queue from "d3-queue";
-import * as topojson from "topojson";
-import { Gridmap } from './../gridmap';
+import gridmap from './../gridmap';
 
-
-var mapConfig = {};
-let instances = [];
+let mapConfig = {};
+const instances = [];
 
 class EvMap {
 
     /**
-     * Create a new Map.
+     * Create a new Map
      *
-     * @param element
+     * @param {element}
      */
     constructor(element) {
+        if (window.isTouchDevice || window.isMobileSize) { return; }
+
         mapConfig = {
             mapID: '#gridmap',
-            mapWidth: 460,
-            mapHeight: 267, // these values set the physical size of the map on the page
-            mapDotStepSize: 6, // this sets size of the map dots
-            mapDotColour: '#CCCCCC', // sets the fill colour of the dots
-            mapLonLeft: -10.65, // enter the longitude in degrees on left edge of map, by comparing with Google
-            mapLonRight: 20.01, // enter the longitude in degrees on right edge of map
-            mapLatBottom: 49.3, // enter the latitude in degrees on bottom edge of map
-            timeDelay: 3500, // time in milliseconds between new charges appearing on the map
-            s: 1342, // these values set scale and boundaries of the map
-            t: [168, 1382] // these values set scale and boundaries of the map
-        }
+            mapWidth: 700,
+            mapHeight: 553, // size of the map on the page in pixels
+            mapDotStepSize: 10, // size of the map dots
+            mapDotColour: '#CCCCCC', // fill colour of the dots
+            mapLonLeft: -12.0, // enter the longitude in degrees on left edge of map, by comparing with Google Maps
+            mapLonRight: 16.04, // enter the longitude in degrees on right edge of map
+            mapLatBottom: 47.1, // enter the latitude in degrees on bottom edge of map
+            timeDelay: 6000, // time in milliseconds between new charges appearing on the map
+            s: 2250, // scale
+            t: [300, 2350], // boundaries
+        };
 
         this.element = element;
-        this.mapElement = element.querySelector(mapConfig.mapID);
-        this.markerHolder = element.querySelector('#markerHolder');
-
+        this.jsonPath = element.getAttribute('data-json-path');
+        this.mapElement = document.getElementById(mapConfig.mapID);
+        this.markerHolder = document.getElementById('markerHolder');
+        this.markerCircleHolder = document.getElementById('markerCircleHolder');
+        this.markerCircle = document.getElementById('markerCircle');
+        this.kwText = document.getElementById('kw');
+        this.savingText = document.getElementById('saving');
         this.lastHighlightedDot = [];
 
-        mapConfig.projection = d3.geoAzimuthalEqualArea().scale(mapConfig.s).translate(mapConfig.t).clipAngle(180).precision(1);
-
-        var path = d3.geoPath().projection(mapConfig.projection);
-
-        this.chargesData = chargeData.charges;
+        mapConfig.projection = d3.geoAzimuthalEqualArea().scale(mapConfig.s)
+            .translate(mapConfig.t).clipAngle(180)
+            .precision(1);
 
         d3.queue()
-            .defer(d3.json, "./assets/js/data/geo-data/eu.json")
+            .defer(d3.json, this.jsonPath)
             .await(this.ready);
 
-        // this.ping();
+        this.startCharges();
     }
 
     /**
@@ -57,24 +61,21 @@ class EvMap {
      * @param eu
      */
     ready(error, eu) {
-        var features =  topojson.feature(eu, eu.objects.europe).features;
+        const features = topojson.feature(eu, eu.objects.europe).features;
+        const data = d3.map();
+        let j;
+        let len;
 
-        // generate some random data
-        var data = d3.map(); // data is a d3.map !!
-        var j;
-        var len;
-
-        for (j = 0, len = features.length; j < len; j++) {
-            data.set(features[j]["id"], getRandomInt(1,5));
+        for (j = 0, len = features.length; j < len; j += 1) {
+            data.set(features[j].id, getRandomInt(1, 5));
         }
 
-        var chart = new Gridmap()
+        const chart = gridmap()
             .data(data)
             .width(mapConfig.mapWidth)
             .height(mapConfig.mapHeight)
-            .key("id")
-            .side(mapConfig.mapDotStepSize) // change this to make dots larger or smaller
-            .isDensity(true)
+            .key('id')
+            .side(mapConfig.mapDotStepSize)
             .projection(mapConfig.projection)
             .features(features)
             .fill(mapConfig.mapDotColour);
@@ -92,22 +93,21 @@ class EvMap {
      */
     showMarker(x, y, kw, saving) {
         this.lastHighlightedDot = [x, y];
-        var mapPoint = this.element.querySelectorAll('circle[cx="' + x + '"][cy="' + y + '"]');
+        this.mapPoint = document.querySelector(`circle[cx="${x}"][cy="${y}"]`);
 
-        if (mapPoint.length) {
-            mapPoint[0].classList.add('gridmap-dot-selected');
-            var kwText = this.element.getElementById('kw');
-            kwText.innerHTML = kw;
+        if (this.mapPoint) {
+            this.mapPoint.classList.add('gridmap-dot-selected');
 
-            savingText = this.element.getElementById('saving');
-            savingText.innerHTML = saving;
+            this.kwText.innerHTML = kw;
+            this.savingText.innerHTML = saving.toFixed(2);
 
-            this.markerHolder.style.left = (x - 32) + 'px';
-            this.markerHolder.style.top = (y - 32) + 'px';
-            this.markerHolder.style.visibility = 'visible';
-            this.markerHolder.classList.add('bulge-appear');
+            this.markerHolder.style.left = `${(x - 50)}px`;
+            this.markerHolder.style.top = `${(y - 50)}px`;
+            this.markerHolder.classList.remove('hidden');
+
+            this.markerCircleHolder.classList.add('ev-map-wrap__bulge-appear');
         } else {
-            nextCharge();
+            this.nextCharge();
         }
     }
 
@@ -117,41 +117,25 @@ class EvMap {
      */
     hideMarker() {
         if (this.lastHighlightedDot[0]) {
-            mapPoint = document.querySelectorAll('circle[cx="' + this.lastHighlightedDot[0] + '"][cy="' + this.lastHighlightedDot[1] + '"]');
-            if (mapPoint.length) {
-                mapPoint[0].classList.remove('gridmap-dot-selected');
+            this.mapPoint = document.querySelector(
+                `circle[cx="${this.lastHighlightedDot[0]}"][cy="${this.lastHighlightedDot[1]}"]`,
+            );
+            if (this.mapPoint) {
+                this.mapPoint.classList.remove('gridmap-dot-selected');
             }
         }
-        this.markerHolder.classList.remove('bulge-appear');
-        this.markerHolder.style.visibility = 'hidden';
-        void this.markerHolder.offsetWidth; // workaround to force browser to reflow so bulge animation class works again next time
+
+        this.markerHolder.classList.add('hidden');
+        this.markerCircleHolder.classList.remove('ev-map-wrap__bulge-appear');
+        /* eslint no-void: "off" */
+        void this.markerHolder.offsetWidth; // force DOM reflow to result bulge class
+
         this.lastHighlightedDot = [];
     }
 
     /**
-     * convert Lat and Long to a dot on the map
+     * Convert latitude and longitude to a dot on the map
      * (adapted from http://stackoverflow.com/a/27313080)
-     *
-     * @param latitute
-     * @param longitude
-     */
-    convertLatLongToDot(latitude, longitude) {
-        var mapLonDelta = mapConfig.mapLonRight - mapConfig.mapLonLeft;
-        var mapLatBottomDegree = mapConfig.mapLatBottom * Math.PI / 180;
-        var x = (longitude - mapConfig.mapLonLeft) * (mapConfig.mapWidth / mapLonDelta);
-        latitude = latitude * Math.PI / 180;
-        var worldMapWidth = ((mapConfig.mapWidth / mapLonDelta) * 360) / (2 * Math.PI);
-        var mapOffsetY = (worldMapWidth / 2 * Math.log((1 + Math.sin(mapLatBottomDegree)) / (1 - Math.sin(mapLatBottomDegree))));
-        var y = mapConfig.mapHeight - ((worldMapWidth / 2 * Math.log((1 + Math.sin(latitude)) / (1 - Math.sin(latitude)))) - mapOffsetY);
-        console.log(x);
-        // var dotX = x.roundTo(mapConfig.mapDotStepSize);
-        // var dotY = y.roundTo(mapConfig.mapDotStepSize);
-
-        return [dotX, dotY];
-    }
-
-    /**
-     * Show charge on the map
      *
      * @param latitute
      * @param longitude
@@ -159,29 +143,43 @@ class EvMap {
      * @param saving
      */
     showChargeOnMap(latitude, longitude, kw, saving) {
-        var dotCoords = this.convertLatLongToDot(latitude, longitude);
-        showMarker(dotCoords[0], dotCoords[1], kw, saving);
+        const mapLonDelta = mapConfig.mapLonRight - mapConfig.mapLonLeft;
+        const mapLatBottomDegree = (mapConfig.mapLatBottom * Math.PI) / 180;
+
+        const x = (longitude - mapConfig.mapLonLeft) * (mapConfig.mapWidth / mapLonDelta);
+        const latitudeNew = (latitude * Math.PI) / 180;
+        const worldMapWidth = ((mapConfig.mapWidth / mapLonDelta) * 360) / (2 * Math.PI);
+        const mapOffsetY = ((worldMapWidth / 2) * Math.log((1 + Math.sin(mapLatBottomDegree))
+            / (1 - Math.sin(mapLatBottomDegree))));
+        const y = mapConfig.mapHeight - (((worldMapWidth / 2) * Math.log((1 + Math.sin(latitudeNew))
+            / (1 - Math.sin(latitudeNew)))) - mapOffsetY);
+
+        const dotX = roundNumberTo(x, mapConfig.mapDotStepSize);
+        const dotY = roundNumberTo(y, mapConfig.mapDotStepSize);
+
+        this.showMarker(dotX, dotY, kw, saving);
     }
 
     /**
-     * Next charge
+     * Get the next charge
      */
     nextCharge() {
-        hideMarker();
-        var charge = this.chargesData[Math.floor(Math.random() * this.chargesData.length)];
-        showChargeOnMap(charge[0], charge[1], charge[2], charge[3]);
+        this.hideMarker();
+        const charge = chargeData.charges[Math.floor(Math.random() * chargeData.charges.length)];
+        this.showChargeOnMap(charge[0], charge[1], charge[2], charge[3]);
     }
 
     /**
-     * Ping the charges
+     * Start showing charges on the map
      */
-    ping() {
-        setInterval(this.nextCharge, mapConfig.timeDelay);
+    startCharges() {
+        this.hideMarker();
+        setInterval(this.nextCharge.bind(this), mapConfig.timeDelay);
     }
 }
 
 export default {
-    init: function(element) {
+    init: element => {
         instances.push(new EvMap(element));
-    }
-}
+    },
+};

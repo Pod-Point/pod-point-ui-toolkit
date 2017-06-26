@@ -77,7 +77,8 @@ $background-color-base: white;
 $gray-very-light: #f9fafa;
 $gray-light: #f2f2f2;
 $gray: #b3b3b3;
-$gray-very-dark: #4d4d4d;
+$gray-dark: #4d4d4d;
+$gray-very-dark: #2a2a2a;
 
 // Custom colours
 $primary-color: #8CC63F;
@@ -104,6 +105,12 @@ $icon-color: $font-color-base;
 $facebook-color: #4b6ead;
 $twitter-color: #00b7f0;
 $pinterest-color: #bd081c;
+
+// Because of firefox, svg background image strings need to be character encoded
+$gray-encoded: '%23b3b3b3';
+$font-color-base-encoded: '%23333';
+$primary-color-encoded: '%238CC63F';
+$error-red-encoded: '%23C1272D';
 
 // Border
 $border-radius-base: 5px;
@@ -143,6 +150,22 @@ $checked-fill-color: $primary-color;
 $checkbox-bg-color: transparent;
 $error-red: #C1272D;
 
+
+// State and Alert colours
+$state-success-bg:            #dff0d8;
+$state-success-text:          #3c763d;
+$state-success-border:        darken(adjust-hue($state-success-bg, -10), 5%);
+$state-info-bg:               #d9edf7;
+$state-info-text:             #31708f;
+$state-info-border:           darken(adjust-hue($state-info-bg, -10), 5%);
+$state-warning-bg:            #fcf8e3;
+$state-warning-text:          #8a6d3b;
+$state-warning-border:        darken(adjust-hue($state-warning-bg, -10), 5%);
+$state-danger-bg:             #f2dede;
+$state-danger-text:           #C1272D;
+$state-danger-border:         darken(adjust-hue($state-danger-bg, -10), 5%);
+
+
 $disabled-color: gray;
 
 // Forms
@@ -152,7 +175,7 @@ $form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
 $form-border-radius: 5px;
 $form-border-base: $border-base;
-$input-text-color: #444;
+$input-text-color: $font-color-base;
 $input-placeholder-color: #ccc;
 $input-icon-color: #9C9C9C;
 $form-field-max-width: rem(600);

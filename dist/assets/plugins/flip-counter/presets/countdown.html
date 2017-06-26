@@ -20,9 +20,9 @@
 <!-- start of preset snippet -->
 
 <div>
-    
+
     <style>
-        
+
         body {
             
             background-image:linear-gradient(-45deg, rgba(0, 0, 0, 0), #1f2326 50%), url();
@@ -86,9 +86,9 @@
             }
 
         }
-        
+
     </style>
-    
+
     <div class="tick"
          data-did-init="handleTickInit">
 
@@ -120,8 +120,8 @@
                 <div data-key="label"
                      data-view="text"></div>
 
-                <div data-key="value" 
-                     data-repeat="true" 
+                <div data-key="value"
+                     data-repeat="true"
                      data-transform="pad(00) -> split -> delay">
                     <span data-view="flip"></span>
                 </div>
@@ -131,14 +131,14 @@
         </div>
 
     </div>
-    
+
     <script>
     function handleTickInit(tick) {
-        
+
         var nextYear = ((new Date()).getFullYear() + 1) + '-01-01T00:00:00';
-    
+
         var counter = Tick.count.down(nextYear);
-        
+
         counter.onupdate = function(value) {
             tick.value = value;
         };

@@ -6,74 +6,76 @@ const HAS_ERROR = 'has-error';
 const HAS_FOCUS = 'has-focus';
 
 class FormFields {
+
     constructor(root = document.body) {
-        this.bindEvents(root);
-        this.checkAllFieldsForContent();
+        FormFields.bindEvents(root);
+        FormFields.checkAllFieldsForContent();
     }
 
-    checkAllFieldsForContent() {
-        var inputs = nodesToArray(select('input'));
+    static checkAllFieldsForContent() {
+        const inputs = nodesToArray(select('input'));
 
         if (inputs.length) {
-            inputs.forEach(input => this.checkForContent(input));
+            inputs.forEach(input => FormFields.checkForContent(input));
         }
     }
 
-    checkForContent(element) {
-        var container = this.getInputContainer(element),
-            callback = (element.value) ? addClass : removeClass;
+    static checkForContent(element) {
+        const container = FormFields.getInputContainer(element);
+        const callback = (element.value) ? addClass : removeClass;
 
         callback(container, HAS_CONTENT);
     }
 
-    checkForErrors(element) {
-        removeClass(this.getInputContainer(element), HAS_ERROR);
+    static checkForErrors(element) {
+        removeClass(FormFields.getInputContainer(element), HAS_ERROR);
     }
 
-    bindEvents(root) {
-        var listener = new Delegate(root);
+    static bindEvents(root) {
+        const listener = new Delegate(root);
 
         // Listen to change because of password managers etc
         listener.on('change', 'input, textarea', (event, element) => {
-            this.checkForContent(element);
-            this.checkForErrors(element);
-            this.giveFocus(element);
+            FormFields.checkForContent(element);
+            FormFields.checkForErrors(element);
+            FormFields.giveFocus(element);
         });
 
         // Text input focus handler
-        listener.on('focus', 'input, textarea', (event, element) => this.giveFocus(element));
+        listener.on('focus', 'input, textarea', (event, element) => FormFields.giveFocus(element));
 
         // Text input focusout handler
         listener.on('focusout', 'input, textarea', (event, element) => {
-            this.checkForContent(element);
-            this.checkForErrors(element);
-            this.removeFocus(element);
+            FormFields.checkForContent(element);
+            FormFields.checkForErrors(element);
+            FormFields.removeFocus(element);
         });
 
         listener.on('input', 'textarea', (event, element) => {
-            var scrollHeight = element.scrollHeight;
+            const scrollHeight = element.scrollHeight;
+            const formEl = element;
 
-            if (scrollHeight > parseInt(window.getComputedStyle(element, null).height)) {
-                element.style.height = scrollHeight + 'px';
+            if (scrollHeight > parseInt(window.getComputedStyle(formEl, null).height, 0)) {
+                formEl.style.height = `${scrollHeight}px`;
             }
         });
     }
 
-    getInputContainer(element) {
+    static getInputContainer(element) {
         return element.parentNode;
     }
 
-    removeFocus(element) {
-        removeClass(this.getInputContainer(element), HAS_FOCUS);
+    static removeFocus(element) {
+        removeClass(FormFields.getInputContainer(element), HAS_FOCUS);
     }
 
-    giveFocus(element) {
-        addClass(this.getInputContainer(element), HAS_FOCUS);
+    static giveFocus(element) {
+        addClass(FormFields.getInputContainer(element), HAS_FOCUS);
     }
 }
 
 export default {
-    init: function() {
-        new FormFields();
-    }
+    init: () => {
+        new FormFields(); // eslint-disable-line no-new
+    },
 };

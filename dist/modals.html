@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE 9]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 ie"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9 ie"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -11,6 +13,7 @@
 
 	<link href="assets/css/styles.css" rel="stylesheet">
 	<link href="assets/css/demo.css" rel="stylesheet">
+	<script src="assets/js/modernizr.js"></script>
 
 
 
@@ -41,7 +44,8 @@
 					<img src="assets/img/toolkit/logos/pod-point-logo.svg" alt="POD Point">
 				</a>
 			</div>
-		</header><div data-page="modals">
+		</header>
+<div data-page="modals">
 
 	<header class="demo-section-heading">
 		<div class="container content-block">
@@ -59,10 +63,10 @@
 
 	<!-- HIDDEN MODALS -->
 	<div class="modal hidden fade-in" id="testModal">
-		<a href="#" class="circle-icon circle-icon--close circle-icon--outlined-dark circle-icon--small-resp modal-close"><svg class="icon"><use xlink:href="#general--cross"/></svg></a>
 		<div class="modal__content">
+			<a href="#" class="circle-icon circle-icon--close circle-icon--outlined-dark circle-icon--small-resp modal-close"><svg class="icon"><use xlink:href="#general--cross"/></svg></a>
 			<div class="panel">
-				<img class="img--resp img--rounded-corners" src="http://placehold.it/700x400">
+				<img class="img--resp img--rounded-corners inline-block" src="http://placehold.it/700x400">
 				<div class="content-block">
 					<h2 class="panel__title">Pricing</h2>
 					<div class="panel__text-content" class="font-style-large">
@@ -75,21 +79,21 @@
 						<div class="grid-col grid-col--md-4">
 							<div class="card card--centered card--no-border">
 								<h3>3.7kW</h3>
-								<img class="img--resp img--rounded-corners" src="http://placehold.it/100x50">
+								<img class="img--resp img--rounded-corners inline-block" src="http://placehold.it/100x50">
 								<p>(Up to 15 miles RPH)<br>from <strong class="green">&pound;279*</strong></p>
 							</div>
 						</div>
 						<div class="grid-col grid-col--md-4">
 							<div class="card card--centered card--no-border">
 								<h3>7kW</h3>
-								<img class="img--resp img--rounded-corners" src="http://placehold.it/100x50">
+								<img class="img--resp img--rounded-corners inline-block" src="http://placehold.it/100x50">
 								<p>(Up to 30 miles RPH)<br>from <strong class="green">&pound;359*</strong></p>
 							</div>
 						</div>
 						<div class="grid-col grid-col--md-4">
 							<div class="card card--centered card--no-border">
 								<h3>22kW</h3>
-								<img class="img--resp img--rounded-corners" src="http://placehold.it/100x50">
+								<img class="img--resp img--rounded-corners inline-block" src="http://placehold.it/100x50">
 								<p>(Up to 80 miles RPH)<br>from <strong class="green">&pound;999*</strong></p>
 							</div>
 						</div>
@@ -100,8 +104,8 @@
 	</div>
 
 	<div class="modal hidden fade-in" id="anotherTestModal">
-		<a href="#" class="circle-icon circle-icon--close circle-icon--outlined-dark circle-icon--small-resp modal-close"><svg class="icon"><use xlink:href="#general--cross"/></svg></a>
 		<div class="modal__content">
+			<a href="#" class="circle-icon circle-icon--close circle-icon--outlined-dark circle-icon--small-resp modal-close"><svg class="icon"><use xlink:href="#general--cross"/></svg></a>
 			<div class="panel">
 				<img class="img--resp" src="http://placehold.it/1000x400">
 				<h2 class="panel__title">A Title For This Panel</h2>
@@ -110,6 +114,7 @@
 	</div>
 
 </div>
+
 	</div>
 
 	<script src="assets/js/script.js"></script>

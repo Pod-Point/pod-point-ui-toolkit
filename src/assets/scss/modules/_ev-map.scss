@@ -2,7 +2,37 @@
 //  EV MAP
 // =============================================================================
 
+@keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@keyframes bulge-appear {
+	from {
+		-ms-transform: scale(0.1, 0.1);
+		-webkit-transform: scale(0.1, 0.1);
+	}
+	to {
+		-ms-transform: scale(1, 1);
+		-webkit-transform: scale(1, 1);
+	}
+}
+
+.ev-map-section {
+	.container {
+		overflow: hidden;
+		.grid-wrap {
+			position: relative;
+			z-index: 1;
+		}
+	}
+}
+
 .ev-map-wrap {
+	display: block;
 	&__markers {
 		@include position(absolute, 50% null null 61%);
 	}
@@ -12,14 +42,35 @@
 		margin-left: 10px;
 		width: 250px;
 	}
+	&__rotate {
+		animation-name: rotate;
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        svg {
+        	width: 100%!important;
+        	height: auto!important;
+        }
+	}
+	&__bulge-appear {
+		animation-name: bulge-appear;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+	}
 	&__pulse {
 		float: left;
 		width: 100px;
 	}
 }
+
 .ev-map {
 	display: block;
-	@include position(absolute, 0 -20% null null);
+	z-index: 0;
+	@include position(absolute, 0 -20% null auto);
+	@include large-and-up {
+		right: -9.5%;
+	}
 	svg {
 		width: 700px;
 		height: 553px;
@@ -28,7 +79,7 @@
 		transform-origin: 50% 50%;
 		transform: scale(1,1);
 	}
-	circle.gridmap-dot:hover {
+	circle.gridmap-dot:hover, circle.gridmap-dot-selected {
 		fill: rgb(140, 198, 63) !important;
 	}
 	path.arc{

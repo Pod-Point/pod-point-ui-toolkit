@@ -1,5 +1,5 @@
 /*
- * Tick v1.3.2 - Counters Made Easy
+ * Tick v1.4.0 - Counters Made Easy
  * Copyright (c) 2017 PQINA - http://tickcounterplugin.com
  */
 define(function() {
@@ -448,6 +448,10 @@ var destroyer = (function (state) {
 			if (state.didResizeWindow) {
 				window.removeEventListener('resize', state.didResizeWindow);
 			}
+
+			if (state.root && state.root.parentNode) {
+				state.root.parentNode.removeChild(state.root);
+			}
 		}
 	};
 });
@@ -541,15 +545,16 @@ var grouper = (function (state, definition) {
  * Drawer
  * @param state
  * @param draw
+ * @param present
  */
-var drawer = (function (state, draw) {
+var drawer = (function (state, draw, present) {
 
 	state.frame = null;
 
 	state.dirty = function () {
 		cancelAnimationFrame(state.frame);
 		state.frame = requestAnimationFrame(function () {
-			draw(state);
+			draw(state, present);
 		});
 	};
 });
@@ -563,7 +568,7 @@ var updater = (function (state) {
 	};
 
 	return {
-		update: function update$$1(value) {
+		update: function update(value) {
 
 			// don't update on same value
 			if (equal(state.value, value)) {
@@ -681,7 +686,7 @@ var toConsumableArray = function (arr) {
   }
 };
 
-var draw = function draw(state) {
+var draw = function draw(state, present) {
 
 	var views = (state.definition || []).concat();
 
@@ -694,7 +699,7 @@ var draw = function draw(state) {
 	views.forEach(function (view) {
 
 		if (!view.presenter) {
-			present(view);
+			state.update = present(view);
 			if (!view.presenter) {
 				return;
 			}
@@ -708,18 +713,18 @@ var draw = function draw(state) {
 
 		if (Array.isArray(value) && state.valueMapping) {
 			// if set to indexes divide values over views, else (must be "none") just pass array
-			update(view, state.valueMapping === 'indexes' ? state.align === 'right' ? value.pop() : value.shift() : value);
+			state.update(view, state.valueMapping === 'indexes' ? state.align === 'right' ? value.pop() : value.shift() : value);
 		} else if (view.key && value[view.key] !== undefined) {
 			// view expects a key so value should be object
-			update(view, value[view.key]);
+			state.update(view, value[view.key]);
 		} else {
 			// just pass on value to all sub views
-			update(view, value);
+			state.update(view, value);
 		}
 	});
 };
 
-var createRoot = (function (root, definition) {
+var createRoot = (function (root, definition, present) {
 
 	var state = {
 		valueMapping: null // "none" or "indexes"
@@ -731,12 +736,12 @@ var createRoot = (function (root, definition) {
 		state.valueMapping = allowed.indexOf(mapping) !== -1 ? mapping : null;
 	}
 
-	drawer(state, draw);
+	drawer(state, draw, present);
 
 	return Object.assign({}, rooter(state, root), updater(state), grouper(state, definition), destroyer(state));
 });
 
-var draw$1 = function draw(state) {
+var draw$1 = function draw(state, present) {
 
 	// if value is not in form of array force to array
 	var value = copyArray(Array.isArray(state.value) ? state.value : (state.value + '').split(''));
@@ -760,23 +765,23 @@ var draw$1 = function draw(state) {
 		var def = state.definitions[index];
 		if (!def) {
 			def = state.definitions[index] = cloneDefinition(state.definition);
-			present(def);
+			state.update = present(def);
 			def.presenter.appendTo(state.root, state.align === 'right' ? 'first' : 'last');
 		}
 	});
 
 	value.forEach(function (value, index) {
-		return update(state.definitions[index], value);
+		return state.update(state.definitions[index], value);
 	});
 };
 
-var createRepeater = (function (root, definition) {
+var createRepeater = (function (root, definition, present) {
 
 	var state = {
 		definitions: []
 	};
 
-	drawer(state, draw$1);
+	drawer(state, draw$1, present);
 
 	return Object.assign({}, rooter(state, root), updater(state), grouper(state, definition), destroyer(state));
 });
@@ -862,6 +867,23 @@ var setTransformStyle = function setTransformStyle(element, transforms) {
 	element.style.transform = transforms.map(function (t) {
 		return t.name + '(' + t.value + t.unit + ')';
 	}).join(' ');
+};
+
+var isVisible = function isVisible(element) {
+
+	var elementRect = element.getBoundingClientRect();
+
+	// is above top of the page
+	if (elementRect.bottom < 0) {
+		return false;
+	}
+
+	// is below bottom of page
+	if (elementRect.top > window.scrollY + window.innerHeight) {
+		return false;
+	}
+
+	return true;
 };
 
 /**
@@ -1367,14 +1389,14 @@ var animate = function animate(cb, complete) {
  * @param duration - duration in milliseconds
  * @param delay - milliseconds to wait before starting
  */
-var interpolate = function interpolate(update$$1) {
+var interpolate = function interpolate(update) {
 	var complete = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
 	var duration = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 500;
 	var delay = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 0;
 
 
 	// no update function supplied -> exit
-	if (!update$$1) {
+	if (!update) {
 		return null;
 	}
 
@@ -1393,12 +1415,12 @@ var interpolate = function interpolate(update$$1) {
 		t = ts - start - delay;
 
 		if (t < duration) {
-			update$$1(t >= 0 ? t / duration : 0);
+			update(t >= 0 ? t / duration : 0);
 			frame = requestAnimationFrame(tick);
 			return null;
 		}
 
-		update$$1(1);
+		update(1);
 
 		if (complete) {
 			complete();
@@ -1434,7 +1456,7 @@ var translator = function translator() {
 		cancelAnimationFrame(frame);
 	};
 
-	var translate = function translate(cb, from, to, update$$1) {
+	var translate = function translate(cb, from, to, update) {
 
 		// cancel previous animations if are running
 		cancel();
@@ -1474,7 +1496,7 @@ var translator = function translator() {
 			// align next frame
 			last = ts - delta % interval;
 
-			update$$1(state, cancel);
+			update(state, cancel);
 
 			cb(state.position);
 		};
@@ -1522,7 +1544,7 @@ var createTranslator = function createTranslator(type) {
  * @param maxVelocity
  * @param friction
  */
-var arrive = function arrive(update$$1) {
+var arrive = function arrive(update) {
 	var maxVelocity = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
 	var friction = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : .01;
 
@@ -1532,7 +1554,7 @@ var arrive = function arrive(update$$1) {
 		var to = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
 
-		update$$1(cb, from, to, function (state, cancel) {
+		update(cb, from, to, function (state, cancel) {
 
 			// distance to target
 			var distance = state.destination - state.position;
@@ -1554,7 +1576,7 @@ var arrive = function arrive(update$$1) {
 	};
 };
 
-var step = function step(update$$1) {
+var step = function step(update) {
 	var velocity = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0.01;
 
 
@@ -1563,7 +1585,7 @@ var step = function step(update$$1) {
 		var to = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
 
-		update$$1(cb, from, to, function (state, cancel) {
+		update(cb, from, to, function (state, cancel) {
 
 			// update velocity based on distance
 			state.velocity = velocity;
@@ -1589,7 +1611,7 @@ var step = function step(update$$1) {
  * @param mass - the higher the slower the spring springs in action
  * @returns {function(*=, *=)}
  */
-var spring = function spring(update$$1) {
+var spring = function spring(update) {
 	var stiffness = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : .5;
 	var damping = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : .75;
 	var mass = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 10;
@@ -1600,7 +1622,7 @@ var spring = function spring(update$$1) {
 		var to = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
 
-		update$$1(cb, from, to, function (state, cancel) {
+		update(cb, from, to, function (state, cancel) {
 
 			// calculate spring force
 			var f = -(state.position - state.destination) * stiffness;
@@ -1839,6 +1861,7 @@ var API$2 = function API() {
 			getBackingStoreRatio: getBackingStoreRatio
 		},
 		DOM: {
+			visible: isVisible,
 			create: create$1,
 			transform: setTransform
 		},
@@ -1866,12 +1889,12 @@ var API$2 = function API() {
 /**
  * Base view definitions
  */
-var createPresenterRoot = function createPresenterRoot(root, definition) {
-	return createRoot(root, definition);
+var createPresenterRoot = function createPresenterRoot(root, definition, presentDefinition) {
+	return createRoot(root, definition, presentDefinition);
 };
 
-var createPresenterRepeater = function createPresenterRepeater(root, definition) {
-	return createRepeater(root, definition);
+var createPresenterRepeater = function createPresenterRepeater(root, definition, presentDefinition) {
+	return createRepeater(root, definition, presentDefinition);
 };
 
 var createPresenterView = function createPresenterView(name, root, style) {
@@ -2102,8 +2125,8 @@ var definitionOutline = {
 
 var toPresenterDefinitionTree = function toPresenterDefinitionTree(nodes) {
 	return Array.from(nodes)
-	// fix to allow nesting of tick counters 
-	// .filter(node => !node.classList.contains('tick')) 
+	// fix to allow nesting of tick counters
+	// .filter(node => !node.classList.contains('tick'))
 	.map(function (node) {
 
 		var definition = mergeObjects(definitionOutline, { root: node });
@@ -2145,12 +2168,10 @@ var createDOMTreeForDefinition = function createDOMTreeForDefinition(definition)
 
 		def = mergeObjects(definitionOutline, def);
 
-		if (!def.root) {
-			if (typeof def.root === 'string') {
-				def.root = document.createElement(def.root);
-			} else {
-				def.root = document.createElement('span');
-			}
+		if (typeof def.root === 'string') {
+			def.root = document.createElement(def.root);
+		} else {
+			def.root = document.createElement('span');
 		}
 
 		if (def.view) {
@@ -2160,11 +2181,15 @@ var createDOMTreeForDefinition = function createDOMTreeForDefinition(definition)
 			}
 			def.repeat = null;
 		} else {
+
 			if (def.layout) {
 				def.root.dataset.layout = def.layout;
 			}
 
-			if (def.children) {
+			if (def.repeat) {
+				def.root.dataset.repeat = true;
+				def.repeat = createDOMTreeForDefinition(def.children).pop();
+			} else if (def.children) {
 				def.children = createDOMTreeForDefinition(def.children);
 				def.children.forEach(function (child) {
 					def.root.appendChild(child.root);
@@ -2179,38 +2204,44 @@ var createDOMTreeForDefinition = function createDOMTreeForDefinition(definition)
 /**
  * Presenting values
  */
-var createPresenterByDefinition = function createPresenterByDefinition(definition) {
+var createPresenterByDefinition = function createPresenterByDefinition(definition, presentDefinition) {
 
 	var presenter = void 0;
 
 	if (definition.repeat) {
-		presenter = createPresenterRepeater(definition.root, definition.repeat);
+		presenter = createPresenterRepeater(definition.root, definition.repeat, presentDefinition);
 	} else if (typeof definition.view === 'string') {
 		presenter = createPresenterView(definition.view, definition.root, definition.style);
 	} else if (isRootDefinition(definition)) {
-		presenter = createPresenterRoot(definition.root, definition.children);
+		presenter = createPresenterRoot(definition.root, definition.children, presentDefinition);
 	}
 
 	return presenter;
 };
 
-var present = function present(definition) {
-	definition.presenter = createPresenterByDefinition(definition);
-	definition.transform = toTransformComposition(definition.transform);
-};
+var presentTick = function presentTick(instance) {
 
-var update = function update(definition, value) {
-	definition.transform(value, function (output) {
-		definition.presenter.update(output);
-	});
+	var update = function update(definition, value) {
+		definition.transform(value, function (output) {
+			definition.presenter.update(output);
+		}, instance);
+	};
+
+	var presentDefinition = function presentDefinition(definition) {
+		definition.presenter = createPresenterByDefinition(definition, presentDefinition);
+		definition.transform = toTransformComposition(definition.transform, instance);
+		return update;
+	};
+
+	return presentDefinition(instance.baseDefinition);
 };
 
 /**
  * Transform
  */
-var composeAsync = function composeAsync() {
-	for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
-		funcs[_key] = arguments[_key];
+var composeAsync = function composeAsync(instance) {
+	for (var _len = arguments.length, funcs = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+		funcs[_key - 1] = arguments[_key];
 	}
 
 	return function (initialValue, callback) {
@@ -2223,7 +2254,7 @@ var composeAsync = function composeAsync() {
 				return;
 			}
 
-			funcs[i](value, partial(compose, [i + 1]));
+			funcs[i](value, partial(compose, [i + 1]), instance);
 		}
 
 		compose(0, initialValue);
@@ -2234,7 +2265,6 @@ var partial = function partial(fn) {
 	var initialArgs = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
 	var ctx = arguments[2];
 
-
 	return function () {
 		var args = Array.from(initialArgs);
 		Array.prototype.push.apply(args, arguments);
@@ -2242,7 +2272,7 @@ var partial = function partial(fn) {
 	};
 };
 
-var toTransformComposition = function toTransformComposition(string) {
+var toTransformComposition = function toTransformComposition(string, instance) {
 
 	// no composition
 	if (!string) {
@@ -2259,10 +2289,10 @@ var toTransformComposition = function toTransformComposition(string) {
 	// wrap in default transform
 	// if is single transform force parenthesis as it must be a fn
 	var result = parseTransformChain('transform(' + (/^[a-z]+$/.test(string) ? string + '()' : string) + ')');
-	return compose(result);
+	return compose(result, instance);
 };
 
-var compose = function compose(chain) {
+var compose = function compose(chain, instance) {
 
 	var composition = chain.map(function (item) {
 
@@ -2270,7 +2300,7 @@ var compose = function compose(chain) {
 		var name = item.shift();
 
 		// get related function
-		var func = getExtension(ExtensionType.TRANSFORM, name) || function (value, cb) {
+		var func = getExtension(ExtensionType.TRANSFORM, name) || function (value, cb, instance) {
 			cb(value);
 		};
 
@@ -2282,20 +2312,20 @@ var compose = function compose(chain) {
 
 				// normal transform
 				if (typeof parameter[0] === 'string') {
-					return compose([parameter]);
+					return compose([parameter], instance);
 				}
 
 				// chain of transforms
-				return compose(parameter);
+				return compose(parameter, instance);
 			}
 
 			return toParameter(parameter);
 		});
 
-		return func.apply(null, params);
+		return func.apply(undefined, toConsumableArray(params));
 	});
 
-	return composition.length > 1 ? composeAsync.apply(null, composition) : composition[0];
+	return composeAsync.apply(undefined, [instance].concat(toConsumableArray(composition)));
 };
 
 var toFunctionOutline = function toFunctionOutline(string) {
@@ -2578,6 +2608,8 @@ var Tick = function () {
 		this._value = null;
 		this._observer = null;
 		this._viewDefinition = null;
+		this._constants = null;
+		this._presets = null;
 
 		// callback methods
 		this._didInit = null;
@@ -2605,15 +2637,40 @@ var Tick = function () {
 			return this._element === element;
 		}
 	}, {
+		key: 'setConstant',
+		value: function setConstant$$1(key, value) {
+			this._constants[key] = value;
+		}
+	}, {
+		key: 'getConstants',
+		value: function getConstants$$1() {
+			return this._constants;
+		}
+	}, {
+		key: 'getConstant',
+		value: function getConstant(key) {
+			return this._constants[key];
+		}
+	}, {
+		key: 'setPreset',
+		value: function setPreset$$1(key, fn) {
+			this._presets[key] = fn;
+		}
+	}, {
+		key: 'getPreset',
+		value: function getPreset(key) {
+			return this._presets[key];
+		}
+	}, {
 		key: 'destroy',
-		value: function destroy() {
+		value: function destroy$$1() {
 			this._willDestroy(this);
 
 			// clean up
 			this._observer.disconnect();
 
 			// destroy presenters
-			this._viewDefinition[0].presenter.destroy();
+			this.baseDefinition.presenter.destroy();
 
 			this._didDestroy(this);
 		}
@@ -2634,6 +2691,8 @@ var Tick = function () {
 			this._didInit = this._options.didInit;
 			this._didUpdate = this._options.didUpdate;
 			this._value = this._options.value;
+			this._presets = this._options.presets;
+			this._constants = this._options.constants;
 
 			// no more use of options behind this line
 			// ---------------------------------------
@@ -2648,8 +2707,21 @@ var Tick = function () {
 				_this.value = value;
 			});
 
+			// force default view root, move children of current root to this element
+			if (this._viewDefinition.root !== this._element) {
+				Array.from(this._viewDefinition.root.children).forEach(function (node) {
+					_this._element.appendChild(node);
+				});
+				this._viewDefinition.root = this._element;
+			}
+
+			// no default view presenter defined, fallback to text
+			if (!this._viewDefinition.view && !this._viewDefinition.children) {
+				this._viewDefinition.view = 'text';
+			}
+
 			// setup root presenter
-			present(this._viewDefinition[0]);
+			this._updater = presentTick(this);
 
 			// done with init
 			this._didInit(this, this.value);
@@ -2665,16 +2737,23 @@ var Tick = function () {
 	}, {
 		key: '_update',
 		value: function _update(value) {
-			update(this._viewDefinition[0], value);
+
+			this._updater(this.baseDefinition, value);
+
 			this._didUpdate(this, value);
 		}
 	}, {
-		key: 'root',
+		key: 'baseDefinition',
 
 
 		/**
    * Public Properties
    */
+		get: function get$$1() {
+			return this._viewDefinition;
+		}
+	}, {
+		key: 'root',
 		get: function get$$1() {
 			return this._element;
 		}
@@ -2691,8 +2770,10 @@ var Tick = function () {
 		key: 'options',
 		value: function options() {
 			return {
+				constants: getConstants(),
+				presets: getPresets(),
 				value: null,
-				view: [{ view: 'text' }],
+				view: null,
 				didInit: function didInit(tick) {},
 				didUpdate: function didUpdate(tick, value) {},
 				willDestroy: function willDestroy(tick) {},
@@ -2703,10 +2784,80 @@ var Tick = function () {
 	return Tick;
 }();
 
+var transformDurationUnit = function transformDurationUnit(value, single, plural, progress) {
+	return {
+		label: value === 1 ? single : plural,
+		progress: value / progress,
+		value: value
+	};
+};
+
 /**
  * Tick DOM interface
  */
 var instances = [];
+
+var setConstant = function setConstant(key, value) {
+	constants[key] = value;
+};
+
+var setPreset = function setPreset(key, value) {
+	presets[key] = value;
+};
+
+var getConstants = function getConstants() {
+	return constants;
+};
+
+var getPresets = function getPresets() {
+	return presets;
+};
+
+var constants = {
+	YEAR_PLURAL: 'Years',
+	YEAR_SINGULAR: 'Year',
+	MONTH_PLURAL: 'Months',
+	MONTH_SINGULAR: 'Month',
+	WEEK_PLURAL: 'Weeks',
+	WEEK_SINGULAR: 'Week',
+	DAY_PLURAL: 'Days',
+	DAY_SINGULAR: 'Day',
+	HOUR_PLURAL: 'Hours',
+	HOUR_SINGULAR: 'Hour',
+	MINUTE_PLURAL: 'Minutes',
+	MINUTE_SINGULAR: 'Minute',
+	SECOND_PLURAL: 'Seconds',
+	SECOND_SINGULAR: 'Second',
+	MILLISECOND_PLURAL: 'Milliseconds',
+	MILLISECOND_SINGULAR: 'Millisecond'
+};
+
+var presets = {
+	y: function y(value, constants) {
+		return transformDurationUnit(value, constants.YEAR_SINGULAR, constants.YEAR_PLURAL, 10);
+	},
+	M: function M(value, constants) {
+		return transformDurationUnit(value, constants.MONTH_SINGULAR, constants.MONTH_PLURAL, 12);
+	},
+	w: function w(value, constants) {
+		return transformDurationUnit(value, constants.WEEK_SINGULAR, constants.WEEK_PLURAL, 52);
+	},
+	d: function d(value, constants) {
+		return transformDurationUnit(value, constants.DAY_SINGULAR, constants.DAY_PLURAL, 365);
+	},
+	h: function h(value, constants) {
+		return transformDurationUnit(value, constants.HOUR_SINGULAR, constants.HOUR_PLURAL, 24);
+	},
+	m: function m(value, constants) {
+		return transformDurationUnit(value, constants.MINUTE_SINGULAR, constants.MINUTE_PLURAL, 60);
+	},
+	s: function s(value, constants) {
+		return transformDurationUnit(value, constants.SECOND_SINGULAR, constants.SECOND_PLURAL, 60);
+	},
+	mi: function mi(value, constants) {
+		return transformDurationUnit(value, constants.MILLISECOND_SINGULAR, constants.MILLISECOND_PLURAL, 1000);
+	}
+};
 
 var attributes = {
 	'value': toValue,
@@ -2718,7 +2869,7 @@ var attributes = {
 
 var getOptionsFromAttributes = function getOptionsFromAttributes(element) {
 	var transfomers = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	var defaults = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	var defaults$$1 = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
 
 	var dataset = element.dataset;
@@ -2738,7 +2889,7 @@ var getOptionsFromAttributes = function getOptionsFromAttributes(element) {
 
 		if (valueTransformer) {
 			value = valueTransformer(value);
-			value = value === null ? clone$$1(defaults[prop]) : value;
+			value = value === null ? clone$$1(defaults$$1[prop]) : value;
 			options[prop] = value;
 		}
 	}
@@ -2783,6 +2934,10 @@ var find = function find(element) {
 	return result ? result[0] : null;
 };
 
+var getDefaultOptions = function getDefaultOptions() {
+	return _extends({}, Tick.options(), { constants: _extends({}, constants), presets: _extends({}, presets) });
+};
+
 var create$$1 = function create$$1() {
 	var element = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
 	var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : undefined;
@@ -2801,33 +2956,26 @@ var create$$1 = function create$$1() {
 
 	// if view defined
 	if (options && options.view) {
-		options.view = createDOMTreeForDefinition(options.view);
+		options.view = createDOMTreeForDefinition([options.view])[0];
 	}
 
 	// if no options supplied, get the options from the element attributes
 	if (!options && element) {
-		options = getOptionsFromAttributes(element, attributes, Tick.options());
+		options = getOptionsFromAttributes(element, attributes, getDefaultOptions());
 	}
 
-	// if element supplied, view is either default view or defined by child elements 
+	// if element supplied, view is either default view or defined by child elements
 	if (element) {
 
-		// if no default view defined and no children
-		if (!element.children.length && element.dataset.view === undefined) {
-			element.dataset.view = 'text';
-		}
-
+		// no options defined, set blank options object
 		if (!options) {
 			options = {};
 		}
 
-		// get view tree
-		options.view = options.view || toPresenterDefinitionTree([element]);
-	}
-
-	// if no valid view found, set to undefined so the default view is used
-	if (options && (!options.view || !options.view.length)) {
-		options.view = undefined;
+		// no default view defined
+		if (!options.view) {
+			options.view = toPresenterDefinitionTree([element])[0];
+		}
 	}
 
 	// instance (pass element to set root)
@@ -3958,7 +4106,7 @@ var countScheduled = function countScheduled(schedule) {
 			// update counter dates
 			counter.nextScheduledDate = clone$1(nextDate);
 
-			// just now we did not have a date (last date is always the date from the previous loop), 
+			// just now we did not have a date (last date is always the date from the previous loop),
 			// but now have, so we just woke up
 			if (lastDate === null) {
 				counter.onresume(clone$1(nextDate));
@@ -4255,14 +4403,14 @@ var delay = (function () {
 			indexes.reverse();
 		}
 
-		var update$$1 = function update$$1() {
+		var update = function update() {
 			flip(indexes.shift(), current, value, cb);
 			if (indexes.length) {
-				setTimeout(update$$1, random(min, max));
+				setTimeout(update, random(min, max));
 			}
 		};
 
-		update$$1();
+		update();
 	};
 });
 
@@ -4469,6 +4617,18 @@ var tween = (function (duration) {
 	};
 });
 
+var preset = (function () {
+  for (var _len = arguments.length, presets = Array(_len), _key = 0; _key < _len; _key++) {
+    presets[_key] = arguments[_key];
+  }
+
+  return function (value, cb, instance) {
+    return cb(value.map(function (v, index) {
+      return instance.getPreset(presets[index])(v, instance.getConstants(), instance);
+    }));
+  };
+});
+
 var Transforms = {
 	tween: tween,
 	value: value$1,
@@ -4503,7 +4663,8 @@ var Transforms = {
 	step: step$1,
 	keys: keys,
 	duration: duration$1,
-	substring: substring
+	substring: substring,
+	preset: preset
 };
 
 addExtensions(ExtensionType.TRANSFORM, Transforms);
@@ -4707,6 +4868,12 @@ var API = {
   * Quick way to detect if Tick is supported
   */
 	supported: support(),
+
+	// options
+	options: {
+		setConstant: setConstant,
+		setPreset: setPreset
+	},
 
 	/**
   * Helper Methods

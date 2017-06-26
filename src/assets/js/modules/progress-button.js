@@ -1,42 +1,42 @@
+import { addClass, removeClass } from '@pod-point/dom-ops';
+
 const IS_LOADING = 'is-loading';
 const IS_COMPLETE = 'is-complete';
 
 class ProgressButton {
 
     /**
-     * Create a new progress button.
+     * Create a new progress button
      *
-     * @param button
+     * @param {element} button
      */
     constructor(button) {
         this.button = button;
     }
 
     /**
-     * Handle the button in a loading state.
+     * Handle the button in a loading state
      */
     handleLoading() {
         this.button.setAttribute('disabled', true);
-        this.button.classList.add(IS_LOADING);
+        addClass(this.button, IS_LOADING);
     }
 
     /**
-     * Handle the button on success.
+     * Handle the button on success
      *
-     * @param success
+     * @param {boolean} success
      */
     handleComplete(success) {
-        this.button.classList.remove(IS_LOADING);
+        removeClass(this.button, IS_LOADING);
 
         if (success) {
             this.button.removeAttribute('disabled');
-            this.button.classList.add(IS_COMPLETE);
+            addClass(this.button, IS_COMPLETE);
         }
     }
 }
 
 export default {
-    create: function(button) {
-        return new ProgressButton(button);
-    }
-}
+    create: button => new ProgressButton(button),
+};

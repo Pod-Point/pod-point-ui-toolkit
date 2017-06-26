@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE 9]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 ie"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9 ie"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -11,6 +13,7 @@
 
 	<link href="assets/css/styles.css" rel="stylesheet">
 	<link href="assets/css/demo.css" rel="stylesheet">
+	<script src="assets/js/modernizr.js"></script>
 
 
 
@@ -41,7 +44,8 @@
 					<img src="assets/img/toolkit/logos/pod-point-logo.svg" alt="POD Point">
 				</a>
 			</div>
-		</header><div data-page="cards">
+		</header>
+<div data-page="cards">
 	<header class="demo-section-heading">
 		<div class="container content-block">
 			<h2>Cards</h2>
@@ -62,7 +66,7 @@
 					<div class="grid-col grid-col--md-4">
 						<div class="card card--centered">
 							<h3>Card one</h3>
-							<img class="img--resp img--rounded-corners" src="http://placehold.it/100x50">
+							<img class="img--resp inline-block img--rounded-corners" src="http://placehold.it/100x50">
 							<p>This is a card.<br> It also has an image.</p>
 						</div>
 					</div>
@@ -135,6 +139,7 @@
 		</div>
 	</section>
 </div>
+
 	</div>
 
 	<script src="assets/js/script.js"></script>

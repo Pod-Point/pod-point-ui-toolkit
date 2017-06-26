@@ -1,4 +1,4 @@
-# podp-point-ui-toolkit
+# pod-point-ui-toolkit
 
 The POD Point frontend framework is a library of base styles and components designed for rapid prototyping.
 

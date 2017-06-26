@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _flickity = require('flickity/js/flickity.js');
+var _flickity = require('flickity');
 
 var _flickity2 = _interopRequireDefault(_flickity);
 
@@ -19,9 +19,9 @@ var instances = [];
 var Carousel = function () {
 
     /**
-     * Create a new carousel element.
+     * Create a new carousel element
      *
-     * @param select wrapper
+     * @param {element} select wrapper
      */
     function Carousel(element) {
         _classCallCheck(this, Carousel);
@@ -31,7 +31,7 @@ var Carousel = function () {
     }
 
     /**
-     * Initialise a Flickity carousel.
+     * Initialise a Flickity carousel
      */
 
 
@@ -44,7 +44,7 @@ var Carousel = function () {
         }
 
         /**
-         * Destroy Flickity carousel.
+         * Destroy Flickity carousel
          */
 
     }, {

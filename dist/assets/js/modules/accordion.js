@@ -20,19 +20,20 @@ var MOBILE_ONLY = 'accordion--only-mobile';
 var Accordion = function () {
 
     /**
-     * Creates a new accordion element.
+     * Creates a new accordion element
      *
-     * @param element
+     * @param {element}
      */
     function Accordion(element) {
         _classCallCheck(this, Accordion);
 
         this.element = element;
+        this.accordionIsMobileOnly = (0, _domOps.hasClass)(this.element, MOBILE_ONLY);
         this.bindEvents();
     }
 
     /**
-     * Binds the event listeners from the elements.
+     * Binds the event listeners from the elements
      */
 
 
@@ -43,15 +44,15 @@ var Accordion = function () {
 
             this.listener = new _domDelegate.Delegate(this.element);
 
-            if ((0, _domOps.hasClass)(this.element, MOBILE_ONLY) && isMobileSize || (0, _domOps.hasClass)(this.element, MOBILE_ONLY) != true) {
+            if (this.accordionIsMobileOnly && window.isMobileSize || this.accordionIsMobileOnly !== true) {
                 this.listener.on('click', 'dt', function (event, element) {
-                    _this.toggleAccordion(event, element);
+                    _this.toggleAccordion(element);
                 });
             }
         }
 
         /**
-         * Unbinds the event listeners from the elements.
+         * Unbinds the event listeners from the elements
          */
 
     }, {
@@ -63,13 +64,12 @@ var Accordion = function () {
         /**
          * Toggles the accordion.
          *
-         * @param {Event} event
-         * @param {Element} element
+         * @param {element} element to toggle
          */
 
     }, {
         key: 'toggleAccordion',
-        value: function toggleAccordion(event, element) {
+        value: function toggleAccordion(element) {
             if ((0, _domOps.hasClass)(element, IS_OPEN)) {
                 (0, _domOps.removeClass)(element, IS_OPEN);
             } else {

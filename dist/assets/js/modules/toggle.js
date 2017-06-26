@@ -23,9 +23,9 @@ var VISIBLE = 'visible';
 var Toggle = function () {
 
     /**
-     * Creates a new toggle element.
+     * Creates a new toggle element
      *
-     * @param element
+     * @param {element}
      */
     function Toggle(element) {
         _classCallCheck(this, Toggle);
@@ -54,7 +54,7 @@ var Toggle = function () {
     }
 
     /**
-     * Binds the event listeners from the elements.
+     * Binds the event listeners from the elements
      */
 
 
@@ -71,19 +71,9 @@ var Toggle = function () {
         }
 
         /**
-         * Unbinds the event listeners from the elements.
-         */
-
-    }, {
-        key: 'unbindEvents',
-        value: function unbindEvents() {
-            this.listener.destroy();
-        }
-
-        /**
-         * Toggles the elements.
+         * Toggles the elements
          *
-         * @param {Event} event
+         * @param {event}
          */
 
     }, {
@@ -113,6 +103,16 @@ var Toggle = function () {
                     (0, _utilities.show)(hideElement);
                 }
             }
+        }
+
+        /**
+         * Unbinds the event listeners from the elements
+         */
+
+    }, {
+        key: 'unbindEvents',
+        value: function unbindEvents() {
+            this.listener.destroy();
         }
     }]);
 

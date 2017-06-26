@@ -19,9 +19,9 @@ var HIDDEN = 'hidden';
 var ChangeContent = function () {
 
     /**
-     * Creates a new content change wrapper.
+     * Creates a new content change wrapper
      *
-     * @param element
+     * @param {element}
      */
     function ChangeContent(element) {
         _classCallCheck(this, ChangeContent);
@@ -32,7 +32,7 @@ var ChangeContent = function () {
     }
 
     /**
-     * Binds the event listeners from the elements.
+     * Binds the event listeners from the elements
      */
 
 
@@ -49,7 +49,7 @@ var ChangeContent = function () {
         }
 
         /**
-         * Unbinds the event listeners from the elements.
+         * Unbinds the event listeners from the elements
          */
 
     }, {
@@ -59,9 +59,9 @@ var ChangeContent = function () {
         }
 
         /**
-         * Hide/Show content.
+         * Hide/Show content
          *
-         * @param {Event} event
+         * @param {event}
          */
 
     }, {

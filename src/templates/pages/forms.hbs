@@ -16,29 +16,32 @@
 		</header>
 
 		<div class="container content-block">
-			<div class="field-row">
-				<label class="label--block">Input field</label>
+			<div class="form__group field-row">
+				<label class="form__label">Input field</label>
 				<div class="form-field-wrapper">
-					<input type="text" placeholder="Sample placeholder text" />
+					<input type="text" placeholder="Sample placeholder text">
 				</div>
 			</div>
-			<div class="field-row">
-				<label class="label--block">Input field - disabled</label>
+
+			<div class="form__group field-row">
+				<label class="form__label">Input field - disabled</label>
 				<div class="form-field-wrapper">
-					<input type="text" disabled="true" />
+					<input type="text" disabled="true">
 				</div>
 			</div>
-			<div class="field-row">
-				<label class="label--block">Input field - valid</label>
-				<div class="form-field-wrapper is-valid">
-					<input type="text" placeholder="Sample placeholder text" />
+
+			<div class="form__group field-row has-content form__group--valid">
+				<label class="form__label">Input field - valid</label>
+				<div class="form-field-wrapper">
+					<input type="text" placeholder="Sample placeholder text" class="has-content">
 				</div>
 			</div>
-			<div class="field-row">
-				<label class="label--block">Input field - invalid</label>
-				<div class="form-field-wrapper is-invalid">
-					<input type="text" placeholder="Sample placeholder text" />
-					<span class="error-message">This is an error message.</span>
+
+			<div class="form__group field-row has-content form__group--error">
+				<label class="form__label">Input field - invalid</label>
+				<div class="form-field-wrapper">
+					<input type="text" placeholder="Sample placeholder text" class="has-content">
+					<span class="form__error">This is an error message.</span>
 				</div>
 			</div>
 		</div>
@@ -54,29 +57,32 @@
 		</header>
 
 		<div class="container content-block">
-			<div class="field-row">
-				<label class="label--block">Text area</label>
+			<div class="form__group field-row">
+				<label class="form__label">Text area</label>
 				<div class="form-field-wrapper">
 					<textarea type="text"></textarea>
 				</div>
 			</div>
-			<div class="field-row">
-				<label class="label--block">Text area - disabled</label>
+
+			<div class="form__group field-row">
+				<label class="form__label">Text area - disabled</label>
 				<div class="form-field-wrapper">
 					<textarea type="text" disabled="true"></textarea>
 				</div>
 			</div>
-			<div class="field-row">
-				<label class="label--block">Text area - valid</label>
-				<div class="form-field-wrapper is-valid">
-					<textarea type="text"></textarea>
+
+			<div class="form__group field-row has-content form__group--valid">
+				<label class="form__label">Text area - valid</label>
+				<div class="form-field-wrapper">
+					<textarea type="text" class="has-content"></textarea>
 				</div>
 			</div>
-			<div class="field-row">
-				<label class="label--block">Text area - invalid</label>
-				<div class="form-field-wrapper is-invalid">
-					<textarea type="text"></textarea>
-					<span class="error-message">This is an error message.</span>
+
+			<div class="form__group field-row has-content form__group--error">
+				<label class="form__label">Text area - invalid</label>
+				<div class="form-field-wrapper">
+					<textarea type="text" class="has-content"></textarea>
+					<span class="form__error">This is an error message.</span>
 				</div>
 			</div>
 		</div>
@@ -92,10 +98,10 @@
 		</header>
 
 		<div class="container content-block">
-			<div class="field-row">
-				<label class="label--block">Select dropdown</label>
+			<div class="form__group field-row">
+				<label class="form__label">Select dropdown</label>
 				<div class="form-field-wrapper">
-					<div data-js-module="selectDropdown" class="select-dd-wrapper">
+					<div class="select-wrapper">
 						<select>
 							<option value="00">00</option>
 							<option selected value="01">01</option>
@@ -104,10 +110,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="field-row">
-				<label class="label--block">Select dropdown - disabled</label>
+
+			<div class="form__group field-row">
+				<label class="form__label">Select dropdown - disabled</label>
 				<div class="form-field-wrapper">
-					<div data-js-module="selectDropdown" class="select-dd-wrapper">
+					<div class="select-wrapper is-disabled">
 						<select disabled="true">
 							<option value="00">00</option>
 							<option selected value="01">01</option>
@@ -116,10 +123,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="field-row">
-				<label class="label--block">Select dropdown - valid</label>
-				<div class="form-field-wrapper is-valid">
-					<div data-js-module="selectDropdown" class="select-dd-wrapper">
+
+			<div class="form__group field-row has-content form__group--valid">
+				<label class="form__label">Select dropdown - valid</label>
+				<div class="form-field-wrapper">
+					<div class="select-wrapper">
 						<select>
 							<option value="00">00</option>
 							<option selected value="01">01</option>
@@ -128,17 +136,18 @@
 					</div>
 				</div>
 			</div>
-			<div class="field-row">
-				<label class="label--block">Select dropdown - invalid</label>
-				<div class="form-field-wrapper is-invalid">
-					<div data-js-module="selectDropdown" class="select-dd-wrapper">
+
+			<div class="form__group field-row has-content form__group--error">
+				<label class="form__label">Select dropdown - invalid</label>
+				<div class="form-field-wrapper">
+					<div class="select-wrapper">
 						<select>
 							<option value="00">00</option>
 							<option selected value="01">01</option>
 							<option value="02">02</option>
 						</select>
 					</div>
-					<span class="error-message">This is an error message.</span>
+					<span class="form__error">This is an error message.</span>
 				</div>
 			</div>
 		</div>
@@ -154,24 +163,39 @@
 		</header>
 
 		<div class="container content-block">
-			<div class="field-row">
-				<div class="checkboxes-wrap">
-					<div class="checkbox-wrap">
-						<input type="checkbox" name="checkboxExample1" id="checkboxExample1" checked="checked">
-						<label for="checkboxExample1">This is an example of a checkbox</label>
-						<span class="error-message">This is an error message.</span>
-					</div>
-					<div class="checkbox-wrap is-invalid">
-						<input type="checkbox" name="checkboxExample2" id="checkboxExample2">
-						<label for="checkboxExample2">This is an example of a checkbox with lots of text and a <a href="#">link</a>. Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et.</label>
-						<span class="error-message">This is an error message.</span>
-					</div>
-					<div class="checkbox-wrap">
-						<input disabled type="checkbox" name="checkboxExample3" id="checkboxExample3">
-						<label for="checkboxExample3">This is an example of a disabled checkbox</label>
-					</div>
-				</div>
+			<div class="form__group field-row">
+				<div class="form-field-wrapper">
+                    <label class="checkbox" for="checkboxExample1">
+                        <input type="checkbox" name="checkboxExample1" id="checkboxExample1" checked="checked" value="value1">
+                        <span>This is an example of a checkbox</span>
+                    </label>
+                </div>
 			</div>
+			<div class="form__group field-row">
+                <div class="form-field-wrapper">
+                    <label class="checkbox" for="checkboxExample2">
+                        <input type="checkbox" name="checkboxExample2" id="checkboxExample2" checked="checked" value="value2">
+                        <span>This is an example of a checkbox with lots of text and a <a href="#" class="a">link</a>. Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et.</span>
+                    </label>
+                </div>
+            </div>
+            <div class="form__group field-row">
+                <div class="form-field-wrapper">
+                    <label class="checkbox" for="checkboxExample3">
+                        <input type="checkbox" name="checkboxExample3" id="checkboxExample3" disabled="true" value="value3">
+                        <span>This is an example of a disabled checkbox</span>
+                    </label>
+                </div>
+            </div>
+            <div class="form__group field-row has-content form__group--error">
+                <div class="form-field-wrapper">
+                    <label class="checkbox" for="checkboxExample4">
+                        <input type="checkbox" name="checkboxExample4" id="checkboxExample4" value="value4">
+                        <span>This is an example of a checkbox with an error.</span>
+                    </label>
+                    <span class="form__error">This is an error message.</span>
+                </div>
+            </div>
 		</div>
 	</section>
 
@@ -185,35 +209,36 @@
 		</header>
 
 		<div class="container content-block">
-			<div class="field-row">
-				<div class="radios-wrap">
-					<div class="radio-wrap">
-						<input type="radio" name="radioExample" id="radioExample1" value="radioExample1" checked="checked"/>
-						<label for="radioExample1" class="radio">Radio example one</label>
-					</div>
-					<div class="radio-wrap">
-						<input type="radio" name="radioExample" id="radioExample2" value="radioExample2"/>
-						<label for="radioExample2" class="radio">Radio example with lots of text sed porttitor, arcu sit amet blandit cursus, magna lectus varius lectus, tristique molestie lacus est maximus ipsum. Donec ultricies consequat ornare.</label>
-					</div>
-					<div class="radio-wrap">
-						<input type="radio" name="radioExample" id="radioExampleDisabled" value="radioExampleDisabled" disabled/>
-						<label for="radioExampleDisabled" class="radio">Radio example disabled</label>
-					</div>
-				</div>
-			</div>
 
-			<div class="field-row">
-				<div class="radios-wrap">
-					<div class="radio-wrap radio-wrap--inline">
-						<input type="radio" name="radioExampleInline" id="radioExampleInline1" value="radioExampleInline1" checked="checked"/>
-						<label for="radioExampleInline1" class="radio">Inline radio example one</label>
-					</div>
-					<div class="radio-wrap radio-wrap--inline">
-						<input type="radio" name="radioExampleInline" id="radioExampleInline2" value="radioExampleInline2"/>
-						<label for="radioExampleInline2" class="radio">Inline radio example two</label>
-					</div>
-				</div>
-			</div>
+            <div class="field-row form__group">
+                <div class="form-field-wrapper">
+                    <label class="form__label radio" for="radioExample1">
+                        <input class="form__control" type="radio" id="radioExample1" name="radioExample" value="radioExample1">
+                        <span>Radio example one</span>
+                    </label>
+                    <label class="form__label radio" for="radioExample2">
+                        <input class="form__control" type="radio" id="radioExample2" name="radioExample" value="radioExample2">
+                        <span>Radio example two</span>
+                    </label>
+                    <label class="form__label radio" for="radioExample3">
+                        <input class="form__control" type="radio" id="radioExampleDisabled" name="radioExample" value="radioExampleDisabled" disabled>
+                        <span>Radio example disabled</span>
+                    </label>
+                </div>
+            </div>
+
+			<div class="field-row form__group">
+                <div class="form-field-wrapper">
+                    <label class="form__label radio radio--inline" for="radioExampleInline1">
+                        <input class="form__control" type="radio" id="radioExampleInline1" name="radioExampleInline" value="radioExampleInline1">
+                        <span>Inline radio example one</span>
+                    </label>
+                    <label class="form__label radio radio--inline" for="radioExampleInline2">
+                        <input class="form__control" type="radio" id="radioExampleInline2" name="radioExampleInline" value="radioExampleInline2">
+                        <span>Inline radio example two</span>
+                    </label>
+                </div>
+            </div>
 
 			<div class="form-action-buttons">
 				<button type="Submit" class="button">Submit</button>

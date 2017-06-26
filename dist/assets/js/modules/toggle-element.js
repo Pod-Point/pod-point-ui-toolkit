@@ -13,26 +13,31 @@ var _domOps = require('@pod-point/dom-ops');
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var instances = [];
-var anElementIsOpen = false;
 var IS_OPEN = 'fade-in';
 
 var ToggleElement = function () {
 
     /**
-     * Creates a new toggle element.
+     * Creates a new toggle element
      *
-     * @param element
+     * @param {element}
      */
     function ToggleElement(element) {
         _classCallCheck(this, ToggleElement);
 
         this.element = element;
         this.elementId = element.getAttribute('id');
-        this.toggleButtons = (0, _domOps.nodesToArray)(document.querySelectorAll('[data-toggle-el="' + this.elementId + '"]')) || [];
-        this.openButtons = (0, _domOps.nodesToArray)(document.querySelectorAll('[data-open-el="' + this.elementId + '"]')) || [];
-        this.closeButtons = (0, _domOps.nodesToArray)(document.querySelectorAll('[data-close-el="' + this.elementId + '"]')) || [];
 
-        this.allElements = (0, _domOps.nodesToArray)(document.querySelectorAll('[data-js-module="toggleElement"]'));
+        var toggleButtonsSelector = '[data-toggle-el="' + this.elementId + '"]';
+        var openButtonsSelector = '[data-open-el="' + this.elementId + '"]';
+        var closeButtonsSelector = '[data-close-el="' + this.elementId + '"]';
+        var allElementsSelector = '[data-js-module="toggleElement"]';
+
+        this.toggleButtons = (0, _domOps.nodesToArray)(document.querySelectorAll(toggleButtonsSelector)) || [];
+        this.openButtons = (0, _domOps.nodesToArray)(document.querySelectorAll(openButtonsSelector)) || [];
+        this.closeButtons = (0, _domOps.nodesToArray)(document.querySelectorAll(closeButtonsSelector)) || [];
+
+        this.allElements = (0, _domOps.nodesToArray)(document.querySelectorAll(allElementsSelector));
 
         this.elementIsVisible = false;
 
@@ -40,7 +45,7 @@ var ToggleElement = function () {
     }
 
     /**
-     * Binds the event listeners from the elements.
+     * Binds the event listeners from the elements
      */
 
 
@@ -81,7 +86,7 @@ var ToggleElement = function () {
         }
 
         /**
-         * Unbinds the event listeners from the elements.
+         * Unbinds the event listeners from the elements
          */
 
     }, {
@@ -99,7 +104,7 @@ var ToggleElement = function () {
         }
 
         /**
-         * Toggle element depending if already open or not.
+         * Toggle element depending if already open or not
          */
 
     }, {
@@ -113,21 +118,20 @@ var ToggleElement = function () {
         }
 
         /**
-         * Handle the element opening.
+         * Handle the element opening
          */
 
     }, {
         key: 'openElement',
         value: function openElement() {
             this.closeAllElements();
-            anElementIsOpen = true;
             this.elementIsVisible = true;
             this.element.classList.remove('hidden');
             this.element.classList.add(IS_OPEN);
         }
 
         /**
-         * Handle the element closing.
+         * Handle the element closing
          */
 
     }, {
@@ -139,7 +143,7 @@ var ToggleElement = function () {
         }
 
         /**
-         * Handle the closing of all other elements.
+         * Handle the closing of all other elements
          */
 
     }, {

@@ -4,9 +4,10 @@
 
 // Get rid of yellow bg color on Chrome auto complete
 input:-webkit-autofill {
-	-webkit-box-shadow: 0 0 0 1000px black inset;
-	-webkit-text-fill-color: white !important;
+	-webkit-box-shadow: 0 0 0 1000px #fffaeb inset;
+	-webkit-text-fill-color: $input-text-color !important;
 }
+
 
 @mixin placeholder {
 	::-webkit-input-placeholder {@content};
@@ -63,18 +64,19 @@ input.form-font-large {
 	background-color: $gray-very-light;
 }
 
-label {
+label,
+.form__label {
 	display: inline-block;
-	@include font-style-base;
+	@include font-style-small;
 	padding-bottom: rem(5);
 
-	.checkbox-wrap &,
-	.radio-wrap & {
+	.checkbox &,
+	.radio & {
 		@include font-style-base;
 	}
 }
 
-.label--block {
+.form__label {
 	width: 100%;
 	font-weight: $font-weight-bold;
 }

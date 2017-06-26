@@ -11,20 +11,21 @@ input[type="checkbox"] {
 	cursor: pointer;
 }
 
-.checkbox-wrap {
+.checkbox {
 	text-align: left;
+	@include font-style-base;
 	position: relative;
-	margin-bottom: rem(20);
+	display: block;
 
 	&--inline {
 		display: inline-block;
 		margin-right: rem(25);
 	}
 
-	input[type="checkbox"] {
+	> input[type="checkbox"] {
 		width: rem(23);
 		height: rem(23);
-		& ~ label {
+		& ~ span {
 			text-transform: none;
 			display: inline-block;
 			@include padding(0 null rem(5) rem(35));
@@ -41,7 +42,7 @@ input[type="checkbox"] {
 			}
 		}
 
-		&:checked ~ label {
+		&:checked ~ span {
 			&:before {
 				@include svg-bg-tick(white);
 				background-size: rem(15) rem(15);
@@ -52,7 +53,7 @@ input[type="checkbox"] {
 			}
 		}
 
-		&:disabled ~ label {
+		&:disabled ~ span {
 			color: $disabled-color;
 			cursor: not-allowed;
 			&:before {

@@ -61,16 +61,16 @@ button {
 		}
 	}
 	&.button--tertiary {
-		color: $gray-very-dark;
+		color: $gray-dark;
 		background-color: transparent;
-		border-color: $gray-very-dark;
+		border-color: $gray-dark;
 
 		&:hover:not(.is-disabled),
 		&:focus:not(.is-disabled),
 		&:active:not(.is-disabled) {
 			color: white;
-			background-color: $gray-very-dark;
-			border-color: $gray-very-dark;
+			background-color: $gray-dark;
+			border-color: $gray-dark;
 		}
 	}
 	&.button--selected {
@@ -86,7 +86,7 @@ button {
 		&:focus:not(.is-disabled),
 		&:active:not(.is-disabled) {
 			&:before {
-				@include svg-bg-tick($primary-color);
+				@include svg-bg-tick($primary-color-encoded);
 			}
 		}
 	}

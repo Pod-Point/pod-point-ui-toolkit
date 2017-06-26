@@ -22,67 +22,64 @@ var FormFields = function () {
 
         _classCallCheck(this, FormFields);
 
-        this.bindEvents(root);
-        this.checkAllFieldsForContent();
+        FormFields.bindEvents(root);
+        FormFields.checkAllFieldsForContent();
     }
 
-    _createClass(FormFields, [{
+    _createClass(FormFields, null, [{
         key: 'checkAllFieldsForContent',
         value: function checkAllFieldsForContent() {
-            var _this = this;
-
             var inputs = (0, _domOps.nodesToArray)((0, _domOps.select)('input'));
 
             if (inputs.length) {
                 inputs.forEach(function (input) {
-                    return _this.checkForContent(input);
+                    return FormFields.checkForContent(input);
                 });
             }
         }
     }, {
         key: 'checkForContent',
         value: function checkForContent(element) {
-            var container = this.getInputContainer(element),
-                callback = element.value ? _domOps.addClass : _domOps.removeClass;
+            var container = FormFields.getInputContainer(element);
+            var callback = element.value ? _domOps.addClass : _domOps.removeClass;
 
             callback(container, HAS_CONTENT);
         }
     }, {
         key: 'checkForErrors',
         value: function checkForErrors(element) {
-            (0, _domOps.removeClass)(this.getInputContainer(element), HAS_ERROR);
+            (0, _domOps.removeClass)(FormFields.getInputContainer(element), HAS_ERROR);
         }
     }, {
         key: 'bindEvents',
         value: function bindEvents(root) {
-            var _this2 = this;
-
             var listener = new _domDelegate.Delegate(root);
 
             // Listen to change because of password managers etc
             listener.on('change', 'input, textarea', function (event, element) {
-                _this2.checkForContent(element);
-                _this2.checkForErrors(element);
-                _this2.giveFocus(element);
+                FormFields.checkForContent(element);
+                FormFields.checkForErrors(element);
+                FormFields.giveFocus(element);
             });
 
             // Text input focus handler
             listener.on('focus', 'input, textarea', function (event, element) {
-                return _this2.giveFocus(element);
+                return FormFields.giveFocus(element);
             });
 
             // Text input focusout handler
             listener.on('focusout', 'input, textarea', function (event, element) {
-                _this2.checkForContent(element);
-                _this2.checkForErrors(element);
-                _this2.removeFocus(element);
+                FormFields.checkForContent(element);
+                FormFields.checkForErrors(element);
+                FormFields.removeFocus(element);
             });
 
             listener.on('input', 'textarea', function (event, element) {
                 var scrollHeight = element.scrollHeight;
+                var formEl = element;
 
-                if (scrollHeight > parseInt(window.getComputedStyle(element, null).height)) {
-                    element.style.height = scrollHeight + 'px';
+                if (scrollHeight > parseInt(window.getComputedStyle(formEl, null).height, 0)) {
+                    formEl.style.height = scrollHeight + 'px';
                 }
             });
         }
@@ -94,12 +91,12 @@ var FormFields = function () {
     }, {
         key: 'removeFocus',
         value: function removeFocus(element) {
-            (0, _domOps.removeClass)(this.getInputContainer(element), HAS_FOCUS);
+            (0, _domOps.removeClass)(FormFields.getInputContainer(element), HAS_FOCUS);
         }
     }, {
         key: 'giveFocus',
         value: function giveFocus(element) {
-            (0, _domOps.addClass)(this.getInputContainer(element), HAS_FOCUS);
+            (0, _domOps.addClass)(FormFields.getInputContainer(element), HAS_FOCUS);
         }
     }]);
 
@@ -108,6 +105,6 @@ var FormFields = function () {
 
 exports.default = {
     init: function init() {
-        new FormFields();
+        new FormFields(); // eslint-disable-line no-new
     }
 };

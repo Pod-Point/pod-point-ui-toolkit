@@ -25,9 +25,9 @@ var instances = [];
 var AjaxForm = function () {
 
     /**
-     * Create a new AJAX form.
+     * Create a new AJAX form
      *
-     * @param form
+     * @param {element} form
      */
     function AjaxForm(form) {
         _classCallCheck(this, AjaxForm);
@@ -40,7 +40,7 @@ var AjaxForm = function () {
     }
 
     /**
-     * Handle the form submission.
+     * Handle the form submission
      */
 
 
@@ -64,7 +64,7 @@ var AjaxForm = function () {
         }
 
         /**
-         * Bind any event listeners to the elements.
+         * Bind any event listeners to the elements
          */
 
     }, {
@@ -84,7 +84,7 @@ var AjaxForm = function () {
         }
 
         /**
-         * Unbinds the event listeners from the elements.
+         * Unbinds the event listeners from the elements
          */
 
     }, {

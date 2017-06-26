@@ -1,13 +1,13 @@
-import Flickity from 'flickity/js/flickity.js';
+import Flickity from 'flickity';
 
 let instances = [];
 
 class Carousel {
 
     /**
-     * Create a new carousel element.
+     * Create a new carousel element
      *
-     * @param select wrapper
+     * @param {element} select wrapper
      */
     constructor(element) {
         this.element = element;
@@ -15,16 +15,16 @@ class Carousel {
     }
 
     /**
-     * Initialise a Flickity carousel.
+     * Initialise a Flickity carousel
      */
     initFlickity() {
-        this.carousel = new Flickity( this.element, {
-            contain: true
+        this.carousel = new Flickity(this.element, {
+            contain: true,
         });
     }
 
     /**
-     * Destroy Flickity carousel.
+     * Destroy Flickity carousel
      */
     destroy() {
         this.carousel.destroy();
@@ -32,12 +32,12 @@ class Carousel {
 }
 
 export default {
-    init: function(element) {
+    init: element => {
         instances.push(new Carousel(element));
     },
 
-    destroy: function() {
-        instances.forEach((instance) => instance.destroy());
+    destroy: () => {
+        instances.forEach(instance => instance.destroy());
         instances = [];
-    }
+    },
 };

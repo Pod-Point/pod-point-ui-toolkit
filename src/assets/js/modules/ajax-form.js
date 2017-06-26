@@ -7,9 +7,9 @@ let instances = [];
 class AjaxForm {
 
     /**
-     * Create a new AJAX form.
+     * Create a new AJAX form
      *
-     * @param form
+     * @param {element} form
      */
     constructor(form) {
         this.form = form;
@@ -20,7 +20,7 @@ class AjaxForm {
     }
 
     /**
-     * Handle the form submission.
+     * Handle the form submission
      */
     submitForm() {
         this.requestInProgress = true;
@@ -41,12 +41,12 @@ class AjaxForm {
     }
 
     /**
-     * Bind any event listeners to the elements.
+     * Bind any event listeners to the elements
      */
     bindEvents() {
         this.listener = new Delegate(this.form);
 
-        this.listener.on('submit', (event) => {
+        this.listener.on('submit', event => {
             event.preventDefault();
 
             if (!this.requestInProgress) {
@@ -56,7 +56,7 @@ class AjaxForm {
     }
 
     /**
-     * Unbinds the event listeners from the elements.
+     * Unbinds the event listeners from the elements
      */
     unbindEvents() {
         this.listener.destroy();
@@ -64,12 +64,12 @@ class AjaxForm {
 }
 
 export default {
-    init: function(form) {
+    init: form => {
         instances.push(new AjaxForm(form));
     },
 
-    destroy: function() {
-        instances.forEach((instance) => instance.unbindEvents());
+    destroy: () => {
+        instances.forEach(instance => instance.unbindEvents());
         instances = [];
-    }
-}
+    },
+};

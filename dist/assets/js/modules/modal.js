@@ -15,26 +15,29 @@ var _utilities = require('./../utilities');
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var instances = [];
+var MODAL_OPEN = 'is-modal-open';
 
 var Modal = function () {
 
     /**
-     * Creates a new modal window.
+     * Creates a new modal window
      *
-     * @param element
+     * @param {element}
      */
     function Modal(element) {
         _classCallCheck(this, Modal);
 
         this.openButton = element;
-        this.modal = (0, _domOps.selectFirst)('#' + this.openButton.getAttribute('data-modal'));
-        this.closeButton = (0, _domOps.selectFirst)('.modal-close', this.modal);
+        var modalID = this.openButton.getAttribute('data-modal');
+        this.modal = document.querySelector('#' + modalID);
+        this.closeButton = this.modal.querySelector('.modal-close');
+        this.video = this.modal.querySelector('.video-wrapper iframe');
 
         this.bindEvents();
     }
 
     /**
-     * Binds the event listeners from the elements.
+     * Binds the event listeners from the elements
      */
 
 
@@ -45,7 +48,7 @@ var Modal = function () {
 
             this.openListener = new _domDelegate.Delegate(this.openButton);
 
-            this.openListener.on('click', function (event) {
+            this.openListener.on('click', function () {
                 _this.openModal();
             });
 
@@ -74,22 +77,9 @@ var Modal = function () {
         }
 
         /**
-         * Unbinds the event listeners from the elements.
-         */
-
-    }, {
-        key: 'unbindEvents',
-        value: function unbindEvents() {
-            this.openListener.destroy();
-            this.closeListener.destroy();
-            this.overlayListener.destroy();
-            this.windowListener.destroy();
-        }
-
-        /**
-         * Handle the modal opening.
+         * Handle the modal opening
          *
-         * @param {Event} event
+         * @param {event}
          */
 
     }, {
@@ -105,15 +95,18 @@ var Modal = function () {
         }
 
         /**
-         * Handle the modal opening.
+         * Handle the modal opening
          */
 
     }, {
         key: 'openModal',
         value: function openModal() {
-            document.documentElement.classList.add('is-modal-open');
-
+            (0, _domOps.addClass)(document.documentElement, MODAL_OPEN);
             (0, _utilities.show)(this.modal);
+
+            if (this.video) {
+                (0, _utilities.loadVideo)(this.video, true);
+            }
 
             var overlay = document.createElement('div');
             overlay.className = 'modal-overlay';
@@ -121,21 +114,36 @@ var Modal = function () {
         }
 
         /**
-         * Handle the modal closing.
+         * Handle the modal closing
          */
 
     }, {
         key: 'closeModal',
         value: function closeModal() {
-            document.documentElement.classList.remove('is-modal-open');
-
+            (0, _domOps.removeClass)(document.documentElement, MODAL_OPEN);
             (0, _utilities.hide)(this.modal);
 
-            var overlay = (0, _domOps.selectFirst)('.modal-overlay');
+            if (this.video) {
+                (0, _utilities.loadVideo)(this.video, false);
+            }
 
+            var overlay = document.querySelector('.modal-overlay');
             if (overlay !== null) {
                 document.body.removeChild(overlay);
             }
+        }
+
+        /**
+         * Unbinds the event listeners from the elements
+         */
+
+    }, {
+        key: 'unbindEvents',
+        value: function unbindEvents() {
+            this.openListener.destroy();
+            this.closeListener.destroy();
+            this.overlayListener.destroy();
+            this.windowListener.destroy();
         }
     }]);
 

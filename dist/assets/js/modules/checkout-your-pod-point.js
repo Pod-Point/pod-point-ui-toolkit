@@ -56,7 +56,7 @@ var CheckoutYourPodPoint = function () {
             this.selectEVMakeListener = new _domDelegate.Delegate(this.selectEvMake);
 
             this.selectEVMakeListener.on('change', function (event, element) {
-                (0, _utilities.disableOrEnableDd)(_this.selectEvModel);
+                // needs to enable the select 'this.selectEvModel'
             });
 
             this.selectEVModelListener = new _domDelegate.Delegate(this.selectEvModel);

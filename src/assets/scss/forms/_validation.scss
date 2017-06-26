@@ -26,51 +26,21 @@
 		}
 	}
 	&.is-valid {
-		&:before {
-			@include small-and-up {
-				@include svg-bg-tick($color: $primary-color);
-			}
-		}
 		#{$inputs},
 		textarea[type="text"],
-		.select-dd-wrapper:not(.select-dd-wrapper--alternative) .dk-selected,
-		.select-dd-wrapper:not(.select-dd-wrapper--alternative) .mobile-select {
+		.select-wrapper select {
 			border-color: $primary-color;
-		}
-		.select-dd-wrapper:not(.select-dd-wrapper--alternative) .dk-select:after,
-		.select-dd-wrapper--mobile .mobile-select:after {
-			color: $primary-color;
 		}
 	}
 	&.is-invalid {
-		&:before {
-			@include small-and-up {
-				@include svg-bg-cross($color: $error-red);
-			}
-		}
 		#{$inputs},
 		textarea[type="text"],
-		.select-dd-wrapper:not(.select-dd-wrapper--alternative) .dk-selected,
-		.select-dd-wrapper:not(.select-dd-wrapper--alternative) .mobile-select {
+		.select-wrapper select {
 			border-color: $error-red;
-		}
-		.select-dd-wrapper:not(.select-dd-wrapper--alternative) .dk-select:after,
-		.select-dd-wrapper--mobile .mobile-select:after {
-			color: $error-red;
 		}
 	}
 }
 
-.error-message {
-	display: block;
-	@include font-style-small;
-	font-weight: $font-weight-bold;
-	color: $error-red;
-	margin-top: rem(3);
-	.checkbox-wrap & {
-		margin-top: 0;
-	}
-}
 .checkbox-wrap:not(.is-invalid),
 .form-field-wrapper:not(.is-invalid) {
 	.error-message {
@@ -81,5 +51,38 @@
 .checkbox-wrap.is-invalid {
 	input[type="checkbox"] ~ label:before {
 		border-color: $error-red;
+	}
+}
+
+.form {
+	&__group--error {
+		#{$inputs},
+		textarea[type="text"],
+		.select-wrapper select {
+			border-color: $error-red;
+		}
+	}
+	&__group--valid {
+		#{$inputs},
+		textarea[type="text"],
+		.select-wrapper select {
+			border-color: $primary-color;
+		}
+	}
+	&__error {
+		display: block;
+		@include font-style-small;
+		font-weight: $font-weight-bold;
+		color: $error-red;
+		margin-top: rem(5);
+		.checkbox-wrap & {
+			margin-top: 0;
+		}
+	}
+}
+
+.checkbox-wrap {
+	.form__error {
+		margin-left: 35px;
 	}
 }

@@ -1,43 +1,49 @@
 // =============================================================================
 //  GRID
 // =============================================================================
-// Below is a very basic grid based on a 12 col grid and provides half, third and quarter width columns that expand to full width on a smaller screen. See here to fully configure grids: http://thingsym.github.io/flexbox-grid-mixins
+// See here to fully configure grids: http://thingsym.github.io/flexbox-grid-mixins
 
-$default-gutter: 20px;
-$mobile-gutter: 5px;
+$sides-gutter: 2%; // Flex calc doesn't work in IE so this has to be a percentage
+$sides-mobile-gutter: 0.5%;
 
-$-default-gutter: -20px;
+$bottom-space: 4%;
 
-// SAMPLE GRID (change or delete as required)
+.grid-wrap {
+	margin-bottom: -4%;
+	@include medium-and-up {
+		margin-bottom: -2%;
+	}
+}
 .grid-row {
-	@include grid($flex-wrap: wrap, $gutter: $default-gutter);
-	margin-bottom: $-default-gutter;
+	@include clearfix;
+	@include grid($flex-wrap: wrap, $gutter: $sides-gutter);
 	&--vertical-center {
 		align-items: center;
 	}
 	&--mobile-cols {
-		@include grid($flex-wrap: wrap, $gutter: $mobile-gutter);
+		@include grid($flex-wrap: wrap, $gutter: $sides-mobile-gutter);
 	}
 	&--no-space {
 		margin-bottom: 0;
 	}
 	.grid-col {
-		@include grid-col($col: 12, $gutter: $default-gutter);
+		@include grid-col($col: 12, $gutter: $sides-gutter);
+		margin-bottom: $bottom-space;
 	}
 	.grid-col--12 {
-		@include grid-col($col: 12, $gutter: $mobile-gutter);
+		@include grid-col($col: 12, $gutter: $sides-mobile-gutter);
 	}
 	.grid-col--8 {
-		@include grid-col($col: 8, $gutter: $mobile-gutter);
+		@include grid-col($col: 8, $gutter: $sides-mobile-gutter);
 	}
 	.grid-col--6 {
-		@include grid-col($col: 6, $gutter: $mobile-gutter);
+		@include grid-col($col: 6, $gutter: $sides-mobile-gutter);
 	}
 	.grid-col--3 {
-		@include grid-col($col: 3, $gutter: $mobile-gutter);
+		@include grid-col($col: 3, $gutter: $sides-mobile-gutter);
 	}
 	.grid-col--4 {
-		@include grid-col($col: 4, $gutter: $mobile-gutter);
+		@include grid-col($col: 4, $gutter: $sides-mobile-gutter);
 	}
 	.grid-col {
 		&--separator {
@@ -45,7 +51,7 @@ $-default-gutter: -20px;
 			border-bottom: $border-thin;
 		}
 		&--no-space {
-			margin-bottom: 0;
+			margin-bottom: 0!important;
 		}
 	}
 	&--b-space-mobile {
@@ -59,19 +65,19 @@ $-default-gutter: -20px;
 
 	@include small-and-up {
 		.grid-col--sm-12 {
-			@include grid-col($col: 12, $gutter: $default-gutter);
+			@include grid-col($col: 12, $gutter: $sides-gutter);
 		}
 		.grid-col--sm-8 {
-			@include grid-col($col: 8, $gutter: $default-gutter);
+			@include grid-col($col: 8, $gutter: $sides-gutter);
 		}
 		.grid-col--sm-6 {
-			@include grid-col($col: 6, $gutter: $default-gutter);
+			@include grid-col($col: 6, $gutter: $sides-gutter);
 		}
 		.grid-col--sm-3 {
-			@include grid-col($col: 3, $gutter: $default-gutter);
+			@include grid-col($col: 3, $gutter: $sides-gutter);
 		}
 		.grid-col--sm-4 {
-			@include grid-col($col: 4, $gutter: $default-gutter);
+			@include grid-col($col: 4, $gutter: $sides-gutter);
 		}
 		.grid-col--sm-right {
 			order: 10;
@@ -87,19 +93,19 @@ $-default-gutter: -20px;
 
 	@include medium-and-up {
 		.grid-col--md-12 {
-			@include grid-col($col: 12, $gutter: $default-gutter);
+			@include grid-col($col: 12, $gutter: $sides-gutter);
 		}
 		.grid-col--md-8 {
-			@include grid-col($col: 8, $gutter: $default-gutter);
+			@include grid-col($col: 8, $gutter: $sides-gutter);
 		}
 		.grid-col--md-6 {
-			@include grid-col($col: 6, $gutter: $default-gutter);
+			@include grid-col($col: 6, $gutter: $sides-gutter);
 		}
 		.grid-col--md-3 {
-			@include grid-col($col: 3, $gutter: $default-gutter);
+			@include grid-col($col: 3, $gutter: $sides-gutter);
 		}
 		.grid-col--md-4 {
-			@include grid-col($col: 4, $gutter: $default-gutter);
+			@include grid-col($col: 4, $gutter: $sides-gutter);
 		}
 		.grid-col--md-right {
 			order: 10;
@@ -114,19 +120,19 @@ $-default-gutter: -20px;
 	}
 	@include large-and-up {
 		.grid-col--lg-12 {
-			@include grid-col($col: 12, $gutter: $default-gutter);
+			@include grid-col($col: 12, $gutter: $sides-gutter);
 		}
 		.grid-col--md-8 {
-			@include grid-col($col: 8, $gutter: $default-gutter);
+			@include grid-col($col: 8, $gutter: $sides-gutter);
 		}
 		.grid-col--lg-6 {
-			@include grid-col($col: 6, $gutter: $default-gutter);
+			@include grid-col($col: 6, $gutter: $sides-gutter);
 		}
 		.grid-col--lg-3 {
-			@include grid-col($col: 3, $gutter: $default-gutter);
+			@include grid-col($col: 3, $gutter: $sides-gutter);
 		}
 		.grid-col--lg-4 {
-			@include grid-col($col: 4, $gutter: $default-gutter);
+			@include grid-col($col: 4, $gutter: $sides-gutter);
 		}
 		.grid-col--lg-right {
 			order: 10;

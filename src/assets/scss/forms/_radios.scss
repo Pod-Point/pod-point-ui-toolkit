@@ -11,54 +11,23 @@ input[type="radio"] {
 	left: -9999px;
 }
 
-.radio-wrap {
-	display: block;
-	&--inline {
-		display: inline-block;
-	}
-	input[type="radio"] {
-		& + label {
-			@include font-style-base;
-			position: relative;
-			@include padding(rem(6) rem(25) 0 rem(30));
-			cursor: pointer;
-			display: inline-block;
-			min-height: rem(30);
-			transition: all .28s ease;
-			user-select: none;
+.radio {
+	display: inline-block;
+	cursor: pointer;
+	transition: all .28s ease;
+	user-select: none;
 
-			&:after,
-			&:before {
-				content: '';
-				position: absolute;
-				left: 0;
-				top: 0;
-				@include margin(rem(6) null rem(6) null);
-				width: rem(18);
-				height: rem(18);
-				z-index: 0;
-				transition: .28s ease;
-				@include medium-and-up {
-					@include margin(rem(8) null rem(8) null);
-				}
-			}
-			&:before {
-				border-radius: 50%;
-				border: 2px solid $radio-border;
-			}
-			&:after {
-				border-radius: 50%;
-				border: 2px solid $radio-border;
-				z-index: -1;
-				@include transform(scale(0));
-			}
-		}
+	&--inline {
+		display: inline;
+	}
+
+	> input[type="radio"] {
 		&:checked {
-			& + label:before {
+			& + span:before {
 				border-radius: 50%;
 				border: 2px solid transparent;
 			}
-			& + label:after {
+			& + span:after {
 				border-radius: 50%;
 				border: 2px solid $radio-fill-color;
 				background-color: $radio-fill-color;
@@ -66,7 +35,7 @@ input[type="radio"] {
 				@include transform(scale(1.02));
 			}
 		}
-		&:disabled + label {
+		&:disabled + span {
 			color: $disabled-color;
 			cursor: not-allowed;
 			&:before {
@@ -77,6 +46,39 @@ input[type="radio"] {
 					border-color: $disabled-color;
 				}
 			}
+		}
+	}
+
+	> span {
+		@include font-style-base;
+		position: relative;
+		@include padding(rem(6) rem(25) 0 rem(30));
+		min-height: rem(30);
+
+		&:after,
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			@include margin(rem(6) null rem(6) null);
+			width: rem(18);
+			height: rem(18);
+			z-index: 0;
+			transition: .28s ease;
+			@include medium-and-up {
+				@include margin(rem(8) null rem(8) null);
+			}
+		}
+		&:before {
+			border-radius: 50%;
+			border: 2px solid $radio-border;
+		}
+		&:after {
+			border-radius: 50%;
+			border: 2px solid $radio-border;
+			z-index: -1;
+			@include transform(scale(0));
 		}
 	}
 }

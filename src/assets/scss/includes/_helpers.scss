@@ -56,6 +56,15 @@
 	}
 }
 
+// Full width/height overlay.
+// If it is a pseudo element, it will meeds an empty content property and the wrapper to have a relative position
+@mixin full-overlay($bgColor: black) {
+	@include position(absolute, 0 0 0 0);
+	width: 100%;
+	height: 100%;
+	background-color: $bgColor;
+}
+
 // Iconfont icon in a circle with optional colours
 @mixin icon-in-circle($bgColor: $icon-color, $color: white, $border: none ) {
 	text-align: center;
@@ -103,6 +112,23 @@
 	max-width: $max-width-content;
 	@include horizontal-spacing;
 }
+
+// Mixin for alert boxes/messages
+@mixin alert-variant($background, $border, $text-color) {
+    background-color: $background;
+    border-color: $border;
+    color: $text-color;
+    font-weight: $font-weight-bold;
+    hr {
+        border-top-color: darken($border, 5%);
+    }
+    .a {
+        color: darken($text-color, 10%);
+        text-decoration: underline;
+    }
+}
+
+
 
 //	BG Images
 %bg-cover {

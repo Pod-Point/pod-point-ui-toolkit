@@ -20,28 +20,40 @@ var IS_OPEN = 'is-open';
 var ToggleAccordionPanel = function () {
 
     /**
-     * Creates a new toggle panel.
+     * Creates a new toggle panel
      *
-     * @param element
+     * @param {element}
      */
     function ToggleAccordionPanel(element) {
         _classCallCheck(this, ToggleAccordionPanel);
 
         this.panel = element;
         this.panelId = element.getAttribute('id');
-        this.toggleIcon = document.querySelector('[data-toggle-icon="' + this.panelId + '"]');
-        this.toggleButtons = (0, _domOps.nodesToArray)(document.querySelectorAll('[data-toggle-panel="' + this.panelId + '"]')) || [];
-        this.openButtons = (0, _domOps.nodesToArray)(document.querySelectorAll('[data-open-panel="' + this.panelId + '"]')) || [];
-        this.closeButtons = (0, _domOps.nodesToArray)(document.querySelectorAll('[data-close-panel="' + this.panelId + '"]')) || [];
-        this.radioOpenButtons = (0, _domOps.nodesToArray)(document.querySelectorAll('[data-radio-open-panel="' + this.panelId + '"]')) || [];
-        this.radioCloseButtons = (0, _domOps.nodesToArray)(document.querySelectorAll('[data-radio-close-panel="' + this.panelId + '"]')) || [];
-        this.inputOpenButtons = (0, _domOps.nodesToArray)(document.querySelectorAll('[data-input-open-panel="' + this.panelId + '"]')) || [];
+
+        var toggleIconSelector = '[data-toggle-icon="' + this.panelId + '"]';
+        var toggleButtonsSelector = '[data-toggle-panel="' + this.panelId + '"]';
+        var openButtonsSelector = '[data-open-panel="' + this.panelId + '"]';
+        var closeButtonsSelector = '[data-close-panel="' + this.panelId + '"]';
+        var radioOpenButtonsSelector = '[data-radio-open-panel="' + this.panelId + '"]';
+        var radioCloseButtonsSelector = '[data-radio-close-panel="' + this.panelId + '"]';
+        var inputOpenButtonsSelector = '[data-input-open-panel="' + this.panelId + '"]';
+        var selectToggleButtonsSelector = '[data-select-toggle-panel="' + this.panelId + '"]';
+
+        this.toggleIcon = document.querySelector(toggleIconSelector);
+        this.toggleButtons = (0, _domOps.nodesToArray)(document.querySelectorAll(toggleButtonsSelector)) || [];
+        this.openButtons = (0, _domOps.nodesToArray)(document.querySelectorAll(openButtonsSelector)) || [];
+        this.closeButtons = (0, _domOps.nodesToArray)(document.querySelectorAll(closeButtonsSelector)) || [];
+        this.radioOpenButtons = (0, _domOps.nodesToArray)(document.querySelectorAll(radioOpenButtonsSelector)) || [];
+        this.radioCloseButtons = (0, _domOps.nodesToArray)(document.querySelectorAll(radioCloseButtonsSelector)) || [];
+        this.inputOpenButtons = (0, _domOps.nodesToArray)(document.querySelectorAll(inputOpenButtonsSelector)) || [];
+
+        this.selectToggleButtons = (0, _domOps.nodesToArray)(document.querySelectorAll(selectToggleButtonsSelector)) || [];
 
         this.bindEvents();
     }
 
     /**
-     * Binds the event listeners from the elements.
+     * Binds the event listeners from the elements
      */
 
 
@@ -108,10 +120,41 @@ var ToggleAccordionPanel = function () {
                     return (0, _utilities.openPanel)(_this.panel);
                 });
             });
+
+            this.selectToggleListeners = [];
+            this.selectToggleButtons.forEach(function (selectToggleButton) {
+                var selectToggleListener = new _domDelegate.Delegate(selectToggleButton);
+                _this.selectToggleListeners.push(selectToggleListener);
+                selectToggleListener.on('change', function (event, element) {
+                    var selectedVal = element.options[element.selectedIndex].value;
+
+                    if (selectedVal === 'other') {
+                        (0, _utilities.openPanel)(_this.panel);
+                    } else {
+                        (0, _utilities.closePanel)(_this.panel);
+                    }
+                });
+            });
         }
 
         /**
-         * Unbinds the event listeners from the elements.
+         * Toggle panel depending if already open or not
+         */
+
+    }, {
+        key: 'togglePanel',
+        value: function togglePanel() {
+            var panelIsVisible = (0, _domOps.hasClass)(this.panel, IS_OPEN);
+
+            if (panelIsVisible) {
+                (0, _utilities.closePanel)(this.panel);
+            } else {
+                (0, _utilities.openPanel)(this.panel);
+            }
+        }
+
+        /**
+         * Unbinds the event listeners from the elements
          */
 
     }, {
@@ -135,22 +178,6 @@ var ToggleAccordionPanel = function () {
             this.inputOpenListeners.forEach(function (inputOpenListener) {
                 return inputOpenListener.destroy();
             });
-        }
-
-        /**
-         * Toggle panel depending if already open or not.
-         */
-
-    }, {
-        key: 'togglePanel',
-        value: function togglePanel() {
-            var panelIsVisible = (0, _domOps.hasClass)(this.panel, IS_OPEN);
-
-            if (panelIsVisible) {
-                (0, _utilities.closePanel)(this.panel);
-            } else {
-                (0, _utilities.openPanel)(this.panel);
-            }
         }
     }]);
 

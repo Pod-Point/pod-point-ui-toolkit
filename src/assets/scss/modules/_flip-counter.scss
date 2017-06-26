@@ -4,6 +4,33 @@
 
 @import '../../plugins/flip-counter/flip/tick';
 
+.flip-counter-section {
+  min-height: 67px;
+  position: relative;
+  &:after {
+    content: '';
+    @include full-overlay($gray-very-dark);
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 1s ease-in;
+  }
+  &.loaded {
+    &:after {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin slideDownCollapsed($duration) {
+   max-height: 0;
+   transition: max-height $duration ease-out;
+   overflow: hidden;
+}
+@mixin slideDownActive($duration, $approxHeight) {
+   max-height: $approxHeight;
+   transition: max-height $duration ease-in;
+   overflow: hidden;
+}
 
 .tick {
     font-size: 1.5em;
@@ -20,21 +47,24 @@
     background:#fff;
 }
 
-.tick-group-wrap {
-  @include medium-and-up {
-    @include margin(null 15px);
+.tick-group {
+  @include margin(null 5px);
+}
+
+.tick-module {
+  display: inline-block;
+  @include margin(5px 5px);
+  @include small-and-up {
+    @include margin(0 5px);
   }
 }
 
-.tick-group {
-  white-space: nowrap;
-  &__desc {
-    display: block;
-    @include font-small;
-    font-weight: $font-weight-bold;
-    text-transform: uppercase;
-    @include xsmall-and-up {
-      display: inline-block;
-    }
+.tick-desc {
+  display: block;
+  @include font-small;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  @include xsmall-and-up {
+    display: inline-block;
   }
 }

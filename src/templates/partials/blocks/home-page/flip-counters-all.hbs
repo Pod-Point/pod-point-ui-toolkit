@@ -1,19 +1,14 @@
-<section class="bg--very-dark-gray">
+<section class="bg--dark-gray flip-counter-section">
 	<div class="container">
 		<div class="content-block content-block--strip text-center">
-			<div class="tick"
-				data-js-module="flipCounter"
-				data-value="statOne:23655438, statTwo:5913859, statThree:2365"
-				data-stat-one="23655438"
-				data-stat-two="5913859"
-				data-stat-three="2365"
-				data-did-init="handleTickInit">
-
-				<span class="tick-group-wrap hidden inline-block-lg"><span class="tick-group" data-repeat="true" data-key="statOne"><span data-view="flip"></span></span> <span class="tick-group__desc">miles of charging</span></span>
-
-                <span class="tick-group-wrap hidden inline-block-md"><span class="tick-group" data-repeat="true" data-key="statTwo"><span data-view="flip"></span></span> <span class="tick-group__desc">kwh of energy transferred</span></span>
-
-                <span class="tick-group-wrap"><span class="tick-group" data-repeat="true" data-key="statThree"><span data-view="flip"></span></span> <span class="tick-group__desc">tonnes of CO2 saved</span></span>
+			<div class="tick-group inline-block">
+				<div class="tick-module" data-js-module="flipCounter" data-stat="2365"></div><span class="tick-desc">tonnes of CO2 saved</span>
+			</div>
+			<div class="tick-group hidden inline-block-md">
+				<div class="tick-module" data-js-module="flipCounter" data-stat="5913859"></div><span class="tick-desc">kwh of energy transferred</span>
+			</div>
+			<div class="tick-group hidden inline-block-lg">
+				<div class="tick-module" data-js-module="flipCounter" data-stat="23655438"></div><span class="tick-desc">miles of charging</span>
 			</div>
 	    </div>
 	</div>

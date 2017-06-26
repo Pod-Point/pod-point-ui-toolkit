@@ -2,6 +2,9 @@
 //	IMAGES
 // =============================================================================
 
+img {
+	display: block;
+}
 .img {
 	&--resp {
 		max-width: 100%;
@@ -13,6 +16,7 @@
 .svg-wrap {
 	display: inline-block;
 	svg {
-		width: 100%;
+		// width: 100%;
+		// height: auto;
 	}
 }

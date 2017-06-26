@@ -132,15 +132,13 @@
 
 @mixin font-style-forms {
 	margin: 0;
-	line-height: rem(16);
+	line-height: rem(18);
 	font-size: rem(16); // Has to be 16px min for IOS
-	font-weight: $font-weight-bold;
 }
 @mixin font-style-forms-large {
 	margin: 0;
-	line-height: rem(16);
+	line-height: rem(18);
 	font-size: rem(16);
-	font-weight: $font-weight-bold;
 	@include medium-and-up {
 		line-height: rem(20);
 		font-size: rem(20);

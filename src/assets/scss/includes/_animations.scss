@@ -20,3 +20,13 @@
    transition: max-height $duration ease-in;
    overflow: hidden;
 }
+
+@keyframes popUpFadeIn {
+   0% {top: 100px; opacity: 0;}
+   50% {opacity: 0;}
+   100% {top: 0px; opacity: 1;}
+}
+@mixin popUpFadeIn() {
+   position: relative;
+   animation: popUpFadeIn 2s;
+}

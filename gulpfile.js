@@ -11,7 +11,7 @@ gulp.task('set-env-dev', () => { global.env = 'dev' });
 gulp.task('set-env-prod', () => { global.env = 'prod' });
 
 // Global tasks
-gulp.task('common', ['copyAll', 'svgs', 'js', 'sass', 'assembleHtml']);
+gulp.task('common', ['copyAll', 'svgs', 'js', 'modernizr', 'sass', 'assembleHtml']);
 
 // Dev task
 gulp.task('dev', [

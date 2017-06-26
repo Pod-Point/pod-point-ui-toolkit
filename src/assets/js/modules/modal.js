@@ -1,44 +1,47 @@
 import { Delegate } from 'dom-delegate';
-import { selectFirst } from '@pod-point/dom-ops';
-import { isVisible, show, hide } from './../utilities';
+import { addClass, removeClass } from '@pod-point/dom-ops';
+import { isVisible, show, hide, loadVideo } from './../utilities';
 
 let instances = [];
+const MODAL_OPEN = 'is-modal-open';
 
 class Modal {
 
     /**
-     * Creates a new modal window.
+     * Creates a new modal window
      *
-     * @param element
+     * @param {element}
      */
     constructor(element) {
         this.openButton = element;
-        this.modal = selectFirst('#' + this.openButton.getAttribute('data-modal'));
-        this.closeButton = selectFirst('.modal-close', this.modal);
+        const modalID = this.openButton.getAttribute('data-modal');
+        this.modal = document.querySelector(`#${modalID}`);
+        this.closeButton = this.modal.querySelector('.modal-close');
+        this.video = this.modal.querySelector('.video-wrapper iframe');
 
         this.bindEvents();
     }
 
     /**
-     * Binds the event listeners from the elements.
+     * Binds the event listeners from the elements
      */
     bindEvents() {
         this.openListener = new Delegate(this.openButton);
 
-        this.openListener.on('click', (event) => {
+        this.openListener.on('click', () => {
             this.openModal();
         });
 
         this.closeListener = new Delegate(this.closeButton);
 
-        this.closeListener.on('click', (event) => {
+        this.closeListener.on('click', event => {
             event.preventDefault();
             this.closeModal();
         });
 
         this.overlayListener = new Delegate(this.modal);
 
-        this.overlayListener.on('click', (event) => {
+        this.overlayListener.on('click', event => {
             if (event.target === this.modal) {
                 this.closeModal();
             }
@@ -46,7 +49,7 @@ class Modal {
 
         this.windowListener = new Delegate(document.body);
 
-        this.windowListener.on('keyup', (event) => {
+        this.windowListener.on('keyup', event => {
             if (event.keyCode === 27) {
                 this.closeModal();
             }
@@ -54,19 +57,9 @@ class Modal {
     }
 
     /**
-     * Unbinds the event listeners from the elements.
-     */
-    unbindEvents() {
-        this.openListener.destroy();
-        this.closeListener.destroy();
-        this.overlayListener.destroy();
-        this.windowListener.destroy();
-    }
-
-    /**
-     * Handle the modal opening.
+     * Handle the modal opening
      *
-     * @param {Event} event
+     * @param {event}
      */
     doModal(event) {
         event.preventDefault();
@@ -79,12 +72,13 @@ class Modal {
     }
 
     /**
-     * Handle the modal opening.
+     * Handle the modal opening
      */
     openModal() {
-        document.documentElement.classList.add('is-modal-open');
-
+        addClass(document.documentElement, MODAL_OPEN);
         show(this.modal);
+
+        if (this.video) { loadVideo(this.video, true); }
 
         const overlay = document.createElement('div');
         overlay.className = 'modal-overlay';
@@ -92,28 +86,36 @@ class Modal {
     }
 
     /**
-     * Handle the modal closing.
+     * Handle the modal closing
      */
     closeModal() {
-        document.documentElement.classList.remove('is-modal-open');
-
+        removeClass(document.documentElement, MODAL_OPEN);
         hide(this.modal);
 
-        const overlay = selectFirst('.modal-overlay');
+        if (this.video) { loadVideo(this.video, false); }
 
-        if (overlay !== null) {
-            document.body.removeChild(overlay);
-        }
+        const overlay = document.querySelector('.modal-overlay');
+        if (overlay !== null) { document.body.removeChild(overlay); }
+    }
+
+    /**
+     * Unbinds the event listeners from the elements
+     */
+    unbindEvents() {
+        this.openListener.destroy();
+        this.closeListener.destroy();
+        this.overlayListener.destroy();
+        this.windowListener.destroy();
     }
 }
 
 export default {
-    init: function(element) {
+    init: element => {
         instances.push(new Modal(element));
     },
 
-    destroy: function() {
-        instances.forEach((instance) => instance.unbindEvents());
+    destroy: () => {
+        instances.forEach(instance => instance.unbindEvents());
         instances = [];
-    }
+    },
 };

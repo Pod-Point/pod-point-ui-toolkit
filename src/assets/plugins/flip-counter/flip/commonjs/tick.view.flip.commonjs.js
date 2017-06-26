@@ -1,5 +1,5 @@
 /*
- * Tick v1.3.2 - Counters Made Easy
+ * Tick v1.4.0 - Counters Made Easy
  * Copyright (c) 2017 PQINA - http://tickcounterplugin.com
  */
 module.exports = (function() {
@@ -74,6 +74,15 @@ var index = (function () {
 
 		// set spacer value
 		state.spacer.textContent = state.value;
+
+		// don't animate when invisible to the user
+		if (!state.isInitialValue() && !DOM.visible(state.root)) {
+			state.cards.forEach(function (card) {
+				card.back = state.value;
+				card.front = state.value;
+			});
+			return;
+		}
 
 		// get previous card
 		var turningCard = state.cards[state.cards.length - 1];

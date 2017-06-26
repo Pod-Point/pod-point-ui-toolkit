@@ -8,10 +8,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _domDelegate = require('dom-delegate');
 
-var _domOps = require('@pod-point/dom-ops');
-
-var _utilities = require('./../utilities');
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var instances = [];
@@ -19,9 +15,9 @@ var instances = [];
 var GallerySimple = function () {
 
     /**
-     * Creates a gallery element.
+     * Creates a gallery element
      *
-     * @param element
+     * @param {element}
      */
     function GallerySimple(element) {
         _classCallCheck(this, GallerySimple);
@@ -32,7 +28,7 @@ var GallerySimple = function () {
     }
 
     /**
-     * Get first thumbnail and pass to function to display as the main image.
+     * Get first thumbnail and pass to function to display as the main image
      */
 
 
@@ -61,7 +57,7 @@ var GallerySimple = function () {
         }
 
         /**
-         * Unbinds the event listeners from the elements.
+         * Unbinds the event listeners from the elements
          */
 
     }, {
@@ -71,7 +67,8 @@ var GallerySimple = function () {
         }
 
         /**
-         * Display thumbnail as main image.
+         * Display thumbnail as main image
+         * @param {element} thumbnail
          */
 
     }, {

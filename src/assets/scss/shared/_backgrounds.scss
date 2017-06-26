@@ -8,15 +8,20 @@
 		border-top: $border-thin;
 	}
 }
+.main > .bg--white:first-child,
 .global-header-wrap + .bg--white {
 	border-top: $border-thin;
+}
+.bg--dark-gray {
+	background-color: $gray-dark;
+	color: white;
 }
 .bg--very-dark-gray {
 	background-color: $gray-very-dark;
 	color: white;
 }
 .bg--very-light-gray {
-	background-color: $gray-very-light;
+	background-color: $gray-light;
 }
 .bg--light-gray {
 	background-color: $gray-light;
@@ -43,7 +48,7 @@
 		z-index: -1;
 		content: '';
 		@include position(absolute, 0 0 0 0);
-		background-color: $gray-very-dark;
+		background-color: $gray-dark;
 		opacity: 0.65;
 		width: 100%;
 		height: 100%;
