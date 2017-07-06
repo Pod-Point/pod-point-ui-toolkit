@@ -317,6 +317,7 @@
 	
 	module.exports = exports['default'];
 
+
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
@@ -573,7 +574,7 @@
 	        var modalID = this.openButton.getAttribute('data-modal');
 	        this.modal = document.querySelector('#' + modalID);
 	        this.closeButton = this.modal.querySelector('.modal-close');
-	        this.video = this.modal.querySelector('.video-wrapper iframe');
+	        this.videoWrapper = this.modal.querySelector('.video-wrapper');
 	
 	        this.bindEvents();
 	    }
@@ -646,10 +647,6 @@
 	            (0, _domOps.addClass)(document.documentElement, MODAL_OPEN);
 	            (0, _utilities.show)(this.modal);
 	
-	            if (this.video) {
-	                (0, _utilities.loadVideo)(this.video, true);
-	            }
-	
 	            var overlay = document.createElement('div');
 	            overlay.className = 'modal-overlay';
 	            document.body.appendChild(overlay);
@@ -665,8 +662,13 @@
 	            (0, _domOps.removeClass)(document.documentElement, MODAL_OPEN);
 	            (0, _utilities.hide)(this.modal);
 	
-	            if (this.video) {
-	                (0, _utilities.loadVideo)(this.video, false);
+	            if (this.videoWrapper) {
+	                var wrapperId = this.videoWrapper.getAttribute('id');
+	                if (window[wrapperId].pause) {
+	                    window[wrapperId].pause();
+	                } else if (window[wrapperId].pauseVideo) {
+	                    window[wrapperId].pauseVideo();
+	                }
 	            }
 	
 	            var overlay = document.querySelector('.modal-overlay');
@@ -1188,7 +1190,6 @@
 	exports.aRadioContains = aRadioContains;
 	exports.getRandomInt = getRandomInt;
 	exports.roundNumberTo = roundNumberTo;
-	exports.loadVideo = loadVideo;
 	
 	var _domOps = __webpack_require__(4);
 	
@@ -1372,22 +1373,6 @@
 	function roundNumberTo(num, roundTo) {
 	    var resto = num % roundTo;
 	    return resto <= roundTo / 2 ? num - resto : num + roundTo - resto;
-	}
-	
-	/**
-	 * Load or destroy video by replacing the src from the data-src
-	 *
-	 * @param {element} video
-	 * @param {boolean} load video
-	 */
-	function loadVideo(videoEl, load) {
-	    var videoSrc = videoEl.getAttribute('data-src');
-	
-	    if (load) {
-	        videoEl.setAttribute('src', videoSrc);
-	    } else {
-	        videoEl.setAttribute('src', '');
-	    }
 	}
 
 /***/ }),

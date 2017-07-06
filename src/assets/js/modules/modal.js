@@ -1,6 +1,6 @@
 import { Delegate } from 'dom-delegate';
 import { addClass, removeClass } from '@pod-point/dom-ops';
-import { isVisible, show, hide, loadVideo } from './../utilities';
+import { isVisible, show, hide } from './../utilities';
 
 let instances = [];
 const MODAL_OPEN = 'is-modal-open';
@@ -17,7 +17,7 @@ class Modal {
         const modalID = this.openButton.getAttribute('data-modal');
         this.modal = document.querySelector(`#${modalID}`);
         this.closeButton = this.modal.querySelector('.modal-close');
-        this.video = this.modal.querySelector('.video-wrapper iframe');
+        this.videoWrapper = this.modal.querySelector('.video-wrapper');
 
         this.bindEvents();
     }
@@ -78,8 +78,6 @@ class Modal {
         addClass(document.documentElement, MODAL_OPEN);
         show(this.modal);
 
-        if (this.video) { loadVideo(this.video, true); }
-
         const overlay = document.createElement('div');
         overlay.className = 'modal-overlay';
         document.body.appendChild(overlay);
@@ -92,7 +90,14 @@ class Modal {
         removeClass(document.documentElement, MODAL_OPEN);
         hide(this.modal);
 
-        if (this.video) { loadVideo(this.video, false); }
+        if (this.videoWrapper) {
+            const wrapperId = this.videoWrapper.getAttribute('id');
+            if (window[wrapperId].pause) {
+                window[wrapperId].pause();
+            } else if (window[wrapperId].pauseVideo) {
+                window[wrapperId].pauseVideo();
+            }
+        }
 
         const overlay = document.querySelector('.modal-overlay');
         if (overlay !== null) { document.body.removeChild(overlay); }
