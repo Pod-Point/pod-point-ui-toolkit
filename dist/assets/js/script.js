@@ -563,6 +563,7 @@
 	
 	module.exports = exports['default'];
 
+
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
@@ -600,7 +601,7 @@
 	    ==============================================================
 	*/
 	function select(selector) {
-	    var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
+	    var root = arguments.length <= 1 || arguments[1] === undefined ? document : arguments[1];
 	
 	    var selection = root.querySelectorAll(selector);
 	
@@ -608,7 +609,7 @@
 	}
 	
 	function selectFirst(selector) {
-	    var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
+	    var root = arguments.length <= 1 || arguments[1] === undefined ? document : arguments[1];
 	
 	    return root.querySelector(selector);
 	}
@@ -660,7 +661,7 @@
 	    ==============================================================
 	*/
 	function create() {
-	    var tag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'div';
+	    var tag = arguments.length <= 0 || arguments[0] === undefined ? 'div' : arguments[0];
 	
 	    return document.createElement(tag);
 	}
@@ -748,7 +749,7 @@
 	}
 	
 	function whenReady(callback) {
-	    if (document.readyState != 'loading' && document.body != null) {
+	    if (document.readyState != 'loading') {
 	        callback();
 	    } else {
 	        document.addEventListener('DOMContentLoaded', callback);
@@ -817,7 +818,7 @@
 	        var modalID = this.openButton.getAttribute('data-modal');
 	        this.modal = document.querySelector('#' + modalID);
 	        this.closeButton = this.modal.querySelector('.modal-close');
-	        this.video = this.modal.querySelector('.video-wrapper iframe');
+	        this.videoWrapper = this.modal.querySelector('.video-wrapper');
 	
 	        this.bindEvents();
 	    }
@@ -882,10 +883,6 @@
 	            (0, _domOps.addClass)(document.documentElement, MODAL_OPEN);
 	            (0, _utilities.show)(this.modal);
 	
-	            if (this.video) {
-	                (0, _utilities.loadVideo)(this.video, true);
-	            }
-	
 	            var overlay = document.createElement('div');
 	            overlay.className = 'modal-overlay';
 	            document.body.appendChild(overlay);
@@ -901,8 +898,13 @@
 	            (0, _domOps.removeClass)(document.documentElement, MODAL_OPEN);
 	            (0, _utilities.hide)(this.modal);
 	
-	            if (this.video) {
-	                (0, _utilities.loadVideo)(this.video, false);
+	            if (this.videoWrapper) {
+	                var wrapperId = this.videoWrapper.getAttribute('id');
+	                if (window[wrapperId].pause) {
+	                    window[wrapperId].pause();
+	                } else if (window[wrapperId].pauseVideo) {
+	                    window[wrapperId].pauseVideo();
+	                }
 	            }
 	
 	            var overlay = document.querySelector('.modal-overlay');
@@ -964,7 +966,6 @@
 	exports.aRadioContains = aRadioContains;
 	exports.getRandomInt = getRandomInt;
 	exports.roundNumberTo = roundNumberTo;
-	exports.loadVideo = loadVideo;
 	exports.registerEvent = registerEvent;
 	exports.removeEvents = removeEvents;
 	
@@ -1150,22 +1151,6 @@
 	function roundNumberTo(num, roundTo) {
 	    var resto = num % roundTo;
 	    return resto <= roundTo / 2 ? num - resto : num + roundTo - resto;
-	}
-	
-	/**
-	 * Load or destroy video by replacing the src from the data-src
-	 *
-	 * @param {element} video
-	 * @param {boolean} load video
-	 */
-	function loadVideo(videoEl, load) {
-	    var videoSrc = videoEl.getAttribute('data-src');
-	
-	    if (load) {
-	        videoEl.setAttribute('src', videoSrc);
-	    } else {
-	        videoEl.setAttribute('src', '');
-	    }
 	}
 	
 	/**
@@ -4447,14 +4432,14 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	 * Flickity v2.0.9
+	 * Flickity v2.0.8
 	 * Touch, responsive, flickable carousels
 	 *
 	 * Licensed GPLv3 for open source use
 	 * or Flickity Commercial License for commercial use
 	 *
 	 * http://flickity.metafizzy.co
-	 * Copyright 2017 Metafizzy
+	 * Copyright 2016 Metafizzy
 	 */
 	
 	( function( window, factory ) {
@@ -5436,14 +5421,13 @@
 	  if ( !listeners || !listeners.length ) {
 	    return;
 	  }
-	  // copy over to avoid interference if .off() in listener
-	  listeners = listeners.slice(0);
+	  var i = 0;
+	  var listener = listeners[i];
 	  args = args || [];
 	  // once stuff
 	  var onceListeners = this._onceEvents && this._onceEvents[ eventName ];
 	
-	  for ( var i=0; i < listeners.length; i++ ) {
-	    var listener = listeners[i]
+	  while ( listener ) {
 	    var isOnce = onceListeners && onceListeners[ listener ];
 	    if ( isOnce ) {
 	      // remove listener
@@ -5454,12 +5438,16 @@
 	    }
 	    // trigger listener
 	    listener.apply( this, args );
+	    // get next listener
+	    i += isOnce ? 0 : 1;
+	    listener = listeners[i];
 	  }
 	
 	  return this;
 	};
 	
-	proto.allOff = function() {
+	proto.allOff =
+	proto.removeAllListeners = function() {
 	  delete this._events;
 	  delete this._onceEvents;
 	};
@@ -6444,7 +6432,6 @@
 	
 	var proto = Flickity.prototype;
 	utils.extend( proto, Unidragger.prototype );
-	proto._touchActionValue = 'pan-y';
 	
 	// --------------------------  -------------------------- //
 	
@@ -6791,7 +6778,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	 * Unidragger v2.2.3
+	 * Unidragger v2.2.2
 	 * Draggable base class
 	 * MIT license
 	 */
@@ -6860,13 +6847,10 @@
 	    // touch-action: none to override browser touch gestures
 	    // metafizzy/flickity#540
 	    if ( window.PointerEvent ) {
-	      handle.style.touchAction = isBind ? this._touchActionValue : '';
+	      handle.style.touchAction = isBind ? 'none' : '';
 	    }
 	  }
 	};
-	
-	// prototype so it can be overwriteable by Flickity
-	proto._touchActionValue = 'none';
 	
 	// ----- start event ----- //
 	
