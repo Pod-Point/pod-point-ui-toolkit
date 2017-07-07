@@ -8,7 +8,7 @@ class Video {
     /**
      * Creates a new video in an iframe, from a div wrapper
      *
-     * @param videoWrapper
+     * @param {element} videoWrapper
      */
     constructor(videoWrapper) {
         const wrapperId = videoWrapper.getAttribute('id');
@@ -45,9 +45,6 @@ class Video {
                 };
 
                 window[wrapperId] = YouTubePlayer(videoDiv, options);
-                break;
-            }
-            default: {
                 break;
             }
         }
