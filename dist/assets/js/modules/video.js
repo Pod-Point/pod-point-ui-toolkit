@@ -23,7 +23,7 @@ var Video =
 /**
  * Creates a new video in an iframe, from a div wrapper
  *
- * @param videoWrapper
+ * @param {element} videoWrapper
  */
 function Video(videoWrapper) {
     _classCallCheck(this, Video);
@@ -64,10 +64,6 @@ function Video(videoWrapper) {
                 };
 
                 window[wrapperId] = (0, _youtubePlayer2.default)(videoDiv, _options);
-                break;
-            }
-        default:
-            {
                 break;
             }
     }
