@@ -102,6 +102,10 @@
 	
 	var addressLookup = _interopRequireWildcard(_addressLookup);
 	
+	var _video = __webpack_require__(46);
+	
+	var _video2 = _interopRequireDefault(_video);
+	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -122,7 +126,8 @@
 	            headerNav: _headerNav2.default,
 	            accordion: _accordion2.default,
 	            carousel: _carousel2.default,
-	            addressLookup: addressLookup
+	            addressLookup: addressLookup,
+	            video: _video2.default
 	        })
 	    });
 	});
@@ -563,7 +568,6 @@
 	
 	module.exports = exports['default'];
 
-
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
@@ -601,7 +605,7 @@
 	    ==============================================================
 	*/
 	function select(selector) {
-	    var root = arguments.length <= 1 || arguments[1] === undefined ? document : arguments[1];
+	    var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
 	
 	    var selection = root.querySelectorAll(selector);
 	
@@ -609,7 +613,7 @@
 	}
 	
 	function selectFirst(selector) {
-	    var root = arguments.length <= 1 || arguments[1] === undefined ? document : arguments[1];
+	    var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
 	
 	    return root.querySelector(selector);
 	}
@@ -661,7 +665,7 @@
 	    ==============================================================
 	*/
 	function create() {
-	    var tag = arguments.length <= 0 || arguments[0] === undefined ? 'div' : arguments[0];
+	    var tag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'div';
 	
 	    return document.createElement(tag);
 	}
@@ -749,7 +753,7 @@
 	}
 	
 	function whenReady(callback) {
-	    if (document.readyState != 'loading') {
+	    if (document.readyState != 'loading' && document.body != null) {
 	        callback();
 	    } else {
 	        document.addEventListener('DOMContentLoaded', callback);
@@ -4432,14 +4436,14 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	 * Flickity v2.0.8
+	 * Flickity v2.0.9
 	 * Touch, responsive, flickable carousels
 	 *
 	 * Licensed GPLv3 for open source use
 	 * or Flickity Commercial License for commercial use
 	 *
 	 * http://flickity.metafizzy.co
-	 * Copyright 2016 Metafizzy
+	 * Copyright 2017 Metafizzy
 	 */
 	
 	( function( window, factory ) {
@@ -5421,13 +5425,14 @@
 	  if ( !listeners || !listeners.length ) {
 	    return;
 	  }
-	  var i = 0;
-	  var listener = listeners[i];
+	  // copy over to avoid interference if .off() in listener
+	  listeners = listeners.slice(0);
 	  args = args || [];
 	  // once stuff
 	  var onceListeners = this._onceEvents && this._onceEvents[ eventName ];
 	
-	  while ( listener ) {
+	  for ( var i=0; i < listeners.length; i++ ) {
+	    var listener = listeners[i]
 	    var isOnce = onceListeners && onceListeners[ listener ];
 	    if ( isOnce ) {
 	      // remove listener
@@ -5438,16 +5443,12 @@
 	    }
 	    // trigger listener
 	    listener.apply( this, args );
-	    // get next listener
-	    i += isOnce ? 0 : 1;
-	    listener = listeners[i];
 	  }
 	
 	  return this;
 	};
 	
-	proto.allOff =
-	proto.removeAllListeners = function() {
+	proto.allOff = function() {
 	  delete this._events;
 	  delete this._onceEvents;
 	};
@@ -6432,6 +6433,7 @@
 	
 	var proto = Flickity.prototype;
 	utils.extend( proto, Unidragger.prototype );
+	proto._touchActionValue = 'pan-y';
 	
 	// --------------------------  -------------------------- //
 	
@@ -6778,7 +6780,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	 * Unidragger v2.2.2
+	 * Unidragger v2.2.3
 	 * Draggable base class
 	 * MIT license
 	 */
@@ -6847,10 +6849,13 @@
 	    // touch-action: none to override browser touch gestures
 	    // metafizzy/flickity#540
 	    if ( window.PointerEvent ) {
-	      handle.style.touchAction = isBind ? 'none' : '';
+	      handle.style.touchAction = isBind ? this._touchActionValue : '';
 	    }
 	  }
 	};
+	
+	// prototype so it can be overwriteable by Flickity
+	proto._touchActionValue = 'none';
 	
 	// ----- start event ----- //
 	
@@ -8489,6 +8494,3760 @@
 	exports.initAutocomplete = initAutocomplete;
 	exports.fillInAddress = fillInAddress;
 	exports.geolocate = geolocate;
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _player = __webpack_require__(47);
+	
+	var _player2 = _interopRequireDefault(_player);
+	
+	var _youtubePlayer = __webpack_require__(51);
+	
+	var _youtubePlayer2 = _interopRequireDefault(_youtubePlayer);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var instances = [];
+	
+	var Video =
+	
+	/**
+	 * Creates a new video in an iframe, from a div wrapper
+	 *
+	 * @param {element} videoWrapper
+	 */
+	function Video(videoWrapper) {
+	    _classCallCheck(this, Video);
+	
+	    var wrapperId = videoWrapper.getAttribute('id');
+	    var videoType = videoWrapper.getAttribute('data-video-type');
+	    var videoId = videoWrapper.getAttribute('data-video-id');
+	    var videoWidth = videoWrapper.getAttribute('data-video-width');
+	    var videoHeight = videoWrapper.getAttribute('data-video-height');
+	    var videoFullscreen = videoWrapper.getAttribute('data-video-fullscreen') === 'true';
+	
+	    switch (videoType) {
+	        case 'vimeo':
+	            {
+	                var options = {
+	                    id: videoId,
+	                    width: videoWidth,
+	                    height: videoHeight
+	                };
+	
+	                window[wrapperId] = new _player2.default(videoWrapper, options);
+	                break;
+	            }
+	        case 'youtube':
+	            {
+	                // YouTube player needs an extra child div to create iframe from so we don't replace wrapper
+	                var videoDiv = document.createElement('div');
+	                videoWrapper.appendChild(videoDiv);
+	
+	                var _options = {
+	                    width: videoWidth,
+	                    height: videoHeight,
+	                    videoId: videoId,
+	                    playerVars: {
+	                        fs: videoFullscreen ? 1 : 0,
+	                        rel: 0
+	                    }
+	                };
+	
+	                window[wrapperId] = (0, _youtubePlayer2.default)(videoDiv, _options);
+	                break;
+	            }
+	    }
+	};
+	
+	exports.default = {
+	    init: function init(videoWrapper) {
+	        instances.push(new Video(videoWrapper));
+	    },
+	
+	    destroy: function destroy() {
+	        instances.forEach(function (instance) {
+	            return instance.unbindEvents();
+	        });
+	        instances = [];
+	    }
+	};
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*! @vimeo/player v2.1.0 | (c) 2017 Vimeo | MIT License | https://github.com/vimeo/player.js */
+	(function (global, factory) {
+		 true ? module.exports = factory() :
+		typeof define === 'function' && define.amd ? define(factory) :
+		(global.Vimeo = global.Vimeo || {}, global.Vimeo.Player = factory());
+	}(this, (function () { 'use strict';
+	
+	var arrayIndexOfSupport = typeof Array.prototype.indexOf !== 'undefined';
+	var postMessageSupport = typeof window.postMessage !== 'undefined';
+	
+	if (!arrayIndexOfSupport || !postMessageSupport) {
+	    throw new Error('Sorry, the Vimeo Player API is not available in this browser.');
+	}
+	
+	var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+	
+	
+	
+	
+	
+	function createCommonjsModule(fn, module) {
+		return module = { exports: {} }, fn(module, module.exports), module.exports;
+	}
+	
+	var index = createCommonjsModule(function (module, exports) {
+	(function (exports) {
+	  'use strict';
+	  //shared pointer
+	
+	  var i;
+	  //shortcuts
+	  var defineProperty = Object.defineProperty,
+	      is = function is(a, b) {
+	    return a === b || a !== a && b !== b;
+	  };
+	
+	  //Polyfill global objects
+	  if (typeof WeakMap == 'undefined') {
+	    exports.WeakMap = createCollection({
+	      // WeakMap#delete(key:void*):boolean
+	      'delete': sharedDelete,
+	      // WeakMap#clear():
+	      clear: sharedClear,
+	      // WeakMap#get(key:void*):void*
+	      get: sharedGet,
+	      // WeakMap#has(key:void*):boolean
+	      has: mapHas,
+	      // WeakMap#set(key:void*, value:void*):void
+	      set: sharedSet
+	    }, true);
+	  }
+	
+	  if (typeof Map == 'undefined' || typeof new Map().values !== 'function' || !new Map().values().next) {
+	    exports.Map = createCollection({
+	      // WeakMap#delete(key:void*):boolean
+	      'delete': sharedDelete,
+	      //:was Map#get(key:void*[, d3fault:void*]):void*
+	      // Map#has(key:void*):boolean
+	      has: mapHas,
+	      // Map#get(key:void*):boolean
+	      get: sharedGet,
+	      // Map#set(key:void*, value:void*):void
+	      set: sharedSet,
+	      // Map#keys(void):Iterator
+	      keys: sharedKeys,
+	      // Map#values(void):Iterator
+	      values: sharedValues,
+	      // Map#entries(void):Iterator
+	      entries: mapEntries,
+	      // Map#forEach(callback:Function, context:void*):void ==> callback.call(context, key, value, mapObject) === not in specs`
+	      forEach: sharedForEach,
+	      // Map#clear():
+	      clear: sharedClear
+	    });
+	  }
+	
+	  if (typeof Set == 'undefined' || typeof new Set().values !== 'function' || !new Set().values().next) {
+	    exports.Set = createCollection({
+	      // Set#has(value:void*):boolean
+	      has: setHas,
+	      // Set#add(value:void*):boolean
+	      add: sharedAdd,
+	      // Set#delete(key:void*):boolean
+	      'delete': sharedDelete,
+	      // Set#clear():
+	      clear: sharedClear,
+	      // Set#keys(void):Iterator
+	      keys: sharedValues, // specs actually say "the same function object as the initial value of the values property"
+	      // Set#values(void):Iterator
+	      values: sharedValues,
+	      // Set#entries(void):Iterator
+	      entries: setEntries,
+	      // Set#forEach(callback:Function, context:void*):void ==> callback.call(context, value, index) === not in specs
+	      forEach: sharedForEach
+	    });
+	  }
+	
+	  if (typeof WeakSet == 'undefined') {
+	    exports.WeakSet = createCollection({
+	      // WeakSet#delete(key:void*):boolean
+	      'delete': sharedDelete,
+	      // WeakSet#add(value:void*):boolean
+	      add: sharedAdd,
+	      // WeakSet#clear():
+	      clear: sharedClear,
+	      // WeakSet#has(value:void*):boolean
+	      has: setHas
+	    }, true);
+	  }
+	
+	  /**
+	   * ES6 collection constructor
+	   * @return {Function} a collection class
+	   */
+	  function createCollection(proto, objectOnly) {
+	    function Collection(a) {
+	      if (!this || this.constructor !== Collection) return new Collection(a);
+	      this._keys = [];
+	      this._values = [];
+	      this._itp = []; // iteration pointers
+	      this.objectOnly = objectOnly;
+	
+	      //parse initial iterable argument passed
+	      if (a) init.call(this, a);
+	    }
+	
+	    //define size for non object-only collections
+	    if (!objectOnly) {
+	      defineProperty(proto, 'size', {
+	        get: sharedSize
+	      });
+	    }
+	
+	    //set prototype
+	    proto.constructor = Collection;
+	    Collection.prototype = proto;
+	
+	    return Collection;
+	  }
+	
+	  /** parse initial iterable argument passed */
+	  function init(a) {
+	    var i;
+	    //init Set argument, like `[1,2,3,{}]`
+	    if (this.add) a.forEach(this.add, this);
+	    //init Map argument like `[[1,2], [{}, 4]]`
+	    else a.forEach(function (a) {
+	        this.set(a[0], a[1]);
+	      }, this);
+	  }
+	
+	  /** delete */
+	  function sharedDelete(key) {
+	    if (this.has(key)) {
+	      this._keys.splice(i, 1);
+	      this._values.splice(i, 1);
+	      // update iteration pointers
+	      this._itp.forEach(function (p) {
+	        if (i < p[0]) p[0]--;
+	      });
+	    }
+	    // Aurora here does it while Canary doesn't
+	    return -1 < i;
+	  }
+	
+	  function sharedGet(key) {
+	    return this.has(key) ? this._values[i] : undefined;
+	  }
+	
+	  function has(list, key) {
+	    if (this.objectOnly && key !== Object(key)) throw new TypeError("Invalid value used as weak collection key");
+	    //NaN or 0 passed
+	    if (key != key || key === 0) for (i = list.length; i-- && !is(list[i], key);) {} else i = list.indexOf(key);
+	    return -1 < i;
+	  }
+	
+	  function setHas(value) {
+	    return has.call(this, this._values, value);
+	  }
+	
+	  function mapHas(value) {
+	    return has.call(this, this._keys, value);
+	  }
+	
+	  /** @chainable */
+	  function sharedSet(key, value) {
+	    this.has(key) ? this._values[i] = value : this._values[this._keys.push(key) - 1] = value;
+	    return this;
+	  }
+	
+	  /** @chainable */
+	  function sharedAdd(value) {
+	    if (!this.has(value)) this._values.push(value);
+	    return this;
+	  }
+	
+	  function sharedClear() {
+	    (this._keys || 0).length = this._values.length = 0;
+	  }
+	
+	  /** keys, values, and iterate related methods */
+	  function sharedKeys() {
+	    return sharedIterator(this._itp, this._keys);
+	  }
+	
+	  function sharedValues() {
+	    return sharedIterator(this._itp, this._values);
+	  }
+	
+	  function mapEntries() {
+	    return sharedIterator(this._itp, this._keys, this._values);
+	  }
+	
+	  function setEntries() {
+	    return sharedIterator(this._itp, this._values, this._values);
+	  }
+	
+	  function sharedIterator(itp, array, array2) {
+	    var p = [0],
+	        done = false;
+	    itp.push(p);
+	    return {
+	      next: function next() {
+	        var v,
+	            k = p[0];
+	        if (!done && k < array.length) {
+	          v = array2 ? [array[k], array2[k]] : array[k];
+	          p[0]++;
+	        } else {
+	          done = true;
+	          itp.splice(itp.indexOf(p), 1);
+	        }
+	        return { done: done, value: v };
+	      }
+	    };
+	  }
+	
+	  function sharedSize() {
+	    return this._values.length;
+	  }
+	
+	  function sharedForEach(callback, context) {
+	    var it = this.entries();
+	    for (;;) {
+	      var r = it.next();
+	      if (r.done) break;
+	      callback.call(context, r.value[1], r.value[0], this);
+	    }
+	  }
+	})('object' != 'undefined' && typeof commonjsGlobal != 'undefined' ? commonjsGlobal : window);
+	});
+	
+	var npo_src = createCommonjsModule(function (module) {
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	
+	/*! Native Promise Only
+	    v0.8.1 (c) Kyle Simpson
+	    MIT License: http://getify.mit-license.org
+	*/
+	
+	(function UMD(name, context, definition) {
+		// special form of UMD for polyfilling across evironments
+		context[name] = context[name] || definition();
+		if ('object' != "undefined" && module.exports) {
+			module.exports = context[name];
+		} else if (false) {
+			undefined(function $AMD$() {
+				return context[name];
+			});
+		}
+	})("Promise", typeof commonjsGlobal != "undefined" ? commonjsGlobal : commonjsGlobal, function DEF() {
+		/*jshint validthis:true */
+		"use strict";
+	
+		var builtInProp,
+		    cycle,
+		    scheduling_queue,
+		    ToString = Object.prototype.toString,
+		    timer = typeof setImmediate != "undefined" ? function timer(fn) {
+			return setImmediate(fn);
+		} : setTimeout;
+	
+		// dammit, IE8.
+		try {
+			Object.defineProperty({}, "x", {});
+			builtInProp = function builtInProp(obj, name, val, config) {
+				return Object.defineProperty(obj, name, {
+					value: val,
+					writable: true,
+					configurable: config !== false
+				});
+			};
+		} catch (err) {
+			builtInProp = function builtInProp(obj, name, val) {
+				obj[name] = val;
+				return obj;
+			};
+		}
+	
+		// Note: using a queue instead of array for efficiency
+		scheduling_queue = function Queue() {
+			var first, last, item;
+	
+			function Item(fn, self) {
+				this.fn = fn;
+				this.self = self;
+				this.next = void 0;
+			}
+	
+			return {
+				add: function add(fn, self) {
+					item = new Item(fn, self);
+					if (last) {
+						last.next = item;
+					} else {
+						first = item;
+					}
+					last = item;
+					item = void 0;
+				},
+				drain: function drain() {
+					var f = first;
+					first = last = cycle = void 0;
+	
+					while (f) {
+						f.fn.call(f.self);
+						f = f.next;
+					}
+				}
+			};
+		}();
+	
+		function schedule(fn, self) {
+			scheduling_queue.add(fn, self);
+			if (!cycle) {
+				cycle = timer(scheduling_queue.drain);
+			}
+		}
+	
+		// promise duck typing
+		function isThenable(o) {
+			var _then,
+			    o_type = typeof o === "undefined" ? "undefined" : _typeof(o);
+	
+			if (o != null && (o_type == "object" || o_type == "function")) {
+				_then = o.then;
+			}
+			return typeof _then == "function" ? _then : false;
+		}
+	
+		function notify() {
+			for (var i = 0; i < this.chain.length; i++) {
+				notifyIsolated(this, this.state === 1 ? this.chain[i].success : this.chain[i].failure, this.chain[i]);
+			}
+			this.chain.length = 0;
+		}
+	
+		// NOTE: This is a separate function to isolate
+		// the `try..catch` so that other code can be
+		// optimized better
+		function notifyIsolated(self, cb, chain) {
+			var ret, _then;
+			try {
+				if (cb === false) {
+					chain.reject(self.msg);
+				} else {
+					if (cb === true) {
+						ret = self.msg;
+					} else {
+						ret = cb.call(void 0, self.msg);
+					}
+	
+					if (ret === chain.promise) {
+						chain.reject(TypeError("Promise-chain cycle"));
+					} else if (_then = isThenable(ret)) {
+						_then.call(ret, chain.resolve, chain.reject);
+					} else {
+						chain.resolve(ret);
+					}
+				}
+			} catch (err) {
+				chain.reject(err);
+			}
+		}
+	
+		function resolve(msg) {
+			var _then,
+			    self = this;
+	
+			// already triggered?
+			if (self.triggered) {
+				return;
+			}
+	
+			self.triggered = true;
+	
+			// unwrap
+			if (self.def) {
+				self = self.def;
+			}
+	
+			try {
+				if (_then = isThenable(msg)) {
+					schedule(function () {
+						var def_wrapper = new MakeDefWrapper(self);
+						try {
+							_then.call(msg, function $resolve$() {
+								resolve.apply(def_wrapper, arguments);
+							}, function $reject$() {
+								reject.apply(def_wrapper, arguments);
+							});
+						} catch (err) {
+							reject.call(def_wrapper, err);
+						}
+					});
+				} else {
+					self.msg = msg;
+					self.state = 1;
+					if (self.chain.length > 0) {
+						schedule(notify, self);
+					}
+				}
+			} catch (err) {
+				reject.call(new MakeDefWrapper(self), err);
+			}
+		}
+	
+		function reject(msg) {
+			var self = this;
+	
+			// already triggered?
+			if (self.triggered) {
+				return;
+			}
+	
+			self.triggered = true;
+	
+			// unwrap
+			if (self.def) {
+				self = self.def;
+			}
+	
+			self.msg = msg;
+			self.state = 2;
+			if (self.chain.length > 0) {
+				schedule(notify, self);
+			}
+		}
+	
+		function iteratePromises(Constructor, arr, resolver, rejecter) {
+			for (var idx = 0; idx < arr.length; idx++) {
+				(function IIFE(idx) {
+					Constructor.resolve(arr[idx]).then(function $resolver$(msg) {
+						resolver(idx, msg);
+					}, rejecter);
+				})(idx);
+			}
+		}
+	
+		function MakeDefWrapper(self) {
+			this.def = self;
+			this.triggered = false;
+		}
+	
+		function MakeDef(self) {
+			this.promise = self;
+			this.state = 0;
+			this.triggered = false;
+			this.chain = [];
+			this.msg = void 0;
+		}
+	
+		function Promise(executor) {
+			if (typeof executor != "function") {
+				throw TypeError("Not a function");
+			}
+	
+			if (this.__NPO__ !== 0) {
+				throw TypeError("Not a promise");
+			}
+	
+			// instance shadowing the inherited "brand"
+			// to signal an already "initialized" promise
+			this.__NPO__ = 1;
+	
+			var def = new MakeDef(this);
+	
+			this["then"] = function then(success, failure) {
+				var o = {
+					success: typeof success == "function" ? success : true,
+					failure: typeof failure == "function" ? failure : false
+				};
+				// Note: `then(..)` itself can be borrowed to be used against
+				// a different promise constructor for making the chained promise,
+				// by substituting a different `this` binding.
+				o.promise = new this.constructor(function extractChain(resolve, reject) {
+					if (typeof resolve != "function" || typeof reject != "function") {
+						throw TypeError("Not a function");
+					}
+	
+					o.resolve = resolve;
+					o.reject = reject;
+				});
+				def.chain.push(o);
+	
+				if (def.state !== 0) {
+					schedule(notify, def);
+				}
+	
+				return o.promise;
+			};
+			this["catch"] = function $catch$(failure) {
+				return this.then(void 0, failure);
+			};
+	
+			try {
+				executor.call(void 0, function publicResolve(msg) {
+					resolve.call(def, msg);
+				}, function publicReject(msg) {
+					reject.call(def, msg);
+				});
+			} catch (err) {
+				reject.call(def, err);
+			}
+		}
+	
+		var PromisePrototype = builtInProp({}, "constructor", Promise,
+		/*configurable=*/false);
+	
+		// Note: Android 4 cannot use `Object.defineProperty(..)` here
+		Promise.prototype = PromisePrototype;
+	
+		// built-in "brand" to signal an "uninitialized" promise
+		builtInProp(PromisePrototype, "__NPO__", 0,
+		/*configurable=*/false);
+	
+		builtInProp(Promise, "resolve", function Promise$resolve(msg) {
+			var Constructor = this;
+	
+			// spec mandated checks
+			// note: best "isPromise" check that's practical for now
+			if (msg && (typeof msg === "undefined" ? "undefined" : _typeof(msg)) == "object" && msg.__NPO__ === 1) {
+				return msg;
+			}
+	
+			return new Constructor(function executor(resolve, reject) {
+				if (typeof resolve != "function" || typeof reject != "function") {
+					throw TypeError("Not a function");
+				}
+	
+				resolve(msg);
+			});
+		});
+	
+		builtInProp(Promise, "reject", function Promise$reject(msg) {
+			return new this(function executor(resolve, reject) {
+				if (typeof resolve != "function" || typeof reject != "function") {
+					throw TypeError("Not a function");
+				}
+	
+				reject(msg);
+			});
+		});
+	
+		builtInProp(Promise, "all", function Promise$all(arr) {
+			var Constructor = this;
+	
+			// spec mandated checks
+			if (ToString.call(arr) != "[object Array]") {
+				return Constructor.reject(TypeError("Not an array"));
+			}
+			if (arr.length === 0) {
+				return Constructor.resolve([]);
+			}
+	
+			return new Constructor(function executor(resolve, reject) {
+				if (typeof resolve != "function" || typeof reject != "function") {
+					throw TypeError("Not a function");
+				}
+	
+				var len = arr.length,
+				    msgs = Array(len),
+				    count = 0;
+	
+				iteratePromises(Constructor, arr, function resolver(idx, msg) {
+					msgs[idx] = msg;
+					if (++count === len) {
+						resolve(msgs);
+					}
+				}, reject);
+			});
+		});
+	
+		builtInProp(Promise, "race", function Promise$race(arr) {
+			var Constructor = this;
+	
+			// spec mandated checks
+			if (ToString.call(arr) != "[object Array]") {
+				return Constructor.reject(TypeError("Not an array"));
+			}
+	
+			return new Constructor(function executor(resolve, reject) {
+				if (typeof resolve != "function" || typeof reject != "function") {
+					throw TypeError("Not a function");
+				}
+	
+				iteratePromises(Constructor, arr, function resolver(idx, msg) {
+					resolve(msg);
+				}, reject);
+			});
+		});
+	
+		return Promise;
+	});
+	});
+	
+	/**
+	 * @module lib/callbacks
+	 */
+	
+	var callbackMap = new WeakMap();
+	
+	/**
+	 * Store a callback for a method or event for a player.
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @param {Player} player The player object.
+	 * @param {string} name The method or event name.
+	 * @param {(function(this:Player, *): void|{resolve: function, reject: function})} callback
+	 *        The callback to call or an object with resolve and reject functions for a promise.
+	 * @return {void}
+	 */
+	function storeCallback(player, name, callback) {
+	    var playerCallbacks = callbackMap.get(player.element) || {};
+	
+	    if (!(name in playerCallbacks)) {
+	        playerCallbacks[name] = [];
+	    }
+	
+	    playerCallbacks[name].push(callback);
+	    callbackMap.set(player.element, playerCallbacks);
+	}
+	
+	/**
+	 * Get the callbacks for a player and event or method.
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @param {Player} player The player object.
+	 * @param {string} name The method or event name
+	 * @return {function[]}
+	 */
+	function getCallbacks(player, name) {
+	    var playerCallbacks = callbackMap.get(player.element) || {};
+	    return playerCallbacks[name] || [];
+	}
+	
+	/**
+	 * Remove a stored callback for a method or event for a player.
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @param {Player} player The player object.
+	 * @param {string} name The method or event name
+	 * @param {function} [callback] The specific callback to remove.
+	 * @return {boolean} Was this the last callback?
+	 */
+	function removeCallback(player, name, callback) {
+	    var playerCallbacks = callbackMap.get(player.element) || {};
+	
+	    if (!playerCallbacks[name]) {
+	        return true;
+	    }
+	
+	    // If no callback is passed, remove all callbacks for the event
+	    if (!callback) {
+	        playerCallbacks[name] = [];
+	        callbackMap.set(player.element, playerCallbacks);
+	
+	        return true;
+	    }
+	
+	    var index = playerCallbacks[name].indexOf(callback);
+	
+	    if (index !== -1) {
+	        playerCallbacks[name].splice(index, 1);
+	    }
+	
+	    callbackMap.set(player.element, playerCallbacks);
+	    return playerCallbacks[name] && playerCallbacks[name].length === 0;
+	}
+	
+	/**
+	 * Return the first stored callback for a player and event or method.
+	 *
+	 * @param {Player} player The player object.
+	 * @param {string} name The method or event name.
+	 * @return {function} The callback, or false if there were none
+	 */
+	function shiftCallbacks(player, name) {
+	    var playerCallbacks = getCallbacks(player, name);
+	
+	    if (playerCallbacks.length < 1) {
+	        return false;
+	    }
+	
+	    var callback = playerCallbacks.shift();
+	    removeCallback(player, name, callback);
+	    return callback;
+	}
+	
+	/**
+	 * Move callbacks associated with an element to another element.
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @param {HTMLElement} oldElement The old element.
+	 * @param {HTMLElement} newElement The new element.
+	 * @return {void}
+	 */
+	function swapCallbacks(oldElement, newElement) {
+	    var playerCallbacks = callbackMap.get(oldElement);
+	
+	    callbackMap.set(newElement, playerCallbacks);
+	    callbackMap.delete(oldElement);
+	}
+	
+	/**
+	 * @module lib/functions
+	 */
+	
+	/**
+	 * Get the name of the method for a given getter or setter.
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @param {string} prop The name of the property.
+	 * @param {string} type Either “get” or “set”.
+	 * @return {string}
+	 */
+	function getMethodName(prop, type) {
+	    if (prop.indexOf(type.toLowerCase()) === 0) {
+	        return prop;
+	    }
+	
+	    return '' + type.toLowerCase() + prop.substr(0, 1).toUpperCase() + prop.substr(1);
+	}
+	
+	/**
+	 * Check to see if the object is a DOM Element.
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @param {*} element The object to check.
+	 * @return {boolean}
+	 */
+	function isDomElement(element) {
+	    return element instanceof window.HTMLElement;
+	}
+	
+	/**
+	 * Check to see whether the value is a number.
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @see http://dl.dropboxusercontent.com/u/35146/js/tests/isNumber.html
+	 * @param {*} value The value to check.
+	 * @param {boolean} integer Check if the value is an integer.
+	 * @return {boolean}
+	 */
+	function isInteger(value) {
+	    // eslint-disable-next-line eqeqeq
+	    return !isNaN(parseFloat(value)) && isFinite(value) && Math.floor(value) == value;
+	}
+	
+	/**
+	 * Check to see if the URL is a Vimeo url.
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @param {string} url The url string.
+	 * @return {boolean}
+	 */
+	function isVimeoUrl(url) {
+	    return (/^(https?:)?\/\/((player|www).)?vimeo.com(?=$|\/)/.test(url)
+	    );
+	}
+	
+	/**
+	 * Get the Vimeo URL from an element.
+	 * The element must have either a data-vimeo-id or data-vimeo-url attribute.
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @param {object} oEmbedParameters The oEmbed parameters.
+	 * @return {string}
+	 */
+	function getVimeoUrl() {
+	    var oEmbedParameters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+	
+	    var id = oEmbedParameters.id;
+	    var url = oEmbedParameters.url;
+	    var idOrUrl = id || url;
+	
+	    if (!idOrUrl) {
+	        throw new Error('An id or url must be passed, either in an options object or as a data-vimeo-id or data-vimeo-url attribute.');
+	    }
+	
+	    if (isInteger(idOrUrl)) {
+	        return 'https://vimeo.com/' + idOrUrl;
+	    }
+	
+	    if (isVimeoUrl(idOrUrl)) {
+	        return idOrUrl.replace('http:', 'https:');
+	    }
+	
+	    if (id) {
+	        throw new TypeError('\u201C' + id + '\u201D is not a valid video id.');
+	    }
+	
+	    throw new TypeError('\u201C' + idOrUrl + '\u201D is not a vimeo.com url.');
+	}
+	
+	/**
+	 * @module lib/embed
+	 */
+	
+	var oEmbedParameters = ['id', 'url', 'width', 'maxwidth', 'height', 'maxheight', 'portrait', 'title', 'byline', 'color', 'autoplay', 'autopause', 'loop', 'responsive'];
+	
+	/**
+	 * Get the 'data-vimeo'-prefixed attributes from an element as an object.
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @param {HTMLElement} element The element.
+	 * @param {Object} [defaults={}] The default values to use.
+	 * @return {Object<string, string>}
+	 */
+	function getOEmbedParameters(element) {
+	    var defaults = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	
+	    return oEmbedParameters.reduce(function (params, param) {
+	        var value = element.getAttribute('data-vimeo-' + param);
+	
+	        if (value || value === '') {
+	            params[param] = value === '' ? 1 : value;
+	        }
+	
+	        return params;
+	    }, defaults);
+	}
+	
+	/**
+	 * Make an oEmbed call for the specified URL.
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @param {string} videoUrl The vimeo.com url for the video.
+	 * @param {Object} [params] Parameters to pass to oEmbed.
+	 * @return {Promise}
+	 */
+	function getOEmbedData(videoUrl) {
+	    var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	
+	    return new Promise(function (resolve, reject) {
+	        if (!isVimeoUrl(videoUrl)) {
+	            throw new TypeError('\u201C' + videoUrl + '\u201D is not a vimeo.com url.');
+	        }
+	
+	        var url = 'https://vimeo.com/api/oembed.json?url=' + encodeURIComponent(videoUrl);
+	
+	        for (var param in params) {
+	            if (params.hasOwnProperty(param)) {
+	                url += '&' + param + '=' + encodeURIComponent(params[param]);
+	            }
+	        }
+	
+	        var xhr = 'XDomainRequest' in window ? new XDomainRequest() : new XMLHttpRequest();
+	        xhr.open('GET', url, true);
+	
+	        xhr.onload = function () {
+	            if (xhr.status === 404) {
+	                reject(new Error('\u201C' + videoUrl + '\u201D was not found.'));
+	                return;
+	            }
+	
+	            if (xhr.status === 403) {
+	                reject(new Error('\u201C' + videoUrl + '\u201D is not embeddable.'));
+	                return;
+	            }
+	
+	            try {
+	                var json = JSON.parse(xhr.responseText);
+	                resolve(json);
+	            } catch (error) {
+	                reject(error);
+	            }
+	        };
+	
+	        xhr.onerror = function () {
+	            var status = xhr.status ? ' (' + xhr.status + ')' : '';
+	            reject(new Error('There was an error fetching the embed code from Vimeo' + status + '.'));
+	        };
+	
+	        xhr.send();
+	    });
+	}
+	
+	/**
+	 * Create an embed from oEmbed data inside an element.
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @param {object} data The oEmbed data.
+	 * @param {HTMLElement} element The element to put the iframe in.
+	 * @return {HTMLIFrameElement} The iframe embed.
+	 */
+	function createEmbed(_ref, element) {
+	    var html = _ref.html;
+	
+	    if (!element) {
+	        throw new TypeError('An element must be provided');
+	    }
+	
+	    if (element.getAttribute('data-vimeo-initialized') !== null) {
+	        return element.querySelector('iframe');
+	    }
+	
+	    var div = document.createElement('div');
+	    div.innerHTML = html;
+	
+	    element.appendChild(div.firstChild);
+	    element.setAttribute('data-vimeo-initialized', 'true');
+	
+	    return element.querySelector('iframe');
+	}
+	
+	/**
+	 * Initialize all embeds within a specific element
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @param {HTMLElement} [parent=document] The parent element.
+	 * @return {void}
+	 */
+	function initializeEmbeds() {
+	    var parent = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+	
+	    var elements = [].slice.call(parent.querySelectorAll('[data-vimeo-id], [data-vimeo-url]'));
+	
+	    var handleError = function handleError(error) {
+	        if ('console' in window && console.error) {
+	            console.error('There was an error creating an embed: ' + error);
+	        }
+	    };
+	
+	    elements.forEach(function (element) {
+	        try {
+	            // Skip any that have data-vimeo-defer
+	            if (element.getAttribute('data-vimeo-defer') !== null) {
+	                return;
+	            }
+	
+	            var params = getOEmbedParameters(element);
+	            var url = getVimeoUrl(params);
+	
+	            getOEmbedData(url, params).then(function (data) {
+	                return createEmbed(data, element);
+	            }).catch(handleError);
+	        } catch (error) {
+	            handleError(error);
+	        }
+	    });
+	}
+	
+	/**
+	 * Resize embeds when messaged by the player.
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @param {HTMLElement} [parent=document] The parent element.
+	 * @return {void}
+	 */
+	function resizeEmbeds() {
+	    var parent = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+	
+	    var onMessage = function onMessage(event) {
+	        if (!isVimeoUrl(event.origin)) {
+	            return;
+	        }
+	
+	        if (!event.data || event.data.event !== 'spacechange') {
+	            return;
+	        }
+	
+	        var iframes = parent.querySelectorAll('iframe');
+	
+	        for (var i = 0; i < iframes.length; i++) {
+	            if (iframes[i].contentWindow !== event.source) {
+	                continue;
+	            }
+	
+	            var space = iframes[i].parentElement;
+	
+	            if (space && space.className.indexOf('vimeo-space') !== -1) {
+	                space.style.paddingBottom = event.data.data[0].bottom + 'px';
+	            }
+	
+	            break;
+	        }
+	    };
+	
+	    if (window.addEventListener) {
+	        window.addEventListener('message', onMessage, false);
+	    } else if (window.attachEvent) {
+	        window.attachEvent('onmessage', onMessage);
+	    }
+	}
+	
+	/**
+	 * @module lib/postmessage
+	 */
+	
+	/**
+	 * Parse a message received from postMessage.
+	 *
+	 * @param {*} data The data received from postMessage.
+	 * @return {object}
+	 */
+	function parseMessageData(data) {
+	    if (typeof data === 'string') {
+	        data = JSON.parse(data);
+	    }
+	
+	    return data;
+	}
+	
+	/**
+	 * Post a message to the specified target.
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @param {Player} player The player object to use.
+	 * @param {string} method The API method to call.
+	 * @param {object} params The parameters to send to the player.
+	 * @return {void}
+	 */
+	function postMessage(player, method, params) {
+	    if (!player.element.contentWindow || !player.element.contentWindow.postMessage) {
+	        return;
+	    }
+	
+	    var message = {
+	        method: method
+	    };
+	
+	    if (params !== undefined) {
+	        message.value = params;
+	    }
+	
+	    // IE 8 and 9 do not support passing messages, so stringify them
+	    var ieVersion = parseFloat(navigator.userAgent.toLowerCase().replace(/^.*msie (\d+).*$/, '$1'));
+	    if (ieVersion >= 8 && ieVersion < 10) {
+	        message = JSON.stringify(message);
+	    }
+	
+	    player.element.contentWindow.postMessage(message, player.origin);
+	}
+	
+	/**
+	 * Parse the data received from a message event.
+	 *
+	 * @author Brad Dougherty <brad@vimeo.com>
+	 * @param {Player} player The player that received the message.
+	 * @param {(Object|string)} data The message data. Strings will be parsed into JSON.
+	 * @return {void}
+	 */
+	function processData(player, data) {
+	    data = parseMessageData(data);
+	    var callbacks = [];
+	    var param = void 0;
+	
+	    if (data.event) {
+	        if (data.event === 'error') {
+	            var promises = getCallbacks(player, data.data.method);
+	
+	            promises.forEach(function (promise) {
+	                var error = new Error(data.data.message);
+	                error.name = data.data.name;
+	
+	                promise.reject(error);
+	                removeCallback(player, data.data.method, promise);
+	            });
+	        }
+	
+	        callbacks = getCallbacks(player, 'event:' + data.event);
+	        param = data.data;
+	    } else if (data.method) {
+	        var callback = shiftCallbacks(player, data.method);
+	
+	        if (callback) {
+	            callbacks.push(callback);
+	            param = data.value;
+	        }
+	    }
+	
+	    callbacks.forEach(function (callback) {
+	        try {
+	            if (typeof callback === 'function') {
+	                callback.call(player, param);
+	                return;
+	            }
+	
+	            callback.resolve(param);
+	        } catch (e) {
+	            // empty
+	        }
+	    });
+	}
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var playerMap = new WeakMap();
+	var readyMap = new WeakMap();
+	
+	var Player = function () {
+	    /**
+	    * Create a Player.
+	    *
+	    * @author Brad Dougherty <brad@vimeo.com>
+	    * @param {(HTMLIFrameElement|HTMLElement|string|jQuery)} element A reference to the Vimeo
+	    *        player iframe, and id, or a jQuery object.
+	    * @param {object} [options] oEmbed parameters to use when creating an embed in the element.
+	    * @return {Player}
+	    */
+	    function Player(element) {
+	        var _this = this;
+	
+	        var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	
+	        _classCallCheck(this, Player);
+	
+	        /* global jQuery */
+	        if (window.jQuery && element instanceof jQuery) {
+	            if (element.length > 1 && window.console && console.warn) {
+	                console.warn('A jQuery object with multiple elements was passed, using the first element.');
+	            }
+	
+	            element = element[0];
+	        }
+	
+	        // Find an element by ID
+	        if (typeof element === 'string') {
+	            element = document.getElementById(element);
+	        }
+	
+	        // Not an element!
+	        if (!isDomElement(element)) {
+	            throw new TypeError('You must pass either a valid element or a valid id.');
+	        }
+	
+	        // Already initialized an embed in this div, so grab the iframe
+	        if (element.nodeName !== 'IFRAME') {
+	            var iframe = element.querySelector('iframe');
+	
+	            if (iframe) {
+	                element = iframe;
+	            }
+	        }
+	
+	        // iframe url is not a Vimeo url
+	        if (element.nodeName === 'IFRAME' && !isVimeoUrl(element.getAttribute('src') || '')) {
+	            throw new Error('The player element passed isn’t a Vimeo embed.');
+	        }
+	
+	        // If there is already a player object in the map, return that
+	        if (playerMap.has(element)) {
+	            return playerMap.get(element);
+	        }
+	
+	        this.element = element;
+	        this.origin = '*';
+	
+	        var readyPromise = new npo_src(function (resolve, reject) {
+	            var onMessage = function onMessage(event) {
+	                if (!isVimeoUrl(event.origin) || _this.element.contentWindow !== event.source) {
+	                    return;
+	                }
+	
+	                if (_this.origin === '*') {
+	                    _this.origin = event.origin;
+	                }
+	
+	                var data = parseMessageData(event.data);
+	                var isReadyEvent = 'event' in data && data.event === 'ready';
+	                var isPingResponse = 'method' in data && data.method === 'ping';
+	
+	                if (isReadyEvent || isPingResponse) {
+	                    _this.element.setAttribute('data-ready', 'true');
+	                    resolve();
+	                    return;
+	                }
+	
+	                processData(_this, data);
+	            };
+	
+	            if (window.addEventListener) {
+	                window.addEventListener('message', onMessage, false);
+	            } else if (window.attachEvent) {
+	                window.attachEvent('onmessage', onMessage);
+	            }
+	
+	            if (_this.element.nodeName !== 'IFRAME') {
+	                var params = getOEmbedParameters(element, options);
+	                var url = getVimeoUrl(params);
+	
+	                getOEmbedData(url, params).then(function (data) {
+	                    var iframe = createEmbed(data, element);
+	                    _this.element = iframe;
+	
+	                    swapCallbacks(element, iframe);
+	                    playerMap.set(_this.element, _this);
+	
+	                    return data;
+	                }).catch(function (error) {
+	                    return reject(error);
+	                });
+	            }
+	        });
+	
+	        // Store a copy of this Player in the map
+	        readyMap.set(this, readyPromise);
+	        playerMap.set(this.element, this);
+	
+	        // Send a ping to the iframe so the ready promise will be resolved if
+	        // the player is already ready.
+	        if (this.element.nodeName === 'IFRAME') {
+	            postMessage(this, 'ping');
+	        }
+	
+	        return this;
+	    }
+	
+	    /**
+	     * Get a promise for a method.
+	     *
+	     * @author Brad Dougherty <brad@vimeo.com>
+	     * @param {string} name The API method to call.
+	     * @param {Object} [args={}] Arguments to send via postMessage.
+	     * @return {Promise}
+	     */
+	
+	
+	    _createClass(Player, [{
+	        key: 'callMethod',
+	        value: function callMethod(name) {
+	            var _this2 = this;
+	
+	            var args = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	
+	            return new npo_src(function (resolve, reject) {
+	                // We are storing the resolve/reject handlers to call later, so we
+	                // can’t return here.
+	                // eslint-disable-next-line promise/always-return
+	                return _this2.ready().then(function () {
+	                    storeCallback(_this2, name, {
+	                        resolve: resolve,
+	                        reject: reject
+	                    });
+	
+	                    postMessage(_this2, name, args);
+	                });
+	            });
+	        }
+	
+	        /**
+	         * Get a promise for the value of a player property.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @param {string} name The property name
+	         * @return {Promise}
+	         */
+	
+	    }, {
+	        key: 'get',
+	        value: function get(name) {
+	            var _this3 = this;
+	
+	            return new npo_src(function (resolve, reject) {
+	                name = getMethodName(name, 'get');
+	
+	                // We are storing the resolve/reject handlers to call later, so we
+	                // can’t return here.
+	                // eslint-disable-next-line promise/always-return
+	                return _this3.ready().then(function () {
+	                    storeCallback(_this3, name, {
+	                        resolve: resolve,
+	                        reject: reject
+	                    });
+	
+	                    postMessage(_this3, name);
+	                });
+	            });
+	        }
+	
+	        /**
+	         * Get a promise for setting the value of a player property.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @param {string} name The API method to call.
+	         * @param {mixed} value The value to set.
+	         * @return {Promise}
+	         */
+	
+	    }, {
+	        key: 'set',
+	        value: function set(name, value) {
+	            var _this4 = this;
+	
+	            return npo_src.resolve(value).then(function (val) {
+	                name = getMethodName(name, 'set');
+	
+	                if (val === undefined || val === null) {
+	                    throw new TypeError('There must be a value to set.');
+	                }
+	
+	                return _this4.ready().then(function () {
+	                    return new npo_src(function (resolve, reject) {
+	                        storeCallback(_this4, name, {
+	                            resolve: resolve,
+	                            reject: reject
+	                        });
+	
+	                        postMessage(_this4, name, val);
+	                    });
+	                });
+	            });
+	        }
+	
+	        /**
+	         * Add an event listener for the specified event. Will call the
+	         * callback with a single parameter, `data`, that contains the data for
+	         * that event.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @param {string} eventName The name of the event.
+	         * @param {function(*)} callback The function to call when the event fires.
+	         * @return {void}
+	         */
+	
+	    }, {
+	        key: 'on',
+	        value: function on(eventName, callback) {
+	            if (!eventName) {
+	                throw new TypeError('You must pass an event name.');
+	            }
+	
+	            if (!callback) {
+	                throw new TypeError('You must pass a callback function.');
+	            }
+	
+	            if (typeof callback !== 'function') {
+	                throw new TypeError('The callback must be a function.');
+	            }
+	
+	            var callbacks = getCallbacks(this, 'event:' + eventName);
+	            if (callbacks.length === 0) {
+	                this.callMethod('addEventListener', eventName).catch(function () {
+	                    // Ignore the error. There will be an error event fired that
+	                    // will trigger the error callback if they are listening.
+	                });
+	            }
+	
+	            storeCallback(this, 'event:' + eventName, callback);
+	        }
+	
+	        /**
+	         * Remove an event listener for the specified event. Will remove all
+	         * listeners for that event if a `callback` isn’t passed, or only that
+	         * specific callback if it is passed.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @param {string} eventName The name of the event.
+	         * @param {function} [callback] The specific callback to remove.
+	         * @return {void}
+	         */
+	
+	    }, {
+	        key: 'off',
+	        value: function off(eventName, callback) {
+	            if (!eventName) {
+	                throw new TypeError('You must pass an event name.');
+	            }
+	
+	            if (callback && typeof callback !== 'function') {
+	                throw new TypeError('The callback must be a function.');
+	            }
+	
+	            var lastCallback = removeCallback(this, 'event:' + eventName, callback);
+	
+	            // If there are no callbacks left, remove the listener
+	            if (lastCallback) {
+	                this.callMethod('removeEventListener', eventName).catch(function (e) {
+	                    // Ignore the error. There will be an error event fired that
+	                    // will trigger the error callback if they are listening.
+	                });
+	            }
+	        }
+	
+	        /**
+	         * A promise to load a new video.
+	         *
+	         * @promise LoadVideoPromise
+	         * @fulfill {number} The video with this id successfully loaded.
+	         * @reject {TypeError} The id was not a number.
+	         */
+	        /**
+	         * Load a new video into this embed. The promise will be resolved if
+	         * the video is successfully loaded, or it will be rejected if it could
+	         * not be loaded.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @param {number} id The id of the video.
+	         * @return {LoadVideoPromise}
+	         */
+	
+	    }, {
+	        key: 'loadVideo',
+	        value: function loadVideo(id) {
+	            return this.callMethod('loadVideo', id);
+	        }
+	
+	        /**
+	         * A promise to perform an action when the Player is ready.
+	         *
+	         * @todo document errors
+	         * @promise LoadVideoPromise
+	         * @fulfill {void}
+	         */
+	        /**
+	         * Trigger a function when the player iframe has initialized. You do not
+	         * need to wait for `ready` to trigger to begin adding event listeners
+	         * or calling other methods.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {ReadyPromise}
+	         */
+	
+	    }, {
+	        key: 'ready',
+	        value: function ready() {
+	            var readyPromise = readyMap.get(this);
+	            return npo_src.resolve(readyPromise);
+	        }
+	
+	        /**
+	         * A promise to add a cue point to the player.
+	         *
+	         * @promise AddCuePointPromise
+	         * @fulfill {string} The id of the cue point to use for removeCuePoint.
+	         * @reject {RangeError} the time was less than 0 or greater than the
+	         *         video’s duration.
+	         * @reject {UnsupportedError} Cue points are not supported with the current
+	         *         player or browser.
+	         */
+	        /**
+	         * Add a cue point to the player.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @param {number} time The time for the cue point.
+	         * @param {object} [data] Arbitrary data to be returned with the cue point.
+	         * @return {AddCuePointPromise}
+	         */
+	
+	    }, {
+	        key: 'addCuePoint',
+	        value: function addCuePoint(time) {
+	            var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	
+	            return this.callMethod('addCuePoint', { time: time, data: data });
+	        }
+	
+	        /**
+	         * A promise to remove a cue point from the player.
+	         *
+	         * @promise AddCuePointPromise
+	         * @fulfill {string} The id of the cue point that was removed.
+	         * @reject {InvalidCuePoint} The cue point with the specified id was not
+	         *         found.
+	         * @reject {UnsupportedError} Cue points are not supported with the current
+	         *         player or browser.
+	         */
+	        /**
+	         * Remove a cue point from the video.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @param {string} id The id of the cue point to remove.
+	         * @return {RemoveCuePointPromise}
+	         */
+	
+	    }, {
+	        key: 'removeCuePoint',
+	        value: function removeCuePoint(id) {
+	            return this.callMethod('removeCuePoint', id);
+	        }
+	
+	        /**
+	         * A representation of a text track on a video.
+	         *
+	         * @typedef {Object} VimeoTextTrack
+	         * @property {string} language The ISO language code.
+	         * @property {string} kind The kind of track it is (captions or subtitles).
+	         * @property {string} label The human‐readable label for the track.
+	         */
+	        /**
+	         * A promise to enable a text track.
+	         *
+	         * @promise EnableTextTrackPromise
+	         * @fulfill {VimeoTextTrack} The text track that was enabled.
+	         * @reject {InvalidTrackLanguageError} No track was available with the
+	         *         specified language.
+	         * @reject {InvalidTrackError} No track was available with the specified
+	         *         language and kind.
+	         */
+	        /**
+	         * Enable the text track with the specified language, and optionally the
+	         * specified kind (captions or subtitles).
+	         *
+	         * When set via the API, the track language will not change the viewer’s
+	         * stored preference.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @param {string} language The two‐letter language code.
+	         * @param {string} [kind] The kind of track to enable (captions or subtitles).
+	         * @return {EnableTextTrackPromise}
+	         */
+	
+	    }, {
+	        key: 'enableTextTrack',
+	        value: function enableTextTrack(language, kind) {
+	            if (!language) {
+	                throw new TypeError('You must pass a language.');
+	            }
+	
+	            return this.callMethod('enableTextTrack', {
+	                language: language,
+	                kind: kind
+	            });
+	        }
+	
+	        /**
+	         * A promise to disable the active text track.
+	         *
+	         * @promise DisableTextTrackPromise
+	         * @fulfill {void} The track was disabled.
+	         */
+	        /**
+	         * Disable the currently-active text track.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {DisableTextTrackPromise}
+	         */
+	
+	    }, {
+	        key: 'disableTextTrack',
+	        value: function disableTextTrack() {
+	            return this.callMethod('disableTextTrack');
+	        }
+	
+	        /**
+	         * A promise to pause the video.
+	         *
+	         * @promise PausePromise
+	         * @fulfill {void} The video was paused.
+	         */
+	        /**
+	         * Pause the video if it’s playing.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {PausePromise}
+	         */
+	
+	    }, {
+	        key: 'pause',
+	        value: function pause() {
+	            return this.callMethod('pause');
+	        }
+	
+	        /**
+	         * A promise to play the video.
+	         *
+	         * @promise PlayPromise
+	         * @fulfill {void} The video was played.
+	         */
+	        /**
+	         * Play the video if it’s paused. **Note:** on iOS and some other
+	         * mobile devices, you cannot programmatically trigger play. Once the
+	         * viewer has tapped on the play button in the player, however, you
+	         * will be able to use this function.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {PlayPromise}
+	         */
+	
+	    }, {
+	        key: 'play',
+	        value: function play() {
+	            return this.callMethod('play');
+	        }
+	
+	        /**
+	         * A promise to unload the video.
+	         *
+	         * @promise UnloadPromise
+	         * @fulfill {void} The video was unloaded.
+	         */
+	        /**
+	         * Return the player to its initial state.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {UnloadPromise}
+	         */
+	
+	    }, {
+	        key: 'unload',
+	        value: function unload() {
+	            return this.callMethod('unload');
+	        }
+	
+	        /**
+	         * A promise to get the autopause behavior of the video.
+	         *
+	         * @promise GetAutopausePromise
+	         * @fulfill {boolean} Whether autopause is turned on or off.
+	         * @reject {UnsupportedError} Autopause is not supported with the current
+	         *         player or browser.
+	         */
+	        /**
+	         * Get the autopause behavior for this player.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetAutopausePromise}
+	         */
+	
+	    }, {
+	        key: 'getAutopause',
+	        value: function getAutopause() {
+	            return this.get('autopause');
+	        }
+	
+	        /**
+	         * A promise to set the autopause behavior of the video.
+	         *
+	         * @promise SetAutopausePromise
+	         * @fulfill {boolean} Whether autopause is turned on or off.
+	         * @reject {UnsupportedError} Autopause is not supported with the current
+	         *         player or browser.
+	         */
+	        /**
+	         * Enable or disable the autopause behavior of this player.
+	         *
+	         * By default, when another video is played in the same browser, this
+	         * player will automatically pause. Unless you have a specific reason
+	         * for doing so, we recommend that you leave autopause set to the
+	         * default (`true`).
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @param {boolean} autopause
+	         * @return {SetAutopausePromise}
+	         */
+	
+	    }, {
+	        key: 'setAutopause',
+	        value: function setAutopause(autopause) {
+	            return this.set('autopause', autopause);
+	        }
+	
+	        /**
+	         * A promise to get the color of the player.
+	         *
+	         * @promise GetColorPromise
+	         * @fulfill {string} The hex color of the player.
+	         */
+	        /**
+	         * Get the color for this player.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetColorPromise}
+	         */
+	
+	    }, {
+	        key: 'getColor',
+	        value: function getColor() {
+	            return this.get('color');
+	        }
+	
+	        /**
+	         * A promise to set the color of the player.
+	         *
+	         * @promise SetColorPromise
+	         * @fulfill {string} The color was successfully set.
+	         * @reject {TypeError} The string was not a valid hex or rgb color.
+	         * @reject {ContrastError} The color was set, but the contrast is
+	         *         outside of the acceptable range.
+	         * @reject {EmbedSettingsError} The owner of the player has chosen to
+	         *         use a specific color.
+	         */
+	        /**
+	         * Set the color of this player to a hex or rgb string. Setting the
+	         * color may fail if the owner of the video has set their embed
+	         * preferences to force a specific color.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @param {string} color The hex or rgb color string to set.
+	         * @return {SetColorPromise}
+	         */
+	
+	    }, {
+	        key: 'setColor',
+	        value: function setColor(color) {
+	            return this.set('color', color);
+	        }
+	
+	        /**
+	         * A representation of a cue point.
+	         *
+	         * @typedef {Object} VimeoCuePoint
+	         * @property {number} time The time of the cue point.
+	         * @property {object} data The data passed when adding the cue point.
+	         * @property {string} id The unique id for use with removeCuePoint.
+	         */
+	        /**
+	         * A promise to get the cue points of a video.
+	         *
+	         * @promise GetCuePointsPromise
+	         * @fulfill {VimeoCuePoint[]} The cue points added to the video.
+	         * @reject {UnsupportedError} Cue points are not supported with the current
+	         *         player or browser.
+	         */
+	        /**
+	         * Get an array of the cue points added to the video.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetCuePointsPromise}
+	         */
+	
+	    }, {
+	        key: 'getCuePoints',
+	        value: function getCuePoints() {
+	            return this.get('cuePoints');
+	        }
+	
+	        /**
+	         * A promise to get the current time of the video.
+	         *
+	         * @promise GetCurrentTimePromise
+	         * @fulfill {number} The current time in seconds.
+	         */
+	        /**
+	         * Get the current playback position in seconds.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetCurrentTimePromise}
+	         */
+	
+	    }, {
+	        key: 'getCurrentTime',
+	        value: function getCurrentTime() {
+	            return this.get('currentTime');
+	        }
+	
+	        /**
+	         * A promise to set the current time of the video.
+	         *
+	         * @promise SetCurrentTimePromise
+	         * @fulfill {number} The actual current time that was set.
+	         * @reject {RangeError} the time was less than 0 or greater than the
+	         *         video’s duration.
+	         */
+	        /**
+	         * Set the current playback position in seconds. If the player was
+	         * paused, it will remain paused. Likewise, if the player was playing,
+	         * it will resume playing once the video has buffered.
+	         *
+	         * You can provide an accurate time and the player will attempt to seek
+	         * to as close to that time as possible. The exact time will be the
+	         * fulfilled value of the promise.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @param {number} currentTime
+	         * @return {SetCurrentTimePromise}
+	         */
+	
+	    }, {
+	        key: 'setCurrentTime',
+	        value: function setCurrentTime(currentTime) {
+	            return this.set('currentTime', currentTime);
+	        }
+	
+	        /**
+	         * A promise to get the duration of the video.
+	         *
+	         * @promise GetDurationPromise
+	         * @fulfill {number} The duration in seconds.
+	         */
+	        /**
+	         * Get the duration of the video in seconds. It will be rounded to the
+	         * nearest second before playback begins, and to the nearest thousandth
+	         * of a second after playback begins.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetDurationPromise}
+	         */
+	
+	    }, {
+	        key: 'getDuration',
+	        value: function getDuration() {
+	            return this.get('duration');
+	        }
+	
+	        /**
+	         * A promise to get the ended state of the video.
+	         *
+	         * @promise GetEndedPromise
+	         * @fulfill {boolean} Whether or not the video has ended.
+	         */
+	        /**
+	         * Get the ended state of the video. The video has ended if
+	         * `currentTime === duration`.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetEndedPromise}
+	         */
+	
+	    }, {
+	        key: 'getEnded',
+	        value: function getEnded() {
+	            return this.get('ended');
+	        }
+	
+	        /**
+	         * A promise to get the loop state of the player.
+	         *
+	         * @promise GetLoopPromise
+	         * @fulfill {boolean} Whether or not the player is set to loop.
+	         */
+	        /**
+	         * Get the loop state of the player.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetLoopPromise}
+	         */
+	
+	    }, {
+	        key: 'getLoop',
+	        value: function getLoop() {
+	            return this.get('loop');
+	        }
+	
+	        /**
+	         * A promise to set the loop state of the player.
+	         *
+	         * @promise SetLoopPromise
+	         * @fulfill {boolean} The loop state that was set.
+	         */
+	        /**
+	         * Set the loop state of the player. When set to `true`, the player
+	         * will start over immediately once playback ends.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @param {boolean} loop
+	         * @return {SetLoopPromise}
+	         */
+	
+	    }, {
+	        key: 'setLoop',
+	        value: function setLoop(loop) {
+	            return this.set('loop', loop);
+	        }
+	
+	        /**
+	         * A promise to get the paused state of the player.
+	         *
+	         * @promise GetLoopPromise
+	         * @fulfill {boolean} Whether or not the video is paused.
+	         */
+	        /**
+	         * Get the paused state of the player.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetLoopPromise}
+	         */
+	
+	    }, {
+	        key: 'getPaused',
+	        value: function getPaused() {
+	            return this.get('paused');
+	        }
+	
+	        /**
+	         * A promise to get the text tracks of a video.
+	         *
+	         * @promise GetTextTracksPromise
+	         * @fulfill {VimeoTextTrack[]} The text tracks associated with the video.
+	         */
+	        /**
+	         * Get an array of the text tracks that exist for the video.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetTextTracksPromise}
+	         */
+	
+	    }, {
+	        key: 'getTextTracks',
+	        value: function getTextTracks() {
+	            return this.get('textTracks');
+	        }
+	
+	        /**
+	         * A promise to get the embed code for the video.
+	         *
+	         * @promise GetVideoEmbedCodePromise
+	         * @fulfill {string} The `<iframe>` embed code for the video.
+	         */
+	        /**
+	         * Get the `<iframe>` embed code for the video.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetVideoEmbedCodePromise}
+	         */
+	
+	    }, {
+	        key: 'getVideoEmbedCode',
+	        value: function getVideoEmbedCode() {
+	            return this.get('videoEmbedCode');
+	        }
+	
+	        /**
+	         * A promise to get the id of the video.
+	         *
+	         * @promise GetVideoIdPromise
+	         * @fulfill {number} The id of the video.
+	         */
+	        /**
+	         * Get the id of the video.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetVideoIdPromise}
+	         */
+	
+	    }, {
+	        key: 'getVideoId',
+	        value: function getVideoId() {
+	            return this.get('videoId');
+	        }
+	
+	        /**
+	         * A promise to get the title of the video.
+	         *
+	         * @promise GetVideoTitlePromise
+	         * @fulfill {number} The title of the video.
+	         */
+	        /**
+	         * Get the title of the video.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetVideoTitlePromise}
+	         */
+	
+	    }, {
+	        key: 'getVideoTitle',
+	        value: function getVideoTitle() {
+	            return this.get('videoTitle');
+	        }
+	
+	        /**
+	         * A promise to get the native width of the video.
+	         *
+	         * @promise GetVideoWidthPromise
+	         * @fulfill {number} The native width of the video.
+	         */
+	        /**
+	         * Get the native width of the currently‐playing video. The width of
+	         * the highest‐resolution available will be used before playback begins.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetVideoWidthPromise}
+	         */
+	
+	    }, {
+	        key: 'getVideoWidth',
+	        value: function getVideoWidth() {
+	            return this.get('videoWidth');
+	        }
+	
+	        /**
+	         * A promise to get the native height of the video.
+	         *
+	         * @promise GetVideoHeightPromise
+	         * @fulfill {number} The native height of the video.
+	         */
+	        /**
+	         * Get the native height of the currently‐playing video. The height of
+	         * the highest‐resolution available will be used before playback begins.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetVideoHeightPromise}
+	         */
+	
+	    }, {
+	        key: 'getVideoHeight',
+	        value: function getVideoHeight() {
+	            return this.get('videoHeight');
+	        }
+	
+	        /**
+	         * A promise to get the vimeo.com url for the video.
+	         *
+	         * @promise GetVideoUrlPromise
+	         * @fulfill {number} The vimeo.com url for the video.
+	         * @reject {PrivacyError} The url isn’t available because of the video’s privacy setting.
+	         */
+	        /**
+	         * Get the vimeo.com url for the video.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetVideoUrlPromise}
+	         */
+	
+	    }, {
+	        key: 'getVideoUrl',
+	        value: function getVideoUrl() {
+	            return this.get('videoUrl');
+	        }
+	
+	        /**
+	         * A promise to get the volume level of the player.
+	         *
+	         * @promise GetVolumePromise
+	         * @fulfill {number} The volume level of the player on a scale from 0 to 1.
+	         */
+	        /**
+	         * Get the current volume level of the player on a scale from `0` to `1`.
+	         *
+	         * Most mobile devices do not support an independent volume from the
+	         * system volume. In those cases, this method will always return `1`.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @return {GetVolumePromise}
+	         */
+	
+	    }, {
+	        key: 'getVolume',
+	        value: function getVolume() {
+	            return this.get('volume');
+	        }
+	
+	        /**
+	         * A promise to set the volume level of the player.
+	         *
+	         * @promise SetVolumePromise
+	         * @fulfill {number} The volume was set.
+	         * @reject {RangeError} The volume was less than 0 or greater than 1.
+	         */
+	        /**
+	         * Set the volume of the player on a scale from `0` to `1`. When set
+	         * via the API, the volume level will not be synchronized to other
+	         * players or stored as the viewer’s preference.
+	         *
+	         * Most mobile devices do not support setting the volume. An error will
+	         * *not* be triggered in that situation.
+	         *
+	         * @author Brad Dougherty <brad@vimeo.com>
+	         * @param {number} volume
+	         * @return {SetVolumePromise}
+	         */
+	
+	    }, {
+	        key: 'setVolume',
+	        value: function setVolume(volume) {
+	            return this.set('volume', volume);
+	        }
+	    }]);
+	
+	    return Player;
+	}();
+	
+	initializeEmbeds();
+	resizeEmbeds();
+	
+	return Player;
+	
+	})));
+	
+	//# sourceMappingURL=player.js.map
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(48).setImmediate))
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var apply = Function.prototype.apply;
+	
+	// DOM APIs, for completeness
+	
+	exports.setTimeout = function() {
+	  return new Timeout(apply.call(setTimeout, window, arguments), clearTimeout);
+	};
+	exports.setInterval = function() {
+	  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
+	};
+	exports.clearTimeout =
+	exports.clearInterval = function(timeout) {
+	  if (timeout) {
+	    timeout.close();
+	  }
+	};
+	
+	function Timeout(id, clearFn) {
+	  this._id = id;
+	  this._clearFn = clearFn;
+	}
+	Timeout.prototype.unref = Timeout.prototype.ref = function() {};
+	Timeout.prototype.close = function() {
+	  this._clearFn.call(window, this._id);
+	};
+	
+	// Does not start the time, just sets up the members needed.
+	exports.enroll = function(item, msecs) {
+	  clearTimeout(item._idleTimeoutId);
+	  item._idleTimeout = msecs;
+	};
+	
+	exports.unenroll = function(item) {
+	  clearTimeout(item._idleTimeoutId);
+	  item._idleTimeout = -1;
+	};
+	
+	exports._unrefActive = exports.active = function(item) {
+	  clearTimeout(item._idleTimeoutId);
+	
+	  var msecs = item._idleTimeout;
+	  if (msecs >= 0) {
+	    item._idleTimeoutId = setTimeout(function onTimeout() {
+	      if (item._onTimeout)
+	        item._onTimeout();
+	    }, msecs);
+	  }
+	};
+	
+	// setimmediate attaches itself to the global object
+	__webpack_require__(49);
+	exports.setImmediate = setImmediate;
+	exports.clearImmediate = clearImmediate;
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
+	    "use strict";
+	
+	    if (global.setImmediate) {
+	        return;
+	    }
+	
+	    var nextHandle = 1; // Spec says greater than zero
+	    var tasksByHandle = {};
+	    var currentlyRunningATask = false;
+	    var doc = global.document;
+	    var registerImmediate;
+	
+	    function setImmediate(callback) {
+	      // Callback can either be a function or a string
+	      if (typeof callback !== "function") {
+	        callback = new Function("" + callback);
+	      }
+	      // Copy function arguments
+	      var args = new Array(arguments.length - 1);
+	      for (var i = 0; i < args.length; i++) {
+	          args[i] = arguments[i + 1];
+	      }
+	      // Store and register the task
+	      var task = { callback: callback, args: args };
+	      tasksByHandle[nextHandle] = task;
+	      registerImmediate(nextHandle);
+	      return nextHandle++;
+	    }
+	
+	    function clearImmediate(handle) {
+	        delete tasksByHandle[handle];
+	    }
+	
+	    function run(task) {
+	        var callback = task.callback;
+	        var args = task.args;
+	        switch (args.length) {
+	        case 0:
+	            callback();
+	            break;
+	        case 1:
+	            callback(args[0]);
+	            break;
+	        case 2:
+	            callback(args[0], args[1]);
+	            break;
+	        case 3:
+	            callback(args[0], args[1], args[2]);
+	            break;
+	        default:
+	            callback.apply(undefined, args);
+	            break;
+	        }
+	    }
+	
+	    function runIfPresent(handle) {
+	        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
+	        // So if we're currently running a task, we'll need to delay this invocation.
+	        if (currentlyRunningATask) {
+	            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
+	            // "too much recursion" error.
+	            setTimeout(runIfPresent, 0, handle);
+	        } else {
+	            var task = tasksByHandle[handle];
+	            if (task) {
+	                currentlyRunningATask = true;
+	                try {
+	                    run(task);
+	                } finally {
+	                    clearImmediate(handle);
+	                    currentlyRunningATask = false;
+	                }
+	            }
+	        }
+	    }
+	
+	    function installNextTickImplementation() {
+	        registerImmediate = function(handle) {
+	            process.nextTick(function () { runIfPresent(handle); });
+	        };
+	    }
+	
+	    function canUsePostMessage() {
+	        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
+	        // where `global.postMessage` means something completely different and can't be used for this purpose.
+	        if (global.postMessage && !global.importScripts) {
+	            var postMessageIsAsynchronous = true;
+	            var oldOnMessage = global.onmessage;
+	            global.onmessage = function() {
+	                postMessageIsAsynchronous = false;
+	            };
+	            global.postMessage("", "*");
+	            global.onmessage = oldOnMessage;
+	            return postMessageIsAsynchronous;
+	        }
+	    }
+	
+	    function installPostMessageImplementation() {
+	        // Installs an event handler on `global` for the `message` event: see
+	        // * https://developer.mozilla.org/en/DOM/window.postMessage
+	        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
+	
+	        var messagePrefix = "setImmediate$" + Math.random() + "$";
+	        var onGlobalMessage = function(event) {
+	            if (event.source === global &&
+	                typeof event.data === "string" &&
+	                event.data.indexOf(messagePrefix) === 0) {
+	                runIfPresent(+event.data.slice(messagePrefix.length));
+	            }
+	        };
+	
+	        if (global.addEventListener) {
+	            global.addEventListener("message", onGlobalMessage, false);
+	        } else {
+	            global.attachEvent("onmessage", onGlobalMessage);
+	        }
+	
+	        registerImmediate = function(handle) {
+	            global.postMessage(messagePrefix + handle, "*");
+	        };
+	    }
+	
+	    function installMessageChannelImplementation() {
+	        var channel = new MessageChannel();
+	        channel.port1.onmessage = function(event) {
+	            var handle = event.data;
+	            runIfPresent(handle);
+	        };
+	
+	        registerImmediate = function(handle) {
+	            channel.port2.postMessage(handle);
+	        };
+	    }
+	
+	    function installReadyStateChangeImplementation() {
+	        var html = doc.documentElement;
+	        registerImmediate = function(handle) {
+	            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
+	            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
+	            var script = doc.createElement("script");
+	            script.onreadystatechange = function () {
+	                runIfPresent(handle);
+	                script.onreadystatechange = null;
+	                html.removeChild(script);
+	                script = null;
+	            };
+	            html.appendChild(script);
+	        };
+	    }
+	
+	    function installSetTimeoutImplementation() {
+	        registerImmediate = function(handle) {
+	            setTimeout(runIfPresent, 0, handle);
+	        };
+	    }
+	
+	    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
+	    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
+	    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
+	
+	    // Don't get fooled by e.g. browserify environments.
+	    if ({}.toString.call(global.process) === "[object process]") {
+	        // For Node.js before 0.9
+	        installNextTickImplementation();
+	
+	    } else if (canUsePostMessage()) {
+	        // For non-IE10 modern browsers
+	        installPostMessageImplementation();
+	
+	    } else if (global.MessageChannel) {
+	        // For web workers, where supported
+	        installMessageChannelImplementation();
+	
+	    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
+	        // For IE 6–8
+	        installReadyStateChangeImplementation();
+	
+	    } else {
+	        // For older browsers
+	        installSetTimeoutImplementation();
+	    }
+	
+	    attachTo.setImmediate = setImmediate;
+	    attachTo.clearImmediate = clearImmediate;
+	}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(50)))
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports) {
+
+	// shim for using process in browser
+	var process = module.exports = {};
+	
+	// cached from whatever global is present so that test runners that stub it
+	// don't break things.  But we need to wrap it in a try catch in case it is
+	// wrapped in strict mode code which doesn't define any globals.  It's inside a
+	// function because try/catches deoptimize in certain engines.
+	
+	var cachedSetTimeout;
+	var cachedClearTimeout;
+	
+	function defaultSetTimout() {
+	    throw new Error('setTimeout has not been defined');
+	}
+	function defaultClearTimeout () {
+	    throw new Error('clearTimeout has not been defined');
+	}
+	(function () {
+	    try {
+	        if (typeof setTimeout === 'function') {
+	            cachedSetTimeout = setTimeout;
+	        } else {
+	            cachedSetTimeout = defaultSetTimout;
+	        }
+	    } catch (e) {
+	        cachedSetTimeout = defaultSetTimout;
+	    }
+	    try {
+	        if (typeof clearTimeout === 'function') {
+	            cachedClearTimeout = clearTimeout;
+	        } else {
+	            cachedClearTimeout = defaultClearTimeout;
+	        }
+	    } catch (e) {
+	        cachedClearTimeout = defaultClearTimeout;
+	    }
+	} ())
+	function runTimeout(fun) {
+	    if (cachedSetTimeout === setTimeout) {
+	        //normal enviroments in sane situations
+	        return setTimeout(fun, 0);
+	    }
+	    // if setTimeout wasn't available but was latter defined
+	    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+	        cachedSetTimeout = setTimeout;
+	        return setTimeout(fun, 0);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedSetTimeout(fun, 0);
+	    } catch(e){
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+	            return cachedSetTimeout.call(null, fun, 0);
+	        } catch(e){
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+	            return cachedSetTimeout.call(this, fun, 0);
+	        }
+	    }
+	
+	
+	}
+	function runClearTimeout(marker) {
+	    if (cachedClearTimeout === clearTimeout) {
+	        //normal enviroments in sane situations
+	        return clearTimeout(marker);
+	    }
+	    // if clearTimeout wasn't available but was latter defined
+	    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+	        cachedClearTimeout = clearTimeout;
+	        return clearTimeout(marker);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedClearTimeout(marker);
+	    } catch (e){
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+	            return cachedClearTimeout.call(null, marker);
+	        } catch (e){
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+	            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+	            return cachedClearTimeout.call(this, marker);
+	        }
+	    }
+	
+	
+	
+	}
+	var queue = [];
+	var draining = false;
+	var currentQueue;
+	var queueIndex = -1;
+	
+	function cleanUpNextTick() {
+	    if (!draining || !currentQueue) {
+	        return;
+	    }
+	    draining = false;
+	    if (currentQueue.length) {
+	        queue = currentQueue.concat(queue);
+	    } else {
+	        queueIndex = -1;
+	    }
+	    if (queue.length) {
+	        drainQueue();
+	    }
+	}
+	
+	function drainQueue() {
+	    if (draining) {
+	        return;
+	    }
+	    var timeout = runTimeout(cleanUpNextTick);
+	    draining = true;
+	
+	    var len = queue.length;
+	    while(len) {
+	        currentQueue = queue;
+	        queue = [];
+	        while (++queueIndex < len) {
+	            if (currentQueue) {
+	                currentQueue[queueIndex].run();
+	            }
+	        }
+	        queueIndex = -1;
+	        len = queue.length;
+	    }
+	    currentQueue = null;
+	    draining = false;
+	    runClearTimeout(timeout);
+	}
+	
+	process.nextTick = function (fun) {
+	    var args = new Array(arguments.length - 1);
+	    if (arguments.length > 1) {
+	        for (var i = 1; i < arguments.length; i++) {
+	            args[i - 1] = arguments[i];
+	        }
+	    }
+	    queue.push(new Item(fun, args));
+	    if (queue.length === 1 && !draining) {
+	        runTimeout(drainQueue);
+	    }
+	};
+	
+	// v8 likes predictible objects
+	function Item(fun, array) {
+	    this.fun = fun;
+	    this.array = array;
+	}
+	Item.prototype.run = function () {
+	    this.fun.apply(null, this.array);
+	};
+	process.title = 'browser';
+	process.browser = true;
+	process.env = {};
+	process.argv = [];
+	process.version = ''; // empty string to avoid regexp issues
+	process.versions = {};
+	
+	function noop() {}
+	
+	process.on = noop;
+	process.addListener = noop;
+	process.once = noop;
+	process.off = noop;
+	process.removeListener = noop;
+	process.removeAllListeners = noop;
+	process.emit = noop;
+	process.prependListener = noop;
+	process.prependOnceListener = noop;
+	
+	process.listeners = function (name) { return [] }
+	
+	process.binding = function (name) {
+	    throw new Error('process.binding is not supported');
+	};
+	
+	process.cwd = function () { return '/' };
+	process.chdir = function (dir) {
+	    throw new Error('process.chdir is not supported');
+	};
+	process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	
+	var _sister = __webpack_require__(52);
+	
+	var _sister2 = _interopRequireDefault(_sister);
+	
+	var _loadYouTubeIframeApi = __webpack_require__(53);
+	
+	var _loadYouTubeIframeApi2 = _interopRequireDefault(_loadYouTubeIframeApi);
+	
+	var _YouTubePlayer = __webpack_require__(55);
+	
+	var _YouTubePlayer2 = _interopRequireDefault(_YouTubePlayer);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/**
+	 * @typedef YT.Player
+	 * @see https://developers.google.com/youtube/iframe_api_reference
+	 * */
+	
+	/**
+	 * @see https://developers.google.com/youtube/iframe_api_reference#Loading_a_Video_Player
+	 */
+	var youtubeIframeAPI = void 0;
+	
+	/**
+	 * A factory function used to produce an instance of YT.Player and queue function calls and proxy events of the resulting object.
+	 *
+	 * @param elementId Either An existing YT.Player instance,
+	 * the DOM element or the id of the HTML element where the API will insert an <iframe>.
+	 * @param options See `options` (Ignored when using an existing YT.Player instance).
+	 * @param strictState A flag designating whether or not to wait for
+	 * an acceptable state when calling supported functions. Default: `false`.
+	 * See `FunctionStateMap.js` for supported functions and acceptable states.
+	 */
+	
+	exports.default = function (maybeElementId) {
+	  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var strictState = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+	
+	  var emitter = (0, _sister2.default)();
+	
+	  if (!youtubeIframeAPI) {
+	    youtubeIframeAPI = (0, _loadYouTubeIframeApi2.default)();
+	  }
+	
+	  if (options.events) {
+	    throw new Error('Event handlers cannot be overwritten.');
+	  }
+	
+	  if (typeof maybeElementId === 'string' && !document.getElementById(maybeElementId)) {
+	    throw new Error('Element "' + maybeElementId + '" does not exist.');
+	  }
+	
+	  options.events = _YouTubePlayer2.default.proxyEvents(emitter);
+	
+	  var playerAPIReady = new Promise(function (resolve) {
+	    if (typeof maybeElementId === 'string' || maybeElementId instanceof HTMLElement) {
+	      // eslint-disable-next-line promise/catch-or-return
+	      youtubeIframeAPI.then(function (YT) {
+	        var player = new YT.Player(maybeElementId, options);
+	
+	        emitter.on('ready', function () {
+	          resolve(player);
+	        });
+	
+	        return null;
+	      });
+	    } else if ((typeof maybeElementId === 'undefined' ? 'undefined' : _typeof(maybeElementId)) === 'object' && maybeElementId.playVideo instanceof Function) {
+	      var player = maybeElementId;
+	
+	      resolve(player);
+	    } else {
+	      throw new TypeError('Unexpected state.');
+	    }
+	  });
+	
+	  var playerApi = _YouTubePlayer2.default.promisifyPlayer(playerAPIReady, strictState);
+	
+	  playerApi.on = emitter.on;
+	  playerApi.off = emitter.off;
+	
+	  return playerApi;
+	};
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/**
+	* @link https://github.com/gajus/sister for the canonical source repository
+	* @license https://github.com/gajus/sister/blob/master/LICENSE BSD 3-Clause
+	*/
+	function Sister () {
+	    var sister = {},
+	        events = {};
+	
+	    /**
+	     * @name handler
+	     * @function
+	     * @param {Object} data Event data.
+	     */
+	
+	    /**
+	     * @param {String} name Event name.
+	     * @param {handler} handler
+	     * @return {listener}
+	     */
+	    sister.on = function (name, handler) {
+	        var listener = {name: name, handler: handler};
+	        events[name] = events[name] || [];
+	        events[name].unshift(listener);
+	        return listener;
+	    };
+	
+	    /**
+	     * @param {listener}
+	     */
+	    sister.off = function (listener) {
+	        var index = events[listener.name].indexOf(listener);
+	
+	        if (index != -1) {
+	            events[listener.name].splice(index, 1);
+	        }
+	    };
+	
+	    /**
+	     * @param {String} name Event name.
+	     * @param {Object} data Event data.
+	     */
+	    sister.trigger = function (name, data) {
+	        var listeners = events[name],
+	            i;
+	
+	        if (listeners) {
+	            i = listeners.length;
+	            while (i--) {
+	                listeners[i].handler(data);
+	            }
+	        }
+	    };
+	
+	    return sister;
+	}
+	
+	global.gajus = global.gajus || {};
+	global.gajus.Sister = Sister;
+	
+	module.exports = Sister;
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _loadScript = __webpack_require__(54);
+	
+	var _loadScript2 = _interopRequireDefault(_loadScript);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function () {
+	  /**
+	   * A promise that is resolved when window.onYouTubeIframeAPIReady is called.
+	   * The promise is resolved with a reference to window.YT object.
+	   */
+	  var iframeAPIReady = new Promise(function (resolve) {
+	    if (window.YT && window.YT.Player && window.YT.Player instanceof Function) {
+	      resolve(window.YT);
+	
+	      return;
+	    }
+	
+	    var previous = window.onYouTubeIframeAPIReady;
+	
+	    // The API will call this function when page has finished downloading
+	    // the JavaScript for the player API.
+	    window.onYouTubeIframeAPIReady = function () {
+	      if (previous) {
+	        previous();
+	      }
+	
+	      resolve(window.YT);
+	    };
+	  });
+	
+	  var protocol = window.location.protocol === 'http:' ? 'http:' : 'https:';
+	
+	  (0, _loadScript2.default)(protocol + '//www.youtube.com/iframe_api');
+	
+	  return iframeAPIReady;
+	};
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports) {
+
+	
+	module.exports = function load (src, opts, cb) {
+	  var head = document.head || document.getElementsByTagName('head')[0]
+	  var script = document.createElement('script')
+	
+	  if (typeof opts === 'function') {
+	    cb = opts
+	    opts = {}
+	  }
+	
+	  opts = opts || {}
+	  cb = cb || function() {}
+	
+	  script.type = opts.type || 'text/javascript'
+	  script.charset = opts.charset || 'utf8';
+	  script.async = 'async' in opts ? !!opts.async : true
+	  script.src = src
+	
+	  if (opts.attrs) {
+	    setAttributes(script, opts.attrs)
+	  }
+	
+	  if (opts.text) {
+	    script.text = '' + opts.text
+	  }
+	
+	  var onend = 'onload' in script ? stdOnEnd : ieOnEnd
+	  onend(script, cb)
+	
+	  // some good legacy browsers (firefox) fail the 'in' detection above
+	  // so as a fallback we always set onload
+	  // old IE will ignore this and new IE will set onload
+	  if (!script.onload) {
+	    stdOnEnd(script, cb);
+	  }
+	
+	  head.appendChild(script)
+	}
+	
+	function setAttributes(script, attrs) {
+	  for (var attr in attrs) {
+	    script.setAttribute(attr, attrs[attr]);
+	  }
+	}
+	
+	function stdOnEnd (script, cb) {
+	  script.onload = function () {
+	    this.onerror = this.onload = null
+	    cb(null, script)
+	  }
+	  script.onerror = function () {
+	    // this.onload = null here is necessary
+	    // because even IE9 works not like others
+	    this.onerror = this.onload = null
+	    cb(new Error('Failed to load ' + this.src), script)
+	  }
+	}
+	
+	function ieOnEnd (script, cb) {
+	  script.onreadystatechange = function () {
+	    if (this.readyState != 'complete' && this.readyState != 'loaded') return
+	    this.onreadystatechange = null
+	    cb(null, script) // there is no way to catch loading errors in IE8
+	  }
+	}
+
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _debug = __webpack_require__(56);
+	
+	var _debug2 = _interopRequireDefault(_debug);
+	
+	var _functionNames = __webpack_require__(59);
+	
+	var _functionNames2 = _interopRequireDefault(_functionNames);
+	
+	var _eventNames = __webpack_require__(60);
+	
+	var _eventNames2 = _interopRequireDefault(_eventNames);
+	
+	var _FunctionStateMap = __webpack_require__(61);
+	
+	var _FunctionStateMap2 = _interopRequireDefault(_FunctionStateMap);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var debug = (0, _debug2.default)('youtube-player');
+	
+	var YouTubePlayer = {};
+	
+	/**
+	 * Construct an object that defines an event handler for all of the YouTube
+	 * player events. Proxy captured events through an event emitter.
+	 *
+	 * @todo Capture event parameters.
+	 * @see https://developers.google.com/youtube/iframe_api_reference#Events
+	 */
+	YouTubePlayer.proxyEvents = function (emitter) {
+	  var events = {};
+	
+	  var _loop = function _loop(eventName) {
+	    var onEventName = 'on' + eventName.slice(0, 1).toUpperCase() + eventName.slice(1);
+	
+	    events[onEventName] = function (event) {
+	      debug('event "%s"', onEventName, event);
+	
+	      emitter.trigger(eventName, event);
+	    };
+	  };
+	
+	  var _iteratorNormalCompletion = true;
+	  var _didIteratorError = false;
+	  var _iteratorError = undefined;
+	
+	  try {
+	    for (var _iterator = _eventNames2.default[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	      var eventName = _step.value;
+	
+	      _loop(eventName);
+	    }
+	  } catch (err) {
+	    _didIteratorError = true;
+	    _iteratorError = err;
+	  } finally {
+	    try {
+	      if (!_iteratorNormalCompletion && _iterator.return) {
+	        _iterator.return();
+	      }
+	    } finally {
+	      if (_didIteratorError) {
+	        throw _iteratorError;
+	      }
+	    }
+	  }
+	
+	  return events;
+	};
+	
+	/**
+	 * Delays player API method execution until player state is ready.
+	 *
+	 * @todo Proxy all of the methods using Object.keys.
+	 * @todo See TRICKY below.
+	 * @param playerAPIReady Promise that resolves when player is ready.
+	 * @param strictState A flag designating whether or not to wait for
+	 * an acceptable state when calling supported functions.
+	 * @returns {Object}
+	 */
+	YouTubePlayer.promisifyPlayer = function (playerAPIReady) {
+	  var strictState = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+	
+	  var functions = {};
+	
+	  var _loop2 = function _loop2(functionName) {
+	    if (strictState && _FunctionStateMap2.default[functionName]) {
+	      functions[functionName] = function () {
+	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	          args[_key] = arguments[_key];
+	        }
+	
+	        return playerAPIReady.then(function (player) {
+	          var stateInfo = _FunctionStateMap2.default[functionName];
+	          var playerState = player.getPlayerState();
+	
+	          // eslint-disable-next-line no-warning-comments
+	          // TODO: Just spread the args into the function once Babel is fixed:
+	          // https://github.com/babel/babel/issues/4270
+	          //
+	          // eslint-disable-next-line prefer-spread
+	          var value = player[functionName].apply(player, args);
+	
+	          // TRICKY: For functions like `seekTo`, a change in state must be
+	          // triggered given that the resulting state could match the initial
+	          // state.
+	          if (stateInfo.stateChangeRequired ||
+	
+	          // eslint-disable-next-line no-extra-parens
+	          Array.isArray(stateInfo.acceptableStates) && stateInfo.acceptableStates.indexOf(playerState) === -1) {
+	            return new Promise(function (resolve) {
+	              var onPlayerStateChange = function onPlayerStateChange() {
+	                var playerStateAfterChange = player.getPlayerState();
+	
+	                var timeout = void 0;
+	
+	                if (typeof stateInfo.timeout === 'number') {
+	                  timeout = setTimeout(function () {
+	                    player.removeEventListener('onStateChange', onPlayerStateChange);
+	
+	                    resolve();
+	                  }, stateInfo.timeout);
+	                }
+	
+	                if (Array.isArray(stateInfo.acceptableStates) && stateInfo.acceptableStates.indexOf(playerStateAfterChange) !== -1) {
+	                  player.removeEventListener('onStateChange', onPlayerStateChange);
+	
+	                  clearTimeout(timeout);
+	
+	                  resolve();
+	                }
+	              };
+	
+	              player.addEventListener('onStateChange', onPlayerStateChange);
+	            }).then(function () {
+	              return value;
+	            });
+	          }
+	
+	          return value;
+	        });
+	      };
+	    } else {
+	      functions[functionName] = function () {
+	        for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+	          args[_key2] = arguments[_key2];
+	        }
+	
+	        return playerAPIReady.then(function (player) {
+	          // eslint-disable-next-line no-warning-comments
+	          // TODO: Just spread the args into the function once Babel is fixed:
+	          // https://github.com/babel/babel/issues/4270
+	          //
+	          // eslint-disable-next-line prefer-spread
+	          return player[functionName].apply(player, args);
+	        });
+	      };
+	    }
+	  };
+	
+	  var _iteratorNormalCompletion2 = true;
+	  var _didIteratorError2 = false;
+	  var _iteratorError2 = undefined;
+	
+	  try {
+	    for (var _iterator2 = _functionNames2.default[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+	      var functionName = _step2.value;
+	
+	      _loop2(functionName);
+	    }
+	  } catch (err) {
+	    _didIteratorError2 = true;
+	    _iteratorError2 = err;
+	  } finally {
+	    try {
+	      if (!_iteratorNormalCompletion2 && _iterator2.return) {
+	        _iterator2.return();
+	      }
+	    } finally {
+	      if (_didIteratorError2) {
+	        throw _iteratorError2;
+	      }
+	    }
+	  }
+	
+	  return functions;
+	};
+	
+	exports.default = YouTubePlayer;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * This is the web browser implementation of `debug()`.
+	 *
+	 * Expose `debug()` as the module.
+	 */
+	
+	exports = module.exports = __webpack_require__(57);
+	exports.log = log;
+	exports.formatArgs = formatArgs;
+	exports.save = save;
+	exports.load = load;
+	exports.useColors = useColors;
+	exports.storage = 'undefined' != typeof chrome
+	               && 'undefined' != typeof chrome.storage
+	                  ? chrome.storage.local
+	                  : localstorage();
+	
+	/**
+	 * Colors.
+	 */
+	
+	exports.colors = [
+	  'lightseagreen',
+	  'forestgreen',
+	  'goldenrod',
+	  'dodgerblue',
+	  'darkorchid',
+	  'crimson'
+	];
+	
+	/**
+	 * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+	 * and the Firebug extension (any Firefox version) are known
+	 * to support "%c" CSS customizations.
+	 *
+	 * TODO: add a `localStorage` variable to explicitly enable/disable colors
+	 */
+	
+	function useColors() {
+	  // NB: In an Electron preload script, document will be defined but not fully
+	  // initialized. Since we know we're in Chrome, we'll just detect this case
+	  // explicitly
+	  if (typeof window !== 'undefined' && window.process && window.process.type === 'renderer') {
+	    return true;
+	  }
+	
+	  // is webkit? http://stackoverflow.com/a/16459606/376773
+	  // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
+	  return (typeof document !== 'undefined' && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance) ||
+	    // is firebug? http://stackoverflow.com/a/398120/376773
+	    (typeof window !== 'undefined' && window.console && (window.console.firebug || (window.console.exception && window.console.table))) ||
+	    // is firefox >= v31?
+	    // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
+	    (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31) ||
+	    // double check webkit in userAgent just in case we are in a worker
+	    (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/));
+	}
+	
+	/**
+	 * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+	 */
+	
+	exports.formatters.j = function(v) {
+	  try {
+	    return JSON.stringify(v);
+	  } catch (err) {
+	    return '[UnexpectedJSONParseError]: ' + err.message;
+	  }
+	};
+	
+	
+	/**
+	 * Colorize log arguments if enabled.
+	 *
+	 * @api public
+	 */
+	
+	function formatArgs(args) {
+	  var useColors = this.useColors;
+	
+	  args[0] = (useColors ? '%c' : '')
+	    + this.namespace
+	    + (useColors ? ' %c' : ' ')
+	    + args[0]
+	    + (useColors ? '%c ' : ' ')
+	    + '+' + exports.humanize(this.diff);
+	
+	  if (!useColors) return;
+	
+	  var c = 'color: ' + this.color;
+	  args.splice(1, 0, c, 'color: inherit')
+	
+	  // the final "%c" is somewhat tricky, because there could be other
+	  // arguments passed either before or after the %c, so we need to
+	  // figure out the correct index to insert the CSS into
+	  var index = 0;
+	  var lastC = 0;
+	  args[0].replace(/%[a-zA-Z%]/g, function(match) {
+	    if ('%%' === match) return;
+	    index++;
+	    if ('%c' === match) {
+	      // we only are interested in the *last* %c
+	      // (the user may have provided their own)
+	      lastC = index;
+	    }
+	  });
+	
+	  args.splice(lastC, 0, c);
+	}
+	
+	/**
+	 * Invokes `console.log()` when available.
+	 * No-op when `console.log` is not a "function".
+	 *
+	 * @api public
+	 */
+	
+	function log() {
+	  // this hackery is required for IE8/9, where
+	  // the `console.log` function doesn't have 'apply'
+	  return 'object' === typeof console
+	    && console.log
+	    && Function.prototype.apply.call(console.log, console, arguments);
+	}
+	
+	/**
+	 * Save `namespaces`.
+	 *
+	 * @param {String} namespaces
+	 * @api private
+	 */
+	
+	function save(namespaces) {
+	  try {
+	    if (null == namespaces) {
+	      exports.storage.removeItem('debug');
+	    } else {
+	      exports.storage.debug = namespaces;
+	    }
+	  } catch(e) {}
+	}
+	
+	/**
+	 * Load `namespaces`.
+	 *
+	 * @return {String} returns the previously persisted debug modes
+	 * @api private
+	 */
+	
+	function load() {
+	  var r;
+	  try {
+	    r = exports.storage.debug;
+	  } catch(e) {}
+	
+	  // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
+	  if (!r && typeof process !== 'undefined' && 'env' in process) {
+	    r = process.env.DEBUG;
+	  }
+	
+	  return r;
+	}
+	
+	/**
+	 * Enable namespaces listed in `localStorage.debug` initially.
+	 */
+	
+	exports.enable(load());
+	
+	/**
+	 * Localstorage attempts to return the localstorage.
+	 *
+	 * This is necessary because safari throws
+	 * when a user disables cookies/localstorage
+	 * and you attempt to access it.
+	 *
+	 * @return {LocalStorage}
+	 * @api private
+	 */
+	
+	function localstorage() {
+	  try {
+	    return window.localStorage;
+	  } catch (e) {}
+	}
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(50)))
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	
+	/**
+	 * This is the common logic for both the Node.js and web browser
+	 * implementations of `debug()`.
+	 *
+	 * Expose `debug()` as the module.
+	 */
+	
+	exports = module.exports = createDebug.debug = createDebug['default'] = createDebug;
+	exports.coerce = coerce;
+	exports.disable = disable;
+	exports.enable = enable;
+	exports.enabled = enabled;
+	exports.humanize = __webpack_require__(58);
+	
+	/**
+	 * The currently active debug mode names, and names to skip.
+	 */
+	
+	exports.names = [];
+	exports.skips = [];
+	
+	/**
+	 * Map of special "%n" handling functions, for the debug "format" argument.
+	 *
+	 * Valid key names are a single, lower or upper-case letter, i.e. "n" and "N".
+	 */
+	
+	exports.formatters = {};
+	
+	/**
+	 * Previous log timestamp.
+	 */
+	
+	var prevTime;
+	
+	/**
+	 * Select a color.
+	 * @param {String} namespace
+	 * @return {Number}
+	 * @api private
+	 */
+	
+	function selectColor(namespace) {
+	  var hash = 0, i;
+	
+	  for (i in namespace) {
+	    hash  = ((hash << 5) - hash) + namespace.charCodeAt(i);
+	    hash |= 0; // Convert to 32bit integer
+	  }
+	
+	  return exports.colors[Math.abs(hash) % exports.colors.length];
+	}
+	
+	/**
+	 * Create a debugger with the given `namespace`.
+	 *
+	 * @param {String} namespace
+	 * @return {Function}
+	 * @api public
+	 */
+	
+	function createDebug(namespace) {
+	
+	  function debug() {
+	    // disabled?
+	    if (!debug.enabled) return;
+	
+	    var self = debug;
+	
+	    // set `diff` timestamp
+	    var curr = +new Date();
+	    var ms = curr - (prevTime || curr);
+	    self.diff = ms;
+	    self.prev = prevTime;
+	    self.curr = curr;
+	    prevTime = curr;
+	
+	    // turn the `arguments` into a proper Array
+	    var args = new Array(arguments.length);
+	    for (var i = 0; i < args.length; i++) {
+	      args[i] = arguments[i];
+	    }
+	
+	    args[0] = exports.coerce(args[0]);
+	
+	    if ('string' !== typeof args[0]) {
+	      // anything else let's inspect with %O
+	      args.unshift('%O');
+	    }
+	
+	    // apply any `formatters` transformations
+	    var index = 0;
+	    args[0] = args[0].replace(/%([a-zA-Z%])/g, function(match, format) {
+	      // if we encounter an escaped % then don't increase the array index
+	      if (match === '%%') return match;
+	      index++;
+	      var formatter = exports.formatters[format];
+	      if ('function' === typeof formatter) {
+	        var val = args[index];
+	        match = formatter.call(self, val);
+	
+	        // now we need to remove `args[index]` since it's inlined in the `format`
+	        args.splice(index, 1);
+	        index--;
+	      }
+	      return match;
+	    });
+	
+	    // apply env-specific formatting (colors, etc.)
+	    exports.formatArgs.call(self, args);
+	
+	    var logFn = debug.log || exports.log || console.log.bind(console);
+	    logFn.apply(self, args);
+	  }
+	
+	  debug.namespace = namespace;
+	  debug.enabled = exports.enabled(namespace);
+	  debug.useColors = exports.useColors();
+	  debug.color = selectColor(namespace);
+	
+	  // env-specific initialization logic for debug instances
+	  if ('function' === typeof exports.init) {
+	    exports.init(debug);
+	  }
+	
+	  return debug;
+	}
+	
+	/**
+	 * Enables a debug mode by namespaces. This can include modes
+	 * separated by a colon and wildcards.
+	 *
+	 * @param {String} namespaces
+	 * @api public
+	 */
+	
+	function enable(namespaces) {
+	  exports.save(namespaces);
+	
+	  exports.names = [];
+	  exports.skips = [];
+	
+	  var split = (typeof namespaces === 'string' ? namespaces : '').split(/[\s,]+/);
+	  var len = split.length;
+	
+	  for (var i = 0; i < len; i++) {
+	    if (!split[i]) continue; // ignore empty strings
+	    namespaces = split[i].replace(/\*/g, '.*?');
+	    if (namespaces[0] === '-') {
+	      exports.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
+	    } else {
+	      exports.names.push(new RegExp('^' + namespaces + '$'));
+	    }
+	  }
+	}
+	
+	/**
+	 * Disable debug output.
+	 *
+	 * @api public
+	 */
+	
+	function disable() {
+	  exports.enable('');
+	}
+	
+	/**
+	 * Returns true if the given mode name is enabled, false otherwise.
+	 *
+	 * @param {String} name
+	 * @return {Boolean}
+	 * @api public
+	 */
+	
+	function enabled(name) {
+	  var i, len;
+	  for (i = 0, len = exports.skips.length; i < len; i++) {
+	    if (exports.skips[i].test(name)) {
+	      return false;
+	    }
+	  }
+	  for (i = 0, len = exports.names.length; i < len; i++) {
+	    if (exports.names[i].test(name)) {
+	      return true;
+	    }
+	  }
+	  return false;
+	}
+	
+	/**
+	 * Coerce `val`.
+	 *
+	 * @param {Mixed} val
+	 * @return {Mixed}
+	 * @api private
+	 */
+	
+	function coerce(val) {
+	  if (val instanceof Error) return val.stack || val.message;
+	  return val;
+	}
+
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports) {
+
+	/**
+	 * Helpers.
+	 */
+	
+	var s = 1000;
+	var m = s * 60;
+	var h = m * 60;
+	var d = h * 24;
+	var y = d * 365.25;
+	
+	/**
+	 * Parse or format the given `val`.
+	 *
+	 * Options:
+	 *
+	 *  - `long` verbose formatting [false]
+	 *
+	 * @param {String|Number} val
+	 * @param {Object} [options]
+	 * @throws {Error} throw an error if val is not a non-empty string or a number
+	 * @return {String|Number}
+	 * @api public
+	 */
+	
+	module.exports = function(val, options) {
+	  options = options || {};
+	  var type = typeof val;
+	  if (type === 'string' && val.length > 0) {
+	    return parse(val);
+	  } else if (type === 'number' && isNaN(val) === false) {
+	    return options.long ? fmtLong(val) : fmtShort(val);
+	  }
+	  throw new Error(
+	    'val is not a non-empty string or a valid number. val=' +
+	      JSON.stringify(val)
+	  );
+	};
+	
+	/**
+	 * Parse the given `str` and return milliseconds.
+	 *
+	 * @param {String} str
+	 * @return {Number}
+	 * @api private
+	 */
+	
+	function parse(str) {
+	  str = String(str);
+	  if (str.length > 100) {
+	    return;
+	  }
+	  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(
+	    str
+	  );
+	  if (!match) {
+	    return;
+	  }
+	  var n = parseFloat(match[1]);
+	  var type = (match[2] || 'ms').toLowerCase();
+	  switch (type) {
+	    case 'years':
+	    case 'year':
+	    case 'yrs':
+	    case 'yr':
+	    case 'y':
+	      return n * y;
+	    case 'days':
+	    case 'day':
+	    case 'd':
+	      return n * d;
+	    case 'hours':
+	    case 'hour':
+	    case 'hrs':
+	    case 'hr':
+	    case 'h':
+	      return n * h;
+	    case 'minutes':
+	    case 'minute':
+	    case 'mins':
+	    case 'min':
+	    case 'm':
+	      return n * m;
+	    case 'seconds':
+	    case 'second':
+	    case 'secs':
+	    case 'sec':
+	    case 's':
+	      return n * s;
+	    case 'milliseconds':
+	    case 'millisecond':
+	    case 'msecs':
+	    case 'msec':
+	    case 'ms':
+	      return n;
+	    default:
+	      return undefined;
+	  }
+	}
+	
+	/**
+	 * Short format for `ms`.
+	 *
+	 * @param {Number} ms
+	 * @return {String}
+	 * @api private
+	 */
+	
+	function fmtShort(ms) {
+	  if (ms >= d) {
+	    return Math.round(ms / d) + 'd';
+	  }
+	  if (ms >= h) {
+	    return Math.round(ms / h) + 'h';
+	  }
+	  if (ms >= m) {
+	    return Math.round(ms / m) + 'm';
+	  }
+	  if (ms >= s) {
+	    return Math.round(ms / s) + 's';
+	  }
+	  return ms + 'ms';
+	}
+	
+	/**
+	 * Long format for `ms`.
+	 *
+	 * @param {Number} ms
+	 * @return {String}
+	 * @api private
+	 */
+	
+	function fmtLong(ms) {
+	  return plural(ms, d, 'day') ||
+	    plural(ms, h, 'hour') ||
+	    plural(ms, m, 'minute') ||
+	    plural(ms, s, 'second') ||
+	    ms + ' ms';
+	}
+	
+	/**
+	 * Pluralization helper.
+	 */
+	
+	function plural(ms, n, name) {
+	  if (ms < n) {
+	    return;
+	  }
+	  if (ms < n * 1.5) {
+	    return Math.floor(ms / n) + ' ' + name;
+	  }
+	  return Math.ceil(ms / n) + ' ' + name + 's';
+	}
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	
+	/**
+	 * @see https://developers.google.com/youtube/iframe_api_reference#Functions
+	 */
+	exports.default = ['cueVideoById', 'loadVideoById', 'cueVideoByUrl', 'loadVideoByUrl', 'playVideo', 'pauseVideo', 'stopVideo', 'getVideoLoadedFraction', 'cuePlaylist', 'loadPlaylist', 'nextVideo', 'previousVideo', 'playVideoAt', 'setShuffle', 'setLoop', 'getPlaylist', 'getPlaylistIndex', 'setOption', 'mute', 'unMute', 'isMuted', 'setVolume', 'getVolume', 'seekTo', 'getPlayerState', 'getPlaybackRate', 'setPlaybackRate', 'getAvailablePlaybackRates', 'getPlaybackQuality', 'setPlaybackQuality', 'getAvailableQualityLevels', 'getCurrentTime', 'getDuration', 'removeEventListener', 'getVideoUrl', 'getVideoEmbedCode', 'getOptions', 'getOption', 'addEventListener', 'destroy', 'setSize', 'getIframe'];
+	module.exports = exports['default'];
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	
+	/**
+	 * @see https://developers.google.com/youtube/iframe_api_reference#Events
+	 * `volumeChange` is not officially supported but seems to work
+	 * it emits an object: `{volume: 82.6923076923077, muted: false}`
+	 */
+	exports.default = ['ready', 'stateChange', 'playbackQualityChange', 'playbackRateChange', 'error', 'apiChange', 'volumeChange'];
+	module.exports = exports['default'];
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _PlayerStates = __webpack_require__(62);
+	
+	var _PlayerStates2 = _interopRequireDefault(_PlayerStates);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  pauseVideo: {
+	    acceptableStates: [_PlayerStates2.default.ENDED, _PlayerStates2.default.PAUSED],
+	    stateChangeRequired: false
+	  },
+	  playVideo: {
+	    acceptableStates: [_PlayerStates2.default.ENDED, _PlayerStates2.default.PLAYING],
+	    stateChangeRequired: false
+	  },
+	  seekTo: {
+	    acceptableStates: [_PlayerStates2.default.ENDED, _PlayerStates2.default.PLAYING, _PlayerStates2.default.PAUSED],
+	    stateChangeRequired: true,
+	
+	    // TRICKY: `seekTo` may not cause a state change if no buffering is
+	    // required.
+	    timeout: 3000
+	  }
+	};
+	module.exports = exports['default'];
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  BUFFERING: 3,
+	  ENDED: 0,
+	  PAUSED: 2,
+	  PLAYING: 1,
+	  UNSTARTED: -1,
+	  VIDEO_CUED: 5
+	};
+	module.exports = exports["default"];
 
 /***/ })
 /******/ ]);
