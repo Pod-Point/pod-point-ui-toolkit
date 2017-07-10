@@ -35,6 +35,17 @@ function Video(videoWrapper) {
     var videoHeight = videoWrapper.getAttribute('data-video-height');
     var videoFullscreen = videoWrapper.getAttribute('data-video-fullscreen') === 'true';
 
+    // Get any extra options and convert into an object
+    var videoExtraOptions = videoWrapper.getAttribute('data-video-options');
+    var videoExtraOptionsObject = void 0;
+    if (videoExtraOptions) {
+        videoExtraOptionsObject = videoExtraOptions.split('&').reduce(function (prev, curr, i, arr) {
+            var p = curr.split('=');
+            prev[decodeURIComponent(p[0])] = decodeURIComponent(p[1]);
+            return prev;
+        }, {});
+    }
+
     switch (videoType) {
         case 'vimeo':
             {
@@ -44,6 +55,11 @@ function Video(videoWrapper) {
                     height: videoHeight
                 };
 
+                if (typeof videoExtraOptionsObject !== 'undefined') {
+                    options = Object.assign(options, videoExtraOptionsObject);
+                }
+
+                // Create the player
                 window[wrapperId] = new _player2.default(videoWrapper, options);
                 break;
             }
@@ -63,6 +79,11 @@ function Video(videoWrapper) {
                     }
                 };
 
+                if (typeof videoExtraOptionsObject !== 'undefined') {
+                    _options = Object.assign(_options, videoExtraOptionsObject);
+                }
+
+                // Create the player
                 window[wrapperId] = (0, _youtubePlayer2.default)(videoDiv, _options);
                 break;
             }
