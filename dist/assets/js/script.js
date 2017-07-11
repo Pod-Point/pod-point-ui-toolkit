@@ -64,7 +64,7 @@
 	
 	var _modal2 = _interopRequireDefault(_modal);
 	
-	var _ajaxForm = __webpack_require__(10);
+	var _ajaxForm = __webpack_require__(8);
 	
 	var _ajaxForm2 = _interopRequireDefault(_ajaxForm);
 	
@@ -548,11 +548,9 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domDelegate = __webpack_require__(7);
-	
 	var _domOps = __webpack_require__(4);
 	
-	var _utilities = __webpack_require__(9);
+	var _utilities = __webpack_require__(7);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -701,6 +699,347 @@
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.show = show;
+	exports.hide = hide;
+	exports.isHidden = isHidden;
+	exports.isVisible = isVisible;
+	exports.disableOrEnableButton = disableOrEnableButton;
+	exports.addItemToCookie = addItemToCookie;
+	exports.readItemFromCookie = readItemFromCookie;
+	exports.deleteItemFromCookie = deleteItemFromCookie;
+	exports.openPanel = openPanel;
+	exports.closePanel = closePanel;
+	exports.allRadiosSelected = allRadiosSelected;
+	exports.aRadioContains = aRadioContains;
+	exports.getRandomInt = getRandomInt;
+	exports.roundNumberTo = roundNumberTo;
+	exports.loadVideo = loadVideo;
+	
+	var _domOps = __webpack_require__(4);
+	
+	var IS_OPEN = 'is-open';
+	
+	/**
+	 * Remove hidden class from element, showing it via CSS
+	 *
+	 * @param {element}
+	 */
+	function show(element) {
+	    element.classList.remove('hidden');
+	}
+	
+	/**
+	 * Apply hidden class to element, hiding it via CSS
+	 *
+	 * @param {element}
+	 */
+	function hide(element) {
+	    element.classList.add('hidden');
+	}
+	
+	/**
+	 * Check if an element is hidden (by CSS)
+	 *
+	 * @param {element}
+	 * @returns {boolean} is hidden
+	 */
+	function isHidden(element) {
+	    return element.classList.contains('hidden');
+	}
+	
+	/**
+	 * Check if an element is visible (isn't hidden by CSS)
+	 *
+	 * @param {element}
+	 * @returns {boolean} is visible
+	 */
+	function isVisible(element) {
+	    return !isHidden(element);
+	}
+	
+	/**
+	 * Disable or enable button element
+	 *
+	 * @param {element} button
+	 * @param {boolean} disable
+	 */
+	function disableOrEnableButton(element, disable) {
+	    var button = element;
+	    if (disable) {
+	        button.disabled = true;
+	        button.classList.add('is-disabled');
+	    } else {
+	        button.disabled = false;
+	        button.classList.remove('is-disabled');
+	    }
+	}
+	
+	/**
+	 * Add item to cookie
+	 *
+	 * @param {string} name of cookie
+	 * @param {obj} value of cookie
+	 */
+	function addItemToCookie(name, value) {
+	    var cookie = [name + '=' + JSON.stringify(value)];
+	    document.cookie = cookie;
+	}
+	
+	/**
+	 * Read item from cookie
+	 *
+	 * @param {string} name of cookie
+	 * @returns {obj} result
+	 */
+	function readItemFromCookie(name) {
+	    var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+	    if (result) result = JSON.parse(result[1]);
+	    return result;
+	}
+	
+	/**
+	 * Delete item from cookie
+	 *
+	 * @param {string} name of cookie
+	 */
+	function deleteItemFromCookie(name) {
+	    var domain = window.location.host.toString();
+	    var expiry = '01-Jan-1970 00:00:01 GMT';
+	    document.cookie = name + '=; expires=' + expiry + '; path=/; domain=.' + domain;
+	}
+	
+	/**
+	 * Open panel
+	 *
+	 * @param {element} panel
+	 */
+	function openPanel(panel) {
+	    var panelId = panel.getAttribute('id');
+	    var toggleIcon = document.querySelector('[data-toggle-icon="' + panelId + '"]');
+	
+	    panel.classList.add(IS_OPEN);
+	    if (toggleIcon) {
+	        toggleIcon.classList.add('rotate');
+	    }
+	}
+	
+	/**
+	 * Close panel
+	 *
+	 * @param {element} panel
+	 */
+	function closePanel(panel) {
+	    var panelId = panel.getAttribute('id');
+	    var toggleIcon = document.querySelector('[data-toggle-icon="' + panelId + '"]');
+	
+	    panel.classList.remove(IS_OPEN);
+	    if (toggleIcon) {
+	        toggleIcon.classList.remove('rotate');
+	    }
+	}
+	
+	/**
+	 * All radios selected
+	 *
+	 * @param {nodeList} radio wrap elements
+	 * @return {boolean} all radios have been selected
+	 */
+	function allRadiosSelected(radiosWraps) {
+	    var numberOfRadioGroups = (0, _domOps.nodesToArray)(radiosWraps).length;
+	    var numberOfRadiosSelected = 0;
+	
+	    radiosWraps.forEach(function (radiosWrap) {
+	        var checkedRadios = (0, _domOps.nodesToArray)(radiosWrap.querySelectorAll('input[type="radio"]:checked'));
+	        if (checkedRadios.length === 1) {
+	            numberOfRadiosSelected += 1;
+	        }
+	    });
+	    return numberOfRadioGroups === numberOfRadiosSelected;
+	}
+	
+	/**
+	 * A radio contains a class
+	 *
+	 * @param {nodeList} radios
+	 * @param {string} the class
+	 * @return {boolean} a radio contains the specified class
+	 */
+	function aRadioContains(radios, specifiedClass) {
+	    var containsClass = false;
+	    radios.forEach(function (radio) {
+	        if (radio.checked) {
+	            if (radio.classList.contains(specifiedClass)) {
+	                containsClass = true;
+	            }
+	        }
+	    });
+	    return containsClass;
+	}
+	
+	/**
+	 * Get random integar
+	 *
+	 * @param {integar} min
+	 * @param {integar} max
+	 * @return {integar} a random integar between the specified min and max
+	 */
+	function getRandomInt(min, max) {
+	    return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	
+	/**
+	 * Round number to
+	 *
+	 * @param {integar} number
+	 * @param {integar} number to round to
+	 * @return {integar} a number rounded to the specified number
+	 */
+	function roundNumberTo(num, roundTo) {
+	    var resto = num % roundTo;
+	    return resto <= roundTo / 2 ? num - resto : num + roundTo - resto;
+	}
+	
+	/**
+	 * Load or destroy video by replacing the src from the data-src
+	 *
+	 * @param {element} video
+	 * @param {boolean} load video
+	 */
+	function loadVideo(videoEl, load) {
+	    var videoSrc = videoEl.getAttribute('data-src');
+	
+	    if (load) {
+	        videoEl.setAttribute('src', videoSrc);
+	    } else {
+	        videoEl.setAttribute('src', '');
+	    }
+	}
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _domDelegate = __webpack_require__(9);
+	
+	var _superagent = __webpack_require__(11);
+	
+	var _superagent2 = _interopRequireDefault(_superagent);
+	
+	var _progressButton = __webpack_require__(17);
+	
+	var _progressButton2 = _interopRequireDefault(_progressButton);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var instances = [];
+	
+	var AjaxForm = function () {
+	
+	    /**
+	     * Create a new AJAX form
+	     *
+	     * @param {element} form
+	     */
+	    function AjaxForm(form) {
+	        _classCallCheck(this, AjaxForm);
+	
+	        this.form = form;
+	        this.button = _progressButton2.default.create(form.querySelector('button[type="submit"]'));
+	        this.requestInProgress = false;
+	
+	        this.bindEvents();
+	    }
+	
+	    /**
+	     * Handle the form submission
+	     */
+	
+	
+	    _createClass(AjaxForm, [{
+	        key: 'submitForm',
+	        value: function submitForm() {
+	            var _this = this;
+	
+	            this.requestInProgress = true;
+	            this.button.handleLoading();
+	
+	            _superagent2.default.post(this.form.action).type('form').send(this.form).end(function (error, response) {
+	                _this.requestInProgress = false;
+	
+	                if (response && response.ok) {
+	                    _this.button.handleComplete(true);
+	                } else {
+	                    _this.button.handleComplete(false);
+	                }
+	            });
+	        }
+	
+	        /**
+	         * Bind any event listeners to the elements
+	         */
+	
+	    }, {
+	        key: 'bindEvents',
+	        value: function bindEvents() {
+	            var _this2 = this;
+	
+	            this.listener = new _domDelegate.Delegate(this.form);
+	
+	            this.listener.on('submit', function (event) {
+	                event.preventDefault();
+	
+	                if (!_this2.requestInProgress) {
+	                    _this2.submitForm();
+	                }
+	            });
+	        }
+	
+	        /**
+	         * Unbinds the event listeners from the elements
+	         */
+	
+	    }, {
+	        key: 'unbindEvents',
+	        value: function unbindEvents() {
+	            this.listener.destroy();
+	        }
+	    }]);
+	
+	    return AjaxForm;
+	}();
+	
+	exports.default = {
+	    init: function init(form) {
+	        instances.push(new AjaxForm(form));
+	    },
+	
+	    destroy: function destroy() {
+	        instances.forEach(function (instance) {
+	            return instance.unbindEvents();
+	        });
+	        instances = [];
+	    }
+	};
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	/*jshint browser:true, node:true*/
 	
 	'use strict';
@@ -713,7 +1052,7 @@
 	 * @copyright The Financial Times Limited [All Rights Reserved]
 	 * @license MIT License (see LICENSE.txt)
 	 */
-	var Delegate = __webpack_require__(8);
+	var Delegate = __webpack_require__(10);
 	
 	module.exports = function(root) {
 	  return new Delegate(root);
@@ -723,7 +1062,7 @@
 
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports) {
 
 	/*jshint browser:true, node:true*/
@@ -1156,347 +1495,6 @@
 	  this.root();
 	};
 
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.show = show;
-	exports.hide = hide;
-	exports.isHidden = isHidden;
-	exports.isVisible = isVisible;
-	exports.disableOrEnableButton = disableOrEnableButton;
-	exports.addItemToCookie = addItemToCookie;
-	exports.readItemFromCookie = readItemFromCookie;
-	exports.deleteItemFromCookie = deleteItemFromCookie;
-	exports.openPanel = openPanel;
-	exports.closePanel = closePanel;
-	exports.allRadiosSelected = allRadiosSelected;
-	exports.aRadioContains = aRadioContains;
-	exports.getRandomInt = getRandomInt;
-	exports.roundNumberTo = roundNumberTo;
-	exports.loadVideo = loadVideo;
-	
-	var _domOps = __webpack_require__(4);
-	
-	var IS_OPEN = 'is-open';
-	
-	/**
-	 * Remove hidden class from element, showing it via CSS
-	 *
-	 * @param {element}
-	 */
-	function show(element) {
-	    element.classList.remove('hidden');
-	}
-	
-	/**
-	 * Apply hidden class to element, hiding it via CSS
-	 *
-	 * @param {element}
-	 */
-	function hide(element) {
-	    element.classList.add('hidden');
-	}
-	
-	/**
-	 * Check if an element is hidden (by CSS)
-	 *
-	 * @param {element}
-	 * @returns {boolean} is hidden
-	 */
-	function isHidden(element) {
-	    return element.classList.contains('hidden');
-	}
-	
-	/**
-	 * Check if an element is visible (isn't hidden by CSS)
-	 *
-	 * @param {element}
-	 * @returns {boolean} is visible
-	 */
-	function isVisible(element) {
-	    return !isHidden(element);
-	}
-	
-	/**
-	 * Disable or enable button element
-	 *
-	 * @param {element} button
-	 * @param {boolean} disable
-	 */
-	function disableOrEnableButton(element, disable) {
-	    var button = element;
-	    if (disable) {
-	        button.disabled = true;
-	        button.classList.add('is-disabled');
-	    } else {
-	        button.disabled = false;
-	        button.classList.remove('is-disabled');
-	    }
-	}
-	
-	/**
-	 * Add item to cookie
-	 *
-	 * @param {string} name of cookie
-	 * @param {obj} value of cookie
-	 */
-	function addItemToCookie(name, value) {
-	    var cookie = [name + '=' + JSON.stringify(value)];
-	    document.cookie = cookie;
-	}
-	
-	/**
-	 * Read item from cookie
-	 *
-	 * @param {string} name of cookie
-	 * @returns {obj} result
-	 */
-	function readItemFromCookie(name) {
-	    var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
-	    if (result) result = JSON.parse(result[1]);
-	    return result;
-	}
-	
-	/**
-	 * Delete item from cookie
-	 *
-	 * @param {string} name of cookie
-	 */
-	function deleteItemFromCookie(name) {
-	    var domain = window.location.host.toString();
-	    var expiry = '01-Jan-1970 00:00:01 GMT';
-	    document.cookie = name + '=; expires=' + expiry + '; path=/; domain=.' + domain;
-	}
-	
-	/**
-	 * Open panel
-	 *
-	 * @param {element} panel
-	 */
-	function openPanel(panel) {
-	    var panelId = panel.getAttribute('id');
-	    var toggleIcon = document.querySelector('[data-toggle-icon="' + panelId + '"]');
-	
-	    panel.classList.add(IS_OPEN);
-	    if (toggleIcon) {
-	        toggleIcon.classList.add('rotate');
-	    }
-	}
-	
-	/**
-	 * Close panel
-	 *
-	 * @param {element} panel
-	 */
-	function closePanel(panel) {
-	    var panelId = panel.getAttribute('id');
-	    var toggleIcon = document.querySelector('[data-toggle-icon="' + panelId + '"]');
-	
-	    panel.classList.remove(IS_OPEN);
-	    if (toggleIcon) {
-	        toggleIcon.classList.remove('rotate');
-	    }
-	}
-	
-	/**
-	 * All radios selected
-	 *
-	 * @param {nodeList} radio wrap elements
-	 * @return {boolean} all radios have been selected
-	 */
-	function allRadiosSelected(radiosWraps) {
-	    var numberOfRadioGroups = (0, _domOps.nodesToArray)(radiosWraps).length;
-	    var numberOfRadiosSelected = 0;
-	
-	    radiosWraps.forEach(function (radiosWrap) {
-	        var checkedRadios = (0, _domOps.nodesToArray)(radiosWrap.querySelectorAll('input[type="radio"]:checked'));
-	        if (checkedRadios.length === 1) {
-	            numberOfRadiosSelected += 1;
-	        }
-	    });
-	    return numberOfRadioGroups === numberOfRadiosSelected;
-	}
-	
-	/**
-	 * A radio contains a class
-	 *
-	 * @param {nodeList} radios
-	 * @param {string} the class
-	 * @return {boolean} a radio contains the specified class
-	 */
-	function aRadioContains(radios, specifiedClass) {
-	    var containsClass = false;
-	    radios.forEach(function (radio) {
-	        if (radio.checked) {
-	            if (radio.classList.contains(specifiedClass)) {
-	                containsClass = true;
-	            }
-	        }
-	    });
-	    return containsClass;
-	}
-	
-	/**
-	 * Get random integar
-	 *
-	 * @param {integar} min
-	 * @param {integar} max
-	 * @return {integar} a random integar between the specified min and max
-	 */
-	function getRandomInt(min, max) {
-	    return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
-	
-	/**
-	 * Round number to
-	 *
-	 * @param {integar} number
-	 * @param {integar} number to round to
-	 * @return {integar} a number rounded to the specified number
-	 */
-	function roundNumberTo(num, roundTo) {
-	    var resto = num % roundTo;
-	    return resto <= roundTo / 2 ? num - resto : num + roundTo - resto;
-	}
-	
-	/**
-	 * Load or destroy video by replacing the src from the data-src
-	 *
-	 * @param {element} video
-	 * @param {boolean} load video
-	 */
-	function loadVideo(videoEl, load) {
-	    var videoSrc = videoEl.getAttribute('data-src');
-	
-	    if (load) {
-	        videoEl.setAttribute('src', videoSrc);
-	    } else {
-	        videoEl.setAttribute('src', '');
-	    }
-	}
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _domDelegate = __webpack_require__(7);
-	
-	var _superagent = __webpack_require__(11);
-	
-	var _superagent2 = _interopRequireDefault(_superagent);
-	
-	var _progressButton = __webpack_require__(17);
-	
-	var _progressButton2 = _interopRequireDefault(_progressButton);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	var instances = [];
-	
-	var AjaxForm = function () {
-	
-	    /**
-	     * Create a new AJAX form
-	     *
-	     * @param {element} form
-	     */
-	    function AjaxForm(form) {
-	        _classCallCheck(this, AjaxForm);
-	
-	        this.form = form;
-	        this.button = _progressButton2.default.create(form.querySelector('button[type="submit"]'));
-	        this.requestInProgress = false;
-	
-	        this.bindEvents();
-	    }
-	
-	    /**
-	     * Handle the form submission
-	     */
-	
-	
-	    _createClass(AjaxForm, [{
-	        key: 'submitForm',
-	        value: function submitForm() {
-	            var _this = this;
-	
-	            this.requestInProgress = true;
-	            this.button.handleLoading();
-	
-	            _superagent2.default.post(this.form.action).type('form').send(this.form).end(function (error, response) {
-	                _this.requestInProgress = false;
-	
-	                if (response && response.ok) {
-	                    _this.button.handleComplete(true);
-	                } else {
-	                    _this.button.handleComplete(false);
-	                }
-	            });
-	        }
-	
-	        /**
-	         * Bind any event listeners to the elements
-	         */
-	
-	    }, {
-	        key: 'bindEvents',
-	        value: function bindEvents() {
-	            var _this2 = this;
-	
-	            this.listener = new _domDelegate.Delegate(this.form);
-	
-	            this.listener.on('submit', function (event) {
-	                event.preventDefault();
-	
-	                if (!_this2.requestInProgress) {
-	                    _this2.submitForm();
-	                }
-	            });
-	        }
-	
-	        /**
-	         * Unbinds the event listeners from the elements
-	         */
-	
-	    }, {
-	        key: 'unbindEvents',
-	        value: function unbindEvents() {
-	            this.listener.destroy();
-	        }
-	    }]);
-	
-	    return AjaxForm;
-	}();
-	
-	exports.default = {
-	    init: function init(form) {
-	        instances.push(new AjaxForm(form));
-	    },
-	
-	    destroy: function destroy() {
-	        instances.forEach(function (instance) {
-	            return instance.unbindEvents();
-	        });
-	        instances = [];
-	    }
-	};
 
 /***/ }),
 /* 11 */
@@ -3091,13 +3089,13 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domDelegate = __webpack_require__(7);
+	var _domDelegate = __webpack_require__(9);
 	
 	var _domOps = __webpack_require__(4);
 	
 	var _validationRules = __webpack_require__(19);
 	
-	var _utilities = __webpack_require__(9);
+	var _utilities = __webpack_require__(7);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -3346,11 +3344,11 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domDelegate = __webpack_require__(7);
+	var _domDelegate = __webpack_require__(9);
 	
 	var _domOps = __webpack_require__(4);
 	
-	var _utilities = __webpack_require__(9);
+	var _utilities = __webpack_require__(7);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -3549,8 +3547,6 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domDelegate = __webpack_require__(7);
-	
 	var _domOps = __webpack_require__(4);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3719,7 +3715,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domDelegate = __webpack_require__(7);
+	var _domDelegate = __webpack_require__(9);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -3822,7 +3818,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domDelegate = __webpack_require__(7);
+	var _domDelegate = __webpack_require__(9);
 	
 	var _domOps = __webpack_require__(4);
 	
@@ -3929,7 +3925,7 @@
 	
 	var _domOps = __webpack_require__(4);
 	
-	var _domDelegate = __webpack_require__(7);
+	var _domDelegate = __webpack_require__(9);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -8158,7 +8154,7 @@
 
 	'use strict';
 	
-	var _utilities = __webpack_require__(9);
+	var _utilities = __webpack_require__(7);
 	
 	Object.defineProperty(exports, '__esModule', {
 	    value: true

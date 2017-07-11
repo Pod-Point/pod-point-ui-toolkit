@@ -1,4 +1,3 @@
-import { Delegate } from 'dom-delegate';
 import { nodesToArray } from '@pod-point/dom-ops';
 
 let instances = [];

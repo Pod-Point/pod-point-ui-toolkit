@@ -1,4 +1,3 @@
-import { Delegate } from 'dom-delegate';
 import { addClass, removeClass } from '@pod-point/dom-ops';
 import { isVisible, show, hide, loadVideo } from './../utilities';
 
