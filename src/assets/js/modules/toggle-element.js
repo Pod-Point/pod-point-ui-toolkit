@@ -35,31 +35,22 @@ class ToggleElement {
      * Binds the event listeners from the elements
      */
     bindEvents() {
-        this.toggleListeners = [];
         this.toggleButtons.forEach(toggleButton => {
-            const toggleListener = new Delegate(toggleButton);
-            this.toggleListeners.push(toggleListener);
-            toggleListener.on('click', event => {
+            toggleButton.addEventListener('click', event => {
                 event.preventDefault();
                 this.toggleElement();
             });
         });
 
-        this.openListeners = [];
         this.openButtons.forEach(openButton => {
-            const openListener = new Delegate(openButton);
-            this.openListeners.push(openListener);
-            openListener.on('click', event => {
+            openButton.addEventListener('click', event => {
                 event.preventDefault();
                 this.openElement();
             });
         });
 
-        this.closeListeners = [];
         this.closeButtons.forEach(closeButton => {
-            const closeListener = new Delegate(closeButton);
-            this.closeListeners.push(closeListener);
-            closeListener.on('click', event => {
+            closeButton.addEventListener('click', event => {
                 event.preventDefault();
                 this.closeElement();
             });

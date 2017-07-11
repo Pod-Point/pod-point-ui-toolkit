@@ -588,30 +588,22 @@
 	        value: function bindEvents() {
 	            var _this = this;
 	
-	            this.openListener = new _domDelegate.Delegate(this.openButton);
-	
-	            this.openListener.on('click', function () {
+	            this.openButton.addEventListener('click', function () {
 	                _this.openModal();
 	            });
 	
-	            this.closeListener = new _domDelegate.Delegate(this.closeButton);
-	
-	            this.closeListener.on('click', function (event) {
+	            this.closeButton.addEventListener('click', function (event) {
 	                event.preventDefault();
 	                _this.closeModal();
 	            });
 	
-	            this.overlayListener = new _domDelegate.Delegate(this.modal);
-	
-	            this.overlayListener.on('click', function (event) {
+	            this.modal.addEventListener('click', function (event) {
 	                if (event.target === _this.modal) {
 	                    _this.closeModal();
 	                }
 	            });
 	
-	            this.windowListener = new _domDelegate.Delegate(document.body);
-	
-	            this.windowListener.on('keyup', function (event) {
+	            document.body.addEventListener('keyup', function (event) {
 	                if (event.keyCode === 27) {
 	                    _this.closeModal();
 	                }
@@ -3605,31 +3597,22 @@
 	        value: function bindEvents() {
 	            var _this = this;
 	
-	            this.toggleListeners = [];
 	            this.toggleButtons.forEach(function (toggleButton) {
-	                var toggleListener = new _domDelegate.Delegate(toggleButton);
-	                _this.toggleListeners.push(toggleListener);
-	                toggleListener.on('click', function (event) {
+	                toggleButton.addEventListener('click', function (event) {
 	                    event.preventDefault();
 	                    _this.toggleElement();
 	                });
 	            });
 	
-	            this.openListeners = [];
 	            this.openButtons.forEach(function (openButton) {
-	                var openListener = new _domDelegate.Delegate(openButton);
-	                _this.openListeners.push(openListener);
-	                openListener.on('click', function (event) {
+	                openButton.addEventListener('click', function (event) {
 	                    event.preventDefault();
 	                    _this.openElement();
 	                });
 	            });
 	
-	            this.closeListeners = [];
 	            this.closeButtons.forEach(function (closeButton) {
-	                var closeListener = new _domDelegate.Delegate(closeButton);
-	                _this.closeListeners.push(closeListener);
-	                closeListener.on('click', function (event) {
+	                closeButton.addEventListener('click', function (event) {
 	                    event.preventDefault();
 	                    _this.closeElement();
 	                });

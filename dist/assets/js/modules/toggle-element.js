@@ -54,31 +54,22 @@ var ToggleElement = function () {
         value: function bindEvents() {
             var _this = this;
 
-            this.toggleListeners = [];
             this.toggleButtons.forEach(function (toggleButton) {
-                var toggleListener = new _domDelegate.Delegate(toggleButton);
-                _this.toggleListeners.push(toggleListener);
-                toggleListener.on('click', function (event) {
+                toggleButton.addEventListener('click', function (event) {
                     event.preventDefault();
                     _this.toggleElement();
                 });
             });
 
-            this.openListeners = [];
             this.openButtons.forEach(function (openButton) {
-                var openListener = new _domDelegate.Delegate(openButton);
-                _this.openListeners.push(openListener);
-                openListener.on('click', function (event) {
+                openButton.addEventListener('click', function (event) {
                     event.preventDefault();
                     _this.openElement();
                 });
             });
 
-            this.closeListeners = [];
             this.closeButtons.forEach(function (closeButton) {
-                var closeListener = new _domDelegate.Delegate(closeButton);
-                _this.closeListeners.push(closeListener);
-                closeListener.on('click', function (event) {
+                closeButton.addEventListener('click', function (event) {
                     event.preventDefault();
                     _this.closeElement();
                 });
