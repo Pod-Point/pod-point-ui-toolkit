@@ -10,8 +10,10 @@ requireDir('gulp_tasks', { recurse: true } );
 gulp.task('set-env-dev', () => { global.env = 'dev' });
 gulp.task('set-env-prod', () => { global.env = 'prod' });
 
+gulp.task('assembleHtml', ['copyAll', 'svgs', 'js', 'sass']);
+
 // Global tasks
-gulp.task('common', ['copyAll', 'svgs', 'js', 'sass', 'assembleHtml']);
+gulp.task('common', ['assembleHtml']);
 
 // Dev task
 gulp.task('dev', [

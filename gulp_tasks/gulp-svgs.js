@@ -1,42 +1,41 @@
 const gulp = require('gulp');
 const config = require('../config');
 const svgmin = require('gulp-svgmin');
-const svgSprite	= require('gulp-svg-sprite');
 const rename = require("gulp-rename");
 
-// Spritesheet config
-var svgConfig = {
-    shape : {
-        dimension : { // Set maximum dimensions
-            maxWidth : 32,
-            maxHeight : 32
-        }
-    },
-    mode : {
-        symbol : true // Activate the «symbol» mode
-    }
-};
 
-// Generate SVG Spritesheet from icons.
-// Put spritesheet as an svg in dist/img and also create a hbs file and put in src/templates/partials
-gulp.task('svg-sprite', () => {
-    gulp.src(config.src.icons+'**/*.svg')
-        .pipe(svgSprite(svgConfig))
-        .pipe(gulp.dest(config.dist.img));
-
-    gulp.src(config.dist.img + '/symbol/svg/sprite.symbol.svg')
-        .pipe(rename(function (path) {
-                path.basename = "spritesheet";
-                path.extname = ".hbs"
-            }))
-        .pipe(gulp.dest(config.src.svgPartials));
-});
-
-// Minify svg images used for the toolkit
+// Minify and copy svgs to dist assets
 gulp.task('copy-svgs', () => {
+
+    // Minify icons
+    gulp.src(config.src.icons+'**/*.svg')
+        .pipe(svgmin())
+        .pipe(gulp.dest(config.dist.icons));
+
+    // Minify other svgs
     gulp.src(config.src.img + '**/*.svg')
         .pipe(svgmin())
         .pipe(gulp.dest(config.dist.img));
 });
 
-gulp.task('svgs', ['svg-sprite', 'copy-svgs']);
+gulp.task('inline-svgs', () => {
+
+    // Minify icons and make them hbs partials
+    gulp.src(config.src.icons+'**/*.svg')
+        .pipe(svgmin())
+        .pipe(rename({
+            prefix: "icon-",
+            extname: ".hbs"
+        }))
+        .pipe(gulp.dest(config.src.svgIconPartials));
+
+    // Minify svgs and make them hbs partials
+    gulp.src(config.src.inlineSvgs + '**/*.svg')
+        .pipe(svgmin())
+        .pipe(rename({
+            extname: ".hbs"
+        }))
+        .pipe(gulp.dest(config.src.svgPartials));
+});
+
+gulp.task('svgs', ['copy-svgs', 'inline-svgs']);

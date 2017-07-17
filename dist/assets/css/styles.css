@@ -1615,17 +1615,18 @@ button {
       transform: rotate(360deg); }
 
 .icon {
-  height: 25px;
-  width: 25px;
   margin-right: 2px;
   margin-left: 2px; }
-  .icon--sm {
+  .icon svg {
+    height: 25px;
+    width: 25px; }
+  .icon--sm svg {
     height: 20px;
     width: 20px; }
-  .icon--xs {
+  .icon--xs svg {
     height: 15px;
     width: 15px; }
-  .icon--xxs {
+  .icon--xxs svg {
     height: 10px;
     width: 10px; }
 
@@ -2155,7 +2156,7 @@ img {
             padding: 39px 5px; } }
         .global-nav ul li .nav-link.find-chargepoint {
           color: #8CC63F;
-          padding-left: 25px !important;
+          padding-left: 20px !important;
           position: relative; }
           .global-nav ul li .nav-link.find-chargepoint svg {
             position: absolute;
