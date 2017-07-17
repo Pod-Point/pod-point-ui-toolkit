@@ -29,7 +29,7 @@ var Modal = function () {
         var modalID = this.openButton.getAttribute('data-modal');
         this.modal = document.querySelector('#' + modalID);
         this.closeButton = this.modal.querySelector('.modal-close');
-        this.video = this.modal.querySelector('.video-wrapper iframe');
+        this.videoWrapper = this.modal.querySelector('.video-wrapper');
 
         this.bindEvents();
     }
@@ -94,10 +94,6 @@ var Modal = function () {
             (0, _domOps.addClass)(document.documentElement, MODAL_OPEN);
             (0, _utilities.show)(this.modal);
 
-            if (this.video) {
-                (0, _utilities.loadVideo)(this.video, true);
-            }
-
             var overlay = document.createElement('div');
             overlay.className = 'modal-overlay';
             document.body.appendChild(overlay);
@@ -113,8 +109,13 @@ var Modal = function () {
             (0, _domOps.removeClass)(document.documentElement, MODAL_OPEN);
             (0, _utilities.hide)(this.modal);
 
-            if (this.video) {
-                (0, _utilities.loadVideo)(this.video, false);
+            if (this.videoWrapper) {
+                var wrapperId = this.videoWrapper.getAttribute('id');
+                if (window[wrapperId].pause) {
+                    window[wrapperId].pause();
+                } else if (window[wrapperId].pauseVideo) {
+                    window[wrapperId].pauseVideo();
+                }
             }
 
             var overlay = document.querySelector('.modal-overlay');

@@ -173,19 +173,3 @@ export function roundNumberTo(num, roundTo) {
     const resto = num % roundTo;
     return resto <= (roundTo / 2) ? (num - resto) : ((num + roundTo) - resto);
 }
-
-/**
- * Load or destroy video by replacing the src from the data-src
- *
- * @param {element} video
- * @param {boolean} load video
- */
-export function loadVideo(videoEl, load) {
-    const videoSrc = videoEl.getAttribute('data-src');
-
-    if (load) {
-        videoEl.setAttribute('src', videoSrc);
-    } else {
-        videoEl.setAttribute('src', '');
-    }
-}
