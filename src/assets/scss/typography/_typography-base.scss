@@ -12,9 +12,7 @@ body {
 	color: $font-color-base;
 	font-family: $font-family-base;
 	font-weight: $font-weight-regular;
-	font-size: $font-size-base;
-	line-height: $line-height-base;
-
+	@include font-base;
 	-webkit-text-size-adjust:100%;
 	-ms-text-size-adjust:100%;
 	-webkit-text-shadow:rgba(255,255,255,0.01) 0 0 1px;
@@ -65,25 +63,6 @@ strong,
 	color: $primary-color;
 	a {
 		border-bottom: 2px solid $primary-color;
-	}
-}
-.crossed-out {
-	color: $font-color-very-light;
-	position: relative;
-	display: inline-block;
-	&:before {
-		content: '';
-		display: inline-block;
-		text-align: center;
-		@include position(absolute, 50% 0 null null);
-		width: 100%;
-		height: 2px;
-		background-color: $font-color-very-light;
-		transform: rotate(20deg);
-	}
-	&:after {
-		content: '';
-		display: block;
 	}
 }
 

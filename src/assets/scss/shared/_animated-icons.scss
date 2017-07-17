@@ -87,9 +87,9 @@
 		border-radius: 50%;
 		border: 2px solid $primary-color;
 		span {
-			@include position(relative, 12px 4px null null);
-			width: 18px;
-			height: 18px;
+			@include position(relative, 12px 3px null null);
+			width: 19px;
+			height: 19px;
 			&:before,
 			&:after {
 				background-color: $primary-color;

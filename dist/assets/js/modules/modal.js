@@ -6,8 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _domDelegate = require('dom-delegate');
-
 var _domOps = require('@pod-point/dom-ops');
 
 var _utilities = require('./../utilities');
@@ -46,30 +44,22 @@ var Modal = function () {
         value: function bindEvents() {
             var _this = this;
 
-            this.openListener = new _domDelegate.Delegate(this.openButton);
-
-            this.openListener.on('click', function () {
+            this.openButton.addEventListener('click', function () {
                 _this.openModal();
             });
 
-            this.closeListener = new _domDelegate.Delegate(this.closeButton);
-
-            this.closeListener.on('click', function (event) {
+            this.closeButton.addEventListener('click', function (event) {
                 event.preventDefault();
                 _this.closeModal();
             });
 
-            this.overlayListener = new _domDelegate.Delegate(this.modal);
-
-            this.overlayListener.on('click', function (event) {
+            this.modal.addEventListener('click', function (event) {
                 if (event.target === _this.modal) {
                     _this.closeModal();
                 }
             });
 
-            this.windowListener = new _domDelegate.Delegate(document.body);
-
-            this.windowListener.on('keyup', function (event) {
+            document.body.addEventListener('keyup', function (event) {
                 if (event.keyCode === 27) {
                     _this.closeModal();
                 }

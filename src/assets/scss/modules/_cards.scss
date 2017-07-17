@@ -66,9 +66,6 @@ $card-padding-base: 20px;
 
 .cards-same-height {
 	.card {
-		min-height: calc(100% - 40px);
-		&--more-pad {
-			min-height: calc(100% - 80px);
-		}
+		min-height: 100%;
 	}
 }

@@ -51,10 +51,10 @@
 }
 
 .list--inline {
-	@include margin(null rem(-15));
+	@include margin(rem(-5) rem(-13));
 	li {
 		display: inline-block;
-		@include margin(null rem(15));
+		@include margin(rem(5) rem(13));
 	}
 	&--sm-gutter {
 		@include margin(null rem(-5));

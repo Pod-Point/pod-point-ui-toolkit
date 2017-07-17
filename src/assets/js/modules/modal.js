@@ -1,4 +1,3 @@
-import { Delegate } from 'dom-delegate';
 import { addClass, removeClass } from '@pod-point/dom-ops';
 import { isVisible, show, hide } from './../utilities';
 
@@ -26,30 +25,22 @@ class Modal {
      * Binds the event listeners from the elements
      */
     bindEvents() {
-        this.openListener = new Delegate(this.openButton);
-
-        this.openListener.on('click', () => {
+        this.openButton.addEventListener('click', () => {
             this.openModal();
         });
 
-        this.closeListener = new Delegate(this.closeButton);
-
-        this.closeListener.on('click', event => {
+        this.closeButton.addEventListener('click', event => {
             event.preventDefault();
             this.closeModal();
         });
 
-        this.overlayListener = new Delegate(this.modal);
-
-        this.overlayListener.on('click', event => {
+        this.modal.addEventListener('click', event => {
             if (event.target === this.modal) {
                 this.closeModal();
             }
         });
 
-        this.windowListener = new Delegate(document.body);
-
-        this.windowListener.on('keyup', event => {
+        document.body.addEventListener('keyup', event => {
             if (event.keyCode === 27) {
                 this.closeModal();
             }

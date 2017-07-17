@@ -422,12 +422,16 @@ body {
   color: #333;
   font-family: "Quicksand", sans-serif;
   font-weight: 400;
-  font-size: 0.75rem;
+  font-weight: 400;
+  font-size: 0.875rem;
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-text-shadow: rgba(255, 255, 255, 0.01) 0 0 1px;
   text-shadow: rgba(255, 255, 255, 0.01) 0 0 1px; }
+  @media (min-width: 50em) {
+    body {
+      font-size: 1rem; } }
 
 p, .p {
   margin: 0;
@@ -445,7 +449,6 @@ h1, .h1 {
   margin: 0;
   padding-bottom: 1em;
   font-weight: 700;
-  font-size: 0.75rem;
   line-height: 1.3;
   font-size: 1.25rem; }
   h1:last-child, .h1:last-child {
@@ -458,7 +461,6 @@ h2, .h2 {
   margin: 0;
   padding-bottom: 1em;
   font-weight: 700;
-  font-size: 0.75rem;
   line-height: 1.3;
   font-size: 1.125rem; }
   h2:last-child, .h2:last-child {
@@ -471,7 +473,6 @@ h3, .h3 {
   margin: 0;
   padding-bottom: 1em;
   font-weight: 700;
-  font-size: 0.75rem;
   line-height: 1.3;
   font-size: 0.875rem; }
   h3:last-child, .h3:last-child {
@@ -484,7 +485,6 @@ h4, .h4 {
   margin: 0;
   padding-bottom: 1em;
   font-weight: 700;
-  font-size: 0.75rem;
   line-height: 1.3;
   font-size: 0.875rem; }
   h4:last-child, .h4:last-child {
@@ -497,7 +497,6 @@ h5, .h5 {
   margin: 0;
   padding-bottom: 1em;
   font-weight: 700;
-  font-size: 0.75rem;
   line-height: 1.3;
   font-size: 0.875rem; }
   h5:last-child, .h5:last-child {
@@ -510,7 +509,6 @@ h6, .h6 {
   margin: 0;
   padding-bottom: 1em;
   font-weight: 700;
-  font-size: 0.75rem;
   line-height: 1.3;
   font-size: 0.875rem; }
   h6:last-child, .h6:last-child {
@@ -535,7 +533,6 @@ h6, .h6 {
     padding-bottom: 0; }
 
 .font-base {
-  margin: 0;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.5; }
@@ -587,7 +584,6 @@ h6, .h6 {
     padding-bottom: 0; }
 
 .font-small {
-  margin: 0;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -601,7 +597,6 @@ h6, .h6 {
       font-size: 0.875rem; } }
 
 .font-tiny {
-  margin: 0;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -633,26 +628,6 @@ strong,
   .green a,
   .primary a {
     border-bottom: 2px solid #8CC63F; }
-
-.crossed-out {
-  color: #ccc;
-  position: relative;
-  display: inline-block; }
-  .crossed-out:before {
-    content: '';
-    display: inline-block;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #ccc;
-    -ms-transform: rotate(20deg);
-        transform: rotate(20deg); }
-  .crossed-out:after {
-    content: '';
-    display: block; }
 
 a {
   text-decoration: none;
@@ -697,7 +672,6 @@ p + hr, h1 + hr, h2 + hr, h3 + hr, h4 + hr, h5 + hr, h6 + hr {
     list-style: none; }
 
 .list--small {
-  margin: 0;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -760,12 +734,10 @@ p + hr, h1 + hr, h2 + hr, h3 + hr, h4 + hr, h5 + hr, h6 + hr {
       height: 18px; }
 
 .list--inline {
-  margin-right: -0.9375rem;
-  margin-left: -0.9375rem; }
+  margin: -0.3125rem -0.8125rem; }
   .list--inline li {
     display: inline-block;
-    margin-right: 0.9375rem;
-    margin-left: 0.9375rem; }
+    margin: 0.3125rem 0.8125rem; }
   .list--inline--sm-gutter {
     margin-right: -0.3125rem;
     margin-left: -0.3125rem; }
@@ -1626,9 +1598,9 @@ button {
     .plus-minus-toggle--green-in-circle span {
       position: relative;
       top: 12px;
-      right: 4px;
-      width: 18px;
-      height: 18px; }
+      right: 3px;
+      width: 19px;
+      height: 19px; }
       .plus-minus-toggle--green-in-circle span:before, .plus-minus-toggle--green-in-circle span:after {
         background-color: #8CC63F; }
 
@@ -2060,7 +2032,6 @@ img {
   padding-top: 20px;
   padding-bottom: 20px; }
   .global-footer__section-bottom p {
-    margin: 0;
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 1.5;
@@ -2078,8 +2049,19 @@ img {
   .global-footer__section-bottom .grid-row .grid-col-6 {
     margin-bottom: 0; }
   .global-footer__section-bottom .list--inline {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-size: 0.75rem;
+    line-height: 1.2;
     font-weight: 700;
     text-align: center; }
+    @media (min-width: 50em) {
+      .global-footer__section-bottom .list--inline {
+        font-size: 1rem; } }
+    @media (min-width: 50em) {
+      .global-footer__section-bottom .list--inline {
+        font-size: 0.875rem; } }
     @media (min-width: 50em) {
       .global-footer__section-bottom .list--inline {
         text-align: left; } }
@@ -2087,6 +2069,7 @@ img {
     text-transform: uppercase; }
   .global-footer__section-bottom .copyright {
     margin-top: 10px;
+    margin-bottom: 0;
     text-align: center; }
     @media (min-width: 50em) {
       .global-footer__section-bottom .copyright {
@@ -2128,7 +2111,6 @@ img {
       list-style: none; }
     .global-nav ul li {
       position: relative;
-      margin: 0;
       font-weight: 400;
       font-size: 0.875rem;
       line-height: 1.5;
@@ -2339,7 +2321,6 @@ img {
         margin: 0;
         padding-bottom: 1em;
         font-weight: 700;
-        font-size: 0.75rem;
         line-height: 1.3;
         font-size: 1.25rem; }
         .modal__content .panel__title:last-child {
@@ -2513,9 +2494,7 @@ img {
       opacity: 1; }
 
 .cards-same-height .card {
-  min-height: calc(100% - 40px); }
-  .cards-same-height .card--more-pad {
-    min-height: calc(100% - 80px); }
+  min-height: 100%; }
 
 .tooltip-icon {
   text-align: center;
@@ -2628,7 +2607,6 @@ img {
     margin: 0;
     padding-bottom: 1em;
     font-weight: 700;
-    font-size: 0.75rem;
     line-height: 1.3;
     font-size: 0.875rem; }
     .tooltip__box .rich-text h1:last-child, .tooltip__box .rich-text h2:last-child, .tooltip__box .rich-text h3:last-child, .tooltip__box .rich-text h4:last-child, .tooltip__box .rich-text h5:last-child, .tooltip__box .rich-text h6:last-child {
@@ -2679,7 +2657,6 @@ img {
   border-radius: 5px;
   background-color: #4d4d4d;
   color: white;
-  margin: 0;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.5;

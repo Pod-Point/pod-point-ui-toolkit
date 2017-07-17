@@ -6,8 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _domDelegate = require('dom-delegate');
-
 var _domOps = require('@pod-point/dom-ops');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -54,31 +52,22 @@ var ToggleElement = function () {
         value: function bindEvents() {
             var _this = this;
 
-            this.toggleListeners = [];
             this.toggleButtons.forEach(function (toggleButton) {
-                var toggleListener = new _domDelegate.Delegate(toggleButton);
-                _this.toggleListeners.push(toggleListener);
-                toggleListener.on('click', function (event) {
+                toggleButton.addEventListener('click', function (event) {
                     event.preventDefault();
                     _this.toggleElement();
                 });
             });
 
-            this.openListeners = [];
             this.openButtons.forEach(function (openButton) {
-                var openListener = new _domDelegate.Delegate(openButton);
-                _this.openListeners.push(openListener);
-                openListener.on('click', function (event) {
+                openButton.addEventListener('click', function (event) {
                     event.preventDefault();
                     _this.openElement();
                 });
             });
 
-            this.closeListeners = [];
             this.closeButtons.forEach(function (closeButton) {
-                var closeListener = new _domDelegate.Delegate(closeButton);
-                _this.closeListeners.push(closeListener);
-                closeListener.on('click', function (event) {
+                closeButton.addEventListener('click', function (event) {
                     event.preventDefault();
                     _this.closeElement();
                 });
