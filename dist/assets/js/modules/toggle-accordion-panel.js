@@ -6,8 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _domDelegate = require('dom-delegate');
-
 var _domOps = require('@pod-point/dom-ops');
 
 var _utilities = require('./../utilities');
@@ -62,70 +60,49 @@ var ToggleAccordionPanel = function () {
         value: function bindEvents() {
             var _this = this;
 
-            this.toggleListeners = [];
             this.toggleButtons.forEach(function (toggleButton) {
-                var toggleListener = new _domDelegate.Delegate(toggleButton);
-                _this.toggleListeners.push(toggleListener);
-                toggleListener.on('click', function (event) {
+                toggleButton.addEventListener('click', function (event) {
                     event.preventDefault();
                     _this.togglePanel();
                 });
             });
 
-            this.openListeners = [];
             this.openButtons.forEach(function (openButton) {
-                var openListener = new _domDelegate.Delegate(openButton);
-                _this.openListeners.push(openListener);
-                openListener.on('click', function (event) {
+                openButton.addEventListener('click', function (event) {
                     event.preventDefault();
                     (0, _utilities.openPanel)(_this.panel);
                 });
             });
 
-            this.closeListeners = [];
             this.closeButtons.forEach(function (closeButton) {
-                var closeListener = new _domDelegate.Delegate(closeButton);
-                _this.closeListeners.push(closeListener);
-                closeListener.on('click', function (event) {
+                closeButton.addEventListener('click', function (event) {
                     event.preventDefault();
                     (0, _utilities.closePanel)(_this.panel);
                 });
             });
 
-            this.radioOpenListeners = [];
             this.radioOpenButtons.forEach(function (radioOpenButton) {
-                var radioOpenListener = new _domDelegate.Delegate(radioOpenButton);
-                _this.radioOpenListeners.push(radioOpenListener);
-                radioOpenListener.on('change', function (event) {
+                radioOpenButton.addEventListener('change', function (event) {
                     event.preventDefault();
                     (0, _utilities.openPanel)(_this.panel);
                 });
             });
 
-            this.radioCloseListeners = [];
             this.radioCloseButtons.forEach(function (radioCloseButton) {
-                var radioCloseListener = new _domDelegate.Delegate(radioCloseButton);
-                _this.radioCloseListeners.push(radioCloseListener);
-                radioCloseListener.on('change', function (event) {
+                radioCloseButton.addEventListener('change', function (event) {
                     event.preventDefault();
                     (0, _utilities.closePanel)(_this.panel);
                 });
             });
 
-            this.inputOpenListeners = [];
             this.inputOpenButtons.forEach(function (inputOpenButton) {
-                var inputOpenListener = new _domDelegate.Delegate(inputOpenButton);
-                _this.inputOpenListeners.push(inputOpenListener);
-                inputOpenListener.on('focus', function () {
+                inputOpenButton.addEventListener('focus', function () {
                     return (0, _utilities.openPanel)(_this.panel);
                 });
             });
 
-            this.selectToggleListeners = [];
             this.selectToggleButtons.forEach(function (selectToggleButton) {
-                var selectToggleListener = new _domDelegate.Delegate(selectToggleButton);
-                _this.selectToggleListeners.push(selectToggleListener);
-                selectToggleListener.on('change', function (event, element) {
+                selectToggleButton.addEventListener('change', function (event, element) {
                     var selectedVal = element.options[element.selectedIndex].value;
 
                     if (selectedVal === 'other') {
