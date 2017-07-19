@@ -1617,16 +1617,16 @@ button {
 .icon {
   margin-right: 2px;
   margin-left: 2px; }
-  .icon svg {
+  .icon > svg {
     height: 25px;
     width: 25px; }
-  .icon--sm svg {
+  .icon--sm > svg {
     height: 20px;
     width: 20px; }
-  .icon--xs svg {
+  .icon--xs > svg {
     height: 15px;
     width: 15px; }
-  .icon--xxs svg {
+  .icon--xxs > svg {
     height: 10px;
     width: 10px; }
 
