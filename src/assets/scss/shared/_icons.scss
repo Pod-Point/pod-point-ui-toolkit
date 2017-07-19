@@ -3,18 +3,24 @@
 // =============================================================================
 
 .icon {
-	height: 25px;
-	width: 25px;
 	@include margin(null 2px);
-	&--sm {
+
+	> svg {
+		height: 25px;
+		width: 25px;
+	}
+
+	&--sm > svg {
 		height: 20px;
 		width: 20px;
 	}
-	&--xs {
+
+	&--xs > svg {
 		height: 15px;
 		width: 15px;
 	}
-	&--xxs {
+
+	&--xxs > svg {
 		height: 10px;
 		width: 10px;
 	}
@@ -28,30 +34,37 @@
 	&--small {
 		@include icon-in-circle--size($dimension: 25px);
 	}
+
 	&--small-resp {
 		@include icon-in-circle--size($dimension: 25px);
 		@include medium-and-up {
 			@include icon-in-circle--size($dimension: 40px);
 		}
 	}
+
 	&--large-resp {
 		@include icon-in-circle--size($dimension: 40px);
 		@include medium-and-up {
 			@include icon-in-circle--size($dimension: 60px);
 		}
 	}
+
 	&--green {
 		@include icon-in-circle($bgColor: $primary-color, $color: white);
 	}
+
 	&--outlined {
 		@include icon-in-circle($bgColor: transparent, $color: $font-color-base, $border: 2px solid $font-color-base);
 	}
+
 	&--outlined-green {
 		@include icon-in-circle($bgColor: transparent, $color: $primary-color, $border: 2px solid $primary-color);
 	}
+
 	&--outlined-dark {
 		@include icon-in-circle($bgColor: transparent, $color: white, $border: 2px solid white);
 	}
+
 	&--white-outline {
 		@include icon-in-circle($bgColor: white, $color: $font-color-base, $border: 2px solid $gray-keyline);
 	}
@@ -60,10 +73,12 @@
 .inline-circle-icon {
 	position: relative;
 	padding-right: 30px;
+
 	.toggle-panel-icon,
 	.toggle-panel {
 		@include position(absolute, 0 -5px null null);
 	}
+
 	.toggle-panel-icon--secondary {
 		@include position(absolute, 3px 0 null null);
 	}
@@ -74,10 +89,12 @@
 	@include icon-in-circle--size($dimension: 25px);
 	@include icon-in-border-circle--size($dimension: 25px);
 }
+
 .toggle-panel-icon--secondary {
 	@include icon-in-circle($bgColor: transparent, $color: $font-color-base, $border: 2px solid $font-color-base);
 	@include icon-in-border-circle--size($dimension: 24px);
 }
+
 .circle-icon--close-panel {
 	@include icon-in-circle($bgColor: transparent, $color: $primary-color, $border: 2px solid $primary-color);
 	@include icon-in-border-circle--size();
@@ -87,6 +104,7 @@
 .toggle-rotate-icon {
 	display: inline-block;
 	transition: transform 0.8s ease-in-out;
+
 	&.rotate {
 		transition: transform 0.7s ease-in-out;
 		transform: rotate(-180deg);

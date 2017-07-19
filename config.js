@@ -6,11 +6,12 @@ module.exports = {
         jsData: './src/assets/js/data/',
         plugins: './src/assets/plugins/',
         img: './src/assets/img/',
-        fonts: './src/assets/fonts/',
-        icons: './src/assets/icons/',
+        icons: './src/assets/img/icons/',
+        inlineSvgs: './src/assets/img/inline-svgs/',
         templates: './src/templates/',
         partials: './src/templates/partials/',
-        svgPartials: './src/templates/partials/svgs/'
+        svgPartials: './src/templates/partials/svgs/',
+        svgIconPartials: './src/templates/partials/svgs/icons/'
     },
     dist: {
         root: './dist/',
@@ -19,7 +20,7 @@ module.exports = {
         jsData: './dist/assets/js/data/',
         plugins: './dist/assets/plugins/',
         img: './dist/assets/img/',
-        spritesheets: './dist/assets/img/spritesheets/',
+        icons: './dist/assets/img/icons/',
         fonts: './dist/assets/fonts/',
         svg: './dist/assets/svg/',
     }
