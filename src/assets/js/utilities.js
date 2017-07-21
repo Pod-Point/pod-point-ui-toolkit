@@ -200,7 +200,7 @@ export function loadVideo(videoEl, load) {
  */
 export function registerEvent(eventsArray, element, eventName, listener) {
     // TODO: Check if element exists
-    eventsArray.push({element, eventName, listener});
+    eventsArray.push({ element, eventName, listener });
 }
 
 /**
@@ -211,7 +211,7 @@ export function registerEvent(eventsArray, element, eventName, listener) {
  */
 export function removeEvents(eventsArray) {
     eventsArray.forEach(eventObj => {
-        const {element, eventName, listener} = eventObj;
+        const { element, eventName, listener } = eventObj;
         element.removeEventListener(eventName, listener);
     });
 }
