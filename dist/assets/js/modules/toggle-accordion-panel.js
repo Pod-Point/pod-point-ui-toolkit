@@ -137,23 +137,23 @@ var ToggleAccordionPanel = function () {
     }, {
         key: 'unbindEvents',
         value: function unbindEvents() {
-            this.toggleListeners.forEach(function (toggleListener) {
-                return toggleListener.destroy();
+            this.toggleButtons.forEach(function (toggleButton) {
+                return toggleButton.destroy();
             });
-            this.openListeners.forEach(function (openListener) {
-                return openListener.destroy();
+            this.openButtons.forEach(function (openButton) {
+                return openButton.destroy();
             });
-            this.closeListeners.forEach(function (closeListener) {
-                return closeListener.destroy();
+            this.closeButtons.forEach(function (closeButton) {
+                return closeButton.destroy();
             });
-            this.radioOpenListeners.forEach(function (radioOpenListener) {
-                return radioOpenListener.destroy();
+            this.radioOpenButtons.forEach(function (radioOpenButton) {
+                return radioOpenButton.destroy();
             });
-            this.radioCloseListeners.forEach(function (radioCloseListener) {
-                return radioCloseListener.destroy();
+            this.radioCloseButtons.forEach(function (radioCloseButton) {
+                return radioCloseButton.destroy();
             });
-            this.inputOpenListeners.forEach(function (inputOpenListener) {
-                return inputOpenListener.destroy();
+            this.inputOpenButtons.forEach(function (inputOpenButton) {
+                return inputOpenButton.destroy();
             });
         }
     }]);

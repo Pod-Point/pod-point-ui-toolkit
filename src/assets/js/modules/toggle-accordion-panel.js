@@ -110,12 +110,12 @@ class ToggleAccordionPanel {
      * Unbinds the event listeners from the elements
      */
     unbindEvents() {
-        this.toggleListeners.forEach(toggleListener => toggleListener.destroy());
-        this.openListeners.forEach(openListener => openListener.destroy());
-        this.closeListeners.forEach(closeListener => closeListener.destroy());
-        this.radioOpenListeners.forEach(radioOpenListener => radioOpenListener.destroy());
-        this.radioCloseListeners.forEach(radioCloseListener => radioCloseListener.destroy());
-        this.inputOpenListeners.forEach(inputOpenListener => inputOpenListener.destroy());
+        this.toggleButtons.forEach(toggleButton => toggleButton.destroy());
+        this.openButtons.forEach(openButton => openButton.destroy());
+        this.closeButtons.forEach(closeButton => closeButton.destroy());
+        this.radioOpenButtons.forEach(radioOpenButton => radioOpenButton.destroy());
+        this.radioCloseButtons.forEach(radioCloseButton => radioCloseButton.destroy());
+        this.inputOpenButtons.forEach(inputOpenButton => inputOpenButton.destroy());
     }
 }
 

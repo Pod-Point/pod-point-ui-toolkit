@@ -8,6 +8,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _domOps = require('@pod-point/dom-ops');
 
+var _utilities = require('./../utilities');
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var instances = [];
@@ -39,6 +41,7 @@ var ToggleElement = function () {
 
         this.elementIsVisible = false;
 
+        this.eventsArray = [];
         this.bindEvents();
     }
 
@@ -52,44 +55,61 @@ var ToggleElement = function () {
         value: function bindEvents() {
             var _this = this;
 
+            var clickEvent = 'click';
+
             this.toggleButtons.forEach(function (toggleButton) {
-                toggleButton.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    _this.toggleElement();
-                });
+                var handler = _this.toggleHandler.bind(_this);
+                toggleButton.addEventListener(clickEvent, handler);
+                (0, _utilities.registerEvent)(_this.eventsArray, toggleButton, clickEvent, handler);
             });
 
             this.openButtons.forEach(function (openButton) {
-                openButton.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    _this.openElement();
-                });
+                var handler = _this.openHandler.bind(_this);
+                openButton.addEventListener(clickEvent, handler);
+                (0, _utilities.registerEvent)(_this.eventsArray, openButton, clickEvent, handler);
             });
 
             this.closeButtons.forEach(function (closeButton) {
-                closeButton.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    _this.closeElement();
-                });
+                var handler = _this.closeHandler.bind(_this);
+                closeButton.addEventListener(clickEvent, handler);
+                (0, _utilities.registerEvent)(_this.eventsArray, closeButton, clickEvent, handler);
             });
         }
 
         /**
-         * Unbinds the event listeners from the elements
+         * Toggle handler for click event
+         * @param {event}
          */
 
     }, {
-        key: 'unbindEvents',
-        value: function unbindEvents() {
-            this.toggleListeners.forEach(function (toggleListener) {
-                return toggleListener.destroy();
-            });
-            this.openListeners.forEach(function (openListener) {
-                return openListener.destroy();
-            });
-            this.closeListeners.forEach(function (closeListener) {
-                return closeListener.destroy();
-            });
+        key: 'toggleHandler',
+        value: function toggleHandler(event) {
+            event.preventDefault();
+            this.toggleElement();
+        }
+
+        /**
+         * Open handler for click event
+         * @param {event}
+         */
+
+    }, {
+        key: 'openHandler',
+        value: function openHandler(event) {
+            event.preventDefault();
+            this.openElement();
+        }
+
+        /**
+         * close handler for click event
+         * @param {event}
+         */
+
+    }, {
+        key: 'closeHandler',
+        value: function closeHandler(event) {
+            event.preventDefault();
+            this.closeElement();
         }
 
         /**
@@ -143,6 +163,17 @@ var ToggleElement = function () {
                 el.classList.remove(IS_OPEN);
             });
             this.elementIsVisible = false;
+        }
+
+        /**
+         * Unbinds the event listeners from the elements
+         */
+
+    }, {
+        key: 'unbindEvents',
+        value: function unbindEvents() {
+            (0, _utilities.removeEvents)(this.eventsArray);
+            this.eventsArray = [];
         }
     }]);
 

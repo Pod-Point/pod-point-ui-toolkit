@@ -1,4 +1,5 @@
 import { nodesToArray } from '@pod-point/dom-ops';
+import { registerEvent, removeEvents } from './../utilities';
 
 let instances = [];
 const IS_OPEN = 'fade-in';
@@ -27,6 +28,7 @@ class ToggleElement {
 
         this.elementIsVisible = false;
 
+        this.eventsArray = [];
         this.bindEvents();
     }
 
@@ -34,35 +36,52 @@ class ToggleElement {
      * Binds the event listeners from the elements
      */
     bindEvents() {
+        const clickEvent = 'click';
+
         this.toggleButtons.forEach(toggleButton => {
-            toggleButton.addEventListener('click', event => {
-                event.preventDefault();
-                this.toggleElement();
-            });
+            const handler = this.toggleHandler.bind(this);
+            toggleButton.addEventListener(clickEvent, handler);
+            registerEvent(this.eventsArray, toggleButton, clickEvent, handler);
         });
 
         this.openButtons.forEach(openButton => {
-            openButton.addEventListener('click', event => {
-                event.preventDefault();
-                this.openElement();
-            });
+            const handler = this.openHandler.bind(this);
+            openButton.addEventListener(clickEvent, handler);
+            registerEvent(this.eventsArray, openButton, clickEvent, handler);
         });
 
         this.closeButtons.forEach(closeButton => {
-            closeButton.addEventListener('click', event => {
-                event.preventDefault();
-                this.closeElement();
-            });
+            const handler = this.closeHandler.bind(this);
+            closeButton.addEventListener(clickEvent, handler);
+            registerEvent(this.eventsArray, closeButton, clickEvent, handler);
         });
     }
 
     /**
-     * Unbinds the event listeners from the elements
+     * Toggle handler for click event
+     * @param {event}
      */
-    unbindEvents() {
-        this.toggleListeners.forEach(toggleListener => toggleListener.destroy());
-        this.openListeners.forEach(openListener => openListener.destroy());
-        this.closeListeners.forEach(closeListener => closeListener.destroy());
+    toggleHandler(event) {
+        event.preventDefault();
+        this.toggleElement();
+    }
+
+    /**
+     * Open handler for click event
+     * @param {event}
+     */
+    openHandler(event) {
+        event.preventDefault();
+        this.openElement();
+    }
+
+    /**
+     * close handler for click event
+     * @param {event}
+     */
+    closeHandler(event) {
+        event.preventDefault();
+        this.closeElement();
     }
 
     /**
@@ -104,6 +123,14 @@ class ToggleElement {
             el.classList.remove(IS_OPEN);
         });
         this.elementIsVisible = false;
+    }
+
+    /**
+     * Unbinds the event listeners from the elements
+     */
+    unbindEvents() {
+        removeEvents(this.eventsArray);
+        this.eventsArray = [];
     }
 }
 

@@ -189,3 +189,29 @@ export function loadVideo(videoEl, load) {
         videoEl.setAttribute('src', '');
     }
 }
+
+/**
+ * Register an event in order to later on remove the event
+ *
+ * @param {array} events array
+ * @param {element} element
+ * @param {string} event name
+ * @param {func} listener
+ */
+export function registerEvent(eventsArray, element, eventName, listener) {
+    // TODO: Check if element exists
+    eventsArray.push({element, eventName, listener});
+}
+
+/**
+ * Remove the events from the events array
+ *
+ * @param {array} events array
+ * @param {callback} callback
+ */
+export function removeEvents(eventsArray) {
+    eventsArray.forEach(eventObj => {
+        const {element, eventName, listener} = eventObj;
+        element.removeEventListener(eventName, listener);
+    });
+}
