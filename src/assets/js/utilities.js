@@ -199,7 +199,6 @@ export function loadVideo(videoEl, load) {
  * @param {func} listener
  */
 export function registerEvent(eventsArray, element, eventName, listener) {
-    // TODO: Check if element exists
     eventsArray.push({ element, eventName, listener });
 }
 
