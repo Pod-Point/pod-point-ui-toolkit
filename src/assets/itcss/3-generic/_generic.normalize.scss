@@ -1,0 +1,133 @@
+// Edited and reduced standard normalize css
+
+html,
+body {
+	width: 100%;
+}
+
+html {
+	box-sizing: border-box;
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+}
+
+article,
+aside,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+a {
+	background-color: transparent;
+}
+
+a:active,
+a:hover {
+	outline: 0;
+}
+
+h1 {
+	margin: 0.67rem 0;
+	font-size: 2rem;
+}
+
+img {
+	border: 0;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+button,
+input,
+select,
+textarea {
+	margin: 0;
+	color: inherit;
+	font: inherit;
+}
+
+button {
+	overflow: visible;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+	cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+input {
+	line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	padding: 0;
+	box-sizing: border-box;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+input[type="search"] {
+	appearance: textfield;
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	appearance: none;
+}
+
+textarea {
+	overflow: auto;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}

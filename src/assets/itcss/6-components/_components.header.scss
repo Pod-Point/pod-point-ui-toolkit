@@ -1,0 +1,61 @@
+// =============================================================================
+//	HEADER
+// =============================================================================
+
+.global-header-wrap {
+	position: relative;
+	width: 100%;
+	background-color: white;
+	z-index: 100;
+}
+
+.global-header {
+	@include clearfix;
+	@include container;
+	@include medium-and-up {
+		height: 96px;
+	}
+	&.nav-open {
+		box-shadow: $bottom-shadow;
+		@include medium-and-up {
+			box-shadow: none;
+		}
+	}
+	&__content {
+		position: relative;
+		height: 60px;
+		@include medium-and-up {
+			height: auto;
+			border-bottom: none;
+		}
+	}
+}
+
+.logo-main {
+	width: 100px;
+	height: 27px;
+	float: left;
+	margin-top: 17px;
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+	@include medium-and-up {
+		margin-top: 30px;
+		width: 140px;
+		height: 38px;
+	}
+	@include large-and-up {
+		margin-top: 22px;
+		width: 180px;
+		height: 49px;
+	}
+}
+
+.navicon {
+	margin-top: 20px;
+	float: right;
+	@include medium-and-up {
+		display: none;
+	}
+}

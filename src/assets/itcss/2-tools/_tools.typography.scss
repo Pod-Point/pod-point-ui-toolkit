@@ -1,0 +1,150 @@
+// =============================================================================
+//	MIXINS
+// =============================================================================
+
+// Font sizes
+@mixin font-base {
+	font-weight: $font-weight-regular;
+	font-size: $font-size-base-mobile;
+	line-height: 1.5;
+	@include medium-and-up {
+		font-size: $font-size-base-desktop;
+	}
+}
+@mixin font-small {
+	@include font-base;
+	font-size: $font-size-small-mobile;
+	line-height: 1.2;
+	@include medium-and-up {
+		font-size: $font-size-small-desktop;
+	}
+}
+@mixin font-tiny {
+	@include font-base;
+	font-size: $font-size-tiny-mobile;
+	line-height: 1.2;
+	@include medium-and-up {
+		font-size: $font-size-tiny-desktop;
+	}
+}
+@mixin font-large {
+	@include font-base;
+	font-size: $font-size-large-mobile;
+	line-height: 1.5;
+	@include medium-and-up {
+		line-height: 1.2;
+		font-size: $font-size-large-desktop;
+	}
+}
+@mixin font-huge {
+	font-size: $font-size-huge-mobile;
+	line-height: 1.1;
+	@include medium-and-up {
+		font-size: $font-size-huge-desktop;
+	}
+}
+
+
+// Font styles
+@mixin font-style-base {
+	margin: 0;
+	@include font-base;
+	padding-bottom: 0.5em;
+	&:last-child {
+		padding-bottom: 0;
+	}
+}
+@mixin font-style-small {
+	margin: 0;
+	@include font-small;
+	padding-bottom: 0.5em;
+	&:last-child {
+		padding-bottom: 0;
+	}
+}
+@mixin font-style-large {
+	margin: 0;
+	@include font-large;
+	padding-bottom: 0.5em;
+	&:last-child {
+		padding-bottom: 0;
+	}
+}
+
+
+@mixin font-style-headings {
+	margin: 0;
+	padding-bottom: 1em;
+	font-weight: $font-weight-bold;
+	line-height: $line-height-heading;
+	&:last-child {
+		padding-bottom: 0;
+	}
+}
+
+@mixin font-style-h1 {
+	@include font-style-headings;
+	font-size: $font-size-h1-mobile;
+	@include medium-and-up {
+		font-size: $font-size-h1-desktop;
+	}
+}
+
+@mixin font-style-h2 {
+	@include font-style-headings;
+	font-size: $font-size-h2-mobile;
+	@include medium-and-up {
+		font-size: $font-size-h2-desktop;
+	}
+}
+
+@mixin font-style-h3 {
+	@include font-style-headings;
+	font-size: $font-size-h3-mobile;
+	@include medium-and-up {
+		font-size: $font-size-h3-desktop;
+	}
+}
+
+@mixin font-style-h4 {
+	@include font-style-headings;
+	font-size: $font-size-h4-mobile;
+	@include medium-and-up {
+		font-size: $font-size-h4-desktop;
+	}
+}
+
+@mixin font-style-h5 {
+	@include font-style-headings;
+	font-size: $font-size-h5-mobile;
+	@include medium-and-up {
+		font-size: $font-size-h5-desktop;
+	}
+}
+
+@mixin font-style-h6 {
+	@include font-style-headings;
+	font-size: $font-size-h6-mobile;
+	@include medium-and-up {
+		font-size: $font-size-h6-desktop;
+	}
+}
+
+@mixin font-style-forms {
+	margin: 0;
+	line-height: rem(18);
+	font-size: $font-size-forms-base;
+}
+@mixin font-style-forms-large {
+	margin: 0;
+	line-height: rem(18);
+	font-size: $font-size-forms-base;
+	@include medium-and-up {
+		line-height: rem(20);
+		font-size: $font-size-forms-large-desktop;
+	}
+}
+
+@mixin font-style-tables {
+	@include font-style-base;
+}

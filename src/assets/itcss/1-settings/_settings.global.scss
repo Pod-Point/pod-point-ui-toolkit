@@ -1,0 +1,12 @@
+// =============================================================================
+//	GLOBAL
+// =============================================================================
+
+// Function to turn pixels to rems
+@function rem($size) {
+	$remSize: $size / 16;
+	@return #{$remSize}rem;
+}
+
+// File path variable for background images which can be re-assigned if file structure is different
+$css-bg-path: '../img/css-bg/';

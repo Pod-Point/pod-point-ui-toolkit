@@ -1,0 +1,30 @@
+// =============================================================================
+//	FORMS
+// =============================================================================
+
+// List of used inputs
+$inputs-list:
+	'input[type="date"]',
+	'input[type="email"]',
+	'input[type="number"]',
+	'input[type="password"]',
+	'input[type="search"]',
+	'input[type="tel"]',
+	'input[type="text"]',
+	'input[type="url"]';
+
+// Let's assign so we can use the list
+$inputs: assign-inputs($inputs-list);
+
+// Forms
+$input-height: rem(40);
+$input-padding: 10px;
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+$form-border-radius: 5px;
+$form-border-base: $border-base;
+$input-text-color: $font-color-base;
+$input-placeholder-color: #ccc;
+$input-icon-color: #9C9C9C;
+$form-field-max-width: rem(600);
+$button-max-width: rem(600);

@@ -1,0 +1,63 @@
+// =============================================================================
+//	PALETTE
+// =============================================================================
+
+// Grey palette
+$background-color-base: white;
+$gray-very-light: #f9fafa;
+$gray-light: #f2f2f2;
+$gray: #b3b3b3;
+$gray-dark: #4d4d4d;
+$gray-very-dark: #2a2a2a;
+
+// Custom colours
+$primary-color: #8CC63F;
+$primary-color-light: #e2eecc;
+$secondary-color-dark: green;
+$sky-blue: #deeefc;
+
+// Keyline colors
+$gray-keyline-very-light: #e2e2e2;
+$gray-keyline-light: #b3b3b3;
+$gray-keyline: #ccc;
+$gray-keyline-dark: #777;
+
+// Font Colors
+$font-color-base: #333;
+$font-color-very-light: #ccc;
+$font-color-light: #999;
+$action-color: #7b7b7b;
+$article-title-color: #cdcdcd;
+
+$icon-color: $font-color-base;
+
+// Social colors
+$facebook-color: #4b6ead;
+$twitter-color: #00b7f0;
+$pinterest-color: #bd081c;
+
+// Form colors
+$form-keyline: $border-color-base;
+$radio-border: $border-color-base;
+$radio-fill-color: $primary-color;
+$checkbox-border: $form-keyline;
+$checked-fill-color: $primary-color;
+$checkbox-bg-color: transparent;
+$error-red: #C1272D;
+
+
+// State and Alert colours
+$state-success-bg:            #dff0d8;
+$state-success-text:          #3c763d;
+$state-success-border:        darken(adjust-hue($state-success-bg, -10), 5%);
+$state-info-bg:               #d9edf7;
+$state-info-text:             #31708f;
+$state-info-border:           darken(adjust-hue($state-info-bg, -10), 5%);
+$state-warning-bg:            #fcf8e3;
+$state-warning-text:          #8a6d3b;
+$state-warning-border:        darken(adjust-hue($state-warning-bg, -10), 5%);
+$state-danger-bg:             #f2dede;
+$state-danger-text:           #C1272D;
+$state-danger-border:         darken(adjust-hue($state-danger-bg, -10), 5%);
+
+$disabled-color: gray;

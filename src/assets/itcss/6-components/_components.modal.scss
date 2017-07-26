@@ -1,0 +1,54 @@
+// =============================================================================
+//	MODAL
+// =============================================================================
+
+.is-modal-open body {
+	overflow: hidden;
+}
+
+.modal {
+	z-index: 101;
+	background-color: rgba(0,0,0,0.9);
+	@include position(fixed, 0 0 0 0);
+	overflow-y: scroll;
+	width: 100%;
+	min-height: 100%;
+	.circle-icon--close {
+		@include position(absolute, -50px $horizontal-spacing-mobile null null);
+		@include medium-and-up {
+			@include position(absolute, -70px $horizontal-spacing null null);
+		}
+	}
+	&__content {
+		position: relative;
+		@include container;
+		@include margin(80px null);
+		@include medium-and-up {
+			@include margin(100px null);
+		}
+		.panel {
+			text-align: center;
+			color: white;
+			&__title {
+				color: white;
+				@include font-style-h1;
+			}
+			&__text-content {
+				max-width: $max-width-text;
+				@include margin(null auto);
+			}
+		}
+		&--white {
+			background-color: white;
+			.panel {
+				color: $font-color-base;
+				&__title {
+					color: $font-color-base;
+				}
+			}
+		}
+		&--narrow {
+			max-width: 700px;
+		}
+	}
+}

@@ -1,0 +1,20 @@
+// =============================================================================
+//	ALERTS
+// =============================================================================
+
+// Mixin for alert boxes/messages
+@mixin alert-variant($background, $border, $text-color) {
+    background-color: $background;
+    border-color: $border;
+    color: $text-color;
+    font-weight: $font-weight-bold;
+
+    hr {
+        border-top-color: darken($border, 5%);
+    }
+
+    .a {
+        color: darken($text-color, 10%);
+        text-decoration: underline;
+    }
+}
