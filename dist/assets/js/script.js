@@ -965,6 +965,8 @@
 	exports.getRandomInt = getRandomInt;
 	exports.roundNumberTo = roundNumberTo;
 	exports.loadVideo = loadVideo;
+	exports.registerEvent = registerEvent;
+	exports.removeEvents = removeEvents;
 	
 	var _domOps = __webpack_require__(5);
 	
@@ -1164,6 +1166,34 @@
 	    } else {
 	        videoEl.setAttribute('src', '');
 	    }
+	}
+	
+	/**
+	 * Register an event in order to later on remove the event
+	 *
+	 * @param {array} events array
+	 * @param {element} element
+	 * @param {string} event name
+	 * @param {func} listener
+	 */
+	function registerEvent(eventsArray, element, eventName, listener) {
+	    eventsArray.push({ element: element, eventName: eventName, listener: listener });
+	}
+	
+	/**
+	 * Remove the events from the events array
+	 *
+	 * @param {array} events array
+	 * @param {callback} callback
+	 */
+	function removeEvents(eventsArray) {
+	    eventsArray.forEach(function (eventObj) {
+	        var element = eventObj.element,
+	            eventName = eventObj.eventName,
+	            listener = eventObj.listener;
+	
+	        element.removeEventListener(eventName, listener);
+	    });
 	}
 
 /***/ }),
