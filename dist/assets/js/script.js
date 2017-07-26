@@ -46,61 +46,61 @@
 
 	'use strict';
 	
-	var _moduleLoader = __webpack_require__(1);
+	__webpack_require__(1);
+	
+	var _moduleLoader = __webpack_require__(2);
 	
 	var _moduleLoader2 = _interopRequireDefault(_moduleLoader);
 	
-	var _domModuleLoader = __webpack_require__(3);
+	var _domModuleLoader = __webpack_require__(4);
 	
 	var _domModuleLoader2 = _interopRequireDefault(_domModuleLoader);
 	
-	var _domOps = __webpack_require__(4);
+	var _domOps = __webpack_require__(5);
 	
 	var dom = _interopRequireWildcard(_domOps);
 	
-	__webpack_require__(5);
+	__webpack_require__(6);
 	
-	var _modal = __webpack_require__(6);
+	var _modal = __webpack_require__(7);
 	
 	var _modal2 = _interopRequireDefault(_modal);
 	
-	var _ajaxForm = __webpack_require__(8);
+	var _ajaxForm = __webpack_require__(9);
 	
 	var _ajaxForm2 = _interopRequireDefault(_ajaxForm);
 	
-	var _formFields = __webpack_require__(18);
+	var _formFields = __webpack_require__(19);
 	
 	var _formFields2 = _interopRequireDefault(_formFields);
 	
-	var _toggleAccordionPanel = __webpack_require__(20);
+	var _toggleAccordionPanel = __webpack_require__(21);
 	
 	var _toggleAccordionPanel2 = _interopRequireDefault(_toggleAccordionPanel);
 	
-	var _toggleElement = __webpack_require__(21);
+	var _toggleElement = __webpack_require__(22);
 	
 	var _toggleElement2 = _interopRequireDefault(_toggleElement);
 	
-	var _gallerySimple = __webpack_require__(22);
+	var _gallerySimple = __webpack_require__(23);
 	
 	var _gallerySimple2 = _interopRequireDefault(_gallerySimple);
 	
-	var _accordion = __webpack_require__(23);
+	var _accordion = __webpack_require__(24);
 	
 	var _accordion2 = _interopRequireDefault(_accordion);
 	
-	var _headerNav = __webpack_require__(24);
+	var _headerNav = __webpack_require__(25);
 	
 	var _headerNav2 = _interopRequireDefault(_headerNav);
 	
-	var _carousel = __webpack_require__(25);
+	var _carousel = __webpack_require__(26);
 	
 	var _carousel2 = _interopRequireDefault(_carousel);
 	
-	var _addressLookup = __webpack_require__(44);
+	var _addressLookup = __webpack_require__(45);
 	
 	var addressLookup = _interopRequireWildcard(_addressLookup);
-	
-	__webpack_require__(45);
 	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
@@ -129,6 +129,252 @@
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports) {
+
+	/*
+	 * classList.js: Cross-browser full element.classList implementation.
+	 * 1.1.20170427
+	 *
+	 * By Eli Grey, http://eligrey.com
+	 * License: Dedicated to the public domain.
+	 *   See https://github.com/eligrey/classList.js/blob/master/LICENSE.md
+	 */
+	
+	/*global self, document, DOMException */
+	
+	/*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js */
+	
+	if ("document" in window.self) {
+	
+	// Full polyfill for browsers with no classList support
+	// Including IE < Edge missing SVGElement.classList
+	if (!("classList" in document.createElement("_")) 
+		|| document.createElementNS && !("classList" in document.createElementNS("http://www.w3.org/2000/svg","g"))) {
+	
+	(function (view) {
+	
+	"use strict";
+	
+	if (!('Element' in view)) return;
+	
+	var
+		  classListProp = "classList"
+		, protoProp = "prototype"
+		, elemCtrProto = view.Element[protoProp]
+		, objCtr = Object
+		, strTrim = String[protoProp].trim || function () {
+			return this.replace(/^\s+|\s+$/g, "");
+		}
+		, arrIndexOf = Array[protoProp].indexOf || function (item) {
+			var
+				  i = 0
+				, len = this.length
+			;
+			for (; i < len; i++) {
+				if (i in this && this[i] === item) {
+					return i;
+				}
+			}
+			return -1;
+		}
+		// Vendors: please allow content code to instantiate DOMExceptions
+		, DOMEx = function (type, message) {
+			this.name = type;
+			this.code = DOMException[type];
+			this.message = message;
+		}
+		, checkTokenAndGetIndex = function (classList, token) {
+			if (token === "") {
+				throw new DOMEx(
+					  "SYNTAX_ERR"
+					, "An invalid or illegal string was specified"
+				);
+			}
+			if (/\s/.test(token)) {
+				throw new DOMEx(
+					  "INVALID_CHARACTER_ERR"
+					, "String contains an invalid character"
+				);
+			}
+			return arrIndexOf.call(classList, token);
+		}
+		, ClassList = function (elem) {
+			var
+				  trimmedClasses = strTrim.call(elem.getAttribute("class") || "")
+				, classes = trimmedClasses ? trimmedClasses.split(/\s+/) : []
+				, i = 0
+				, len = classes.length
+			;
+			for (; i < len; i++) {
+				this.push(classes[i]);
+			}
+			this._updateClassName = function () {
+				elem.setAttribute("class", this.toString());
+			};
+		}
+		, classListProto = ClassList[protoProp] = []
+		, classListGetter = function () {
+			return new ClassList(this);
+		}
+	;
+	// Most DOMException implementations don't allow calling DOMException's toString()
+	// on non-DOMExceptions. Error's toString() is sufficient here.
+	DOMEx[protoProp] = Error[protoProp];
+	classListProto.item = function (i) {
+		return this[i] || null;
+	};
+	classListProto.contains = function (token) {
+		token += "";
+		return checkTokenAndGetIndex(this, token) !== -1;
+	};
+	classListProto.add = function () {
+		var
+			  tokens = arguments
+			, i = 0
+			, l = tokens.length
+			, token
+			, updated = false
+		;
+		do {
+			token = tokens[i] + "";
+			if (checkTokenAndGetIndex(this, token) === -1) {
+				this.push(token);
+				updated = true;
+			}
+		}
+		while (++i < l);
+	
+		if (updated) {
+			this._updateClassName();
+		}
+	};
+	classListProto.remove = function () {
+		var
+			  tokens = arguments
+			, i = 0
+			, l = tokens.length
+			, token
+			, updated = false
+			, index
+		;
+		do {
+			token = tokens[i] + "";
+			index = checkTokenAndGetIndex(this, token);
+			while (index !== -1) {
+				this.splice(index, 1);
+				updated = true;
+				index = checkTokenAndGetIndex(this, token);
+			}
+		}
+		while (++i < l);
+	
+		if (updated) {
+			this._updateClassName();
+		}
+	};
+	classListProto.toggle = function (token, force) {
+		token += "";
+	
+		var
+			  result = this.contains(token)
+			, method = result ?
+				force !== true && "remove"
+			:
+				force !== false && "add"
+		;
+	
+		if (method) {
+			this[method](token);
+		}
+	
+		if (force === true || force === false) {
+			return force;
+		} else {
+			return !result;
+		}
+	};
+	classListProto.toString = function () {
+		return this.join(" ");
+	};
+	
+	if (objCtr.defineProperty) {
+		var classListPropDesc = {
+			  get: classListGetter
+			, enumerable: true
+			, configurable: true
+		};
+		try {
+			objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+		} catch (ex) { // IE 8 doesn't support enumerable:true
+			// adding undefined to fight this issue https://github.com/eligrey/classList.js/issues/36
+			// modernie IE8-MSW7 machine has IE8 8.0.6001.18702 and is affected
+			if (ex.number === undefined || ex.number === -0x7FF5EC54) {
+				classListPropDesc.enumerable = false;
+				objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+			}
+		}
+	} else if (objCtr[protoProp].__defineGetter__) {
+		elemCtrProto.__defineGetter__(classListProp, classListGetter);
+	}
+	
+	}(window.self));
+	
+	}
+	
+	// There is full or partial native classList support, so just check if we need
+	// to normalize the add/remove and toggle APIs.
+	
+	(function () {
+		"use strict";
+	
+		var testElement = document.createElement("_");
+	
+		testElement.classList.add("c1", "c2");
+	
+		// Polyfill for IE 10/11 and Firefox <26, where classList.add and
+		// classList.remove exist but support only one argument at a time.
+		if (!testElement.classList.contains("c2")) {
+			var createMethod = function(method) {
+				var original = DOMTokenList.prototype[method];
+	
+				DOMTokenList.prototype[method] = function(token) {
+					var i, len = arguments.length;
+	
+					for (i = 0; i < len; i++) {
+						token = arguments[i];
+						original.call(this, token);
+					}
+				};
+			};
+			createMethod('add');
+			createMethod('remove');
+		}
+	
+		testElement.classList.toggle("c3", false);
+	
+		// Polyfill for IE 10 and Firefox <24, where classList.toggle does not
+		// support the second argument.
+		if (testElement.classList.contains("c3")) {
+			var _toggle = DOMTokenList.prototype.toggle;
+	
+			DOMTokenList.prototype.toggle = function(token, force) {
+				if (1 in arguments && !this.contains(token) === !force) {
+					return force;
+				} else {
+					return _toggle.call(this, token);
+				}
+			};
+	
+		}
+	
+		testElement = null;
+	}());
+	
+	}
+
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -149,7 +395,7 @@
 	    value: true
 	});
 	
-	var _podPointUtils = __webpack_require__(2);
+	var _podPointUtils = __webpack_require__(3);
 	
 	var pageActive = false;
 	var modules = {};
@@ -185,7 +431,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -246,7 +492,7 @@
 	}
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -268,7 +514,7 @@
 	    value: true
 	});
 	
-	var _podPointDomOps = __webpack_require__(4);
+	var _podPointDomOps = __webpack_require__(5);
 	
 	var DATA_TAG = 'data-js-module';
 	
@@ -318,7 +564,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -510,12 +756,12 @@
 	}
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _domOps = __webpack_require__(4);
+	var _domOps = __webpack_require__(5);
 	
 	window.defineSizeAndDevice = function () {
 	    window.isTouchDevice = 'ontouchstart' in document.documentElement;
@@ -537,7 +783,7 @@
 	window.defineSizeAndDevice();
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -548,9 +794,9 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domOps = __webpack_require__(4);
+	var _domOps = __webpack_require__(5);
 	
-	var _utilities = __webpack_require__(7);
+	var _utilities = __webpack_require__(8);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -696,7 +942,7 @@
 	};
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -720,7 +966,7 @@
 	exports.roundNumberTo = roundNumberTo;
 	exports.loadVideo = loadVideo;
 	
-	var _domOps = __webpack_require__(4);
+	var _domOps = __webpack_require__(5);
 	
 	var IS_OPEN = 'is-open';
 	
@@ -921,7 +1167,7 @@
 	}
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -932,13 +1178,13 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domDelegate = __webpack_require__(9);
+	var _domDelegate = __webpack_require__(10);
 	
-	var _superagent = __webpack_require__(11);
+	var _superagent = __webpack_require__(12);
 	
 	var _superagent2 = _interopRequireDefault(_superagent);
 	
-	var _progressButton = __webpack_require__(17);
+	var _progressButton = __webpack_require__(18);
 	
 	var _progressButton2 = _interopRequireDefault(_progressButton);
 	
@@ -1037,7 +1283,7 @@
 	};
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*jshint browser:true, node:true*/
@@ -1052,7 +1298,7 @@
 	 * @copyright The Financial Times Limited [All Rights Reserved]
 	 * @license MIT License (see LICENSE.txt)
 	 */
-	var Delegate = __webpack_require__(10);
+	var Delegate = __webpack_require__(11);
 	
 	module.exports = function(root) {
 	  return new Delegate(root);
@@ -1062,7 +1308,7 @@
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 	/*jshint browser:true, node:true*/
@@ -1497,17 +1743,17 @@
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Module dependencies.
 	 */
 	
-	var Emitter = __webpack_require__(12);
-	var reduce = __webpack_require__(13);
-	var requestBase = __webpack_require__(14);
-	var isObject = __webpack_require__(15);
+	var Emitter = __webpack_require__(13);
+	var reduce = __webpack_require__(14);
+	var requestBase = __webpack_require__(15);
+	var isObject = __webpack_require__(16);
 	
 	/**
 	 * Root reference for iframes.
@@ -1556,7 +1802,7 @@
 	 * Expose `request`.
 	 */
 	
-	var request = module.exports = __webpack_require__(16).bind(null, Request);
+	var request = module.exports = __webpack_require__(17).bind(null, Request);
 	
 	/**
 	 * Determine XHR.
@@ -2580,7 +2826,7 @@
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
@@ -2749,7 +2995,7 @@
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 	
@@ -2778,13 +3024,13 @@
 	};
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Module of mixed-in functions shared between node and client code
 	 */
-	var isObject = __webpack_require__(15);
+	var isObject = __webpack_require__(16);
 	
 	/**
 	 * Clear previous timeout.
@@ -2950,7 +3196,7 @@
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 	/**
@@ -2969,7 +3215,7 @@
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 	// The node and browser modules expose versions of this with the
@@ -3007,7 +3253,7 @@
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3018,7 +3264,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domOps = __webpack_require__(4);
+	var _domOps = __webpack_require__(5);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -3078,7 +3324,7 @@
 	};
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3089,13 +3335,13 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domDelegate = __webpack_require__(9);
+	var _domDelegate = __webpack_require__(10);
 	
-	var _domOps = __webpack_require__(4);
+	var _domOps = __webpack_require__(5);
 	
-	var _validationRules = __webpack_require__(19);
+	var _validationRules = __webpack_require__(20);
 	
-	var _utilities = __webpack_require__(7);
+	var _utilities = __webpack_require__(8);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -3300,7 +3546,7 @@
 	};
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -3317,7 +3563,7 @@
 	 * @return {boolean} passed validation
 	 */
 	function required(element) {
-	  return element.value === '' ? false : true;
+	  return element.value === '';
 	}
 	
 	/**
@@ -3327,13 +3573,13 @@
 	 * @return {boolean} passed validation
 	 */
 	function email(element) {
-	  var re = /(\w+)\@(\w+)\.[a-zA-Z]/g;
+	  var re = /(\w+)@(\w+)\.[a-zA-Z]/g;
 	  var emailValue = element.value;
 	  return re.test(emailValue);
 	}
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3344,11 +3590,11 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domDelegate = __webpack_require__(9);
+	var _domDelegate = __webpack_require__(10);
 	
-	var _domOps = __webpack_require__(4);
+	var _domOps = __webpack_require__(5);
 	
-	var _utilities = __webpack_require__(7);
+	var _utilities = __webpack_require__(8);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -3536,7 +3782,7 @@
 	};
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3547,7 +3793,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domOps = __webpack_require__(4);
+	var _domOps = __webpack_require__(5);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -3704,7 +3950,7 @@
 	};
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3715,7 +3961,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domDelegate = __webpack_require__(9);
+	var _domDelegate = __webpack_require__(10);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -3807,7 +4053,7 @@
 	};
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3818,9 +4064,9 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domDelegate = __webpack_require__(9);
+	var _domDelegate = __webpack_require__(10);
 	
-	var _domOps = __webpack_require__(4);
+	var _domOps = __webpack_require__(5);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -3912,7 +4158,7 @@
 	};
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3923,9 +4169,9 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domOps = __webpack_require__(4);
+	var _domOps = __webpack_require__(5);
 	
-	var _domDelegate = __webpack_require__(9);
+	var _domDelegate = __webpack_require__(10);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -4091,7 +4337,7 @@
 	};
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4102,7 +4348,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _flickity = __webpack_require__(26);
+	var _flickity = __webpack_require__(27);
 	
 	var _flickity2 = _interopRequireDefault(_flickity);
 	
@@ -4167,7 +4413,7 @@
 	};
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -4187,13 +4433,13 @@
 	  if ( true ) {
 	    // AMD
 	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	      __webpack_require__(27),
-	      __webpack_require__(35),
-	      __webpack_require__(38),
-	      __webpack_require__(40),
+	      __webpack_require__(28),
+	      __webpack_require__(36),
+	      __webpack_require__(39),
 	      __webpack_require__(41),
 	      __webpack_require__(42),
-	      __webpack_require__(43)
+	      __webpack_require__(43),
+	      __webpack_require__(44)
 	    ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	  } else if ( typeof module == 'object' && module.exports ) {
 	    // CommonJS
@@ -4215,7 +4461,7 @@
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Flickity main
@@ -4225,12 +4471,12 @@
 	  if ( true ) {
 	    // AMD
 	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	      __webpack_require__(28),
 	      __webpack_require__(29),
 	      __webpack_require__(30),
-	      __webpack_require__(32),
+	      __webpack_require__(31),
 	      __webpack_require__(33),
-	      __webpack_require__(34)
+	      __webpack_require__(34),
+	      __webpack_require__(35)
 	    ], __WEBPACK_AMD_DEFINE_RESULT__ = function( EvEmitter, getSize, utils, Cell, Slide, animatePrototype ) {
 	      return factory( window, EvEmitter, getSize, utils, Cell, Slide, animatePrototype );
 	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -5076,7 +5322,7 @@
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -5194,7 +5440,7 @@
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -5409,7 +5655,7 @@
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -5426,7 +5672,7 @@
 	  if ( true ) {
 	    // AMD
 	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	      __webpack_require__(31)
+	      __webpack_require__(32)
 	    ], __WEBPACK_AMD_DEFINE_RESULT__ = function( matchesSelector ) {
 	      return factory( window, matchesSelector );
 	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -5653,7 +5899,7 @@
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -5712,7 +5958,7 @@
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Flickity.Cell
@@ -5722,7 +5968,7 @@
 	  if ( true ) {
 	    // AMD
 	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	      __webpack_require__(29)
+	      __webpack_require__(30)
 	    ], __WEBPACK_AMD_DEFINE_RESULT__ = function( getSize ) {
 	      return factory( window, getSize );
 	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -5808,7 +6054,7 @@
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;// slide
@@ -5890,7 +6136,7 @@
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// animate
@@ -5900,7 +6146,7 @@
 	  if ( true ) {
 	    // AMD
 	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	      __webpack_require__(30)
+	      __webpack_require__(31)
 	    ], __WEBPACK_AMD_DEFINE_RESULT__ = function( utils ) {
 	      return factory( window, utils );
 	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -6115,7 +6361,7 @@
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// drag
@@ -6125,9 +6371,9 @@
 	  if ( true ) {
 	    // AMD
 	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	      __webpack_require__(27),
-	      __webpack_require__(36),
-	      __webpack_require__(30)
+	      __webpack_require__(28),
+	      __webpack_require__(37),
+	      __webpack_require__(31)
 	    ], __WEBPACK_AMD_DEFINE_RESULT__ = function( Flickity, Unidragger, utils ) {
 	      return factory( window, Flickity, Unidragger, utils );
 	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -6511,7 +6757,7 @@
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -6529,7 +6775,7 @@
 	  if ( true ) {
 	    // AMD
 	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	      __webpack_require__(37)
+	      __webpack_require__(38)
 	    ], __WEBPACK_AMD_DEFINE_RESULT__ = function( Unipointer ) {
 	      return factory( window, Unipointer );
 	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -6788,7 +7034,7 @@
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -6805,7 +7051,7 @@
 	  if ( true ) {
 	    // AMD
 	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	      __webpack_require__(28)
+	      __webpack_require__(29)
 	    ], __WEBPACK_AMD_DEFINE_RESULT__ = function( EvEmitter ) {
 	      return factory( window, EvEmitter );
 	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -7089,7 +7335,7 @@
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// prev/next buttons
@@ -7099,9 +7345,9 @@
 	  if ( true ) {
 	    // AMD
 	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	      __webpack_require__(27),
-	      __webpack_require__(39),
-	      __webpack_require__(30)
+	      __webpack_require__(28),
+	      __webpack_require__(40),
+	      __webpack_require__(31)
 	    ], __WEBPACK_AMD_DEFINE_RESULT__ = function( Flickity, TapListener, utils ) {
 	      return factory( window, Flickity, TapListener, utils );
 	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -7315,7 +7561,7 @@
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -7333,7 +7579,7 @@
 	  if ( true ) {
 	    // AMD
 	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	      __webpack_require__(37)
+	      __webpack_require__(38)
 	    ], __WEBPACK_AMD_DEFINE_RESULT__ = function( Unipointer ) {
 	      return factory( window, Unipointer );
 	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -7434,7 +7680,7 @@
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// page dots
@@ -7444,9 +7690,9 @@
 	  if ( true ) {
 	    // AMD
 	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	      __webpack_require__(27),
-	      __webpack_require__(39),
-	      __webpack_require__(30)
+	      __webpack_require__(28),
+	      __webpack_require__(40),
+	      __webpack_require__(31)
 	    ], __WEBPACK_AMD_DEFINE_RESULT__ = function( Flickity, TapListener, utils ) {
 	      return factory( window, Flickity, TapListener, utils );
 	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -7618,7 +7864,7 @@
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// player & autoPlay
@@ -7628,9 +7874,9 @@
 	  if ( true ) {
 	    // AMD
 	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	      __webpack_require__(28),
-	      __webpack_require__(30),
-	      __webpack_require__(27)
+	      __webpack_require__(29),
+	      __webpack_require__(31),
+	      __webpack_require__(28)
 	    ], __WEBPACK_AMD_DEFINE_RESULT__ = function( EvEmitter, utils, Flickity ) {
 	      return factory( EvEmitter, utils, Flickity );
 	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -7837,7 +8083,7 @@
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// add, remove cell
@@ -7847,8 +8093,8 @@
 	  if ( true ) {
 	    // AMD
 	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	      __webpack_require__(27),
-	      __webpack_require__(30)
+	      __webpack_require__(28),
+	      __webpack_require__(31)
 	    ], __WEBPACK_AMD_DEFINE_RESULT__ = function( Flickity, utils ) {
 	      return factory( window, Flickity, utils );
 	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -8025,7 +8271,7 @@
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// lazyload
@@ -8035,8 +8281,8 @@
 	  if ( true ) {
 	    // AMD
 	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	      __webpack_require__(27),
-	      __webpack_require__(30)
+	      __webpack_require__(28),
+	      __webpack_require__(31)
 	    ], __WEBPACK_AMD_DEFINE_RESULT__ = function( Flickity, utils ) {
 	      return factory( window, Flickity, utils );
 	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -8150,12 +8396,12 @@
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _utilities = __webpack_require__(7);
+	var _utilities = __webpack_require__(8);
 	
 	Object.defineProperty(exports, '__esModule', {
 	    value: true
@@ -8229,252 +8475,6 @@
 	exports.initAutocomplete = initAutocomplete;
 	exports.fillInAddress = fillInAddress;
 	exports.geolocate = geolocate;
-
-/***/ }),
-/* 45 */
-/***/ (function(module, exports) {
-
-	/*
-	 * classList.js: Cross-browser full element.classList implementation.
-	 * 1.1.20170427
-	 *
-	 * By Eli Grey, http://eligrey.com
-	 * License: Dedicated to the public domain.
-	 *   See https://github.com/eligrey/classList.js/blob/master/LICENSE.md
-	 */
-	
-	/*global self, document, DOMException */
-	
-	/*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js */
-	
-	if ("document" in window.self) {
-	
-	// Full polyfill for browsers with no classList support
-	// Including IE < Edge missing SVGElement.classList
-	if (!("classList" in document.createElement("_")) 
-		|| document.createElementNS && !("classList" in document.createElementNS("http://www.w3.org/2000/svg","g"))) {
-	
-	(function (view) {
-	
-	"use strict";
-	
-	if (!('Element' in view)) return;
-	
-	var
-		  classListProp = "classList"
-		, protoProp = "prototype"
-		, elemCtrProto = view.Element[protoProp]
-		, objCtr = Object
-		, strTrim = String[protoProp].trim || function () {
-			return this.replace(/^\s+|\s+$/g, "");
-		}
-		, arrIndexOf = Array[protoProp].indexOf || function (item) {
-			var
-				  i = 0
-				, len = this.length
-			;
-			for (; i < len; i++) {
-				if (i in this && this[i] === item) {
-					return i;
-				}
-			}
-			return -1;
-		}
-		// Vendors: please allow content code to instantiate DOMExceptions
-		, DOMEx = function (type, message) {
-			this.name = type;
-			this.code = DOMException[type];
-			this.message = message;
-		}
-		, checkTokenAndGetIndex = function (classList, token) {
-			if (token === "") {
-				throw new DOMEx(
-					  "SYNTAX_ERR"
-					, "An invalid or illegal string was specified"
-				);
-			}
-			if (/\s/.test(token)) {
-				throw new DOMEx(
-					  "INVALID_CHARACTER_ERR"
-					, "String contains an invalid character"
-				);
-			}
-			return arrIndexOf.call(classList, token);
-		}
-		, ClassList = function (elem) {
-			var
-				  trimmedClasses = strTrim.call(elem.getAttribute("class") || "")
-				, classes = trimmedClasses ? trimmedClasses.split(/\s+/) : []
-				, i = 0
-				, len = classes.length
-			;
-			for (; i < len; i++) {
-				this.push(classes[i]);
-			}
-			this._updateClassName = function () {
-				elem.setAttribute("class", this.toString());
-			};
-		}
-		, classListProto = ClassList[protoProp] = []
-		, classListGetter = function () {
-			return new ClassList(this);
-		}
-	;
-	// Most DOMException implementations don't allow calling DOMException's toString()
-	// on non-DOMExceptions. Error's toString() is sufficient here.
-	DOMEx[protoProp] = Error[protoProp];
-	classListProto.item = function (i) {
-		return this[i] || null;
-	};
-	classListProto.contains = function (token) {
-		token += "";
-		return checkTokenAndGetIndex(this, token) !== -1;
-	};
-	classListProto.add = function () {
-		var
-			  tokens = arguments
-			, i = 0
-			, l = tokens.length
-			, token
-			, updated = false
-		;
-		do {
-			token = tokens[i] + "";
-			if (checkTokenAndGetIndex(this, token) === -1) {
-				this.push(token);
-				updated = true;
-			}
-		}
-		while (++i < l);
-	
-		if (updated) {
-			this._updateClassName();
-		}
-	};
-	classListProto.remove = function () {
-		var
-			  tokens = arguments
-			, i = 0
-			, l = tokens.length
-			, token
-			, updated = false
-			, index
-		;
-		do {
-			token = tokens[i] + "";
-			index = checkTokenAndGetIndex(this, token);
-			while (index !== -1) {
-				this.splice(index, 1);
-				updated = true;
-				index = checkTokenAndGetIndex(this, token);
-			}
-		}
-		while (++i < l);
-	
-		if (updated) {
-			this._updateClassName();
-		}
-	};
-	classListProto.toggle = function (token, force) {
-		token += "";
-	
-		var
-			  result = this.contains(token)
-			, method = result ?
-				force !== true && "remove"
-			:
-				force !== false && "add"
-		;
-	
-		if (method) {
-			this[method](token);
-		}
-	
-		if (force === true || force === false) {
-			return force;
-		} else {
-			return !result;
-		}
-	};
-	classListProto.toString = function () {
-		return this.join(" ");
-	};
-	
-	if (objCtr.defineProperty) {
-		var classListPropDesc = {
-			  get: classListGetter
-			, enumerable: true
-			, configurable: true
-		};
-		try {
-			objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
-		} catch (ex) { // IE 8 doesn't support enumerable:true
-			// adding undefined to fight this issue https://github.com/eligrey/classList.js/issues/36
-			// modernie IE8-MSW7 machine has IE8 8.0.6001.18702 and is affected
-			if (ex.number === undefined || ex.number === -0x7FF5EC54) {
-				classListPropDesc.enumerable = false;
-				objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
-			}
-		}
-	} else if (objCtr[protoProp].__defineGetter__) {
-		elemCtrProto.__defineGetter__(classListProp, classListGetter);
-	}
-	
-	}(window.self));
-	
-	}
-	
-	// There is full or partial native classList support, so just check if we need
-	// to normalize the add/remove and toggle APIs.
-	
-	(function () {
-		"use strict";
-	
-		var testElement = document.createElement("_");
-	
-		testElement.classList.add("c1", "c2");
-	
-		// Polyfill for IE 10/11 and Firefox <26, where classList.add and
-		// classList.remove exist but support only one argument at a time.
-		if (!testElement.classList.contains("c2")) {
-			var createMethod = function(method) {
-				var original = DOMTokenList.prototype[method];
-	
-				DOMTokenList.prototype[method] = function(token) {
-					var i, len = arguments.length;
-	
-					for (i = 0; i < len; i++) {
-						token = arguments[i];
-						original.call(this, token);
-					}
-				};
-			};
-			createMethod('add');
-			createMethod('remove');
-		}
-	
-		testElement.classList.toggle("c3", false);
-	
-		// Polyfill for IE 10 and Firefox <24, where classList.toggle does not
-		// support the second argument.
-		if (testElement.classList.contains("c3")) {
-			var _toggle = DOMTokenList.prototype.toggle;
-	
-			DOMTokenList.prototype.toggle = function(token, force) {
-				if (1 in arguments && !this.contains(token) === !force) {
-					return force;
-				} else {
-					return _toggle.call(this, token);
-				}
-			};
-	
-		}
-	
-		testElement = null;
-	}());
-	
-	}
-
 
 /***/ })
 /******/ ]);

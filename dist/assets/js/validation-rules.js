@@ -12,7 +12,7 @@ exports.email = email;
  * @return {boolean} passed validation
  */
 function required(element) {
-  return element.value === '' ? false : true;
+  return element.value === '';
 }
 
 /**
@@ -22,7 +22,7 @@ function required(element) {
  * @return {boolean} passed validation
  */
 function email(element) {
-  var re = /(\w+)\@(\w+)\.[a-zA-Z]/g;
+  var re = /(\w+)@(\w+)\.[a-zA-Z]/g;
   var emailValue = element.value;
   return re.test(emailValue);
 }
