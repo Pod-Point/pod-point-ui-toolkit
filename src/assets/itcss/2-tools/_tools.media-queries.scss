@@ -1,50 +1,57 @@
 // =============================================================================
-//	MEDIA QUERIES
+//  TOOLS - MEDIA QUERIES
 // =============================================================================
 
 @mixin xsmall-and-up {
-  @media (min-width: #{$xsmall-screen}) {
-    @content;
-  }
+    @media (min-width: #{$xsmall-screen}) {
+        @content;
+    }
 }
+
 @mixin small-and-up {
-  @media (min-width: #{$small-screen}) {
-    @content;
-  }
+    @media (min-width: #{$small-screen}) {
+        @content;
+    }
 }
+
 @mixin medium-and-up {
-  @media (min-width: #{$medium-screen}) {
-    @content;
-  }
+    @media (min-width: #{$medium-screen}) {
+        @content;
+    }
 }
+
 @mixin large-and-up {
-  @media (min-width: #{$large-screen}) {
-    @content;
-  }
+    @media (min-width: #{$large-screen}) {
+        @content;
+    }
 }
+
 @mixin xlarge-and-up {
-  @media (min-width: #{$xlarge-screen}) {
-    @content;
-  }
+    @media (min-width: #{$xlarge-screen}) {
+        @content;
+    }
 }
 
 @mixin xsmall-and-down {
-  @media (max-width: #{$xsmall-screen}) {
-    @content;
-  }
+    @media (max-width: #{$xsmall-screen}) {
+        @content;
+    }
 }
+
 @mixin small-and-down {
-  @media (max-width: #{$small-screen}) {
-    @content;
-  }
+    @media (max-width: #{$small-screen}) {
+        @content;
+    }
 }
+
 @mixin medium-and-down {
-  @media (max-width: #{$medium-screen}) {
-    @content;
-  }
+    @media (max-width: #{$medium-screen}) {
+        @content;
+    }
 }
+
 @mixin large-and-down {
-  @media (max-width: #{$large-screen}) {
-    @content;
-  }
+    @media (max-width: #{$large-screen}) {
+        @content;
+    }
 }

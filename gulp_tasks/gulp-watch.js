@@ -7,7 +7,7 @@ gulp.task('watch', ['browser-sync'], () => {
 	global.waitingWatch = false;
 	console.log(global.waitingWatch);
 	// Watch for css changes
-	gulp.watch(config.src.scss + '**/*', ['sass']);
+	gulp.watch(config.src.itcss + '**/*', ['sass']);
 	// Watch for html changes
 	gulp.watch([config.src.templates + '**/*', config.src.data + '**/*'], ['assembleHtml']);
 	// Watch for js changes

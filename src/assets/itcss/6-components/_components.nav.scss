@@ -1,231 +1,231 @@
 // =============================================================================
-//	NAV
+//  COMPONENTS - NAV
 // =============================================================================
 
 .is-nav-open body {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .global-nav {
-	@include clearfix;
-	@include margin(null auto);
-	transition: 0.1s ease-in-out;
-	@include slideDownCollapsed(0.5s);
+    @include clearfix;
+    @include margin(null auto);
+    transition: 0.1s ease-in-out;
+    @include slideDownCollapsed(0.5s);
 
-	@include medium-and-up {
-		height: 97px;
-		max-height: 100%;
-		display: block;
-		float: right;
-	}
+    @include medium-and-up {
+        height: 97px;
+        max-height: 100%;
+        display: block;
+        float: right;
+    }
 
-	.checkout-flow & {
-		display: none;
-	}
+    .checkout-flow & {
+        display: none;
+    }
 
-	.nav-open & {
-		height: auto;
-		transition: 1s ease-in-out;
-		@include slideDownActive(1s, 800px);
-	}
+    .nav-open & {
+        height: auto;
+        transition: 1s ease-in-out;
+        @include slideDownActive(1s, 800px);
+    }
 
-	ul {
-		@include remove-list-styles;
+    ul {
+        @include remove-list-styles;
 
-		li {
-			position: relative;
-			@include font-small;
-			border-bottom: $border-thin;
+        li {
+            position: relative;
+            @include font-small;
+            border-bottom: $border-thin;
 
-			&:last-child {
-				border-bottom: none;
-			}
+            &:last-child {
+                border-bottom: none;
+            }
 
-			@include medium-and-up {
-				position: static;
-				border-bottom: none;
-				display: inline-block;
-				@include padding(null 10px);
-			}
+            @include medium-and-up {
+                position: static;
+                border-bottom: none;
+                display: inline-block;
+                @include padding(null 10px);
+            }
 
-			@include large-and-up {
-				@include padding(null 20px);
-			}
+            @include large-and-up {
+                @include padding(null 20px);
+            }
 
-			.nav-link {
-				cursor: pointer;
-				@include padding(15px 0);
-				color: $font-color-base;
-				font-weight: $font-weight-bold;
-				display: block;
-				width: 100%;
-				text-align: left;
+            .nav-link {
+                cursor: pointer;
+                @include padding(15px 0);
+                color: $font-color-base;
+                font-weight: $font-weight-bold;
+                display: block;
+                width: 100%;
+                text-align: left;
 
-				@include medium-and-up {
-					text-align: center;
-					@include padding(39px 5px);
-				}
+                @include medium-and-up {
+                    text-align: center;
+                    @include padding(39px 5px);
+                }
 
-				&.find-chargepoint {
-					color: $primary-color;
-					padding-left: 25px!important;
-					position: relative;
+                &.find-chargepoint {
+                    color: $primary-color;
+                    padding-left: 25px!important;
+                    position: relative;
 
-					svg {
-						@include position(absolute, 50% null null 0);
-						margin-top: -10px;
-						width: 20px;
-						height: 20px;
-						fill: $primary-color;
-					}
-				}
-			}
-		}
-	}
+                    svg {
+                        @include position(absolute, 50% null null 0);
+                        margin-top: -10px;
+                        width: 20px;
+                        height: 20px;
+                        fill: $primary-color;
+                    }
+                }
+            }
+        }
+    }
 
-	> ul {
+    > ul {
 
-		@include medium-and-up {
-			float: right;
-			margin-right: -10px;
-		}
+        @include medium-and-up {
+            float: right;
+            margin-right: -10px;
+        }
 
-		> li {
-			min-height: 43px;
+        > li {
+            min-height: 43px;
 
-			&.has-sub-nav {
+            &.has-sub-nav {
 
-				&.sub-nav-open {
+                &.sub-nav-open {
 
-					.global-nav__sub-nav {
-						height: auto;
-						max-height: 340px;
-						transition: 1s ease-in-out;
-						@include slideDownActive(1s, 340px);
+                    .global-nav__sub-nav {
+                        height: auto;
+                        max-height: 340px;
+                        transition: 1s ease-in-out;
+                        @include slideDownActive(1s, 340px);
 
-						@include medium-and-up {
-							transition: none;
-							opacity: 1;
-							animation-duration: 0.3s;
-							animation-fill-mode: both;
-							animation-name: fadeIn;
-						}
-					}
-				}
+                        @include medium-and-up {
+                            transition: none;
+                            opacity: 1;
+                            animation-duration: 0.3s;
+                            animation-fill-mode: both;
+                            animation-name: fadeIn;
+                        }
+                    }
+                }
 
-				.plus-minus-toggle {
-					z-index: -1;
-					@include position(absolute, 4px 0 null null);
+                .plus-minus-toggle {
+                    z-index: -1;
+                    @include position(absolute, 4px 0 null null);
 
-					@include medium-and-up {
-						display: none;
-					}
-				}
-			}
+                    @include medium-and-up {
+                        display: none;
+                    }
+                }
+            }
 
-			> .nav-link {
-				border-bottom: 2px solid transparent;
-			}
+            > .nav-link {
+                border-bottom: 2px solid transparent;
+            }
 
-			@include medium-and-up {
+            @include medium-and-up {
 
-				&.sub-nav-open,
-				&:hover {
+                &.sub-nav-open,
+                &:hover {
 
-					> .nav-link {
-						border-color: $primary-color;
-					}
-				}
-			}
-		}
-	}
+                    > .nav-link {
+                        border-color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
 
-	&__sub-nav {
-		width: 100%;
-		text-align: center;
-		transition: 0.3s ease-in-out;
-		@include slideDownCollapsed(0.5s);
-		background-color: white;
+    &__sub-nav {
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+        @include slideDownCollapsed(0.5s);
+        background-color: white;
 
-		@include medium-and-up {
-			opacity: 0;
-			@include position(absolute, 96px 0 null null);
-		}
+        @include medium-and-up {
+            opacity: 0;
+            @include position(absolute, 96px 0 null null);
+        }
 
-		ul {
-			background-color: rgba(255,255,255,0.3);
-			margin-bottom: 20px;
+        ul {
+            background-color: rgba(255,255,255,0.3);
+            margin-bottom: 20px;
 
-			@include small-and-up {
-				@include container;
-			}
+            @include small-and-up {
+                @include container;
+            }
 
-			@include medium-and-up {
-				margin-bottom: 0;
-			}
+            @include medium-and-up {
+                margin-bottom: 0;
+            }
 
-			li {
-				border-bottom: none;
-				@include clearfix;
-				@include padding(null 20px);
-				display: inline-block;
-				width: 120px;
+            li {
+                border-bottom: none;
+                @include clearfix;
+                @include padding(null 20px);
+                display: inline-block;
+                width: 120px;
 
-				@include small-and-up {
-					width: auto;
-				}
+                @include small-and-up {
+                    width: auto;
+                }
 
-				.nav-link  {
-					text-align: center;
+                .nav-link  {
+                    text-align: center;
 
-					.nav-item-img {
-						@include margin(5px auto 10px auto);
-						display: block;
-						width: 60px;
-						height: 60px;
+                    .nav-item-img {
+                        @include margin(5px auto 10px auto);
+                        display: block;
+                        width: 60px;
+                        height: 60px;
 
-						@include small-and-up {
-							margin-bottom: 20px;
-							width: 100px;
-							height: 100px;
-						}
-					}
-				}
-			}
-		}
-	}
+                        @include small-and-up {
+                            margin-bottom: 20px;
+                            width: 100px;
+                            height: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @include medium-and-up {
 
-	.global-nav-overlay {
-		display: none;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0,0,0,0.5);
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 10;
-		transition: 0.1s ease-in-out;
+    .global-nav-overlay {
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        transition: 0.1s ease-in-out;
 
-		&.nav-open {
-			display: block;
-			transition: 0.8s ease-in-out;
-			animation-duration: 0.3s;
-			animation-fill-mode: both;
-			animation-name: fadeIn;
-		}
+        &.nav-open {
+            display: block;
+            transition: 0.8s ease-in-out;
+            animation-duration: 0.3s;
+            animation-fill-mode: both;
+            animation-name: fadeIn;
+        }
 
-		&:before {
-			content: '';
-			width: 100%;
-			height: 320px;
-			background-color: white;
-			position: fixed;
-			top: 0;
-			left: 0;
-			box-shadow: $bottom-shadow;
-		}
-	}
+        &:before {
+            content: '';
+            width: 100%;
+            height: 320px;
+            background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: $bottom-shadow;
+        }
+    }
 }

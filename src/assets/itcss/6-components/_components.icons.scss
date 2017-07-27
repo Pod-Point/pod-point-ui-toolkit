@@ -1,0 +1,27 @@
+// =============================================================================
+//  COMPONENTS - ICONS
+// =============================================================================
+
+.icon {
+    @include margin(null 2px);
+
+    > svg {
+        height: 25px;
+        width: 25px;
+    }
+
+    &--sm > svg {
+        height: 20px;
+        width: 20px;
+    }
+
+    &--xs > svg {
+        height: 15px;
+        width: 15px;
+    }
+
+    &--xxs > svg {
+        height: 10px;
+        width: 10px;
+    }
+}

@@ -1,0 +1,20 @@
+// =============================================================================
+//  TOOLS - ALL
+// =============================================================================
+
+// Bourbon is depreciating a lot of mixins in the next release and shows warning messages in the command line when compiling. The following line turns those messages off.
+$output-bourbon-deprecation-warnings: false;
+
+@import 'bourbon/_bourbon';
+@import 'neat/_neat';
+
+@import '_tools.media-queries';
+@import '_tools.typography';
+@import '_tools.forms';
+@import '_tools.alerts';
+@import '_tools.animation-fades';
+@import '_tools.animation-slides';
+@import '_tools.animation-pop-up-fade';
+@import '_tools.aspect-ratio';
+@import '_tools.helpers';
+@import '_tools.icons-in-circles';

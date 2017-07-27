@@ -1,0 +1,91 @@
+// =============================================================================
+//	ELEMENTS - FORMS - VALIDATION
+// =============================================================================
+
+.form-field-wrapper {
+
+    @include small-and-up {
+        padding-right: rem(3);
+    }
+
+    @include medium-and-up {
+        padding-right: 0;
+    }
+    &.is-valid,
+    &.is-invalid {
+        position: relative;
+        &:before {
+            @include small-and-up {
+                content: '';
+                width: rem(18);
+                height: rem(18);
+                background-size: cover;
+                @include position(absolute, 9px 0 null null);
+            }
+            @include medium-and-up {
+                right: -30px;
+            }
+        }
+    }
+    &.is-valid {
+        #{$inputs},
+        textarea[type="text"],
+        .select-wrapper select {
+            border-color: $primary-color;
+        }
+    }
+    &.is-invalid {
+        #{$inputs},
+        textarea[type="text"],
+        .select-wrapper select {
+            border-color: $error-red;
+        }
+    }
+}
+
+.checkbox-wrap:not(.is-invalid),
+.form-field-wrapper:not(.is-invalid) {
+    .error-message {
+        display: none;
+    }
+}
+
+.checkbox-wrap.is-invalid {
+    input[type="checkbox"] ~ label:before {
+        border-color: $error-red;
+    }
+}
+
+
+.form__group--error,
+.has-error {
+    #{$inputs},
+    textarea[type="text"],
+    .select-wrapper select {
+        border-color: $error-red;
+    }
+}
+.form__group--valid {
+    #{$inputs},
+    textarea[type="text"],
+    .select-wrapper select {
+        border-color: $primary-color;
+    }
+}
+.form__error {
+    display: block;
+    @include font-style-small;
+    font-weight: $font-weight-bold;
+    color: $error-red;
+    margin-top: rem(5);
+    .checkbox-wrap & {
+        margin-top: 0;
+    }
+}
+
+
+.checkbox-wrap {
+    .form__error {
+        margin-left: 35px;
+    }
+}

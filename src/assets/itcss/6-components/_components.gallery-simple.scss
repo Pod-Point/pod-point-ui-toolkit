@@ -1,34 +1,34 @@
 // =============================================================================
-//	GALLERY SIMPLE
+//  COMPONENTS - GALLERY SIMPLE
 // =============================================================================
 
 .gallery-simple {
-	max-width: 300px;
+    max-width: 300px;
 
-	&__image {
-		width: 100%;
-		border-radius: $border-radius-base;
-	}
+    &__image {
+        width: 100%;
+        border-radius: $border-radius-base;
+    }
 
-	&__thumbnails {
-		text-align: center;
-		@include margin(20px -5px);
-		padding: 0;
+    &__thumbnails {
+        text-align: center;
+        @include margin(20px -5px);
+        padding: 0;
 
-		li {
-			list-style: none;
-			width: 40px;
-			display: inline-block;
-			@include margin(null 5px);
+        li {
+            list-style: none;
+            width: 40px;
+            display: inline-block;
+            @include margin(null 5px);
 
-			.thumbnail {
-				@extend %clickable;
-			}
+            .thumbnail {
+                @extend %clickable;
+            }
 
-			img {
-				width: 100%;
-				border-radius: $border-radius-base;
-			}
-		}
-	}
+            img {
+                width: 100%;
+                border-radius: $border-radius-base;
+            }
+        }
+    }
 }

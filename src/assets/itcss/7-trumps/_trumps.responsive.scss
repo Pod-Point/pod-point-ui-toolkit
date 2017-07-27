@@ -1,8 +1,8 @@
 // =============================================================================
-//  RESPONSIVE HELPERS
+//  TRUMPS - RESPONSIVE HELPERS
 // =============================================================================
 
-.text-center { text-align: center!important; }
+.text-center {text-align: center!important; }
 .text-right { text-align: right!important; }
 .text-left { text-align: left!important; }
 .float-right { float: right!important; }
@@ -15,41 +15,41 @@
 .full-width { width: 100%!important; max-width: 100%!important; }
 
 @include small-and-up {
-	.text-center-sm { text-align: center!important; }
-	.text-right-sm { text-align: right!important; }
-	.text-left-sm { text-align: left!important; }
-	.float-right-sm { float: right!important; }
-	.float-left-sm { float: left!important; }
-	.marg-center-sm { margin-right: auto!important; margin-left: auto!important; }
-	.marg-to-left-sm { margin-left: 0!important; }
-	.hidden-sm { display: none!important; }
-	.block-sm { display: block!important; }
-	.inline-block-sm { display: inline-block!important; }
-	.full-width-sm { width: 100%!important; max-width: 100%!important; }
+    .text-center-sm { text-align: center!important; }
+    .text-right-sm { text-align: right!important; }
+    .text-left-sm { text-align: left!important; }
+    .float-right-sm { float: right!important; }
+    .float-left-sm { float: left!important; }
+    .marg-center-sm { margin-right: auto!important; margin-left: auto!important; }
+    .marg-to-left-sm { margin-left: 0!important; }
+    .hidden-sm { display: none!important; }
+    .block-sm { display: block!important; }
+    .inline-block-sm { display: inline-block!important; }
+    .full-width-sm { width: 100%!important; max-width: 100%!important; }
 }
 
 @include medium-and-up {
-	.text-center-md { text-align: center!important; }
-	.text-right-md { text-align: right!important; }
-	.text-left-md { text-align: left!important; }
-	.float-right-md { float: right!important; }
-	.float-left-md { float: left!important; }
-	.marg-center-md { margin-right: auto!important; margin-left: auto!important; }
-	.marg-to-left-md { margin-left: 0!important; }
-	.hidden-md { display: none!important; }
-	.block-md { display: block!important; }
-	.inline-block-md { display: inline-block!important; }
-	.full-width-md { width: 100%!important; max-width: 100%!important; }
+    .text-center-md { text-align: center!important; }
+    .text-right-md { text-align: right!important; }
+    .text-left-md { text-align: left!important; }
+    .float-right-md { float: right!important; }
+    .float-left-md { float: left!important; }
+    .marg-center-md { margin-right: auto!important; margin-left: auto!important; }
+    .marg-to-left-md { margin-left: 0!important; }
+    .hidden-md { display: none!important; }
+    .block-md { display: block!important; }
+    .inline-block-md { display: inline-block!important; }
+    .full-width-md { width: 100%!important; max-width: 100%!important; }
 }
 @include large-and-up {
-	.text-center-lg { text-align: center!important; }
-	.text-right-lg { text-align: right!important; }
-	.text-left-lg { text-align: left!important; }
-	.float-right-lg { float: right!important; }
-	.float-left-lg { float: left!important; }
-	.marg-center-lg { margin-right: auto!important; margin-left: auto!important; }
-	.hidden-lg { display: none!important; }
-	.block-lg { display: block!important; }
-	.inline-block-lg { display: inline-block!important; }
-	.full-width-lg { width: 100%!important; max-width: 100%!important; }
+    .text-center-lg { text-align: center!important; }
+    .text-right-lg { text-align: right!important; }
+    .text-left-lg { text-align: left!important; }
+    .float-right-lg { float: right!important; }
+    .float-left-lg { float: left!important; }
+    .marg-center-lg { margin-right: auto!important; margin-left: auto!important; }
+    .hidden-lg { display: none!important; }
+    .block-lg { display: block!important; }
+    .inline-block-lg { display: inline-block!important; }
+    .full-width-lg { width: 100%!important; max-width: 100%!important; }
 }

@@ -20,7 +20,7 @@ const autoprefixerOptions = {
 };
 
 gulp.task('sass', () => {
-	return gulp.src(config.src.scss + '**/*.scss')
+	return gulp.src(config.src.itcss + '**/*.scss')
 		.pipe(sass(sassOptions).on('error', sass.logError))
 		.pipe(autoprefixer(autoprefixerOptions))
 		.pipe(gulpif(global.env === 'prod', combineMq()))

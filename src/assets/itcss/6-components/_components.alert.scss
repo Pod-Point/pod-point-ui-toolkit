@@ -1,5 +1,5 @@
 // =============================================================================
-//	ALERT
+//  COMPONENTS - ALERT
 // =============================================================================
 
 .alert {
@@ -27,16 +27,20 @@
         color: inherit;
         text-decoration: underline;
     }
-	&--success {
-		@include alert-variant($state-success-bg, $state-success-border, $state-success-text);
-	}
-	&--info {
-		@include alert-variant($state-info-bg, $state-info-border, $state-info-text);
-	}
-	&--warning {
-		@include alert-variant($state-warning-bg, $state-warning-border, $state-warning-text);
-	}
-	&--danger {
-		@include alert-variant($state-danger-bg, $state-danger-border, $state-danger-text);
-	}
+
+    &--success {
+        @include alert-variant($state-success-bg, $state-success-border, $state-success-text);
+    }
+
+    &--info {
+        @include alert-variant($state-info-bg, $state-info-border, $state-info-text);
+    }
+
+    &--warning {
+        @include alert-variant($state-warning-bg, $state-warning-border, $state-warning-text);
+    }
+
+    &--danger {
+        @include alert-variant($state-danger-bg, $state-danger-border, $state-danger-text);
+    }
 }

@@ -1,83 +1,98 @@
 // =============================================================================
-//  TOOLTIP
+//  COMPONENTS - TOOLTIP
 // =============================================================================
 
 .tooltip-icon {
-	@include icon-in-circle($bgColor: transparent, $color: $font-color-base, $border: 2px solid $font-color-base);
-	@include icon-in-border-circle--size($dimension: 15px);
-	@include hide-text-not-pseudo;
-	display: inline-block;
-	&:before {
-		content: '?';
-		font-size: 9px;
-		line-height: 12px;
-	}
+    @include icon-in-circle($bgColor: transparent, $color: $font-color-base, $border: 2px solid $font-color-base);
+    @include icon-in-border-circle--size($dimension: 15px);
+    @include hide-text-not-pseudo;
+    display: inline-block;
+
+    &:before {
+        content: '?';
+        font-size: 9px;
+        line-height: 12px;
+    }
 }
 
 .tooltip-wrap {
-	display: block;
-	width: 100%;
-	position: relative;
-	z-index: 1;
-	@include medium-and-up {
-		display: inline-block;
-		width: auto;
-	}
+    display: block;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+
+    @include medium-and-up {
+        display: inline-block;
+        width: auto;
+    }
 }
 
 .tooltip {
-	&__box {
-		@include position(absolute, 50px null null 0);
-		box-sizing: border-box;
-		z-index: auto;
-		width: 100%;
-		@include padding(30px);
-		background-color: white;
-		border: $border-base;
-		border-radius: $border-radius-base;
-		box-shadow: $box-shadow-front;
-		@include medium-and-up {
-			width: 350px;
-			margin-left: -175px;
-			left: 50%;
-		}
-		&:before {
-			content: "";
-			@include position(absolute, -15px null null 50%);
-			margin-left: -14px;
-			z-index: -1;
-			width: 32px;
-			height: 32px;
-			display: block;
-			transform: rotate(-45deg);
-			background-color: white;
-			box-shadow: $box-shadow-front;
-			border: $border-base;
-		}
-		&:after {
-			content: "";
-			@include position(absolute, -13px null null 50%);
-			margin-left: -11px;
-			z-index: 1;
-			width: 26px;
-			height: 26px;
-			display: block;
-			transform: rotate(-45deg);
-			background-color: white;
-		}
-		.rich-text {
-			ul {
-				padding-left: 20px;
-			}
-			p, li {
-				@include font-style-small;
-			}
-			h1,h2,h3,h4,h5,h6 {
-				@include font-style-h6;
-			}
-		}
-	}
-	&__close {
-		@include position(absolute, 15px 15px null null);
-	}
+    &__box {
+        @include position(absolute, 50px null null 0);
+        box-sizing: border-box;
+        z-index: auto;
+        width: 100%;
+        @include padding(30px);
+        background-color: white;
+        border: $border-base;
+        border-radius: $border-radius-base;
+        box-shadow: $box-shadow-front;
+
+        @include medium-and-up {
+            width: 350px;
+            margin-left: -175px;
+            left: 50%;
+        }
+
+        &:before {
+            content: "";
+            @include position(absolute, -15px null null 50%);
+            margin-left: -14px;
+            z-index: -1;
+            width: 32px;
+            height: 32px;
+            display: block;
+            transform: rotate(-45deg);
+            background-color: white;
+            box-shadow: $box-shadow-front;
+            border: $border-base;
+        }
+
+        &:after {
+            content: "";
+            @include position(absolute, -13px null null 50%);
+            margin-left: -11px;
+            z-index: 1;
+            width: 26px;
+            height: 26px;
+            display: block;
+            transform: rotate(-45deg);
+            background-color: white;
+        }
+
+        .rich-text {
+            ul {
+                padding-left: 20px;
+            }
+
+            p,
+            li {
+                @include font-style-small;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                @include font-style-h6;
+            }
+        }
+    }
+
+    &__close {
+        @include position(absolute, 15px 15px null null);
+    }
 }

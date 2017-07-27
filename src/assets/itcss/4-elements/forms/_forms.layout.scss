@@ -1,0 +1,18 @@
+// =============================================================================
+//	ELEMENTS - FORMS - LAYOUT
+// =============================================================================
+
+.field-row {
+    margin-bottom: 25px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.form-action-buttons {
+    padding-top: 25px;
+}
+.form-field-wrapper {
+    display: inline-block;
+    width: 100%;
+    max-width: 600px;
+}

@@ -1,0 +1,64 @@
+// =============================================================================
+//  TOOLS - FORMS
+// =============================================================================
+
+// List of used inputs
+$inputs-list:
+    'input[type="date"]',
+    'input[type="email"]',
+    'input[type="number"]',
+    'input[type="password"]',
+    'input[type="search"]',
+    'input[type="tel"]',
+    'input[type="text"]',
+    'input[type="url"]';
+
+// Let's assign so we can use the list
+$inputs: assign-inputs($inputs-list);
+
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content};
+    :-moz-placeholder           {@content};
+    ::-moz-placeholder          {@content};
+    :-ms-input-placeholder      {@content};
+}
+
+@include placeholder {
+    color: $input-placeholder-color;
+}
+
+@mixin input-styles {
+    @include font-style-forms;
+    line-height: rem(24);
+    box-sizing: border-box;
+    width: 100%;
+    height: $input-height;
+    -webkit-appearance: none;
+    @include padding(rem(6) $input-padding);
+    display: block;
+    max-width: $form-field-max-width;
+}
+
+@mixin input-border {
+    transition: border-color;
+    background-color: $background-color-base;
+    border: $form-border-base;
+    border-radius: $form-border-radius;
+}
+
+@mixin input-border--focus {
+    color: $font-color-base!important;
+    border-color: $font-color-base;
+    outline: none;
+}
+
+@mixin input-border--hover {
+    color: $font-color-base!important;
+    border-color: $font-color-base;
+}
+
+@mixin input-border--disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background-color: $gray-very-light;
+}

@@ -1,0 +1,17 @@
+// =============================================================================
+//	ELEMENTS - FORMS - INPUTS
+// =============================================================================
+
+#{$inputs} {
+    @include input-styles;
+    @include input-border;
+    &:focus:not(disabled) {
+        @include input-border--focus;
+    }
+    &:hover:not(:disabled) {
+        @include input-border--hover;
+    }
+    &:disabled {
+        @include input-border--disabled;
+    }
+}

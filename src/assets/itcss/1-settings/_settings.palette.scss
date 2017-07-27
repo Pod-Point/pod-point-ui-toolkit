@@ -1,5 +1,5 @@
 // =============================================================================
-//	PALETTE
+//	SETTINGS - PALETTE
 // =============================================================================
 
 // Grey palette
@@ -37,8 +37,8 @@ $twitter-color: #00b7f0;
 $pinterest-color: #bd081c;
 
 // Form colors
-$form-keyline: $border-color-base;
-$radio-border: $border-color-base;
+$form-keyline: $gray-keyline;
+$radio-border: $gray-keyline;
 $radio-fill-color: $primary-color;
 $checkbox-border: $form-keyline;
 $checked-fill-color: $primary-color;

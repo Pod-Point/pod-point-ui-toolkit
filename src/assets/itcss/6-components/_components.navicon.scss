@@ -1,0 +1,50 @@
+// =============================================================================
+//  COMPONENTS - NAVICON
+// =============================================================================
+
+.navicon {
+    width: 25px;
+    height: 18px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+
+    span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: $icon-color;
+        @include position(absolute, null null null 0);
+        border-radius: 5px;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+        opacity: 1;
+
+        &:nth-child(1) {
+            top: 0;
+
+            .nav-open & {
+                top: 50%;
+                transform: rotate(135deg);
+            }
+        }
+
+        &:nth-child(2) {
+            top: 50%;
+
+            .nav-open & {
+                left: -25px;
+                opacity: 0;
+            }
+        }
+
+        &:nth-child(3) {
+            top: 100%;
+
+            .nav-open & {
+                top: 50%;
+                transform: rotate(-135deg);
+            }
+        }
+    }
+}

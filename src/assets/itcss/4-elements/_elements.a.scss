@@ -1,0 +1,26 @@
+// =============================================================================
+//  ELEMENTS - A
+// =============================================================================
+
+a {
+    text-decoration: none;
+    transition: all 0.2s linear;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    &:active,
+    &:focus,
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}
+
+.a {
+    color: inherit;
+    font-weight: $font-weight-bold;
+    text-decoration: underline;
+}

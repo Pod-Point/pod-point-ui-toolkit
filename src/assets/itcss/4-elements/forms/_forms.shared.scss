@@ -1,0 +1,20 @@
+// =============================================================================
+//	ELEMENTS - FORMS - SHARED
+// =============================================================================
+
+label,
+.form__label {
+    display: inline-block;
+    @include font-style-small;
+    padding-bottom: rem(5);
+
+    .checkbox &,
+    .radio & {
+        @include font-style-base;
+    }
+}
+
+.form__label {
+    width: 100%;
+    font-weight: $font-weight-bold;
+}

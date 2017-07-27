@@ -1,17 +1,17 @@
 // =============================================================================
-// ANIMATION SLIDES
+//  TOOLS - ANIMATION SLIDES
 // =============================================================================
 
 // Slide down (collapsed)
 @mixin slideDownCollapsed($duration) {
-   max-height: 0;
-   transition: max-height $duration ease-out;
-   overflow: hidden;
+    max-height: 0;
+    transition: max-height $duration ease-out;
+    overflow: hidden;
 }
 
 // Slide down (active/open)
 @mixin slideDownActive($duration, $approxHeight) {
-   max-height: $approxHeight;
-   transition: max-height $duration ease-in;
-   overflow: hidden;
+    max-height: $approxHeight;
+    transition: max-height $duration ease-in;
+    overflow: hidden;
 }

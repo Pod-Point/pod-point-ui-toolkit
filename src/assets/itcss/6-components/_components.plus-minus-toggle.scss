@@ -1,0 +1,67 @@
+// =============================================================================
+//  COMPONENTS - PLUS MINUS TOGGLE
+// =============================================================================
+
+.plus-minus-toggle {
+    cursor: pointer;
+    width: 29px;
+    height: 29px;
+
+    span {
+        display: block;
+        @include position(relative, 17px 0 null null);
+        float: right;
+        width: 15px;
+        height: 15px;
+        transition: .5s ease-in-out;
+        transform: rotate(0deg);
+
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 100%;
+            background-color: $icon-color;
+            @include position(absolute, 0 null null null);
+            border-radius: 5px;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+            opacity: 1;
+        }
+
+        &:before {
+            top: 0;
+
+            .sub-nav-open & {
+                transform: rotate(180deg);
+            }
+        }
+
+        &:after {
+            transform: rotate(90deg);
+
+            .sub-nav-open &,
+            .accordion .is-open & {
+                opacity: 0;
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+    &--green-in-circle {
+        border-radius: 50%;
+        border: 2px solid $primary-color;
+
+        span {
+            @include position(relative, 12px 3px null null);
+            width: 19px;
+            height: 19px;
+
+            &:before,
+            &:after {
+                background-color: $primary-color;
+            }
+        }
+    }
+}

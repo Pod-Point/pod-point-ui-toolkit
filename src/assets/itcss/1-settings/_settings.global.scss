@@ -1,11 +1,13 @@
 // =============================================================================
-//	GLOBAL
+//  SETTINGS - GLOBAL
 // =============================================================================
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
 
 // Function to turn pixels to rems
 @function rem($size) {
-	$remSize: $size / 16;
-	@return #{$remSize}rem;
+    $remSize: $size / 16;
+    @return #{$remSize}rem;
 }
 
 // File path variable for background images which can be re-assigned if file structure is different

@@ -1,0 +1,63 @@
+// =============================================================================
+//	ELEMENTS - FORMS - CHECKBOXES
+// =============================================================================
+
+input[type="checkbox"] {
+    @include position(absolute, 0 null null 0);
+    display: block;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.checkbox {
+    text-align: left;
+    @include font-style-base;
+    position: relative;
+    display: block;
+
+    &--inline {
+        display: inline-block;
+        margin-right: rem(25);
+    }
+
+    > input[type="checkbox"] {
+        width: rem(23);
+        height: rem(23);
+        & ~ span {
+            text-transform: none;
+            display: inline-block;
+            @include padding(0 null rem(5) rem(35));
+            cursor: pointer;
+
+            &:before {
+                @include position(absolute, 0 null null 0);
+                content: "";
+                width: rem(23);
+                height: rem(23);
+                z-index: 1;
+                border: 2px solid $checkbox-border;
+                border-radius: $form-border-radius;
+            }
+        }
+
+        &:checked ~ span {
+            &:before {
+                background-image: url($css-bg-path+'icons/tick-white.svg');
+                background-size: rem(15) rem(15);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-color: $primary-color;
+                border-color: $primary-color;
+            }
+        }
+
+        &:disabled ~ span {
+            color: $disabled-color;
+            cursor: not-allowed;
+            &:before {
+                opacity: 0.7;
+            }
+        }
+    }
+}

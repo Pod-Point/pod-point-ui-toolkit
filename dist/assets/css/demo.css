@@ -1,4 +1,52 @@
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
+=======
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
+::-webkit-input-placeholder {
+  color: #ccc; }
+
+:-moz-placeholder {
+  color: #ccc; }
+
+::-moz-placeholder {
+  color: #ccc; }
+
+:-ms-input-placeholder {
+  color: #ccc; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes popUpFadeIn {
+  0% {
+    top: 100px;
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    top: 0px;
+    opacity: 1; } }
+
+.hide {
+  display: none !important; }
+
+.tel-link:hover {
+  opacity: 1;
+  cursor: default; }
+
+.full-img {
+  width: 100%; }
+
+>>>>>>> More restructuring in folders including adding form elements
 .demo-header {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem; }

@@ -1,20 +1,6 @@
 // =============================================================================
-//	FORMS
+//  SETTINGS - FORMS
 // =============================================================================
-
-// List of used inputs
-$inputs-list:
-	'input[type="date"]',
-	'input[type="email"]',
-	'input[type="number"]',
-	'input[type="password"]',
-	'input[type="search"]',
-	'input[type="tel"]',
-	'input[type="text"]',
-	'input[type="url"]';
-
-// Let's assign so we can use the list
-$inputs: assign-inputs($inputs-list);
 
 // Forms
 $input-height: rem(40);

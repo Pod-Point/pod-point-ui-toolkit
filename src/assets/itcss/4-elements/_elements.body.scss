@@ -1,0 +1,16 @@
+// =============================================================================
+//  ELEMENTS - BODY
+// =============================================================================
+
+body {
+    @include font-feature-settings('kern', 'liga', 'pnum');
+    -webkit-font-smoothing: antialiased;
+    color: $font-color-base;
+    font-family: $font-family-base;
+    font-weight: $font-weight-regular;
+    @include font-base;
+    -webkit-text-size-adjust:100%;
+    -ms-text-size-adjust:100%;
+    -webkit-text-shadow:rgba(255,255,255,0.01) 0 0 1px;
+    text-shadow:rgba(255,255,255,0.01) 0 0 1px;
+}

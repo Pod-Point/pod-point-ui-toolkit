@@ -1,34 +1,40 @@
 // =============================================================================
-//	HERO
+//  COMPONENTS - HERO
 // =============================================================================
 
 .hero {
-	position: relative;
-	overflow: hidden;
-	.container {
-		position: relative;
-		z-index: 3;
-	}
-	.content-block {
-		min-height: 300px;
-		@include medium-and-up {
-			min-height: 420px;
-		}
-	}
-	&__content {
-		@include popUpFadeIn;
-		max-width: 300px;
-		@include medium-and-up {
-			max-width: 500px;
-		}
-	}
-	&:before {
-		content: '';
-		@include full-overlay($gray-dark);
-		opacity: 1;
-		animation-duration: 1.5s;
-		animation-fill-mode: both;
-		animation-name: fadeOut;
-		animation-delay: 1s;
-	}
+    position: relative;
+    overflow: hidden;
+
+    .container {
+        position: relative;
+        z-index: 3;
+    }
+
+    .content-block {
+        min-height: 300px;
+
+        @include medium-and-up {
+            min-height: 420px;
+        }
+    }
+
+    &__content {
+        @include popUpFadeIn;
+        max-width: 300px;
+
+        @include medium-and-up {
+            max-width: 500px;
+        }
+    }
+
+    &:before {
+        content: '';
+        @include full-overlay($gray-dark);
+        opacity: 1;
+        animation-duration: 1.5s;
+        animation-fill-mode: both;
+        animation-name: fadeOut;
+        animation-delay: 1s;
+    }
 }

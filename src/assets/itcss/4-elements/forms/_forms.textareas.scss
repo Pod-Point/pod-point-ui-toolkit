@@ -1,0 +1,23 @@
+// =============================================================================
+//	ELEMENTS - FORMS - TEXTAREAS
+// =============================================================================
+
+textarea {
+    @include input-styles;
+    @include input-border;
+    @include font-style-forms;
+    line-height: 1.5;
+    height: auto;
+    min-height: 130px;
+    resize: vertical;
+    @include padding($input-padding);
+    &:focus:not(disabled) {
+        @include input-border--focus;
+    }
+    &:hover:not(:disabled) {
+        @include input-border--hover;
+    }
+    &:disabled {
+        @include input-border--disabled;
+    }
+}
