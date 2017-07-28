@@ -9,7 +9,7 @@
         @include margin(0 null);
     }
 
-    @include font-style-small;
+    @include font-size-sm;
 
     dt {
         font-weight: $font-weight-bold;
@@ -58,7 +58,7 @@
     }
 
     &--featured {
-        @include font-style-base;
+        @include font-size-md;
 
         dt {
             font-weight: $font-weight-regular;

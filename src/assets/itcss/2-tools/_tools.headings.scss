@@ -1,0 +1,69 @@
+// =============================================================================
+//  TOOLS - TYPOGRAPHY
+// =============================================================================
+
+// Heading style
+%heading-style {
+    margin: 0;
+    padding-bottom: 1em;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-heading;
+
+    &:last-child {
+        padding-bottom: 0;
+    }
+}
+
+@mixin heading-style-1 {
+    @extend %heading-style;
+    font-size: $font-size-h1-mobile;
+
+    @include medium-and-up {
+        font-size: $font-size-h1-desktop;
+    }
+}
+
+@mixin heading-style-2 {
+    @extend %heading-style;
+    font-size: $font-size-h2-mobile;
+
+    @include medium-and-up {
+        font-size: $font-size-h2-desktop;
+    }
+}
+
+@mixin heading-style-3 {
+    @extend %heading-style;
+    font-size: $font-size-h3-mobile;
+
+    @include medium-and-up {
+        font-size: $font-size-h3-desktop;
+    }
+}
+
+@mixin heading-style-4 {
+    @extend %heading-style;
+    font-size: $font-size-h4-mobile;
+
+    @include medium-and-up {
+        font-size: $font-size-h4-desktop;
+    }
+}
+
+@mixin heading-style-5 {
+    @extend %heading-style;
+    font-size: $font-size-h5-mobile;
+
+    @include medium-and-up {
+        font-size: $font-size-h5-desktop;
+    }
+}
+
+@mixin heading-style-6 {
+    @extend %heading-style;
+    font-size: $font-size-h6-mobile;
+
+    @include medium-and-up {
+        font-size: $font-size-h6-desktop;
+    }
+}

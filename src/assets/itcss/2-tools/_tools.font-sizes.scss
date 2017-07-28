@@ -1,0 +1,48 @@
+// =============================================================================
+//  TOOLS - TYPOGRAPHY
+// =============================================================================
+
+// Font size x-small
+@mixin font-size-xs {
+    font-size: $font-size-xs-mobile;
+
+    @include medium-and-up {
+        font-size: $font-size-xs-desktop;
+    }
+}
+
+// Font size small
+@mixin font-size-sm {
+    font-size: $font-size-sm-mobile;
+
+    @include medium-and-up {
+        font-size: $font-size-sm-desktop;
+    }
+}
+
+// Font size medium (BASE)
+@mixin font-size-md {
+    font-size: $font-size-md-mobile;
+
+    @include medium-and-up {
+        font-size: $font-size-md-desktop;
+    }
+}
+
+// Font size large
+@mixin font-size-lg {
+    font-size: $font-size-lg-mobile;
+
+    @include medium-and-up {
+        font-size: $font-size-lg-desktop;
+    }
+}
+
+// Font size x-large
+@mixin font-size-xl {
+    font-size: $font-size-xl-mobile;
+
+    @include medium-and-up {
+        font-size: $font-size-xl-desktop;
+    }
+}

@@ -2,9 +2,21 @@
 //  TRUMPS - OVERRIDES
 // =============================================================================
 
+//  Visibility
+.hide {
+    display: none !important;
+}
+
 .is-disabled {
     cursor: not-allowed;
     opacity: 0.5;
+}
+
+.tel-link {
+    &:hover {
+        opacity: 1;
+        cursor: default;
+    }
 }
 
 .uppercase {
@@ -55,8 +67,9 @@
     @include slideDownCollapsed(0.8s);
 }
 
-.clear {
-    @include clearfix;
+.clear,
+.clearfix {
+    @extend %clearfix;
 }
 
 .rel {
@@ -191,7 +204,7 @@
 }
 
 .v-align-content {
-    @include vertical-align;
+    @extend %vertical-align;
 }
 
 .clickable {

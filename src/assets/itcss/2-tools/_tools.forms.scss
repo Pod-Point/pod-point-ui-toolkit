@@ -2,6 +2,23 @@
 //  TOOLS - FORMS
 // =============================================================================
 
+@mixin font-style-forms {
+    margin: 0;
+    line-height: rem(18);
+    font-size: $font-size-forms-md;
+}
+
+@mixin font-style-forms-large {
+    margin: 0;
+    line-height: rem(18);
+    font-size: $font-size-forms-md;
+
+    @include medium-and-up {
+        line-height: rem(20);
+        font-size: $font-size-forms-large-desktop;
+    }
+}
+
 // List of used inputs
 $inputs-list:
     'input[type="date"]',

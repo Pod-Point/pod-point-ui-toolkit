@@ -10,7 +10,7 @@
 }
 
 .global-header {
-    @include clearfix;
+    @extend %clearfix;
     @include container;
 
     @include medium-and-up {

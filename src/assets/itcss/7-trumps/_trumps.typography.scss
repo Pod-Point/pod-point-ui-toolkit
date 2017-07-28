@@ -1,0 +1,65 @@
+// =============================================================================
+//  TRUMPS - TYPOGRAPHY
+// =============================================================================
+
+p,
+.p {
+    @extend %paragraph-style;
+}
+
+.font-size-xs {
+    @include font-size-xs;
+}
+.font-size-sm {
+    @include font-size-sm;
+}
+.font-size-md {
+    @include font-size-md;
+}
+.font-size-lg {
+    @include font-size-lg;
+}
+.font-size-xl {
+    @include font-size-xl;
+}
+
+strong,
+.bold,
+.bold p {
+    font-weight: normal;
+    font-weight: $font-weight-bold!important;
+}
+
+.green,
+.primary {
+    color: $primary-color;
+
+    a {
+        border-bottom: 2px solid $primary-color;
+    }
+}
+
+.color-base {
+    color: $font-color-base;
+}
+
+hr {
+    margin: 30px 0;
+    border-bottom: $border-thin;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    background-color: $gray-keyline-very-light;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+
+    & + hr {
+        margin-top: 20px;
+    }
+}
+
+
+.remove-link-styles {
+    @extend %remove-link-styles;
+}

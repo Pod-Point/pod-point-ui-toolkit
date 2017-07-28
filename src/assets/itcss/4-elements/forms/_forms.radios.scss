@@ -50,7 +50,7 @@ input[type="radio"] {
     }
 
     > span {
-        @include font-style-base;
+        @include font-size-md;
         position: relative;
         @include padding(rem(6) rem(25) 0 rem(30));
         min-height: rem(30);

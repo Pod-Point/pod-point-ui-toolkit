@@ -74,7 +74,7 @@
         @include padding(20px null);
 
         p {
-            @include font-small;
+            @include font-size-sm;
             font-weight: $font-weight-bold;
         }
 
@@ -85,7 +85,7 @@
         }
 
         .list--inline {
-            @include font-small;
+            @include font-size-sm;
             font-weight: $font-weight-bold;
             text-align: center;
 

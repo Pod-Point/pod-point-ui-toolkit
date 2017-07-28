@@ -3,7 +3,7 @@
 // =============================================================================
 
 // Clearfix
-@mixin clearfix {
+%clearfix {
     &:after {
         content: "";
         display: table;
@@ -12,23 +12,42 @@
 }
 
 // Vertically align center
-@mixin vertical-align {
+%vertical-align {
     display: flex;
     align-items: center;
 }
 
 // Remove default list styling
-@mixin remove-list-styles {
+%remove-list-styles {
     padding: 0;
     margin: 0;
 
     li {
         list-style: none;
+        padding-left: 0;
+    }
+}
+
+// Remove default link styling
+%remove-link-styles {
+    font-weight: inherit;
+    text-decoration: none;
+}
+
+
+// Clickable elements that are not an anchor
+%clickable {
+    cursor: pointer;
+
+    &:active,
+    &:focus,
+    &:hover {
+        opacity: 0.7;
     }
 }
 
 // Hide text not the pseudo
-@mixin hide-text-not-pseudo {
+%hide-text-not-pseudo {
     text-indent: -9999px;
 
     &:before,
@@ -39,6 +58,24 @@
         height: 100%;
         margin: 0;
     }
+}
+
+// BG Images
+%bg-cover {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+// Hide text
+%hide-text {
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+// Margin center
+%m-center {
+    @include margin(null auto);
 }
 
 // Full width/height overlay.
@@ -63,47 +100,4 @@
     @include margin(null auto);
     max-width: $max-width-content;
     @include horizontal-spacing;
-}
-
-// Clickable elements that are not an anchor
-%clickable {
-    cursor: pointer;
-
-    &:active,
-    &:focus,
-    &:hover {
-        opacity: 0.7;
-    }
-}
-
-//	BG Images
-%bg-cover {
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-//	Visibility
-.hide {
-    display: none !important;
-}
-
-%hide-text {
-    overflow: hidden;
-    text-indent: -9999px;
-}
-
-.tel-link {
-    &:hover {
-        opacity: 1;
-        cursor: default;
-    }
-}
-
-.full-img {
-    width: 100%;
-}
-
-%margin-center {
-    @include margin(null auto);
 }

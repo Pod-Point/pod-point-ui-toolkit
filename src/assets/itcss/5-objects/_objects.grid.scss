@@ -17,7 +17,7 @@ $bottom-space: 4%;
 }
 
 .grid-row {
-    @include clearfix;
+    @extend %clearfix;
 
     &:not(.grid-row--flex) {
         @include grid($flex-wrap: wrap, $gutter: $sides-gutter);

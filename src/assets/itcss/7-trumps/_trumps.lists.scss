@@ -1,0 +1,102 @@
+// =============================================================================
+//  TRUMPS - LISTS
+// =============================================================================
+
+
+// List of links, removing default list styling and default link styling
+.list--links {
+    @extend %remove-list-styles;
+
+    li a {
+        @extend %remove-link-styles;
+    }
+}
+
+// List with green tick icons instead of bullets
+.list--featured {
+    @include featured-icon-list($css-bg-path+'icons/tick-green.svg');
+}
+
+// List with green tick icons instead of bullets
+.list--featured--ticks {
+    @include featured-icon-list($css-bg-path+'icons/tick-green.svg');
+}
+
+// Inline list styles
+.list--inline {
+    @extend %remove-list-styles;
+    @include margin(rem(-5) rem(-13));
+
+    li {
+        display: inline-block;
+        @include margin(rem(5) rem(13));
+    }
+
+    &--sm-gutter {
+        @include margin(null rem(-5));
+        li {
+            @include margin(null rem(5));
+        }
+    }
+
+    &--small {
+        margin-bottom: rem(-10);
+
+        li {
+            margin-bottom: rem(10);
+
+            img {
+                height: rem(42);
+                width: auto;
+            }
+        }
+    }
+
+    &--tiny {
+        margin-bottom: rem(-10);
+
+        li {
+            margin-bottom: rem(10);
+
+            img {
+                max-height: rem(45);
+                width: auto;
+            }
+        }
+    }
+}
+
+// Icons in a list
+.icons-list {
+    @extend %remove-list-styles;
+
+    &--inline {
+        @include margin(null rem(-1.5));
+
+        li {
+            display: inline-block;
+            @include margin(null rem(1.5));
+
+            a:not(.circle-icon) {
+
+                &:before {
+                    color: black;
+                    font-size: rem(25);
+                }
+            }
+        }
+    }
+}
+
+.dl {
+    margin-bottom: 15px;
+
+    dt {
+        font-weight: bold;
+        margin-top: 15px;
+    }
+
+    dd {
+        margin: 0;
+    }
+}

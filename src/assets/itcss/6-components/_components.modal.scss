@@ -37,7 +37,7 @@
 
             &__title {
                 color: white;
-                @include font-style-h1;
+                @include heading-style-1;
             }
 
             &__text-content {

@@ -12,7 +12,7 @@ input[type="checkbox"] {
 
 .checkbox {
     text-align: left;
-    @include font-style-base;
+    @include font-size-md;
     position: relative;
     display: block;
 

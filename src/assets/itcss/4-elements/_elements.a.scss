@@ -2,8 +2,11 @@
 //  ELEMENTS - A
 // =============================================================================
 
-a {
-    text-decoration: none;
+a,
+.a {
+    color: inherit;
+    font-weight: $font-weight-bold;
+    text-decoration: underline;
     transition: all 0.2s linear;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 
@@ -17,10 +20,4 @@ a {
     &:focus {
         outline: none;
     }
-}
-
-.a {
-    color: inherit;
-    font-weight: $font-weight-bold;
-    text-decoration: underline;
 }

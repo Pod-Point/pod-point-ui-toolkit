@@ -21,7 +21,6 @@ $table-border-color: $gray-very-light;
     width: 100%;
     max-width: 100%;
     margin-bottom: $line-height-computed;
-    @include font-style-tables;
     // Cells
     > thead,
     > tbody,

@@ -4,58 +4,8 @@
 
 p,
 .p {
-	@include font-style-base;
-}
-
-.font-style-base,
-.font-style-base p {
-    @include font-style-base;
-}
-
-.font-base {
-    @include font-base;
-}
-
-.font-style-large,
-.font-style-large p {
-    @include font-style-large;
-}
-
-.font-style-small,
-.font-style-small p {
-    @include font-style-small;
-}
-
-.font-small {
-    @include font-small;
-}
-
-.font-tiny {
-    @include font-tiny;
-}
-
-.font-huge {
-    @include font-huge;
-}
-
-strong,
-.bold,
-.bold p {
-    font-weight: normal;
-    font-weight: $font-weight-bold!important;
-}
-
-.green,
-.primary {
-    color: $primary-color;
-
-    a {
-        border-bottom: 2px solid $primary-color;
-    }
-}
-
-.color-base {
-    color: $font-color-base;
+    margin: 0;
+    padding-bottom: 0.5em;
 }
 
 hr {

@@ -79,7 +79,7 @@ button {
     }
 
     &.button--selected {
-        @include hide-text-not-pseudo;
+        @extend %hide-text-not-pseudo;
 
         &:before {
             content: '';

@@ -7,7 +7,7 @@
 }
 
 .global-nav {
-    @include clearfix;
+    @extend %clearfix;
     @include margin(null auto);
     transition: 0.1s ease-in-out;
     @include slideDownCollapsed(0.5s);
@@ -30,11 +30,11 @@
     }
 
     ul {
-        @include remove-list-styles;
+        @extend %remove-list-styles;
 
         li {
             position: relative;
-            @include font-small;
+            @include font-size-sm;
             border-bottom: $border-thin;
 
             &:last-child {
@@ -166,7 +166,7 @@
 
             li {
                 border-bottom: none;
-                @include clearfix;
+                @extend %clearfix;
                 @include padding(null 20px);
                 display: inline-block;
                 width: 120px;

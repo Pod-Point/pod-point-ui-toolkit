@@ -36,6 +36,7 @@
     top: 0px;
     opacity: 1; } }
 
+<<<<<<< HEAD
 .hide {
   display: none !important; }
 
@@ -47,6 +48,8 @@
   width: 100%; }
 
 >>>>>>> More restructuring in folders including adding form elements
+=======
+>>>>>>> Cleaning up typography formatting and naming conventions
 .demo-header {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem; }

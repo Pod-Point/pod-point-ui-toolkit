@@ -5,12 +5,12 @@
 label,
 .form__label {
     display: inline-block;
-    @include font-style-small;
+    @include font-size-sm;
     padding-bottom: rem(5);
 
     .checkbox &,
     .radio & {
-        @include font-style-base;
+        @include font-size-md;
     }
 }
 

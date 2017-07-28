@@ -9,7 +9,8 @@ $output-bourbon-deprecation-warnings: false;
 @import 'neat/_neat';
 
 @import '_tools.media-queries';
-@import '_tools.typography';
+@import '_tools.headings';
+@import '_tools.font-sizes';
 @import '_tools.forms';
 @import '_tools.alerts';
 @import '_tools.animation-fades';
@@ -18,3 +19,4 @@ $output-bourbon-deprecation-warnings: false;
 @import '_tools.aspect-ratio';
 @import '_tools.helpers';
 @import '_tools.icons-in-circles';
+@import '_tools.custom-icon-list';

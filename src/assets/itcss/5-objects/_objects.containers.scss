@@ -50,7 +50,7 @@
 
         p {
             width: 100%;
-            @include font-style-small;
+            @include font-size-sm;
             @include position(absolute, 20px null 0 0);
 
             .content-block--standout & {

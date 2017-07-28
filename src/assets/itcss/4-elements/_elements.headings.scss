@@ -2,9 +2,32 @@
 //  ELEMENTS - HEADINGS
 // =============================================================================
 
-h1, .h1 { @include font-style-h1; }
-h2, .h2 { @include font-style-h2; }
-h3, .h3 { @include font-style-h3; }
-h4, .h4 { @include font-style-h4; }
-h5, .h5 { @include font-style-h5; }
-h6, .h6 { @include font-style-h6; }
+h1,
+.h1 {
+    @include heading-style-1;
+}
+
+h2,
+.h2 {
+    @include heading-style-2;
+}
+
+h3,
+.h3 {
+    @include heading-style-3;
+}
+
+h4,
+.h4 {
+    @include heading-style-4;
+}
+
+h5,
+.h5 {
+    @include heading-style-5;
+}
+
+h6,
+.h6 {
+    @include heading-style-6;
+}
