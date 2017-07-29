@@ -51,7 +51,7 @@ http://flickity.metafizzy.co
     min-height: 300px;
     @include margin(null 10px);
 
-    @include medium-and-up {
+    @include screen-md-min {
         padding-top: 60px;
     }
 }
@@ -95,7 +95,7 @@ http://flickity.metafizzy.co
     &.next {
         right: -30px;
 
-        @include medium-and-up {
+        @include screen-md-min {
             right: -50px;
         }
 
@@ -107,7 +107,7 @@ http://flickity.metafizzy.co
     &.previous {
         left: -30px;
 
-        @include medium-and-up {
+        @include screen-md-min {
             left: -50px;
         }
 

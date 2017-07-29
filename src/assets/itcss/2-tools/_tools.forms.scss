@@ -13,7 +13,7 @@
     line-height: rem(18);
     font-size: $font-size-forms-md;
 
-    @include medium-and-up {
+    @include screen-md-min {
         line-height: rem(20);
         font-size: $font-size-forms-large-desktop;
     }

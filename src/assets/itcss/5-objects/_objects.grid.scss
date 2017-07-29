@@ -11,7 +11,7 @@ $bottom-space: 4%;
 .grid-wrap {
     margin-bottom: -4%;
 
-    @include medium-and-up {
+    @include screen-md-min {
         margin-bottom: -2%;
     }
 }
@@ -25,11 +25,11 @@ $bottom-space: 4%;
 
     &--flex {
 
-        @include medium-and-down {
+        @include screen-md-max {
             @include grid($flex-wrap: wrap, $gutter: $sides-gutter);
         }
 
-        @include medium-and-up {
+        @include screen-md-min {
             @include grid($flex-wrap: flex, $gutter: $sides-gutter);
         }
     }
@@ -94,7 +94,7 @@ $bottom-space: 4%;
         }
     }
 
-    @include small-and-up {
+    @include screen-sm-min {
 
         .grid-col--sm-12 {
             @include grid-col($col: 12, $gutter: $sides-gutter);
@@ -130,7 +130,7 @@ $bottom-space: 4%;
         }
     }
 
-    @include medium-and-up {
+    @include screen-md-min {
 
         .grid-col--md-12 {
             @include grid-col($col: 12, $gutter: $sides-gutter);
@@ -166,7 +166,7 @@ $bottom-space: 4%;
         }
     }
 
-    @include large-and-up {
+    @include screen-lg-min {
 
         .grid-col--lg-12 {
             @include grid-col($col: 12, $gutter: $sides-gutter);

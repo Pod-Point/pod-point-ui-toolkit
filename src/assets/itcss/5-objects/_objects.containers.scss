@@ -7,7 +7,7 @@
     box-sizing: border-box;
     max-width: 540px;
 
-    @include medium-and-up {
+    @include screen-md-min {
         max-width: $max-width-content;
     }
 }
@@ -22,7 +22,7 @@
     @include padding(60px null);
 
     &--standout {
-        @include medium-and-up {
+        @include screen-md-min {
             @include padding(100px null);
         }
     }
@@ -54,7 +54,7 @@
             @include position(absolute, 20px null 0 0);
 
             .content-block--standout & {
-                @include medium-and-up {
+                @include screen-md-min {
                     top: 60px;
                 }
             }

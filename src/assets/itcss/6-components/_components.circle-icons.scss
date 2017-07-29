@@ -14,7 +14,7 @@
     &--small-resp {
         @include icon-in-circle--size($dimension: 25px);
 
-        @include medium-and-up {
+        @include screen-md-min {
             @include icon-in-circle--size($dimension: 40px);
         }
     }
@@ -22,7 +22,7 @@
     &--large-resp {
         @include icon-in-circle--size($dimension: 40px);
 
-        @include medium-and-up {
+        @include screen-md-min {
             @include icon-in-circle--size($dimension: 60px);
         }
     }

@@ -11,7 +11,7 @@
         padding-bottom: 10px;
         padding-left: 30px;
 
-        @include medium-and-up {
+        @include screen-md-min {
             padding-bottom: 20px;
         }
 

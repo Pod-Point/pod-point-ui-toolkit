@@ -5,7 +5,7 @@
 .global-footer {
 
     .list--links:not(.list--inline) {
-        @include medium-and-up {
+        @include screen-md-min {
 
             li {
                 margin-bottom: 10px;
@@ -25,7 +25,7 @@
         }
 
         .accordion dd .accordion__item-content {
-            @include medium-and-up {
+            @include screen-md-min {
                 @include padding(20px null 0 null);
             }
         }
@@ -43,12 +43,12 @@
                 display: inline-block;;
                 margin-top: 20px;
 
-                @include medium-and-up {
+                @include screen-md-min {
                     margin-bottom: 12px;
                 }
             }
 
-            @include medium-and-up {
+            @include screen-md-min {
                 margin-top: 0;
                 text-align: right;
                 display: flex;
@@ -89,7 +89,7 @@
             font-weight: $font-weight-bold;
             text-align: center;
 
-            @include medium-and-up {
+            @include screen-md-min {
                 text-align: left;
             }
         }
@@ -103,7 +103,7 @@
             margin-bottom: 0;
             text-align: center;
 
-            @include medium-and-up {
+            @include screen-md-min {
                 margin-top: 0;
                 text-align: right;
             }

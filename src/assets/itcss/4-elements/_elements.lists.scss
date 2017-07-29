@@ -4,16 +4,21 @@
 
 ul,
 ol {
+    margin: 0;
     padding-left: 2em;
-    padding-bottom: 1em;
+    padding-bottom: $typography-vertical-spacing / 2;
 
     li {
-        padding-bottom: 0.5em;
+        padding-bottom: $typography-vertical-spacing / 2;
 
         ul,
         ol {
-            padding-top: 0.5em;
+            padding-top: $typography-vertical-spacing / 2;
             padding-bottom: 0;
+
+            li:last-child {
+                padding-bottom: 0;
+            }
         }
     }
 }

@@ -39,7 +39,7 @@
     }
 
     &--only-mobile {
-        @include medium-and-up {
+        @include screen-md-min {
 
             dt {
                 border-bottom: none;

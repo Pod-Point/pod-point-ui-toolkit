@@ -21,7 +21,7 @@
     position: relative;
     z-index: 1;
 
-    @include medium-and-up {
+    @include screen-md-min {
         display: inline-block;
         width: auto;
     }
@@ -39,7 +39,7 @@
         border-radius: $border-radius-base;
         box-shadow: $box-shadow-front;
 
-        @include medium-and-up {
+        @include screen-md-min {
             width: 350px;
             margin-left: -175px;
             left: 50%;

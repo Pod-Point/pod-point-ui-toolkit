@@ -33,7 +33,7 @@ button {
     transition: all 0.2s ease;
     max-width: $button-max-width;
 
-    @include small-and-up {
+    @include screen-sm-min {
         @include padding(null 35px);
     }
 

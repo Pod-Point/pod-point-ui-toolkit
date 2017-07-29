@@ -6,7 +6,7 @@
 @mixin font-size-xs {
     font-size: $font-size-xs-mobile;
 
-    @include medium-and-up {
+    @include screen-md-min {
         font-size: $font-size-xs-desktop;
     }
 }
@@ -15,7 +15,7 @@
 @mixin font-size-sm {
     font-size: $font-size-sm-mobile;
 
-    @include medium-and-up {
+    @include screen-md-min {
         font-size: $font-size-sm-desktop;
     }
 }
@@ -24,7 +24,7 @@
 @mixin font-size-md {
     font-size: $font-size-md-mobile;
 
-    @include medium-and-up {
+    @include screen-md-min {
         font-size: $font-size-md-desktop;
     }
 }
@@ -33,7 +33,7 @@
 @mixin font-size-lg {
     font-size: $font-size-lg-mobile;
 
-    @include medium-and-up {
+    @include screen-md-min {
         font-size: $font-size-lg-desktop;
     }
 }
@@ -42,7 +42,7 @@
 @mixin font-size-xl {
     font-size: $font-size-xl-mobile;
 
-    @include medium-and-up {
+    @include screen-md-min {
         font-size: $font-size-xl-desktop;
     }
 }

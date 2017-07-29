@@ -27,7 +27,7 @@
 		text-transform: uppercase;
 		font-size: rem(12);
 		font-weight: $font-weight-bold;
-		@include medium-and-up {
+		@include screen-md-min {
 			font-size: rem(14);
 		}
 	}

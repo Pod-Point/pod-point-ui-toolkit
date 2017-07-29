@@ -4,7 +4,7 @@
 
 p,
 .p {
-    @extend %paragraph-style;
+    padding-bottom: $typography-vertical-spacing;
 }
 
 .font-size-xs {

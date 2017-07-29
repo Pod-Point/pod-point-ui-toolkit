@@ -14,7 +14,7 @@
     .content-block {
         min-height: 300px;
 
-        @include medium-and-up {
+        @include screen-md-min {
             min-height: 420px;
         }
     }
@@ -23,7 +23,7 @@
         @include popUpFadeIn;
         max-width: 300px;
 
-        @include medium-and-up {
+        @include screen-md-min {
             max-width: 500px;
         }
     }

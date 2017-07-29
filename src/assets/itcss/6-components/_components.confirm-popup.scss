@@ -22,7 +22,7 @@
         border-radius: $border-radius-base;
         box-shadow: $box-shadow-front;
 
-        @include medium-and-up {
+        @include screen-md-min {
             width: 500px;
             margin-left: -250px;
             left: 50%;

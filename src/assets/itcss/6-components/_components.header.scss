@@ -13,14 +13,14 @@
     @extend %clearfix;
     @include container;
 
-    @include medium-and-up {
+    @include screen-md-min {
         height: 96px;
     }
 
     &.nav-open {
         box-shadow: $bottom-shadow;
 
-        @include medium-and-up {
+        @include screen-md-min {
             box-shadow: none;
         }
     }
@@ -29,7 +29,7 @@
         position: relative;
         height: 60px;
 
-        @include medium-and-up {
+        @include screen-md-min {
             height: auto;
             border-bottom: none;
         }
@@ -47,13 +47,13 @@
         height: 100%;
     }
 
-    @include medium-and-up {
+    @include screen-md-min {
         margin-top: 30px;
         width: 140px;
         height: 38px;
     }
 
-    @include large-and-up {
+    @include screen-lg-min {
         margin-top: 22px;
         width: 180px;
         height: 49px;
@@ -64,7 +64,7 @@
     margin-top: 20px;
     float: right;
 
-    @include medium-and-up {
+    @include screen-md-min {
         display: none;
     }
 }

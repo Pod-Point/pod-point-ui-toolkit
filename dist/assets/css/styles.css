@@ -32,11 +32,6 @@ h1,
   .tooltip__box .rich-text h6:last-child {
     padding-bottom: 0; }
 
-p,
-.p {
-  margin: 0;
-  padding-bottom: 0.5em; }
-
 ::-webkit-input-placeholder {
   color: #ccc; }
 
@@ -256,6 +251,11 @@ a,
   .a:focus {
     outline: none; }
 
+p,
+.p {
+  margin: 0;
+  padding-bottom: 0.5em; }
+
 hr {
   margin: 30px 0;
   border-bottom: 1px solid #e2e2e2;
@@ -423,17 +423,23 @@ table th[class*="col-"] {
 
 ul,
 ol {
+  margin: 0;
   padding-left: 2em;
   padding-bottom: 1em; }
   ul li,
   ol li {
-    padding-bottom: 0.5em; }
+    padding-bottom: 1em; }
     ul li ul,
     ul li ol,
     ol li ul,
     ol li ol {
-      padding-top: 0.5em;
+      padding-top: 1em;
       padding-bottom: 0; }
+      ul li ul li:last-child,
+      ul li ol li:last-child,
+      ol li ul li:last-child,
+      ol li ol li:last-child {
+        padding-bottom: 0; }
 
 ul li {
   padding-left: 1em;
@@ -2984,6 +2990,10 @@ http://flickity.metafizzy.co
   .bg-img-overlay--black:after {
     background-color: black;
     opacity: 0.55; }
+
+p,
+.p {
+  padding-bottom: 2em; }
 
 .font-size-xs {
   font-size: 0.625rem; }

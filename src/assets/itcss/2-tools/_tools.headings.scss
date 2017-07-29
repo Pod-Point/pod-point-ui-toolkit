@@ -18,7 +18,7 @@
     @extend %heading-style;
     font-size: $font-size-h1-mobile;
 
-    @include medium-and-up {
+    @include screen-md-min {
         font-size: $font-size-h1-desktop;
     }
 }
@@ -27,7 +27,7 @@
     @extend %heading-style;
     font-size: $font-size-h2-mobile;
 
-    @include medium-and-up {
+    @include screen-md-min {
         font-size: $font-size-h2-desktop;
     }
 }
@@ -36,7 +36,7 @@
     @extend %heading-style;
     font-size: $font-size-h3-mobile;
 
-    @include medium-and-up {
+    @include screen-md-min {
         font-size: $font-size-h3-desktop;
     }
 }
@@ -45,7 +45,7 @@
     @extend %heading-style;
     font-size: $font-size-h4-mobile;
 
-    @include medium-and-up {
+    @include screen-md-min {
         font-size: $font-size-h4-desktop;
     }
 }
@@ -54,7 +54,7 @@
     @extend %heading-style;
     font-size: $font-size-h5-mobile;
 
-    @include medium-and-up {
+    @include screen-md-min {
         font-size: $font-size-h5-desktop;
     }
 }
@@ -63,7 +63,7 @@
     @extend %heading-style;
     font-size: $font-size-h6-mobile;
 
-    @include medium-and-up {
+    @include screen-md-min {
         font-size: $font-size-h6-desktop;
     }
 }

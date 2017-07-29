@@ -4,25 +4,25 @@
 
 .form-field-wrapper {
 
-    @include small-and-up {
+    @include screen-sm-min {
         padding-right: rem(3);
     }
 
-    @include medium-and-up {
+    @include screen-md-min {
         padding-right: 0;
     }
     &.is-valid,
     &.is-invalid {
         position: relative;
         &:before {
-            @include small-and-up {
+            @include screen-sm-min {
                 content: '';
                 width: rem(18);
                 height: rem(18);
                 background-size: cover;
                 @include position(absolute, 9px 0 null null);
             }
-            @include medium-and-up {
+            @include screen-md-min {
                 right: -30px;
             }
         }
