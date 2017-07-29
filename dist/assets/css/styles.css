@@ -368,10 +368,17 @@ h6,
     .h6 {
       font-size: 1rem; } }
 
+table,
 .table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 25px; }
+  table > thead > tr > th,
+  table > thead > tr > td,
+  table > tbody > tr > th,
+  table > tbody > tr > td,
+  table > tfoot > tr > th,
+  table > tfoot > tr > td,
   .table > thead > tr > th,
   .table > thead > tr > td,
   .table > tbody > tr > th,
@@ -382,10 +389,17 @@ h6,
     line-height: 25px;
     vertical-align: top;
     border-top: 1px solid #f2f2f2; }
+  table > thead > tr > th,
   .table > thead > tr > th {
     vertical-align: bottom;
     border-bottom: 2px solid #f2f2f2;
     text-align: left; }
+  table > caption + thead > tr:first-child > th,
+  table > caption + thead > tr:first-child > td,
+  table > colgroup + thead > tr:first-child > th,
+  table > colgroup + thead > tr:first-child > td,
+  table > thead:first-child > tr:first-child > th,
+  table > thead:first-child > tr:first-child > td,
   .table > caption + thead > tr:first-child > th,
   .table > caption + thead > tr:first-child > td,
   .table > colgroup + thead > tr:first-child > th,
@@ -393,6 +407,7 @@ h6,
   .table > thead:first-child > tr:first-child > th,
   .table > thead:first-child > tr:first-child > td {
     border-top: 0; }
+  table > tbody + tbody,
   .table > tbody + tbody {
     border-top: 2px solid #f2f2f2; }
 
