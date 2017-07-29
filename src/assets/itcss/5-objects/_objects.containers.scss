@@ -18,46 +18,23 @@
     &--narrow { max-width: $max-width-text-narrow; }
 }
 
-.content-block {
-    @include padding(60px null);
 
-    &--standout {
-        @include screen-md-min {
-            @include padding(100px null);
-        }
+.buttons-container {
+    @include margin(-10px null);
+    overflow: hidden;
+
+    .button,
+    .button-setback {
+        display: block;
+        @include margin(10px null);
     }
+}
+.buttons-container--inline {
+    @include margin(-10px);
+    overflow: hidden;
 
-    &--strip {
-        @include padding(20px null);
-    }
-
-    &--no-padding {
-        @include padding(0 null);
-    }
-
-    &--centered {
-        @include margin(null auto);
-        text-align: center;
-    }
-
-    & + .content-block {
-        padding-top: 0;
-    }
-
-    &__legal {
-        width: 100%;
-        position: relative;
-
-        p {
-            width: 100%;
-            @include font-size-sm;
-            @include position(absolute, 20px null 0 0);
-
-            .content-block--standout & {
-                @include screen-md-min {
-                    top: 60px;
-                }
-            }
-        }
+    .button,
+    .button-setback {
+        @include margin(10px);
     }
 }

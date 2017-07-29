@@ -31,8 +31,8 @@
 			</div>
 		</header>
 <div data-page="buttons">
-	<header class="demo-section-heading">
-		<div class="container content-block">
+	<header class="content-block bg--primary-color">
+		<div class="container">
 			<h2>Buttons</h2>
 		</div>
 	</header>
@@ -40,19 +40,20 @@
 
 	<!-- ACTIVE BUTTONS -->
 	<section>
-		<header class="demo-section-sub-heading">
+		<header class="content-block--strip bg--light-gray">
 			<div class="container">
 				<h3>Active buttons</h3>
+				<p>Use the class <code>.button</code> on any element eg. button, a, div, span</p>
+				<p>Add the modifying classes to apply the secondary and tertiary button styles <code>.button--secondary</code> and <code>.button--tertiary</code></p>
 			</div>
 		</header>
-		<div class="container content-block">
-			<div class="buttons-container">
-				<button class="button">Primary button</button>
-				<a href="#" class="button button--secondary">Secondary button</a>
-				<button class="button button--tertiary">Tertiary button</button>
-				<button class="button button--tertiary uppercase">Tertiary button uppercase</button>
-				<button class="button button--selected">Selected button</button>
-				<button class="button button--auto-width">Primary button (auto width on mobile)</button>
+		<div class="content-block">
+			<div class="container">
+				<div class="buttons-container--inline">
+					<button class="button">Primary button</button>
+					<a href="#" class="button button--secondary">Secondary button</a>
+					<button class="button button--tertiary">Tertiary button</button>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -60,20 +61,58 @@
 
 	<!-- DISABLED BUTTONS -->
 	<section>
-		<header class="demo-section-sub-heading">
+		<header class="content-block--strip bg--light-gray">
 			<div class="container">
 				<h3>Disabled buttons</h3>
+				<p>Add the class <code>.is-disabled</code> to apply disabled styles to a button</p>
 			</div>
 		</header>
-		<div class="container content-block">
-			<div class="buttons-container">
-				<button class="button is-disabled">Primary button disabled</button>
-				<button class="button button--secondary is-disabled">Secondary button disabled</button>
-				<button class="button button--tertiary is-disabled">Tertiary button disabled</button>
+		<div class="content-block">
+			<div class="container">
+				<div class="buttons-container--inline">
+					<button class="button is-disabled">Primary button disabled</button>
+					<button class="button button--secondary is-disabled">Secondary button disabled</button>
+					<button class="button button--tertiary is-disabled">Tertiary button disabled</button>
+				</div>
 			</div>
 		</div>
 	</section>
+
+
+	<!-- SETBACK BUTTON -->
+	<section>
+		<header class="content-block--strip bg--light-gray">
+			<div class="container">
+				<h3>Setback buttons</h3>
+				<p>Use the class <code>.button-setback</code></p>
+				<p>There is an option to add an svg icon embed inside the button</p>
+			</div>
+		</header>
+		<div class="content-block">
+			<div class="container">
+				<div class="buttons-container">
+					<button class="button-setback">Setback button</button>
+					<button class="button-setback">Setback button with cheveron icon<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M249 407c-8.2 0-16-3.6-21.4-9.8L14.9 151.8c-10.2-11.8-9-29.7 2.8-39.9s29.6-9 39.9 2.8L249 335.5l191.3-220.8c10.3-11.8 28.1-13.1 39.9-2.8 11.8 10.2 13.1 28.1 2.8 39.9L270.4 397.2c-5.4 6.2-13.2 9.8-21.4 9.8z"/></svg></button>
+					<button class="button-setback">Setback button with cross icon<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M281.9 249L479.6 51.2c9-9 9-23.5 0-32.4s-23.5-9-32.4 0L249.5 216.5 51.7 18.8c-9-9-23.5-9-32.4 0s-9 23.5 0 32.4L217.1 249 19.3 446.7c-9 9-9 23.5 0 32.4 4.5 4.5 10.3 6.7 16.2 6.7 5.9 0 11.7-2.2 16.2-6.7l197.8-197.8 197.8 197.8c4.5 4.5 10.3 6.7 16.2 6.7 5.9 0 11.7-2.2 16.2-6.7 9-9 9-23.5 0-32.4L281.9 249z"/></svg></button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- BUTTON CONTAINERS -->
+	<section>
+		<header class="content-block--strip bg--light-gray">
+			<div class="container">
+				<h3>Button containers</h3>
+				<p>The buttons have no spacing around them by default. However to stack buttons together nicely (as the examples above) add a wrapper with the class <code>.buttons-container</code> or for inline <code>.buttons-container--inline</code> which will add a 10px margin around each button and minus margins on the wrapper to counteract.</p>
+			</div>
+		</header>
+	</section>
+
 </div>
+
+
 	</div>
 
 	<script src="assets/js/script.js"></script>

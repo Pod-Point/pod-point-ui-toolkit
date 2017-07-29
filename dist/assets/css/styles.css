@@ -88,14 +88,14 @@ h1,
     list-style: none;
     padding-left: 0; }
 
-.remove-link-styles,
+.button, .remove-link-styles,
 .remove-link-styles a {
   font-weight: inherit;
   text-decoration: none; }
 
-.gallery-simple__thumbnails li .thumbnail, .clickable {
+.button-setback, .gallery-simple__thumbnails li .thumbnail, .clickable {
   cursor: pointer; }
-  .gallery-simple__thumbnails li .thumbnail:active, .clickable:active, .gallery-simple__thumbnails li .thumbnail:focus, .clickable:focus, .gallery-simple__thumbnails li .thumbnail:hover, .clickable:hover {
+  .button-setback:active, .gallery-simple__thumbnails li .thumbnail:active, .clickable:active, .button-setback:focus, .gallery-simple__thumbnails li .thumbnail:focus, .clickable:focus, .button-setback:hover, .gallery-simple__thumbnails li .thumbnail:hover, .clickable:hover {
     opacity: 0.7; }
 
 .button.button--selected, .tooltip-icon {
@@ -303,6 +303,22 @@ hr {
   border-right: none;
   border-top: none;
   background-color: #e2e2e2; }
+
+button {
+  -webkit-font-smoothing: antialiased;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-decoration: none;
+  background-color: transparent;
+  border: none; }
+  button:focus {
+    outline: none; }
 
 h1,
 .h1 {
@@ -1093,41 +1109,22 @@ fieldset {
   .max-width-text--narrow {
     max-width: 500px; }
 
-.content-block {
-  padding-top: 60px;
-  padding-bottom: 60px; }
-  @media (min-width: 50em) {
-    .content-block--standout {
-      padding-top: 100px;
-      padding-bottom: 100px; } }
-  .content-block--strip {
-    padding-top: 20px;
-    padding-bottom: 20px; }
-  .content-block--no-padding {
-    padding-top: 0;
-    padding-bottom: 0; }
-  .content-block--centered {
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center; }
-  .content-block + .content-block {
-    padding-top: 0; }
-  .content-block__legal {
-    width: 100%;
-    position: relative; }
-    .content-block__legal p {
-      width: 100%;
-      font-size: 0.75rem;
-      position: absolute;
-      top: 20px;
-      bottom: 0;
-      left: 0; }
-      @media (min-width: 50em) {
-        .content-block__legal p {
-          font-size: 0.875rem; } }
-      @media (min-width: 50em) {
-        .content-block--standout .content-block__legal p {
-          top: 60px; } }
+.buttons-container {
+  margin-top: -10px;
+  margin-bottom: -10px;
+  overflow: hidden; }
+  .buttons-container .button,
+  .buttons-container .button-setback {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+
+.buttons-container--inline {
+  margin: -10px;
+  overflow: hidden; }
+  .buttons-container--inline .button,
+  .buttons-container--inline .button-setback {
+    margin: 10px; }
 
 .content-block {
   padding-top: 60px;
@@ -1271,22 +1268,6 @@ fieldset {
       color: #971e23;
       text-decoration: underline; }
 
-button {
-  -webkit-font-smoothing: antialiased;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  text-decoration: none;
-  background-color: transparent;
-  border: none; }
-  button:focus {
-    outline: none; }
-
 .button {
   cursor: pointer;
   box-sizing: border-box;
@@ -1333,6 +1314,9 @@ button {
       background-color: #4d4d4d;
       border-color: #4d4d4d; }
   .button.button--selected:before {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
     content: '';
     background-image: url("../img/css-bg/icons/tick-white.svg");
     background-size: cover;
@@ -1340,21 +1324,17 @@ button {
     height: 20px; }
   .button.button--selected:hover:not(.is-disabled):before, .button.button--selected:focus:not(.is-disabled):before, .button.button--selected:active:not(.is-disabled):before {
     background-image: url("../img/css-bg/icons/tick-green.svg"); }
-  .button.button--auto-width {
-    width: auto; }
 
-.buttons-container {
-  margin: -10px;
-  overflow: hidden; }
-  .buttons-container .button {
-    margin: 10px; }
-
-.setback-button {
+.button-setback {
   display: inline-block;
   color: #333;
   font-weight: 700;
   text-decoration: underline; }
-  .setback-button svg {
+  .button-setback svg {
+    position: relative;
+    top: 0.1em;
+    height: 1em;
+    width: 1em;
     margin-right: 5px;
     margin-left: 5px; }
 
@@ -3031,6 +3011,10 @@ http://flickity.metafizzy.co
 
 .bg--light-gray {
   background-color: #f2f2f2; }
+
+.bg--primary-color {
+  background-color: #8CC63F;
+  color: white; }
 
 .bg--sky-blue {
   background-color: #deeefc; }

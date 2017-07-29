@@ -2,19 +2,8 @@
 //  COMPONENTS - BUTONS
 // =============================================================================
 
-// Get rid of all default stying
-button {
-    -webkit-font-smoothing: antialiased;
-    appearance: none;
-    cursor: pointer;
-    user-select: none;
-    text-decoration: none;
-    background-color: transparent;
-    border: none;
-    &:focus { outline: none; }
-}
-
 .button {
+    @extend %remove-link-styles;
     cursor: pointer;
     box-sizing: border-box;
     vertical-align: middle;
@@ -82,6 +71,8 @@ button {
         @extend %hide-text-not-pseudo;
 
         &:before {
+            @include margin(null auto);
+            display: block;
             content: '';
             background-image: url($css-bg-path+'icons/tick-white.svg');
             background-size: cover;
@@ -97,28 +88,20 @@ button {
             }
         }
     }
-
-    &.button--auto-width {
-        width: auto;
-    }
 }
 
-.buttons-container {
-    @include margin(-10px);
-    overflow: hidden;
-
-    .button {
-        @include margin(10px);
-    }
-}
-
-.setback-button {
+.button-setback {
+    @extend %clickable;
     display: inline-block;
     color: $font-color-base;
     font-weight: $font-weight-bold;
     text-decoration: underline;
 
     svg {
+        position: relative;
+        top: 0.1em;
+        height: 1em;
+        width: 1em;
         @include margin(null 5px);
     }
 }

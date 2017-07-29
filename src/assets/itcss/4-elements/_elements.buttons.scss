@@ -1,0 +1,18 @@
+// =============================================================================
+//  ELEMENTS - BUTTONS
+// =============================================================================
+
+// Get rid of all default stying
+button {
+    -webkit-font-smoothing: antialiased;
+    appearance: none;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+        outline: none;
+    }
+}
