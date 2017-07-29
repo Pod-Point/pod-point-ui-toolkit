@@ -1,7 +1,16 @@
 // =============================================================================
-//  OBJECTS - ALL
+//  ELEMENTS - DL
 // =============================================================================
 
-@import '_objects.grid';
-@import '_objects.containers';
-@import '_objects.content-blocks';
+.dl {
+    margin-bottom: 15px;
+
+    dt {
+        font-weight: bold;
+        margin-top: 15px;
+    }
+
+    dd {
+        margin: 0;
+    }
+}

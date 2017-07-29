@@ -2,11 +2,6 @@
 //  TRUMPS - TYPOGRAPHY
 // =============================================================================
 
-p,
-.p {
-    padding-bottom: $typography-vertical-spacing;
-}
-
 .font-size-xs {
     @include font-size-xs;
 }
@@ -23,13 +18,6 @@ p,
     @include font-size-xl;
 }
 
-strong,
-.bold,
-.bold p {
-    font-weight: normal;
-    font-weight: $font-weight-bold!important;
-}
-
 .green,
 .primary {
     color: $primary-color;
@@ -43,23 +31,7 @@ strong,
     color: $font-color-base;
 }
 
-hr {
-    margin: 30px 0;
-    border-bottom: $border-thin;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    background-color: $gray-keyline-very-light;
-}
-
-p, h1, h2, h3, h4, h5, h6 {
-
-    & + hr {
-        margin-top: 20px;
-    }
-}
-
-
-.remove-link-styles {
+.remove-link-styles,
+.remove-link-styles a {
     @extend %remove-link-styles;
 }

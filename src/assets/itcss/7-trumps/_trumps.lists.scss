@@ -2,19 +2,14 @@
 //  TRUMPS - LISTS
 // =============================================================================
 
-
-// List of links, removing default list styling and default link styling
-.list--links {
+// List of links, removing default list styling
+.list--no-style {
     @extend %remove-list-styles;
+    padding-bottom: $typography-vertical-spacing;
 
-    li a {
-        @extend %remove-link-styles;
+    li {
+        padding-bottom: 0;
     }
-}
-
-// List with green tick icons instead of bullets
-.list--featured {
-    @include featured-icon-list($css-bg-path+'icons/tick-green.svg');
 }
 
 // List with green tick icons instead of bullets
@@ -22,49 +17,39 @@
     @include featured-icon-list($css-bg-path+'icons/tick-green.svg');
 }
 
-// Inline list styles
-.list--inline {
+// List with green tick icons instead of bullets
+.list--featured--ticks--lg {
+    @include featured-icon-list-lg($css-bg-path+'icons/tick-green.svg');
+}
+
+// Inline lists - shared styles
+.list--inline,
+.list--inline--sm-gutter {
     @extend %remove-list-styles;
-    @include margin(rem(-5) rem(-13));
 
     li {
         display: inline-block;
-        @include margin(rem(5) rem(13));
-    }
-
-    &--sm-gutter {
-        @include margin(null rem(-5));
-        li {
-            @include margin(null rem(5));
-        }
-    }
-
-    &--small {
-        margin-bottom: rem(-10);
-
-        li {
-            margin-bottom: rem(10);
-
-            img {
-                height: rem(42);
-                width: auto;
-            }
-        }
-    }
-
-    &--tiny {
-        margin-bottom: rem(-10);
-
-        li {
-            margin-bottom: rem(10);
-
-            img {
-                max-height: rem(45);
-                width: auto;
-            }
-        }
     }
 }
+
+// Inline list
+.list--inline {
+    @include margin(-0.5em -1em);
+
+    li {
+        @include padding(0.5em 1em);
+    }
+}
+
+// Inline list small gutter
+.list--inline--sm-gutter {
+    @include margin(null -0.5em);
+
+    li {
+        @include margin(null 0.5em);
+    }
+}
+
 
 // Icons in a list
 .icons-list {
@@ -85,18 +70,5 @@
                 }
             }
         }
-    }
-}
-
-.dl {
-    margin-bottom: 15px;
-
-    dt {
-        font-weight: bold;
-        margin-top: 15px;
-    }
-
-    dd {
-        margin: 0;
     }
 }

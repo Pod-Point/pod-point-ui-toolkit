@@ -1,25 +1,12 @@
 // =============================================================================
-//	ELEMENTS - TYPOGRAPHY
+//	ELEMENTS - HORIZONTAL RULE (HR)
 // =============================================================================
 
-p,
-.p {
-    margin: 0;
-    padding-bottom: 0.5em;
-}
-
 hr {
-    margin: 30px 0;
+    margin: 0 0 $typography-vertical-spacing 0;
     border-bottom: $border-thin;
     border-left: none;
     border-right: none;
     border-top: none;
     background-color: $gray-keyline-very-light;
-}
-
-p, h1, h2, h3, h4, h5, h6 {
-
-    & + hr {
-        margin-top: 20px;
-    }
 }

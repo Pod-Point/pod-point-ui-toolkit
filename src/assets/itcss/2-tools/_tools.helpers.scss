@@ -19,7 +19,7 @@
 
 // Remove default list styling
 %remove-list-styles {
-    padding: 0;
+    @include padding(null 0);
     margin: 0;
 
     li {

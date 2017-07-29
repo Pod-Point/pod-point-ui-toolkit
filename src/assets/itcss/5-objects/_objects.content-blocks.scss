@@ -1,0 +1,30 @@
+// =============================================================================
+//  OBJECTS - CONTENT BLOCKS
+// =============================================================================
+
+.content-block {
+    @include padding(60px null);
+
+    &--standout {
+        @include screen-md-min {
+            @include padding(100px null);
+        }
+    }
+
+    &--strip {
+        @include padding(20px null);
+    }
+
+    &--no-padding {
+        @include padding(0 null);
+    }
+
+    &--centered {
+        @include margin(null auto);
+        text-align: center;
+    }
+
+    & + .content-block {
+        padding-top: 0;
+    }
+}

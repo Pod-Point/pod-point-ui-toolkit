@@ -4,11 +4,13 @@
 
 @import '_elements.html';
 @import '_elements.body';
-@import '_elements.a';
-@import '_elements.typography';
+@import '_elements.anchors';
+@import '_elements.type';
+@import '_elements.horizontal-rule';
 @import '_elements.headings';
 @import '_elements.tables';
 @import '_elements.lists';
+@import '_elements.definition-lists';
 
 @import 'forms/_forms.shared';
 @import 'forms/_forms.layout';

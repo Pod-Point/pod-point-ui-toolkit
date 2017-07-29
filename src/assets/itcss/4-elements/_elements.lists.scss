@@ -8,6 +8,10 @@ ol {
     padding-left: 2em;
     padding-bottom: $typography-vertical-spacing / 2;
 
+    &:last-child {
+        padding-bottom: 0;
+    }
+
     li {
         padding-bottom: $typography-vertical-spacing / 2;
 
