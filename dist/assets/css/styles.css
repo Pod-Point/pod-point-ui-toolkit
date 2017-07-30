@@ -2206,49 +2206,49 @@ http://flickity.metafizzy.co
     height: 20px;
     margin-top: 10px;
     margin-bottom: 10px; }
-  .circle-icon--small {
+  .circle-icon--sm {
     width: 25px;
     height: 25px;
     font-size: 10px; }
-    .circle-icon--small svg {
+    .circle-icon--sm svg {
       width: 12.5px;
       height: 12.5px;
       margin-top: 6.25px;
       margin-bottom: 6.25px; }
-  .circle-icon--small-resp {
+  .circle-icon--sm-resp {
     width: 25px;
     height: 25px;
     font-size: 10px; }
-    .circle-icon--small-resp svg {
+    .circle-icon--sm-resp svg {
       width: 12.5px;
       height: 12.5px;
       margin-top: 6.25px;
       margin-bottom: 6.25px; }
     @media (min-width: 50em) {
-      .circle-icon--small-resp {
+      .circle-icon--sm-resp {
         width: 40px;
         height: 40px;
         font-size: 10px; }
-        .circle-icon--small-resp svg {
+        .circle-icon--sm-resp svg {
           width: 20px;
           height: 20px;
           margin-top: 10px;
           margin-bottom: 10px; } }
-  .circle-icon--large-resp {
+  .circle-icon--lg-resp {
     width: 40px;
     height: 40px;
     font-size: 10px; }
-    .circle-icon--large-resp svg {
+    .circle-icon--lg-resp svg {
       width: 20px;
       height: 20px;
       margin-top: 10px;
       margin-bottom: 10px; }
     @media (min-width: 50em) {
-      .circle-icon--large-resp {
+      .circle-icon--lg-resp {
         width: 60px;
         height: 60px;
         font-size: 10px; }
-        .circle-icon--large-resp svg {
+        .circle-icon--lg-resp svg {
           width: 30px;
           height: 30px;
           margin-top: 15px;
@@ -2260,7 +2260,7 @@ http://flickity.metafizzy.co
     padding: 0;
     background-color: #8CC63F;
     border-radius: 50%;
-    border: none; }
+    border: 2px solid #8CC63F; }
     .circle-icon--green svg {
       fill: white;
       box-sizing: content-box; }

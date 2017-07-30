@@ -7,43 +7,52 @@
     </header>
 
 
-	<!-- ICONS -->
+	<!-- SVG ICONS -->
 	<section>
-		<header class="demo-section-sub-heading">
+		<header class="content-block bg--light-gray">
 			<div class="container">
-				<h3>Icons</h3>
+				<h3>SVG icons</h3>
+				<p>The below icon SVGs are included in the toolkit. Icons can be added to the toolkit as explained <a href="#">here</a></p>
+				<p>Inline SVGs are used for the icons and wrapped with an <code>.icon</code> element which defines the size</p>
+				<p>Modifying classes can be added to change the sizes <code>.icon--sm</code>, <code>.icon--xs</code>, <code>.icon--xxs</code></p>
+				<p>Note: the global helper class <code>.clickable</code> can be used to show something is clickable even if it is not an anchor</p>
 			</div>
 		</header>
-		<div class="container content-block">
-			<ul class="icons-list icons-list--inline">
-				<li><i class="clickable icon">{{> icon-cross }}</i></li>
-				<li><i class="clickable icon">{{> icon-charge-location }}</i></li>
-				<li><i class="clickable icon">{{> icon-charge }}</i></li>
-				<li><i class="clickable icon">{{> icon-location }}</i></li>
-				<li><i class="clickable icon">{{> icon-tick }}</i></li>
-				<li><i class="clickable icon">{{> icon-arrow }}</i></li>
-				<li><i class="clickable icon">{{> icon-money }}</i></li>
-				<li><i class="clickable icon">{{> icon-cheveron }}</i></li>
-				<li><i class="clickable icon">{{> icon-star }}</i></li>
-			</ul>
-			<br>
-			<ul class="icons-list icons-list--inline">
-				<li><a href="#" class="icon">{{> icon-facebook }}</a></li>
-				<li><a href="#" class="icon">{{> icon-twitter }}</a></li>
-				<li><a href="#" class="icon">{{> icon-linkedin }}</a></li>
-				<li><a href="#" class="icon">{{> icon-youtube }}</a></li>
-				<li><a href="#" class="icon">{{> icon-instagram }}</a></li>
-				<li><a href="#" class="icon">{{> icon-google }}</a></li>
-			</ul>
+		<div class="content-block">
+			<div class="container">
+				<ul class="icons-list icons-list--inline">
+					<li><i class="clickable icon">{{> icon-cross }}</i></li>
+					<li><i class="clickable icon">{{> icon-charge-location }}</i></li>
+					<li><i class="clickable icon">{{> icon-charge }}</i></li>
+					<li><i class="clickable icon">{{> icon-location }}</i></li>
+					<li><i class="clickable icon">{{> icon-tick }}</i></li>
+					<li><i class="clickable icon">{{> icon-arrow }}</i></li>
+					<li><i class="clickable icon">{{> icon-money }}</i></li>
+					<li><i class="clickable icon">{{> icon-cheveron }}</i></li>
+					<li><i class="clickable icon">{{> icon-star }}</i></li>
+				</ul>
+				<br>
+				<ul class="icons-list icons-list--inline">
+					<li><a href="#" class="icon">{{> icon-facebook }}</a></li>
+					<li><a href="#" class="icon">{{> icon-twitter }}</a></li>
+					<li><a href="#" class="icon">{{> icon-linkedin }}</a></li>
+					<li><a href="#" class="icon">{{> icon-youtube }}</a></li>
+					<li><a href="#" class="icon">{{> icon-instagram }}</a></li>
+					<li><a href="#" class="icon">{{> icon-google }}</a></li>
+				</ul>
+			</div>
 		</div>
 	</section>
 
 
 	<!-- ICONS IN CIRCLES - SIZES -->
 	<section>
-		<header class="demo-section-sub-heading">
+		<header class="content-block bg--light-gray">
 			<div class="container">
 				<h3>Icons in circles - sizes</h3>
+				<p>To create an icon in a circle, add a wrapping element to the <code>.icon</code> with the class of <code>.circle-icon</code></p>
+				<p>The alternative sizes available can be applied using the modifying classes <code>.circle-icon--sm</code>, <code>.circle-icon--sm-resp</code>, <code>.circle-icon--lg</code>, <code>.circle-icon--lg-resp</code> ('resp' meaning it has a different size on mobile and desktop)</p>
+				<p>There is also a mixin available to customise the circle icon size <code>@include icon-in-circle--size($dimension: 25px);</code></p>
 			</div>
 		</header>
 		<div class="container content-block">
@@ -59,22 +68,22 @@
 			<hr>
 			<h4>Small responsive</h4>
 			<ul class="icons-list icons-list--inline">
-				<li><a class="circle-icon circle-icon--small-resp" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
-				<li><a class="circle-icon circle-icon--small-resp" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
-				<li><a class="circle-icon circle-icon--small-resp" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
-				<li><a class="circle-icon circle-icon--small-resp" href="#"><i class="icon">{{> icon-youtube }}</i></a></li>
-				<li><a class="circle-icon circle-icon--small-resp" href="#"><i class="icon">{{> icon-instagram }}</i></a></li>
-				<li><a class="circle-icon circle-icon--small-resp" href="#"><i class="icon">{{> icon-google }}</i></a></li>
+				<li><a class="circle-icon circle-icon--sm-resp" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
+				<li><a class="circle-icon circle-icon--sm-resp" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
+				<li><a class="circle-icon circle-icon--sm-resp" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
+				<li><a class="circle-icon circle-icon--sm-resp" href="#"><i class="icon">{{> icon-youtube }}</i></a></li>
+				<li><a class="circle-icon circle-icon--sm-resp" href="#"><i class="icon">{{> icon-instagram }}</i></a></li>
+				<li><a class="circle-icon circle-icon--sm-resp" href="#"><i class="icon">{{> icon-google }}</i></a></li>
 			</ul>
 			<hr>
 			<h4>Large responsive</h4>
 			<ul class="icons-list icons-list--inline">
-				<li><a class="circle-icon circle-icon--large-resp" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
-				<li><a class="circle-icon circle-icon--large-resp" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
-				<li><a class="circle-icon circle-icon--large-resp" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
-				<li><a class="circle-icon circle-icon--large-resp" href="#"><i class="icon">{{> icon-youtube }}</i></a></li>
-				<li><a class="circle-icon circle-icon--large-resp" href="#"><i class="icon">{{> icon-instagram }}</i></a></li>
-				<li><a class="circle-icon circle-icon--large-resp" href="#"><i class="icon">{{> icon-google }}</i></a></li>
+				<li><a class="circle-icon circle-icon--lg-resp" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
+				<li><a class="circle-icon circle-icon--lg-resp" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
+				<li><a class="circle-icon circle-icon--lg-resp" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
+				<li><a class="circle-icon circle-icon--lg-resp" href="#"><i class="icon">{{> icon-youtube }}</i></a></li>
+				<li><a class="circle-icon circle-icon--lg-resp" href="#"><i class="icon">{{> icon-instagram }}</i></a></li>
+				<li><a class="circle-icon circle-icon--lg-resp" href="#"><i class="icon">{{> icon-google }}</i></a></li>
 			</ul>
 		</div>
 	</section>
@@ -82,9 +91,11 @@
 
 	<!-- ICONS IN CIRCLES - COLORS -->
 	<section>
-		<header class="demo-section-sub-heading">
+		<header class="content-block bg--light-gray">
 			<div class="container">
-				<h3>Icons in circles - colors</h3>
+				<h3>Icons in circles - colours</h3>
+				<p>The colour variations can be applied using the modifying classes <code>.circle-icon--green</code>, <code>.circle-icon--outlined</code>, <code>.circle-icon--outlined-green</code>, <code>.circle-icon--outlined-dark</code>, <code>.circle-icon--white-outline</code></p>
+				<p>There is also a mixin available to customise the circle icon color and border <code>@include icon-in-circle($bgColor: transparent, $color: $primary-color, $border: 2px solid $primary-color);</code></p>
 			</div>
 		</header>
 		<div class="container content-block">

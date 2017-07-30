@@ -7,11 +7,11 @@
     @include icon-in-circle;
     @include icon-in-circle--size;
 
-    &--small {
+    &--sm {
         @include icon-in-circle--size($dimension: 25px);
     }
 
-    &--small-resp {
+    &--sm-resp {
         @include icon-in-circle--size($dimension: 25px);
 
         @include screen-md-min {
@@ -19,7 +19,7 @@
         }
     }
 
-    &--large-resp {
+    &--lg-resp {
         @include icon-in-circle--size($dimension: 40px);
 
         @include screen-md-min {
@@ -28,7 +28,7 @@
     }
 
     &--green {
-        @include icon-in-circle($bgColor: $primary-color, $color: white);
+        @include icon-in-circle($bgColor: $primary-color, $color: white, $border: 2px solid $primary-color);
     }
 
     &--outlined {
