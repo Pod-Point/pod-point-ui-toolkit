@@ -6,7 +6,75 @@
     overflow: hidden;
 }
 
-.global-nav {
+.navbar-wrap {
+    position: relative;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+}
+
+.navbar {
+    @extend %clearfix;
+    @include container;
+
+    @include screen-md-min {
+        height: 96px;
+    }
+
+    &.nav-open {
+        box-shadow: $bottom-shadow;
+
+        @include screen-md-min {
+            box-shadow: none;
+        }
+    }
+}
+
+.navbar__content {
+    position: relative;
+    height: 60px;
+
+    @include screen-md-min {
+        height: auto;
+        border-bottom: none;
+    }
+}
+
+.navbar__pp-logo {
+    width: 100px;
+    height: 27px;
+    float: left;
+    margin-top: 17px;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    @include screen-md-min {
+        margin-top: 30px;
+        width: 140px;
+        height: 38px;
+    }
+
+    @include screen-lg-min {
+        margin-top: 22px;
+        width: 180px;
+        height: 49px;
+    }
+}
+
+
+.navbar__navicon {
+    margin-top: 20px;
+    float: right;
+
+    @include screen-md-min {
+        display: none;
+    }
+}
+
+.navbar__nav {
     @extend %clearfix;
     @include margin(null auto);
     transition: 0.1s ease-in-out;
@@ -17,10 +85,6 @@
         max-height: 100%;
         display: block;
         float: right;
-    }
-
-    .checkout-flow & {
-        display: none;
     }
 
     .nav-open & {
@@ -52,8 +116,9 @@
                 @include padding(null 20px);
             }
 
-            .nav-link {
+            .navbar__link {
                 cursor: pointer;
+                text-decoration: none;
                 @include padding(15px 0);
                 color: $font-color-base;
                 font-weight: $font-weight-bold;
@@ -63,7 +128,7 @@
 
                 @include screen-md-min {
                     text-align: center;
-                    @include padding(39px 5px);
+                    @include padding(36px 5px);
                 }
 
                 &.find-chargepoint {
@@ -97,7 +162,7 @@
 
                 &.sub-nav-open {
 
-                    .global-nav__sub-nav {
+                    .navbar__sub-nav {
                         height: auto;
                         max-height: 340px;
                         transition: 1s ease-in-out;
@@ -123,72 +188,17 @@
                 }
             }
 
-            > .nav-link {
+            > .navbar__link {
                 border-bottom: 2px solid transparent;
             }
 
-            @include screen-md-min {
+            &.sub-nav-open,
+            &:hover {
 
-                &.sub-nav-open,
-                &:hover {
+                > .navbar__link {
 
-                    > .nav-link {
+                    @include screen-md-min {
                         border-color: $primary-color;
-                    }
-                }
-            }
-        }
-    }
-
-    &__sub-nav {
-        width: 100%;
-        text-align: center;
-        transition: 0.3s ease-in-out;
-        @include slideDownCollapsed(0.5s);
-        background-color: white;
-
-        @include screen-md-min {
-            opacity: 0;
-            @include position(absolute, 96px 0 null null);
-        }
-
-        ul {
-            background-color: rgba(255,255,255,0.3);
-            margin-bottom: 20px;
-
-            @include screen-sm-min {
-                @include container;
-            }
-
-            @include screen-md-min {
-                margin-bottom: 0;
-            }
-
-            li {
-                border-bottom: none;
-                @extend %clearfix;
-                @include padding(null 20px);
-                display: inline-block;
-                width: 120px;
-
-                @include screen-sm-min {
-                    width: auto;
-                }
-
-                .nav-link  {
-                    text-align: center;
-
-                    .nav-item-img {
-                        @include margin(5px auto 10px auto);
-                        display: block;
-                        width: 60px;
-                        height: 60px;
-
-                        @include screen-sm-min {
-                            margin-bottom: 20px;
-                            width: 100px;
-                            height: 100px;
-                        }
                     }
                 }
             }
@@ -196,9 +206,65 @@
     }
 }
 
+.navbar__sub-nav {
+    width: 100%;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    @include slideDownCollapsed(0.5s);
+    background-color: white;
+
+    @include screen-md-min {
+        opacity: 0;
+        @include position(absolute, 96px 0 null null);
+    }
+
+    ul {
+        background-color: rgba(255,255,255,0.3);
+        margin-bottom: 20px;
+
+        @include screen-sm-min {
+            @include container;
+        }
+
+        @include screen-md-min {
+            margin-bottom: 0;
+        }
+
+        li {
+            border-bottom: none;
+            @extend %clearfix;
+            @include padding(null 20px);
+            display: inline-block;
+            width: 120px;
+
+            @include screen-sm-min {
+                width: auto;
+            }
+
+            .navbar__link  {
+                text-align: center;
+
+                .navbar__item-img {
+                    @include margin(5px auto 10px auto);
+                    display: block;
+                    width: 60px;
+                    height: 60px;
+
+                    @include screen-sm-min {
+                        margin-bottom: 20px;
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 @include screen-md-min {
 
-    .global-nav-overlay {
+    .navbar-overlay {
         display: none;
         width: 100%;
         height: 100%;

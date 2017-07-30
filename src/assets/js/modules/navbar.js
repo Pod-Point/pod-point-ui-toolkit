@@ -8,18 +8,18 @@ const SUBNAV_OPEN = 'sub-nav-open';
 
 let navIsOpen = false;
 
-class HeaderNav {
+class Navbar {
 
     /**
-     * Creates a new header nav element
+     * Creates a new navbar element
      *
      * @param element
      */
     constructor(element) {
         this.element = element;
-        this.navicon = this.element.querySelector('.navicon');
-        this.nav = this.element.querySelector('.global-nav');
-        this.navOverlay = document.querySelector('.global-nav-overlay');
+        this.navicon = this.element.querySelector('.navbar__navicon');
+        this.nav = this.element.querySelector('.navbar__nav');
+        this.navOverlay = document.querySelector('.navbar-overlay');
 
         this.bindEvents();
     }
@@ -36,7 +36,7 @@ class HeaderNav {
 
         this.navListener = new Delegate(this.nav);
 
-        this.navListener.on('click', '.has-sub-nav > .nav-link', (event, clickedElement) => {
+        this.navListener.on('click', '.has-sub-nav > .navbar__link', (event, clickedElement) => {
             this.toggleSubNav(event, clickedElement);
         });
 
@@ -125,7 +125,7 @@ class HeaderNav {
 
 export default {
     init: element => {
-        instances.push(new HeaderNav(element));
+        instances.push(new Navbar(element));
     },
 
     destroy: () => {

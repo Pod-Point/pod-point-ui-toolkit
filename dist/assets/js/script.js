@@ -90,25 +90,17 @@
 	
 	var _accordion2 = _interopRequireDefault(_accordion);
 	
-	var _headerNav = __webpack_require__(25);
+	var _navbar = __webpack_require__(25);
 	
-	var _headerNav2 = _interopRequireDefault(_headerNav);
+	var _navbar2 = _interopRequireDefault(_navbar);
 	
 	var _carousel = __webpack_require__(26);
 	
 	var _carousel2 = _interopRequireDefault(_carousel);
 	
-	var _addressLookup = __webpack_require__(45);
-	
-	var addressLookup = _interopRequireWildcard(_addressLookup);
-	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	window.initAutocomplete = addressLookup.initAutocomplete;
-	window.geolocate = addressLookup.geolocate;
-	window.fillInAddress = addressLookup.fillInAddress;
 	
 	dom.whenReady(function () {
 	    (0, _moduleLoader2.default)({
@@ -119,10 +111,9 @@
 	            toggleAccordionPanel: _toggleAccordionPanel2.default,
 	            toggleElement: _toggleElement2.default,
 	            gallerySimple: _gallerySimple2.default,
-	            headerNav: _headerNav2.default,
+	            navbar: _navbar2.default,
 	            accordion: _accordion2.default,
-	            carousel: _carousel2.default,
-	            addressLookup: addressLookup
+	            carousel: _carousel2.default
 	        })
 	    });
 	});
@@ -4196,20 +4187,20 @@
 	
 	var navIsOpen = false;
 	
-	var HeaderNav = function () {
+	var Navbar = function () {
 	
 	    /**
-	     * Creates a new header nav element
+	     * Creates a new navbar element
 	     *
 	     * @param element
 	     */
-	    function HeaderNav(element) {
-	        _classCallCheck(this, HeaderNav);
+	    function Navbar(element) {
+	        _classCallCheck(this, Navbar);
 	
 	        this.element = element;
-	        this.navicon = this.element.querySelector('.navicon');
-	        this.nav = this.element.querySelector('.global-nav');
-	        this.navOverlay = document.querySelector('.global-nav-overlay');
+	        this.navicon = this.element.querySelector('.navbar__navicon');
+	        this.nav = this.element.querySelector('.navbar__nav');
+	        this.navOverlay = document.querySelector('.navbar-overlay');
 	
 	        this.bindEvents();
 	    }
@@ -4219,7 +4210,7 @@
 	     */
 	
 	
-	    _createClass(HeaderNav, [{
+	    _createClass(Navbar, [{
 	        key: 'bindEvents',
 	        value: function bindEvents() {
 	            var _this = this;
@@ -4232,7 +4223,7 @@
 	
 	            this.navListener = new _domDelegate.Delegate(this.nav);
 	
-	            this.navListener.on('click', '.has-sub-nav > .nav-link', function (event, clickedElement) {
+	            this.navListener.on('click', '.has-sub-nav > .navbar__link', function (event, clickedElement) {
 	                _this.toggleSubNav(event, clickedElement);
 	            });
 	
@@ -4334,12 +4325,12 @@
 	        }
 	    }]);
 	
-	    return HeaderNav;
+	    return Navbar;
 	}();
 	
 	exports.default = {
 	    init: function init(element) {
-	        instances.push(new HeaderNav(element));
+	        instances.push(new Navbar(element));
 	    },
 	
 	    destroy: function destroy() {
@@ -8408,87 +8399,6 @@
 	
 	}));
 
-
-/***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var _utilities = __webpack_require__(8);
-	
-	Object.defineProperty(exports, '__esModule', {
-	    value: true
-	}); /* global google */
-	
-	
-	var autocomplete = void 0;
-	var componentForm = {
-	    street_number: 'short_name',
-	    route: 'long_name',
-	    locality: 'long_name',
-	    administrative_area_level_1: 'short_name',
-	    country: 'long_name',
-	    postal_code: 'short_name'
-	};
-	
-	var fillInAddress = function fillInAddress() {
-	    // Get the place details from the autocomplete object.
-	    var placeAddressComponents = autocomplete.getPlace().address_components;
-	
-	    Object.entries(componentForm).map(function (key) {
-	        // eslint-disable-line array-callback-return
-	        var formFieldName = key[0];
-	        document.getElementById(formFieldName).value = '';
-	        document.getElementById(formFieldName).disabled = false;
-	    });
-	
-	    // Get each component of the address from the place details
-	    // and fill the corresponding field on the form.
-	    placeAddressComponents.map(function (key) {
-	        // eslint-disable-line array-callback-return
-	        var addressType = key.types[0];
-	        if (componentForm[addressType]) {
-	            var val = key[componentForm[addressType]];
-	            document.getElementById(addressType).value = val;
-	        }
-	    });
-	
-	    (0, _utilities.openPanel)(document.getElementById('address'));
-	};
-	
-	var initAutocomplete = function initAutocomplete() {
-	    // Create the autocomplete object, restricting the search to geographical
-	    // location types.
-	    autocomplete = new google.maps.places.Autocomplete(
-	    /** @type {!HTMLInputElement} */document.getElementById('autocomplete'), { types: ['geocode'] });
-	
-	    // When the user selects an address from the dropdown, populate the address
-	    // fields in the form.
-	    autocomplete.addListener('place_changed', fillInAddress);
-	};
-	
-	// Bias the autocomplete object to the user's geographical location,
-	// as supplied by the browser's 'navigator.geolocation' object.
-	var geolocate = function geolocate() {
-	    if (navigator.geolocation) {
-	        navigator.geolocation.getCurrentPosition(function (position) {
-	            var geolocation = {
-	                lat: position.coords.latitude,
-	                lng: position.coords.longitude
-	            };
-	            var circle = new google.maps.Circle({
-	                center: geolocation,
-	                radius: position.coords.accuracy
-	            });
-	            autocomplete.setBounds(circle.getBounds());
-	        });
-	    }
-	};
-	
-	exports.initAutocomplete = initAutocomplete;
-	exports.fillInAddress = fillInAddress;
-	exports.geolocate = geolocate;
 
 /***/ })
 /******/ ]);
