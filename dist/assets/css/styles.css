@@ -1232,6 +1232,7 @@ fieldset {
         border-bottom: none; }
 
 .alert {
+  width: 100%;
   padding: 30px;
   margin-bottom: 10px; }
   .alert h4 {
