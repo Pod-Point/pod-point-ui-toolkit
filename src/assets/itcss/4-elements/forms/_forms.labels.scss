@@ -1,9 +1,10 @@
 // =============================================================================
-//	ELEMENTS - FORMS - SHARED
+//	ELEMENTS - FORMS - LABELS
 // =============================================================================
 
-label,
 .form__label {
+    width: 100%;
+    font-weight: $font-weight-bold;
     display: inline-block;
     @include font-size-sm;
     padding-bottom: rem(5);
@@ -12,9 +13,4 @@ label,
     .radio & {
         @include font-size-md;
     }
-}
-
-.form__label {
-    width: 100%;
-    font-weight: $font-weight-bold;
 }

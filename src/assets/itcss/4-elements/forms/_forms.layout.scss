@@ -2,17 +2,29 @@
 //	ELEMENTS - FORMS - LAYOUT
 // =============================================================================
 
-.field-row {
-    margin-bottom: 25px;
+.form__field {
+    width: 100%;
+    max-width: $form-field-max-width;
+}
+
+.form__group {
+    margin-bottom: $form-group-base-spacing;
+
     &:last-child {
         margin-bottom: 0;
     }
 }
-.form-action-buttons {
-    padding-top: 25px;
+
+// Form spacing for modifying form__group or form__field or whatever is needed
+.form-spacing-none {
+    margin-bottom: 0;
 }
-.form-field-wrapper {
-    display: inline-block;
-    width: 100%;
-    max-width: 600px;
+.form-spacing-sm {
+    margin-bottom: $form-group-base-spacing / 2;
+}
+.form-spacing-md {
+    margin-bottom: $form-group-base-spacing;
+}
+.form-spacing-lg {
+    margin-bottom: $form-group-base-spacing * 2;
 }

@@ -23,8 +23,4 @@
         @include margin(null auto);
         text-align: center;
     }
-
-    & + .content-block {
-        padding-top: 0;
-    }
 }

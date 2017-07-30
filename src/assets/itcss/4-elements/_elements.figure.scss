@@ -1,0 +1,15 @@
+// =============================================================================
+//	ELEMENTS - FIGURE
+// =============================================================================
+
+figure {
+    overflow-x: scroll;
+    background-color: $gray-dark;
+    font-weight: bold;
+    box-shadow: $box-shadow-inset;
+    color: white;
+    margin: 0;
+    padding: 20px 30px;
+    border: $border-base;
+    border-radius: $border-radius-base;
+}

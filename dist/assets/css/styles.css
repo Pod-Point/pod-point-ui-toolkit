@@ -15,9 +15,23 @@ h1,
 .tooltip__box .rich-text h5,
 .tooltip__box .rich-text h6 {
   margin: 0;
+  padding-top: 1em;
   padding-bottom: 1em;
   font-weight: 700;
   line-height: 1.3; }
+  h1:first-child,
+  .h1:first-child, h2:first-child,
+  .h2:first-child, h3:first-child,
+  .h3:first-child, h4:first-child,
+  .h4:first-child, h5:first-child,
+  .h5:first-child, h6:first-child,
+  .h6:first-child, .modal__content .panel__title:first-child, .tooltip__box .rich-text h1:first-child,
+  .tooltip__box .rich-text h2:first-child,
+  .tooltip__box .rich-text h3:first-child,
+  .tooltip__box .rich-text h4:first-child,
+  .tooltip__box .rich-text h5:first-child,
+  .tooltip__box .rich-text h6:first-child {
+    padding-top: 0; }
   h1:last-child,
   .h1:last-child, h2:last-child,
   .h2:last-child, h3:last-child,
@@ -524,6 +538,17 @@ ol li {
   padding-left: 1em;
   list-style-type: decimal; }
 
+figure {
+  overflow-x: scroll;
+  background-color: #4d4d4d;
+  font-weight: bold;
+  box-shadow: inset 0px 0px 15px -5px rgba(0, 0, 0, 0.3);
+  color: white;
+  margin: 0;
+  padding: 20px 30px;
+  border: 2px solid #ccc;
+  border-radius: 5px; }
+
 .dl {
   margin-bottom: 15px; }
   .dl dt {
@@ -532,45 +557,26 @@ ol li {
   .dl dd {
     margin: 0; }
 
-label,
-.form__label {
-  display: inline-block;
-  font-size: 0.75rem;
-  padding-bottom: 0.3125rem; }
-  @media (min-width: 50em) {
-    label,
-    .form__label {
-      font-size: 0.875rem; } }
-  .checkbox label,
-  .radio label, .checkbox
-  .form__label,
-  .radio
-  .form__label {
-    font-size: 0.875rem; }
-    @media (min-width: 50em) {
-      .checkbox label,
-      .radio label, .checkbox
-      .form__label,
-      .radio
-      .form__label {
-        font-size: 1rem; } }
-
-.form__label {
+.form__field {
   width: 100%;
-  font-weight: 700; }
+  max-width: 37.5rem; }
 
-.field-row {
-  margin-bottom: 25px; }
-  .field-row:last-child {
+.form__group {
+  margin-bottom: 30px; }
+  .form__group:last-child {
     margin-bottom: 0; }
 
-.form-action-buttons {
-  padding-top: 25px; }
+.form-spacing-none {
+  margin-bottom: 0; }
 
-.form-field-wrapper {
-  display: inline-block;
-  width: 100%;
-  max-width: 600px; }
+.form-spacing-sm {
+  margin-bottom: 15px; }
+
+.form-spacing-md {
+  margin-bottom: 30px; }
+
+.form-spacing-lg {
+  margin-bottom: 60px; }
 
 input[type="date"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"] {
   margin: 0;
@@ -682,7 +688,7 @@ input[type="checkbox"] {
       background-repeat: no-repeat;
       background-position: center;
       background-color: #8CC63F;
-      border-color: #8CC63F; }
+      border-color: #8CC63F !important; }
     .checkbox > input[type="checkbox"]:disabled ~ span {
       color: gray;
       cursor: not-allowed; }
@@ -703,7 +709,10 @@ input[type="radio"] {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-          user-select: none; }
+          user-select: none;
+  margin-bottom: 0.5em; }
+  .radio:last-child {
+    margin-bottom: 0; }
   .radio--inline {
     display: inline; }
   .radio > input[type="radio"]:checked + span:before {
@@ -758,7 +767,7 @@ input[type="radio"] {
       -ms-transform: scale(0);
       transform: scale(0); }
 
-.select-wrapper {
+.select {
   position: relative;
   display: block;
   vertical-align: middle;
@@ -768,7 +777,7 @@ input[type="radio"] {
   height: 2.5rem;
   max-width: 37.5rem;
   cursor: pointer; }
-  .select-wrapper:after {
+  .select:after {
     content: '';
     position: absolute;
     top: 35%;
@@ -777,7 +786,7 @@ input[type="radio"] {
     height: 0.9375rem;
     background-image: url("../img/css-bg/icons/cheveron.svg");
     background-size: cover; }
-  .select-wrapper select {
+  .select select {
     -moz-appearance: none;
     position: relative;
     z-index: 1;
@@ -801,16 +810,17 @@ input[type="radio"] {
     font-size: 1rem;
     cursor: pointer;
     background-color: transparent; }
-    .select-wrapper select:focus {
+    .select select:focus {
       color: #333 !important;
       border-color: #333;
       outline: none; }
-    .select-wrapper select:hover {
+    .select select:hover {
       color: #333 !important;
       border-color: #333; }
-  .select-wrapper select::-ms-expand {
+  .select select::-ms-expand {
     display: none; }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 fieldset {
   border: none; }
@@ -849,40 +859,35 @@ fieldset {
       position: absolute;
       top: 9px;
       right: 0; } }
+=======
+.form__label {
+  width: 100%;
+  font-weight: 700;
+  display: inline-block;
+  font-size: 0.75rem;
+  padding-bottom: 0.3125rem; }
+>>>>>>> Refining and documenting form elements
   @media (min-width: 50em) {
-    .form-field-wrapper.is-valid:before, .form-field-wrapper.is-invalid:before {
-      right: -30px; } }
-
-.form-field-wrapper.is-valid input[type="date"], .form-field-wrapper.is-valid input[type="email"], .form-field-wrapper.is-valid input[type="number"], .form-field-wrapper.is-valid input[type="password"], .form-field-wrapper.is-valid input[type="search"], .form-field-wrapper.is-valid input[type="tel"], .form-field-wrapper.is-valid input[type="text"], .form-field-wrapper.is-valid input[type="url"],
-.form-field-wrapper.is-valid textarea[type="text"],
-.form-field-wrapper.is-valid .select-wrapper select {
-  border-color: #8CC63F; }
-
-.form-field-wrapper.is-invalid input[type="date"], .form-field-wrapper.is-invalid input[type="email"], .form-field-wrapper.is-invalid input[type="number"], .form-field-wrapper.is-invalid input[type="password"], .form-field-wrapper.is-invalid input[type="search"], .form-field-wrapper.is-invalid input[type="tel"], .form-field-wrapper.is-invalid input[type="text"], .form-field-wrapper.is-invalid input[type="url"],
-.form-field-wrapper.is-invalid textarea[type="text"],
-.form-field-wrapper.is-invalid .select-wrapper select {
-  border-color: #C1272D; }
+    .form__label {
+      font-size: 0.875rem; } }
+  .checkbox .form__label,
+  .radio .form__label {
+    font-size: 0.875rem; }
+    @media (min-width: 50em) {
+      .checkbox .form__label,
+      .radio .form__label {
+        font-size: 1rem; } }
 
 .checkbox-wrap:not(.is-invalid) .error-message,
 .form-field-wrapper:not(.is-invalid) .error-message {
   display: none; }
 
-.checkbox-wrap.is-invalid input[type="checkbox"] ~ label:before {
+.form__group--error .checkbox > input[type="checkbox"] + span:before {
   border-color: #C1272D; }
 
 .form__group--error input[type="date"], .form__group--error input[type="email"], .form__group--error input[type="number"], .form__group--error input[type="password"], .form__group--error input[type="search"], .form__group--error input[type="tel"], .form__group--error input[type="text"], .form__group--error input[type="url"],
 .form__group--error textarea[type="text"],
-.form__group--error .select-wrapper select,
-.has-error input[type="date"],
-.has-error input[type="email"],
-.has-error input[type="number"],
-.has-error input[type="password"],
-.has-error input[type="search"],
-.has-error input[type="tel"],
-.has-error input[type="text"],
-.has-error input[type="url"],
-.has-error textarea[type="text"],
-.has-error .select-wrapper select {
+.form__group--error .select-wrapper select {
   border-color: #C1272D; }
 
 .form__group--valid input[type="date"], .form__group--valid input[type="email"], .form__group--valid input[type="number"], .form__group--valid input[type="password"], .form__group--valid input[type="search"], .form__group--valid input[type="tel"], .form__group--valid input[type="text"], .form__group--valid input[type="url"],
@@ -1158,8 +1163,6 @@ fieldset {
     margin-right: auto;
     margin-left: auto;
     text-align: center; }
-  .content-block + .content-block {
-    padding-top: 0; }
 
 .accordion {
   -webkit-tap-highlight-color: transparent;
