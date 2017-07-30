@@ -4,6 +4,7 @@
 
 .form__label {
     width: 100%;
+    max-width: $form-field-max-width;
     font-weight: $font-weight-bold;
     display: inline-block;
     @include font-size-sm;

@@ -23,7 +23,7 @@
                 <p>Note: Form fields can be used for the placement of error messages directly underneath, therefore it is best not to add a bottom margin</p>
 
                 <h5>Form label</h5>
-                <p>Use the class <code>.form__label</code> for a form field label - which is styled as small, bold font</p>
+                <p>Use the class <code>.form__label</code> for a form field label - which is styled as small, bold font. The form label includes the max-width style.</p>
 
                 <h5>Disabled fields</h5>
                 <p>All fields can use the disabled attribute which will apply the disabled styles, however the select element needs a class <code>.is-disabled</code> added to the <code>.select</code></p>
@@ -77,6 +77,43 @@
                     <label class="form__label">Input field - invalid</label>
                     <input class="form__field" type="text" placeholder="Sample placeholder text">
                     <span class="form__error">This is an error message.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- INPUTS -->
+    <section>
+        <header class="content-block bg--light-gray">
+            <div class="container">
+                <h3>Alternative inputs</h3>
+                <p>The alternative input styling is suited to one off fields like a newsletter sign up or search bar</p>
+                <p>Use the class <code>.input--alternative</code> to apply the below styling</p>
+                <p>To make it centralised, add the global helper class <code>.text-center</code> to both the input and the label</p>
+
+<figure>
+<pre>
+&#x3C;div class=&#x22;form__group&#x22;&#x3E;
+    &#x3C;label class=&#x22;form__label&#x22;&#x3E;Input field - alternative&#x3C;/label&#x3E;
+    &#x3C;input class=&#x22;form__field input--alternative&#x22; type=&#x22;text&#x22; placeholder=&#x22;Sample placeholder text&#x22; /&#x3E;
+&#x3C;/div&#x3E;
+</pre>
+</figure>
+
+            </div>
+        </header>
+        <div class="content-block">
+            <div class="container">
+
+                <div class="form__group">
+                    <label class="form__label">Input field - alternative</label>
+                    <input class="form__field input--alternative" type="text" placeholder="Sample placeholder text" />
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label text-center">Input field - alternative and centred</label>
+                    <input class="form__field input--alternative text-center" type="text" placeholder="Sample placeholder text" />
                 </div>
             </div>
         </div>

@@ -606,6 +606,13 @@ input[type="date"], input[type="email"], input[type="number"], input[type="passw
     cursor: not-allowed;
     background-color: #f9fafa; }
 
+input[type="date"].input--alternative, input[type="email"].input--alternative, input[type="number"].input--alternative, input[type="password"].input--alternative, input[type="search"].input--alternative, input[type="tel"].input--alternative, input[type="text"].input--alternative, input[type="url"].input--alternative {
+  padding: 1.5em 0;
+  border-radius: 0;
+  border-top: none;
+  border-right: none;
+  border-left: none; }
+
 textarea {
   margin: 0;
   line-height: 1.125rem;
@@ -862,6 +869,7 @@ fieldset {
 =======
 .form__label {
   width: 100%;
+  max-width: 37.5rem;
   font-weight: 700;
   display: inline-block;
   font-size: 0.75rem;
