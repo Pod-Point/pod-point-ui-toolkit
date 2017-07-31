@@ -17,7 +17,7 @@ class Navbar {
      */
     constructor(element) {
         this.element = element;
-        this.navicon = this.element.querySelector('.navbar__navicon');
+        this.navicon = this.element.querySelector('.navicon');
         this.nav = this.element.querySelector('.navbar__nav');
         this.navOverlay = document.querySelector('.navbar-overlay');
 
@@ -98,17 +98,19 @@ class Navbar {
     }
 
     /**
-     * Shows the overlay if it's desktop size
+     * Shows the overlays if it's desktop size
      *
-     * @param {boolean} show overlay
+     * @param {boolean} show overlays
      */
     showOverlay(showOverlay) {
         if (window.isMobileSize) return;
 
         if (showOverlay) {
+            addClass(this.element, NAV_OPEN);
             addClass(this.navOverlay, NAV_OPEN);
             addClass(document.documentElement, 'is-nav-open');
         } else {
+            removeClass(this.element, NAV_OPEN);
             removeClass(this.navOverlay, NAV_OPEN);
             removeClass(document.documentElement, 'is-nav-open');
         }

@@ -1,5 +1,5 @@
 // =============================================================================
-//  COMPONENTS - NAV
+//  COMPONENTS - NAVBAR
 // =============================================================================
 
 .is-nav-open body {
@@ -18,7 +18,7 @@
     @include container;
 
     @include screen-md-min {
-        height: 96px;
+        height: $navbar-desktop-height;
     }
 
     &.nav-open {
@@ -26,6 +26,27 @@
 
         @include screen-md-min {
             box-shadow: none;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: $underlay-desktop-height;
+                background-color: white;
+                z-index: -1;
+                box-shadow: $bottom-shadow;
+            }
+        }
+    }
+
+    .navicon {
+        margin-top: 20px;
+        float: right;
+
+        @include screen-md-min {
+            display: none;
         }
     }
 }
@@ -65,15 +86,6 @@
 }
 
 
-.navbar__navicon {
-    margin-top: 20px;
-    float: right;
-
-    @include screen-md-min {
-        display: none;
-    }
-}
-
 .navbar__nav {
     @extend %clearfix;
     @include margin(null auto);
@@ -100,6 +112,7 @@
             position: relative;
             @include font-size-sm;
             border-bottom: $border-thin;
+            padding-bottom: 0;
 
             &:last-child {
                 border-bottom: none;
@@ -169,6 +182,7 @@
                         @include slideDownActive(1s, 340px);
 
                         @include screen-md-min {
+                            height: $subnav-desktop-height;
                             transition: none;
                             opacity: 1;
                             animation-duration: 0.3s;
@@ -180,7 +194,7 @@
 
                 .plus-minus-toggle {
                     z-index: -1;
-                    @include position(absolute, 4px 0 null null);
+                    @include position(absolute, 6px 0 null null);
 
                     @include screen-md-min {
                         display: none;
@@ -281,17 +295,6 @@
             animation-duration: 0.3s;
             animation-fill-mode: both;
             animation-name: fadeIn;
-        }
-
-        &:before {
-            content: '';
-            width: 100%;
-            height: 320px;
-            background-color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            box-shadow: $bottom-shadow;
         }
     }
 }

@@ -1,9 +1,83 @@
-<div data-page="navbar">
-	{{> header }}
-
+{{> demo-header }}
+<div data-page="forms">
     <header class="content-block content-block--strip bg--primary-color">
         <div class="container">
             <h2>Navbar</h2>
         </div>
     </header>
+
+    <!-- NAVBAR -->
+    <section>
+        <header class="content-block bg--light-gray">
+            <div class="container">
+                <h3>Responsive navbar</h3>
+                <p>This is a responsive navbar as seen on the main POD Point website</p>
+                <p>SCSS files required: <code>_components.navicon.scss</code>, <code>_components.plus-minus-toggle.scss</code>, <code>_components.navbar.scss</code></p>
+                <p>JS files required: <code>navbar.js</code></p>
+            </div>
+        </header>
+
+        {{> navbar }}
+
+
+        <header class="content-block bg--light-gray">
+            <div class="container">
+                <p>Sample markup:</p>
+
+<figure>
+<pre>
+&#x3C;div class=&#x22;navbar-wrap&#x22;&#x3E;
+    &#x3C;header role=&#x22;header&#x22; class=&#x22;navbar&#x22; data-js-module=&#x22;navbar&#x22;&#x3E;
+        &#x3C;div class=&#x22;navbar__content&#x22;&#x3E;
+            &#x3C;a class=&#x22;navbar__pp-logo&#x22; href=&#x22;/&#x22;&#x3E;
+                &#x3C;span class=&#x22;svg-wrap&#x22;&#x3E;&#x3C;svg&#x3E;[POD POINT LOGO HERE]&#x3C;/svg&#x3E;&#x3C;/span&#x3E;
+            &#x3C;/a&#x3E;
+            &#x3C;button type=&#x22;button&#x22; class=&#x22;navicon&#x22;&#x3E;
+                &#x3C;span&#x3E;&#x3C;/span&#x3E;
+                &#x3C;span&#x3E;&#x3C;/span&#x3E;
+                &#x3C;span&#x3E;&#x3C;/span&#x3E;
+            &#x3C;/button&#x3E;
+        &#x3C;/div&#x3E;
+
+        &#x3C;nav class=&#x22;navbar__nav&#x22;&#x3E;
+            &#x3C;ul&#x3E;
+                &#x3C;li&#x3E;&#x3C;a class=&#x22;navbar__link&#x22; href=&#x22;#&#x22;&#x3E;ITEM ONE&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+                &#x3C;li class=&#x22;has-sub-nav&#x22;&#x3E;
+                    &#x3C;button type=&#x22;button&#x22; class=&#x22;navbar__link&#x22;&#x3E;ITEM TWO (WITH SUB ITEMS)&#x3C;/button&#x3E;
+                    &#x3C;i class=&#x22;plus-minus-toggle&#x22;&#x3E;&#x3C;span&#x3E;&#x3C;/span&#x3E;&#x3C;/i&#x3E;
+                    &#x3C;div class=&#x22;navbar__sub-nav&#x22;&#x3E;
+                        &#x3C;ul&#x3E;
+                            &#x3C;li&#x3E;
+                                &#x3C;a class=&#x22;navbar__link&#x22; href=&#x22;#&#x22;&#x3E;
+                                    &#x3C;img class=&#x22;navbar__item-img&#x22; src=&#x22;[ITEM IMAGE HERE]&#x22;&#x3E;
+                                    &#x3C;span&#x3E;ITEM TWO - SUB ITEM ONE&#x3C;/span&#x3E;
+                                &#x3C;/a&#x3E;
+                            &#x3C;/li&#x3E;
+                            &#x3C;li&#x3E;
+                                &#x3C;a class=&#x22;navbar__link&#x22; href=&#x22;#&#x22;&#x3E;
+                                    &#x3C;img class=&#x22;navbar__item-img&#x22; src=&#x22;[ITEM IMAGE HERE]&#x22;&#x3E;
+                                    &#x3C;span&#x3E;ITEM TWO - SUB ITEM TWO&#x3C;/span&#x3E;
+                                &#x3C;/a&#x3E;
+                            &#x3C;/li&#x3E;
+                        &#x3C;/ul&#x3E;
+                    &#x3C;/div&#x3E;
+                &#x3C;/li&#x3E;
+                &#x3C;li&#x3E;&#x3C;a class=&#x22;navbar__link&#x22; href=&#x22;#&#x22;&#x3E;ITEM THREE&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+                &#x3C;li&#x3E;&#x3C;a class=&#x22;navbar__link find-chargepoint&#x22; href=&#x22;#&#x22;&#x3E;&#x3C;i class=&#x22;icon&#x22;&#x3E;&#x3C;svg&#x3E;[CHARGEPOINT ICON HERE]&#x3C;/svg&#x3E;&#x3C;/i&#x3E;&#x3C;span&#x3E;Find a Chargepoint&#x3C;/span&#x3E;&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+            &#x3C;/ul&#x3E;
+        &#x3C;/nav&#x3E;
+
+    &#x3C;/header&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;navbar-overlay&#x22;&#x3E;&#x3C;/div&#x3E;
+
+</pre>
+</figure>
+
+            </div>
+        </header>
+
+
+
+    </section>
 </div>
