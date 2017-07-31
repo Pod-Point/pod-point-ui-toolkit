@@ -56,7 +56,9 @@
 			</div>
 		</header>
 		<div class="container content-block">
-			<h4>Non responsive</h4>
+			<h4>Non responsive
+				<span class="font-size-md font-regular">= <code>.circle-icon</code></span>
+			</h4>
 			<ul class="icons-list icons-list--inline">
 				<li><a class="circle-icon" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
 				<li><a class="circle-icon" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
@@ -65,8 +67,10 @@
 				<li><a class="circle-icon" href="#"><i class="icon">{{> icon-instagram }}</i></a></li>
 				<li><a class="circle-icon" href="#"><i class="icon">{{> icon-google }}</i></a></li>
 			</ul>
-			<hr>
-			<h4>Small responsive</h4>
+			<br>
+			<h4>Small responsive
+				<span class="font-size-md font-regular">= <code>.circle-icon--sm-resp</code></span>
+			</h4>
 			<ul class="icons-list icons-list--inline">
 				<li><a class="circle-icon circle-icon--sm-resp" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
 				<li><a class="circle-icon circle-icon--sm-resp" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
@@ -75,8 +79,10 @@
 				<li><a class="circle-icon circle-icon--sm-resp" href="#"><i class="icon">{{> icon-instagram }}</i></a></li>
 				<li><a class="circle-icon circle-icon--sm-resp" href="#"><i class="icon">{{> icon-google }}</i></a></li>
 			</ul>
-			<hr>
-			<h4>Large responsive</h4>
+			<br>
+			<h4>Large responsive
+				<span class="font-size-md font-regular">= <code>.circle-icon--lg-resp</code></span>
+			</h4>
 			<ul class="icons-list icons-list--inline">
 				<li><a class="circle-icon circle-icon--lg-resp" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
 				<li><a class="circle-icon circle-icon--lg-resp" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
@@ -94,20 +100,27 @@
 		<header class="content-block bg--light-gray">
 			<div class="container">
 				<h3>Icons in circles - colours</h3>
-				<p>The colour variations can be applied using the modifying classes <code>.circle-icon--green</code>, <code>.circle-icon--outlined</code>, <code>.circle-icon--outlined-green</code>, <code>.circle-icon--outlined-dark</code>, <code>.circle-icon--white-outline</code></p>
+				<p>The colour variations can be applied using the modifying classes <code>.circle-icon--primary</code>, <code>.circle-icon--outlined</code>, <code>.circle-icon--outlined--primary</code>, <code>.circle-icon--outlined--inversed</code>, <code>.circle-icon--white-outline</code></p>
 				<p>There is also a mixin available to customise the circle icon color and border <code>@include icon-in-circle($bgColor: transparent, $color: $primary-color, $border: 2px solid $primary-color);</code></p>
 			</div>
 		</header>
 		<div class="container content-block">
+			<h4>Primary colour background
+				<span class="font-size-md font-regular"> = <code>.circle-icon--primary</code></span>
+			</h4>
 			<ul class="icons-list icons-list--inline">
-				<li><a class="circle-icon circle-icon--green" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
-				<li><a class="circle-icon circle-icon--green" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
-				<li><a class="circle-icon circle-icon--green" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
-				<li><a class="circle-icon circle-icon--green" href="#"><i class="icon">{{> icon-youtube }}</i></a></li>
-				<li><a class="circle-icon circle-icon--green" href="#"><i class="icon">{{> icon-instagram }}</i></a></li>
-				<li><a class="circle-icon circle-icon--green" href="#"><i class="icon">{{> icon-google }}</i></a></li>
+				<li><a class="circle-icon circle-icon--primary" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
+				<li><a class="circle-icon circle-icon--primary" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
+				<li><a class="circle-icon circle-icon--primary" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
+				<li><a class="circle-icon circle-icon--primary" href="#"><i class="icon">{{> icon-youtube }}</i></a></li>
+				<li><a class="circle-icon circle-icon--primary" href="#"><i class="icon">{{> icon-instagram }}</i></a></li>
+				<li><a class="circle-icon circle-icon--primary" href="#"><i class="icon">{{> icon-google }}</i></a></li>
 			</ul>
-			<hr>
+			<br>
+
+			<h4>Outlined with base colour border
+				<span class="font-size-md font-regular"> = <code>.circle-icon--outlined</code></span>
+			</h4>
 			<ul class="icons-list icons-list--inline">
 				<li><a class="circle-icon circle-icon--outlined" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
 				<li><a class="circle-icon circle-icon--outlined" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
@@ -116,37 +129,32 @@
 				<li><a class="circle-icon circle-icon--outlined" href="#"><i class="icon">{{> icon-instagram }}</i></a></li>
 				<li><a class="circle-icon circle-icon--outlined" href="#"><i class="icon">{{> icon-google }}</i></a></li>
 			</ul>
-			<hr>
+			<br>
+
+			<h4>Outlined with primary colour border
+				<span class="font-size-md font-regular"> = <code>.circle-icon--outlined--primary</code></span>
+			</h4>
 			<ul class="icons-list icons-list--inline">
-				<li><a class="circle-icon circle-icon--outlined-green" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
-				<li><a class="circle-icon circle-icon--outlined-green" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
-				<li><a class="circle-icon circle-icon--outlined-green" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
-				<li><a class="circle-icon circle-icon--outlined-green" href="#"><i class="icon">{{> icon-youtube }}</i></a></li>
-				<li><a class="circle-icon circle-icon--outlined-green" href="#"><i class="icon">{{> icon-instagram }}</i></a></li>
-				<li><a class="circle-icon circle-icon--outlined-green" href="#"><i class="icon">{{> icon-google }}</i></a></li>
+				<li><a class="circle-icon circle-icon--outlined--primary" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
+				<li><a class="circle-icon circle-icon--outlined--primary" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
+				<li><a class="circle-icon circle-icon--outlined--primary" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
+				<li><a class="circle-icon circle-icon--outlined--primary" href="#"><i class="icon">{{> icon-youtube }}</i></a></li>
+				<li><a class="circle-icon circle-icon--outlined--primary" href="#"><i class="icon">{{> icon-instagram }}</i></a></li>
+				<li><a class="circle-icon circle-icon--outlined--primary" href="#"><i class="icon">{{> icon-google }}</i></a></li>
 			</ul>
 		</div>
 		<div class="bg--dark-gray">
 			<div class="container content-block">
+				<h4>Outlined with inversed icon colour and border
+					<span class="font-size-md font-regular"> = <code>.circle-icon--outlined--inversed</code></span>
+				</h4>
 				<ul class="icons-list icons-list--inline">
-					<li><a class="circle-icon circle-icon--outlined-dark" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
-					<li><a class="circle-icon circle-icon--outlined-dark" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
-					<li><a class="circle-icon circle-icon--outlined-dark" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
-					<li><a class="circle-icon circle-icon--outlined-dark" href="#"><i class="icon">{{> icon-youtube }}</i></a></li>
-					<li><a class="circle-icon circle-icon--outlined-dark" href="#"><i class="icon">{{> icon-instagram }}</i></a></li>
-					<li><a class="circle-icon circle-icon--outlined-dark" href="#"><i class="icon">{{> icon-google }}</i></a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="bg--very-light-gray">
-			<div class="container content-block">
-				<ul class="icons-list icons-list--inline">
-					<li><a class="circle-icon circle-icon--white-outline" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
-					<li><a class="circle-icon circle-icon--white-outline" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
-					<li><a class="circle-icon circle-icon--white-outline" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
-					<li><a class="circle-icon circle-icon--white-outline" href="#"><i class="icon">{{> icon-youtube }}</i></a></li>
-					<li><a class="circle-icon circle-icon--white-outline" href="#"><i class="icon">{{> icon-instagram }}</i></a></li>
-					<li><a class="circle-icon circle-icon--white-outline" href="#"><i class="icon">{{> icon-google }}</i></a></li>
+					<li><a class="circle-icon circle-icon--outlined--inversed" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
+					<li><a class="circle-icon circle-icon--outlined--inversed" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
+					<li><a class="circle-icon circle-icon--outlined--inversed" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
+					<li><a class="circle-icon circle-icon--outlined--inversed" href="#"><i class="icon">{{> icon-youtube }}</i></a></li>
+					<li><a class="circle-icon circle-icon--outlined--inversed" href="#"><i class="icon">{{> icon-instagram }}</i></a></li>
+					<li><a class="circle-icon circle-icon--outlined--inversed" href="#"><i class="icon">{{> icon-google }}</i></a></li>
 				</ul>
 			</div>
 		</div>

@@ -26,13 +26,17 @@
     text-transform: lowercase;
 }
 
-.green,
 .primary {
     color: $primary-color;
 
     a {
         border-bottom: 2px solid $primary-color;
     }
+}
+
+.font-regular {
+    font-family: $font-weight-regular;
+    font-weight: normal;
 }
 
 .color-base {

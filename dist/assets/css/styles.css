@@ -1338,7 +1338,7 @@ fieldset {
     width: 20px;
     height: 20px; }
   .btn.btn--selected:hover:not(.is-disabled):before, .btn.btn--selected:focus:not(.is-disabled):before, .btn.btn--selected:active:not(.is-disabled):before {
-    background-image: url("../img/css-bg/icons/tick-green.svg"); }
+    background-image: url("../img/css-bg/icons/tick-primary.svg"); }
 
 .btn-setback {
   display: inline-block;
@@ -2164,7 +2164,7 @@ http://flickity.metafizzy.co
           height: 30px;
           margin-top: 15px;
           margin-bottom: 15px; } }
-  .circle-icon--green {
+  .circle-icon--primary {
     text-align: center;
     display: block;
     margin: 0;
@@ -2172,10 +2172,10 @@ http://flickity.metafizzy.co
     background-color: #8CC63F;
     border-radius: 50%;
     border: 2px solid #8CC63F; }
-    .circle-icon--green svg {
+    .circle-icon--primary svg {
       fill: white;
       box-sizing: content-box; }
-    .circle-icon--green:before {
+    .circle-icon--primary:before {
       color: white; }
   .circle-icon--outlined {
     text-align: center;
@@ -2190,7 +2190,7 @@ http://flickity.metafizzy.co
       box-sizing: content-box; }
     .circle-icon--outlined:before {
       color: #333; }
-  .circle-icon--outlined-green {
+  .circle-icon--outlined--primary {
     text-align: center;
     display: block;
     margin: 0;
@@ -2198,12 +2198,12 @@ http://flickity.metafizzy.co
     background-color: transparent;
     border-radius: 50%;
     border: 2px solid #8CC63F; }
-    .circle-icon--outlined-green svg {
+    .circle-icon--outlined--primary svg {
       fill: #8CC63F;
       box-sizing: content-box; }
-    .circle-icon--outlined-green:before {
+    .circle-icon--outlined--primary:before {
       color: #8CC63F; }
-  .circle-icon--outlined-dark {
+  .circle-icon--outlined--inversed {
     text-align: center;
     display: block;
     margin: 0;
@@ -2211,24 +2211,11 @@ http://flickity.metafizzy.co
     background-color: transparent;
     border-radius: 50%;
     border: 2px solid white; }
-    .circle-icon--outlined-dark svg {
+    .circle-icon--outlined--inversed svg {
       fill: white;
       box-sizing: content-box; }
-    .circle-icon--outlined-dark:before {
+    .circle-icon--outlined--inversed:before {
       color: white; }
-  .circle-icon--white-outline {
-    text-align: center;
-    display: block;
-    margin: 0;
-    padding: 0;
-    background-color: white;
-    border-radius: 50%;
-    border: 2px solid #ccc; }
-    .circle-icon--white-outline svg {
-      fill: #333;
-      box-sizing: content-box; }
-    .circle-icon--white-outline:before {
-      color: #333; }
 
 .inline-circle-icon {
   position: relative;
@@ -2410,16 +2397,16 @@ http://flickity.metafizzy.co
         opacity: 0;
         -ms-transform: rotate(360deg);
             transform: rotate(360deg); }
-  .plus-minus-toggle--green-in-circle {
+  .plus-minus-toggle--primary-in-circle {
     border-radius: 50%;
     border: 2px solid #8CC63F; }
-    .plus-minus-toggle--green-in-circle span {
+    .plus-minus-toggle--primary-in-circle span {
       position: relative;
       top: 12px;
       right: 3px;
       width: 19px;
       height: 19px; }
-      .plus-minus-toggle--green-in-circle span:before, .plus-minus-toggle--green-in-circle span:after {
+      .plus-minus-toggle--primary-in-circle span:before, .plus-minus-toggle--primary-in-circle span:after {
         background-color: #8CC63F; }
 
 .is-disabled {
@@ -2866,12 +2853,14 @@ http://flickity.metafizzy.co
 .lowercase {
   text-transform: lowercase; }
 
-.green,
 .primary {
   color: #8CC63F; }
-  .green a,
   .primary a {
     border-bottom: 2px solid #8CC63F; }
+
+.font-regular {
+  font-family: 400;
+  font-weight: normal; }
 
 .color-base {
   color: #333; }
@@ -2906,7 +2895,7 @@ http://flickity.metafizzy.co
     position: absolute;
     top: 3px;
     left: 0;
-    background-image: url("../img/css-bg/icons/tick-green.svg");
+    background-image: url("../img/css-bg/icons/tick-primary.svg");
     background-size: cover;
     width: 18px;
     height: 18px; }
@@ -2924,7 +2913,7 @@ http://flickity.metafizzy.co
     position: absolute;
     top: 2px;
     left: 0;
-    background-image: url("../img/css-bg/icons/tick-green.svg");
+    background-image: url("../img/css-bg/icons/tick-primary.svg");
     background-size: cover;
     width: 23px;
     height: 23px; }

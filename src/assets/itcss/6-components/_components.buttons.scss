@@ -84,7 +84,7 @@
         &:focus:not(.is-disabled),
         &:active:not(.is-disabled) {
             &:before {
-                background-image: url($css-bg-path+'icons/tick-green.svg');
+                background-image: url($css-bg-path+'icons/tick-primary.svg');
             }
         }
     }

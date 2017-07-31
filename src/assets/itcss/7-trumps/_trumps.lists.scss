@@ -12,14 +12,14 @@
     }
 }
 
-// List with green tick icons instead of bullets
+// List with primary colour tick icons instead of bullets
 .list--featured--ticks {
-    @include featured-icon-list($css-bg-path+'icons/tick-green.svg');
+    @include featured-icon-list($css-bg-path+'icons/tick-primary.svg');
 }
 
-// List with green tick icons instead of bullets
+// List with primary colour tick icons instead of bullets
 .list--featured--ticks--lg {
-    @include featured-icon-list-lg($css-bg-path+'icons/tick-green.svg');
+    @include featured-icon-list-lg($css-bg-path+'icons/tick-primary.svg');
 }
 
 // Inline lists - shared styles
