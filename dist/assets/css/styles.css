@@ -102,19 +102,19 @@ h1,
     list-style: none;
     padding-left: 0; }
 
-.button, .remove-link-styles,
+.btn, .remove-link-styles,
 .remove-link-styles a {
   font-weight: inherit;
   text-decoration: none; }
 
-.button-setback, .gallery-simple__thumbnails li .thumbnail, .clickable {
+.btn-setback, .gallery-simple__thumbnails li .thumbnail, .clickable {
   cursor: pointer; }
-  .button-setback:active, .gallery-simple__thumbnails li .thumbnail:active, .clickable:active, .button-setback:focus, .gallery-simple__thumbnails li .thumbnail:focus, .clickable:focus, .button-setback:hover, .gallery-simple__thumbnails li .thumbnail:hover, .clickable:hover {
+  .btn-setback:active, .gallery-simple__thumbnails li .thumbnail:active, .clickable:active, .btn-setback:focus, .gallery-simple__thumbnails li .thumbnail:focus, .clickable:focus, .btn-setback:hover, .gallery-simple__thumbnails li .thumbnail:hover, .clickable:hover {
     opacity: 0.7; }
 
-.button.button--selected, .tooltip-icon {
+.btn.btn--selected, .tooltip-icon {
   text-indent: -9999px; }
-  .button.button--selected:before, .tooltip-icon:before, .button.button--selected:after, .tooltip-icon:after {
+  .btn.btn--selected:before, .tooltip-icon:before, .btn.btn--selected:after, .tooltip-icon:after {
     text-indent: 0;
     float: left;
     width: 100%;
@@ -1137,21 +1137,21 @@ fieldset {
   .max-width-text--narrow {
     max-width: 500px; }
 
-.buttons-container {
+.btns-container {
   margin-top: -10px;
   margin-bottom: -10px;
   overflow: hidden; }
-  .buttons-container .button,
-  .buttons-container .button-setback {
+  .btns-container .btn,
+  .btns-container .btn-setback {
     display: block;
     margin-top: 10px;
     margin-bottom: 10px; }
 
-.buttons-container--inline {
+.btns-container--inline {
   margin: -10px;
   overflow: hidden; }
-  .buttons-container--inline .button,
-  .buttons-container--inline .button-setback {
+  .btns-container--inline .btn,
+  .btns-container--inline .btn-setback {
     margin: 10px; }
 
 .content-block {
@@ -1295,7 +1295,7 @@ fieldset {
       color: #971e23;
       text-decoration: underline; }
 
-.button {
+.btn {
   cursor: pointer;
   box-sizing: border-box;
   vertical-align: middle;
@@ -1314,33 +1314,33 @@ fieldset {
   transition: all 0.2s ease;
   max-width: 37.5rem; }
   @media (min-width: 40em) {
-    .button {
+    .btn {
       padding-right: 35px;
       padding-left: 35px; } }
-  .button:focus {
+  .btn:focus {
     outline: none; }
-  .button:hover:not(.is-disabled), .button:focus:not(.is-disabled), .button:active:not(.is-disabled) {
+  .btn:hover:not(.is-disabled), .btn:focus:not(.is-disabled), .btn:active:not(.is-disabled) {
     color: #8CC63F;
     background-color: transparent;
     border-color: #8CC63F;
     opacity: 1; }
-  .button.button--secondary {
+  .btn.btn--secondary {
     color: white;
     background-color: #b3b3b3;
     border-color: #b3b3b3; }
-    .button.button--secondary:hover:not(.is-disabled), .button.button--secondary:focus:not(.is-disabled), .button.button--secondary:active:not(.is-disabled) {
+    .btn.btn--secondary:hover:not(.is-disabled), .btn.btn--secondary:focus:not(.is-disabled), .btn.btn--secondary:active:not(.is-disabled) {
       color: #b3b3b3;
       background-color: transparent;
       border-color: #b3b3b3; }
-  .button.button--tertiary {
+  .btn.btn--tertiary {
     color: #4d4d4d;
     background-color: transparent;
     border-color: #4d4d4d; }
-    .button.button--tertiary:hover:not(.is-disabled), .button.button--tertiary:focus:not(.is-disabled), .button.button--tertiary:active:not(.is-disabled) {
+    .btn.btn--tertiary:hover:not(.is-disabled), .btn.btn--tertiary:focus:not(.is-disabled), .btn.btn--tertiary:active:not(.is-disabled) {
       color: white;
       background-color: #4d4d4d;
       border-color: #4d4d4d; }
-  .button.button--selected:before {
+  .btn.btn--selected:before {
     margin-right: auto;
     margin-left: auto;
     display: block;
@@ -1349,15 +1349,15 @@ fieldset {
     background-size: cover;
     width: 20px;
     height: 20px; }
-  .button.button--selected:hover:not(.is-disabled):before, .button.button--selected:focus:not(.is-disabled):before, .button.button--selected:active:not(.is-disabled):before {
+  .btn.btn--selected:hover:not(.is-disabled):before, .btn.btn--selected:focus:not(.is-disabled):before, .btn.btn--selected:active:not(.is-disabled):before {
     background-image: url("../img/css-bg/icons/tick-green.svg"); }
 
-.button-setback {
+.btn-setback {
   display: inline-block;
   color: #333;
   font-weight: 700;
   text-decoration: underline; }
-  .button-setback svg {
+  .btn-setback svg {
     position: relative;
     top: 0.1em;
     height: 1em;
@@ -1578,7 +1578,7 @@ http://flickity.metafizzy.co
         width: 500px;
         margin-left: -250px;
         left: 50%; } }
-    .confirm-popup__box .button {
+    .confirm-popup__box .btn {
       margin-top: 20px; }
 
 .gallery-simple {

@@ -2,7 +2,7 @@
 //  COMPONENTS - BUTONS
 // =============================================================================
 
-.button {
+.btn {
     @extend %remove-link-styles;
     cursor: pointer;
     box-sizing: border-box;
@@ -39,7 +39,7 @@
         opacity: 1;
     }
 
-    &.button--secondary {
+    &.btn--secondary {
         color: white;
         background-color: $gray;
         border-color: $gray;
@@ -53,7 +53,7 @@
         }
     }
 
-    &.button--tertiary {
+    &.btn--tertiary {
         color: $gray-dark;
         background-color: transparent;
         border-color: $gray-dark;
@@ -67,7 +67,7 @@
         }
     }
 
-    &.button--selected {
+    &.btn--selected {
         @extend %hide-text-not-pseudo;
 
         &:before {
@@ -90,7 +90,7 @@
     }
 }
 
-.button-setback {
+.btn-setback {
     @extend %clickable;
     display: inline-block;
     color: $font-color-base;
