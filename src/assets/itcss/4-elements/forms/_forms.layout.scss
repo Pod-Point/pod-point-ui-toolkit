@@ -14,17 +14,3 @@
         margin-bottom: 0;
     }
 }
-
-// Form spacing for modifying form__group or form__field or whatever is needed
-.form-spacing-none {
-    margin-bottom: 0;
-}
-.form-spacing-sm {
-    margin-bottom: $form-group-base-spacing / 2;
-}
-.form-spacing-md {
-    margin-bottom: $form-group-base-spacing;
-}
-.form-spacing-lg {
-    margin-bottom: $form-group-base-spacing * 2;
-}

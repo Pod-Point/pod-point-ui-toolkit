@@ -43,18 +43,24 @@
         <header class="content-block bg--light-gray">
             <div class="container">
                 <h3>Form layout</h3>
+
+                <p>Note: some variables are in the settings file <code>settings.forms.scss</code> and can be reassigned after the include of the file if required</p>
+
                 <p>Use the class <code>.form</code> on the element that contains all the form elements</p>
 
                 <h5>Form group</h5>
                 <p>Use the class <code>.form__group</code> to wrap each form field or group of fields (such as a group of radios).</p>
-                <p>Form group includes a base bottom margin to give space between fields but can be added or overridden with the following helper classes <code>form-spacing-none</code>, <code>form-spacing-sm</code>, <code>form-spacing-md</code>, <code>form-spacing-lg</code></p>
+                <p>Form group includes a bottom margin of 30px (variable: <code>$form-group-base-spacing</code>) to give space between fields</p>
+                <p>Note: global spacing helper classes can also be applied <code>.m-b-none</code>, <code>.m-b-xs</code>, <code>.m-b-sm</code>, <code>.m-b-md</code> etc.</p>
 
                 <h5>Form field</h5>
-                <p>Use the class <code>.form__field</code> for each field. The form field includes the max-width style.
+                <p>Use the class <code>.form__field</code> for each field.</p>
+                <p>The form field includes the max-width style (variable: <code>$form-field-max-width</code>)</p>
                 <p>Note: Form fields can be used for the placement of error messages directly underneath, therefore it is best not to add a bottom margin</p>
 
                 <h5>Form label</h5>
-                <p>Use the class <code>.form__label</code> for a form field label - which is styled as small, bold font. The form label includes the max-width style.</p>
+                <p>Use the class <code>.form__label</code> for a form field label - which is styled as small, bold font.</p>
+                <p>The form label includes the max-width style (variable: <code>$form-field-max-width</code>)</p>
 
                 <h5>Disabled fields</h5>
                 <p>All fields can use the disabled attribute which will apply the disabled styles, however the select element needs a class <code>.is-disabled</code> added to the <code>.select</code></p>

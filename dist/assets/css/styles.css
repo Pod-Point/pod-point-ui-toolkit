@@ -566,18 +566,6 @@ figure {
   .form__group:last-child {
     margin-bottom: 0; }
 
-.form-spacing-none {
-  margin-bottom: 0; }
-
-.form-spacing-sm {
-  margin-bottom: 15px; }
-
-.form-spacing-md {
-  margin-bottom: 30px; }
-
-.form-spacing-lg {
-  margin-bottom: 60px; }
-
 input[type="date"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"] {
   margin: 0;
   line-height: 1.125rem;
