@@ -8535,42 +8535,42 @@
 	    var videoWidth = videoWrapper.getAttribute('data-video-width');
 	    var videoHeight = videoWrapper.getAttribute('data-video-height');
 	    var videoFullscreen = videoWrapper.getAttribute('data-video-fullscreen') === 'true';
+	    var options = {};
 	
 	    // Get any extra options and convert into an object
 	    var videoExtraOptions = videoWrapper.getAttribute('data-video-options');
 	    var videoExtraOptionsObject = void 0;
 	    if (videoExtraOptions) {
-	        videoExtraOptionsObject = videoExtraOptions.split('&').reduce(function (prev, curr, i, arr) {
+	        videoExtraOptionsObject = videoExtraOptions.split('&').reduce(function (prev, curr) {
 	            var p = curr.split('=');
-	            prev[decodeURIComponent(p[0])] = decodeURIComponent(p[1]);
-	            return prev;
+	            var newPrev = prev;
+	            newPrev[decodeURIComponent(p[0])] = decodeURIComponent(p[1]);
+	            return newPrev;
 	        }, {});
 	    }
 	
-	    switch (videoType) {
+	    switch (videoType) {// eslint-disable-line default-case
 	        case 'vimeo':
-	            {
-	                var options = {
-	                    id: videoId,
-	                    width: videoWidth,
-	                    height: videoHeight
-	                };
+	            options = {
+	                id: videoId,
+	                width: videoWidth,
+	                height: videoHeight
+	            };
 	
-	                if (typeof videoExtraOptionsObject !== 'undefined') {
-	                    options = Object.assign(options, videoExtraOptionsObject);
-	                }
-	
-	                // Create the player
-	                window[wrapperId] = new _player2.default(videoWrapper, options);
-	                break;
+	            if (typeof videoExtraOptionsObject !== 'undefined') {
+	                options = Object.assign(options, videoExtraOptionsObject);
 	            }
+	
+	            // Create the player
+	            window[wrapperId] = new _player2.default(videoWrapper, options);
+	            break;
 	        case 'youtube':
 	            {
 	                // YouTube player needs an extra child div to create iframe from so we don't replace wrapper
 	                var videoDiv = document.createElement('div');
 	                videoWrapper.appendChild(videoDiv);
 	
-	                var _options = {
+	                options = {
 	                    width: videoWidth,
 	                    height: videoHeight,
 	                    videoId: videoId,
@@ -8581,11 +8581,11 @@
 	                };
 	
 	                if (typeof videoExtraOptionsObject !== 'undefined') {
-	                    _options = Object.assign(_options, videoExtraOptionsObject);
+	                    options = Object.assign(options, videoExtraOptionsObject);
 	                }
 	
 	                // Create the player
-	                window[wrapperId] = (0, _youtubePlayer2.default)(videoDiv, _options);
+	                window[wrapperId] = (0, _youtubePlayer2.default)(videoDiv, options);
 	                break;
 	            }
 	    }

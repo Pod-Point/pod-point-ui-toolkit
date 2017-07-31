@@ -17,21 +17,23 @@ class Video {
         const videoWidth = videoWrapper.getAttribute('data-video-width');
         const videoHeight = videoWrapper.getAttribute('data-video-height');
         const videoFullscreen = (videoWrapper.getAttribute('data-video-fullscreen') === 'true');
+        let options = {};
 
         // Get any extra options and convert into an object
         const videoExtraOptions = videoWrapper.getAttribute('data-video-options');
         let videoExtraOptionsObject;
         if (videoExtraOptions) {
-            videoExtraOptionsObject = videoExtraOptions.split('&').reduce((prev, curr, i, arr) => {
+            videoExtraOptionsObject = videoExtraOptions.split('&').reduce((prev, curr) => {
                 const p = curr.split('=');
-                prev[decodeURIComponent(p[0])] = decodeURIComponent(p[1]);
-                return prev;
+                const newPrev = prev;
+                newPrev[decodeURIComponent(p[0])] = decodeURIComponent(p[1]);
+                return newPrev;
             }, {});
         }
 
-        switch (videoType) {
-            case 'vimeo': {
-                let options = {
+        switch (videoType) { // eslint-disable-line default-case
+            case 'vimeo':
+                options = {
                     id: videoId,
                     width: videoWidth,
                     height: videoHeight,
@@ -44,13 +46,12 @@ class Video {
                 // Create the player
                 window[wrapperId] = new Player(videoWrapper, options);
                 break;
-            }
             case 'youtube': {
                 // YouTube player needs an extra child div to create iframe from so we don't replace wrapper
                 const videoDiv = document.createElement('div');
                 videoWrapper.appendChild(videoDiv);
 
-                let options = {
+                options = {
                     width: videoWidth,
                     height: videoHeight,
                     videoId,
