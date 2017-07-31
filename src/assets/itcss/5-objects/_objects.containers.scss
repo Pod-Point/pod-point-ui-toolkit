@@ -28,13 +28,14 @@
         display: block;
         @include margin(10px null);
     }
-}
-.btns-container--inline {
-    @include margin(-10px);
-    overflow: hidden;
 
-    .btn,
-    .btn-setback {
-        @include margin(10px);
+    &--inline {
+        @include margin(-10px);
+
+        .btn,
+        .btn-setback {
+            display: inline-block;
+            @include margin(10px);
+        }
     }
 }

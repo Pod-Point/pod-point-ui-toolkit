@@ -1,0 +1,60 @@
+{{> demo-header }}
+<div data-page="confirm">
+    <header class="content-block content-block--strip bg--primary-color">
+        <div class="container">
+            <h2>Confirm popup</h2>
+        </div>
+    </header>
+
+
+    <!-- CONFIRM POPUP -->
+    <section>
+        <header class="content-block bg--light-gray">
+            <div class="container">
+                <h3>Required files</h3>
+                <p>SCSS files required: <code>_components.confirm-popup.scss</code></p>
+                <p>JS files required: <code>toggle-element.js</code></p>
+
+                <h3>The markup</h3>
+
+                <p>The confirm box wrapping element requires an ID eg <code>#confirmBoxExample</code> to be targetted, the two classes <code>.confirm-popup</code> and <code>.hidden</code>, and the javascript module to be applied <code>data-js-module="toggleElement"</code></p>
+
+                <p>The box itself required the class <code>.confirm-popup__box</code> and a modifying class can be added to create a wider box <code>.confirm-popup__box--lg</code></p>
+
+                <p>To trigger opening the popup use the 'data-open-el' attribute and ID of the confirm box <code>data-open-el="confirmBoxExample"</code></p>
+
+                <p>To trigger closing the popup use the 'data-close-el' attribute and ID of the confirm box <code>data-close-el="confirmBoxExample"</code></p>
+
+<figure>
+<pre>
+&#x3C;button type=&#x22;button&#x22; class=&#x22;btn&#x22; data-open-el=&#x22;confirmBoxExample&#x22;&#x3E;Open confirm popup&#x3C;/button&#x3E;
+
+&#x3C;div id=&#x22;confirmBoxExample&#x22; class=&#x22;confirm-popup hidden&#x22; data-js-module=&#x22;toggleElement&#x22;&#x3E;
+    &#x3C;div class=&#x22;confirm-popup__box&#x22;&#x3E;
+        &#x3C;p&#x3E;Hi, I am a confirm box&#x3C;/p&#x3E;
+        &#x3C;button type=&#x22;button&#x22; class=&#x22;btn&#x22; data-close-el=&#x22;confirmBoxExample&#x22;&#x3E;Confirm&#x3C;/button&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</pre>
+</figure>
+
+            </div>
+        </header>
+        <div class="content-block">
+            <div class="container">
+                <button type="button" class="btn" data-open-el="confirmBoxExample">Open confirm popup</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="confirmBoxExample" class="confirm-popup hidden" data-js-module="toggleElement">
+        <div class="confirm-popup__box">
+            <p>Hi, I am a confirm box</p>
+            <div class="btns-container btns-container--inline">
+                <button type="button" class="btn" data-close-el="confirmBoxExample">Confirm</button>
+                <button type="button" class="btn btn--tertiary" data-close-el="confirmBoxExample">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+</div>
