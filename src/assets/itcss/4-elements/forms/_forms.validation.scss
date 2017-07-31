@@ -18,7 +18,7 @@
 .form__group--error {
     #{$inputs},
     textarea[type="text"],
-    .select-wrapper select {
+    .select select {
         border-color: $error-red;
     }
 }
@@ -26,7 +26,7 @@
 .form__group--valid {
     #{$inputs},
     textarea[type="text"],
-    .select-wrapper select {
+    .select select {
         border-color: $primary-color;
     }
 }

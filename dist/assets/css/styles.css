@@ -883,12 +883,12 @@ fieldset {
 
 .form__group--error input[type="date"], .form__group--error input[type="email"], .form__group--error input[type="number"], .form__group--error input[type="password"], .form__group--error input[type="search"], .form__group--error input[type="tel"], .form__group--error input[type="text"], .form__group--error input[type="url"],
 .form__group--error textarea[type="text"],
-.form__group--error .select-wrapper select {
+.form__group--error .select select {
   border-color: #C1272D; }
 
 .form__group--valid input[type="date"], .form__group--valid input[type="email"], .form__group--valid input[type="number"], .form__group--valid input[type="password"], .form__group--valid input[type="search"], .form__group--valid input[type="tel"], .form__group--valid input[type="text"], .form__group--valid input[type="url"],
 .form__group--valid textarea[type="text"],
-.form__group--valid .select-wrapper select {
+.form__group--valid .select select {
   border-color: #8CC63F; }
 
 .form__error {
