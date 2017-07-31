@@ -1,0 +1,15 @@
+// =============================================================================
+//  TRUMPS - FADES
+// =============================================================================
+
+.fade-in {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+}
+
+.fade-in-slow {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+}

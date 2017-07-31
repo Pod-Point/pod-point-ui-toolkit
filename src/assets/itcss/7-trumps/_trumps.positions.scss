@@ -1,0 +1,49 @@
+// =============================================================================
+//  TRUMPS - POSITIONS
+// =============================================================================
+
+// Position properties
+.pos-sta {
+    position: static;
+}
+
+.pos-rel {
+    position: relative;
+}
+
+.pos-abs {
+    position: absolute;
+}
+
+.pos-fix {
+    position: fixed;
+}
+
+// Pinning an element in each corner
+.pin-top-right {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+}
+
+.pin-bottom-right {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+}
+
+.pin-top-left {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+}
+
+.pin-bottom-left {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+}

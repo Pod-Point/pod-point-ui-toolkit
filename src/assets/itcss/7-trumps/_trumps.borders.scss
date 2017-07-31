@@ -1,0 +1,32 @@
+// =============================================================================
+//  TRUMPS - BORDERS
+// =============================================================================
+
+.b {
+    // Base border (top and bottom)
+    &-t-base {
+        border-top: $border-base;
+    }
+
+    &-b-base {
+        border-bottom: $border-base;
+    }
+
+    // Thin border (top and bottom)
+    &-t-thin {
+        border-top: $border-thin;
+    }
+
+    &-b-thin {
+        border-bottom: $border-thin;
+    }
+
+    // No border (top and bottom)
+    &-t-none {
+        border-top: none!important;
+    }
+
+    &-b-none {
+        border-bottom: none!important;
+    }
+}

@@ -1,0 +1,41 @@
+// =============================================================================
+//  TRUMPS - ACCORDION PANEL SIZES
+// =============================================================================
+
+// Using CSS to animate the height of a container means we need to give it an explicit max-height
+// However if we give it an extra large max-height on a small panel it will cause a delay effect on the animation // So here are some accordion panel modifying classes for the different approx sizes we might need
+
+.accordion-panel {
+
+    &--xs {
+        @include slideDownCollapsed(0.8s);
+
+        &.is-open {
+            @include slideDownActive(0.5s, 200px);
+        }
+    }
+
+    &--sm {
+        @include slideDownCollapsed(0.8s);
+
+        &.is-open {
+            @include slideDownActive(0.5s, 400px);
+        }
+    }
+
+    &--md {
+        @include slideDownCollapsed(0.8s);
+
+        &.is-open {
+            @include slideDownActive(1s, 1000px);
+        }
+    }
+
+    &--xl {
+        @include slideDownCollapsed(0.8s);
+
+        &.is-open {
+            @include slideDownActive(1s, 3000px);
+        }
+    }
+}

@@ -18,6 +18,14 @@
     @include font-size-xl;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
 .green,
 .primary {
     color: $primary-color;

@@ -1,0 +1,62 @@
+// =============================================================================
+//  TRUMPS - WIDTHS
+// =============================================================================
+
+.width-100 {
+    width: 100%;
+}
+
+.max-width-content {
+    max-width: $max-width-content;
+}
+
+.max-width-text {
+    max-width: $max-width-text;
+}
+
+.max-width-text-wider {
+    max-width: $max-width-text-wider;
+}
+
+.max-width-text-wide {
+    max-width: $max-width-text-wide;
+}
+
+.max-width-text-narrow {
+    max-width: $max-width-text-narrow;
+}
+
+.max-width {
+
+    &--xxs {
+        max-width: $max-width-xxs;
+    }
+
+    &--xs {
+        max-width: $max-width-xs;
+    }
+
+    &--sm {
+        max-width: $max-width-sm;
+    }
+
+    &--md {
+        max-width: $max-width-md;
+    }
+
+    &--lg {
+        max-width: $max-width-lg;
+    }
+
+    &--xl {
+        max-width: $max-width-xl;
+    }
+
+    &--xxl {
+        max-width: $max-width-xxl;
+    }
+
+    &--xxxl {
+        max-width: $max-width-xxxl;
+    }
+}
