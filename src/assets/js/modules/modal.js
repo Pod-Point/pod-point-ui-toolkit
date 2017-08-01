@@ -17,7 +17,6 @@ class Modal {
         this.modal = document.querySelector(`#${modalID}`);
         this.closeButton = this.modal.querySelector('.modal-close');
         this.videoWrapper = this.modal.querySelector('.video-wrapper');
-
         this.bindEvents();
     }
 

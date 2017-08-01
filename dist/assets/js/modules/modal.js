@@ -28,8 +28,13 @@ var Modal = function () {
         this.openButton = element;
         var modalID = this.openButton.getAttribute('data-modal');
         this.modal = document.querySelector('#' + modalID);
+<<<<<<< HEAD
         this.closeButton = this.modal.querySelector('.modal-close');
         this.videoWrapper = this.modal.querySelector('.video-wrapper');
+=======
+        this.closeButton = this.modal.querySelector('.modal__close');
+        this.video = this.modal.querySelector('.video-wrapper iframe');
+>>>>>>> cleaned up and refined the modals and created the docs and examples. Also made bg classes bg-white instead of bg--white as bg doesnt work on its own
 
         this.bindEvents();
     }

@@ -2,47 +2,39 @@
 //  TRUMPS - BACKGROUNDS
 // =============================================================================
 
-.bg--white {
+.bg-white {
     background-color: white;
-
-    & + .bg--white {
-        border-top: $border-thin;
-    }
+    color: $font-color-base;
 }
 
-.main > .bg--white:first-child,
-.global-header-wrap + .bg--white {
-    border-top: $border-thin;
-}
-
-.bg--dark-gray {
+.bg-dark-gray {
     background-color: $gray-dark;
     color: white;
 }
 
-.bg--very-dark-gray {
+.bg-very-dark-gray {
     background-color: $gray-very-dark;
     color: white;
 }
 
-.bg--very-light-gray {
+.bg-very-light-gray {
     background-color: $gray-very-light;
 }
 
-.bg--light-gray {
+.bg-light-gray {
     background-color: $gray-light;
 }
 
-.bg--primary-color {
+.bg-primary {
     background-color: $primary-color;
     color: white;
 }
 
-.bg--sky-blue {
+.bg-sky-blue {
     background-color: $sky-blue;
 }
 
-.bg--img-cover {
+.bg-img-cover {
     background-position: center center;
     background-size: cover;
 }

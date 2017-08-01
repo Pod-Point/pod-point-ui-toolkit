@@ -14,8 +14,8 @@
     width: 100%;
     min-height: 100%;
 
-    .circle-icon--close {
-        @include position(absolute, -50px $horizontal-spacing-mobile null null);
+    .modal__close {
+        @include position(absolute, -55px $horizontal-spacing null null);
 
         @include screen-md-min {
             @include position(absolute, -70px $horizontal-spacing null null);
@@ -23,43 +23,23 @@
     }
 
     &__content {
+        text-align: center;
         position: relative;
         @include container;
         @include margin(80px null);
+        color: white;
 
         @include screen-md-min {
             @include margin(100px null);
         }
 
-        .panel {
-            text-align: center;
-            color: white;
-
-            &__title {
-                color: white;
-                @include heading-style-1;
-            }
-
-            &__text-content {
-                max-width: $max-width-text;
-                @include margin(null auto);
-            }
-        }
-
-        &--white {
-            background-color: white;
-
-            .panel {
-                color: $font-color-base;
-
-                &__title {
-                    color: $font-color-base;
-                }
-            }
-        }
-
         &--narrow {
-            max-width: 700px;
+            max-width: 800px;
         }
+    }
+
+    &__panel {
+        @include horizontal-spacing;
+        @include padding(40px null);
     }
 }

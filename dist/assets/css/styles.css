@@ -8,7 +8,7 @@ h1,
 .h3, h4,
 .h4, h5,
 .h5, h6,
-.h6, .modal__content .panel__title, .tooltip__box .rich-text h1,
+.h6, .tooltip__box .rich-text h1,
 .tooltip__box .rich-text h2,
 .tooltip__box .rich-text h3,
 .tooltip__box .rich-text h4,
@@ -25,7 +25,7 @@ h1,
   .h3:first-child, h4:first-child,
   .h4:first-child, h5:first-child,
   .h5:first-child, h6:first-child,
-  .h6:first-child, .modal__content .panel__title:first-child, .tooltip__box .rich-text h1:first-child,
+  .h6:first-child, .tooltip__box .rich-text h1:first-child,
   .tooltip__box .rich-text h2:first-child,
   .tooltip__box .rich-text h3:first-child,
   .tooltip__box .rich-text h4:first-child,
@@ -38,7 +38,7 @@ h1,
   .h3:last-child, h4:last-child,
   .h4:last-child, h5:last-child,
   .h5:last-child, h6:last-child,
-  .h6:last-child, .modal__content .panel__title:last-child, .tooltip__box .rich-text h1:last-child,
+  .h6:last-child, .tooltip__box .rich-text h1:last-child,
   .tooltip__box .rich-text h2:last-child,
   .tooltip__box .rich-text h3:last-child,
   .tooltip__box .rich-text h4:last-child,
@@ -1935,16 +1935,17 @@ http://flickity.metafizzy.co
   overflow-y: scroll;
   width: 100%;
   min-height: 100%; }
-  .modal .circle-icon--close {
+  .modal .modal__close {
     position: absolute;
-    top: -50px;
-    right: 25px; }
+    top: -55px;
+    right: 30px; }
     @media (min-width: 50em) {
-      .modal .circle-icon--close {
+      .modal .modal__close {
         position: absolute;
         top: -70px;
         right: 30px; } }
   .modal__content {
+    text-align: center;
     position: relative;
     margin-right: auto;
     margin-left: auto;
@@ -1952,7 +1953,8 @@ http://flickity.metafizzy.co
     padding-right: 25px;
     padding-left: 25px;
     margin-top: 80px;
-    margin-bottom: 80px; }
+    margin-bottom: 80px;
+    color: white; }
     @media (min-width: 50em) {
       .modal__content {
         padding-right: 30px;
@@ -1961,27 +1963,17 @@ http://flickity.metafizzy.co
       .modal__content {
         margin-top: 100px;
         margin-bottom: 100px; } }
-    .modal__content .panel {
-      text-align: center;
-      color: white; }
-      .modal__content .panel__title {
-        color: white;
-        font-size: 1.25rem; }
-        @media (min-width: 50em) {
-          .modal__content .panel__title {
-            font-size: 1.75rem; } }
-      .modal__content .panel__text-content {
-        max-width: 600px;
-        margin-right: auto;
-        margin-left: auto; }
-    .modal__content--white {
-      background-color: white; }
-      .modal__content--white .panel {
-        color: #333; }
-        .modal__content--white .panel__title {
-          color: #333; }
     .modal__content--narrow {
-      max-width: 700px; }
+      max-width: 800px; }
+  .modal__panel {
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-top: 40px;
+    padding-bottom: 40px; }
+    @media (min-width: 50em) {
+      .modal__panel {
+        padding-right: 30px;
+        padding-left: 30px; } }
 
 .tooltip-icon {
   text-align: center;
@@ -2787,37 +2779,32 @@ http://flickity.metafizzy.co
 .p-l-xl {
   padding-left: 50px !important; }
 
-.bg--white {
-  background-color: white; }
-  .bg--white + .bg--white {
-    border-top: 1px solid #e2e2e2; }
+.bg-white {
+  background-color: white;
+  color: #333; }
 
-.main > .bg--white:first-child,
-.global-header-wrap + .bg--white {
-  border-top: 1px solid #e2e2e2; }
-
-.bg--dark-gray {
+.bg-dark-gray {
   background-color: #4d4d4d;
   color: white; }
 
-.bg--very-dark-gray {
+.bg-very-dark-gray {
   background-color: #2a2a2a;
   color: white; }
 
-.bg--very-light-gray {
+.bg-very-light-gray {
   background-color: #f9fafa; }
 
-.bg--light-gray {
+.bg-light-gray {
   background-color: #f2f2f2; }
 
-.bg--primary-color {
+.bg-primary {
   background-color: #8CC63F;
   color: white; }
 
-.bg--sky-blue {
+.bg-sky-blue {
   background-color: #deeefc; }
 
-.bg--img-cover {
+.bg-img-cover {
   background-position: center center;
   background-size: cover; }
 
@@ -2858,6 +2845,9 @@ http://flickity.metafizzy.co
 
 .b-b-none {
   border-bottom: none !important; }
+
+.b-radius {
+  border-radius: 5px; }
 
 .font-size-xs {
   font-size: 0.625rem; }

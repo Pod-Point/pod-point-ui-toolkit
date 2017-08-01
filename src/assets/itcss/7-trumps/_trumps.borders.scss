@@ -29,4 +29,9 @@
     &-b-none {
         border-bottom: none!important;
     }
+
+    // Border radius
+    &-radius {
+        border-radius: $border-radius-base;
+    }
 }
