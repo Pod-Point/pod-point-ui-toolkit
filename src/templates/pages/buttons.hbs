@@ -8,7 +8,7 @@
 
 
 	<!-- BUTTON CONTAINERS -->
-	<section>
+	<section id="buttonsContainer">
 		<header class="content-block bg--light-gray">
 			<div class="container">
 				<h3>Button containers</h3>
@@ -19,7 +19,7 @@
 
 
 	<!-- ACTIVE BUTTONS -->
-	<section>
+	<section id="buttonsActive">
 		<header class="content-block bg--light-gray">
 			<div class="container">
 				<h3>Active buttons</h3>
@@ -40,7 +40,7 @@
 
 
 	<!-- DISABLED BUTTONS -->
-	<section>
+	<section id="buttonsDisabled">
 		<header class="content-block bg--light-gray">
 			<div class="container">
 				<h3>Disabled buttons</h3>
@@ -59,21 +59,20 @@
 	</section>
 
 
-	<!-- SETBACK BUTTON -->
-	<section>
+	<!-- PASSIVE BUTTON -->
+	<section id="buttonsPassive">
 		<header class="content-block bg--light-gray">
 			<div class="container">
-				<h3>Setback buttons</h3>
-				<p>Use the class <code>.btn-setback</code></p>
-				<p>There is an option to add an svg icon embed inside the button</p>
+				<h3>Passive buttons</h3>
+				<p>Use the class <code>.btn</code> as well as the modifying class <code>.btn--passive</code></p>
+				<p>There is an option to add an svg icon embed inside the button. See the <a href="/icons.html#iconsInline">icons example page</a> for more info on inline icons</p>
 			</div>
 		</header>
 		<div class="content-block">
 			<div class="container">
 				<div class="btns-container">
-					<button class="btn-setback">Setback button</button>
-					<button class="btn-setback">Setback button with cheveron icon{{> icon-cheveron }}</button>
-					<button class="btn-setback">Setback button with cross icon{{> icon-cross }}</button>
+					<button class="btn btn--passive">Passive button</button>
+					<button class="btn btn--passive"><span>Passive button with cheveron icon</span><i class="icon icon--inline">{{> icon-cheveron }}</i></button>
 				</div>
 			</div>
 		</div>

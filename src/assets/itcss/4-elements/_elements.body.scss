@@ -9,7 +9,7 @@ body {
     font-family: $font-family-base;
     font-weight: $font-weight-regular;
     @include font-size-md;
-    line-height: 1.5;
+    line-height: $line-height-base;
     -webkit-text-size-adjust:100%;
     -ms-text-size-adjust:100%;
     -webkit-text-shadow:rgba(255,255,255,0.01) 0 0 1px;

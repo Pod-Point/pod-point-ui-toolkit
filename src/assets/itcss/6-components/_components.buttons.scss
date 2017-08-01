@@ -90,18 +90,27 @@
     }
 }
 
-.btn-setback {
+.btn--passive {
     @extend %clickable;
+    padding: 0;
+    background-color: transparent;
+    border: none;
     display: inline-block;
     color: $font-color-base;
     font-weight: $font-weight-bold;
     text-decoration: underline;
+    line-height: $line-height-base;
+    min-height: auto;
+    max-width: auto;
 
-    svg {
-        position: relative;
-        top: 0.1em;
-        height: 1em;
-        width: 1em;
-        @include margin(null 5px);
+    @include screen-sm-min {
+        padding: 0;
+    }
+
+    &:hover:not(.is-disabled),
+    &:focus:not(.is-disabled),
+    &:active:not(.is-disabled) {
+        color: $font-color-base;
+        opacity: 0.8;
     }
 }

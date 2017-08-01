@@ -107,9 +107,9 @@ h1,
   font-weight: inherit;
   text-decoration: none; }
 
-.btn-setback, .gallery-simple__thumbnails li .thumbnail, .clickable {
+.btn--passive, .gallery-simple__thumbnails li .thumbnail, .clickable {
   cursor: pointer; }
-  .btn-setback:active, .gallery-simple__thumbnails li .thumbnail:active, .clickable:active, .btn-setback:focus, .gallery-simple__thumbnails li .thumbnail:focus, .clickable:focus, .btn-setback:hover, .gallery-simple__thumbnails li .thumbnail:hover, .clickable:hover {
+  .btn--passive:active, .gallery-simple__thumbnails li .thumbnail:active, .clickable:active, .btn--passive:focus, .gallery-simple__thumbnails li .thumbnail:focus, .clickable:focus, .btn--passive:hover, .gallery-simple__thumbnails li .thumbnail:hover, .clickable:hover {
     opacity: 0.7; }
 
 .btn.btn--selected, .tooltip-icon {
@@ -1129,15 +1129,13 @@ fieldset {
   margin-top: -10px;
   margin-bottom: -10px;
   overflow: hidden; }
-  .btns-container .btn,
-  .btns-container .btn-setback {
+  .btns-container .btn {
     display: block;
     margin-top: 10px;
     margin-bottom: 10px; }
   .btns-container--inline {
     margin: -10px; }
-    .btns-container--inline .btn,
-    .btns-container--inline .btn-setback {
+    .btns-container--inline .btn {
       display: inline-block;
       margin: 10px; }
 
@@ -1339,18 +1337,23 @@ fieldset {
   .btn.btn--selected:hover:not(.is-disabled):before, .btn.btn--selected:focus:not(.is-disabled):before, .btn.btn--selected:active:not(.is-disabled):before {
     background-image: url("../img/css-bg/icons/tick-primary.svg"); }
 
-.btn-setback {
+.btn--passive {
+  padding: 0;
+  background-color: transparent;
+  border: none;
   display: inline-block;
   color: #333;
   font-weight: 700;
-  text-decoration: underline; }
-  .btn-setback svg {
-    position: relative;
-    top: 0.1em;
-    height: 1em;
-    width: 1em;
-    margin-right: 5px;
-    margin-left: 5px; }
+  text-decoration: underline;
+  line-height: 1.5;
+  min-height: auto;
+  max-width: auto; }
+  @media (min-width: 40em) {
+    .btn--passive {
+      padding: 0; } }
+  .btn--passive:hover:not(.is-disabled), .btn--passive:focus:not(.is-disabled), .btn--passive:active:not(.is-disabled) {
+    color: #333;
+    opacity: 0.8; }
 
 .card {
   display: block;
@@ -2100,6 +2103,18 @@ http://flickity.metafizzy.co
   .icon--xxs > svg {
     height: 10px;
     width: 10px; }
+  .icon--inline {
+    margin: 0; }
+    .icon--inline > svg {
+      margin: 0;
+      position: relative;
+      top: 0.15em;
+      height: 1em;
+      width: 1em; }
+  .icon--inline + span {
+    margin-left: 0.3em; }
+  span + .icon--inline {
+    margin-left: 0.3em; }
 
 .circle-icon {
   box-sizing: content-box;
@@ -2209,7 +2224,7 @@ http://flickity.metafizzy.co
       box-sizing: content-box; }
     .circle-icon--outlined--primary:before {
       color: #8CC63F; }
-  .circle-icon--outlined--inversed {
+  .circle-icon--outlined--inverse {
     text-align: center;
     display: block;
     margin: 0;
@@ -2217,10 +2232,10 @@ http://flickity.metafizzy.co
     background-color: transparent;
     border-radius: 50%;
     border: 2px solid white; }
-    .circle-icon--outlined--inversed svg {
+    .circle-icon--outlined--inverse svg {
       fill: white;
       box-sizing: content-box; }
-    .circle-icon--outlined--inversed:before {
+    .circle-icon--outlined--inverse:before {
       color: white; }
 
 .inline-circle-icon {

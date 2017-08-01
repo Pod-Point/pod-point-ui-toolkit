@@ -24,4 +24,27 @@
         height: 10px;
         width: 10px;
     }
+
+    // Icon inline with text
+    &--inline {
+        margin: 0;
+
+        > svg {
+            margin: 0;
+            position: relative;
+            top: 0.15em;
+            height: 1em;
+            width: 1em;
+        }
+    }
+
+    // To create spacing between the text and the icon, you can wrap the text in a span
+    &--inline + span {
+        margin-left: 0.3em;
+    }
+
+    span + &--inline {
+        margin-left: 0.3em;
+    }
 }
+

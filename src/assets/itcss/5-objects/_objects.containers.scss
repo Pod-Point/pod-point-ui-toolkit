@@ -23,8 +23,7 @@
     @include margin(-10px null);
     overflow: hidden;
 
-    .btn,
-    .btn-setback {
+    .btn {
         display: block;
         @include margin(10px null);
     }
@@ -32,8 +31,7 @@
     &--inline {
         @include margin(-10px);
 
-        .btn,
-        .btn-setback {
+        .btn {
             display: inline-block;
             @include margin(10px);
         }
