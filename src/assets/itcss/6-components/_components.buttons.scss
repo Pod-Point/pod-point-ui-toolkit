@@ -67,6 +67,20 @@
         }
     }
 
+    &.btn--danger {
+        color: white;
+        background-color: $error-red;
+        border-color: $error-red;
+
+        &:hover:not(.is-disabled),
+        &:focus:not(.is-disabled),
+        &:active:not(.is-disabled) {
+            color: $error-red;
+            background-color: transparent;
+            border-color: $error-red;
+        }
+    }
+
     &.btn--selected {
         @extend %hide-text-not-pseudo;
 

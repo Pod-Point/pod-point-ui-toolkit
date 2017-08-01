@@ -55,15 +55,16 @@
 			<div class="container">
 				<h3>Active buttons</h3>
 				<p>Use the class <code>.btn</code> on any element eg. button, anchor, div, span</p>
-				<p>Add the modifying classes to apply the secondary and tertiary button styles <code>.btn--secondary</code> and <code>.btn--tertiary</code></p>
+				<p>Add the modifying classes to apply the secondary, tertiary and danger (delete) button styles <code>.btn--secondary</code>, <code>.btn--tertiary</code>, <code>.btn--danger</code></p>
 			</div>
 		</header>
 		<div class="content-block">
 			<div class="container">
 				<div class="btns-container--inline">
-					<button class="btn">Primary button</button>
-					<a href="#" class="btn btn--secondary">Secondary button</a>
-					<button class="btn btn--tertiary">Tertiary button</button>
+					<button type="button" class="btn">Primary</button>
+					<a href="#" class="btn btn--secondary">Secondary</a>
+					<button type="button" class="btn btn--tertiary">Tertiary</button>
+					<span class="btn btn--danger">Danger</span>
 				</div>
 			</div>
 		</div>
@@ -81,9 +82,10 @@
 		<div class="content-block">
 			<div class="container">
 				<div class="btns-container--inline">
-					<button class="btn is-disabled">Primary button disabled</button>
-					<button class="btn btn--secondary is-disabled">Secondary button disabled</button>
-					<button class="btn btn--tertiary is-disabled">Tertiary button disabled</button>
+					<button class="btn is-disabled">Primary disabled</button>
+					<button class="btn btn--secondary is-disabled">Secondary disabled</button>
+					<button class="btn btn--tertiary is-disabled">Tertiary disabled</button>
+					<button class="btn btn--danger is-disabled">Danger disabled</button>
 				</div>
 			</div>
 		</div>

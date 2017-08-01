@@ -1338,6 +1338,14 @@ fieldset {
       color: white;
       background-color: #4d4d4d;
       border-color: #4d4d4d; }
+  .btn.btn--danger {
+    color: white;
+    background-color: #C1272D;
+    border-color: #C1272D; }
+    .btn.btn--danger:hover:not(.is-disabled), .btn.btn--danger:focus:not(.is-disabled), .btn.btn--danger:active:not(.is-disabled) {
+      color: #C1272D;
+      background-color: transparent;
+      border-color: #C1272D; }
   .btn.btn--selected:before {
     margin-right: auto;
     margin-left: auto;
