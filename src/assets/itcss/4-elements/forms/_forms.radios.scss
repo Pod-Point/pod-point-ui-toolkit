@@ -20,10 +20,17 @@ input[type="radio"] {
 
     &:last-child {
         margin-bottom: 0;
+
+        > span {
+            padding-right: 0;
+        }
     }
 
     &--inline {
-        display: inline;
+        display: inline-block;
+        width: auto;
+        max-width: auto;
+        min-width: auto;
     }
 
     > input[type="radio"] {

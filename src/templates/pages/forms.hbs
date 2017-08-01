@@ -363,4 +363,64 @@
             </div>
         </div>
     <section>
+
+
+
+    <!-- FIELDS INLINE -->
+    <section>
+        <header class="content-block bg--light-gray">
+            <div class="container">
+                <h3>Fields inline</h3>
+                <p>To display form fields inline, wrap all the form groups in a wrapper with a class <code>.form__groups-inline</code></p>
+                <p>To include any other elements eg. button or text amongst the inline elements, they should also be wrapped with the class <code>.form__group</code></p>
+            </div>
+        </header>
+        <div class="content-block">
+            <div class="container">
+
+                <div class="form__groups-inline">
+                    <div class="form__group">
+                        <label class="form__label">Input field</label>
+                        <input class="form__field" type="text" placeholder="Sample placeholder text">
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label">Input field</label>
+                        <input class="form__field" type="text" placeholder="Sample placeholder text">
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox form__field" for="checkboxExampleInline">
+                            <input type="checkbox" name="checkboxExampleInline" id="checkboxExampleInline" checked="checked" value="value1">
+                            <span>This is an example of a checkbox</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label">Select dropdown</label>
+                        <div class="select form__field">
+                            <select>
+                                <option value="00">00</option>
+                                <option selected value="01">01</option>
+                                <option value="02">02</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <label class="radio radio--inline form__field" for="radioExampleInlineInline1">
+                            <input type="radio" id="radioExampleInlineInline1" name="radioExampleInlineInline" value="radioExampleInlineInline1">
+                            <span>Inline radio example one</span>
+                        </label>
+                        <label class="radio radio--inline form__field" for="radioExampleInlineInline2">
+                            <input type="radio" id="radioExampleInlineInline2" name="radioExampleInlineInline" value="radioExampleInlineInline2">
+                            <span>Inline radio example two</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <button type="button" class="btn">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
 </div>

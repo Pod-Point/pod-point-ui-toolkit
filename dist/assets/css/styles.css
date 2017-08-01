@@ -559,12 +559,20 @@ figure {
 
 .form__field {
   width: 100%;
+  min-width: 15.625rem;
   max-width: 37.5rem; }
 
 .form__group {
   margin-bottom: 30px; }
   .form__group:last-child {
     margin-bottom: 0; }
+
+.form__groups-inline {
+  margin: -10px;
+  overflow: hidden; }
+  .form__groups-inline .form__group {
+    display: inline-block;
+    margin: 10px; }
 
 input[type="date"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"] {
   margin: 0;
@@ -708,8 +716,13 @@ input[type="radio"] {
   margin-bottom: 0.5em; }
   .radio:last-child {
     margin-bottom: 0; }
+    .radio:last-child > span {
+      padding-right: 0; }
   .radio--inline {
-    display: inline; }
+    display: inline-block;
+    width: auto;
+    max-width: auto;
+    min-width: auto; }
   .radio > input[type="radio"]:checked + span:before {
     border-radius: 50%;
     border: 2px solid transparent; }

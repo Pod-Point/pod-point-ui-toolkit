@@ -4,6 +4,7 @@
 
 .form__field {
     width: 100%;
+    min-width: $form-field-min-width;
     max-width: $form-field-max-width;
 }
 
@@ -12,5 +13,15 @@
 
     &:last-child {
         margin-bottom: 0;
+    }
+}
+
+.form__groups-inline {
+    @include margin(-10px);
+    overflow: hidden;
+
+    .form__group {
+        display: inline-block;
+        @include margin(10px);
     }
 }
