@@ -14,7 +14,6 @@ import accordion from './modules/accordion';
 import headerNav from './modules/header-nav';
 import carousel from './modules/carousel';
 import * as addressLookup from './modules/address-lookup';
-import video from './modules/video';
 
 window.initAutocomplete = addressLookup.initAutocomplete;
 window.geolocate = addressLookup.geolocate;
@@ -33,7 +32,6 @@ dom.whenReady(() => {
             accordion,
             carousel,
             addressLookup,
-            video,
         }),
     });
 });
