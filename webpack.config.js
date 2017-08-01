@@ -1,10 +1,11 @@
 const webpack = require('webpack');
 const config = require('./config');
+require('babel-polyfill');
 
 var isProd = (process.env.NODE_ENV === 'production');
 
 module.exports = {
-    entry: config.src.js + 'script.js',
+    entry: ['babel-polyfill', config.src.js + 'script.js'],
     output: {
         path: __dirname + config.dist.js,
         filename: 'script.js'
@@ -13,7 +14,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                exclude: /node_modules(?!\/youtube-player)/,
                 loader: 'babel-loader'
             }
         ]

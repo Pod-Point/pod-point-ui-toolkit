@@ -10,6 +10,7 @@
     "@pod-point/module-loader": "^2.2.0",
     "@pod-point/utils": "^1.5.0",
     "@vimeo/player": "^2.1.0",
+    "babel-polyfill": "^6.23.0",
     "bourbon": "^4.3.4",
     "bourbon-neat": "^2.0.0",
     "classlist-polyfill": "^1.2.0",
