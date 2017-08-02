@@ -6,19 +6,99 @@
         </div>
     </header>
 
-	<div class="container content-block">
-		<div class="tooltip-wrap">
-			<h3>Title with a tooltip <button type="button" data-toggle-el="tipStandardInstallation" class="tooltip-icon"></button></h3>
-			<div data-js-module="toggleElement" id="tipStandardInstallation" class="tooltip hidden">
-				<div class="tooltip__box">
-					<button type="button" class="tooltip__close" data-close-el="tipStandardInstallation"><i class="icon icon--sm">{{> icon-cross }}</i></button>
-					<div class="rich-text">
-						<h3>Tooltip title</h3>
-						<p>Tooltip text</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
+    <!-- TOOLTIPS -->
+    <section>
+        <header class="content-block bg-light-gray">
+            <div class="container">
+                <h3>Required files</h3>
+                <p>SCSS files required: <code>_components.tooltips.scss</code></p>
+                <p>JS files required: <code>toggle-element.js</code></p>
+
+                <h3>The markup</h3>
+
+                <p>To create a tooltip there needs to be a trigger button and a tooltip element which is toggled using the <code>toggle-element.js</code></p>
+
+                <p>The tooltip itself is used to position the tooltip box. It has a relative position and a full with, so the tooltip box will pin to the top left of the tooltip (unless modifying classes are used) and on mobile will span the full with of the tooltip element.</p>
+
+                <p>The tooltip trigger icon should be a button with the class <code>.tooltip-icon</code> and the data attribute with the ID name of the tooltip <code>data-toggle-el="[TOOLTIP ID NAME]"</code></p>
+
+                <p>The tooltip needs an ID, the toggle-element.js data attribute <code>data-js-module="toggleElement"</code> and the classes <code>.tooltip</code> and <code>.hidden</code></p>
+
+                <p>Inside the tooltip should be an element with the class <code>.tooltip__box</code> and inside that should be the close button</p>
+
+                <p>The modifying classes available are to make the tooltip box wider <code>.tooltip--lg</code> and to change the positioning <code>.tooltip--right</code> and <code>.tooltip--center</code>. These classes are all applied to the tooltip element but they actually modify the tooltip box, so other global helpers can be used on the tooltip box itself if required.</p>
+
+                <p>The tooltip close trigger should be a button with the data attribute with the ID name of the tooltip <code>data-close-el="[TOOLTIP ID NAME]"</code>. The close button in the examples below include a small cross <a href="/icons.html">icon</a> and the class <code>.tooltip__close</code> is used for the positioning.</p>
+
+                <p>Global font sizing classes can be applied. The examples have a wrapper with the class <code>.font-size-sm</code> and the title is a <code>&lt;h5&gt;</code> or can have the <code>.h5</code> class</p>
+
+<figure>
+<pre>
+&#x3C;h3&#x3E;Title with a tooltip &#x3C;button type=&#x22;button&#x22; data-toggle-el=&#x22;tooltipExample&#x22; class=&#x22;tooltip-icon&#x22;&#x3E;&#x3C;/button&#x3E;&#x3C;/h3&#x3E;
+&#x3C;div data-js-module=&#x22;toggleElement&#x22; id=&#x22;tooltipExample&#x22; class=&#x22;tooltip hidden&#x22;&#x3E;
+    &#x3C;div class=&#x22;tooltip__box&#x22;&#x3E;
+        &#x3C;button type=&#x22;button&#x22; class=&#x22;tooltip__close&#x22; data-close-el=&#x22;tooltipExample&#x22;&#x3E;&#x3C;i class=&#x22;icon icon--xs&#x22;&#x3E;&#x3C;svg&#x3E;[SVG CROSS ICON]&#x3C;/svg&#x3E;&#x3C;/i&#x3E;&#x3C;/button&#x3E;
+        &#x3C;div class=&#x22;font-size-sm&#x22;&#x3E;
+            &#x3C;h5&#x3E;Tooltip title&#x3C;/h5&#x3E;
+            &#x3C;p&#x3E;[TEXT CONTENT]&#x3C;/p&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</pre>
+</figure>
+
+            </div>
+        </header>
+    </section>
+
+
+    <div class="container content-block">
+        <h3>Title with a tooltip <button type="button" data-toggle-el="tooltipExample" class="tooltip-icon"></button></h3>
+        <div data-js-module="toggleElement" id="tooltipExample" class="tooltip hidden">
+            <div class="tooltip__box">
+                <button type="button" class="tooltip__close" data-close-el="tooltipExample"><i class="icon icon--xs">{{> icon-cross }}</i></button>
+                <div class="font-size-sm">
+                    <h5>Tooltip title</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate aliquam nunc eget pretium. Nunc vel lectus elementum, sodales sem eu, ultrices risus. Aliquam nunc diam, ultricies at tristique sit amet, facilisis eu dui. Cras eu nisl justo. Aliquam efficitur turpis velit, nec euismod odio vulputate id.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <p>Text with a large tooltip <button type="button" data-toggle-el="tooltipExampleLarge" class="tooltip-icon"></button></p>
+        <div data-js-module="toggleElement" id="tooltipExampleLarge" class="tooltip tooltip--lg hidden">
+            <div class="tooltip__box">
+                <button type="button" class="tooltip__close" data-close-el="tooltipExampleLarge"><i class="icon icon--xs">{{> icon-cross }}</i></button>
+                <div class="font-size-sm">
+                    <h5>Tooltip title</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate aliquam nunc eget pretium. Nunc vel lectus elementum, sodales sem eu, ultrices risus. Aliquam nunc diam, ultricies at tristique sit amet, facilisis eu dui. Cras eu nisl justo. Aliquam efficitur turpis velit, nec euismod odio vulputate id.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <p class="text-right">Text right aligned with tooltip <button type="button" data-toggle-el="tooltipExampleRight" class="tooltip-icon"></button></p>
+        <div data-js-module="toggleElement" id="tooltipExampleRight" class="tooltip tooltip--right hidden">
+            <div class="tooltip__box">
+                <button type="button" class="tooltip__close" data-close-el="tooltipExampleRight"><i class="icon icon--xs">{{> icon-cross }}</i></button>
+                <div class="font-size-sm">
+                    <h5>Tooltip title</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate aliquam nunc eget pretium. Nunc vel lectus elementum, sodales sem eu, ultrices risus. Aliquam nunc diam, ultricies at tristique sit amet, facilisis eu dui. Cras eu nisl justo. Aliquam efficitur turpis velit, nec euismod odio vulputate id.</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-center">Text center aligned with tooltip <button type="button" data-toggle-el="tooltipExampleCenter" class="tooltip-icon"></button></p>
+        <div data-js-module="toggleElement" id="tooltipExampleCenter" class="tooltip tooltip--center hidden">
+            <div class="tooltip__box">
+                <button type="button" class="tooltip__close" data-close-el="tooltipExampleCenter"><i class="icon icon--xs">{{> icon-cross }}</i></button>
+                <div class="font-size-sm">
+                    <h5>Tooltip title</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate aliquam nunc eget pretium. Nunc vel lectus elementum, sodales sem eu, ultrices risus. Aliquam nunc diam, ultricies at tristique sit amet, facilisis eu dui. Cras eu nisl justo. Aliquam efficitur turpis velit, nec euismod odio vulputate id.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>

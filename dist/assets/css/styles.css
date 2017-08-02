@@ -8,12 +8,7 @@ h1,
 .h3, h4,
 .h4, h5,
 .h5, h6,
-.h6, .tooltip__box .rich-text h1,
-.tooltip__box .rich-text h2,
-.tooltip__box .rich-text h3,
-.tooltip__box .rich-text h4,
-.tooltip__box .rich-text h5,
-.tooltip__box .rich-text h6 {
+.h6, .tooltip__title {
   margin: 0;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -25,12 +20,7 @@ h1,
   .h3:first-child, h4:first-child,
   .h4:first-child, h5:first-child,
   .h5:first-child, h6:first-child,
-  .h6:first-child, .tooltip__box .rich-text h1:first-child,
-  .tooltip__box .rich-text h2:first-child,
-  .tooltip__box .rich-text h3:first-child,
-  .tooltip__box .rich-text h4:first-child,
-  .tooltip__box .rich-text h5:first-child,
-  .tooltip__box .rich-text h6:first-child {
+  .h6:first-child, .tooltip__title:first-child {
     padding-top: 0; }
   h1:last-child,
   .h1:last-child, h2:last-child,
@@ -38,12 +28,7 @@ h1,
   .h3:last-child, h4:last-child,
   .h4:last-child, h5:last-child,
   .h5:last-child, h6:last-child,
-  .h6:last-child, .tooltip__box .rich-text h1:last-child,
-  .tooltip__box .rich-text h2:last-child,
-  .tooltip__box .rich-text h3:last-child,
-  .tooltip__box .rich-text h4:last-child,
-  .tooltip__box .rich-text h5:last-child,
-  .tooltip__box .rich-text h6:last-child {
+  .h6:last-child, .tooltip__title:last-child {
     padding-bottom: 0; }
 
 ::-webkit-input-placeholder {
@@ -1998,94 +1983,68 @@ http://flickity.metafizzy.co
     margin-top: 2.5px;
     margin-bottom: 2.5px; }
   .tooltip-icon:before {
+    font-weight: bold;
     content: '?';
     font-size: 9px;
     line-height: 12px; }
 
-.tooltip-wrap {
+.tooltip {
   display: block;
   width: 100%;
-  position: relative;
-  z-index: 1; }
+  position: relative; }
   @media (min-width: 50em) {
-    .tooltip-wrap {
-      display: inline-block;
+    .tooltip {
       width: auto; } }
 
 .tooltip__box {
   position: absolute;
-  top: 50px;
+  top: 0;
   left: 0;
+  z-index: 99;
   box-sizing: border-box;
   z-index: auto;
   width: 100%;
-  padding: 30px;
+  padding: 20px;
+  margin-bottom: 20px;
   background-color: white;
   border: 2px solid #ccc;
   border-radius: 5px;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.2); }
-  @media (min-width: 50em) {
+  @media (min-width: 24em) {
     .tooltip__box {
-      width: 350px;
-      margin-left: -175px;
-      left: 50%; } }
-  .tooltip__box:before {
-    content: "";
-    position: absolute;
-    top: -15px;
+      width: 325px; } }
+
+@media (min-width: 24em) {
+  .tooltip--lg .tooltip__box {
+    width: 100%; } }
+
+@media (min-width: 40em) {
+  .tooltip--lg .tooltip__box {
+    width: 500px; } }
+
+.tooltip--right .tooltip__box {
+  right: 0;
+  left: auto; }
+
+@media (min-width: 24em) {
+  .tooltip--center .tooltip__box {
     left: 50%;
-    margin-left: -14px;
-    z-index: -1;
-    width: 32px;
-    height: 32px;
-    display: block;
-    -ms-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-    background-color: white;
-    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.2);
-    border: 2px solid #ccc; }
-  .tooltip__box:after {
-    content: "";
-    position: absolute;
-    top: -13px;
-    left: 50%;
-    margin-left: -11px;
-    z-index: 1;
-    width: 26px;
-    height: 26px;
-    display: block;
-    -ms-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-    background-color: white; }
-  .tooltip__box .rich-text ul {
-    padding-left: 20px; }
-  .tooltip__box .rich-text p,
-  .tooltip__box .rich-text li {
-    font-size: 0.75rem; }
-    @media (min-width: 50em) {
-      .tooltip__box .rich-text p,
-      .tooltip__box .rich-text li {
-        font-size: 0.875rem; } }
-  .tooltip__box .rich-text h1,
-  .tooltip__box .rich-text h2,
-  .tooltip__box .rich-text h3,
-  .tooltip__box .rich-text h4,
-  .tooltip__box .rich-text h5,
-  .tooltip__box .rich-text h6 {
-    font-size: 0.875rem; }
-    @media (min-width: 50em) {
-      .tooltip__box .rich-text h1,
-      .tooltip__box .rich-text h2,
-      .tooltip__box .rich-text h3,
-      .tooltip__box .rich-text h4,
-      .tooltip__box .rich-text h5,
-      .tooltip__box .rich-text h6 {
-        font-size: 1rem; } }
+    margin-left: -173px; } }
+
+@media (min-width: 24em) {
+  .tooltip--center.tooltip--lg .tooltip__box {
+    margin-left: -250px; } }
+
+.tooltip__title {
+  font-size: 0.875rem; }
+  @media (min-width: 50em) {
+    .tooltip__title {
+      font-size: 1.125rem; } }
 
 .tooltip__close {
   position: absolute;
   top: 15px;
-  right: 15px; }
+  right: 10px; }
 
 .video-wrapper {
   position: relative;
