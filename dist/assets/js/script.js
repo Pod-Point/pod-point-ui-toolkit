@@ -82,15 +82,11 @@
 	
 	var _toggleElement2 = _interopRequireDefault(_toggleElement);
 	
-	var _gallerySimple = __webpack_require__(23);
-	
-	var _gallerySimple2 = _interopRequireDefault(_gallerySimple);
-	
-	var _accordion = __webpack_require__(24);
+	var _accordion = __webpack_require__(23);
 	
 	var _accordion2 = _interopRequireDefault(_accordion);
 	
-	var _navbar = __webpack_require__(25);
+	var _navbar = __webpack_require__(24);
 	
 	var _navbar2 = _interopRequireDefault(_navbar);
 	
@@ -106,7 +102,6 @@
 	            ajaxForm: _ajaxForm2.default,
 	            toggleAccordionPanel: _toggleAccordionPanel2.default,
 	            toggleElement: _toggleElement2.default,
-	            gallerySimple: _gallerySimple2.default,
 	            navbar: _navbar2.default,
 	            accordion: _accordion2.default
 	        })
@@ -3968,109 +3963,6 @@
 	
 	var _domDelegate = __webpack_require__(10);
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	var instances = [];
-	
-	var GallerySimple = function () {
-	
-	    /**
-	     * Creates a gallery element
-	     *
-	     * @param {element}
-	     */
-	    function GallerySimple(element) {
-	        _classCallCheck(this, GallerySimple);
-	
-	        this.element = element;
-	        this.getFirstThumbnail();
-	        this.bindEvents();
-	    }
-	
-	    /**
-	     * Get first thumbnail and pass to function to display as the main image
-	     */
-	
-	
-	    _createClass(GallerySimple, [{
-	        key: 'getFirstThumbnail',
-	        value: function getFirstThumbnail() {
-	            var firstThumbnail = this.element.querySelector('.gallery-simple__thumbnails li .thumbnail');
-	            this.displayThumbnailAsImage(firstThumbnail);
-	        }
-	
-	        /**
-	         * Bind any event listeners to the elements.
-	         */
-	
-	    }, {
-	        key: 'bindEvents',
-	        value: function bindEvents() {
-	            var _this = this;
-	
-	            this.listener = new _domDelegate.Delegate(this.element);
-	
-	            this.listener.on('click', 'li .thumbnail', function (event, thumbnail) {
-	                event.preventDefault();
-	                _this.displayThumbnailAsImage(thumbnail);
-	            });
-	        }
-	
-	        /**
-	         * Unbinds the event listeners from the elements
-	         */
-	
-	    }, {
-	        key: 'unbindEvents',
-	        value: function unbindEvents() {
-	            this.listener.destroy();
-	        }
-	
-	        /**
-	         * Display thumbnail as main image
-	         * @param {element} thumbnail
-	         */
-	
-	    }, {
-	        key: 'displayThumbnailAsImage',
-	        value: function displayThumbnailAsImage(thumbnail) {
-	            var thumbnailSrc = thumbnail.querySelector('img').src;
-	            var mainImage = this.element.querySelector('.gallery-simple__image');
-	
-	            mainImage.src = thumbnailSrc;
-	        }
-	    }]);
-	
-	    return GallerySimple;
-	}();
-	
-	exports.default = {
-	    init: function init(element) {
-	        instances.push(new GallerySimple(element));
-	    },
-	
-	    destroy: function destroy() {
-	        instances.forEach(function (instance) {
-	            return instance.unbindEvents();
-	        });
-	        instances = [];
-	    }
-	};
-
-/***/ },
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _domDelegate = __webpack_require__(10);
-	
 	var _domOps = __webpack_require__(5);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -4163,7 +4055,7 @@
 	};
 
 /***/ },
-/* 25 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

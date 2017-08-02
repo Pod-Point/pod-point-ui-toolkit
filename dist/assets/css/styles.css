@@ -90,9 +90,9 @@ h1,
   font-weight: inherit;
   text-decoration: none; }
 
-.btn--passive, .gallery-simple__thumbnails li .thumbnail, .clickable {
+.btn--passive, .clickable {
   cursor: pointer; }
-  .btn--passive:active, .gallery-simple__thumbnails li .thumbnail:active, .clickable:active, .btn--passive:focus, .gallery-simple__thumbnails li .thumbnail:focus, .clickable:focus, .btn--passive:hover, .gallery-simple__thumbnails li .thumbnail:hover, .clickable:hover {
+  .btn--passive:active, .clickable:active, .btn--passive:focus, .clickable:focus, .btn--passive:hover, .clickable:hover {
     opacity: 0.7; }
 
 .btn.btn--selected, .tooltip-icon {
@@ -1439,25 +1439,6 @@ fieldset {
         left: 50%;
         width: 740px;
         margin-left: -370px; } }
-
-.gallery-simple {
-  max-width: 300px; }
-  .gallery-simple__image {
-    width: 100%;
-    border-radius: 5px; }
-  .gallery-simple__thumbnails {
-    text-align: center;
-    margin: 20px -5px;
-    padding: 0; }
-    .gallery-simple__thumbnails li {
-      list-style: none;
-      width: 40px;
-      display: inline-block;
-      margin-right: 5px;
-      margin-left: 5px; }
-      .gallery-simple__thumbnails li img {
-        width: 100%;
-        border-radius: 5px; }
 
 .is-nav-open body {
   overflow: hidden; }
