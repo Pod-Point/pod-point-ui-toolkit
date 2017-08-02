@@ -12,7 +12,6 @@ import toggleElement from './modules/toggle-element';
 import gallerySimple from './modules/gallery-simple';
 import accordion from './modules/accordion';
 import navbar from './modules/navbar';
-import carousel from './modules/carousel';
 
 dom.whenReady(() => {
     loadModules({
@@ -24,8 +23,7 @@ dom.whenReady(() => {
             toggleElement,
             gallerySimple,
             navbar,
-            accordion,
-            carousel,
+            accordion
         }),
     });
 });
