@@ -25,18 +25,7 @@
 
                 <p>To trigger closing the popup use the 'data-close-el' attribute and ID of the confirm box <code>data-close-el="confirmBoxExample"</code></p>
 
-<figure>
-<pre>
-&#x3C;button type=&#x22;button&#x22; class=&#x22;btn&#x22; data-open-el=&#x22;confirmBoxExample&#x22;&#x3E;Open confirm popup&#x3C;/button&#x3E;
-
-&#x3C;div id=&#x22;confirmBoxExample&#x22; class=&#x22;confirm-popup hidden&#x22; data-js-module=&#x22;toggleElement&#x22;&#x3E;
-    &#x3C;div class=&#x22;confirm-popup__box&#x22;&#x3E;
-        &#x3C;p&#x3E;Hi, I am a confirm box&#x3C;/p&#x3E;
-        &#x3C;button type=&#x22;button&#x22; class=&#x22;btn&#x22; data-close-el=&#x22;confirmBoxExample&#x22;&#x3E;Confirm&#x3C;/button&#x3E;
-    &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;
-</pre>
-</figure>
+{{> snippet-confirm-box }}
 
             </div>
         </header>

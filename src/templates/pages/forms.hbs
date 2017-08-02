@@ -50,14 +50,7 @@
                 <p>Input elements are styled without requiring any added classes</p>
                 <p>However adhearing to the guidelines above will help with consistency in form layout and validation</p>
 
-<figure>
-<pre>
-&#x3C;div class=&#x22;form__group&#x22;&#x3E;
-    &#x3C;label class=&#x22;form__label&#x22;&#x3E;Input field&#x3C;/label&#x3E;
-    &#x3C;input class=&#x22;form__field&#x22; type=&#x22;text&#x22; placeholder=&#x22;Sample placeholder text&#x22;&#x3E;
-&#x3C;/div&#x3E;
-</pre>
-</figure>
+{{> snippet-form-input }}
 
             </div>
         </header>
@@ -98,14 +91,7 @@
                 <p>Use the class <code>.input--alternative</code> to apply the below styling</p>
                 <p>To make it centralised, add the global helper class <code>.text-center</code> to both the input and the label</p>
 
-<figure>
-<pre>
-&#x3C;div class=&#x22;form__group&#x22;&#x3E;
-    &#x3C;label class=&#x22;form__label&#x22;&#x3E;Input field - alternative&#x3C;/label&#x3E;
-    &#x3C;input class=&#x22;form__field input--alternative&#x22; type=&#x22;text&#x22; placeholder=&#x22;Sample placeholder text&#x22; /&#x3E;
-&#x3C;/div&#x3E;
-</pre>
-</figure>
+{{> snippet-form-alt-input }}
 
             </div>
         </header>
@@ -134,14 +120,7 @@
                 <p>Text area elements are styled without requiring any added classes</p>
                 <p>However adhearing to the guidelines above will help with consistency in form layout and validation</p>
 
-<figure>
-<pre>
-&#x3C;div class=&#x22;form__group&#x22;&#x3E;
-    &#x3C;label class=&#x22;form__label&#x22;&#x3E;Text area&#x3C;/label&#x3E;
-    &#x3C;textarea class=&#x22;form__field&#x22; type=&#x22;text&#x22;&#x3E;&#x3C;/textarea&#x3E;
-&#x3C;/div&#x3E;
-</pre>
-</figure>
+{{> snippet-form-textarea }}
 
             </div>
         </header>
@@ -181,20 +160,7 @@
                 <p>Select elements are styled via a wrapping <code>&lt;div&gt;</code> which requires the class <code>.select</code></p>
                 <p>The cheveron icon is a background image applied to the <code>.select:after</code> element. See <a href="#">here</a> for info on how to deal with background images in the toolkit.</p>
 
-<figure>
-<pre>
-&#x3C;div class=&#x22;form__group&#x22;&#x3E;
-    &#x3C;label class=&#x22;form__label&#x22;&#x3E;Select dropdown&#x3C;/label&#x3E;
-    &#x3C;div class=&#x22;select form__field&#x22;&#x3E;
-        &#x3C;select&#x3E;
-            &#x3C;option value=&#x22;00&#x22;&#x3E;00&#x3C;/option&#x3E;
-            &#x3C;option selected value=&#x22;01&#x22;&#x3E;01&#x3C;/option&#x3E;
-            &#x3C;option value=&#x22;02&#x22;&#x3E;02&#x3C;/option&#x3E;
-        &#x3C;/select&#x3E;
-    &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;
-</pre>
-</figure>
+{{> snippet-form-select }}
 
             </div>
         </header>
@@ -258,14 +224,7 @@
                 <p>Checkbox elements are styled via a wrapping <code>&lt;label&gt;</code> which requires the class <code>.checkbox</code> and the <code>for</code> attribute which has the id name of the input.</p>
                 <p>Inside the label element should be the checkbox <code>&lt;input&gt;</code> with the matching id, followed by a <code>&lt;span&gt;</code> with the text required.</p>
 
-<figure>
-<pre>
-&#x3C;label class=&#x22;checkbox form__field&#x22; for=&#x22;checkboxExample1&#x22;&#x3E;
-    &#x3C;input type=&#x22;checkbox&#x22; name=&#x22;checkboxExample1&#x22; id=&#x22;checkboxExample1&#x22; checked=&#x22;checked&#x22; value=&#x22;value1&#x22;&#x3E;
-    &#x3C;span&#x3E;This is an example of a checkbox&#x3C;/span&#x3E;
-&#x3C;/label&#x3E;
-</pre>
-</figure>
+{{> snippet-form-checkbox }}
 
             </div>
         </header>
@@ -312,24 +271,8 @@
                 <p>Radios are functionally grouped together via the name attribute, however for styling a wrapping div can be added with the class <code>.form__group</code></p>
                 <p>Radios can also be made inline by applying the modifying class <code>.radio--inline</code></p>
 
-<figure>
-<pre>
-&#x3C;div class=&#x22;form__group&#x22;&#x3E;
-    &#x3C;label class=&#x22;radio form__field&#x22; for=&#x22;radioExample1&#x22;&#x3E;
-        &#x3C;input type=&#x22;radio&#x22; id=&#x22;radioExample1&#x22; name=&#x22;radioExample&#x22; value=&#x22;radioExample1&#x22;&#x3E;
-        &#x3C;span&#x3E;Radio example one&#x3C;/span&#x3E;
-    &#x3C;/label&#x3E;
-    &#x3C;label class=&#x22;radio form__field&#x22; for=&#x22;radioExample2&#x22;&#x3E;
-        &#x3C;input type=&#x22;radio&#x22; id=&#x22;radioExample2&#x22; name=&#x22;radioExample&#x22; value=&#x22;radioExample2&#x22;&#x3E;
-        &#x3C;span&#x3E;Radio example two&#x3C;/span&#x3E;
-    &#x3C;/label&#x3E;
-    &#x3C;label class=&#x22;radio form__field&#x22; for=&#x22;radioExample3&#x22;&#x3E;
-        &#x3C;input type=&#x22;radio&#x22; id=&#x22;radioExampleDisabled&#x22; name=&#x22;radioExample&#x22; value=&#x22;radioExampleDisabled&#x22; disabled&#x3E;
-        &#x3C;span&#x3E;Radio example disabled&#x3C;/span&#x3E;
-    &#x3C;/label&#x3E;
-&#x3C;/div&#x3E;
-</pre>
-</figure>
+{{> snippet-form-radios }}
+
             </div>
         </header>
 
