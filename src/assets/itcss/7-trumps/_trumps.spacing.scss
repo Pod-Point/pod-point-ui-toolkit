@@ -28,6 +28,14 @@ $spacings: (
     .m-l-#{$size} {
         margin-left: $value!important;
     }
+    .m-h-#{$size} {
+        margin-right: $value!important;
+        margin-left: $value!important;
+    }
+    .m-v-#{$size} {
+        margin-top: $value!important;
+        margin-bottom: $value!important;
+    }
     .p-#{$size} {
         padding: $value!important;
     }
@@ -42,5 +50,13 @@ $spacings: (
     }
     .p-l-#{$size} {
         padding-left: $value!important;
+    }
+    .p-h-#{$size} {
+        padding-right: $value!important;
+        padding-left: $value!important;
+    }
+    .p-v-#{$size} {
+        padding-top: $value!important;
+        padding-bottom: $value!important;
     }
 }

@@ -3,7 +3,11 @@
 // =============================================================================
 
 .b {
-    // Base border (top and bottom)
+    // Base border
+    &-base {
+        border: $border-base;
+    }
+
     &-t-base {
         border-top: $border-base;
     }
@@ -12,7 +16,11 @@
         border-bottom: $border-base;
     }
 
-    // Thin border (top and bottom)
+    // Thin border
+    &-thin {
+        border: $border-thin;
+    }
+
     &-t-thin {
         border-top: $border-thin;
     }
@@ -21,7 +29,11 @@
         border-bottom: $border-thin;
     }
 
-    // No border (top and bottom)
+    // No border
+    &-none {
+        border-top: none!important;
+    }
+
     &-t-none {
         border-top: none!important;
     }

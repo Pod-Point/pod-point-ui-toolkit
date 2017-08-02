@@ -1,0 +1,243 @@
+{{> demo-header }}
+<div data-page="helpers">
+    <header class="content-block content-block--strip bg-primary">
+        <div class="container">
+            <h2>Helpers</h2>
+        </div>
+    </header>
+
+
+    <!-- SPACING -->
+    <section id="helpersSpacing">
+        <header class="content-block bg-light-gray">
+            <div class="container">
+                <h3>Spacing</h3>
+                <p>Helper classes for margin and padding spacing</p>
+            </div>
+        </header>
+        <div class="content-block">
+            <div class="container">
+                <h4>Spacing settings</h4>
+                <ul class="list--inline">
+                    <li><b>xxs:</b> 5px</li>
+                    <li><b>xs:</b> 10px</li>
+                    <li><b>sm:</b> 15px</li>
+                    <li><b>md:</b> 20px</li>
+                    <li><b>lg:</b> 30px</li>
+                    <li><b>xl:</b> 50px</li>
+                    <li><b>xxl:</b> 70px</li>
+                </ul>
+                <br>
+                <h4>Margin and padding syntax</h4>
+                <p>The helper classes start with <code>.m</code> for margin and <code>.p</code> for padding</p>
+                <p>Next is the direction <code>-t</code> top, <code>-r</code> right, <code>-b</code> bottom, <code>-l</code> left, <code>-h</code> horizontal (right and left), <code>-v</code> vertical (top and bottom)</p>
+                <p>Note if no direction is applied, it will default to all directions</p>
+                <p>Finally is the spacing sizes <code>-none</code>, <code>-xxs</code>, <code>-xs</code>, <code>-sm</code>, <code>-md</code>, <code>-lg</code>, <code>-xl</code>, <code>-xxl</code></p>
+                <br>
+                <h4>Examples</h4>
+                <ul class="list--inline">
+                    <li><code>.p-none</code></li>
+                    <li><code>.m-xs</code></li>
+                    <li><code>.p-l-sm</code></li>
+                    <li><code>.p-h-xl</code></li>
+                    <li><code>.m-r-none</code></li>
+                    <li><code>.p-b-xl</code></li>
+                    <li><code>.m-v-lg</code></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- BORDERS -->
+    <section id="helpersBorders">
+        <header class="content-block bg-light-gray">
+            <div class="container">
+                <h3>Borders</h3>
+                <p>Helper classes for borders</p>
+            </div>
+        </header>
+        <div class="content-block">
+            <div class="container">
+                <h4>Border settings</h4>
+                <ul class="list--inline">
+                    <li><b>base:</b> 2px solid #ccc</li>
+                    <li><b>thin:</b> 1px solid #e2e2e2</li>
+                    <li><b>radius:</b> 5px</li>
+                </ul>
+                <br>
+                <h4>Border syntax</h4>
+                <p>The border helper classes start with <code>.b</code></p>
+                <p>Next is the direction <code>-t</code> top and <code>-b</code> bottom</p>
+                <p>Note if no direction is applied, it will default to all directions</p>
+                <p>Finally is the type of border <code>-none</code>, <code>-base</code>, <code>-thin</code>, <code>-radius</code> (radius cannot be used with a direction)</p>
+                <br>
+                <h4>Examples</h4>
+                <ul class="list--inline">
+                    <li><code>.b-none</code></li>
+                    <li><code>.b-t-thin</code></li>
+                    <li><code>.b-base</code></li>
+                    <li><code>.b-radius</code></li>
+                    <li><code>.b-t-none</code></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- POSITIONING -->
+    <section id="helpersPosition">
+        <header class="content-block bg-light-gray">
+            <div class="container">
+                <h3>Position</h3>
+                <p>Helper classes for positioning in each of the four corners</p>
+            </div>
+        </header>
+        <div class="content-block">
+            <div class="container">
+                <h4>Position properties</h4>
+                <p>The position helpers <code>.pos-sta</code> static, <code>.pos-rel</code> relative, <code>.pos-abs</code> absolute, <code>.pos-fix</code> fixed</p>
+                <br>
+                <h4>Pinning</h4>
+                <p>Helper classes to pin an element each of the for corners with the direction properties. Obviously they won't work if the property is set to static.</p>
+                <p><code>.pin-top-right</code>, <code>.pin-right-bottom</code>, <code>.pin-bottom-left</code>, <code>.pin-left-top</code></p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- RESPONSIVE -->
+    <section id="helpersResponsive">
+        <header class="content-block bg-light-gray">
+            <div class="container">
+                <h3>Responsive helpers</h3>
+                <p>Helper classes that can change according to screen size</p>
+            </div>
+        </header>
+        <div class="content-block">
+            <div class="container">
+                <h4>Screen size settings</h4>
+                <ul class="list--inline">
+                    <li><b>xs:</b> 24em / 384px</li>
+                    <li><b>sm:</b> 40em / 640px</li>
+                    <li><b>md:</b> 50em / 800px</li>
+                    <li><b>lg:</b> 68em / 1088px</li>
+                    <li><b>xl:</b> 100em / 1600px</li>
+                </ul>
+                <br>
+                <h4>Responsive helpers syntax</h4>
+                <p>The media queries are set mobile first so if you set a helper class with no screen size, it will set the style from mobile up. Once a screen size is added on to the helper it sets the style for that screen size and up.</p>
+                <p>The syntax is to define the helper class <code>.text-center</code> and add a screen size on the end <code>-md</code></p>
+                <h4>The helpers</h4>
+                <code>.text-center</code>, <code>.text-right</code>, <code>.text-left</code>, <code>.float-right</code>, <code>.float-left</code>, <code>.float-left</code>, <code>.m-center</code>, <code>.hidden</code>, <code>.block</code>, <code>.inline-block</code>, <code>.width-full</code>
+                <br>
+                <h4>Examples</h4>
+                <ul class="list--inline">
+                    <li><code>.text-center</code></li>
+                    <li><code>.float-right-sm</code></li>
+                    <li><code>.hidden-lg</code></li>
+                    <li><code>.inline-block</code></li>
+                    <li><code>.m-center-md</code></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- WIDTHS -->
+    <section id="helpersWidths">
+        <header class="content-block bg-light-gray">
+            <div class="container">
+                <h3>Max widths</h3>
+                <p>Helper classes to define max widths for content, text content and images</p>
+            </div>
+        </header>
+        <div class="content-block">
+            <div class="container">
+                <h4>Max width settings (images)</h4>
+                <ul class="list--inline">
+                    <li><b>xxs:</b> 100px</li>
+                    <li><b>xs:</b> 150px</li>
+                    <li><b>sm:</b> 200px</li>
+                    <li><b>md:</b> 300px</li>
+                    <li><b>lg:</b> 400px</li>
+                    <li><b>xl:</b> 500px</li>
+                    <li><b>xxl:</b> 700px</li>
+                </ul>
+                <br>
+                <h4>Max width settings (content)</h4>
+                <ul class="list--inline">
+                    <li><b>content:</b> 1100px</li>
+                    <li><b>content wide:</b> 1260px</li>
+                    <li><b>content narrow:</b> 960px</li>
+                    <li><b>text:</b> 600px</li>
+                    <li><b>text wider:</b> 640px</li>
+                    <li><b>text wide:</b> 700px</li>
+                    <li><b>text narrow:</b> 500px</li>
+                </ul>
+                <br>
+                <h4>The helpers</h4>
+                <p>The helpers are just max width properties so can be used on anything, however the content max width helpers are defined to keep consistency and the image max width helpers are roughly sizes of how big images might be in a design</p>
+                <p>Max width content helpers <code>.max-width-content</code>, <code>.max-width-text</code>, <code>.max-width-text-wider</code>, <code>.max-width-text-wide</code>, <code>.max-width-text-narrow</code></p>
+                <p>Max width image helpers <code>.max-width-xxs</code>, <code>.max-width-xs</code>, <code>.max-width-sm</code>, <code>.max-width-md</code>, <code>.max-width-lg</code>, <code>.max-width-xl</code>, <code>.max-width-xxl</code></p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- BACKGROUNDS -->
+    <section id="helpersBackgrounds">
+        <header class="content-block bg-light-gray">
+            <div class="container">
+                <h3>Backgrounds</h3>
+                <p>Background colour helper classes according to the POD Point colour palette</p>
+                <p>Note that if it is a dark background colour, the font colour will change appropriately</p>
+            </div>
+        </header>
+        <div class="content-block">
+            <div class="container p-v-md bg-white">
+                <h4>White
+                    <span class="font-size-md font-regular"> = <code>.bg-white</code></span>
+                </h4>
+            </div>
+            <br>
+            <div class="container p-v-md bg-dark-gray">
+                <h4>Dark grey
+                    <span class="font-size-md font-regular"> = <code>.bg-dark-gray</code></span>
+                </h4>
+            </div>
+            <br>
+            <div class="container p-v-md bg-very-dark-gray">
+                <h4>Very dark grey
+                    <span class="font-size-md font-regular"> = <code>.bg-very-dark-gray</code></span>
+                </h4>
+            </div>
+            <br>
+            <div class="container p-v-md bg-light-gray">
+                <h4>Light grey
+                    <span class="font-size-md font-regular"> = <code>.bg-light-gray</code></span>
+                </h4>
+            </div>
+            <br>
+            <div class="container p-v-md bg-very-light-gray">
+                <h4>Very light grey
+                    <span class="font-size-md font-regular"> = <code>.bg-very-light-gray</code></span>
+                </h4>
+            </div>
+            <br>
+            <div class="container p-v-md bg-primary">
+                <h4>Primary
+                    <span class="font-size-md font-regular"> = <code>.bg-primary</code></span>
+                </h4>
+            </div>
+            <br>
+            <div class="container p-v-md bg-sky-blue">
+                <h4>Sky blue
+                    <span class="font-size-md font-regular"> = <code>.bg-sky-blue</code></span>
+                </h4>
+            </div>
+        </div>
+    </section>
+
+
+</div>
