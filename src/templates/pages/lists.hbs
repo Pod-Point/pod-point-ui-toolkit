@@ -88,7 +88,8 @@
         <header class="content-block bg-light-gray">
             <div class="container">
                 <h3>Inline</h3>
-                <p>Add the class <code>.list--inline</code> or <code>.list--inline--sm-gutter</code></p>
+                <p>Add the class <code>.list--inline</code></p>
+                <p>For a small gutter add the modifying class <code>.list--inline--gutter-sm</code></p>
             </div>
         </header>
         <div class="content-block">
@@ -107,7 +108,7 @@
                 <br>
                 <br>
 
-                <ul class="list--inline--sm-gutter">
+                <ul class="list--inline list--inline--gutter-sm">
                     <li>In non lacus facilisis</li>
                     <li>Donec accumsan placerat metus</li>
                     <li>Etiam tincidunt magna</li>
@@ -159,6 +160,72 @@
                     <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
                     <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- LIST OF ICONS OR IMAGES -->
+    <section>
+        <header class="content-block bg-light-gray">
+            <div class="container">
+                <h3>List of images or icons</h3>
+                <p>For a list of images or icons use the class <code>.list--imgs</code></p>
+                <p>To make the images or icons inline add the modifying class <code>.list--imgs--inline</code></p>
+                <p>To force the images too be the same height there are various modifying classes available <code>.list--imgs--height-xs</code>, <code>.list--imgs--height-sm</code>, <code>.list--imgs--height-md</code>, <code>.list--imgs--height-lg</code>, <code>.list--imgs--height-xl</code></p>
+                <p>To change the gutter spacing there are various modifying classes available <code>.list--imgs--inline-gutter-xs</code>, <code>.list--imgs--inline-gutter-sm</code>, <code>.list--imgs--inline-gutter-md</code>, <code>.list--imgs--inline-gutter-lg</code>, <code>.list--imgs--inline-gutter-xl</code></p>
+            </div>
+        </header>
+        <div class="content-block">
+            <div class="container">
+                <h4>List of images
+                    <span class="font-size-md font-regular"> = <code>.list--imgs</code></span>
+                </h4>
+                <ul class="list--imgs">
+                    <li><img src="https://placeholdit.co//i/50x70?&bg=8CC63F&fc=ffffff"></li>
+                    <li><img src="https://placeholdit.co//i/100x50?&bg=8CC63F&fc=ffffff"></li>
+                    <li><img src="https://placeholdit.co//i/70x90?&bg=8CC63F&fc=ffffff"></li>
+                    <li><img src="https://placeholdit.co//i/80x120?&bg=8CC63F&fc=ffffff"></li>
+                    <li><img src="https://placeholdit.co//i/120x100?&bg=8CC63F&fc=ffffff"></li>
+                </ul>
+                <br>
+
+                <h4>List of images inline
+                    <span class="font-size-md font-regular"> = <code>.list--imgs</code>, <code>list--imgs--inline</code></span>
+                </h4>
+                <ul class="list--imgs list--imgs--inline">
+                    <li><img src="https://placeholdit.co//i/50x70?&bg=8CC63F&fc=ffffff"></li>
+                    <li><img src="https://placeholdit.co//i/100x50?&bg=8CC63F&fc=ffffff"></li>
+                    <li><img src="https://placeholdit.co//i/70x90?&bg=8CC63F&fc=ffffff"></li>
+                    <li><img src="https://placeholdit.co//i/80x120?&bg=8CC63F&fc=ffffff"></li>
+                    <li><img src="https://placeholdit.co//i/120x100?&bg=8CC63F&fc=ffffff"></li>
+                </ul>
+                <br>
+
+                <h4>List of images inline forced to be same height
+                    <span class="font-size-md font-regular"> = <code>.list--imgs</code>, <code>list--imgs--inline</code>, <code>list--imgs--height-md</code></span>
+                </h4>
+                <ul class="list--imgs list--imgs--inline list--imgs--height-md">
+                    <li><img src="https://placeholdit.co//i/50x70?&bg=8CC63F&fc=ffffff"></li>
+                    <li><img src="https://placeholdit.co//i/100x50?&bg=8CC63F&fc=ffffff"></li>
+                    <li><img src="https://placeholdit.co//i/70x90?&bg=8CC63F&fc=ffffff"></li>
+                    <li><img src="https://placeholdit.co//i/80x120?&bg=8CC63F&fc=ffffff"></li>
+                    <li><img src="https://placeholdit.co//i/120x100?&bg=8CC63F&fc=ffffff"></li>
+                </ul>
+                <br>
+
+                <h4>List of icons inline with xs gutter
+                    <span class="font-size-md font-regular"> = <code>.list--imgs</code>, <code>list--imgs--inline</code>, <code>list--imgs--inline-gutter-xs</code></span>
+                </h4>
+                <ul class="list--imgs list--imgs--inline list--imgs--inline-gutter-xs">
+                    <li><i class="icon">{{> icon-facebook }}</i></li>
+                    <li><i class="icon">{{> icon-twitter }}</i></li>
+                    <li><i class="icon">{{> icon-linkedin }}</i></li>
+                    <li><i class="icon">{{> icon-youtube }}</i></li>
+                    <li><i class="icon">{{> icon-instagram }}</i></li>
+                    <li><i class="icon">{{> icon-google }}</i></li>
+                </ul>
+
             </div>
         </div>
     </section>

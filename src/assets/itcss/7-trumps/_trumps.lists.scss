@@ -32,52 +32,121 @@
     @include featured-icon-list-lg($css-bg-path+'icons/tick-primary.svg');
 }
 
-// Inline lists - shared styles
-.list--inline,
-.list--inline--sm-gutter {
-    @extend %remove-list-styles;
-
-    li {
-        display: inline-block;
-    }
-}
-
 // Inline list
 .list--inline {
+    @extend %remove-list-styles;
     @include margin(-0.5em -1em);
 
     li {
+        display: inline-block;
         @include padding(0.5em 1em);
     }
-}
 
-// Inline list small gutter
-.list--inline--sm-gutter {
-    @include margin(null -0.5em);
+    &--gutter-sm {
+        @include margin(null -0.5em);
 
-    li {
-        @include margin(null 0.5em);
+        li {
+            @include padding(null 0);
+            @include margin(null 0.5em);
+        }
     }
 }
 
-
-// Icons in a list
-.icons-list {
+// Image lists
+.list--imgs {
     @extend %remove-list-styles;
 
-    &--inline {
-        @include margin(null rem(-1.5));
+    &--inline,
+    &--inline-gutter-md {
+        @include margin(null rem(-10));
 
         li {
             display: inline-block;
-            @include margin(null rem(1.5));
+            @include margin(null rem(10));
+        }
+    }
 
-            a:not(.circle-icon) {
+    &--inline-gutter-xl {
+        @include margin(null rem(-25));
 
-                &:before {
-                    color: black;
-                    font-size: rem(25);
-                }
+        li {
+            display: inline-block;
+            @include margin(null rem(25));
+        }
+    }
+
+    &--inline-gutter-lg {
+        @include margin(null rem(-20));
+
+        li {
+            display: inline-block;
+            @include margin(null rem(20));
+        }
+    }
+
+    &--inline-gutter-lg {
+        @include margin(null rem(-15));
+
+        li {
+            display: inline-block;
+            @include margin(null rem(15));
+        }
+    }
+
+    &--inline-gutter-sm {
+        @include margin(null rem(-5));
+
+        li {
+            display: inline-block;
+            @include margin(null rem(5));
+        }
+    }
+
+    &--inline-gutter-xs {
+        @include margin(null rem(-2));
+
+        li {
+            display: inline-block;
+            @include margin(null rem(2));
+        }
+    }
+
+    &--height-xl {
+        li {
+            img {
+                height: 150px;
+            }
+        }
+    }
+
+    &--height-lg {
+        li {
+            img {
+                height: 100px;
+            }
+        }
+    }
+
+    &--height-md {
+        li {
+            img {
+                height: 80px;
+            }
+        }
+    }
+
+    &--height-sm {
+        li {
+            img {
+                height: 50px;
+            }
+        }
+    }
+
+    &--height-xs {
+        li {
+            img {
+                height: 40px;
             }
         }
     }

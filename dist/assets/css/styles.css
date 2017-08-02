@@ -77,13 +77,11 @@ h1,
   -ms-flex-align: center;
       align-items: center; }
 
-.navbar__nav ul, .list--no-style, .list--featured--ticks, .list--featured--ticks--lg, .list--inline,
-.list--inline--sm-gutter, .icons-list {
+.navbar__nav ul, .list--no-style, .list--featured--ticks, .list--featured--ticks--lg, .list--inline, .list--imgs {
   padding-right: 0;
   padding-left: 0;
   margin: 0; }
-  .navbar__nav ul li, .list--no-style li, .list--featured--ticks li, .list--featured--ticks--lg li, .list--inline li,
-  .list--inline--sm-gutter li, .icons-list li {
+  .navbar__nav ul li, .list--no-style li, .list--featured--ticks li, .list--featured--ticks--lg li, .list--inline li, .list--imgs li {
     list-style: none;
     padding-left: 0; }
 
@@ -2903,32 +2901,82 @@ http://flickity.metafizzy.co
     width: 23px;
     height: 23px; }
 
-.list--inline li,
-.list--inline--sm-gutter li {
-  display: inline-block; }
-
 .list--inline {
   margin: -0.5em -1em; }
   .list--inline li {
-    padding: 0.5em 1em; }
-
-.list--inline--sm-gutter {
-  margin-right: -0.5em;
-  margin-left: -0.5em; }
-  .list--inline--sm-gutter li {
-    margin-right: 0.5em;
-    margin-left: 0.5em; }
-
-.icons-list--inline {
-  margin-right: -0.0938rem;
-  margin-left: -0.0938rem; }
-  .icons-list--inline li {
     display: inline-block;
-    margin-right: 0.0938rem;
-    margin-left: 0.0938rem; }
-    .icons-list--inline li a:not(.circle-icon):before {
-      color: black;
-      font-size: 1.5625rem; }
+    padding: 0.5em 1em; }
+  .list--inline--gutter-sm {
+    margin-right: -0.5em;
+    margin-left: -0.5em; }
+    .list--inline--gutter-sm li {
+      padding-right: 0;
+      padding-left: 0;
+      margin-right: 0.5em;
+      margin-left: 0.5em; }
+
+.list--imgs--inline, .list--imgs--inline-gutter-md {
+  margin-right: -0.625rem;
+  margin-left: -0.625rem; }
+  .list--imgs--inline li, .list--imgs--inline-gutter-md li {
+    display: inline-block;
+    margin-right: 0.625rem;
+    margin-left: 0.625rem; }
+
+.list--imgs--inline-gutter-xl {
+  margin-right: -1.5625rem;
+  margin-left: -1.5625rem; }
+  .list--imgs--inline-gutter-xl li {
+    display: inline-block;
+    margin-right: 1.5625rem;
+    margin-left: 1.5625rem; }
+
+.list--imgs--inline-gutter-lg {
+  margin-right: -1.25rem;
+  margin-left: -1.25rem; }
+  .list--imgs--inline-gutter-lg li {
+    display: inline-block;
+    margin-right: 1.25rem;
+    margin-left: 1.25rem; }
+
+.list--imgs--inline-gutter-lg {
+  margin-right: -0.9375rem;
+  margin-left: -0.9375rem; }
+  .list--imgs--inline-gutter-lg li {
+    display: inline-block;
+    margin-right: 0.9375rem;
+    margin-left: 0.9375rem; }
+
+.list--imgs--inline-gutter-sm {
+  margin-right: -0.3125rem;
+  margin-left: -0.3125rem; }
+  .list--imgs--inline-gutter-sm li {
+    display: inline-block;
+    margin-right: 0.3125rem;
+    margin-left: 0.3125rem; }
+
+.list--imgs--inline-gutter-xs {
+  margin-right: -0.125rem;
+  margin-left: -0.125rem; }
+  .list--imgs--inline-gutter-xs li {
+    display: inline-block;
+    margin-right: 0.125rem;
+    margin-left: 0.125rem; }
+
+.list--imgs--height-xl li img {
+  height: 150px; }
+
+.list--imgs--height-lg li img {
+  height: 100px; }
+
+.list--imgs--height-md li img {
+  height: 80px; }
+
+.list--imgs--height-sm li img {
+  height: 50px; }
+
+.list--imgs--height-xs li img {
+  height: 40px; }
 
 .accordion-panel--xs {
   max-height: 0;
