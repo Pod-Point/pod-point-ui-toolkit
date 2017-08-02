@@ -1369,13 +1369,6 @@ fieldset {
   color: #333;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   padding: 20px; }
-  .card.rich-text ul {
-    padding-left: 20px; }
-    .card.rich-text ul li {
-      padding-left: 0; }
-  .card.rich-text hr {
-    margin-top: 20px;
-    margin-bottom: 20px; }
   .card--options {
     position: relative; }
     .card--options:before {
@@ -1391,7 +1384,7 @@ fieldset {
       background-color: #e2e2e2; }
     .card--options--recommended:before {
       background-color: #8CC63F; }
-  .card--more-pad {
+  .card--padding-lg {
     padding: 40px 30px; }
   .card--centered {
     text-align: center; }
@@ -1404,10 +1397,6 @@ fieldset {
     border: 2px solid #ccc;
     padding: 30px; }
     .card--informative hr {
-      opacity: 1; }
-  .card--very-light-gray {
-    background-color: #f9fafa; }
-    .card--very-light-gray hr {
       opacity: 1; }
 
 .cards-same-height .card {
@@ -2872,6 +2861,11 @@ http://flickity.metafizzy.co
   padding-bottom: 1em; }
   .list--no-style li {
     padding-bottom: 0; }
+
+.list--spacing-left-sm {
+  padding-left: 20px; }
+  .list--spacing-left-sm li {
+    padding-left: 0; }
 
 .list--featured--ticks li {
   font-size: 0.875rem;

@@ -2,13 +2,23 @@
 //  TRUMPS - LISTS
 // =============================================================================
 
-// List of links, removing default list styling
+
+// Removing default list styling
 .list--no-style {
     @extend %remove-list-styles;
     padding-bottom: $typography-vertical-spacing;
 
     li {
         padding-bottom: 0;
+    }
+}
+
+// Tightens up left spacing
+.list--spacing-left-sm {
+    padding-left: 20px;
+
+    li {
+        padding-left: 0;
     }
 }
 

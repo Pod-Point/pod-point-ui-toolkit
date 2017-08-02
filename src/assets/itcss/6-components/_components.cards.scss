@@ -2,8 +2,6 @@
 //  COMPONENTS - CARDS
 // =============================================================================
 
-$card-padding-base: 20px;
-
 .card {
     display: block;
     background-color: white;
@@ -12,20 +10,6 @@ $card-padding-base: 20px;
     color: $font-color-base;
     box-shadow: $box-shadow-subtle;
     @include padding($card-padding-base);
-
-    &.rich-text {
-        ul {
-            padding-left: 20px;
-
-            li {
-                padding-left: 0;
-            }
-        }
-
-        hr {
-            @include margin(20px null);
-        }
-    }
 
     &--options {
         position: relative;
@@ -48,7 +32,7 @@ $card-padding-base: 20px;
         }
     }
 
-    &--more-pad {
+    &--padding-lg {
         @include padding(40px 30px);
     }
 
@@ -67,14 +51,6 @@ $card-padding-base: 20px;
     &--informative {
         border: $border-base;
         @include padding(30px);
-
-        hr {
-            opacity: 1;
-        }
-    }
-
-    &--very-light-gray {
-        background-color: $gray-very-light;
 
         hr {
             opacity: 1;
