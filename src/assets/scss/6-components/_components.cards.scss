@@ -14,6 +14,15 @@
     &--options {
         position: relative;
 
+        ul,
+        ol {
+            padding-left: 20px;
+
+            li {
+                padding-left: 0;
+            }
+        }
+
         &:before {
             content: '';
             @include position(absolute, -6px null null -1px);
