@@ -43,6 +43,14 @@
     color: $font-color-base;
 }
 
+.color-light {
+    color: $font-color-light;
+}
+
+.color-very-light {
+    color:  $font-color-very-light;
+}
+
 .remove-link-styles,
 .remove-link-styles a {
     @extend %remove-link-styles;

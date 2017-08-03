@@ -533,6 +533,9 @@ figure {
   border: 2px solid #ccc;
   border-radius: 5px; }
 
+img {
+  display: block; }
+
 .dl {
   margin-bottom: 15px; }
   .dl dt {
@@ -2267,7 +2270,7 @@ fieldset {
 .float-left {
   float: left !important; }
 
-.m-left-none {
+.m-l-none {
   margin-left: 0 !important; }
 
 .m-center {
@@ -2298,7 +2301,7 @@ fieldset {
     float: right !important; }
   .float-left-sm {
     float: left !important; }
-  .m-left-none-sm {
+  .m-l-none-sm {
     margin-left: 0 !important; }
   .m-center-sm {
     margin-right: auto !important;
@@ -2324,7 +2327,7 @@ fieldset {
     float: right !important; }
   .float-left-md {
     float: left !important; }
-  .m-left-none-md {
+  .m-l-none-md {
     margin-left: 0 !important; }
   .m-center-md {
     margin-right: auto !important;
@@ -2350,7 +2353,7 @@ fieldset {
     float: right !important; }
   .float-left-lg {
     float: left !important; }
-  .m-left-none-lg {
+  .m-l-none-lg {
     margin-left: 0 !important; }
   .m-center-lg {
     margin-right: auto !important;
@@ -2813,6 +2816,12 @@ fieldset {
 
 .color-base {
   color: #333; }
+
+.color-light {
+  color: #999; }
+
+.color-very-light {
+  color: #ccc; }
 
 .list--no-style {
   padding-bottom: 1em; }
