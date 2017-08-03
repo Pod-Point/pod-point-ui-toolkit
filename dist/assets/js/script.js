@@ -42,7 +42,7 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -108,9 +108,9 @@
 	    });
 	});
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*
 	 * classList.js: Cross-browser full element.classList implementation.
@@ -354,9 +354,9 @@
 	}
 
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	    Module system
@@ -411,9 +411,9 @@
 	
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
 	
@@ -472,9 +472,9 @@
 	    };
 	}
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	    DOM module handler, compatible with @pod-point/module-loader
@@ -544,9 +544,9 @@
 	
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 5 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -581,7 +581,7 @@
 	    ==============================================================
 	*/
 	function select(selector) {
-	    var root = arguments.length <= 1 || arguments[1] === undefined ? document : arguments[1];
+	    var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
 	
 	    var selection = root.querySelectorAll(selector);
 	
@@ -589,7 +589,7 @@
 	}
 	
 	function selectFirst(selector) {
-	    var root = arguments.length <= 1 || arguments[1] === undefined ? document : arguments[1];
+	    var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
 	
 	    return root.querySelector(selector);
 	}
@@ -641,7 +641,7 @@
 	    ==============================================================
 	*/
 	function create() {
-	    var tag = arguments.length <= 0 || arguments[0] === undefined ? 'div' : arguments[0];
+	    var tag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'div';
 	
 	    return document.createElement(tag);
 	}
@@ -729,16 +729,16 @@
 	}
 	
 	function whenReady(callback) {
-	    if (document.readyState != 'loading') {
+	    if (document.readyState != 'loading' && document.body != null) {
 	        callback();
 	    } else {
 	        document.addEventListener('DOMContentLoaded', callback);
 	    }
 	}
 
-/***/ },
+/***/ }),
 /* 6 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -763,9 +763,9 @@
 	};
 	window.defineSizeAndDevice();
 
-/***/ },
+/***/ }),
 /* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -928,9 +928,9 @@
 	    }
 	};
 
-/***/ },
+/***/ }),
 /* 8 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -1166,9 +1166,9 @@
 	    });
 	}
 
-/***/ },
+/***/ }),
 /* 9 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -1282,9 +1282,9 @@
 	    }
 	};
 
-/***/ },
+/***/ }),
 /* 10 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*jshint browser:true, node:true*/
 	
@@ -1307,9 +1307,9 @@
 	module.exports.Delegate = Delegate;
 
 
-/***/ },
+/***/ }),
 /* 11 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*jshint browser:true, node:true*/
 	
@@ -1742,9 +1742,9 @@
 	};
 
 
-/***/ },
+/***/ }),
 /* 12 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Module dependencies.
@@ -2825,9 +2825,9 @@
 	};
 
 
-/***/ },
+/***/ }),
 /* 13 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	
 	/**
@@ -2994,9 +2994,9 @@
 	};
 
 
-/***/ },
+/***/ }),
 /* 14 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	
 	/**
@@ -3023,9 +3023,9 @@
 	  return curr;
 	};
 
-/***/ },
+/***/ }),
 /* 15 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Module of mixed-in functions shared between node and client code
@@ -3195,9 +3195,9 @@
 	};
 
 
-/***/ },
+/***/ }),
 /* 16 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/**
 	 * Check if `obj` is an object.
@@ -3214,9 +3214,9 @@
 	module.exports = isObject;
 
 
-/***/ },
+/***/ }),
 /* 17 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	// The node and browser modules expose versions of this with the
 	// appropriate constructor function bound as first argument
@@ -3252,9 +3252,9 @@
 	module.exports = request;
 
 
-/***/ },
+/***/ }),
 /* 18 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -3323,9 +3323,9 @@
 	    }
 	};
 
-/***/ },
+/***/ }),
 /* 19 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -3545,9 +3545,9 @@
 	    }
 	};
 
-/***/ },
+/***/ }),
 /* 20 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -3578,9 +3578,9 @@
 	  return re.test(emailValue);
 	}
 
-/***/ },
+/***/ }),
 /* 21 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -3781,9 +3781,9 @@
 	    }
 	};
 
-/***/ },
+/***/ }),
 /* 22 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -3949,9 +3949,9 @@
 	    }
 	};
 
-/***/ },
+/***/ }),
 /* 23 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4054,9 +4054,9 @@
 	    }
 	};
 
-/***/ },
+/***/ }),
 /* 24 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4235,6 +4235,6 @@
 	    }
 	};
 
-/***/ }
+/***/ })
 /******/ ]);
 //# sourceMappingURL=script.js.map

@@ -2,11 +2,11 @@
 //	IMPORT ALL SCSS
 // =============================================================================
 
-@import 'base/__base'; // Required
-@import 'includes/__includes'; // Required
-@import 'layout/__layout';
-@import 'typography/__typography';
-@import 'forms/__forms';
-@import 'shared/__shared';
-@import 'modules/__modules'; // Each module can be used on it's own
-@import 'overrides/__overrides'; // Needs to be included last
+@import '1-settings/__settings'; // Required
+@import '2-tools/__tools'; // Required
+
+@import '3-generic/__generic';
+@import '4-elements/__elements';
+@import '5-objects/__objects';
+@import '6-components/__components';
+@import '7-trumps/__trumps';

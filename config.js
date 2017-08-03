@@ -2,7 +2,6 @@ module.exports = {
     src: {
         root: './src/',
         scss: './src/assets/scss/',
-        itcss: './src/assets/itcss/',
         js: './src/assets/js/',
         jsData: './src/assets/js/data/',
         plugins: './src/assets/plugins/',

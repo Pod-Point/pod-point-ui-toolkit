@@ -2,8 +2,8 @@
 //	DEMO STYLES
 // =============================================================================
 
-@import 'base/variables';
-@import 'includes/media-queries';
+@import '1-settings/__settings'; // Required
+@import '2-tools/__tools'; // Required
 
 .demo-header {
 	padding-top: rem(10);
@@ -12,24 +12,6 @@
 .demo-logo-main {
 	img {
 		width: rem(120);
-	}
-}
-.demo-section-heading {
-	background-color: $primary-color;
-	color: white;
-}
-.demo-section-sub-heading {
-	background-color: $gray-very-light;
-	padding-top: rem(20);
-	padding-bottom: rem(20);
-
-	h3 {
-		text-transform: uppercase;
-		font-size: rem(12);
-		font-weight: $font-weight-bold;
-		@include medium-and-up {
-			font-size: rem(14);
-		}
 	}
 }
 

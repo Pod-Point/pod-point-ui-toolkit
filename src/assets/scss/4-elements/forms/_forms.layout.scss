@@ -2,6 +2,10 @@
 //	ELEMENTS - FORMS - LAYOUT
 // =============================================================================
 
+fieldset {
+    border: none;
+}
+
 .form__field {
     width: 100%;
     min-width: $form-field-min-width;
