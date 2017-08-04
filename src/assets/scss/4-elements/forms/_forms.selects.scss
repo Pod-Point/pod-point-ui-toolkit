@@ -15,7 +15,9 @@
 
     &:after {
         content: '';
-        @include position(absolute, 35% $input-padding null null);
+        position: absolute;
+        top: 35%;
+        right: $input-padding;
         width: rem(15);
         height: rem(15);
         background-image: url($css-bg-path+'icons/cheveron.svg');

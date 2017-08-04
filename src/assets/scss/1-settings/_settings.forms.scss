@@ -4,15 +4,14 @@
 
 // Inputs
 $input-height: rem(40);
-$input-padding: 10px;
+$input-padding: rem(10);
 $input-text-color: $font-color-base;
-$input-placeholder-color: #ccc;
-$input-icon-color: #9C9C9C;
+$input-placeholder-color: $font-color-very-light;
 
 // Borders and shadows
 $form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
-$form-border-radius: 5px;
+$form-border-radius: $border-radius-base;
 $form-border-base: $border-base;
 
 // Button
@@ -21,4 +20,4 @@ $button-max-width: rem(600);
 // Form fields/groups
 $form-field-max-width: rem(600);
 $form-field-min-width: rem(250);
-$form-group-base-spacing: 30px;
+$form-group-base-spacing: rem(30);

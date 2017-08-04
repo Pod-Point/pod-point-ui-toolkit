@@ -2,8 +2,6 @@
 //  SETTINGS - GLOBAL
 // =============================================================================
 
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
-
 // Function to turn pixels to rems
 @function rem($size) {
     $remSize: $size / 16;

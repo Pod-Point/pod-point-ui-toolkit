@@ -17,12 +17,12 @@ $-vertical-spacing-mobile: -25px;
 $-vertical-spacing: -40px;
 
 // Spacing
-$space-xxs: 5px;
-$space-xs: 10px;
-$space-sm: 15px;
-$space-md: 20px;
-$space-lg: 30px;
-$space-xl: 50px;
-$space-xxl: 70px;
+$space-xxs: rem(5);
+$space-xs: rem(10);
+$space-sm: rem(15);
+$space-md: rem(20);
+$space-lg: rem(30);
+$space-xl: rem(50);
+$space-xxl: rem(70);
 
 $card-padding-base: 20px;
