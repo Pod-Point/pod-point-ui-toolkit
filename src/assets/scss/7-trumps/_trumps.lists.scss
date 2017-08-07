@@ -6,7 +6,7 @@
 // Removing default list styling
 .list--no-style {
     @extend %remove-list-styles;
-    padding-bottom: $typography-vertical-spacing;
+    padding-bottom: $typography-v-spacing;
 
     li {
         padding-bottom: 0;

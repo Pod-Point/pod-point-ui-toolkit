@@ -9,7 +9,8 @@ $spacings: (
     'sm': $space-sm,
     'md': $space-md,
     'lg': $space-lg,
-    'xl': $space-xl
+    'xl': $space-xl,
+    'xxl': $space-xxl
 );
 
 @each $size, $value in $spacings {

@@ -9,7 +9,7 @@
 }
 
 .form__group {
-    margin-bottom: $form-group-base-spacing;
+    margin-bottom: $form-group-b-spacing;
 
     &:last-child {
         margin-bottom: 0;
@@ -17,11 +17,11 @@
 }
 
 .form__groups-inline {
-    @include margin(-10px);
+    @include margin($-form-groups-inline-gutter);
     overflow: hidden;
 
     .form__group {
         display: inline-block;
-        @include margin(10px);
+        @include margin($form-groups-inline-gutter);
     }
 }

@@ -18,8 +18,8 @@
         position: absolute;
         top: 35%;
         right: $input-padding;
-        width: rem(15);
-        height: rem(15);
+        width: $select-cheveron-size;
+        height: $select-cheveron-size;
         background-image: url($css-bg-path+'icons/cheveron.svg');
         background-size: cover;
     }

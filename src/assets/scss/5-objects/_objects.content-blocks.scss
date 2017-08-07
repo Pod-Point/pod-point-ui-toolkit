@@ -2,21 +2,18 @@
 //  OBJECTS - CONTENT BLOCKS
 // =============================================================================
 
+// This can all be achieved using trump classes, however these classes are nice to keep consistency
 .content-block {
-    @include padding(60px null);
+    @include padding($space-xl null);
 
     &--standout {
         @include screen-md-min {
-            @include padding(100px null);
+            @include padding($space-xxxl null);
         }
     }
 
     &--strip {
-        @include padding(20px null);
-    }
-
-    &--no-padding {
-        @include padding(0 null);
+        @include padding($space-md null);
     }
 
     &--centered {

@@ -15,10 +15,10 @@
     min-height: 100%;
 
     .modal__close {
-        @include position(absolute, -55px $horizontal-spacing null null);
+        @include position(absolute, -55px $h-spacing null null);
 
         @include screen-md-min {
-            @include position(absolute, -70px $horizontal-spacing null null);
+            @include position(absolute, -70px $h-spacing null null);
         }
     }
 

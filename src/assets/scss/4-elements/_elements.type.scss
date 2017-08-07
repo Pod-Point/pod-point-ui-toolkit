@@ -5,7 +5,7 @@
 p,
 .p {
     margin: 0;
-    padding-bottom: $typography-vertical-spacing;
+    padding-bottom: $typography-v-spacing;
 
     &:last-child {
         padding-bottom: 0;
@@ -42,11 +42,11 @@ mark,
 .mark,
 .highlight {
     background-color: $highlight-color;
-    @include padding(null 0.3em);
+    @include padding(null $highlight-text-padding);
 }
 
 code {
     color: $primary-color-very-dark;
     background-color: $primary-color-very-light;
-    padding: 0.3em;
+    padding: $highlight-text-padding;
 }

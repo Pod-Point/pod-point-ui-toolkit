@@ -9,7 +9,7 @@ figure {
     box-shadow: $box-shadow-inset;
     color: white;
     margin: 0;
-    padding: rem(20) 30px;
+    padding: $card-v-padding $card-h-padding;
     border: $border-base;
     border-radius: $border-radius-base;
 }

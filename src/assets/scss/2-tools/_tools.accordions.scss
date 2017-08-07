@@ -1,0 +1,20 @@
+// =============================================================================
+//  TOOLS - ACCORDIONS
+// =============================================================================
+
+@mixin accordion-size($v-spacing) {
+    .accordion__dt {
+        padding-top: $v-spacing;
+        padding-bottom: $v-spacing;
+
+        .accordion__toggle-icon {
+            top: $v-spacing;
+        }
+    }
+
+    .accordion__dd {
+        .accordion__dd-content {
+            padding-bottom: $v-spacing;
+        }
+    }
+}

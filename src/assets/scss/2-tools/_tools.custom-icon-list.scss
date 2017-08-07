@@ -8,7 +8,7 @@
     li {
         @include font-size-md;
         position: relative;
-        padding-bottom: $typography-vertical-spacing / 1.5;
+        padding-bottom: $typography-v-spacing / 1.5;
         padding-left: 2em;
 
         &:before {
@@ -28,7 +28,7 @@
     li {
         @include font-size-lg;
         position: relative;
-        padding-bottom: $typography-vertical-spacing / 1.5;
+        padding-bottom: $typography-v-spacing / 1.5;
         padding-left: 2em;
 
         &:before {

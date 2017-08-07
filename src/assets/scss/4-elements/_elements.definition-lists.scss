@@ -3,11 +3,11 @@
 // =============================================================================
 
 .dl {
-    margin-bottom: rem(15);
+    margin-bottom: $dl-h-spacing;
 
     dt {
         font-weight: bold;
-        margin-top: rem(15);
+        margin-top: $dl-h-spacing;
     }
 
     dd {

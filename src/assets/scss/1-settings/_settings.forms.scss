@@ -2,22 +2,51 @@
 //  SETTINGS - FORMS
 // =============================================================================
 
-// Inputs
-$input-height: rem(40);
-$input-padding: rem(10);
-$input-text-color: $font-color-base;
-$input-placeholder-color: $font-color-very-light;
-
 // Borders and shadows
 $form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
 $form-border-radius: $border-radius-base;
 $form-border-base: $border-base;
 
-// Button
+// Buttons
 $button-max-width: rem(600);
+$buttons-inline-gutter: rem(10);
+$-buttons-inline-gutter: rem(-10);
+$button-b-spacing: rem(10);
+$-button-b-spacing: rem(-10);
 
-// Form fields/groups
+// Form fields
 $form-field-max-width: rem(600);
 $form-field-min-width: rem(250);
-$form-group-base-spacing: rem(30);
+
+// Form groups
+$form-group-b-spacing: rem(30);
+$form-groups-inline-gutter: 10px;
+$-form-groups-inline-gutter: -10px;
+
+// Inputs
+$input-height: rem(40);
+$input-padding: rem(10);
+$input-text-color: $font-color-base;
+$input-placeholder-color: $font-color-very-light;
+$alt-input-v-padding: 1.5em;
+
+// Text areas
+$textarea-min-height: rem(130);
+
+// Selects
+$select-cheveron-size: rem(15);
+
+// Checkbox/radios
+$checkbox-radio-inline-gutter: rem(25);
+$checkbox-size: rem(23);
+$checkbox-tick-size: rem(15);
+$radio-size: rem(18);
+$radio-spacing: 0.4em;
+$radio-text-l-spacing: rem(30);
+$checkbox-text-l-spacing: rem(35);
+$checkbox-text-b-spacing: rem(5);
+
+// Label/errors
+$form-label-b-spacing: rem(5);
+$form-error-t-spacing: rem(5);

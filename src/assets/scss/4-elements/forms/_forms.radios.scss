@@ -2,10 +2,6 @@
 //	ELEMENTS - FORMS - RADIOS
 // =============================================================================
 
-.radios-wrap {
-    margin-bottom: rem(-10);
-}
-
 input[type="radio"] {
     position: absolute;
     left: -9999px;
@@ -20,17 +16,18 @@ input[type="radio"] {
 
     &:last-child {
         margin-bottom: 0;
-
-        > span {
-            padding-right: 0;
-        }
     }
 
     &--inline {
         display: inline-block;
+        margin-right: $checkbox-radio-inline-gutter;
         width: auto;
         max-width: auto;
         min-width: auto;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
     > input[type="radio"] {
@@ -64,8 +61,7 @@ input[type="radio"] {
     > span {
         @include font-size-md;
         position: relative;
-        @include padding(rem(6) rem(25) 0 rem(30));
-        min-height: rem(30);
+        @include padding($radio-spacing null 0 $radio-text-l-spacing);
 
         &:after,
         &:before {
@@ -73,14 +69,11 @@ input[type="radio"] {
             position: absolute;
             left: 0;
             top: 0;
-            @include margin(rem(6) null rem(6) null);
-            width: rem(18);
-            height: rem(18);
+            @include margin($radio-spacing null $radio-spacing null);
+            width: $radio-size;
+            height: $radio-size;
             z-index: 0;
             transition: .28s ease;
-            @include screen-md-min {
-                @include margin(rem(8) null rem(8) null);
-            }
         }
         &:before {
             border-radius: 50%;
