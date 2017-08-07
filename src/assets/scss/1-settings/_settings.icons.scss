@@ -21,14 +21,14 @@ $circle-icon-size-lg: 60px;
 // Navicon
 $navicon-width: 25px;
 $navicon-height: 18px;
-$navicon-stroke: 2px;
-$navicon-stroke-radius: 5px;
+$navicon-stroke: $border-stroke;
+$navicon-stroke-radius: $border-radius-base;
 
 // Plus minus toggle
 $plus-minus-container-size: 29px;
 $plus-minus-size: 15px;
-$plus-minus-stroke: 2px;
-$plus-minus-stroke-radius: 5px;
+$plus-minus-stroke: $border-stroke;
+$plus-minus-stroke-radius: $border-radius-base;
 $circle-plus-minus-size: 19px;
 $circle-plus-minus-t-spacing: 12px;
 $circle-plus-minus-r-spacing: 3px;

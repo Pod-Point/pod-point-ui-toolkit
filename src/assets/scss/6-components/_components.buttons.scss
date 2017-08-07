@@ -18,7 +18,7 @@
     line-height: $button-line-height;
     letter-spacing: $button-letter-spacing;
     border-radius: $button-radius;
-    border: 2px solid $primary-color;
+    border: $border-primary;
     transition: all 0.2s ease;
     max-width: $button-max-width;
 

@@ -3,7 +3,7 @@
 // =============================================================================
 
 .tooltip-icon {
-    @include icon-in-circle($bgColor: transparent, $color: $font-color-base, $border: 2px solid $font-color-base);
+    @include icon-in-circle($bgColor: transparent, $color: $font-color-base, $border: $border-font-color);
     @include icon-in-border-circle--size($dimension: $tooltip-icon-circle-size);
     @extend %hide-text-not-pseudo;
     display: inline-block;

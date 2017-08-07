@@ -1365,7 +1365,7 @@ input[type="radio"] {
       margin-right: 20%;
       margin-left: 20%; }
   .card--highlight {
-    border: solid #8CC63F 2px; }
+    border: 2px solid #8CC63F; }
   .card--informative {
     border: 2px solid #ccc; }
     .card--informative hr {
