@@ -5,7 +5,7 @@
 ul,
 ol {
     margin: 0;
-    padding-left: 2em;
+    padding-left: $list-l-spacing;
     padding-bottom: $typography-v-spacing / 2;
 
     &:last-child {
@@ -29,20 +29,20 @@ ol {
 
 ul {
     li {
-        padding-left: 1em;
+        padding-left: $list-l-spacing / 2;
         list-style-type: disc;
 
         ul li {
             list-style-type: circle;
-            padding-left: 1em;
-            margin-left: 0.5em;
+            padding-left: $list-l-spacing / 2;
+            margin-left: $list-l-spacing / 4;
         }
     }
 }
 
 ol {
     li {
-        padding-left: 1em;
+        padding-left: $list-l-spacing / 2;
         list-style-type: decimal;
     }
 }

@@ -15,7 +15,7 @@
 
 // Tightens up left spacing
 .list--spacing-left-sm {
-    padding-left: 20px;
+    padding-left: $list-l-spacing / 3;
 
     li {
         padding-left: 0;
@@ -35,19 +35,22 @@
 // Inline list
 .list--inline {
     @extend %remove-list-styles;
-    @include margin(-0.5em -1em);
+    margin: -$list-inline-v-spacing -$list-inline-gutter;
 
     li {
         display: inline-block;
-        @include padding(0.5em 1em);
+        padding: $list-inline-v-spacing $list-inline-gutter;
     }
 
     &--gutter-sm {
-        @include margin(null -0.5em);
+        margin-right: -$list-inline-gutter-sm;
+        margin-left: -$list-inline-gutter-sm;
 
         li {
-            @include padding(null 0);
-            @include margin(null 0.5em);
+            padding-right: 0;
+            padding-left: 0;
+            margin-right: $list-inline-gutter-sm;
+            margin-left: $list-inline-gutter-sm;
         }
     }
 }
@@ -58,63 +61,33 @@
 
     &--inline,
     &--inline-gutter-md {
-        @include margin(null rem(-10));
-
-        li {
-            display: inline-block;
-            @include margin(null rem(10));
-        }
+        @include inline-list-gutter($img-list-inline-gutter-md);
     }
 
     &--inline-gutter-xl {
-        @include margin(null rem(-25));
-
-        li {
-            display: inline-block;
-            @include margin(null rem(25));
-        }
+        @include inline-list-gutter($img-list-inline-gutter-xl);
     }
 
     &--inline-gutter-lg {
-        @include margin(null rem(-20));
-
-        li {
-            display: inline-block;
-            @include margin(null rem(20));
-        }
-    }
-
-    &--inline-gutter-lg {
-        @include margin(null rem(-15));
-
-        li {
-            display: inline-block;
-            @include margin(null rem(15));
-        }
+        @include inline-list-gutter($img-list-inline-gutter-lg);
     }
 
     &--inline-gutter-sm {
-        @include margin(null rem(-5));
-
-        li {
-            display: inline-block;
-            @include margin(null rem(5));
-        }
+        @include inline-list-gutter($img-list-inline-gutter-sm);
     }
 
     &--inline-gutter-xs {
-        @include margin(null rem(-2));
+        @include inline-list-gutter($img-list-inline-gutter-xs);
+    }
 
-        li {
-            display: inline-block;
-            @include margin(null rem(2));
-        }
+    &--inline-gutter-xxs {
+        @include inline-list-gutter($img-list-inline-gutter-xxs);
     }
 
     &--height-xl {
         li {
             img {
-                height: 150px;
+                height: $img-list-inline-height-xl;
             }
         }
     }
@@ -122,7 +95,7 @@
     &--height-lg {
         li {
             img {
-                height: 100px;
+                height: $img-list-inline-height-lg;
             }
         }
     }
@@ -130,7 +103,7 @@
     &--height-md {
         li {
             img {
-                height: 80px;
+                height: $img-list-inline-height-md;
             }
         }
     }
@@ -138,7 +111,7 @@
     &--height-sm {
         li {
             img {
-                height: 50px;
+                height: $img-list-inline-height-sm;
             }
         }
     }
@@ -146,7 +119,7 @@
     &--height-xs {
         li {
             img {
-                height: 40px;
+                height: $img-list-inline-height-xs;
             }
         }
     }

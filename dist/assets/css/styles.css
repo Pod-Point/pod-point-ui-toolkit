@@ -2850,7 +2850,7 @@ input[type="radio"] {
     padding-bottom: 0; }
 
 .list--spacing-left-sm {
-  padding-left: 20px; }
+  padding-left: 0.6667em; }
   .list--spacing-left-sm li {
     padding-left: 0; }
 
@@ -2891,7 +2891,7 @@ input[type="radio"] {
     height: 1.4375rem; }
 
 .list--inline {
-  margin: -0.5em -1em; }
+  margin: -1.5em; }
   .list--inline li {
     display: inline-block;
     padding: 0.5em 1em; }
@@ -2905,49 +2905,49 @@ input[type="radio"] {
       margin-left: 0.5em; }
 
 .list--imgs--inline, .list--imgs--inline-gutter-md {
-  margin-right: -0.625rem;
-  margin-left: -0.625rem; }
+  margin-right: -0.9375rem;
+  margin-left: -0.9375rem; }
   .list--imgs--inline li, .list--imgs--inline-gutter-md li {
     display: inline-block;
-    margin-right: 0.625rem;
-    margin-left: 0.625rem; }
+    margin-right: 0.9375rem;
+    margin-left: 0.9375rem; }
 
 .list--imgs--inline-gutter-xl {
-  margin-right: -1.5625rem;
-  margin-left: -1.5625rem; }
+  margin-right: -0.9375rem;
+  margin-left: -0.9375rem; }
   .list--imgs--inline-gutter-xl li {
     display: inline-block;
     margin-right: 1.5625rem;
     margin-left: 1.5625rem; }
 
 .list--imgs--inline-gutter-lg {
-  margin-right: -1.25rem;
-  margin-left: -1.25rem; }
+  margin-right: -0.9375rem;
+  margin-left: -0.9375rem; }
   .list--imgs--inline-gutter-lg li {
     display: inline-block;
     margin-right: 1.25rem;
     margin-left: 1.25rem; }
 
-.list--imgs--inline-gutter-lg {
+.list--imgs--inline-gutter-sm {
   margin-right: -0.9375rem;
   margin-left: -0.9375rem; }
-  .list--imgs--inline-gutter-lg li {
-    display: inline-block;
-    margin-right: 0.9375rem;
-    margin-left: 0.9375rem; }
-
-.list--imgs--inline-gutter-sm {
-  margin-right: -0.3125rem;
-  margin-left: -0.3125rem; }
   .list--imgs--inline-gutter-sm li {
+    display: inline-block;
+    margin-right: 0.625rem;
+    margin-left: 0.625rem; }
+
+.list--imgs--inline-gutter-xs {
+  margin-right: -0.9375rem;
+  margin-left: -0.9375rem; }
+  .list--imgs--inline-gutter-xs li {
     display: inline-block;
     margin-right: 0.3125rem;
     margin-left: 0.3125rem; }
 
-.list--imgs--inline-gutter-xs {
-  margin-right: -0.125rem;
-  margin-left: -0.125rem; }
-  .list--imgs--inline-gutter-xs li {
+.list--imgs--inline-gutter-xxs {
+  margin-right: -0.9375rem;
+  margin-left: -0.9375rem; }
+  .list--imgs--inline-gutter-xxs li {
     display: inline-block;
     margin-right: 0.125rem;
     margin-left: 0.125rem; }
