@@ -9,21 +9,21 @@
     vertical-align: middle;
     width: auto;
     display: inline-block;
-    @include padding(8px 20px);
-    min-height: 40px;
+    @include padding($button-v-padding $button-h-padding-mobile);
+    min-height: $button-min-height;
     color: white;
     background-color: $primary-color;
     font-weight: $font-weight-bold;
-    font-size: rem(15);
-    line-height: 1.2;
-    letter-spacing: rem(1);
-    border-radius: 30px;
+    font-size: $button-font-size;
+    line-height: $button-line-height;
+    letter-spacing: $button-letter-spacing;
+    border-radius: $button-radius;
     border: 2px solid $primary-color;
     transition: all 0.2s ease;
     max-width: $button-max-width;
 
     @include screen-sm-min {
-        @include padding(null 35px);
+        @include padding(null $button-h-padding);
     }
 
     &:focus {
@@ -90,8 +90,8 @@
             content: '';
             background-image: url($css-bg-path+'icons/tick-white.svg');
             background-size: cover;
-            width: 20px;
-            height: 20px;
+            width: $button-icon-size;
+            height: $button-icon-size;
         }
 
         &:hover:not(.is-disabled),

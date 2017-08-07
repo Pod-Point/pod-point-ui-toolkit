@@ -523,7 +523,7 @@ figure {
   box-shadow: inset 0 0 0.9375rem -0.3125rem rgba(0, 0, 0, 0.3);
   color: white;
   margin: 0;
-  padding: 1.25rem 30px;
+  padding: 1.25rem 20px;
   border: 2px solid #ccc;
   border-radius: 5px; }
 
@@ -1197,16 +1197,10 @@ input[type="radio"] {
 
 .alert {
   width: 100%;
-  padding: 30px;
-  margin-bottom: 10px; }
+  padding: 1.25rem;
+  margin-bottom: 0.625rem; }
   .alert h4 {
-    margin-top: 0;
     color: inherit; }
-  .alert > p,
-  .alert > ul {
-    margin-bottom: 0; }
-  .alert > p + p {
-    margin-top: 5px; }
   .alert a {
     color: inherit;
     text-decoration: underline; }
@@ -1257,8 +1251,8 @@ input[type="radio"] {
   vertical-align: middle;
   width: auto;
   display: inline-block;
-  padding: 8px 20px;
-  min-height: 40px;
+  padding: 0.5rem 20px;
+  min-height: 2.5rem;
   color: white;
   background-color: #8CC63F;
   font-weight: 700;
@@ -1311,8 +1305,8 @@ input[type="radio"] {
     content: '';
     background-image: url("../img/css-bg/icons/tick-white.svg");
     background-size: cover;
-    width: 20px;
-    height: 20px; }
+    width: 1.25rem;
+    height: 1.25rem; }
   .btn.btn--selected:hover:not(.is-disabled):before, .btn.btn--selected:focus:not(.is-disabled):before, .btn.btn--selected:active:not(.is-disabled):before {
     background-image: url("../img/css-bg/icons/tick-primary.svg"); }
 
@@ -1341,7 +1335,7 @@ input[type="radio"] {
   border: 1px solid #ccc;
   color: #333;
   box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.1);
-  padding: 20px; }
+  padding: 1.25rem 20px; }
   .card--options {
     position: relative; }
     .card--options ul,
@@ -1364,7 +1358,7 @@ input[type="radio"] {
     .card--options--recommended:before {
       background-color: #8CC63F; }
   .card--padding-lg {
-    padding: 40px 30px; }
+    padding: 2.5rem 30px; }
   .card--centered {
     text-align: center; }
     .card--centered hr {
@@ -1373,8 +1367,7 @@ input[type="radio"] {
   .card--highlight {
     border: solid #8CC63F 2px; }
   .card--informative {
-    border: 2px solid #ccc;
-    padding: 30px; }
+    border: 2px solid #ccc; }
     .card--informative hr {
       opacity: 1; }
 
@@ -1400,7 +1393,7 @@ input[type="radio"] {
     box-sizing: border-box;
     z-index: auto;
     width: 90%;
-    padding: 30px;
+    padding: 1.875rem 30px;
     background-color: white;
     border: 2px solid #ccc;
     border-radius: 5px;
@@ -1704,22 +1697,27 @@ input[type="radio"] {
   font-size: 0.875rem;
   font-weight: 700;
   box-sizing: border-box;
-  line-height: 1rem;
-  min-height: 35px;
-  padding: 8px 15px 5px 35px;
-  display: inline-block;
-  margin-bottom: 10px; }
+  min-height: 2.1875rem;
+  padding: 0.5rem 0.9375rem;
+  display: inline-block; }
   @media (min-width: 50em) {
     .label {
       font-size: 1rem; } }
+  .label--left-icon {
+    padding-left: 2.8125rem; }
+    .label--left-icon svg {
+      left: 0.9375rem; }
+  .label--right-icon {
+    padding-right: 2.8125rem; }
+    .label--right-icon svg {
+      right: 0.9375rem; }
   .label svg {
     fill: white;
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
     position: absolute;
     top: 50%;
-    left: 10px;
-    margin-top: -10px; }
+    margin-top: -0.625rem; }
   .label--gray {
     background-color: #b3b3b3; }
 
@@ -1754,8 +1752,8 @@ input[type="radio"] {
     max-width: 1100px;
     padding-right: 25px;
     padding-left: 25px;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: 6.25rem;
+    margin-bottom: 6.25rem;
     color: white; }
     @media (min-width: 50em) {
       .modal__content {
@@ -1763,15 +1761,15 @@ input[type="radio"] {
         padding-left: 30px; } }
     @media (min-width: 50em) {
       .modal__content {
-        margin-top: 100px;
-        margin-bottom: 100px; } }
+        margin-top: 5rem;
+        margin-bottom: 5rem; } }
     .modal__content--narrow {
       max-width: 800px; }
   .modal__panel {
     padding-right: 25px;
     padding-left: 25px;
-    padding-top: 40px;
-    padding-bottom: 40px; }
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem; }
     @media (min-width: 50em) {
       .modal__panel {
         padding-right: 30px;
@@ -1846,7 +1844,7 @@ input[type="radio"] {
 @media (min-width: 24em) {
   .tooltip--center .tooltip__box {
     left: 50%;
-    margin-left: -173px; } }
+    margin-left: -162.5px; } }
 
 @media (min-width: 24em) {
   .tooltip--center.tooltip--lg .tooltip__box {
@@ -1860,8 +1858,8 @@ input[type="radio"] {
 
 .tooltip__close {
   position: absolute;
-  top: 15px;
-  right: 10px; }
+  top: 13.3333px;
+  right: 8px; }
 
 .video-wrapper {
   position: relative;
@@ -1897,7 +1895,7 @@ input[type="radio"] {
     .icon--inline > svg {
       margin: 0;
       position: relative;
-      top: 0.15em;
+      top: 0.1667em;
       height: 1em;
       width: 1em; }
   .icon--inline + span {
@@ -2078,8 +2076,8 @@ input[type="radio"] {
   background-color: transparent;
   border-radius: 50%;
   border: 2px solid #333;
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
   font-size: 10px; }
   .toggle-panel-icon--secondary svg {
     fill: #333;
@@ -2087,10 +2085,10 @@ input[type="radio"] {
   .toggle-panel-icon--secondary:before {
     color: #333; }
   .toggle-panel-icon--secondary svg {
-    width: 12px;
-    height: 12px;
-    margin-top: 4px;
-    margin-bottom: 4px; }
+    width: 12.5px;
+    height: 12.5px;
+    margin-top: 4.1667px;
+    margin-bottom: 4.1667px; }
 
 .circle-icon--close-panel {
   text-align: center;

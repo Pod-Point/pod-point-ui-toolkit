@@ -12,6 +12,17 @@
 @import '_settings.shadows';
 @import '_settings.forms';
 @import '_settings.tables';
+@import '_settings.grid';
+@import '_settings.icons';
+@import '_settings.buttons';
 
 // Component settings
 @import '_settings.component.navbar';
+@import '_settings.component.accordion';
+@import '_settings.component.cards';
+@import '_settings.component.confirm-popup';
+@import '_settings.component.hero';
+@import '_settings.component.labels';
+@import '_settings.component.modal';
+@import '_settings.component.tooltip';
+

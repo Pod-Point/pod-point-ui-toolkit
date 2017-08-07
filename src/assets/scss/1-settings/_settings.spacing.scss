@@ -26,27 +26,10 @@ $space-xl: rem(50);
 $space-xxl: rem(70);
 $space-xxxl: rem(100);
 
-$card-padding-base: 20px;
+
 $dl-h-spacing: rem(15);
 
-$card-h-padding: 30px;
-$card-v-padding: rem(20);
+
+$alert-padding: rem(20);
 
 $highlight-text-padding: 0.3em;
-
-// Grid
-$grid-gutter: 2%; // Flex calc doesn't work in IE so this has to be a percentage
-$grid-gutter-mobile: 0.5%;
-$grid-b-spacing: 4%;
-$-grid-b-spacing: -4%;
-$grid-b-spacing-lg-mobile: rem(80);
-$grid-separator-b-spacing: rem(40);
-
-// Accordion
-$accordion-v-spacing-xs: rem(10);
-$accordion-v-spacing-sm: rem(15);
-$accordion-v-spacing-md: rem(20);
-$accordion-v-spacing-lg: rem(30);
-$accordion-v-spacing-xl: rem(40);
-
-$accordion-with-toggle-h-spacing: 3.5em;

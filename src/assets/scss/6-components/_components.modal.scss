@@ -15,10 +15,10 @@
     min-height: 100%;
 
     .modal__close {
-        @include position(absolute, -55px $h-spacing null null);
+        @include position(absolute, $modal-close-t-offset-mobile $h-spacing null null);
 
         @include screen-md-min {
-            @include position(absolute, -70px $h-spacing null null);
+            @include position(absolute, $modal-close-t-offset $h-spacing null null);
         }
     }
 
@@ -26,20 +26,20 @@
         text-align: center;
         position: relative;
         @include container;
-        @include margin(80px null);
+        @include margin($modal-content-h-spacing-mobile null);
         color: white;
 
         @include screen-md-min {
-            @include margin(100px null);
+            @include margin($modal-content-h-spacing null);
         }
 
         &--narrow {
-            max-width: 800px;
+            max-width: $modal-content-narrow;
         }
     }
 
     &__panel {
         @include horizontal-spacing;
-        @include padding(40px null);
+        @include padding($modal-panel-v-spacing null);
     }
 }

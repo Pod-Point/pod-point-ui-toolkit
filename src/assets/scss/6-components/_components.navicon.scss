@@ -3,19 +3,19 @@
 // =============================================================================
 
 .navicon {
-    width: 25px;
-    height: 18px;
+    width: $navicon-width;
+    height: $navicon-height;
     position: relative;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
 
     span {
         display: block;
-        height: 2px;
+        height: $navicon-stroke;
         width: 100%;
         background-color: $icon-color;
         @include position(absolute, null null null 0);
-        border-radius: 5px;
+        border-radius: $navicon-stroke-radius;
         transform: rotate(0deg);
         transition: .25s ease-in-out;
         opacity: 1;
@@ -33,7 +33,7 @@
             top: 50%;
 
             .nav-open & {
-                left: -25px;
+                left: -$navicon-width;
                 opacity: 0;
             }
         }

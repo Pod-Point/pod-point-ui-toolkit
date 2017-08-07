@@ -12,19 +12,19 @@
     }
 
     .content-block {
-        min-height: 300px;
+        min-height: $hero-content-min-height-mobile;
 
         @include screen-md-min {
-            min-height: 420px;
+            min-height: $hero-content-min-height;
         }
     }
 
     &__content {
         @include popUpFadeIn;
-        max-width: 300px;
+        max-width: $hero-content-max-width-mobile;
 
         @include screen-md-min {
-            max-width: 500px;
+            max-width: $hero-content-max-width;
         }
     }
 

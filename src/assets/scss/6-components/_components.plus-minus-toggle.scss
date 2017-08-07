@@ -4,15 +4,17 @@
 
 .plus-minus-toggle {
     cursor: pointer;
-    width: 29px;
-    height: 29px;
+    width: $plus-minus-container-size;
+    height: $plus-minus-container-size;
 
     span {
         display: block;
-        @include position(relative, 17px 0 null null);
+        position: relative;
+        top: $plus-minus-size + $plus-minus-stroke;
+        right: 0;
         float: right;
-        width: 15px;
-        height: 15px;
+        width: $plus-minus-size;
+        height: $plus-minus-size;
         transition: .5s ease-in-out;
         transform: rotate(0deg);
 
@@ -20,11 +22,11 @@
         &:after {
             content: '';
             display: block;
-            height: 2px;
+            height: $plus-minus-stroke;
             width: 100%;
             background-color: $icon-color;
             @include position(absolute, 0 null null null);
-            border-radius: 5px;
+            border-radius: $plus-minus-stroke-radius;
             transform: rotate(0deg);
             transition: .25s ease-in-out;
             opacity: 1;
@@ -51,12 +53,12 @@
 
     &--primary-in-circle {
         border-radius: 50%;
-        border: 2px solid $primary-color;
+        border: $plus-minus-stroke solid $primary-color;
 
         span {
-            @include position(relative, 12px 3px null null);
-            width: 19px;
-            height: 19px;
+            @include position(relative, $circle-plus-minus-t-spacing $circle-plus-minus-r-spacing null null);
+            width: $circle-plus-minus-size;
+            height: $circle-plus-minus-size;
 
             &:before,
             &:after {

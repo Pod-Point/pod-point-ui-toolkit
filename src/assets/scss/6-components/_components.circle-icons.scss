@@ -8,22 +8,22 @@
     @include icon-in-circle--size;
 
     &--sm {
-        @include icon-in-circle--size($dimension: 25px);
+        @include icon-in-circle--size($dimension: $circle-icon-size-sm);
     }
 
     &--sm-resp {
-        @include icon-in-circle--size($dimension: 25px);
+        @include icon-in-circle--size($dimension: $circle-icon-size-sm);
 
         @include screen-md-min {
-            @include icon-in-circle--size($dimension: 40px);
+            @include icon-in-circle--size($dimension: $circle-icon-size-md);
         }
     }
 
     &--lg-resp {
-        @include icon-in-circle--size($dimension: 40px);
+        @include icon-in-circle--size($dimension: $circle-icon-size-md);
 
         @include screen-md-min {
-            @include icon-in-circle--size($dimension: 60px);
+            @include icon-in-circle--size($dimension: $circle-icon-size-lg);
         }
     }
 
@@ -61,13 +61,13 @@
 
 .toggle-panel-icon {
     @include icon-in-circle($bgColor: transparent, $color: $primary-color, $border: 2px solid $primary-color);
-    @include icon-in-circle--size($dimension: 25px);
-    @include icon-in-border-circle--size($dimension: 25px);
+    @include icon-in-circle--size($dimension: $circle-icon-size-sm);
+    @include icon-in-border-circle--size($dimension: $circle-icon-size-sm);
 }
 
 .toggle-panel-icon--secondary {
     @include icon-in-circle($bgColor: transparent, $color: $font-color-base, $border: 2px solid $font-color-base);
-    @include icon-in-border-circle--size($dimension: 24px);
+    @include icon-in-border-circle--size($dimension: $circle-icon-size-sm);
 }
 
 .circle-icon--close-panel {
@@ -87,7 +87,6 @@
 }
 
 .circle-icon--close {
-
     &:hover {
         transition: transform 0.8s ease-in-out;
         transform: rotate(360deg);

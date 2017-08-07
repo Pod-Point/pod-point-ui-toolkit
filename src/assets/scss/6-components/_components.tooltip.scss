@@ -4,15 +4,15 @@
 
 .tooltip-icon {
     @include icon-in-circle($bgColor: transparent, $color: $font-color-base, $border: 2px solid $font-color-base);
-    @include icon-in-border-circle--size($dimension: 15px);
+    @include icon-in-border-circle--size($dimension: $tooltip-icon-circle-size);
     @extend %hide-text-not-pseudo;
     display: inline-block;
 
     &:before {
         font-weight: bold;
         content: '?';
-        font-size: 9px;
-        line-height: 12px;
+        font-size: $tooltip-icon-size;
+        line-height: $tooltip-icon-line-height;
     }
 }
 
@@ -32,15 +32,15 @@
     box-sizing: border-box;
     z-index: auto;
     width: 100%;
-    @include padding(20px);
-    margin-bottom: 20px;
+    padding: $tooltip-padding;
+    margin-bottom: $tooltip-b-spacing;
     background-color: white;
     border: $border-base;
     border-radius: $border-radius-base;
     box-shadow: $box-shadow-front;
 
     @include screen-xs-min {
-        width: 325px;
+        width: $tooltip-width;
     }
 }
 
@@ -50,7 +50,7 @@
             width: 100%;
         }
         @include screen-sm-min {
-            width: 500px;
+            width: $tooltip-width-lg;
         }
     }
 }
@@ -66,13 +66,13 @@
     .tooltip__box {
         @include screen-xs-min {
             left: 50%;
-            margin-left: -173px;
+            margin-left: -($tooltip-width / 2);
         }
     }
     &.tooltip--lg {
         .tooltip__box {
             @include screen-xs-min {
-                margin-left: -250px;
+                margin-left: -($tooltip-width-lg / 2);
             }
         }
     }
@@ -83,6 +83,8 @@
 }
 
 .tooltip__close {
-    @include position(absolute, 15px 10px null null);
+    position: absolute;
+    top: $tooltip-padding / 1.5;
+    right: $tooltip-padding / 2.5;
 }
 
