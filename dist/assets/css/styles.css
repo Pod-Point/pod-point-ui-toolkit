@@ -2952,21 +2952,6 @@ input[type="radio"] {
     margin-right: 0.125rem;
     margin-left: 0.125rem; }
 
-.list--imgs--height-xl li img {
-  height: 150px; }
-
-.list--imgs--height-lg li img {
-  height: 100px; }
-
-.list--imgs--height-md li img {
-  height: 80px; }
-
-.list--imgs--height-sm li img {
-  height: 50px; }
-
-.list--imgs--height-xs li img {
-  height: 40px; }
-
 .accordion-panel--xs {
   max-height: 0;
   transition: max-height 0.8s ease-out;

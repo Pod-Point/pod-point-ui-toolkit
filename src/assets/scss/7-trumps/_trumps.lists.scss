@@ -83,44 +83,4 @@
     &--inline-gutter-xxs {
         @include inline-list-gutter($img-list-inline-gutter-xxs);
     }
-
-    &--height-xl {
-        li {
-            img {
-                height: $img-list-inline-height-xl;
-            }
-        }
-    }
-
-    &--height-lg {
-        li {
-            img {
-                height: $img-list-inline-height-lg;
-            }
-        }
-    }
-
-    &--height-md {
-        li {
-            img {
-                height: $img-list-inline-height-md;
-            }
-        }
-    }
-
-    &--height-sm {
-        li {
-            img {
-                height: $img-list-inline-height-sm;
-            }
-        }
-    }
-
-    &--height-xs {
-        li {
-            img {
-                height: $img-list-inline-height-xs;
-            }
-        }
-    }
 }
