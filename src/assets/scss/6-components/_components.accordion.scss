@@ -14,7 +14,7 @@
         cursor: pointer;
         @include padding(null 0);
 
-        .plus-minus-toggle {
+        .accordion__toggle-icon {
             @include position(absolute, 0 0 null null);
         }
 

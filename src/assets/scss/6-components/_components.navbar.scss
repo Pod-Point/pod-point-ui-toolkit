@@ -194,7 +194,7 @@
 
                 .plus-minus-toggle {
                     z-index: -1;
-                    @include position(absolute, 6px 0 null null);
+                    @include position(absolute, 17px 0 null null);
 
                     @include screen-md-min {
                         display: none;

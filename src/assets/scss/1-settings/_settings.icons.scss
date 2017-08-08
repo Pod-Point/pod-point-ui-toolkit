@@ -3,32 +3,30 @@
 // =============================================================================
 
 // Icon
-$icon-size-xxs: 10px;
-$icon-size-xs: 15px;
-$icon-size-sm: 20px;
-$icon-size-md: 25px;
-$icon-h-spacing: 2px;
+$icon-size-xxs: rem(10);
+$icon-size-xs: rem(15);
+$icon-size-sm: rem(20);
+$icon-size-md: rem(25);
+$icon-h-spacing: rem(2);
 
 // Icons inline with text
 $icon-inline-text-gutter: 0.3em;
 $icon-inline-text-size: 1em;
 
-// Circle icon sizes
-$circle-icon-size-sm: 25px;
-$circle-icon-size-md: 40px;
-$circle-icon-size-lg: 60px;
+// Circle icon sizes (these are not working within the icon-in-circle--size mixin for some reason)
+$circle-icon-size-sm: rem(25);
+$circle-icon-size-md: rem(40);
+$circle-icon-size-lg: rem(60);
 
 // Navicon
-$navicon-width: 25px;
+$navicon-width: $icon-size-md;
 $navicon-height: 18px;
 $navicon-stroke: $border-stroke;
 $navicon-stroke-radius: $border-radius-base;
 
 // Plus minus toggle
-$plus-minus-container-size: 29px;
-$plus-minus-size: 15px;
+$plus-minus-size: rem(16);
 $plus-minus-stroke: $border-stroke;
 $plus-minus-stroke-radius: $border-radius-base;
-$circle-plus-minus-size: 19px;
-$circle-plus-minus-t-spacing: 12px;
-$circle-plus-minus-r-spacing: 3px;
+$plus-minus-t-pos: $plus-minus-size / 2;
+$plus-minus-circle-size: rem(30);
