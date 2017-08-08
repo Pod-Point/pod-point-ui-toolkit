@@ -21,7 +21,7 @@ dom.whenReady(() => {
             toggleAccordionPanel,
             toggleElement,
             navbar,
-            accordion
+            accordion,
         }),
     });
 });
