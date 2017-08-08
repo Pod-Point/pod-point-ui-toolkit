@@ -9,9 +9,9 @@ $list-inline-gutter-sm: 0.5em;
 $list-inline-v-spacing: 0.5em;
 
 // Image/icons inline list gutters
-$img-list-inline-gutter-xxs: 2px;
-$img-list-inline-gutter-xs: 5px;
-$img-list-inline-gutter-sm: 10px;
-$img-list-inline-gutter-md: 15px;
-$img-list-inline-gutter-lg: 20px;
-$img-list-inline-gutter-xl: 25px;
+$img-list-inline-gutter-xxs: $space-xxs / 2;
+$img-list-inline-gutter-xs: $space-xs / 2;
+$img-list-inline-gutter-sm: $space-sm / 2;
+$img-list-inline-gutter-md: $space-md / 2;
+$img-list-inline-gutter-lg: $space-lg / 2;
+$img-list-inline-gutter-xl: $space-xl / 2;

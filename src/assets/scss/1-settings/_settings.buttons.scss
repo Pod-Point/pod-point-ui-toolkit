@@ -5,7 +5,7 @@
 // Padding
 $button-h-padding-mobile: 20px;
 $button-h-padding: 35px;
-$button-v-padding: 8px;
+$button-v-padding: $v-spacing-xxs;
 
 // Width/height
 $button-max-width: 600px;
@@ -21,5 +21,5 @@ $button-letter-spacing: rem(1);
 $button-icon-size: rem(20);
 
 // Spacing when in containers
-$buttons-inline-gutter: 10px;
-$buttons-v-spacing: 10px;
+$buttons-inline-gutter: $gutter-base;
+$buttons-v-spacing: $space-xs;

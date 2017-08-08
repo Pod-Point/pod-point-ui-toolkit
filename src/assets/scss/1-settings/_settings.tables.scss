@@ -2,7 +2,7 @@
 //  SETTINGS - TABLES
 // =============================================================================
 
-$table-line-height: 25px;
+$table-line-height: $space-lg;
 $table-bg: transparent;
 $table-border-colour: $gray-light;
 $table-cell-padding: ($table-line-height / 4);

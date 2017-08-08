@@ -2,10 +2,10 @@
 //  SETTINGS - ACCORDION
 // =============================================================================
 
-$accordion-v-spacing-xs: 10px;
-$accordion-v-spacing-sm: 15px;
-$accordion-v-spacing-md: 20px;
-$accordion-v-spacing-lg: 30px;
+$accordion-v-spacing-xs: $space-xs;
+$accordion-v-spacing-sm: $space-sm;
+$accordion-v-spacing-md: $space-md;
+$accordion-v-spacing-lg: $space-lg;
 $accordion-v-spacing-xl: 40px;
 
 $accordion-with-toggle-h-spacing: 3.5em;

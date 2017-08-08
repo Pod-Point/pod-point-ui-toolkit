@@ -3,20 +3,8 @@
 // =============================================================================
 
 @mixin font-style-forms {
-    margin: 0;
-    line-height: rem(18);
     font-size: $font-size-forms-md;
-}
-
-@mixin font-style-forms-large {
-    margin: 0;
-    line-height: rem(18);
-    font-size: $font-size-forms-md;
-
-    @include screen-md-min {
-        line-height: rem(20);
-        font-size: $font-size-forms-large-desktop;
-    }
+    line-height: $input-line-height;
 }
 
 // List of used inputs
@@ -46,12 +34,10 @@ $inputs: assign-inputs($inputs-list);
 
 @mixin input-styles {
     @include font-style-forms;
-    line-height: rem(24);
-    box-sizing: border-box;
     width: 100%;
     height: $input-height;
     -webkit-appearance: none;
-    @include padding(rem(6) $input-padding);
+    @include padding($v-spacing-xxs $input-padding);
     display: block;
     max-width: $form-field-max-width;
 }

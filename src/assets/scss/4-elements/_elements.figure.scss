@@ -9,7 +9,7 @@ figure {
     box-shadow: $box-shadow-inset;
     color: white;
     margin: 0;
-    padding: $card-v-padding $card-h-padding;
+    padding: $v-spacing-mobile $h-spacing-mobile;
     border: $border-base;
     border-radius: $border-radius-base;
 }
