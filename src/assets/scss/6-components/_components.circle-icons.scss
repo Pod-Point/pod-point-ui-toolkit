@@ -39,8 +39,8 @@
         @include icon-in-circle($bgColor: transparent, $color: $primary-color, $border: $border-primary);
     }
 
-    &--outlined--inverse {
-        @include icon-in-circle($bgColor: transparent, $color: white, $border: $border-white);
+    &--outlined--inverted {
+        @include icon-in-circle($bgColor: transparent, $color: white, $border: $border-inverted);
     }
 }
 

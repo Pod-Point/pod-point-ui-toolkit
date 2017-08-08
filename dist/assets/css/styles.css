@@ -2011,7 +2011,7 @@ input[type="radio"] {
       box-sizing: content-box; }
     .circle-icon--outlined--primary:before {
       color: #8CC63F; }
-  .circle-icon--outlined--inverse {
+  .circle-icon--outlined--inverted {
     text-align: center;
     display: block;
     margin: 0;
@@ -2019,10 +2019,10 @@ input[type="radio"] {
     background-color: transparent;
     border-radius: 50%;
     border: 2px solid white; }
-    .circle-icon--outlined--inverse svg {
+    .circle-icon--outlined--inverted svg {
       fill: white;
       box-sizing: content-box; }
-    .circle-icon--outlined--inverse:before {
+    .circle-icon--outlined--inverted:before {
       color: white; }
 
 .inline-circle-icon {
