@@ -2,12 +2,12 @@
 //  SETTINGS - MODAL
 // =============================================================================
 
-$modal-close-t-offset-mobile: -55px;
-$modal-close-t-offset: -70px;
+$modal-close-t-offset-mobile: -50px;
+$modal-close-t-offset: -73px;
 
-$modal-content-h-spacing-mobile: rem(100);
-$modal-content-h-spacing: rem(80);
+$modal-content-v-spacing-mobile: $space-xxl;
+$modal-content-v-spacing: $space-xxxl;
 
-$modal-content-narrow: 800px;
+$modal-content-narrow: $max-width-text-wide;
 
-$modal-panel-v-spacing: rem(40);
+$modal-panel-v-spacing: $v-spacing;

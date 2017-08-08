@@ -33,3 +33,7 @@
 .clickable {
     @extend %clickable;
 }
+
+.img-resp {
+    max-width: 100%;
+}
