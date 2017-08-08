@@ -26,8 +26,8 @@
 
 
 .btns-container {
-    margin-top: $-buttons-v-spacing;
-    margin-bottom: $-buttons-v-spacing;
+    margin-top: -$buttons-v-spacing;
+    margin-bottom: -$buttons-v-spacing;
     overflow: hidden;
 
     .btn {
@@ -37,8 +37,8 @@
     }
 
     &--inline {
-        margin-right: $-buttons-inline-gutter;
-        margin-left: $-buttons-inline-gutter;
+        margin-right: -$buttons-inline-gutter;
+        margin-left: -$buttons-inline-gutter;
 
         .btn {
             display: inline-block;

@@ -17,7 +17,7 @@
 }
 
 .form__groups-inline {
-    @include margin($-form-groups-inline-gutter);
+    @include margin(-$form-groups-inline-gutter);
     overflow: hidden;
 
     .form__group {

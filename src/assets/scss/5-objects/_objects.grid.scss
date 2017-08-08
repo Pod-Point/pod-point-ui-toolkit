@@ -5,7 +5,7 @@
 @import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
 
 .grid-wrap {
-    margin-bottom: $-grid-b-spacing;
+    margin-bottom: -$grid-b-spacing;
 }
 
 .grid-row {
