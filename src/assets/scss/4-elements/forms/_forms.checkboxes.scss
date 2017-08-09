@@ -59,11 +59,8 @@ input[type="checkbox"] {
         }
 
         &:disabled ~ span {
-            color: $disabled-color;
+            opacity: $opacity-disabled;
             cursor: not-allowed;
-            &:before {
-                opacity: 0.7;
-            }
         }
     }
 }

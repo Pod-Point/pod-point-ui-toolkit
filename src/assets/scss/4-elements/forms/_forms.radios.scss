@@ -45,15 +45,10 @@ input[type="radio"] {
             }
         }
         &:disabled + span {
-            color: $disabled-color;
+            opacity: $opacity-disabled;
             cursor: not-allowed;
             &:before {
                 background-color: transparent;
-                border-color: $disabled-color;
-                opacity: 0.5;
-                &:hover {
-                    border-color: $disabled-color;
-                }
             }
         }
     }
