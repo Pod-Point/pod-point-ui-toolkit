@@ -1,13 +1,4 @@
-::-webkit-input-placeholder {
-  color: #ccc; }
-
-:-moz-placeholder {
-  color: #ccc; }
-
-::-moz-placeholder {
-  color: #ccc; }
-
-:-ms-input-placeholder {
+placeholder {
   color: #ccc; }
 
 @keyframes fadeIn {
@@ -22,14 +13,14 @@
   100% {
     opacity: 0; } }
 
-@keyframes popUpFadeIn {
+@keyframes pop-up-fade-in {
   0% {
     top: 100px;
     opacity: 0; }
   50% {
     opacity: 0; }
   100% {
-    top: 0px;
+    top: 0;
     opacity: 1; } }
 
 .demo-header {

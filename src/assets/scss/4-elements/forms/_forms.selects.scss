@@ -11,7 +11,7 @@
     height: $input-height;
     max-width: $form-field-max-width;
 
-    &:after {
+    &::after {
         content: '';
         position: absolute;
         top: 35%;
@@ -24,14 +24,14 @@
 
     select {
         cursor: pointer;
-        -moz-appearance: none;
+        appearance: none;
         position: relative;
         z-index: 1;
         background-color: transparent;
-    }
 
-    select::-ms-expand {
-        display: none;
+        &::-ms-expand { // sass-lint:disable-line no-vendor-prefixes
+            display: none;
+        }
     }
 
     &.is-disabled {
@@ -41,7 +41,7 @@
     }
 
     &--alt {
-        &:after {
+        &::after {
             right: 0;
         }
     }

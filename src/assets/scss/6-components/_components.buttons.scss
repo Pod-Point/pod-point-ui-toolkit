@@ -2,6 +2,8 @@
 //  COMPONENTS - BUTONS
 // =============================================================================
 
+// sass-lint:disable force-pseudo-nesting
+
 .btn {
     @extend %remove-link-styles;
     cursor: pointer;
@@ -11,7 +13,7 @@
     display: inline-block;
     padding: $button-v-padding $button-h-padding-mobile;
     min-height: $button-min-height;
-    color: white;
+    color: $white;
     background-color: $primary-color;
     font-weight: $font-weight-bold;
     font-size: $button-font-size;
@@ -19,7 +21,7 @@
     letter-spacing: $button-letter-spacing;
     border-radius: $button-radius;
     border: $border-primary;
-    transition: all 0.2s ease;
+    transition: opacity .2s ease;
     max-width: $button-max-width;
 
     @include screen-sm-min {
@@ -40,7 +42,7 @@
     }
 
     &.btn--secondary {
-        color: white;
+        color: $white;
         background-color: $gray;
         border-color: $gray;
 
@@ -61,14 +63,14 @@
         &:hover:not(.is-disabled),
         &:focus:not(.is-disabled),
         &:active:not(.is-disabled) {
-            color: white;
+            color: $white;
             background-color: $gray-dark;
             border-color: $gray-dark;
         }
     }
 
     &.btn--danger {
-        color: white;
+        color: $white;
         background-color: $error-red;
         border-color: $error-red;
 
@@ -84,7 +86,7 @@
     &.btn--selected {
         @extend %hide-text-not-pseudo;
 
-        &:before {
+        &::before {
             @extend %m-center;
             display: block;
             content: '';
@@ -97,7 +99,7 @@
         &:hover:not(.is-disabled),
         &:focus:not(.is-disabled),
         &:active:not(.is-disabled) {
-            &:before {
+            &::before {
                 background-image: url($css-bg-path+'icons/tick-primary.svg');
             }
         }
@@ -108,7 +110,7 @@
     @extend %clickable;
     padding: 0;
     background-color: transparent;
-    border: none;
+    border: 0;
     display: inline-block;
     color: $font-color-base;
     font-weight: $font-weight-bold;
@@ -125,6 +127,6 @@
     &:focus:not(.is-disabled),
     &:active:not(.is-disabled) {
         color: $font-color-base;
-        opacity: 0.8;
+        opacity: .8;
     }
 }

@@ -8,10 +8,9 @@
 }
 
 @mixin placeholder {
-    ::-webkit-input-placeholder {@content};
-    :-moz-placeholder           {@content};
-    ::-moz-placeholder          {@content};
-    :-ms-input-placeholder      {@content};
+    placeholder {
+        @content;
+    }
 }
 
 @include placeholder {
@@ -22,7 +21,7 @@
     @include font-style-forms;
     width: 100%;
     height: $input-height;
-    -webkit-appearance: none;
+    appearance: none;
     padding: $v-spacing-xxs $input-padding;
     display: block;
     max-width: $form-field-max-width;
@@ -36,18 +35,18 @@
 }
 
 @mixin input-border--focus {
-    color: $font-color-base!important;
+    color: $font-color-base !important;
     border-color: $font-color-base;
     outline: none;
 }
 
 @mixin input-border--hover {
-    color: $font-color-base!important;
+    color: $font-color-base !important;
     border-color: $font-color-base;
 }
 
 @mixin input-border--disabled {
-    opacity: 0.4;
+    opacity: .4;
     cursor: not-allowed;
     background-color: $gray-very-light;
 }

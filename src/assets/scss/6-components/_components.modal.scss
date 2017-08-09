@@ -8,7 +8,7 @@
 
 .modal {
     z-index: 101;
-    background-color: rgba(0,0,0,0.9);
+    background-color: $transparent-dark-gray;
     position: fixed;
     @extend %pin-all;
     overflow-y: scroll;
@@ -24,11 +24,11 @@
     }
 
     &__content {
-        text-align: center;
-        position: relative;
         @include container;
         @include margin-v($modal-content-v-spacing-mobile);
-        color: white;
+        text-align: center;
+        position: relative;
+        color: $white;
 
         @include screen-md-min {
             @include margin-v($modal-content-v-spacing);

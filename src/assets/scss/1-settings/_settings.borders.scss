@@ -11,7 +11,7 @@ $border-color-base: $gray-keyline;
 $border-base: $border-stroke solid $border-color-base;
 
 $border-font-color: $border-stroke solid $font-color-base;
-$border-inverted: $border-stroke solid white;
+$border-inverted: $border-stroke solid $white;
 $border-primary: $border-stroke solid $primary-color;
 
 $border-thin-dark: $border-stroke-thin solid $border-color-base;

@@ -3,11 +3,11 @@
 // =============================================================================
 
 .label {
+    @include font-size-md;
     position: relative;
     border-radius: $border-radius-base;
     background-color: $gray-dark;
-    color: white;
-    @include font-size-md;
+    color: $white;
     font-weight: $font-weight-bold;
     box-sizing: border-box;
     min-height: $label-min-height;
@@ -31,7 +31,7 @@
     }
 
     svg {
-        fill: white;
+        fill: $white;
         width: $label-icon-size;
         height: $label-icon-size;
         position: absolute;

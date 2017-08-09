@@ -4,8 +4,8 @@
 
 // Function to turn pixels to rems
 @function rem($size) {
-    $remSize: $size / 16;
-    @return #{$remSize}rem;
+    $rem-size: $size / 16;
+    @return #{$rem-size}rem;
 }
 
 // File path variable for background images which can be re-assigned if file structure is different

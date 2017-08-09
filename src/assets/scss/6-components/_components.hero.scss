@@ -20,7 +20,7 @@
     }
 
     &__content {
-        @include popUpFadeIn;
+        @include pop-up-fade-in;
         max-width: $hero-content-max-width-mobile;
 
         @include screen-md-min {
@@ -28,9 +28,9 @@
         }
     }
 
-    &:before {
-        content: '';
+    &::before {
         @include full-overlay($gray-dark);
+        content: '';
         opacity: 1;
         animation-duration: 1.5s;
         animation-fill-mode: both;

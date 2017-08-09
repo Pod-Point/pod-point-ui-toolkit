@@ -6,24 +6,30 @@
     @include input-styles;
     @include input-border;
 
-    &:focus:not(disabled) {
-        @include input-border--focus;
+    &:focus {
+        &:not(disabled) {
+            @include input-border--focus;
+        }
     }
 
-    &:hover:not(:disabled) {
-        @include input-border--hover;
+    &:hover {
+        &:not(:disabled) {
+            @include input-border--hover;
+        }
     }
 
-    &:disabled:not(select) {
-        @include input-border--disabled;
+    &:disabled {
+        &:not(select) {
+            @include input-border--disabled;
+        }
     }
 
     &--alt {
         @include padding-h(0);
         border-radius: 0;
-        border-top: none;
-        border-right: none;
-        border-left: none;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
     }
 }
 

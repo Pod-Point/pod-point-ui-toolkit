@@ -2,8 +2,16 @@
 //	SETTINGS - PALETTE
 // =============================================================================
 
+$black: #000;
+$white: #fff;
+$transparent: rgba(0, 0, 0, 0);
+$transparent-white: rgba(255, 255, 255, .01);
+$transparent-light-gray: rgba(255, 255, 255, .4);
+$transparent-gray: rgba(215, 215, 215, .7);
+$transparent-dark-gray: rgba(0, 0, 0, .9);
+
 // Grey palette
-$background-color-base: white;
+$background-color-base: $white;
 $gray-very-light: #f9fafa;
 $gray-light: #f2f2f2;
 $gray: #b3b3b3;
@@ -11,11 +19,10 @@ $gray-dark: #4d4d4d;
 $gray-very-dark: #2a2a2a;
 
 // Custom colours
-$primary-color: #8CC63F;
+$primary-color: #8cc63f;
 $primary-color-very-light: #e9eee0;
 $primary-color-light: #e2eecc;
 $primary-color-very-dark: #334217;
-$secondary-color-dark: green;
 $sky-blue: #deeefc;
 
 $highlight-color: $primary-color;
@@ -48,7 +55,7 @@ $radio-fill-color: $primary-color;
 $checkbox-border: $form-keyline;
 $checked-fill-color: $primary-color;
 $checkbox-bg-color: transparent;
-$error-red: #C1272D;
+$error-red: #c1272d;
 
 
 // State and Alert colours
@@ -62,5 +69,5 @@ $state-warning-bg:            #fcf8e3;
 $state-warning-text:          #8a6d3b;
 $state-warning-border:        darken(adjust-hue($state-warning-bg, -10), 5%);
 $state-danger-bg:             #f2dede;
-$state-danger-text:           #C1272D;
+$state-danger-text:           #c1272d;
 $state-danger-border:         darken(adjust-hue($state-danger-bg, -10), 5%);

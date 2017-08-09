@@ -11,8 +11,8 @@
     transition: .5s ease-in-out;
     transform: rotate(0deg);
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
         content: '';
         display: block;
         height: $plus-minus-stroke;
@@ -27,13 +27,13 @@
         opacity: 1;
     }
 
-    &:before {
+    &::before {
         .sub-nav-open & {
             transform: rotate(180deg);
         }
     }
 
-    &:after {
+    &::after {
         transform: rotate(90deg);
 
         .sub-nav-open &,
@@ -50,8 +50,8 @@
     width: $plus-minus-circle-size;
     height: $plus-minus-circle-size;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
         background-color: $primary-color;
         width: 60%;
         left: 20%;

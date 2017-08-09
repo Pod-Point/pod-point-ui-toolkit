@@ -2,7 +2,7 @@
 //	ELEMENTS - FORMS - CHECKBOXES
 // =============================================================================
 
-input[type="checkbox"] {
+input[type='checkbox'] {
     @include pos-top-left(absolute, 0, 0);
     display: block;
     opacity: 0;
@@ -11,8 +11,8 @@ input[type="checkbox"] {
 }
 
 .checkbox {
-    text-align: left;
     @include font-size-md;
+    text-align: left;
     position: relative;
     display: block;
 
@@ -25,9 +25,10 @@ input[type="checkbox"] {
         }
     }
 
-    > input[type="checkbox"] {
+    > input[type='checkbox'] {
         width: $checkbox-size;
         height: $checkbox-size;
+
         & ~ span {
             text-transform: none;
             display: inline-block;
@@ -36,9 +37,9 @@ input[type="checkbox"] {
             padding-left: $checkbox-text-l-spacing;
             cursor: pointer;
 
-            &:before {
+            &::before {
                 @include pos-top-left(absolute, 0, 0);
-                content: "";
+                content: '';
                 width: $checkbox-size;
                 height: $checkbox-size;
                 z-index: 1;
@@ -48,13 +49,13 @@ input[type="checkbox"] {
         }
 
         &:checked ~ span {
-            &:before {
+            &::before {
                 background-image: url($css-bg-path+'icons/tick-white.svg');
                 background-size: $checkbox-tick-size $checkbox-tick-size;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-color: $primary-color;
-                border-color: $primary-color!important; // Important is applied to override if there is an error red border
+                border-color: $primary-color !important; // Important is applied to override if there is an error red border
             }
         }
 

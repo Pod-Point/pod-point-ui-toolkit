@@ -3,16 +3,19 @@
 // =============================================================================
 
 .accordion {
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    @include accordion-size($accordion-v-spacing-md);
+    -webkit-tap-highlight-color: $transparent; // sass-lint:disable-line no-vendor-prefixes
 
-    &.grid-row .grid-col-4 {
-        @include margin-v(0);
+    &.grid-row {
+        .grid-col-4 {
+            @include margin-v(0);
+        }
     }
 
     .accordion__dt {
+        @include padding-h(0);
         position: relative;
         cursor: pointer;
-        @include padding-h(0);
 
         .accordion__toggle-icon {
             @include pos-top-right(absolute, 0, 0);
@@ -20,14 +23,14 @@
 
         &.is-open {
             + dd {
-                @include slideDownActive(1s, 300px);
+                @include slide-down-active(1s, 300px);
             }
         }
     }
 
     .accordion__dd {
+        @include slide-down-collapsed(1s);
         border-bottom: $border-thin;
-        @include slideDownCollapsed(1s);
         margin: 0;
     }
 
@@ -35,7 +38,7 @@
         @include screen-md-min {
 
             .accordion__dt {
-                border-bottom: none;
+                border-bottom: 0;
                 padding: 0;
                 cursor: default;
 
@@ -45,14 +48,10 @@
             }
 
             .accordion__dd {
-                @include slideDownActive(1s, 300px);
+                @include slide-down-active(1s, 300px);
             }
         }
     }
-}
-
-.accordion {
-    @include accordion-size($accordion-v-spacing-md);
 }
 
 .accordion--v-spacing-xs {
@@ -80,9 +79,10 @@
             position: absolute;
             right: auto;
             left: 0;
-            margin-top: -0.2em;
+            margin-top: -.2em;
         }
     }
+
     .accordion__dd {
         padding-left: $accordion-with-toggle-h-spacing;
     }

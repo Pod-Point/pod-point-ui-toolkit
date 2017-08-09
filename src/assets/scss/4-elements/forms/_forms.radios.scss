@@ -2,7 +2,7 @@
 //	ELEMENTS - FORMS - RADIOS
 // =============================================================================
 
-input[type="radio"] {
+input[type='radio'] {
     position: absolute;
     left: -9999px;
 }
@@ -10,9 +10,9 @@ input[type="radio"] {
 .radio {
     display: inline-block;
     cursor: pointer;
-    transition: all .28s ease;
+    transition: scale .28s ease;
     user-select: none;
-    margin-bottom: 0.5em;
+    margin-bottom: .5em;
 
     &:last-child {
         margin-bottom: 0;
@@ -30,13 +30,16 @@ input[type="radio"] {
         }
     }
 
-    > input[type="radio"] {
+    > input[type='radio'] {
         &:checked {
-            & + span:before {
+            // sass-lint:disable-block force-pseudo-nesting
+            & + span::before {
                 border-radius: 50%;
                 border: 2px solid transparent;
             }
-            & + span:after {
+
+            // sass-lint:disable-block force-pseudo-nesting
+            & + span::after {
                 border-radius: 50%;
                 border: 2px solid $radio-fill-color;
                 background-color: $radio-fill-color;
@@ -44,10 +47,12 @@ input[type="radio"] {
                 transform: scale(1.02);
             }
         }
+
         &:disabled + span {
             opacity: $opacity-disabled;
             cursor: not-allowed;
-            &:before {
+
+            &::before {
                 background-color: transparent;
             }
         }
@@ -60,23 +65,25 @@ input[type="radio"] {
         padding-bottom: 0;
         padding-left: $radio-text-l-spacing;
 
-        &:after,
-        &:before {
+        &::after,
+        &::before {
+            @include margin-v($radio-spacing);
             content: '';
             position: absolute;
             left: 0;
             top: 0;
-            @include margin-v($radio-spacing);
             width: $radio-size;
             height: $radio-size;
             z-index: 0;
             transition: .28s ease;
         }
-        &:before {
+
+        &::before {
             border-radius: 50%;
             border: 2px solid $radio-border;
         }
-        &:after {
+
+        &::after {
             border-radius: 50%;
             border: 2px solid $radio-border;
             z-index: -1;

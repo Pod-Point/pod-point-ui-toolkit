@@ -5,15 +5,19 @@
 .font-size-xs {
     @include font-size-xs;
 }
+
 .font-size-sm {
     @include font-size-sm;
 }
+
 .font-size-md {
     @include font-size-md;
 }
+
 .font-size-lg {
     @include font-size-lg;
 }
+
 .font-size-xl {
     @include font-size-xl;
 }

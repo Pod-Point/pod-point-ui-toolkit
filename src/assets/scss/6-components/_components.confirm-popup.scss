@@ -4,7 +4,7 @@
 
 .confirm-popup {
     z-index: 101;
-    background-color: rgba(215,215,215,0.7);
+    background-color: $transparent-gray;
     position: fixed;
     @extend %pin-all;
     overflow-y: scroll;
@@ -20,7 +20,7 @@
         z-index: auto;
         width: $confirm-box-width-mobile;
         padding: $confirm-box-v-padding $confirm-box-h-padding;
-        background-color: white;
+        background-color: $white;
         border: $border-base;
         border-radius: $border-radius-base;
         box-shadow: $box-shadow-front;

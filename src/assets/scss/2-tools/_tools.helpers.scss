@@ -4,8 +4,8 @@
 
 // Clearfix
 %clearfix {
-    &:after {
-        content: "";
+    &::after {
+        content: '';
         display: table;
         clear: both;
     }
@@ -34,7 +34,6 @@
     text-decoration: none;
 }
 
-
 // Clickable elements that are not an anchor
 %clickable {
     cursor: pointer;
@@ -42,7 +41,7 @@
     &:active,
     &:focus,
     &:hover {
-        opacity: 0.7;
+        opacity: .7;
     }
 }
 
@@ -50,8 +49,8 @@
 %hide-text-not-pseudo {
     text-indent: -9999px;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
         text-indent: 0;
         float: left;
         width: 100%;
@@ -75,12 +74,12 @@
 
 // Full width/height overlay.
 // If it is a pseudo element, it will meeds an empty content property and the wrapper to have a relative position
-@mixin full-overlay($bgColor: black) {
+@mixin full-overlay($bg-color: $black) {
     position: absolute;
     @extend %pin-all;
     width: 100%;
     height: 100%;
-    background-color: $bgColor;
+    background-color: $bg-color;
 }
 
 @mixin horizontal-spacing {

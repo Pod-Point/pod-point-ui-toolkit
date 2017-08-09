@@ -11,9 +11,9 @@
         padding-bottom: $typography-v-spacing / 1.5;
         padding-left: 2em;
 
-        &:before {
-            content: '';
+        &::before {
             @include pos-top-left(absolute, rem(3), 0);
+            content: '';
             background-image: url($icon-path);
             background-size: cover;
             width: rem(18);
@@ -31,9 +31,9 @@
         padding-bottom: $typography-v-spacing / 1.5;
         padding-left: 2em;
 
-        &:before {
-            content: '';
+        &::before {
             @include pos-top-left(absolute, rem(2), 0);
+            content: '';
             background-image: url($icon-path);
             background-size: cover;
             width: rem(23);

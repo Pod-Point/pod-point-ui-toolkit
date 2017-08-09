@@ -3,7 +3,6 @@
 // =============================================================================
 
 // Edited and reduced standard normalize css
-
 html,
 body {
     width: 100%;
@@ -13,11 +12,13 @@ html {
     font-size: 100%;
     box-sizing: border-box;
     font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
-*, *:before, *:after {
+// sass-lint:disable force-pseudo-nesting
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
@@ -42,15 +43,15 @@ video {
 
 a {
     background-color: transparent;
-}
 
-a:active,
-a:hover {
-    outline: 0;
+    &:active,
+    &:hover {
+        outline: 0;
+    }
 }
 
 h1 {
-    margin: 0.67rem 0;
+    margin: .67rem 0;
     font-size: 2rem;
 }
 
@@ -58,8 +59,10 @@ img {
     border: 0;
 }
 
-svg:not(:root) {
-    overflow: hidden;
+svg {
+    :not(:root) {
+        overflow: hidden;
+    }
 }
 
 hr {
@@ -85,10 +88,11 @@ select {
     text-transform: none;
 }
 
+// sass-lint:disable force-element-nesting, force-attribute-nesting
 button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
     cursor: pointer;
 }
 
@@ -97,6 +101,7 @@ html input[disabled] {
     cursor: default;
 }
 
+// sass-lint:disable no-vendor-prefixes
 button::-moz-focus-inner,
 input::-moz-focus-inner {
     padding: 0;
@@ -107,24 +112,26 @@ input {
     line-height: normal;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
     padding: 0;
     box-sizing: border-box;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+// sass-lint:disable no-vendor-prefixes
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
     height: auto;
 }
 
-input[type="search"] {
+input[type='search'] {
     appearance: textfield;
     box-sizing: content-box;
 }
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+// sass-lint:disable no-vendor-prefixes
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
     appearance: none;
 }
 

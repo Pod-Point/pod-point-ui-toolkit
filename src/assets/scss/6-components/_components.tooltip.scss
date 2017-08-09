@@ -3,12 +3,12 @@
 // =============================================================================
 
 .tooltip-icon {
-    @include icon-in-circle($bgColor: transparent, $color: $font-color-base, $border: $border-font-color);
-    @include icon-in-border-circle--size($dimension: $tooltip-icon-circle-size);
     @extend %hide-text-not-pseudo;
+    @include icon-in-circle($bg-color: transparent, $color: $font-color-base, $border: $border-font-color);
+    @include icon-in-border-circle--size($dimension: $tooltip-icon-circle-size);
     display: inline-block;
 
-    &:before {
+    &::before {
         font-weight: bold;
         content: '?';
         font-size: $tooltip-icon-size;
@@ -28,13 +28,12 @@
 
 .tooltip__box {
     @include pos-top-left(absolute, 0, 0);
-    z-index: 99;
     box-sizing: border-box;
     z-index: auto;
     width: 100%;
     padding: $tooltip-padding;
     margin-bottom: $tooltip-b-spacing;
-    background-color: white;
+    background-color: $white;
     border: $border-base;
     border-radius: $border-radius-base;
     box-shadow: $box-shadow-front;
@@ -49,6 +48,7 @@
         @include screen-xs-min {
             width: 100%;
         }
+
         @include screen-sm-min {
             width: $tooltip-width-lg;
         }
@@ -69,6 +69,7 @@
             margin-left: -($tooltip-width / 2);
         }
     }
+
     &.tooltip--lg {
         .tooltip__box {
             @include screen-xs-min {

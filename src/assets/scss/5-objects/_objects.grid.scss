@@ -41,6 +41,15 @@
     .grid-col {
         @include grid-col($col: 12, $gutter: $grid-gutter);
         margin-bottom: $grid-b-spacing;
+
+        &--separator {
+            padding-bottom: $grid-separator-b-spacing;
+            border-bottom: $border-thin;
+        }
+
+        &--b-spacing-none {
+            margin-bottom: 0 !important;
+        }
     }
 
     .grid-col--12 {
@@ -61,18 +70,6 @@
 
     .grid-col--4 {
         @include grid-col($col: 4, $gutter: $grid-gutter-mobile);
-    }
-
-    .grid-col {
-
-        &--separator {
-            padding-bottom: $grid-separator-b-spacing;
-            border-bottom: $border-thin;
-        }
-
-        &--b-spacing-none {
-            margin-bottom: 0!important;
-        }
     }
 
     &--b-spacing-mobile {
@@ -113,8 +110,8 @@
         }
 
         .grid-col--sm-separator {
-            border: none;
-            box-shadow: 1px 0px 0px 0px $gray-keyline-very-light;
+            border: 0;
+            box-shadow: 1px 0 0 0 $gray-keyline-very-light;
         }
 
         .grid-col--no-space--sm {
@@ -149,8 +146,8 @@
         }
 
         .grid-col--md-separator {
-            border: none;
-            box-shadow: 1px 0px 0px 0px $gray-keyline-very-light;
+            border: 0;
+            box-shadow: 1px 0 0 0 $gray-keyline-very-light;
         }
 
         .grid-col--no-space--md {

@@ -12,7 +12,7 @@ $table-border-color: $gray-light;
 $table-condensed-cell-padding: $table-line-height;
 $table-bg-accent: $gray-very-light;
 
-$table-bg-hover: mix($table-bg-accent, black, 10%);
+$table-bg-hover: mix($table-bg-accent, $black, 10%);
 $table-bg-active: $table-bg-hover;
 
 $table-border-color: $gray-very-light;

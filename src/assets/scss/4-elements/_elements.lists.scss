@@ -20,8 +20,10 @@ ol {
             padding-top: $typography-v-spacing / 2;
             padding-bottom: 0;
 
-            li:last-child {
-                padding-bottom: 0;
+            li {
+                &:last-child {
+                    padding-bottom: 0;
+                }
             }
         }
     }
@@ -32,10 +34,12 @@ ul {
         padding-left: $list-l-spacing / 2;
         list-style-type: disc;
 
-        ul li {
-            list-style-type: circle;
-            padding-left: $list-l-spacing / 2;
-            margin-left: $list-l-spacing / 4;
+        ul {
+            li {
+                list-style-type: circle;
+                padding-left: $list-l-spacing / 2;
+                margin-left: $list-l-spacing / 4;
+            }
         }
     }
 }
