@@ -13,7 +13,7 @@
 
         &:before {
             content: '';
-            @include position(absolute, rem(3) null null 0);
+            @include pos-top-left(absolute, rem(3), 0);
             background-image: url($icon-path);
             background-size: cover;
             width: rem(18);
@@ -33,7 +33,7 @@
 
         &:before {
             content: '';
-            @include position(absolute, rem(2) null null 0);
+            @include pos-top-left(absolute, rem(2), 0);
             background-image: url($icon-path);
             background-size: cover;
             width: rem(23);

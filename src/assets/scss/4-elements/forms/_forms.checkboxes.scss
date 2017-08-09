@@ -3,7 +3,7 @@
 // =============================================================================
 
 input[type="checkbox"] {
-    @include position(absolute, 0 null null 0);
+    @include pos-top-left(absolute, 0, 0);
     display: block;
     opacity: 0;
     z-index: 2;
@@ -37,7 +37,7 @@ input[type="checkbox"] {
             cursor: pointer;
 
             &:before {
-                @include position(absolute, 0 null null 0);
+                @include pos-top-left(absolute, 0, 0);
                 content: "";
                 width: $checkbox-size;
                 height: $checkbox-size;

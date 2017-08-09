@@ -1,0 +1,64 @@
+// =============================================================================
+//	TOOLS - POSITIONS
+// =============================================================================
+
+// Placehold helpers to pin an element in each corner
+%pin-all {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+%pin-top-right {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+}
+
+%pin-bottom-right {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+}
+
+%pin-top-left {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+}
+
+%pin-bottom-left {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+}
+
+// Helpers to choose the position property and position that element relative to each corner
+@mixin pos-top-right($position, $top, $right) {
+    position: $position;
+    top: $top;
+    right: $right;
+}
+
+@mixin pos-bottom-right($position, $bottom, $right) {
+    position: $position;
+    right: $right;
+    bottom: $bottom;
+}
+
+@mixin pos-top-left($position, $top, $left) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+
+@mixin pos-bottom-left($position, $bottom, $left) {
+    position: $position;
+    bottom: $bottom;
+    left: $left;
+}

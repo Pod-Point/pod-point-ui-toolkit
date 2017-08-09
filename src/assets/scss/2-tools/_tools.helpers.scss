@@ -76,7 +76,8 @@
 // Full width/height overlay.
 // If it is a pseudo element, it will meeds an empty content property and the wrapper to have a relative position
 @mixin full-overlay($bgColor: black) {
-    @include position(absolute, 0 0 0 0);
+    position: absolute;
+    @extend %pin-all;
     width: 100%;
     height: 100%;
     background-color: $bgColor;

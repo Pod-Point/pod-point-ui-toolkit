@@ -27,7 +27,7 @@
 }
 
 .tooltip__box {
-    @include position(absolute, 0 null null 0);
+    @include pos-top-left(absolute, 0, 0);
     z-index: 99;
     box-sizing: border-box;
     z-index: auto;

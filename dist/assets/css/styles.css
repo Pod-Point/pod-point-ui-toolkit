@@ -3,6 +3,36 @@
   margin-right: auto;
   margin-left: auto; }
 
+.confirm-popup, .hero:before, .modal, .bg-img-overlay:after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.pin-top-right {
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto; }
+
+.pin-bottom-right {
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: auto; }
+
+.pin-top-left {
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0; }
+
+.pin-bottom-left {
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: 0; }
+
 h1,
 .h1, h2,
 .h2, h3,
@@ -1365,10 +1395,6 @@ input[type="radio"] {
   z-index: 101;
   background-color: rgba(215, 215, 215, 0.7);
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   overflow-y: scroll;
   width: 100%;
   min-height: 100%; }
@@ -1657,10 +1683,6 @@ input[type="radio"] {
   .hero:before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background-color: #4d4d4d;
@@ -1709,17 +1731,13 @@ input[type="radio"] {
   z-index: 101;
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   overflow-y: scroll;
   width: 100%;
   min-height: 100%; }
   .modal .modal__close {
     position: absolute;
     top: -50px;
-    right: 30px; }
+    right: 25px; }
     @media (min-width: 50em) {
       .modal .modal__close {
         position: absolute;
@@ -2106,7 +2124,7 @@ input[type="radio"] {
     width: 100%;
     background-color: #333;
     position: absolute;
-    left: 0;
+    right: 0;
     border-radius: 5px;
     -ms-transform: rotate(0deg);
         transform: rotate(0deg);
@@ -2709,10 +2727,6 @@ input[type="radio"] {
     z-index: -1;
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     background-color: #4d4d4d;
     opacity: 0.65;
     width: 100%;
@@ -3002,30 +3016,6 @@ input[type="radio"] {
 
 .pos-fix {
   position: fixed; }
-
-.pin-top-right {
-  top: 0;
-  right: 0;
-  bottom: auto;
-  left: auto; }
-
-.pin-bottom-right {
-  top: auto;
-  right: 0;
-  bottom: 0;
-  left: auto; }
-
-.pin-top-left {
-  top: 0;
-  right: auto;
-  bottom: auto;
-  left: 0; }
-
-.pin-bottom-left {
-  top: auto;
-  right: auto;
-  bottom: 0;
-  left: 0; }
 
 .z-index-1 {
   z-index: 1; }

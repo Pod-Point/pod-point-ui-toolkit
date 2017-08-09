@@ -21,31 +21,19 @@
 
 // Pinning an element in each corner
 .pin-top-right {
-    top: 0;
-    right: 0;
-    bottom: auto;
-    left: auto;
+    @extend %pin-top-right;
 }
 
 .pin-bottom-right {
-    top: auto;
-    right: 0;
-    bottom: 0;
-    left: auto;
+    @extend %pin-bottom-right;
 }
 
 .pin-top-left {
-    top: 0;
-    right: auto;
-    bottom: auto;
-    left: 0;
+    @extend %pin-top-left;
 }
 
 .pin-bottom-left {
-    top: auto;
-    right: auto;
-    bottom: 0;
-    left: 0;
+    @extend %pin-bottom-left;
 }
 
 // z-indexes

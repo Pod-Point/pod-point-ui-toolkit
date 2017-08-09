@@ -5,7 +5,8 @@
 .confirm-popup {
     z-index: 101;
     background-color: rgba(215,215,215,0.7);
-    @include position(fixed, 0 0 0 0);
+    position: fixed;
+    @extend %pin-all;
     overflow-y: scroll;
     width: 100%;
     min-height: 100%;

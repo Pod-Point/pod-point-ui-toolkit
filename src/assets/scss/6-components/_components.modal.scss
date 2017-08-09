@@ -9,16 +9,17 @@
 .modal {
     z-index: 101;
     background-color: rgba(0,0,0,0.9);
-    @include position(fixed, 0 0 0 0);
+    position: fixed;
+    @extend %pin-all;
     overflow-y: scroll;
     width: 100%;
     min-height: 100%;
 
     .modal__close {
-        @include position(absolute, $modal-close-t-offset-mobile $h-spacing null null);
+        @include pos-top-right(absolute, $modal-close-t-offset-mobile, $h-spacing-mobile);
 
         @include screen-md-min {
-            @include position(absolute, $modal-close-t-offset $h-spacing null null);
+            @include pos-top-right(absolute, $modal-close-t-offset, $h-spacing);
         }
     }
 
