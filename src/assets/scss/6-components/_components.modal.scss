@@ -26,11 +26,11 @@
         text-align: center;
         position: relative;
         @include container;
-        @include margin($modal-content-v-spacing-mobile null);
+        @include margin-v($modal-content-v-spacing-mobile);
         color: white;
 
         @include screen-md-min {
-            @include margin($modal-content-v-spacing null);
+            @include margin-v($modal-content-v-spacing);
         }
 
         &--narrow {

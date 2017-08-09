@@ -88,7 +88,7 @@
 
 .navbar__nav {
     @extend %clearfix;
-    @include margin(null auto);
+    @extend %m-center;
     transition: 0.1s ease-in-out;
     @include slideDownCollapsed(0.5s);
 
@@ -259,7 +259,7 @@
                 text-align: center;
 
                 .navbar__item-img {
-                    @include margin(5px auto 10px auto);
+                    margin: 5px auto 10px auto;
                     display: block;
                     width: 60px;
                     height: 60px;

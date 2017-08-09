@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
+.container, .content-block--centered, .btn.btn--selected:before, .navbar, .navbar__nav, .navbar__sub-nav ul, .modal__content {
+  margin-right: auto;
+  margin-left: auto; }
+
 h1,
 .h1, h2,
 .h2, h3,
@@ -1039,8 +1043,6 @@ input[type="radio"] {
         order: 10; } }
 
 .container {
-  margin-right: auto;
-  margin-left: auto;
   max-width: 1100px;
   padding-right: 25px;
   padding-left: 25px;
@@ -1088,8 +1090,6 @@ input[type="radio"] {
     padding-top: 20px;
     padding-bottom: 20px; }
   .content-block--centered {
-    margin-right: auto;
-    margin-left: auto;
     text-align: center; }
 
 .accordion {
@@ -1288,8 +1288,6 @@ input[type="radio"] {
       background-color: transparent;
       border-color: #C1272D; }
   .btn.btn--selected:before {
-    margin-right: auto;
-    margin-left: auto;
     display: block;
     content: '';
     background-image: url("../img/css-bg/icons/tick-white.svg");
@@ -1412,8 +1410,6 @@ input[type="radio"] {
   z-index: 100; }
 
 .navbar {
-  margin-right: auto;
-  margin-left: auto;
   max-width: 1100px;
   padding-right: 25px;
   padding-left: 25px; }
@@ -1474,8 +1470,6 @@ input[type="radio"] {
       height: 49px; } }
 
 .navbar__nav {
-  margin-right: auto;
-  margin-left: auto;
   transition: 0.1s ease-in-out;
   max-height: 0;
   transition: max-height 0.5s ease-out;
@@ -1592,8 +1586,6 @@ input[type="radio"] {
     margin-bottom: 20px; }
     @media (min-width: 40em) {
       .navbar__sub-nav ul {
-        margin-right: auto;
-        margin-left: auto;
         max-width: 1100px;
         padding-right: 25px;
         padding-left: 25px; } }
@@ -1616,7 +1608,7 @@ input[type="radio"] {
       .navbar__sub-nav ul li .navbar__link {
         text-align: center; }
         .navbar__sub-nav ul li .navbar__link .navbar__item-img {
-          margin: 5px auto 10px;
+          margin: 5px auto 10px auto;
           display: block;
           width: 60px;
           height: 60px; }
@@ -1736,8 +1728,6 @@ input[type="radio"] {
   .modal__content {
     text-align: center;
     position: relative;
-    margin-right: auto;
-    margin-left: auto;
     max-width: 1100px;
     padding-right: 25px;
     padding-left: 25px;

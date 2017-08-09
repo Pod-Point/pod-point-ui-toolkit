@@ -71,7 +71,7 @@ input[type="radio"] {
             position: absolute;
             left: 0;
             top: 0;
-            @include margin($radio-spacing null $radio-spacing null);
+            @include margin-v($radio-spacing);
             width: $radio-size;
             height: $radio-size;
             z-index: 0;

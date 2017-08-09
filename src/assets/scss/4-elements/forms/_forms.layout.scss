@@ -17,11 +17,11 @@
 }
 
 .form__groups-inline {
-    @include margin(-$form-groups-inline-gutter);
+    margin: -$form-groups-inline-gutter;
     overflow: hidden;
 
     .form__group {
         display: inline-block;
-        @include margin($form-groups-inline-gutter);
+        margin: $form-groups-inline-gutter;
     }
 }

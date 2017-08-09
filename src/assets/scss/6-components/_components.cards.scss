@@ -49,7 +49,7 @@
         text-align: center;
 
         hr {
-            @include margin(null 20%);
+            @include margin-h(20%);
         }
     }
 

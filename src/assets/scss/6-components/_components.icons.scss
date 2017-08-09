@@ -3,7 +3,7 @@
 // =============================================================================
 
 .icon {
-    @include margin(null $icon-h-spacing);
+    @include margin-h($icon-h-spacing);
 
     > svg {
         height: $icon-size-md;

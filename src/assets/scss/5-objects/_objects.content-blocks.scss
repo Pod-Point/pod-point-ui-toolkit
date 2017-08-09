@@ -17,7 +17,7 @@
     }
 
     &--centered {
-        @include margin(null auto);
+        @extend %m-center;
         text-align: center;
     }
 }
