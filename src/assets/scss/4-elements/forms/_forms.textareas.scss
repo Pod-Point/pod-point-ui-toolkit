@@ -3,24 +3,9 @@
 // =============================================================================
 
 textarea {
-    @include input-styles;
-    @include input-border;
-    @include font-style-forms;
     line-height: $line-height-base;
     height: auto;
     min-height: $textarea-min-height;
     resize: vertical;
     padding: $input-padding;
-
-    &:focus:not(disabled) {
-        @include input-border--focus;
-    }
-
-    &:hover:not(:disabled) {
-        @include input-border--hover;
-    }
-
-    &:disabled {
-        @include input-border--disabled;
-    }
 }

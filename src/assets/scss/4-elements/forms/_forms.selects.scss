@@ -7,11 +7,9 @@
     display: block;
     vertical-align: middle;
     width: 100%;
-    cursor: pointer;
     margin-top: 0;
     height: $input-height;
     max-width: $form-field-max-width;
-    cursor: pointer;
 
     &:after {
         content: '';
@@ -25,25 +23,26 @@
     }
 
     select {
+        cursor: pointer;
         -moz-appearance: none;
         position: relative;
         z-index: 1;
-        @include input-styles;
-        @include input-border;
-        @include font-style-forms;
-        cursor: pointer;
         background-color: transparent;
-
-        &:focus {
-            @include input-border--focus;
-        }
-
-        &:hover {
-            @include input-border--hover;
-        }
     }
 
     select::-ms-expand {
         display: none;
+    }
+
+    &.is-disabled {
+        select {
+            cursor: not-allowed;
+        }
+    }
+
+    &--alt {
+        &:after {
+            right: 0;
+        }
     }
 }
