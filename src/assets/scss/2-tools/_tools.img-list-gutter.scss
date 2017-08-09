@@ -1,0 +1,14 @@
+// =============================================================================
+//  TOOLS - IMG LIST GUTTER
+// =============================================================================
+
+@mixin inline-list-gutter($gutter) {
+    margin-right: -$gutter;
+    margin-left: -$gutter;
+
+    li {
+        display: inline-block;
+        margin-right: $gutter;
+        margin-left: $gutter;
+    }
+}

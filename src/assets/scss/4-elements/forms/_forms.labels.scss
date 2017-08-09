@@ -8,7 +8,7 @@
     font-weight: $font-weight-bold;
     display: inline-block;
     @include font-size-sm;
-    padding-bottom: rem(5);
+    padding-bottom: $form-label-b-spacing;
 
     .checkbox &,
     .radio & {

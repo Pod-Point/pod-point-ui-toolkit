@@ -10,18 +10,33 @@
     @include font-size-md;
     font-weight: $font-weight-bold;
     box-sizing: border-box;
-    line-height: rem(16);
-    min-height: 35px;
-    @include padding(8px 15px 5px 35px);
+    min-height: $label-min-height;
+    padding: $label-v-padding $label-h-padding;
     display: inline-block;
-    margin-bottom: 10px;
+
+    &--left-icon {
+        padding-left: $label-with-icon-h-spacing;
+
+        svg {
+            left: $label-h-padding;
+        }
+    }
+
+    &--right-icon {
+        padding-right: $label-with-icon-h-spacing;
+
+        svg {
+            right: $label-h-padding;
+        }
+    }
 
     svg {
         fill: white;
-        width: 20px;
-        height: 20px;
-        @include position(absolute, 50% null null 10px);
-        margin-top: -10px;
+        width: $label-icon-size;
+        height: $label-icon-size;
+        position: absolute;
+        top: 50%;
+        margin-top: $label-icon-t-spacing;
     }
 
     &--gray {

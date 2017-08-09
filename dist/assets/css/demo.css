@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
 =======
 @import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
+=======
+>>>>>>> Extracting variables and refactoring (#41)
 ::-webkit-input-placeholder {
   color: #ccc; }
 

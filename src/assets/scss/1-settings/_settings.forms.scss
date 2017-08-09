@@ -2,23 +2,47 @@
 //  SETTINGS - FORMS
 // =============================================================================
 
-// Inputs
-$input-height: rem(40);
-$input-padding: 10px;
-$input-text-color: $font-color-base;
-$input-placeholder-color: #ccc;
-$input-icon-color: #9C9C9C;
+// Form font sizes
+$font-size-forms-md: $font-size-md-desktop; // Forms have to be 16px min for IOS
+$input-line-height: 1.2;
 
 // Borders and shadows
 $form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
-$form-border-radius: 5px;
+$form-border-radius: $border-radius-base;
 $form-border-base: $border-base;
 
-// Button
-$button-max-width: rem(600);
+// Form fields
+$form-field-max-width: $max-width-text;
+$form-field-min-width: $max-width-text / 2;
 
-// Form fields/groups
-$form-field-max-width: rem(600);
-$form-field-min-width: rem(250);
-$form-group-base-spacing: 30px;
+// Form groups
+$form-group-b-spacing: $space-lg;
+$form-groups-inline-gutter: $gutter-base;
+
+// Inputs
+$input-height: rem(40);
+$input-padding: $space-xs;
+$input-text-color: $font-color-base;
+$input-placeholder-color: $font-color-very-light;
+$alt-input-v-padding: 1.5em;
+
+// Text areas
+$textarea-min-height: rem(130);
+
+// Selects
+$select-cheveron-size: $icon-size-xs;
+
+// Checkbox/radios
+$checkbox-radio-inline-gutter: $gutter-lg;
+$checkbox-size: rem(23);
+$checkbox-tick-size: rem(15);
+$radio-size: rem(18);
+$radio-spacing: 0.4em;
+$radio-text-l-spacing: rem(30);
+$checkbox-text-l-spacing: rem(35);
+$checkbox-text-b-spacing: $space-xxs;
+
+// Label/errors
+$form-label-b-spacing: $space-xxs;
+$form-error-t-spacing: $space-xxs;

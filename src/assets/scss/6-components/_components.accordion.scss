@@ -9,16 +9,12 @@
         @include margin(0 null);
     }
 
-    @include font-size-sm;
-
-    dt {
-        font-weight: $font-weight-bold;
-        border-bottom: $border-thin;
+    .accordion__dt {
         position: relative;
         cursor: pointer;
-        @include padding(10px 0);
+        @include padding(null 0);
 
-        .plus-minus-toggle {
+        .accordion__toggle-icon {
             @include position(absolute, 0 0 null null);
         }
 
@@ -29,59 +25,63 @@
         }
     }
 
-    dd {
+    .accordion__dd {
+        border-bottom: $border-thin;
         @include slideDownCollapsed(1s);
         margin: 0;
-
-        .accordion__item-content {
-            @include padding(10px null);
-        }
     }
 
     &--only-mobile {
         @include screen-md-min {
 
-            dt {
+            .accordion__dt {
                 border-bottom: none;
                 padding: 0;
                 cursor: default;
 
-                .plus-minus-toggle {
+                .accordion__toggle-icon {
                     display: none;
                 }
             }
 
-            dd {
+            .accordion__dd {
                 @include slideDownActive(1s, 300px);
             }
         }
     }
+}
 
-    &--featured {
-        @include font-size-md;
+.accordion {
+    @include accordion-size($accordion-v-spacing-md);
+}
 
-        dt {
-            font-weight: $font-weight-regular;
-            @include padding(40px null 40px 60px);
-            border-bottom: none;
+.accordion--v-spacing-xs {
+    @include accordion-size($accordion-v-spacing-xs);
+}
 
-            .plus-minus-toggle {
-                @include position(absolute, 36px auto null 0);
-            }
+.accordion--v-spacing-sm {
+    @include accordion-size($accordion-v-spacing-sm);
+}
+
+.accordion--v-spacing-lg {
+    @include accordion-size($accordion-v-spacing-lg);
+}
+
+.accordion--v-spacing-xl {
+    @include accordion-size($accordion-v-spacing-xl);
+}
+
+
+.accordion--toggle-icon {
+    .accordion__dt {
+        padding-left: $accordion-with-toggle-h-spacing;
+
+        .accordion__toggle-icon {
+            @include position(absolute, null auto null 0);
+            margin-top: -0.2em;
         }
-
-        dd {
-            padding-left: 60px;
-            border-bottom: $border-thin;
-
-            .accordion__item-content {
-                margin-bottom: 40px;
-                padding: 0;
-            }
-
-            &:last-child {
-                border-bottom: none;
-            }
-        }
+    }
+    .accordion__dd {
+        padding-left: $accordion-with-toggle-h-spacing;
     }
 }

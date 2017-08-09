@@ -18,7 +18,7 @@
 
 #{$inputs} {
     &.input--alternative {
-        @include padding(1.5em 0);
+        @include padding($alt-input-v-padding 0);
         border-radius: 0;
         border-top: none;
         border-right: none;

@@ -12,33 +12,35 @@
 
     &__box {
         text-align: center;
-        @include position(absolute, 30% null null 5%);
+        position: absolute;
+        top: $confirm-box-t-spacing;
+        left: ((100% - $confirm-box-width-mobile) / 2);
         box-sizing: border-box;
         z-index: auto;
-        width: 90%;
-        @include padding(30px);
+        width: $confirm-box-width-mobile;
+        @include padding($confirm-box-v-padding $confirm-box-h-padding);
         background-color: white;
         border: $border-base;
         border-radius: $border-radius-base;
         box-shadow: $box-shadow-front;
 
         @include screen-sm-min {
-            width: 500px;
-            margin-left: -250px;
+            width: $confirm-box-width;
+            margin-left: -($confirm-box-width / 2);
             left: 50%;
 
             &--lg {
-                width: 90%;
+                width: $confirm-box-width-mobile;
                 margin-left: 0;
-                left: 5%;
+                left: ((100% - $confirm-box-width-mobile) / 2);
             }
         }
 
         @include screen-md-min {
             &--lg {
                 left: 50%;
-                width: 740px;
-                margin-left: -370px;
+                width: $confirm-box-width-lg;
+                margin-left: -($confirm-box-width-lg / 2);
             }
         }
     }

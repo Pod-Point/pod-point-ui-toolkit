@@ -1,0 +1,203 @@
+{{> demo-header }}
+<div data-page="accordion">
+    <header class="content-block content-block--strip bg-primary">
+        <div class="container">
+            <h2>Accordions</h2>
+        </div>
+    </header>
+
+
+    <!-- ACCORDIONS -->
+    <section>
+        <header class="content-block bg-light-gray">
+            <div class="container">
+                <h3>Required files</h3>
+                <p>SCSS files required: <code>_components.accordion.scss</code></p>
+                <p>SCSS files optional: <code>_components.circle-icons.scss</code> and <code>_components.plus-minus-toggle.scss</code></p>
+                <p>JS files required: <code>accordion.js</code></p>
+            </div>
+        </header>
+
+        <header class="content-block bg-light-gray">
+            <div class="container">
+                <h3>Accordion structure</h3>
+                <p>An accordion is created with an element with a class <code>.accordion</code> and the accordion js module <code>data-js-module="accordion"</code></p>
+                <p>An accordion item title has the class <code>.accordion__dt</code></p>
+                <p>An accordion item content has the class <code>.accordion__dd</code> plus another element inside with the class <code>.accordion__dd-content</code> (due to the padding of the slide mechanism)</p>
+
+{{> snippet-accordion }}
+
+            </div>
+        </header>
+
+        <div class="content-block">
+            <div class="container">
+                <dl data-js-module="accordion" class="accordion">
+                    <dt class="accordion__dt">
+                        Sed placerat, enim nec tincidunt convallis, metus est finibus nisi, eu cursus massa enim in leo
+                    </dt>
+                    <dd class="accordion__dd">
+                        <div class="accordion__dd-content">
+                            Quisque eget leo ullamcorper, dictum massa non, faucibus est. Morbi erat odio, tempor id egestas eget, porttitor sodales ipsum. Etiam et dapibus tortor.
+                        </div>
+                    </dd>
+                    <dt class="accordion__dt">
+                        Donec et sollicitudin tellus, ut blandit tortor
+                    </dt>
+                    <dd class="accordion__dd">
+                        <div class="accordion__dd-content">
+                            Duis vel laoreet ligula. Duis ac orci blandit sem consequat dictum eget eu diam. Nunc mattis, leo sit amet pulvinar posuere, arcu nisi finibus augue, porttitor gravida lectus nunc tincidunt purus.
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ACCORDION VERTICAL SPACING -->
+    <section>
+        <header class="content-block bg-light-gray">
+            <div class="container">
+                <h3>Accordion vertical spacing</h3>
+                <p>There are vertical space variations available with the following modifying classes <code>accordion--v-spacing-xs</code>, <code>accordion--v-spacing-sm</code>, <code>accordion--v-spacing-lg</code>, <code>accordion--v-spacing-xl</code> </p>
+                <p>There is also a mixin available <code>@include accordion-size($v-spacing);</code></p>
+                <p>Note: these classes don't affect the font size, some of the below examples have the global helper classes <code>.font-size-sm</code> and <code>.font-size-lg</code></p>
+            </div>
+        </header>
+
+        <div class="content-block">
+            <div class="container">
+                <h4>Accordion extra small
+                    <span class="font-size-md font-regular">= <code>.accordion--v-spacing-xs</code></span>
+                </h4>
+                <dl data-js-module="accordion" class="accordion accordion--v-spacing-xs font-size-sm">
+                    <dt class="accordion__dt">
+                        Sed placerat, enim nec tincidunt convallis, metus est finibus nisi, eu cursus massa enim in leo
+                    </dt>
+                    <dd class="accordion__dd">
+                        <div class="accordion__dd-content">
+                            Quisque eget leo ullamcorper, dictum massa non, faucibus est. Morbi erat odio, tempor id egestas eget, porttitor sodales ipsum. Etiam et dapibus tortor.
+                        </div>
+                    </dd>
+                    <dt class="accordion__dt">
+                        Donec et sollicitudin tellus, ut blandit tortor
+                    </dt>
+                    <dd class="accordion__dd">
+                        <div class="accordion__dd-content">
+                            Duis vel laoreet ligula. Duis ac orci blandit sem consequat dictum eget eu diam. Nunc mattis, leo sit amet pulvinar posuere, arcu nisi finibus augue, porttitor gravida lectus nunc tincidunt purus.
+                        </div>
+                    </dd>
+                </dl>
+                <br>
+                <h4>Accordion small
+                    <span class="font-size-md font-regular">= <code>.accordion--v-spacing-sm</code></span>
+                </h4>
+                <dl data-js-module="accordion" class="accordion accordion--v-spacing-sm font-size-sm">
+                    <dt class="accordion__dt">
+                        Sed placerat, enim nec tincidunt convallis, metus est finibus nisi, eu cursus massa enim in leo
+                    </dt>
+                    <dd class="accordion__dd">
+                        <div class="accordion__dd-content">
+                            Quisque eget leo ullamcorper, dictum massa non, faucibus est. Morbi erat odio, tempor id egestas eget, porttitor sodales ipsum. Etiam et dapibus tortor.
+                        </div>
+                    </dd>
+                    <dt class="accordion__dt">
+                        Donec et sollicitudin tellus, ut blandit tortor
+                    </dt>
+                    <dd class="accordion__dd">
+                        <div class="accordion__dd-content">
+                            Duis vel laoreet ligula. Duis ac orci blandit sem consequat dictum eget eu diam. Nunc mattis, leo sit amet pulvinar posuere, arcu nisi finibus augue, porttitor gravida lectus nunc tincidunt purus.
+                        </div>
+                    </dd>
+                </dl>
+                <br>
+                <h4>Accordion large
+                    <span class="font-size-md font-regular">= <code>.accordion--v-spacing-lg</code></span>
+                </h4>
+                <dl data-js-module="accordion" class="accordion accordion--v-spacing-lg font-size-md">
+                    <dt class="accordion__dt">
+                        Sed placerat, enim nec tincidunt convallis, metus est finibus nisi, eu cursus massa enim in leo
+                    </dt>
+                    <dd class="accordion__dd">
+                        <div class="accordion__dd-content">
+                            Quisque eget leo ullamcorper, dictum massa non, faucibus est. Morbi erat odio, tempor id egestas eget, porttitor sodales ipsum. Etiam et dapibus tortor.
+                        </div>
+                    </dd>
+                    <dt class="accordion__dt">
+                        Donec et sollicitudin tellus, ut blandit tortor
+                    </dt>
+                    <dd class="accordion__dd">
+                        <div class="accordion__dd-content">
+                            Duis vel laoreet ligula. Duis ac orci blandit sem consequat dictum eget eu diam. Nunc mattis, leo sit amet pulvinar posuere, arcu nisi finibus augue, porttitor gravida lectus nunc tincidunt purus.
+                        </div>
+                    </dd>
+                </dl>
+                <br>
+                <h4>Accordion extra large
+                    <span class="font-size-md font-regular">= <code>.accordion--v-spacing-xl</code></span>
+                </h4>
+                <dl data-js-module="accordion" class="accordion accordion--v-spacing-xl font-size-lg">
+                    <dt class="accordion__dt">
+                        Sed placerat, enim nec tincidunt convallis, metus est finibus nisi, eu cursus massa enim in leo
+                    </dt>
+                    <dd class="accordion__dd">
+                        <div class="accordion__dd-content">
+                            Quisque eget leo ullamcorper, dictum massa non, faucibus est. Morbi erat odio, tempor id egestas eget, porttitor sodales ipsum. Etiam et dapibus tortor.
+                        </div>
+                    </dd>
+                    <dt class="accordion__dt">
+                        Donec et sollicitudin tellus, ut blandit tortor
+                    </dt>
+                    <dd class="accordion__dd">
+                        <div class="accordion__dd-content">
+                            Duis vel laoreet ligula. Duis ac orci blandit sem consequat dictum eget eu diam. Nunc mattis, leo sit amet pulvinar posuere, arcu nisi finibus augue, porttitor gravida lectus nunc tincidunt purus.
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ACCORDIONS -->
+    <section>
+        <header class="content-block bg-light-gray">
+            <div class="container">
+                <h3>Accordion with toggle icon</h3>
+                <p>Add the modifying class <code>.accordion--toggle-icon</code></p>
+                <p>For the animated toggle icon in the example below, create an element such as an <code>&lt;i&gt;</code> and add the following classes <code>.accordion__toggle-icon</code>, <code>.plus-minus-toggle</code>, <code>.plus-minus-toggle--in-circle--primary</code></p>
+                <p>Insert the icon inside all the <code>.accordion__dt</code> elements</p>
+                <p>Note: Any icon can be used, but adding the class <code>.accordion__toggle-icon</code> helps with positioning.</p>
+
+{{> snippet-accordion-toggle }}
+
+            </div>
+        </header>
+
+        <div class="content-block">
+            <div class="container">
+                <dl data-js-module="accordion" class="accordion accordion--toggle-icon">
+                    <dt class="accordion__dt">
+                        <i class="accordion__toggle-icon plus-minus-toggle plus-minus-toggle--in-circle--primary"></i>
+                        Sed placerat, enim nec tincidunt convallis, metus est finibus nisi, eu cursus massa enim in leo
+                    </dt>
+                    <dd class="accordion__dd">
+                        <div class="accordion__dd-content">
+                            Quisque eget leo ullamcorper, dictum massa non, faucibus est. Morbi erat odio, tempor id egestas eget, porttitor sodales ipsum. Etiam et dapibus tortor.
+                        </div>
+                    </dd>
+                    <dt class="accordion__dt">
+                        <i class="accordion__toggle-icon plus-minus-toggle plus-minus-toggle--in-circle--primary"><span></span></i>
+                        Donec et sollicitudin tellus, ut blandit tortor
+                    </dt>
+                    <dd class="accordion__dd">
+                        <div class="accordion__dd-content">
+                            Duis vel laoreet ligula. Duis ac orci blandit sem consequat dictum eget eu diam. Nunc mattis, leo sit amet pulvinar posuere, arcu nisi finibus augue, porttitor gravida lectus nunc tincidunt purus.
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </section>
+</div>

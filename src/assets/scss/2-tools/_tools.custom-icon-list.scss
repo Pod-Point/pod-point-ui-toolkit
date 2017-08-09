@@ -8,16 +8,16 @@
     li {
         @include font-size-md;
         position: relative;
-        padding-bottom: $typography-vertical-spacing / 1.5;
+        padding-bottom: $typography-v-spacing / 1.5;
         padding-left: 2em;
 
         &:before {
             content: '';
-            @include position(absolute, 3px null null 0);
+            @include position(absolute, rem(3) null null 0);
             background-image: url($icon-path);
             background-size: cover;
-            width: 18px;
-            height: 18px;
+            width: rem(18);
+            height: rem(18);
         }
     }
 }
@@ -28,16 +28,16 @@
     li {
         @include font-size-lg;
         position: relative;
-        padding-bottom: $typography-vertical-spacing / 1.5;
+        padding-bottom: $typography-v-spacing / 1.5;
         padding-left: 2em;
 
         &:before {
             content: '';
-            @include position(absolute, 2px null null 0);
+            @include position(absolute, rem(2) null null 0);
             background-image: url($icon-path);
             background-size: cover;
-            width: 23px;
-            height: 23px;
+            width: rem(23);
+            height: rem(23);
         }
     }
 }

@@ -2,8 +2,17 @@
 //  SETTINGS - BORDERS
 // =============================================================================
 
+$border-stroke-thin: 1px;
+$border-stroke: 2px;
 $border-radius-base: 5px;
+
 $border-color-base: $gray-keyline;
-$border-base: 2px solid $border-color-base;
-$border-thin-dark: 1px solid $border-color-base;
-$border-thin: 1px solid $gray-keyline-very-light;
+
+$border-base: $border-stroke solid $border-color-base;
+
+$border-font-color: $border-stroke solid $font-color-base;
+$border-inverted: $border-stroke solid white;
+$border-primary: $border-stroke solid $primary-color;
+
+$border-thin-dark: $border-stroke-thin solid $border-color-base;
+$border-thin: $border-stroke-thin solid $gray-keyline-very-light;

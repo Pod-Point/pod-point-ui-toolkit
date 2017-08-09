@@ -2,21 +2,6 @@
 //  ELEMENTS - TABLES
 // =============================================================================
 
-$table-line-height: 25px;
-$table-bg: transparent;
-$table-border-colour: $gray-light;
-$table-cell-padding: ($table-line-height / 4);
-$text-muted: $gray;
-$line-height-computed: $table-line-height;
-$table-border-color: $gray-light;
-$table-condensed-cell-padding: $table-line-height;
-$table-bg-accent: $gray-very-light;
-
-$table-bg-hover: mix($table-bg-accent, black, 10%);
-$table-bg-active: $table-bg-hover;
-
-$table-border-color: $gray-very-light;
-
 table,
 .table {
     width: 100%;

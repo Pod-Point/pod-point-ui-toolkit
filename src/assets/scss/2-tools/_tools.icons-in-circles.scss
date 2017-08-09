@@ -23,10 +23,10 @@
 }
 
 // SVG icon in a circle - defining the size
-@mixin icon-in-circle--size($dimension: 40px) {
+@mixin icon-in-circle--size($dimension: rem(40)) {
     width: $dimension;
     height: $dimension;
-    font-size: 10px;
+    font-size: $dimension / 4;
 
     svg {
         width: $dimension / 2;
@@ -37,10 +37,10 @@
 }
 
 // SVG icon in a circle - with border
-@mixin icon-in-border-circle--size($dimension: 40px) {
+@mixin icon-in-border-circle--size($dimension: rem(40)) {
     width: $dimension;
     height: $dimension;
-    font-size: 10px;
+    font-size: $dimension / 4;
 
     svg {
         width: $dimension / 2;

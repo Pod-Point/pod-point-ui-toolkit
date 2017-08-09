@@ -9,14 +9,14 @@
     border: $border-thin-dark;
     color: $font-color-base;
     box-shadow: $box-shadow-subtle;
-    @include padding($card-padding-base);
+    @include padding($card-v-padding $card-h-padding);
 
     &--options {
         position: relative;
 
         ul,
         ol {
-            padding-left: 20px;
+            padding-left: $list-l-spacing-sm;
 
             li {
                 padding-left: 0;
@@ -25,10 +25,10 @@
 
         &:before {
             content: '';
-            @include position(absolute, -6px null null -1px);
+            @include position(absolute, $card-option-highlight-offset null null -1px);
             z-index: -1;
             width: calc(100% + 2px);
-            height: 10px;
+            height: $card-option-highlight-height;
             border-top-right-radius: $border-radius-base;
             border-top-left-radius: $border-radius-base;
             background-color: $gray-keyline-very-light;
@@ -42,7 +42,7 @@
     }
 
     &--padding-lg {
-        @include padding(40px 30px);
+        @include padding($card-v-padding-lg $card-h-padding-lg);
     }
 
     &--centered {
@@ -54,12 +54,11 @@
     }
 
     &--highlight {
-        border: solid $primary-color 2px;
+        border: $border-primary;
     }
 
     &--informative {
         border: $border-base;
-        @include padding(30px);
 
         hr {
             opacity: 1;

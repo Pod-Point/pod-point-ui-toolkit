@@ -3,26 +3,26 @@
 // =============================================================================
 
 .icon {
-    @include margin(null 2px);
+    @include margin(null $icon-h-spacing);
 
     > svg {
-        height: 25px;
-        width: 25px;
+        height: $icon-size-md;
+        width: $icon-size-md;
     }
 
     &--sm > svg {
-        height: 20px;
-        width: 20px;
+        height: $icon-size-sm;
+        width: $icon-size-sm;
     }
 
     &--xs > svg {
-        height: 15px;
-        width: 15px;
+        height: $icon-size-xs;
+        width: $icon-size-xs;
     }
 
     &--xxs > svg {
-        height: 10px;
-        width: 10px;
+        height: $icon-size-xxs;
+        width: $icon-size-xxs;
     }
 
     // Icon inline with text
@@ -32,19 +32,19 @@
         > svg {
             margin: 0;
             position: relative;
-            top: 0.15em;
-            height: 1em;
-            width: 1em;
+            top: $icon-inline-text-size / 6;
+            height: $icon-inline-text-size;
+            width: $icon-inline-text-size;
         }
     }
 
     // To create spacing between the text and the icon, you can wrap the text in a span
     &--inline + span {
-        margin-left: 0.3em;
+        margin-left: $icon-inline-text-gutter;
     }
 
     span + &--inline {
-        margin-left: 0.3em;
+        margin-left: $icon-inline-text-gutter;
     }
 }
 

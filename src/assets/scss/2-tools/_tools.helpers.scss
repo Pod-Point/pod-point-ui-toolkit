@@ -88,10 +88,10 @@
 }
 
 @mixin horizontal-spacing {
-    @include padding(null $horizontal-spacing-mobile);
+    @include padding(null $h-spacing-mobile);
 
     @include screen-md-min {
-        @include padding(null $horizontal-spacing);
+        @include padding(null $h-spacing);
     }
 }
 
