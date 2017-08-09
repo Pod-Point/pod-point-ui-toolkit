@@ -3,7 +3,9 @@
 // =============================================================================
 
 body {
-    @include font-feature-settings('kern', 'liga', 'pnum');
+    font-feature-settings: 'kern';
+    font-feature-settings: 'liga';
+    font-feature-settings: 'pnum';
     -webkit-font-smoothing: antialiased;
     color: $font-color-base;
     font-family: $font-family-base;

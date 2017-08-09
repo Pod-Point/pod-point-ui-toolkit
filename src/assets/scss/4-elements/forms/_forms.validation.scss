@@ -16,7 +16,14 @@
 }
 
 .form__group--error {
-    #{$inputs},
+    input[type="date"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="url"],
     textarea[type="text"],
     .select select {
         border-color: $error-red;
@@ -24,7 +31,14 @@
 }
 
 .form__group--valid {
-    #{$inputs},
+    input[type="date"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="url"],
     textarea[type="text"],
     .select select {
         border-color: $primary-color;

@@ -41,7 +41,7 @@ input[type="radio"] {
                 border: 2px solid $radio-fill-color;
                 background-color: $radio-fill-color;
                 z-index: 0;
-                @include transform(scale(1.02));
+                transform: scale(1.02);
             }
         }
         &:disabled + span {
@@ -85,7 +85,7 @@ input[type="radio"] {
             border-radius: 50%;
             border: 2px solid $radio-border;
             z-index: -1;
-            @include transform(scale(0));
+            transform: scale(0);
         }
     }
 }

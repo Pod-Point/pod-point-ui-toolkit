@@ -2,7 +2,14 @@
 //	ELEMENTS - FORMS - INPUTS
 // =============================================================================
 
-#{$inputs} {
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"] {
     @include input-styles;
     @include input-border;
 
@@ -17,9 +24,7 @@
     &:disabled {
         @include input-border--disabled;
     }
-}
 
-#{$inputs} {
     &.input--alternative {
         padding: $alt-input-v-padding 0;
         border-radius: 0;
