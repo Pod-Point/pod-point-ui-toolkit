@@ -18,7 +18,7 @@
         box-sizing: border-box;
         z-index: auto;
         width: $confirm-box-width-mobile;
-        @include padding($confirm-box-v-padding $confirm-box-h-padding);
+        padding: $confirm-box-v-padding $confirm-box-h-padding;
         background-color: white;
         border: $border-base;
         border-radius: $border-radius-base;

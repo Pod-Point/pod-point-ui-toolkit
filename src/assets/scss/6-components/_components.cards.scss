@@ -9,7 +9,7 @@
     border: $border-thin-dark;
     color: $font-color-base;
     box-shadow: $box-shadow-subtle;
-    @include padding($card-v-padding $card-h-padding);
+    padding: $card-v-padding $card-h-padding;
 
     &--options {
         position: relative;
@@ -42,7 +42,7 @@
     }
 
     &--padding-lg {
-        @include padding($card-v-padding-lg $card-h-padding-lg);
+        padding: $card-v-padding-lg $card-h-padding-lg;
     }
 
     &--centered {

@@ -12,7 +12,7 @@
     .accordion__dt {
         position: relative;
         cursor: pointer;
-        @include padding(null 0);
+        @include padding-h(0);
 
         .accordion__toggle-icon {
             @include position(absolute, 0 0 null null);

@@ -10,13 +10,16 @@ textarea {
     height: auto;
     min-height: $textarea-min-height;
     resize: vertical;
-    @include padding($input-padding);
+    padding: $input-padding;
+
     &:focus:not(disabled) {
         @include input-border--focus;
     }
+
     &:hover:not(:disabled) {
         @include input-border--hover;
     }
+
     &:disabled {
         @include input-border--disabled;
     }

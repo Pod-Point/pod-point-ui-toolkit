@@ -5,12 +5,15 @@
 #{$inputs} {
     @include input-styles;
     @include input-border;
+
     &:focus:not(disabled) {
         @include input-border--focus;
     }
+
     &:hover:not(:disabled) {
         @include input-border--hover;
     }
+
     &:disabled {
         @include input-border--disabled;
     }
@@ -18,7 +21,7 @@
 
 #{$inputs} {
     &.input--alternative {
-        @include padding($alt-input-v-padding 0);
+        padding: $alt-input-v-padding 0;
         border-radius: 0;
         border-top: none;
         border-right: none;

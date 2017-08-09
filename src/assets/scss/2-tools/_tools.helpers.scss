@@ -19,7 +19,7 @@
 
 // Remove default list styling
 %remove-list-styles {
-    @include padding(null 0);
+    @include padding-h(0);
     margin: 0;
 
     li {
@@ -83,10 +83,10 @@
 }
 
 @mixin horizontal-spacing {
-    @include padding(null $h-spacing-mobile);
+    @include padding-h($h-spacing-mobile);
 
     @include screen-md-min {
-        @include padding(null $h-spacing);
+        @include padding-h($h-spacing);
     }
 }
 

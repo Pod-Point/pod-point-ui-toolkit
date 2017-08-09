@@ -61,7 +61,9 @@ input[type="radio"] {
     > span {
         @include font-size-md;
         position: relative;
-        @include padding($radio-spacing null 0 $radio-text-l-spacing);
+        padding-top: $radio-spacing;
+        padding-bottom: 0;
+        padding-left: $radio-text-l-spacing;
 
         &:after,
         &:before {

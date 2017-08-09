@@ -1324,7 +1324,7 @@ input[type="radio"] {
   border: 1px solid #ccc;
   color: #333;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  padding: 25px; }
+  padding: 25px 25px; }
   .card--options {
     position: relative; }
     .card--options ul,
@@ -1382,7 +1382,7 @@ input[type="radio"] {
     box-sizing: border-box;
     z-index: auto;
     width: 90%;
-    padding: 25px;
+    padding: 25px 25px;
     background-color: white;
     border: 2px solid #ccc;
     border-radius: 5px;

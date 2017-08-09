@@ -40,6 +40,6 @@
 
     &__panel {
         @include horizontal-spacing;
-        @include padding($modal-panel-v-spacing null);
+        @include padding-v($modal-panel-v-spacing);
     }
 }

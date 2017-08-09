@@ -122,17 +122,17 @@
                 position: static;
                 border-bottom: none;
                 display: inline-block;
-                @include padding(null 10px);
+                @include padding-h(10px);
             }
 
             @include screen-lg-min {
-                @include padding(null 20px);
+                @include padding-h(20px);
             }
 
             .navbar__link {
                 cursor: pointer;
                 text-decoration: none;
-                @include padding(15px 0);
+                padding: 15px 0;
                 color: $font-color-base;
                 font-weight: $font-weight-bold;
                 display: block;
@@ -141,7 +141,7 @@
 
                 @include screen-md-min {
                     text-align: center;
-                    @include padding(36px 5px);
+                    padding: 36px 5px;
                 }
 
                 &.find-chargepoint {
@@ -247,7 +247,7 @@
         li {
             border-bottom: none;
             @extend %clearfix;
-            @include padding(null 20px);
+            @include padding-h(20px);
             display: inline-block;
             width: 120px;
 
