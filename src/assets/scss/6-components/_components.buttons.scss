@@ -9,7 +9,7 @@
     vertical-align: middle;
     width: auto;
     display: inline-block;
-    @include padding($button-v-padding $button-h-padding-mobile);
+    padding: $button-v-padding $button-h-padding-mobile;
     min-height: $button-min-height;
     color: white;
     background-color: $primary-color;
@@ -23,7 +23,7 @@
     max-width: $button-max-width;
 
     @include screen-sm-min {
-        @include padding(null $button-h-padding);
+        @include padding-h($button-h-padding);
     }
 
     &:focus {
@@ -85,7 +85,7 @@
         @extend %hide-text-not-pseudo;
 
         &:before {
-            @include margin(null auto);
+            @extend %m-center;
             display: block;
             content: '';
             background-image: url($css-bg-path+'icons/tick-white.svg');

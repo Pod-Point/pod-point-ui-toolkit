@@ -9,7 +9,7 @@
     border: $border-thin-dark;
     color: $font-color-base;
     box-shadow: $box-shadow-subtle;
-    @include padding($card-v-padding $card-h-padding);
+    padding: $card-v-padding $card-h-padding;
 
     &--options {
         position: relative;
@@ -25,7 +25,7 @@
 
         &:before {
             content: '';
-            @include position(absolute, $card-option-highlight-offset null null -1px);
+            @include pos-top-left(absolute, $card-option-highlight-offset, -1px);
             z-index: -1;
             width: calc(100% + 2px);
             height: $card-option-highlight-height;
@@ -42,14 +42,14 @@
     }
 
     &--padding-lg {
-        @include padding($card-v-padding-lg $card-h-padding-lg);
+        padding: $card-v-padding-lg $card-h-padding-lg;
     }
 
     &--centered {
         text-align: center;
 
         hr {
-            @include margin(null 20%);
+            @include margin-h(20%);
         }
     }
 

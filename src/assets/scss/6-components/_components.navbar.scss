@@ -88,7 +88,7 @@
 
 .navbar__nav {
     @extend %clearfix;
-    @include margin(null auto);
+    @extend %m-center;
     transition: 0.1s ease-in-out;
     @include slideDownCollapsed(0.5s);
 
@@ -122,17 +122,17 @@
                 position: static;
                 border-bottom: none;
                 display: inline-block;
-                @include padding(null 10px);
+                @include padding-h(10px);
             }
 
             @include screen-lg-min {
-                @include padding(null 20px);
+                @include padding-h(20px);
             }
 
             .navbar__link {
                 cursor: pointer;
                 text-decoration: none;
-                @include padding(15px 0);
+                padding: 15px 0;
                 color: $font-color-base;
                 font-weight: $font-weight-bold;
                 display: block;
@@ -141,7 +141,7 @@
 
                 @include screen-md-min {
                     text-align: center;
-                    @include padding(36px 5px);
+                    padding: 36px 5px;
                 }
 
                 &.find-chargepoint {
@@ -150,7 +150,7 @@
                     position: relative;
 
                     svg {
-                        @include position(absolute, 50% null null 0);
+                        @include pos-top-left(absolute, 50%, 0);
                         margin-top: -10px;
                         width: 20px;
                         height: 20px;
@@ -194,7 +194,7 @@
 
                 .plus-minus-toggle {
                     z-index: -1;
-                    @include position(absolute, 17px 0 null null);
+                    @include pos-top-right(absolute, 17px, 0);
 
                     @include screen-md-min {
                         display: none;
@@ -229,7 +229,7 @@
 
     @include screen-md-min {
         opacity: 0;
-        @include position(absolute, 96px 0 null null);
+        @include pos-top-right(absolute, 96px, 0);
     }
 
     ul {
@@ -247,7 +247,7 @@
         li {
             border-bottom: none;
             @extend %clearfix;
-            @include padding(null 20px);
+            @include padding-h(20px);
             display: inline-block;
             width: 120px;
 
@@ -259,7 +259,7 @@
                 text-align: center;
 
                 .navbar__item-img {
-                    @include margin(5px auto 10px auto);
+                    margin: 5px auto 10px auto;
                     display: block;
                     width: 60px;
                     height: 60px;

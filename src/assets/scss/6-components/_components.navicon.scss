@@ -14,7 +14,8 @@
         height: $navicon-stroke;
         width: 100%;
         background-color: $icon-color;
-        @include position(absolute, null null null 0);
+        position: absolute;
+        right: 0;
         border-radius: $navicon-stroke-radius;
         transform: rotate(0deg);
         transition: .25s ease-in-out;

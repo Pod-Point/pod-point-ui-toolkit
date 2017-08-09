@@ -41,7 +41,7 @@ input[type="radio"] {
                 border: 2px solid $radio-fill-color;
                 background-color: $radio-fill-color;
                 z-index: 0;
-                @include transform(scale(1.02));
+                transform: scale(1.02);
             }
         }
         &:disabled + span {
@@ -61,7 +61,9 @@ input[type="radio"] {
     > span {
         @include font-size-md;
         position: relative;
-        @include padding($radio-spacing null 0 $radio-text-l-spacing);
+        padding-top: $radio-spacing;
+        padding-bottom: 0;
+        padding-left: $radio-text-l-spacing;
 
         &:after,
         &:before {
@@ -69,7 +71,7 @@ input[type="radio"] {
             position: absolute;
             left: 0;
             top: 0;
-            @include margin($radio-spacing null $radio-spacing null);
+            @include margin-v($radio-spacing);
             width: $radio-size;
             height: $radio-size;
             z-index: 0;
@@ -83,7 +85,7 @@ input[type="radio"] {
             border-radius: 50%;
             border: 2px solid $radio-border;
             z-index: -1;
-            @include transform(scale(0));
+            transform: scale(0);
         }
     }
 }

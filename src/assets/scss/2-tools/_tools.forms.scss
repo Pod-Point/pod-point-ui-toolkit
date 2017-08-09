@@ -7,20 +7,6 @@
     line-height: $input-line-height;
 }
 
-// List of used inputs
-$inputs-list:
-    'input[type="date"]',
-    'input[type="email"]',
-    'input[type="number"]',
-    'input[type="password"]',
-    'input[type="search"]',
-    'input[type="tel"]',
-    'input[type="text"]',
-    'input[type="url"]';
-
-// Let's assign so we can use the list
-$inputs: assign-inputs($inputs-list);
-
 @mixin placeholder {
     ::-webkit-input-placeholder {@content};
     :-moz-placeholder           {@content};
@@ -37,7 +23,7 @@ $inputs: assign-inputs($inputs-list);
     width: 100%;
     height: $input-height;
     -webkit-appearance: none;
-    @include padding($v-spacing-xxs $input-padding);
+    padding: $v-spacing-xxs $input-padding;
     display: block;
     max-width: $form-field-max-width;
 }

@@ -6,16 +6,16 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 
     &.grid-row .grid-col-4 {
-        @include margin(0 null);
+        @include margin-v(0);
     }
 
     .accordion__dt {
         position: relative;
         cursor: pointer;
-        @include padding(null 0);
+        @include padding-h(0);
 
         .accordion__toggle-icon {
-            @include position(absolute, 0 0 null null);
+            @include pos-top-right(absolute, 0, 0);
         }
 
         &.is-open {
@@ -77,7 +77,9 @@
         padding-left: $accordion-with-toggle-h-spacing;
 
         .accordion__toggle-icon {
-            @include position(absolute, null auto null 0);
+            position: absolute;
+            right: auto;
+            left: 0;
             margin-top: -0.2em;
         }
     }

@@ -19,7 +19,7 @@
 
 // Remove default list styling
 %remove-list-styles {
-    @include padding(null 0);
+    @include padding-h(0);
     margin: 0;
 
     li {
@@ -73,31 +73,27 @@
     text-indent: -9999px;
 }
 
-// Margin center
-%m-center {
-    @include margin(null auto);
-}
-
 // Full width/height overlay.
 // If it is a pseudo element, it will meeds an empty content property and the wrapper to have a relative position
 @mixin full-overlay($bgColor: black) {
-    @include position(absolute, 0 0 0 0);
+    position: absolute;
+    @extend %pin-all;
     width: 100%;
     height: 100%;
     background-color: $bgColor;
 }
 
 @mixin horizontal-spacing {
-    @include padding(null $h-spacing-mobile);
+    @include padding-h($h-spacing-mobile);
 
     @include screen-md-min {
-        @include padding(null $h-spacing);
+        @include padding-h($h-spacing);
     }
 }
 
 // A container that center aligns with padding and max width
 @mixin container {
-    @include margin(null auto);
+    @extend %m-center;
     max-width: $max-width-content;
     @include horizontal-spacing;
 }

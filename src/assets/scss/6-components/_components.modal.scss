@@ -9,16 +9,17 @@
 .modal {
     z-index: 101;
     background-color: rgba(0,0,0,0.9);
-    @include position(fixed, 0 0 0 0);
+    position: fixed;
+    @extend %pin-all;
     overflow-y: scroll;
     width: 100%;
     min-height: 100%;
 
     .modal__close {
-        @include position(absolute, $modal-close-t-offset-mobile $h-spacing null null);
+        @include pos-top-right(absolute, $modal-close-t-offset-mobile, $h-spacing-mobile);
 
         @include screen-md-min {
-            @include position(absolute, $modal-close-t-offset $h-spacing null null);
+            @include pos-top-right(absolute, $modal-close-t-offset, $h-spacing);
         }
     }
 
@@ -26,11 +27,11 @@
         text-align: center;
         position: relative;
         @include container;
-        @include margin($modal-content-v-spacing-mobile null);
+        @include margin-v($modal-content-v-spacing-mobile);
         color: white;
 
         @include screen-md-min {
-            @include margin($modal-content-v-spacing null);
+            @include margin-v($modal-content-v-spacing);
         }
 
         &--narrow {
@@ -40,6 +41,6 @@
 
     &__panel {
         @include horizontal-spacing;
-        @include padding($modal-panel-v-spacing null);
+        @include padding-v($modal-panel-v-spacing);
     }
 }
