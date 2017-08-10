@@ -578,15 +578,6 @@ input[type='radio'] {
       flex-wrap: wrap;
   margin: 0 -1%; }
 
-@media (max-width: 50em) {
-  .grid-row--flex {
-    box-sizing: border-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    margin: 0 -1%; } }
-
 @media (min-width: 50em) {
   .grid-row--flex {
     box-sizing: border-box;
@@ -2789,7 +2780,10 @@ textarea.form__control {
     height: 1.4375rem; }
 
 .list--inline {
-  margin: -1.5em; }
+  margin-top: -0.5em;
+  margin-right: -1em;
+  margin-bottom: -0.5em;
+  margin-left: -1em; }
   .list--inline li {
     display: inline-block;
     padding: 0.5em 1em; }

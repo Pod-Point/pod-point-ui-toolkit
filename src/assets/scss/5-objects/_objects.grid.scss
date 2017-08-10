@@ -16,11 +16,6 @@
     }
 
     &--flex {
-
-        @include screen-md-max {
-            @include grid($flex-wrap: wrap, $gutter: $grid-gutter);
-        }
-
         @include screen-md-min {
             @include grid($flex-wrap: flex, $gutter: $grid-gutter);
         }

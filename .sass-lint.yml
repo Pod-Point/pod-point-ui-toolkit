@@ -7,12 +7,7 @@ rules:
       - 'screen-sm-min'
       - 'screen-md-min'
       - 'screen-lg-min'
-      - 'screen-xl-min'
-      - 'screen-xs-max'
-      - 'screen-sm-max'
-      - 'screen-md-max'
-      - 'screen-lg-max'
-      - 'screen-xl-max' # would like to write a regex here but can't work out how!
+      - 'screen-xl-min' # would like to write a regex here but can't work out how!
 
   # Extends
   extends-before-declarations: 0 # Discuss
