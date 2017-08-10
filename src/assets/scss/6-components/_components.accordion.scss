@@ -18,7 +18,7 @@
         cursor: pointer;
 
         .accordion__toggle-icon {
-            @include pos-top-right(absolute, 0, 0);
+            @include position(absolute, 0, 0, null, null);
         }
 
         &.is-open {

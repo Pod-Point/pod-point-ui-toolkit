@@ -154,7 +154,7 @@
                     position: relative;
 
                     svg {
-                        @include pos-top-left(absolute, 50%, 0);
+                        @include position(absolute, 50%, null, null, 0);
                         margin-top: -10px;
                         width: 20px;
                         height: 20px;
@@ -194,7 +194,7 @@
                 }
 
                 .plus-minus-toggle {
-                    @include pos-top-right(absolute, 17px, 0);
+                    @include position(absolute, 17px, 0, null, null);
                     z-index: -1;
 
                     @include screen-md-min {
@@ -227,7 +227,7 @@
     background-color: $white;
 
     @include screen-md-min {
-        @include pos-top-right(absolute, 96px, 0);
+        @include position(absolute, 96px, 0, null, null);
         opacity: 0;
     }
 

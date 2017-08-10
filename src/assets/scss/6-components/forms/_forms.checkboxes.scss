@@ -18,6 +18,11 @@
     }
 
     > input {
+        @include position(absolute, 0, null, null, 0);
+        display: block;
+        opacity: 0;
+        z-index: 2;
+        cursor: pointer;
         width: $checkbox-size;
         height: $checkbox-size;
 
@@ -30,7 +35,7 @@
             cursor: pointer;
 
             &::before {
-                @include pos-top-left(absolute, 0, 0);
+                @include position(absolute, 0, null, null, 0);
                 content: '';
                 width: $checkbox-size;
                 height: $checkbox-size;

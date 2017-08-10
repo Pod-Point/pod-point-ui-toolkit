@@ -3,36 +3,6 @@
   margin-right: auto;
   margin-left: auto; }
 
-.confirm-popup, .hero::before, .modal, .bg-img-overlay::after {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0; }
-
-.pin-top-right {
-  top: 0;
-  right: 0;
-  bottom: auto;
-  left: auto; }
-
-.pin-bottom-right {
-  top: auto;
-  right: 0;
-  bottom: 0;
-  left: auto; }
-
-.pin-top-left {
-  top: 0;
-  right: auto;
-  bottom: auto;
-  left: 0; }
-
-.pin-bottom-left {
-  top: auto;
-  right: auto;
-  bottom: 0;
-  left: 0; }
-
 h1,
 .h1, h2,
 .h2, h3,
@@ -554,19 +524,6 @@ img {
   .dl dd {
     margin: 0; }
 
-input[type='checkbox'] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  opacity: 0;
-  z-index: 2;
-  cursor: pointer; }
-
-input[type='radio'] {
-  position: absolute;
-  left: -9999px; }
-
 .grid-wrap {
   margin-bottom: -4%; }
 
@@ -1082,9 +1039,13 @@ input[type='radio'] {
   min-height: 100%; }
 
 .confirm-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 101;
   background-color: rgba(215, 215, 215, 0.7);
-  position: fixed;
   overflow-y: scroll;
   width: 100%;
   min-height: 100%; }
@@ -1372,6 +1333,10 @@ input[type='radio'] {
         max-width: 500px; } }
   .hero::before {
     position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: #4d4d4d;
@@ -1418,9 +1383,13 @@ input[type='radio'] {
   overflow: hidden; }
 
 .modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 101;
   background-color: rgba(0, 0, 0, 0.9);
-  position: fixed;
   overflow-y: scroll;
   width: 100%;
   min-height: 100%; }
@@ -1932,6 +1901,13 @@ textarea.form__control {
     .checkbox--inline:last-child {
       margin-right: 0; }
   .checkbox > input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
     width: 1.4375rem;
     height: 1.4375rem; }
     .checkbox > input ~ span {
@@ -2638,9 +2614,13 @@ textarea.form__control {
   color: #fff;
   z-index: 0; }
   .bg-img-overlay::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: -1;
     content: '';
-    position: absolute;
     background-color: #4d4d4d;
     opacity: .65;
     width: 100%;
@@ -2933,6 +2913,36 @@ textarea.form__control {
 
 .pos-fix {
   position: fixed; }
+
+.pin-all {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.pin-top-right {
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto; }
+
+.pin-bottom-right {
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: auto; }
+
+.pin-top-left {
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0; }
+
+.pin-bottom-left {
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: 0; }
 
 .z-index-1 {
   z-index: 1; }

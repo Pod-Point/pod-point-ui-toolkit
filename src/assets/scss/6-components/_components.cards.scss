@@ -24,7 +24,7 @@
         position: relative;
 
         &::before {
-            @include pos-top-left(absolute, $card-option-highlight-offset, -1px);
+            @include position(absolute, $card-option-highlight-offset, null, null, -1px);
             content: '';
             z-index: -1;
             width: calc(100% + 2px);
