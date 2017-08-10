@@ -1,5 +1,5 @@
 // =============================================================================
-//	ELEMENTS - FORMS - VALIDATION
+//	COMPONENTS - FORMS - VALIDATION
 // =============================================================================
 
 // sass-lint:disable force-pseudo-nesting
@@ -12,7 +12,7 @@
 }
 
 .form__group--error {
-    .checkbox > input[type='checkbox'] + span::before {
+    .form__checkbox > .checkbox + span::before {
         border-color: $error-red;
     }
 
@@ -34,7 +34,7 @@
     color: $error-red;
     padding-top: $form-error-t-spacing;
 
-    .checkbox-wrap & {
+    .form__checkbox & {
         margin-top: 0;
     }
 }

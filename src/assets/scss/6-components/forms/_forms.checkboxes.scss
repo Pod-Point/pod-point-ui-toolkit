@@ -1,16 +1,8 @@
 // =============================================================================
-//	ELEMENTS - FORMS - CHECKBOXES
+//	COMPONENTS - FORMS - CHECKBOXES
 // =============================================================================
 
-input[type='checkbox'] {
-    @include pos-top-left(absolute, 0, 0);
-    display: block;
-    opacity: 0;
-    z-index: 2;
-    cursor: pointer;
-}
-
-.checkbox {
+.form__checkbox {
     @include font-size-md;
     text-align: left;
     position: relative;
@@ -25,7 +17,7 @@ input[type='checkbox'] {
         }
     }
 
-    > input[type='checkbox'] {
+    > .checkbox {
         width: $checkbox-size;
         height: $checkbox-size;
 

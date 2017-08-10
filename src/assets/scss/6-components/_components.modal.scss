@@ -2,8 +2,10 @@
 //  COMPONENTS - MODAL
 // =============================================================================
 
-.is-modal-open body {
-    overflow: hidden;
+.is-modal-open {
+    body {
+        overflow: hidden;
+    }
 }
 
 .modal {

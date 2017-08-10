@@ -2,13 +2,13 @@
 //	IMPORT ALL SCSS
 // =============================================================================
 
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700'); // sass-lint:disable-line no-url-protocols, no-url-domains
 
-@import '1-settings/_all'; // Required
-@import '2-tools/_all'; // Required
+@import '1-settings/all'; // Required
+@import '2-tools/all'; // Required
 
-@import '3-generic/_all';
-@import '4-elements/_all';
-@import '5-objects/_all';
-@import '6-components/_all';
-@import '7-trumps/_all';
+@import '3-generic/all';
+@import '4-elements/all';
+@import '5-objects/all';
+@import '6-components/all';
+@import '7-trumps/all';

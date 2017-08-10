@@ -36,6 +36,7 @@
     &::after {
         transform: rotate(90deg);
 
+        // sass-lint:disable-block force-element-nesting
         .sub-nav-open &,
         .accordion .is-open & {
             opacity: 0;
@@ -57,4 +58,3 @@
         left: 20%;
     }
 }
-

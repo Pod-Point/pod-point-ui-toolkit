@@ -54,13 +54,9 @@
                 <p>Note: global spacing helper classes can also be applied <code>.m-b-none</code>, <code>.m-b-xs</code>, <code>.m-b-sm</code>, <code>.m-b-md</code> etc.</p>
 
                 <h5>Form field</h5>
-                <p>Use the class <code>.form__field</code> for each field.</p>
+                <p>Use the class <code>.form__field</code> for each field (placement of class varies across elements).</p>
                 <p>The form field includes the max-width style (variable: <code>$form-field-max-width</code>)</p>
                 <p>Note: Form fields can be used for the placement of error messages directly underneath, therefore it is best not to add a bottom margin</p>
-
-                <h5>Form control</h5>
-                <p>Use the class <code>.form__control</code> directly on a textual input, textarea or select.</p>
-                <p>This is where the border styling, padding and font styling comes from. It varies slightly depending if it is an input, textarea or select.</p>
 
                 <h5>Form label</h5>
                 <p>Use the class <code>.form__label</code> for a form field label - which is styled as small, bold font.</p>
@@ -89,7 +85,7 @@
 <pre>
 &#x3C;div class=&#x22;form__group&#x22;&#x3E;
     &#x3C;label class=&#x22;form__label&#x22;&#x3E;Input field&#x3C;/label&#x3E;
-    &#x3C;input class=&#x22;form__field form__control&#x22; type=&#x22;text&#x22; placeholder=&#x22;Sample placeholder text&#x22;&#x3E;
+    &#x3C;input class=&#x22;form__control form__field&#x22; type=&#x22;text&#x22; placeholder=&#x22;Sample placeholder text&#x22;&#x3E;
 &#x3C;/div&#x3E;
 </pre>
 </figure>
@@ -129,14 +125,14 @@
         <header class="content-block bg-light-gray">
             <div class="container">
                 <h3>Text areas</h3>
-                <p>Use the class <code>.form__control</code> directly on a textarea</p>
+                <p>Use both classes <code>.form__control</code> and <code>.form__textarea</code> directly on a textarea</p>
                 <p>Note: the code example below uses other wrappers and classes from the above general guidelines which helps with layout and validation etc.</p>
 
 <figure>
 <pre>
 &#x3C;div class=&#x22;form__group&#x22;&#x3E;
     &#x3C;label class=&#x22;form__label&#x22;&#x3E;Text area&#x3C;/label&#x3E;
-    &#x3C;textarea class=&#x22;form__field form__control&#x22; type=&#x22;text&#x22;&#x3E;&#x3C;/textarea&#x3E;
+    &#x3C;textarea class=&#x22;form__control form__textarea form__field&#x22; type=&#x22;text&#x22;&#x3E;&#x3C;/textarea&#x3E;
 &#x3C;/div&#x3E;
 </pre>
 </figure>
@@ -148,22 +144,22 @@
             <div class="container">
                 <div class="form__group">
                     <label class="form__label">Textarea</label>
-                    <textarea class="form__field form__control" type="text"></textarea>
+                    <textarea class="form__field form__control form__textarea" type="text"></textarea>
                 </div>
 
                 <div class="form__group">
                     <label class="form__label">Textarea - disabled</label>
-                    <textarea class="form__field form__control" type="text" disabled></textarea>
+                    <textarea class="form__field form__control form__textarea" type="text" disabled></textarea>
                 </div>
 
                 <div class="form__group form__group--valid">
                     <label class="form__label">Textarea - valid</label>
-                    <textarea class="form__field form__control" type="text"></textarea>
+                    <textarea class="form__field form__control form__textarea" type="text"></textarea>
                 </div>
 
                 <div class="form__group form__group--error">
                     <label class="form__label">Textarea - invalid</label>
-                    <textarea class="form__field form__control" type="text"></textarea>
+                    <textarea class="form__field form__control form__textarea" type="text"></textarea>
                     <span class="form__error">This is an error message.</span>
                 </div>
             </div>
@@ -176,17 +172,17 @@
         <header class="content-block bg-light-gray">
             <div class="container">
                 <h3>Selects</h3>
-                <p>Select elements are styled via a wrapping <code>&lt;div&gt;</code> which requires the class <code>.select</code></p>
-                <p>Use the class <code>.form__control</code> directly on a select</p>
-                <p>The cheveron icon is a background image applied to the <code>.select:after</code> element. See <a href="#">here</a> for info on how to deal with background images in the toolkit.</p>
+                <p>Select elements are styled via a wrapping <code>&lt;div&gt;</code> which requires the class <code>.form__select</code></p>
+                <p>Use the classes <code>.form__control</code> and <code>.select</code> directly on a select</p>
+                <p>The cheveron icon is a background image applied to the <code>.form__select:after</code> element. See <a href="#">here</a> for info on how to deal with background images in the toolkit.</p>
                 <p>Note: the code example below uses other wrappers and classes from the above general guidelines which helps with layout and validation etc.</p>
 
 <figure>
 <pre>
 &#x3C;div class=&#x22;form__group&#x22;&#x3E;
     &#x3C;label class=&#x22;form__label&#x22;&#x3E;Select dropdown&#x3C;/label&#x3E;
-    &#x3C;div class=&#x22;select form__field&#x22;&#x3E;
-        &#x3C;select class=&#x22;form__control&#x22;&#x3E;
+    &#x3C;div class=&#x22;form__select form__field&#x22;&#x3E;
+        &#x3C;select class=&#x22;select form__control&#x22;&#x3E;
             &#x3C;option value=&#x22;00&#x22;&#x3E;00&#x3C;/option&#x3E;
             &#x3C;option selected value=&#x22;01&#x22;&#x3E;01&#x3C;/option&#x3E;
             &#x3C;option value=&#x22;02&#x22;&#x3E;02&#x3C;/option&#x3E;
@@ -203,8 +199,8 @@
             <div class="container">
                 <div class="form__group">
                     <label class="form__label">Select</label>
-                    <div class="select form__field">
-                        <select class="form__control">
+                    <div class="form__select form__field">
+                        <select class="select form__control">
                             <option value="00">00</option>
                             <option selected value="01">01</option>
                             <option value="02">02</option>
@@ -214,8 +210,8 @@
 
                 <div class="form__group">
                     <label class="form__label">Select - disabled</label>
-                    <div class="select form__field is-disabled">
-                        <select class="form__control" disabled="true">
+                    <div class="form__select form__field is-disabled">
+                        <select class="select form__control" disabled="true">
                             <option value="00">00</option>
                             <option selected value="01">01</option>
                             <option value="02">02</option>
@@ -225,8 +221,8 @@
 
                 <div class="form__group form__group--valid">
                     <label class="form__label">Select - valid</label>
-                    <div class="select form__field">
-                        <select class="form__control">
+                    <div class="form__select form__field">
+                        <select class="select form__control">
                             <option value="00">00</option>
                             <option selected value="01">01</option>
                             <option value="02">02</option>
@@ -236,8 +232,8 @@
 
                 <div class="form__group form__group--error">
                     <label class="form__label">Select - invalid</label>
-                    <div class="select form__field">
-                        <select class="form__control">
+                    <div class="form__select form__field">
+                        <select class="select form__control">
                             <option value="00">00</option>
                             <option selected value="01">01</option>
                             <option value="02">02</option>
@@ -256,7 +252,7 @@
             <div class="container">
                 <h3>Alternative form controls</h3>
                 <p>To apply the alternative form control styling use the modifying class <code>.form__control--alt</code> to any textual inputs, textareas or selects</p>
-                <p>Annoyingly the select wrapper <code>.select</code> also needs a class <code>.select--alt</code> to move the cheveron flush to the right</p>
+                <p>Annoyingly the select wrapper <code>.form__select</code> also needs a class <code>.form__select--alt</code> to move the cheveron flush to the right</p>
                 <p>Note: global helper classes are available to modify the styling and make a newsletter signup for example</p>
             </div>
         </header>
@@ -274,8 +270,8 @@
 
                 <div class="form__group">
                     <label class="form__label">Select</label>
-                    <div class="select select--alt form__field">
-                        <select class="form__control form__control--alt">
+                    <div class="form__select form__select--alt form__field">
+                        <select class="select form__control form__control--alt">
                             <option value="00">00</option>
                             <option selected value="01">01</option>
                             <option value="02">02</option>
@@ -298,13 +294,13 @@
         <header class="content-block bg-light-gray">
             <div class="container">
                 <h3>Checkboxes</h3>
-                <p>Checkbox elements are styled via a wrapping <code>&lt;label&gt;</code> which requires the class <code>.checkbox</code> and the <code>for</code> attribute which has the id name of the input.</p>
-                <p>Inside the label element should be the checkbox <code>&lt;input&gt;</code> with the matching id, followed by a <code>&lt;span&gt;</code> with the text required.</p>
+                <p>Checkbox elements are styled via a wrapping <code>&lt;label&gt;</code> which requires the class <code>.form__checkbox</code>.</p>
+                <p>Inside the label element should be the checkbox <code>&lt;input&gt;</code> with the class <code>.checkbox</code>, followed by a <code>&lt;span&gt;</code> with the text required.</p>
 
 <figure>
 <pre>
-&#x3C;label class=&#x22;checkbox form__field&#x22; for=&#x22;checkboxExample1&#x22;&#x3E;
-    &#x3C;input type=&#x22;checkbox&#x22; name=&#x22;checkboxExample1&#x22; id=&#x22;checkboxExample1&#x22; checked=&#x22;checked&#x22; value=&#x22;value1&#x22;&#x3E;
+&#x3C;label class=&#x22;form__checkbox form__field&#x22; for=&#x22;checkboxExample1&#x22;&#x3E;
+    &#x3C;input class=&#x22;checkbox&#x22; type=&#x22;checkbox&#x22; name=&#x22;checkboxExample1&#x22; id=&#x22;checkboxExample1&#x22; checked=&#x22;checked&#x22; value=&#x22;value1&#x22;&#x3E;
     &#x3C;span&#x3E;This is an example of a checkbox&#x3C;/span&#x3E;
 &#x3C;/label&#x3E;
 </pre>
@@ -316,26 +312,26 @@
         <div class="content-block">
             <div class="container">
                 <div class="form__group form-spacing-sm">
-                    <label class="checkbox form__field" for="checkboxExample1">
-                        <input type="checkbox" name="checkboxExample1" id="checkboxExample1" checked="checked" value="value1">
+                    <label class="form__checkbox form__field" for="checkboxExample1">
+                        <input class="checkbox" type="checkbox" name="checkboxExample1" id="checkboxExample1" checked="checked" value="value1">
                         <span>This is an example of a checkbox</span>
                     </label>
                 </div>
                 <div class="form__group form-spacing-sm">
-                    <label class="checkbox form__field" for="checkboxExample2">
-                        <input type="checkbox" name="checkboxExample2" id="checkboxExample2" checked="checked" value="value2">
+                    <label class="form__checkbox form__field" for="checkboxExample2">
+                        <input class="checkbox" type="checkbox" name="checkboxExample2" id="checkboxExample2" checked="checked" value="value2">
                         <span>This is an example of a checkbox with lots of text and a <a href="#" class="a">link</a>. Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et.</span>
                     </label>
                 </div>
                 <div class="form__group form-spacing-sm">
-                    <label class="checkbox form__field" for="checkboxExample3">
-                        <input type="checkbox" name="checkboxExample3" id="checkboxExample3" disabled="true" value="value3">
+                    <label class="form__checkbox form__field" for="checkboxExample3">
+                        <input class="checkbox" type="checkbox" name="checkboxExample3" id="checkboxExample3" disabled="true" value="value3">
                         <span>This is an example of a disabled checkbox</span>
                     </label>
                 </div>
                 <div class="form__group form-spacing-sm form__group--error">
-                    <label class="checkbox form__field" for="checkboxExample4">
-                        <input type="checkbox" name="checkboxExample4" id="checkboxExample4" value="value4">
+                    <label class="form__checkbox form__field" for="checkboxExample4">
+                        <input class="checkbox" type="checkbox" name="checkboxExample4" id="checkboxExample4" value="value4">
                         <span>This is an example of a checkbox with an error.</span>
                     </label>
                     <span class="form__error">This is an error message.</span>
@@ -350,24 +346,24 @@
         <header class="content-block bg-light-gray">
             <div class="container">
                 <h3>Radios</h3>
-                <p>Radio elements are styled via a wrapping <code>&lt;label&gt;</code> which requires the class <code>.radio</code> and the <code>for</code> attribute which has the id name of the input.</p>
-                <p>Inside the label element should be the radio <code>&lt;input&gt;</code> with the matching id, followed by a <code>&lt;span&gt;</code> with the text required.</p>
-                <p>Radios are functionally grouped together via the name attribute, however for styling a wrapping div can be added with the class <code>.form__group</code></p>
-                <p>Radios can also be made inline by applying the modifying class <code>.radio--inline</code></p>
+                <p>Radio elements are styled via a wrapping <code>&lt;label&gt;</code> which requires the class <code>.form__radio</code>.</p>
+                <p>Inside the label element should be the radio <code>&lt;input&gt;</code> with the class <code>.radio</code>, followed by a <code>&lt;span&gt;</code> with the text required.</p>
+                <p>Radios that are functionally grouped together via the name attribute can have a wrapping div with the class <code>.form__group</code> for styling as a group.</p>
+                <p>Radios can also be made inline by applying the modifying class <code>.form__radio--inline</code></p>
 
 <figure>
 <pre>
 &#x3C;div class=&#x22;form__group&#x22;&#x3E;
-    &#x3C;label class=&#x22;radio form__field&#x22; for=&#x22;radioExample1&#x22;&#x3E;
-        &#x3C;input type=&#x22;radio&#x22; id=&#x22;radioExample1&#x22; name=&#x22;radioExample&#x22; value=&#x22;radioExample1&#x22;&#x3E;
+    &#x3C;label class=&#x22;form__radio form__field&#x22; for=&#x22;radioExample1&#x22;&#x3E;
+        &#x3C;input class=&#x22;radio&#x22; type=&#x22;radio&#x22; id=&#x22;radioExample1&#x22; name=&#x22;radioExample&#x22; value=&#x22;radioExample1&#x22;&#x3E;
         &#x3C;span&#x3E;Radio example one&#x3C;/span&#x3E;
     &#x3C;/label&#x3E;
-    &#x3C;label class=&#x22;radio form__field&#x22; for=&#x22;radioExample2&#x22;&#x3E;
-        &#x3C;input type=&#x22;radio&#x22; id=&#x22;radioExample2&#x22; name=&#x22;radioExample&#x22; value=&#x22;radioExample2&#x22;&#x3E;
+    &#x3C;label class=&#x22;form__radio form__field&#x22; for=&#x22;radioExample2&#x22;&#x3E;
+        &#x3C;input class=&#x22;radio&#x22; type=&#x22;radio&#x22; id=&#x22;radioExample2&#x22; name=&#x22;radioExample&#x22; value=&#x22;radioExample2&#x22;&#x3E;
         &#x3C;span&#x3E;Radio example two&#x3C;/span&#x3E;
     &#x3C;/label&#x3E;
-    &#x3C;label class=&#x22;radio form__field&#x22; for=&#x22;radioExample3&#x22;&#x3E;
-        &#x3C;input type=&#x22;radio&#x22; id=&#x22;radioExampleDisabled&#x22; name=&#x22;radioExample&#x22; value=&#x22;radioExampleDisabled&#x22; disabled&#x3E;
+    &#x3C;label class=&#x22;form__radio form__field&#x22; for=&#x22;radioExample3&#x22;&#x3E;
+        &#x3C;input class=&#x22;radio&#x22; type=&#x22;radio&#x22; id=&#x22;radioExampleDisabled&#x22; name=&#x22;radioExample&#x22; value=&#x22;radioExampleDisabled&#x22; disabled&#x3E;
         &#x3C;span&#x3E;Radio example disabled&#x3C;/span&#x3E;
     &#x3C;/label&#x3E;
 &#x3C;/div&#x3E;
@@ -380,27 +376,27 @@
         <div class="container content-block">
 
             <div class="form__group">
-                <label class="radio form__field" for="radioExample1">
-                    <input type="radio" id="radioExample1" name="radioExample" value="radioExample1">
+                <label class="form__radio form__field" for="radioExample1">
+                    <input class="radio" type="radio" id="radioExample1" name="radioExample" value="radioExample1">
                     <span>Radio example one</span>
                 </label>
-                <label class="radio form__field" for="radioExample2">
-                    <input type="radio" id="radioExample2" name="radioExample" value="radioExample2">
+                <label class="form__radio form__field" for="radioExample2">
+                    <input class="radio" type="radio" id="radioExample2" name="radioExample" value="radioExample2">
                     <span>Radio example two</span>
                 </label>
-                <label class="radio form__field" for="radioExample3">
-                    <input type="radio" id="radioExampleDisabled" name="radioExample" value="radioExampleDisabled" disabled>
+                <label class="form__radio form__field" for="radioExample3">
+                    <input class="radio" type="radio" id="radioExampleDisabled" name="radioExample" value="radioExampleDisabled" disabled>
                     <span>Radio example disabled</span>
                 </label>
             </div>
 
             <div class="form__group">
-                <label class="radio radio--inline form__field" for="radioExampleInline1">
-                    <input type="radio" id="radioExampleInline1" name="radioExampleInline" value="radioExampleInline1">
+                <label class="form__radio form__radio--inline form__field" for="radioExampleInline1">
+                    <input class="radio" type="radio" id="radioExampleInline1" name="radioExampleInline" value="radioExampleInline1">
                     <span>Inline radio example one</span>
                 </label>
-                <label class="radio radio--inline form__field" for="radioExampleInline2">
-                    <input type="radio" id="radioExampleInline2" name="radioExampleInline" value="radioExampleInline2">
+                <label class="form__radio form__radio--inline form__field" for="radioExampleInline2">
+                    <input class="radio" type="radio" id="radioExampleInline2" name="radioExampleInline" value="radioExampleInline2">
                     <span>Inline radio example two</span>
                 </label>
             </div>
@@ -430,15 +426,15 @@
                         <input class="form__field form__control" type="text" placeholder="Sample placeholder text">
                     </div>
                     <div class="form__group">
-                        <label class="checkbox form__field" for="checkboxExampleInline">
-                            <input type="checkbox" name="checkboxExampleInline" id="checkboxExampleInline" checked="checked" value="value1">
+                        <label class="form__checkbox form__field" for="checkboxExampleInline">
+                            <input class="checkbox" type="checkbox" name="checkboxExampleInline" id="checkboxExampleInline" checked="checked" value="value1">
                             <span>This is an example of a checkbox</span>
                         </label>
                     </div>
                     <div class="form__group">
                         <label class="form__label">Select dropdown</label>
-                        <div class="select form__field">
-                            <select class="form__control">
+                        <div class="form__select form__field">
+                            <select class="select form__control">
                                 <option value="00">00</option>
                                 <option selected value="01">01</option>
                                 <option value="02">02</option>
@@ -446,12 +442,12 @@
                         </div>
                     </div>
                     <div class="form__group">
-                        <label class="radio radio--inline form__field" for="radioExampleInlineInline1">
-                            <input type="radio" id="radioExampleInlineInline1" name="radioExampleInlineInline" value="radioExampleInlineInline1">
+                        <label class="form__radio form__radio--inline form__field" for="radioExampleInlineInline1">
+                            <input class="radio" type="radio" id="radioExampleInlineInline1" name="radioExampleInlineInline" value="radioExampleInlineInline1">
                             <span>Inline radio example one</span>
                         </label>
-                        <label class="radio radio--inline form__field" for="radioExampleInlineInline2">
-                            <input type="radio" id="radioExampleInlineInline2" name="radioExampleInlineInline" value="radioExampleInlineInline2">
+                        <label class="form__radio form__radio--inline form__field" for="radioExampleInlineInline2">
+                            <input class="radio" type="radio" id="radioExampleInlineInline2" name="radioExampleInlineInline" value="radioExampleInlineInline2">
                             <span>Inline radio example two</span>
                         </label>
                     </div>

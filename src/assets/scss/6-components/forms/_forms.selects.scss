@@ -2,7 +2,7 @@
 //	ELEMENTS - FORMS - SELECTS
 // =============================================================================
 
-.select {
+.form__select {
     position: relative;
     display: block;
     vertical-align: middle;
@@ -22,7 +22,7 @@
         background-size: cover;
     }
 
-    select {
+    .select {
         cursor: pointer;
         appearance: none;
         position: relative;
@@ -35,7 +35,7 @@
     }
 
     &.is-disabled {
-        select {
+        .select {
             cursor: not-allowed;
         }
     }

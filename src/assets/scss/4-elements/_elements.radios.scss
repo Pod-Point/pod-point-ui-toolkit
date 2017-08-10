@@ -1,8 +1,10 @@
 // =============================================================================
-//  OBJECTS - ALL
+//	ELEMENTS - RADIOS
 // =============================================================================
 
-@import '_objects.grid';
-@import '_objects.containers';
-@import '_objects.content-blocks';
-@import '_objects.form-layout';
+input {
+    &[type='radio'] {
+        position: absolute;
+        left: -9999px;
+    }
+}

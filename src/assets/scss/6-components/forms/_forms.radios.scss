@@ -1,13 +1,8 @@
 // =============================================================================
-//	ELEMENTS - FORMS - RADIOS
+//	COMPONENTS - FORMS - RADIOS
 // =============================================================================
 
-input[type='radio'] {
-    position: absolute;
-    left: -9999px;
-}
-
-.radio {
+.form__radio {
     display: inline-block;
     cursor: pointer;
     transition: scale .28s ease;
@@ -30,7 +25,7 @@ input[type='radio'] {
         }
     }
 
-    > input[type='radio'] {
+    > .radio {
         &:checked {
             // sass-lint:disable-block force-pseudo-nesting
             & + span::before {

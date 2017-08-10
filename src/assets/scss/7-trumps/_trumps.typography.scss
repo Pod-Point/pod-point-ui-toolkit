@@ -55,7 +55,10 @@
     color:  $font-color-very-light;
 }
 
-.remove-link-styles,
-.remove-link-styles a {
+.remove-link-styles {
     @extend %remove-link-styles;
+
+    a {
+        @extend %remove-link-styles;
+    }
 }

@@ -1,5 +1,5 @@
 // =============================================================================
-//	ELEMENTS - FORMS - LABELS
+//	COMPONENTS - FORMS - LABELS
 // =============================================================================
 
 .form__label {
@@ -10,8 +10,8 @@
     display: inline-block;
     padding-bottom: $form-label-b-spacing;
 
-    .checkbox &,
-    .radio & {
+    .form__checkbox &,
+    .form__radio & {
         @include font-size-md;
     }
 }
