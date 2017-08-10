@@ -12,7 +12,7 @@
 }
 
 .form__group--error {
-    .form__checkbox > .checkbox + span::before {
+    .checkbox > input + span::before {
         border-color: $error-red;
     }
 
@@ -34,7 +34,7 @@
     color: $error-red;
     padding-top: $form-error-t-spacing;
 
-    .form__checkbox & {
+    .checkbox & {
         margin-top: 0;
     }
 }

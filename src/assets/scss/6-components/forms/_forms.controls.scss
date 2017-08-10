@@ -33,3 +33,9 @@
     }
 }
 
+textarea {
+    &.form__control {
+        resize: vertical;
+        min-height: $textarea-min-height;
+    }
+}

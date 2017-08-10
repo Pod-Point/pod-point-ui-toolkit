@@ -2,11 +2,6 @@
 //  TOOLS - FORMS
 // =============================================================================
 
-@mixin font-style-forms {
-    font-size: $font-size-forms-md;
-    line-height: $input-line-height;
-}
-
 @mixin placeholder {
     placeholder {
         @content;
@@ -18,11 +13,11 @@
 }
 
 @mixin input-styles {
-    @include font-style-forms;
+    font-size: $font-size-forms-md;
     width: 100%;
     height: $input-height;
     appearance: none;
-    padding: $v-spacing-xxs $input-padding;
+    padding: $input-v-padding $input-h-padding;
     display: block;
     max-width: $form-field-max-width;
 }

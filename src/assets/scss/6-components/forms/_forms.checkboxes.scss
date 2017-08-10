@@ -2,7 +2,7 @@
 //	COMPONENTS - FORMS - CHECKBOXES
 // =============================================================================
 
-.form__checkbox {
+.checkbox {
     @include font-size-md;
     text-align: left;
     position: relative;
@@ -17,7 +17,7 @@
         }
     }
 
-    > .checkbox {
+    > input {
         width: $checkbox-size;
         height: $checkbox-size;
 

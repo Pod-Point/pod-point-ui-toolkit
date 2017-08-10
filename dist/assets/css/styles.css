@@ -567,10 +567,6 @@ input[type='radio'] {
   position: absolute;
   left: -9999px; }
 
-textarea {
-  height: auto;
-  resize: vertical; }
-
 .grid-wrap {
   margin-bottom: -4%; }
 
@@ -1896,13 +1892,12 @@ textarea {
 
 .form__control {
   font-size: 1rem;
-  line-height: 1.2;
   width: 100%;
   height: 2.5rem;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  padding: 8px 10px;
+  padding: 6px 10px;
   display: block;
   max-width: 600px;
   transition: border-color;
@@ -1928,35 +1923,34 @@ textarea {
     border-right: 0;
     border-left: 0; }
 
-.form__textarea {
-  line-height: 1.5;
-  min-height: 8.125rem;
-  padding: 10px; }
+textarea.form__control {
+  resize: vertical;
+  min-height: 8.125rem; }
 
-.form__checkbox {
+.checkbox {
   font-size: 0.875rem;
   text-align: left;
   position: relative;
   display: block; }
   @media (min-width: 50em) {
-    .form__checkbox {
+    .checkbox {
       font-size: 1rem; } }
-  .form__checkbox--inline {
+  .checkbox--inline {
     display: inline-block;
     margin-right: 25px; }
-    .form__checkbox--inline:last-child {
+    .checkbox--inline:last-child {
       margin-right: 0; }
-  .form__checkbox > .checkbox {
+  .checkbox > input {
     width: 1.4375rem;
     height: 1.4375rem; }
-    .form__checkbox > .checkbox ~ span {
+    .checkbox > input ~ span {
       text-transform: none;
       display: inline-block;
       padding-top: 0;
       padding-bottom: 5px;
       padding-left: 2.1875rem;
       cursor: pointer; }
-      .form__checkbox > .checkbox ~ span::before {
+      .checkbox > input ~ span::before {
         position: absolute;
         top: 0;
         left: 0;
@@ -1966,18 +1960,18 @@ textarea {
         z-index: 1;
         border: 2px solid #ccc;
         border-radius: 5px; }
-    .form__checkbox > .checkbox:checked ~ span::before {
+    .checkbox > input:checked ~ span::before {
       background-image: url("../img/css-bg/icons/tick-white.svg");
       background-size: 0.9375rem 0.9375rem;
       background-repeat: no-repeat;
       background-position: center;
       background-color: #8cc63f;
       border-color: #8cc63f !important; }
-    .form__checkbox > .checkbox:disabled ~ span {
+    .checkbox > input:disabled ~ span {
       opacity: 0.5;
       cursor: not-allowed; }
 
-.form__radio {
+.radio {
   display: inline-block;
   cursor: pointer;
   transition: scale .28s ease;
@@ -1986,41 +1980,44 @@ textarea {
       -ms-user-select: none;
           user-select: none;
   margin-bottom: .5em; }
-  .form__radio:last-child {
+  .radio:last-child {
     margin-bottom: 0; }
-  .form__radio--inline {
+  .radio--inline {
     display: inline-block;
     margin-right: 25px;
     width: auto;
     max-width: auto;
     min-width: auto; }
-    .form__radio--inline:last-child {
+    .radio--inline:last-child {
       margin-right: 0; }
-  .form__radio > .radio:checked + span::before {
-    border-radius: 50%;
-    border: 2px solid transparent; }
-  .form__radio > .radio:checked + span::after {
-    border-radius: 50%;
-    border: 2px solid #8cc63f;
-    background-color: #8cc63f;
-    z-index: 0;
-    -ms-transform: scale(1.02);
-        transform: scale(1.02); }
-  .form__radio > .radio:disabled + span {
-    opacity: 0.5;
-    cursor: not-allowed; }
-    .form__radio > .radio:disabled + span::before {
-      background-color: transparent; }
-  .form__radio > span {
+  .radio > input {
+    position: absolute;
+    left: -9999px; }
+    .radio > input:checked + span::before {
+      border-radius: 50%;
+      border: 2px solid transparent; }
+    .radio > input:checked + span::after {
+      border-radius: 50%;
+      border: 2px solid #8cc63f;
+      background-color: #8cc63f;
+      z-index: 0;
+      -ms-transform: scale(1.02);
+          transform: scale(1.02); }
+    .radio > input:disabled + span {
+      opacity: 0.5;
+      cursor: not-allowed; }
+      .radio > input:disabled + span::before {
+        background-color: transparent; }
+  .radio > span {
     font-size: 0.875rem;
     position: relative;
     padding-top: 0.4em;
     padding-bottom: 0;
     padding-left: 1.875rem; }
     @media (min-width: 50em) {
-      .form__radio > span {
+      .radio > span {
         font-size: 1rem; } }
-    .form__radio > span::after, .form__radio > span::before {
+    .radio > span::after, .radio > span::before {
       margin-top: 0.4em;
       margin-bottom: 0.4em;
       content: '';
@@ -2031,17 +2028,17 @@ textarea {
       height: 1.125rem;
       z-index: 0;
       transition: .28s ease; }
-    .form__radio > span::before {
+    .radio > span::before {
       border-radius: 50%;
       border: 2px solid #ccc; }
-    .form__radio > span::after {
+    .radio > span::after {
       border-radius: 50%;
       border: 2px solid #ccc;
       z-index: -1;
       -ms-transform: scale(0);
           transform: scale(0); }
 
-.form__select {
+.select {
   position: relative;
   display: block;
   vertical-align: middle;
@@ -2049,7 +2046,7 @@ textarea {
   margin-top: 0;
   height: 2.5rem;
   max-width: 600px; }
-  .form__select::after {
+  .select::after {
     content: '';
     position: absolute;
     top: 35%;
@@ -2058,7 +2055,7 @@ textarea {
     height: 0.9375rem;
     background-image: url("../img/css-bg/icons/cheveron.svg");
     background-size: cover; }
-  .form__select .select {
+  .select select {
     cursor: pointer;
     -webkit-appearance: none;
        -moz-appearance: none;
@@ -2066,11 +2063,11 @@ textarea {
     position: relative;
     z-index: 1;
     background-color: transparent; }
-    .form__select .select::-ms-expand {
+    .select select::-ms-expand {
       display: none; }
-  .form__select.is-disabled .select {
+  .select.is-disabled select {
     cursor: not-allowed; }
-  .form__select--alt::after {
+  .select--alt::after {
     right: 0; }
 
 .form__label {
@@ -2083,19 +2080,19 @@ textarea {
   @media (min-width: 50em) {
     .form__label {
       font-size: 0.875rem; } }
-  .form__checkbox .form__label,
-  .form__radio .form__label {
+  .checkbox .form__label,
+  .radio .form__label {
     font-size: 0.875rem; }
     @media (min-width: 50em) {
-      .form__checkbox .form__label,
-      .form__radio .form__label {
+      .checkbox .form__label,
+      .radio .form__label {
         font-size: 1rem; } }
 
 .checkbox-wrap:not(.is-invalid) .error-message,
 .form-field-wrapper:not(.is-invalid) .error-message {
   display: none; }
 
-.form__group--error .form__checkbox > .checkbox + span::before {
+.form__group--error .checkbox > input + span::before {
   border-color: #c1272d; }
 
 .form__group--error .form__control {
@@ -2113,7 +2110,7 @@ textarea {
   @media (min-width: 50em) {
     .form__error {
       font-size: 0.875rem; } }
-  .form__checkbox .form__error {
+  .checkbox .form__error {
     margin-top: 0; }
 
 .checkbox-wrap .form__error {

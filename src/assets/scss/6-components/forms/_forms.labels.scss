@@ -10,8 +10,8 @@
     display: inline-block;
     padding-bottom: $form-label-b-spacing;
 
-    .form__checkbox &,
-    .form__radio & {
+    .checkbox &,
+    .radio & {
         @include font-size-md;
     }
 }

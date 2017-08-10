@@ -4,7 +4,6 @@
 
 // Form font sizes
 $font-size-forms-md: $font-size-md-desktop; // Forms have to be 16px min for IOS
-$input-line-height: 1.2;
 
 // Borders and shadows
 $form-box-shadow: inset 0 1px 3px rgba($black, .06);
@@ -22,7 +21,8 @@ $form-groups-inline-gutter: $gutter-base;
 
 // Inputs
 $input-height: rem(40);
-$input-padding: $space-xs;
+$input-h-padding: $space-xs;
+$input-v-padding: 6px;
 $input-text-color: $font-color-base;
 $input-placeholder-color: $font-color-very-light;
 $alt-input-v-padding: 1.5em;

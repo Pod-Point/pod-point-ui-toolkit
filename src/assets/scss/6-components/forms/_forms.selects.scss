@@ -2,7 +2,7 @@
 //	ELEMENTS - FORMS - SELECTS
 // =============================================================================
 
-.form__select {
+.select {
     position: relative;
     display: block;
     vertical-align: middle;
@@ -15,14 +15,14 @@
         content: '';
         position: absolute;
         top: 35%;
-        right: $input-padding;
+        right: $input-h-padding;
         width: $select-cheveron-size;
         height: $select-cheveron-size;
         background-image: url($css-bg-path+'icons/cheveron.svg');
         background-size: cover;
     }
 
-    .select {
+    select {
         cursor: pointer;
         appearance: none;
         position: relative;
@@ -35,7 +35,7 @@
     }
 
     &.is-disabled {
-        .select {
+        select {
             cursor: not-allowed;
         }
     }
