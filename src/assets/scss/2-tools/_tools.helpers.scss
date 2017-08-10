@@ -93,6 +93,6 @@
 // A container that center aligns with padding and max width
 @mixin container {
     @extend %m-center;
-    max-width: $max-width-content;
     @include horizontal-spacing;
+    max-width: $max-width-content;
 }

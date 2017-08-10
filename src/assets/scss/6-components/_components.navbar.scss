@@ -2,6 +2,8 @@
 //  COMPONENTS - NAVBAR
 // =============================================================================
 
+// sass-lint:disable nesting-depth
+
 .is-nav-open {
     body {
         overflow: hidden;
@@ -148,7 +150,7 @@
 
                 &.find-chargepoint {
                     color: $primary-color;
-                    padding-left: 25px !important;
+                    padding-left: 25px;
                     position: relative;
 
                     svg {

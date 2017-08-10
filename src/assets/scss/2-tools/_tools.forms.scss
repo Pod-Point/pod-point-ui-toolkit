@@ -35,13 +35,13 @@
 }
 
 @mixin input-border--focus {
-    color: $font-color-base !important;
+    color: $font-color-base;
     border-color: $font-color-base;
     outline: none;
 }
 
 @mixin input-border--hover {
-    color: $font-color-base !important;
+    color: $font-color-base;
     border-color: $font-color-base;
 }
 

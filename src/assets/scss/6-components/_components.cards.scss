@@ -11,17 +11,17 @@
     box-shadow: $box-shadow-subtle;
     padding: $card-v-padding $card-h-padding;
 
+    ul,
+    ol {
+        padding-left: $list-l-spacing-sm;
+
+        li {
+            padding-left: 0;
+        }
+    }
+
     &--options {
         position: relative;
-
-        ul,
-        ol {
-            padding-left: $list-l-spacing-sm;
-
-            li {
-                padding-left: 0;
-            }
-        }
 
         &::before {
             @include pos-top-left(absolute, $card-option-highlight-offset, -1px);

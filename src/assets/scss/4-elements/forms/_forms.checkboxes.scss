@@ -55,7 +55,8 @@ input[type='checkbox'] {
                 background-repeat: no-repeat;
                 background-position: center;
                 background-color: $primary-color;
-                border-color: $primary-color !important; // Important is applied to override if there is an error red border
+                border-color: $primary-color !important; // sass-lint:disable-line no-important
+                // Important is applied to override if there is an error red border
             }
         }
 

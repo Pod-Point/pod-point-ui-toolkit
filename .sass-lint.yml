@@ -1,0 +1,36 @@
+rules:
+  # Disallows
+  no-qualifying-elements:
+    - 2
+    - allow-element-with-attribute: 1 # Discuss
+  clean-import-paths: 0
+
+  # Nesting
+  force-attribute-nesting: 0 # Discuss
+  force-element-nesting: 0 # Discuss
+  nesting-depth: 1 # Discuss
+
+  # Mixins
+  mixins-before-declarations:
+    - 1
+    - exclude:
+      - 'screen-xs-min'
+      - 'screen-sm-min'
+      - 'screen-md-min'
+      - 'screen-lg-min'
+      - 'screen-xl-min'
+      - 'screen-xs-max'
+      - 'screen-sm-max'
+      - 'screen-md-max'
+      - 'screen-lg-max'
+      - 'screen-xl-max' # would like to write a regex here but can't work out how!
+
+  # Extends
+  extends-before-declarations: 0 # Discuss
+
+  # Style guide
+  indentation:
+    - 2
+    - size: 4 # Keep
+  class-name-format: 0 # Keep
+  property-sort-order: 0 # Discuss about mixins

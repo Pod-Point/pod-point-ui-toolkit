@@ -2,6 +2,8 @@
 //  TRUMPS - BORDERS
 // =============================================================================
 
+// sass-lint:disable no-important
+
 .b {
     // Base border
     &-base {
@@ -31,7 +33,7 @@
 
     // No border
     &-none {
-        border-top: 0 !important;
+        border: 0 !important;
     }
 
     &-t-none {

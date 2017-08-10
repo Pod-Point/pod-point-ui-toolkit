@@ -2,8 +2,8 @@
 //	DEMO STYLES
 // =============================================================================
 
-@import '1-settings/__settings'; // Required
-@import '2-tools/__tools'; // Required
+@import '1-settings/_all'; // Required
+@import '2-tools/_all'; // Required
 
 .demo-header {
     padding-top: rem(10);
