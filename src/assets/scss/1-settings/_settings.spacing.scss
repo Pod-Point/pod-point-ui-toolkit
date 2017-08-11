@@ -3,6 +3,7 @@
 // =============================================================================
 
 $typography-v-spacing: 1em;
+$typography-v-spacing-half: $typography-v-spacing / 2;
 
 $base-spacing-mobile: 25px;
 $gutter-base: 10px;
@@ -33,6 +34,6 @@ $dl-h-spacing: 15px;
 
 $alert-padding: $space-md;
 
-$highlight-text-padding: 0.3em;
+$highlight-text-padding: .3em;
 
 $list-l-spacing-sm: $space-md;

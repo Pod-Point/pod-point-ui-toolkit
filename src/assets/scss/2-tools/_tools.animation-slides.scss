@@ -3,15 +3,15 @@
 // =============================================================================
 
 // Slide down (collapsed)
-@mixin slideDownCollapsed($duration) {
+@mixin slide-down-collapsed($duration) {
     max-height: 0;
-    transition: max-height $duration ease-out;
     overflow: hidden;
+    transition: max-height $duration ease-out;
 }
 
 // Slide down (active/open)
-@mixin slideDownActive($duration, $approxHeight) {
-    max-height: $approxHeight;
-    transition: max-height $duration ease-in;
+@mixin slide-down-active($duration, $approx-height) {
+    max-height: $approx-height;
     overflow: hidden;
+    transition: max-height $duration ease-in;
 }

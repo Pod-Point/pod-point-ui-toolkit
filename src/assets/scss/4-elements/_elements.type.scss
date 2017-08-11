@@ -14,13 +14,12 @@ p,
 
 small,
 .small {
-    font-size: 0.8em;
+    font-size: .8em;
 }
 
 strong,
 .strong,
 .bold {
-    font-weight: normal;
     font-weight: $font-weight-bold;
 }
 
@@ -41,12 +40,12 @@ s,
 mark,
 .mark,
 .highlight {
+    @include padding(null $highlight-text-padding);
     background-color: $highlight-color;
-    @include padding-h($highlight-text-padding);
 }
 
 code {
-    color: $primary-color-very-dark;
     background-color: $primary-color-very-light;
+    color: $primary-color-very-dark;
     padding: $highlight-text-padding;
 }

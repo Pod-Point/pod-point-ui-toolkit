@@ -3,63 +3,70 @@
 // =============================================================================
 
 .bg-white {
-    background-color: white;
+    background-color: $white;
     color: $font-color-base;
 }
 
-.bg-dark-gray {
-    background-color: $gray-dark;
-    color: white;
-}
-
-.bg-very-dark-gray {
-    background-color: $gray-very-dark;
-    color: white;
+// Greys
+.bg-very-light-gray {
+    background-color: $gray-very-light;
 }
 
 .bg-light-gray {
     background-color: $gray-light;
 }
 
-.bg-very-light-gray {
-    background-color: $gray-very-light;
+.bg-gray {
+    background-color: $gray;
+    color: $white;
 }
 
+.bg-dark-gray {
+    background-color: $gray-dark;
+    color: $white;
+}
+
+.bg-very-dark-gray {
+    background-color: $gray-very-dark;
+    color: $white;
+}
+
+// Colours
 .bg-primary {
     background-color: $primary-color;
-    color: white;
+    color: $white;
 }
 
 .bg-sky-blue {
     background-color: $sky-blue;
 }
 
+// Cover and overlays
 .bg-img-cover {
     background-position: center center;
     background-size: cover;
 }
 
 .bg-img-overlay {
+    color: $white;
     position: relative;
-    color: white;
     z-index: 0;
 
-    &:after {
-        z-index: -1;
-        content: '';
-        position: absolute;
-        @extend %pin-all;
+    &::after {
+        @include position(absolute, 0 0 0 0);
         background-color: $gray-dark;
-        opacity: 0.65;
-        width: 100%;
+        content: '';
         height: 100%;
+        opacity: .65;
+        width: 100%;
+        z-index: -1;
     }
 
     &--black {
 
-        &:after {
-            background-color: black;
-            opacity: 0.55;
+        &::after {
+            background-color: $black;
+            opacity: .55;
         }
     }
 }

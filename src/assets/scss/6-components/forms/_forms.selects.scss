@@ -3,35 +3,33 @@
 // =============================================================================
 
 .select {
-    position: relative;
     display: block;
+    height: $input-height;
+    margin-top: 0;
+    max-width: $form-field-max-width;
+    position: relative;
     vertical-align: middle;
     width: 100%;
-    margin-top: 0;
-    height: $input-height;
-    max-width: $form-field-max-width;
 
-    &:after {
-        content: '';
-        position: absolute;
-        top: 35%;
-        right: $input-padding;
-        width: $select-cheveron-size;
-        height: $select-cheveron-size;
+    &::after {
+        @include position(absolute, 35% $input-h-padding null null);
         background-image: url($css-bg-path+'icons/cheveron.svg');
         background-size: cover;
+        content: '';
+        height: $select-cheveron-size;
+        width: $select-cheveron-size;
     }
 
     select {
+        appearance: none;
+        background-color: transparent;
         cursor: pointer;
-        -moz-appearance: none;
         position: relative;
         z-index: 1;
-        background-color: transparent;
-    }
 
-    select::-ms-expand {
-        display: none;
+        &::-ms-expand { // sass-lint:disable-line no-vendor-prefixes
+            display: none;
+        }
     }
 
     &.is-disabled {
@@ -41,7 +39,7 @@
     }
 
     &--alt {
-        &:after {
+        &::after {
             right: 0;
         }
     }

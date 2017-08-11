@@ -3,17 +3,15 @@
 // =============================================================================
 
 .video-wrapper {
+    height: 0;
+    padding-bottom: 56.25%; // 16:9
+    padding-top: 25px;
     position: relative;
     z-index: 9999;
-    padding-bottom: 56.25%; /* 16:9 */
-    padding-top: 25px;
-    height: 0;
 
     iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+        @include position(absolute, 0 null null 0);
         height: 100%;
+        width: 100%;
     }
 }

@@ -3,14 +3,24 @@
 // =============================================================================
 
 // Pop up and fade in keyframes
-@keyframes popUpFadeIn {
-    0% {top: 100px; opacity: 0;}
-    50% {opacity: 0;}
-    100% {top: 0px; opacity: 1;}
+@keyframes pop-up-fade-in {
+    0% {
+        opacity: 0;
+        top: 100px;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0;
+    }
 }
 
 // Pop up and fade in mixin
-@mixin popUpFadeIn() {
+@mixin pop-up-fade-in {
+    animation: pop-up-fade-in 2s;
     position: relative;
-    animation: popUpFadeIn 2s;
 }

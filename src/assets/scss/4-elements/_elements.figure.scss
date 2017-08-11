@@ -3,13 +3,12 @@
 // =============================================================================
 
 figure {
-    overflow-x: scroll;
     background-color: $gray-dark;
-    font-weight: bold;
-    box-shadow: $box-shadow-inset;
-    color: white;
-    margin: 0;
-    padding: $v-spacing-mobile $h-spacing-mobile;
     border: $border-base;
     border-radius: $border-radius-base;
+    box-shadow: $box-shadow-inset;
+    color: $white;
+    margin: 0;
+    overflow-x: scroll;
+    padding: $v-spacing-mobile $h-spacing-mobile;
 }

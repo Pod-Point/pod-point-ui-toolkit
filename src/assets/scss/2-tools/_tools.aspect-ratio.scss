@@ -6,18 +6,14 @@
 @mixin aspect-ratio($width, $height) {
     position: relative;
 
-    &:before {
+    &::before {
+        content: '';
         display: block;
-        content: "";
-        width: 100%;
         padding-top: ($height / $width) * 100%;
+        width: 100%;
     }
 
     > .aspect-ratio-content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        @include position(absolute, 0 0 0 0);
     }
 }

@@ -2,36 +2,38 @@
 //  COMPONENTS - NAVICON
 // =============================================================================
 
+// sass-lint:disable nesting-depth
+
 .navicon {
-    width: $navicon-width;
     height: $navicon-height;
+    overflow: hidden;
     position: relative;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
+    width: $navicon-width;
 
     span {
+        @include position(absolute, null 0 null null);
+        background-color: $icon-color;
+        border-radius: $navicon-stroke-radius;
         display: block;
         height: $navicon-stroke;
-        width: 100%;
-        background-color: $icon-color;
-        position: absolute;
-        right: 0;
-        border-radius: $navicon-stroke-radius;
+        opacity: 1;
         transform: rotate(0deg);
         transition: .25s ease-in-out;
-        opacity: 1;
+        width: 100%;
 
         &:nth-child(1) {
             top: 0;
 
             .nav-open & {
-                top: 50%;
+                top: calc(50% - 2px);
                 transform: rotate(135deg);
             }
         }
 
         &:nth-child(2) {
-            top: 50%;
+            top: calc(50% - 2px);
 
             .nav-open & {
                 left: -$navicon-width;
@@ -40,10 +42,10 @@
         }
 
         &:nth-child(3) {
-            top: 100%;
+            top: calc(100% - 2px);
 
             .nav-open & {
-                top: 50%;
+                top: calc(50% - 2px);
                 transform: rotate(-135deg);
             }
         }

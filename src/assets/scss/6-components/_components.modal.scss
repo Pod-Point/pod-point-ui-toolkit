@@ -2,36 +2,37 @@
 //  COMPONENTS - MODAL
 // =============================================================================
 
-.is-modal-open body {
-    overflow: hidden;
+.is-modal-open {
+    body {
+        overflow: hidden;
+    }
 }
 
 .modal {
-    z-index: 101;
-    background-color: rgba(0,0,0,0.9);
-    position: fixed;
-    @extend %pin-all;
+    @include position(fixed, 0 0 0 0);
+    background-color: $transparent-very-dark-gray;
+    min-height: 100%;
     overflow-y: scroll;
     width: 100%;
-    min-height: 100%;
+    z-index: 101;
 
     .modal__close {
-        @include pos-top-right(absolute, $modal-close-t-offset-mobile, $h-spacing-mobile);
+        @include position(absolute, $modal-close-t-offset-mobile $h-spacing-mobile null null);
 
         @include screen-md-min {
-            @include pos-top-right(absolute, $modal-close-t-offset, $h-spacing);
+            @include position(absolute, $modal-close-t-offset $h-spacing null null);
         }
     }
 
     &__content {
-        text-align: center;
-        position: relative;
         @include container;
-        @include margin-v($modal-content-v-spacing-mobile);
-        color: white;
+        @include margin($modal-content-v-spacing-mobile null);
+        color: $white;
+        position: relative;
+        text-align: center;
 
         @include screen-md-min {
-            @include margin-v($modal-content-v-spacing);
+            @include margin($modal-content-v-spacing null);
         }
 
         &--narrow {
@@ -41,6 +42,6 @@
 
     &__panel {
         @include horizontal-spacing;
-        @include padding-v($modal-panel-v-spacing);
+        @include padding($modal-panel-v-spacing null);
     }
 }

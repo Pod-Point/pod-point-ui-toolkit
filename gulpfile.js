@@ -13,12 +13,19 @@ gulp.task('set-env-prod', () => { global.env = 'prod' });
 // Global tasks
 gulp.task('common', ['assembleHtml', 'copyAll', 'svgs', 'js', 'sass']);
 
+// Watch task
+gulp.task('watch', [
+    'set-env-dev',
+    'common',
+    'browser-sync',
+    'watch-files'
+]);
+
 // Dev task
 gulp.task('dev', [
     'set-env-dev',
     'common',
-    'browser-sync',
-    'watch'
+    'browser-sync'
 ]);
 
 // Prod task

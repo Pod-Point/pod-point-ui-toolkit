@@ -3,77 +3,77 @@
 // =============================================================================
 
 .circle-icon {
-    box-sizing: content-box;
     @include icon-in-circle;
     @include icon-in-circle--size;
+    box-sizing: content-box;
 
     &--sm {
-        @include icon-in-circle--size($dimension: rem(25));
+        @include icon-in-circle--size($dimension: $circle-icon-size-sm);
     }
 
     &--sm-resp {
-        @include icon-in-circle--size($dimension: rem(25));
+        @include icon-in-circle--size($dimension: $circle-icon-size-sm);
 
         @include screen-md-min {
-            @include icon-in-circle--size();
+            @include icon-in-circle--size;
         }
     }
 
     &--lg-resp {
-        @include icon-in-circle--size();
+        @include icon-in-circle--size;
 
         @include screen-md-min {
-            @include icon-in-circle--size($dimension: rem(60));
+            @include icon-in-circle--size($dimension: $circle-icon-size-lg);
         }
     }
 
     &--primary {
-        @include icon-in-circle($bgColor: $primary-color, $color: white, $border: $border-primary);
+        @include icon-in-circle($bg-color: $primary-color, $color: $white, $border: $border-primary);
     }
 
     &--outlined {
-        @include icon-in-circle($bgColor: transparent, $color: $font-color-base, $border: $border-font-color);
+        @include icon-in-circle($bg-color: transparent, $color: $font-color-base, $border: $border-font-color);
     }
 
     &--outlined--primary {
-        @include icon-in-circle($bgColor: transparent, $color: $primary-color, $border: $border-primary);
+        @include icon-in-circle($bg-color: transparent, $color: $primary-color, $border: $border-primary);
     }
 
     &--outlined--inverted {
-        @include icon-in-circle($bgColor: transparent, $color: white, $border: $border-inverted);
+        @include icon-in-circle($bg-color: transparent, $color: $white, $border: $border-inverted);
     }
 }
 
 .toggle-panel-icon {
-    @include icon-in-circle($bgColor: transparent, $color: $primary-color, $border: $border-primary);
-    @include icon-in-circle--size($dimension: rem(25));
-    @include icon-in-border-circle--size($dimension: rem(25));
+    @include icon-in-circle($bg-color: transparent, $color: $primary-color, $border: $border-primary);
+    @include icon-in-circle--size($dimension: $circle-icon-size-sm);
+    @include icon-in-border-circle--size($dimension: $circle-icon-size-sm);
 }
 
 .toggle-panel-icon--secondary {
-    @include icon-in-circle($bgColor: transparent, $color: $font-color-base, $border: $border-font-color);
-    @include icon-in-border-circle--size($dimension: rem(25));
+    @include icon-in-circle($bg-color: transparent, $color: $font-color-base, $border: $border-font-color);
+    @include icon-in-border-circle--size($dimension: $circle-icon-size-sm);
 }
 
 .circle-icon--close-panel {
-    @include icon-in-circle($bgColor: transparent, $color: $primary-color, $border: $border-primary);
-    @include icon-in-border-circle--size();
+    @include icon-in-circle($bg-color: transparent, $color: $primary-color, $border: $border-primary);
+    @include icon-in-border-circle--size;
     transform: rotate(180deg);
 }
 
 .toggle-rotate-icon {
     display: inline-block;
-    transition: transform 0.8s ease-in-out;
+    transition: transform .8s ease-in-out;
 
     &.rotate {
-        transition: transform 0.7s ease-in-out;
         transform: rotate(-180deg);
+        transition: transform .7s ease-in-out;
     }
 }
 
 .circle-icon--close {
     &:hover {
-        transition: transform 0.8s ease-in-out;
         transform: rotate(360deg);
+        transition: transform .8s ease-in-out;
     }
 }

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
 =======
 @import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
@@ -15,6 +16,9 @@
   color: #ccc; }
 
 :-ms-input-placeholder {
+=======
+placeholder {
+>>>>>>> Sass lint (#45)
   color: #ccc; }
 
 @keyframes fadeIn {
@@ -29,15 +33,15 @@
   100% {
     opacity: 0; } }
 
-@keyframes popUpFadeIn {
+@keyframes pop-up-fade-in {
   0% {
-    top: 100px;
-    opacity: 0; }
+    opacity: 0;
+    top: 100px; }
   50% {
     opacity: 0; }
   100% {
-    top: 0px;
-    opacity: 1; } }
+    opacity: 1;
+    top: 0; } }
 
 <<<<<<< HEAD
 .hide {
@@ -59,8 +63,3 @@
 
 .demo-logo-main img {
   width: 7.5rem; }
-
-.demo-grid .grid-row > div {
-  background-color: #b3b3b3;
-  color: white;
-  padding: 1.25rem; }

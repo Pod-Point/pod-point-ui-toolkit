@@ -3,45 +3,44 @@
 // =============================================================================
 
 .confirm-popup {
-    z-index: 101;
-    background-color: rgba(215,215,215,0.7);
-    position: fixed;
-    @extend %pin-all;
+    @include position(fixed, 0 0 0 0);
+    background-color: $transparent-gray;
+    min-height: 100%;
     overflow-y: scroll;
     width: 100%;
-    min-height: 100%;
+    z-index: 101;
 
     &__box {
-        text-align: center;
-        position: absolute;
-        top: $confirm-box-t-spacing;
-        left: ((100% - $confirm-box-width-mobile) / 2);
-        box-sizing: border-box;
-        z-index: auto;
-        width: $confirm-box-width-mobile;
-        padding: $confirm-box-v-padding $confirm-box-h-padding;
-        background-color: white;
+        background-color: $white;
         border: $border-base;
         border-radius: $border-radius-base;
         box-shadow: $box-shadow-front;
+        box-sizing: border-box;
+        left: ((100% - $confirm-box-width-mobile) / 2);
+        padding: $confirm-box-v-padding $confirm-box-h-padding;
+        position: absolute;
+        text-align: center;
+        top: $confirm-box-t-spacing;
+        width: $confirm-box-width-mobile;
+        z-index: auto;
 
         @include screen-sm-min {
-            width: $confirm-box-width;
-            margin-left: -($confirm-box-width / 2);
             left: 50%;
+            margin-left: -($confirm-box-width / 2);
+            width: $confirm-box-width;
 
             &--lg {
-                width: $confirm-box-width-mobile;
-                margin-left: 0;
                 left: ((100% - $confirm-box-width-mobile) / 2);
+                margin-left: 0;
+                width: $confirm-box-width-mobile;
             }
         }
 
         @include screen-md-min {
             &--lg {
                 left: 50%;
-                width: $confirm-box-width-lg;
                 margin-left: -($confirm-box-width-lg / 2);
+                width: $confirm-box-width-lg;
             }
         }
     }

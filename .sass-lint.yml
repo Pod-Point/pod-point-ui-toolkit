@@ -1,0 +1,16 @@
+rules:
+  # Mixins
+  mixins-before-declarations:
+    - 1
+    - exclude:
+      - 'screen-xs-min'
+      - 'screen-sm-min'
+      - 'screen-md-min'
+      - 'screen-lg-min'
+      - 'screen-xl-min' # would like to write a regex here but can't work out how!
+
+  # Style guide
+  indentation:
+    - 2
+    - size: 4
+  class-name-format: 0

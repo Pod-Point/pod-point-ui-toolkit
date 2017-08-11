@@ -4,22 +4,22 @@
 
 // Clearfix
 %clearfix {
-    &:after {
-        content: "";
-        display: table;
+    &::after {
         clear: both;
+        content: '';
+        display: table;
     }
 }
 
 // Vertically align center
 %vertical-align {
-    display: flex;
     align-items: center;
+    display: flex;
 }
 
 // Remove default list styling
 %remove-list-styles {
-    @include padding-h(0);
+    @include padding(null 0);
     margin: 0;
 
     li {
@@ -34,7 +34,6 @@
     text-decoration: none;
 }
 
-
 // Clickable elements that are not an anchor
 %clickable {
     cursor: pointer;
@@ -42,7 +41,7 @@
     &:active,
     &:focus,
     &:hover {
-        opacity: 0.7;
+        opacity: .7;
     }
 }
 
@@ -50,21 +49,21 @@
 %hide-text-not-pseudo {
     text-indent: -9999px;
 
-    &:before,
-    &:after {
-        text-indent: 0;
+    &::before,
+    &::after {
         float: left;
-        width: 100%;
         height: 100%;
         margin: 0;
+        text-indent: 0;
+        width: 100%;
     }
 }
 
 // BG Images
 %bg-cover {
-    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 // Hide text
@@ -73,27 +72,32 @@
     text-indent: -9999px;
 }
 
+// Margin centre
+%m-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 // Full width/height overlay.
 // If it is a pseudo element, it will meeds an empty content property and the wrapper to have a relative position
-@mixin full-overlay($bgColor: black) {
-    position: absolute;
-    @extend %pin-all;
-    width: 100%;
+@mixin full-overlay($bg-color: $black) {
+    @include position(absolute, 0 0 0 0);
+    background-color: $bg-color;
     height: 100%;
-    background-color: $bgColor;
+    width: 100%;
 }
 
 @mixin horizontal-spacing {
-    @include padding-h($h-spacing-mobile);
+    @include padding(null $h-spacing-mobile);
 
     @include screen-md-min {
-        @include padding-h($h-spacing);
+        @include padding(null $h-spacing);
     }
 }
 
 // A container that center aligns with padding and max width
 @mixin container {
     @extend %m-center;
-    max-width: $max-width-content;
     @include horizontal-spacing;
+    max-width: $max-width-content;
 }

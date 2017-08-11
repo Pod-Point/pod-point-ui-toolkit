@@ -2,11 +2,15 @@
 //  SETTINGS - LISTS
 // =============================================================================
 
-// Lists
+// List left spacing
 $list-l-spacing: 2em;
+$list-l-spacing-half: $list-l-spacing / 2;
+$list-l-spacing-quarter: $list-l-spacing / 4;
+
+// List inline
 $list-inline-gutter: 1em;
-$list-inline-gutter-sm: 0.5em;
-$list-inline-v-spacing: 0.5em;
+$list-inline-gutter-sm: .5em;
+$list-inline-v-spacing: .5em;
 
 // Image/icons inline list gutters
 $img-list-inline-gutter-xxs: $space-xxs / 2;

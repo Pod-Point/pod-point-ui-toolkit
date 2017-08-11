@@ -2,6 +2,8 @@
 //  TRUMPS - BORDERS
 // =============================================================================
 
+// sass-lint:disable no-important
+
 .b {
     // Base border
     &-base {
@@ -31,15 +33,15 @@
 
     // No border
     &-none {
-        border-top: none!important;
+        border: 0 !important;
     }
 
     &-t-none {
-        border-top: none!important;
+        border-top: 0 !important;
     }
 
     &-b-none {
-        border-bottom: none!important;
+        border-bottom: 0 !important;
     }
 
     // Border radius

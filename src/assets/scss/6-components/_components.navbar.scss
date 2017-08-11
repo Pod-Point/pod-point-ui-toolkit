@@ -2,14 +2,18 @@
 //  COMPONENTS - NAVBAR
 // =============================================================================
 
-.is-nav-open body {
-    overflow: hidden;
+// sass-lint:disable nesting-depth
+
+.is-nav-open {
+    body {
+        overflow: hidden;
+    }
 }
 
 .navbar-wrap {
+    background-color: $white;
     position: relative;
     width: 100%;
-    background-color: white;
     z-index: 100;
 }
 
@@ -27,23 +31,23 @@
         @include screen-md-min {
             box-shadow: none;
 
-            &:after {
+            &::after {
+                background-color: $white;
+                box-shadow: $bottom-shadow;
                 content: '';
+                height: $underlay-desktop-height;
+                left: 0;
                 position: absolute;
                 top: 0;
-                left: 0;
                 width: 100%;
-                height: $underlay-desktop-height;
-                background-color: white;
                 z-index: -1;
-                box-shadow: $bottom-shadow;
             }
         }
     }
 
     .navicon {
-        margin-top: 20px;
         float: right;
+        margin-top: 20px;
 
         @include screen-md-min {
             display: none;
@@ -52,36 +56,36 @@
 }
 
 .navbar__content {
-    position: relative;
     height: 60px;
+    position: relative;
 
     @include screen-md-min {
+        border-bottom: 0;
         height: auto;
-        border-bottom: none;
     }
 }
 
 .navbar__pp-logo {
-    width: 100px;
-    height: 27px;
     float: left;
+    height: 27px;
     margin-top: 17px;
+    width: 100px;
 
     svg {
-        width: 100%;
         height: 100%;
+        width: 100%;
     }
 
     @include screen-md-min {
+        height: 38px;
         margin-top: 30px;
         width: 140px;
-        height: 38px;
     }
 
     @include screen-lg-min {
+        height: 49px;
         margin-top: 22px;
         width: 180px;
-        height: 49px;
     }
 }
 
@@ -89,72 +93,72 @@
 .navbar__nav {
     @extend %clearfix;
     @extend %m-center;
-    transition: 0.1s ease-in-out;
-    @include slideDownCollapsed(0.5s);
+    @include slide-down-collapsed(.5s);
+    transition: .1s ease-in-out;
 
     @include screen-md-min {
-        height: 97px;
-        max-height: 100%;
         display: block;
         float: right;
+        height: 97px;
+        max-height: 100%;
     }
 
     .nav-open & {
+        @include slide-down-active(1s, 800px);
         height: auto;
         transition: 1s ease-in-out;
-        @include slideDownActive(1s, 800px);
     }
 
     ul {
         @extend %remove-list-styles;
 
         li {
-            position: relative;
             @include font-size-sm;
             border-bottom: $border-thin;
             padding-bottom: 0;
+            position: relative;
 
             &:last-child {
-                border-bottom: none;
+                border-bottom: 0;
             }
 
             @include screen-md-min {
-                position: static;
-                border-bottom: none;
+                @include padding(null 10px);
+                border-bottom: 0;
                 display: inline-block;
-                @include padding-h(10px);
+                position: static;
             }
 
             @include screen-lg-min {
-                @include padding-h(20px);
+                @include padding(null 20px);
             }
 
             .navbar__link {
-                cursor: pointer;
-                text-decoration: none;
-                padding: 15px 0;
+                @include padding(15px 0);
                 color: $font-color-base;
-                font-weight: $font-weight-bold;
+                cursor: pointer;
                 display: block;
-                width: 100%;
+                font-weight: $font-weight-bold;
                 text-align: left;
+                text-decoration: none;
+                width: 100%;
 
                 @include screen-md-min {
+                    @include padding(36px 5px);
                     text-align: center;
-                    padding: 36px 5px;
                 }
 
                 &.find-chargepoint {
                     color: $primary-color;
-                    padding-left: 25px!important;
+                    padding-left: 25px;
                     position: relative;
 
                     svg {
-                        @include pos-top-left(absolute, 50%, 0);
+                        @include position(absolute, 50% null null 0);
+                        fill: $primary-color;
+                        height: 20px;
                         margin-top: -10px;
                         width: 20px;
-                        height: 20px;
-                        fill: $primary-color;
                     }
                 }
             }
@@ -162,7 +166,6 @@
     }
 
     > ul {
-
         @include screen-md-min {
             float: right;
             margin-right: -10px;
@@ -172,29 +175,27 @@
             min-height: 43px;
 
             &.has-sub-nav {
-
                 &.sub-nav-open {
-
                     .navbar__sub-nav {
+                        @include slide-down-active(1s, 340px);
                         height: auto;
                         max-height: 340px;
                         transition: 1s ease-in-out;
-                        @include slideDownActive(1s, 340px);
 
                         @include screen-md-min {
-                            height: $subnav-desktop-height;
-                            transition: none;
-                            opacity: 1;
-                            animation-duration: 0.3s;
+                            animation-duration: .3s;
                             animation-fill-mode: both;
                             animation-name: fadeIn;
+                            height: $subnav-desktop-height;
+                            opacity: 1;
+                            transition: none;
                         }
                     }
                 }
 
                 .plus-minus-toggle {
+                    @include position(absolute, 17px 0 null null);
                     z-index: -1;
-                    @include pos-top-right(absolute, 17px, 0);
 
                     @include screen-md-min {
                         display: none;
@@ -208,9 +209,7 @@
 
             &.sub-nav-open,
             &:hover {
-
                 > .navbar__link {
-
                     @include screen-md-min {
                         border-color: $primary-color;
                     }
@@ -221,19 +220,19 @@
 }
 
 .navbar__sub-nav {
-    width: 100%;
+    @include slide-down-collapsed(.5s);
+    background-color: $white;
     text-align: center;
-    transition: 0.3s ease-in-out;
-    @include slideDownCollapsed(0.5s);
-    background-color: white;
+    transition: .3s ease-in-out;
+    width: 100%;
 
     @include screen-md-min {
+        @include position(absolute, 96px 0 null null);
         opacity: 0;
-        @include pos-top-right(absolute, 96px, 0);
     }
 
     ul {
-        background-color: rgba(255,255,255,0.3);
+        background-color: $white;
         margin-bottom: 20px;
 
         @include screen-sm-min {
@@ -245,9 +244,9 @@
         }
 
         li {
-            border-bottom: none;
             @extend %clearfix;
-            @include padding-h(20px);
+            @include padding(null 20px);
+            border-bottom: 0;
             display: inline-block;
             width: 120px;
 
@@ -259,15 +258,15 @@
                 text-align: center;
 
                 .navbar__item-img {
-                    margin: 5px auto 10px auto;
+                    @include margin(5px auto 10px);
                     display: block;
-                    width: 60px;
                     height: 60px;
+                    width: 60px;
 
                     @include screen-sm-min {
+                        height: 100px;
                         margin-bottom: 20px;
                         width: 100px;
-                        height: 100px;
                     }
                 }
             }
@@ -275,26 +274,24 @@
     }
 }
 
-
 @include screen-md-min {
-
     .navbar-overlay {
+        background-color: $transparent-dark-gray;
         display: none;
-        width: 100%;
         height: 100%;
-        background-color: rgba(0,0,0,0.5);
+        left: 0;
         position: fixed;
         top: 0;
-        left: 0;
+        transition: .1s ease-in-out;
+        width: 100%;
         z-index: 10;
-        transition: 0.1s ease-in-out;
 
         &.nav-open {
-            display: block;
-            transition: 0.8s ease-in-out;
-            animation-duration: 0.3s;
+            animation-duration: .3s;
             animation-fill-mode: both;
             animation-name: fadeIn;
+            display: block;
+            transition: .8s ease-in-out;
         }
     }
 }

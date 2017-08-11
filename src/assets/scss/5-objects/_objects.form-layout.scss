@@ -1,5 +1,5 @@
 // =============================================================================
-//	ELEMENTS - FORMS - LAYOUT
+//	OBJECTS - FORM LAYOUT
 // =============================================================================
 
 fieldset {
@@ -7,9 +7,9 @@ fieldset {
 }
 
 .form__field {
-    width: 100%;
-    min-width: $form-field-min-width;
     max-width: $form-field-max-width;
+    min-width: $form-field-min-width;
+    width: 100%;
 }
 
 .form__group {

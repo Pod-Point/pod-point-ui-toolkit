@@ -35,7 +35,7 @@
 // Inline list
 .list--inline {
     @extend %remove-list-styles;
-    margin: -$list-inline-v-spacing -$list-inline-gutter;
+    margin: (-$list-inline-v-spacing) (-$list-inline-gutter);
 
     li {
         display: inline-block;
@@ -43,14 +43,11 @@
     }
 
     &--gutter-sm {
-        margin-right: -$list-inline-gutter-sm;
-        margin-left: -$list-inline-gutter-sm;
+        @include margin(null (-$list-inline-gutter-sm));
 
         li {
-            padding-right: 0;
-            padding-left: 0;
-            margin-right: $list-inline-gutter-sm;
-            margin-left: $list-inline-gutter-sm;
+            @include margin(null $list-inline-gutter-sm);
+            @include padding(null 0);
         }
     }
 }

@@ -2,23 +2,15 @@
 //	DEMO STYLES
 // =============================================================================
 
-@import '1-settings/__settings'; // Required
-@import '2-tools/__tools'; // Required
+@import '1-settings/all'; // Required
+@import '2-tools/all'; // Required
 
 .demo-header {
-	padding-top: rem(10);
-	padding-bottom: rem(10);
-}
-.demo-logo-main {
-	img {
-		width: rem(120);
-	}
+    @include padding(rem(10) null);
 }
 
-.demo-grid {
-	.grid-row > div {
-		background-color: $gray;
-		color: white;
-		padding: rem(20);
-	}
+.demo-logo-main {
+    img {
+        width: rem(120);
+    }
 }

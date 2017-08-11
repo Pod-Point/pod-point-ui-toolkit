@@ -1,0 +1,41 @@
+// =============================================================================
+//	COMPONENTS - FORMS - CONTROLS
+// =============================================================================
+
+.form__control {
+    @include input-styles;
+    @include input-border;
+
+    &:focus {
+        &:not(disabled) {
+            @include input-border--focus;
+        }
+    }
+
+    &:hover {
+        &:not(:disabled) {
+            @include input-border--hover;
+        }
+    }
+
+    &:disabled {
+        &:not(select) {
+            @include input-border--disabled;
+        }
+    }
+
+    &--alt {
+        @include padding(null 0);
+        border-left: 0;
+        border-radius: 0;
+        border-right: 0;
+        border-top: 0;
+    }
+}
+
+textarea {
+    &.form__control {
+        min-height: $textarea-min-height;
+        resize: vertical;
+    }
+}

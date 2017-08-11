@@ -1,21 +1,14 @@
 // =============================================================================
-//	ELEMENTS - FORMS - VALIDATION
+//	COMPONENTS - FORMS - VALIDATION
 // =============================================================================
 
-.checkbox-wrap:not(.is-invalid),
-.form-field-wrapper:not(.is-invalid) {
-    .error-message {
-        display: none;
-    }
-}
-
 .form__group--error {
-    .checkbox > input[type="checkbox"] + span:before {
-        border-color: $error-red;
+    .checkbox > input + span {
+        &::before {
+            border-color: $error-red;
+        }
     }
-}
 
-.form__group--error {
     .form__control {
         border-color: $error-red;
     }
@@ -28,19 +21,21 @@
 }
 
 .form__error {
-    display: block;
     @include font-size-sm;
-    font-weight: $font-weight-bold;
     color: $error-red;
+    display: block;
+    font-weight: $font-weight-bold;
     padding-top: $form-error-t-spacing;
 
-    .checkbox-wrap & {
+    .checkbox & {
         margin-top: 0;
     }
 }
 
-.checkbox-wrap {
-    .form__error {
-        margin-left: $checkbox-text-l-spacing;
+.form__group {
+    &:not(.form__group--error) {
+        .form__error {
+            display: none;
+        }
     }
 }

@@ -2,6 +2,8 @@
 //  TRUMPS - SPACING HELPERS
 // =============================================================================
 
+// sass-lint:disable no-important
+
 $spacings: (
     'none': 0,
     'xxs': $space-xxs,
@@ -15,49 +17,62 @@ $spacings: (
 
 @each $size, $value in $spacings {
     .m-#{$size} {
-        margin: $value!important;
+        margin: $value !important;
     }
+
     .m-t-#{$size} {
-        margin-top: $value!important;
+        margin-top: $value !important;
     }
+
     .m-r-#{$size} {
-        margin-right: $value!important;
+        margin-right: $value !important;
     }
+
     .m-b-#{$size} {
-        margin-bottom: $value!important;
+        margin-bottom: $value !important;
     }
+
     .m-l-#{$size} {
-        margin-left: $value!important;
+        margin-left: $value !important;
     }
+
     .m-h-#{$size} {
-        margin-right: $value!important;
-        margin-left: $value!important;
+        margin-left: $value !important;
+        margin-right: $value !important;
     }
+
     .m-v-#{$size} {
-        margin-top: $value!important;
-        margin-bottom: $value!important;
+        margin-bottom: $value !important;
+        margin-top: $value !important;
     }
+
     .p-#{$size} {
-        padding: $value!important;
+        padding: $value !important;
     }
+
     .p-t-#{$size} {
-        padding-top: $value!important;
+        padding-top: $value !important;
     }
+
     .p-r-#{$size} {
-        padding-right: $value!important;
+        padding-right: $value !important;
     }
+
     .p-b-#{$size} {
-        padding-bottom: $value!important;
+        padding-bottom: $value !important;
     }
+
     .p-l-#{$size} {
-        padding-left: $value!important;
+        padding-left: $value !important;
     }
+
     .p-h-#{$size} {
-        padding-right: $value!important;
-        padding-left: $value!important;
+        padding-left: $value !important;
+        padding-right: $value !important;
     }
+
     .p-v-#{$size} {
-        padding-top: $value!important;
-        padding-bottom: $value!important;
+        padding-bottom: $value !important;
+        padding-top: $value !important;
     }
 }

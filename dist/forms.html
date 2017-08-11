@@ -49,18 +49,14 @@
                 <p>Use the class <code>.form</code> on the element that contains all the form elements</p>
 
                 <h5>Form group</h5>
-                <p>Use the class <code>.form__group</code> to wrap each form field or group of fields (such as a group of radios).</p>
+                <p>Use the class <code>.form__group</code> to wrap each form field or group of fields. You could apply the class to a <code>&lt;fieldset&gt;</code> as it has a similar meaning.</p>
                 <p>Form group includes a bottom margin of 30px (variable: <code>$form-group-base-spacing</code>) to give space between fields</p>
                 <p>Note: global spacing helper classes can also be applied <code>.m-b-none</code>, <code>.m-b-xs</code>, <code>.m-b-sm</code>, <code>.m-b-md</code> etc.</p>
 
                 <h5>Form field</h5>
-                <p>Use the class <code>.form__field</code> for each field.</p>
+                <p>Use the class <code>.form__field</code> for each field (placement of class varies across elements).</p>
                 <p>The form field includes the max-width style (variable: <code>$form-field-max-width</code>)</p>
                 <p>Note: Form fields can be used for the placement of error messages directly underneath, therefore it is best not to add a bottom margin</p>
-
-                <h5>Form control</h5>
-                <p>Use the class <code>.form__control</code> directly on a textual input, textarea or select.</p>
-                <p>This is where the border styling, padding and font styling comes from. It varies slightly depending if it is an input, textarea or select.</p>
 
                 <h5>Form label</h5>
                 <p>Use the class <code>.form__label</code> for a form field label - which is styled as small, bold font.</p>
@@ -89,7 +85,7 @@
 <pre>
 &#x3C;div class=&#x22;form__group&#x22;&#x3E;
     &#x3C;label class=&#x22;form__label&#x22;&#x3E;Input field&#x3C;/label&#x3E;
-    &#x3C;input class=&#x22;form__field form__control&#x22; type=&#x22;text&#x22; placeholder=&#x22;Sample placeholder text&#x22;&#x3E;
+    &#x3C;input class=&#x22;form__control form__field&#x22; type=&#x22;text&#x22; placeholder=&#x22;Sample placeholder text&#x22;&#x3E;
 &#x3C;/div&#x3E;
 </pre>
 </figure>
@@ -101,22 +97,22 @@
 
                 <div class="form__group">
                     <label class="form__label">Input</label>
-                    <input class="form__field form__control" type="text" placeholder="Sample placeholder text">
+                    <input class="form__control form__field" type="text" placeholder="Sample placeholder text">
                 </div>
 
                 <div class="form__group">
                     <label class="form__label">Input - disabled</label>
-                    <input class="form__field form__control" type="text" disabled>
+                    <input class="form__control form__field" type="text" disabled>
                 </div>
 
                 <div class="form__group form__group--valid">
                     <label class="form__label">Input - valid</label>
-                    <input class="form__field form__control" type="text" placeholder="Sample placeholder text">
+                    <input class="form__control form__field" type="text" placeholder="Sample placeholder text">
                 </div>
 
                 <div class="form__group form__group--error">
                     <label class="form__label">Input - invalid</label>
-                    <input class="form__field form__control" type="text" placeholder="Sample placeholder text">
+                    <input class="form__control form__field" type="text" placeholder="Sample placeholder text">
                     <span class="form__error">This is an error message.</span>
                 </div>
             </div>
@@ -136,7 +132,7 @@
 <pre>
 &#x3C;div class=&#x22;form__group&#x22;&#x3E;
     &#x3C;label class=&#x22;form__label&#x22;&#x3E;Text area&#x3C;/label&#x3E;
-    &#x3C;textarea class=&#x22;form__field form__control&#x22; type=&#x22;text&#x22;&#x3E;&#x3C;/textarea&#x3E;
+    &#x3C;textarea class=&#x22;form__control form__field&#x22; type=&#x22;text&#x22;&#x3E;&#x3C;/textarea&#x3E;
 &#x3C;/div&#x3E;
 </pre>
 </figure>
@@ -148,22 +144,22 @@
             <div class="container">
                 <div class="form__group">
                     <label class="form__label">Textarea</label>
-                    <textarea class="form__field form__control" type="text"></textarea>
+                    <textarea class="form__control form__field" type="text"></textarea>
                 </div>
 
                 <div class="form__group">
                     <label class="form__label">Textarea - disabled</label>
-                    <textarea class="form__field form__control" type="text" disabled></textarea>
+                    <textarea class="form__control form__field" type="text" disabled></textarea>
                 </div>
 
                 <div class="form__group form__group--valid">
                     <label class="form__label">Textarea - valid</label>
-                    <textarea class="form__field form__control" type="text"></textarea>
+                    <textarea class="form__control form__field" type="text"></textarea>
                 </div>
 
                 <div class="form__group form__group--error">
                     <label class="form__label">Textarea - invalid</label>
-                    <textarea class="form__field form__control" type="text"></textarea>
+                    <textarea class="form__control form__field" type="text"></textarea>
                     <span class="form__error">This is an error message.</span>
                 </div>
             </div>
@@ -264,12 +260,12 @@
             <div class="container">
                 <div class="form__group">
                     <label class="form__label">Input</label>
-                    <input class="form__field form__control form__control--alt" type="text" placeholder="Sample placeholder text" />
+                    <input class="form__control form__control--alt form__field" type="text" placeholder="Sample placeholder text" />
                 </div>
 
                 <div class="form__group">
                     <label class="form__label">Textarea</label>
-                    <textarea class="form__field form__control form__control--alt" type="text"></textarea>
+                    <textarea class="form__control form__control--alt form__field" type="text"></textarea>
                 </div>
 
                 <div class="form__group">
@@ -286,7 +282,7 @@
                 <br>
                 <div class="form__group">
                     <label class="form__label text-center font-size-lg">Sign up to our newsletter!</label>
-                    <input class="form__field form__control form__control--alt text-center p-t-lg p-b-lg" type="text" placeholder="Sample placeholder text" />
+                    <input class="form__control form__control--alt form__field text-center p-t-lg p-b-lg" type="text" placeholder="Sample placeholder text" />
                 </div>
             </div>
         </div>
@@ -298,8 +294,8 @@
         <header class="content-block bg-light-gray">
             <div class="container">
                 <h3>Checkboxes</h3>
-                <p>Checkbox elements are styled via a wrapping <code>&lt;label&gt;</code> which requires the class <code>.checkbox</code> and the <code>for</code> attribute which has the id name of the input.</p>
-                <p>Inside the label element should be the checkbox <code>&lt;input&gt;</code> with the matching id, followed by a <code>&lt;span&gt;</code> with the text required.</p>
+                <p>Checkbox elements are styled via a wrapping <code>&lt;label&gt;</code> which requires the class <code>.checkbox</code>.</p>
+                <p>Inside the label element should be the checkbox <code>&lt;input&gt;</code> followed by a <code>&lt;span&gt;</code> with the text required.</p>
 
 <figure>
 <pre>
@@ -350,9 +346,9 @@
         <header class="content-block bg-light-gray">
             <div class="container">
                 <h3>Radios</h3>
-                <p>Radio elements are styled via a wrapping <code>&lt;label&gt;</code> which requires the class <code>.radio</code> and the <code>for</code> attribute which has the id name of the input.</p>
-                <p>Inside the label element should be the radio <code>&lt;input&gt;</code> with the matching id, followed by a <code>&lt;span&gt;</code> with the text required.</p>
-                <p>Radios are functionally grouped together via the name attribute, however for styling a wrapping div can be added with the class <code>.form__group</code></p>
+                <p>Radio elements are styled via a wrapping <code>&lt;label&gt;</code> which requires the class <code>.radio</code>.</p>
+                <p>Inside the label element should be the radio <code>&lt;input&gt;</code> followed by a <code>&lt;span&gt;</code> with the text required.</p>
+                <p>Radios that are functionally grouped together via the name attribute can have a wrapping div with the class <code>.form__group</code> for styling as a group.</p>
                 <p>Radios can also be made inline by applying the modifying class <code>.radio--inline</code></p>
 
 <figure>
@@ -423,11 +419,11 @@
                 <div class="form__groups-inline">
                     <div class="form__group">
                         <label class="form__label">Input field</label>
-                        <input class="form__field form__control" type="text" placeholder="Sample placeholder text">
+                        <input class="form__control form__field" type="text" placeholder="Sample placeholder text">
                     </div>
                     <div class="form__group">
                         <label class="form__label">Input field</label>
-                        <input class="form__field form__control" type="text" placeholder="Sample placeholder text">
+                        <input class="form__control form__field" type="text" placeholder="Sample placeholder text">
                     </div>
                     <div class="form__group">
                         <label class="checkbox form__field" for="checkboxExampleInline">

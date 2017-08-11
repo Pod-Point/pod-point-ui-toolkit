@@ -1,0 +1,65 @@
+// =============================================================================
+//	COMPONENTS - FORMS - CHECKBOXES
+// =============================================================================
+
+.checkbox {
+    @include font-size-md;
+    display: block;
+    position: relative;
+    text-align: left;
+
+    &--inline {
+        display: inline-block;
+        margin-right: $checkbox-radio-inline-gutter;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    > input {
+        @include position(absolute, 0 null null 0);
+        cursor: pointer;
+        display: block;
+        height: $checkbox-size;
+        opacity: 0;
+        width: $checkbox-size;
+        z-index: 2;
+
+        & ~ span {
+            cursor: pointer;
+            display: inline-block;
+            padding-bottom: $checkbox-text-b-spacing;
+            padding-left: $checkbox-text-l-spacing;
+            padding-top: 0;
+            text-transform: none;
+
+            &::before {
+                @include position(absolute, 0 null null 0);
+                border: 2px solid $checkbox-border;
+                border-radius: $form-border-radius;
+                content: '';
+                height: $checkbox-size;
+                width: $checkbox-size;
+                z-index: 1;
+            }
+        }
+
+        &:checked ~ span {
+            &::before {
+                background-color: $primary-color;
+                background-image: url($css-bg-path+'icons/tick-white.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: $checkbox-tick-size $checkbox-tick-size;
+                border-color: $primary-color !important; // sass-lint:disable-line no-important
+                // Important is applied to override if there is an error red border
+            }
+        }
+
+        &:disabled ~ span {
+            cursor: not-allowed;
+            opacity: $opacity-disabled;
+        }
+    }
+}

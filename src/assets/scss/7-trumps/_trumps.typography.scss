@@ -5,15 +5,19 @@
 .font-size-xs {
     @include font-size-xs;
 }
+
 .font-size-sm {
     @include font-size-sm;
 }
+
 .font-size-md {
     @include font-size-md;
 }
+
 .font-size-lg {
     @include font-size-lg;
 }
+
 .font-size-xl {
     @include font-size-xl;
 }
@@ -51,7 +55,10 @@
     color:  $font-color-very-light;
 }
 
-.remove-link-styles,
-.remove-link-styles a {
+.remove-link-styles {
     @extend %remove-link-styles;
+
+    a {
+        @extend %remove-link-styles;
+    }
 }
