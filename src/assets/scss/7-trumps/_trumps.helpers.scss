@@ -11,8 +11,8 @@
 
 .tel-link {
     &:hover {
-        opacity: 1;
         cursor: default;
+        opacity: 1;
     }
 }
 
@@ -22,8 +22,8 @@
 }
 
 .flip-x {
-    transform: scaleX(-1);
     filter: FlipH;
+    transform: scaleX(-1);
 }
 
 .v-align-content {

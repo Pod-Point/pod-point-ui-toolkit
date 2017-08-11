@@ -7,17 +7,17 @@
 
     li {
         @include font-size-md;
-        position: relative;
         padding-bottom: $typography-v-spacing / 1.5;
         padding-left: 2em;
+        position: relative;
 
         &::before {
             @include position(absolute, rem(3) null null 0);
-            content: '';
             background-image: url($icon-path);
             background-size: cover;
-            width: rem(18);
+            content: '';
             height: rem(18);
+            width: rem(18);
         }
     }
 }
@@ -27,17 +27,17 @@
 
     li {
         @include font-size-lg;
-        position: relative;
         padding-bottom: $typography-v-spacing / 1.5;
         padding-left: 2em;
+        position: relative;
 
         &::before {
             @include position(absolute, rem(2) null null 0);
-            content: '';
             background-image: url($icon-path);
             background-size: cover;
-            width: rem(23);
+            content: '';
             height: rem(23);
+            width: rem(23);
         }
     }
 }

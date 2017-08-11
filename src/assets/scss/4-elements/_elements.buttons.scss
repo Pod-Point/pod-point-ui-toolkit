@@ -5,11 +5,11 @@
 // Get rid of all default stying
 button {
     appearance: none;
-    cursor: pointer;
-    user-select: none;
-    text-decoration: none;
     background-color: transparent;
     border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
 
     &:focus {
         outline: none;

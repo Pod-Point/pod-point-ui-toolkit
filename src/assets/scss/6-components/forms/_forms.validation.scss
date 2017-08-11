@@ -29,9 +29,9 @@
 
 .form__error {
     @include font-size-sm;
+    color: $error-red;
     display: block;
     font-weight: $font-weight-bold;
-    color: $error-red;
     padding-top: $form-error-t-spacing;
 
     .checkbox & {

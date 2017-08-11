@@ -9,17 +9,17 @@
     display: inline-block;
 
     &::before {
-        font-weight: bold;
         content: '?';
         font-size: $tooltip-icon-size;
+        font-weight: $font-weight-bold;
         line-height: $tooltip-icon-line-height;
     }
 }
 
 .tooltip {
     display: block;
-    width: 100%;
     position: relative;
+    width: 100%;
 
     @include screen-md-min {
         width: auto;
@@ -28,15 +28,15 @@
 
 .tooltip__box {
     @include position(absolute, 0 null null 0);
-    box-sizing: border-box;
-    z-index: auto;
-    width: 100%;
-    padding: $tooltip-padding;
-    margin-bottom: $tooltip-b-spacing;
     background-color: $white;
     border: $border-base;
     border-radius: $border-radius-base;
     box-shadow: $box-shadow-front;
+    box-sizing: border-box;
+    margin-bottom: $tooltip-b-spacing;
+    padding: $tooltip-padding;
+    width: 100%;
+    z-index: auto;
 
     @include screen-xs-min {
         width: $tooltip-width;
@@ -57,8 +57,8 @@
 
 .tooltip--right {
     .tooltip__box {
-        right: 0;
         left: auto;
+        right: 0;
     }
 }
 
@@ -85,7 +85,7 @@
 
 .tooltip__close {
     position: absolute;
-    top: $tooltip-padding / 1.5;
     right: $tooltip-padding / 2.5;
+    top: $tooltip-padding / 1.5;
 }
 

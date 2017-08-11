@@ -10,11 +10,11 @@
 .float-right { float: right !important; }
 .float-left { float: left !important; }
 .m-l-none { margin-left: 0 !important; }
-.m-center { margin-right: auto !important;margin-left: auto !important; }
+.m-center { margin-left: auto !important; margin-right: auto !important; }
 .hidden { display: none !important; }
 .block { display: block !important; }
 .inline-block { display: inline-block !important; }
-.width-full { width: 100% !important; max-width: 100% !important; }
+.width-full { max-width: 100% !important; width: 100% !important; }
 
 @include screen-sm-min {
     .text-center-sm { text-align: center !important; }
@@ -23,11 +23,11 @@
     .float-right-sm { float: right !important; }
     .float-left-sm { float: left !important; }
     .m-l-none-sm { margin-left: 0 !important; }
-    .m-center-sm { margin-right: auto !important; margin-left: auto !important; }
+    .m-center-sm { margin-left: auto !important; margin-right: auto !important; }
     .hidden-sm { display: none !important; }
     .block-sm { display: block !important; }
     .inline-block-sm { display: inline-block !important; }
-    .width-full-sm { width: 100% !important; max-width: 100% !important; }
+    .width-full-sm { max-width: 100% !important; width: 100% !important; }
 }
 
 @include screen-md-min {
@@ -37,11 +37,11 @@
     .float-right-md { float: right !important; }
     .float-left-md { float: left !important; }
     .m-l-none-md { margin-left: 0 !important; }
-    .m-center-md { margin-right: auto !important; margin-left: auto !important; }
+    .m-center-md { margin-left: auto !important; margin-right: auto !important; }
     .hidden-md { display: none !important; }
     .block-md { display: block !important; }
     .inline-block-md { display: inline-block !important; }
-    .width-full-md { width: 100% !important; max-width: 100% !important; }
+    .width-full-md { max-width: 100% !important; width: 100% !important; }
 }
 
 @include screen-lg-min {
@@ -51,9 +51,9 @@
     .float-right-lg { float: right !important; }
     .float-left-lg { float: left !important; }
     .m-l-none-lg { margin-left: 0 !important; }
-    .m-center-lg { margin-right: auto !important; margin-left: auto !important; }
+    .m-center-lg { margin-left: auto !important; margin-right: auto !important; }
     .hidden-lg { display: none !important; }
     .block-lg { display: block !important; }
     .inline-block-lg { display: inline-block !important; }
-    .width-full-lg { width: 100% !important; max-width: 100% !important; }
+    .width-full-lg { max-width: 100% !important; width: 100% !important; }
 }

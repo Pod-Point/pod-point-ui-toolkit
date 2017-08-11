@@ -3,11 +3,11 @@
 // =============================================================================
 
 .radio {
-    display: inline-block;
     cursor: pointer;
+    display: inline-block;
+    margin-bottom: .5em;
     transition: scale .28s ease;
     user-select: none;
-    margin-bottom: .5em;
 
     &:last-child {
         margin-bottom: 0;
@@ -16,9 +16,9 @@
     &--inline {
         display: inline-block;
         margin-right: $checkbox-radio-inline-gutter;
-        width: auto;
         max-width: auto;
         min-width: auto;
+        width: auto;
 
         &:last-child {
             margin-right: 0;
@@ -26,29 +26,29 @@
     }
 
     > input {
-        position: absolute;
         left: -9999px;
+        position: absolute;
 
         &:checked {
             // sass-lint:disable-block force-pseudo-nesting
             & + span::before {
-                border-radius: 50%;
                 border: 2px solid transparent;
+                border-radius: 50%;
             }
 
             // sass-lint:disable-block force-pseudo-nesting
             & + span::after {
-                border-radius: 50%;
-                border: 2px solid $radio-fill-color;
                 background-color: $radio-fill-color;
-                z-index: 0;
+                border: 2px solid $radio-fill-color;
+                border-radius: 50%;
                 transform: scale(1.02);
+                z-index: 0;
             }
         }
 
         &:disabled + span {
-            opacity: $opacity-disabled;
             cursor: not-allowed;
+            opacity: $opacity-disabled;
 
             &::before {
                 background-color: transparent;
@@ -66,22 +66,22 @@
             @include margin($radio-spacing null);
             @include position(absolute, 0 null null 0);
             content: '';
-            width: $radio-size;
             height: $radio-size;
-            z-index: 0;
             transition: .28s ease;
+            width: $radio-size;
+            z-index: 0;
         }
 
         &::before {
-            border-radius: 50%;
             border: 2px solid $radio-border;
+            border-radius: 50%;
         }
 
         &::after {
-            border-radius: 50%;
             border: 2px solid $radio-border;
-            z-index: -1;
+            border-radius: 50%;
             transform: scale(0);
+            z-index: -1;
         }
     }
 }

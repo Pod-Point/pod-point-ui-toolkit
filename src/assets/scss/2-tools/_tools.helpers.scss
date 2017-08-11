@@ -5,16 +5,16 @@
 // Clearfix
 %clearfix {
     &::after {
+        clear: both;
         content: '';
         display: table;
-        clear: both;
     }
 }
 
 // Vertically align center
 %vertical-align {
-    display: flex;
     align-items: center;
+    display: flex;
 }
 
 // Remove default list styling
@@ -51,19 +51,19 @@
 
     &::before,
     &::after {
-        text-indent: 0;
         float: left;
-        width: 100%;
         height: 100%;
         margin: 0;
+        text-indent: 0;
+        width: 100%;
     }
 }
 
 // BG Images
 %bg-cover {
-    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 // Hide text
@@ -74,17 +74,17 @@
 
 // Margin centre
 %m-center {
-    margin-right: auto;
     margin-left: auto;
+    margin-right: auto;
 }
 
 // Full width/height overlay.
 // If it is a pseudo element, it will meeds an empty content property and the wrapper to have a relative position
 @mixin full-overlay($bg-color: $black) {
     @include position(absolute, 0 0 0 0);
-    width: 100%;
-    height: 100%;
     background-color: $bg-color;
+    height: 100%;
+    width: 100%;
 }
 
 @mixin horizontal-spacing {

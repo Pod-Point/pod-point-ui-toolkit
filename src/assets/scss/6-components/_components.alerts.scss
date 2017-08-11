@@ -3,9 +3,9 @@
 // =============================================================================
 
 .alert {
-    width: 100%;
-    padding: $alert-padding;
     margin-bottom: $space-xs;
+    padding: $alert-padding;
+    width: 100%;
 
     h4 {
         // Specified for the h4 to prevent conflicts of changing $headings-color

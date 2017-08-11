@@ -4,11 +4,11 @@
 
 a,
 .a {
+    -webkit-tap-highlight-color: $transparent; // sass-lint:disable-line no-vendor-prefixes
     color: inherit;
     font-weight: $font-weight-bold;
     text-decoration: underline;
     transition: opacity .2s linear;
-    -webkit-tap-highlight-color: $transparent; // sass-lint:disable-line no-vendor-prefixes
 
     &:active,
     &:focus,

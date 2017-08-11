@@ -10,11 +10,11 @@
 
 .modal {
     @include position(fixed, 0 0 0 0);
-    z-index: 101;
-    background-color: $transparent-dark-gray;
+    background-color: $transparent-very-dark-gray;
+    min-height: 100%;
     overflow-y: scroll;
     width: 100%;
-    min-height: 100%;
+    z-index: 101;
 
     .modal__close {
         @include position(absolute, $modal-close-t-offset-mobile $h-spacing-mobile null null);
@@ -27,9 +27,9 @@
     &__content {
         @include container;
         @include margin($modal-content-v-spacing-mobile null);
-        text-align: center;
-        position: relative;
         color: $white;
+        position: relative;
+        text-align: center;
 
         @include screen-md-min {
             @include margin($modal-content-v-spacing null);

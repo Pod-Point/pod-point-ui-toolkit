@@ -3,13 +3,13 @@
 // =============================================================================
 
 .card {
-    @include padding($card-v-padding $card-h-padding);
-    display: block;
     background-color: $white;
-    border-radius: $border-radius-base;
     border: $border-thin-dark;
-    color: $font-color-base;
+    border-radius: $border-radius-base;
     box-shadow: $box-shadow-subtle;
+    color: $font-color-base;
+    display: block;
+    padding: $card-v-padding $card-h-padding;
 
     ul,
     ol {
@@ -25,13 +25,13 @@
 
         &::before {
             @include position(absolute, $card-option-highlight-offset null null -1px);
-            content: '';
-            z-index: -1;
-            width: calc(100% + 2px);
-            height: $card-option-highlight-height;
-            border-top-right-radius: $border-radius-base;
-            border-top-left-radius: $border-radius-base;
             background-color: $gray-keyline-very-light;
+            border-top-left-radius: $border-radius-base;
+            border-top-right-radius: $border-radius-base;
+            content: '';
+            height: $card-option-highlight-height;
+            width: calc(100% + 2px);
+            z-index: -1;
         }
 
         &--recommended {
@@ -42,7 +42,7 @@
     }
 
     &--padding-lg {
-        @include padding($card-v-padding-lg $card-h-padding-lg);
+        padding: $card-v-padding-lg $card-h-padding-lg;
     }
 
     &--centered {

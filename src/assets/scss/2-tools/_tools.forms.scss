@@ -13,35 +13,35 @@
 }
 
 @mixin input-styles {
-    font-size: $font-size-forms-md;
-    width: 100%;
-    height: $input-height;
     appearance: none;
-    padding: $input-v-padding $input-h-padding;
     display: block;
+    font-size: $font-size-forms-md;
+    height: $input-height;
     max-width: $form-field-max-width;
+    padding: $input-v-padding $input-h-padding;
+    width: 100%;
 }
 
 @mixin input-border {
-    transition: border-color;
     background-color: $background-color-base;
     border: $form-border-base;
     border-radius: $form-border-radius;
+    transition: border-color;
 }
 
 @mixin input-border--focus {
-    color: $font-color-base;
     border-color: $font-color-base;
+    color: $font-color-base;
     outline: none;
 }
 
 @mixin input-border--hover {
-    color: $font-color-base;
     border-color: $font-color-base;
+    color: $font-color-base;
 }
 
 @mixin input-border--disabled {
-    opacity: .4;
-    cursor: not-allowed;
     background-color: $gray-very-light;
+    cursor: not-allowed;
+    opacity: .4;
 }

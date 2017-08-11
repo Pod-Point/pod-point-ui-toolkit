@@ -4,15 +4,15 @@
 
 .label {
     @include font-size-md;
-    position: relative;
-    border-radius: $border-radius-base;
     background-color: $gray-dark;
-    color: $white;
-    font-weight: $font-weight-bold;
+    border-radius: $border-radius-base;
     box-sizing: border-box;
+    color: $white;
+    display: inline-block;
+    font-weight: $font-weight-bold;
     min-height: $label-min-height;
     padding: $label-v-padding $label-h-padding;
-    display: inline-block;
+    position: relative;
 
     &--left-icon {
         padding-left: $label-with-icon-h-spacing;
@@ -32,11 +32,11 @@
 
     svg {
         fill: $white;
-        width: $label-icon-size;
         height: $label-icon-size;
+        margin-top: $label-icon-t-spacing;
         position: absolute;
         top: 50%;
-        margin-top: $label-icon-t-spacing;
+        width: $label-icon-size;
     }
 
     &--gray {

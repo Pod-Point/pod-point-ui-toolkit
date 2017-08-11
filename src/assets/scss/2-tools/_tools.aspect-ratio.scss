@@ -7,10 +7,10 @@
     position: relative;
 
     &::before {
-        display: block;
         content: '';
-        width: 100%;
+        display: block;
         padding-top: ($height / $width) * 100%;
+        width: 100%;
     }
 
     > .aspect-ratio-content {

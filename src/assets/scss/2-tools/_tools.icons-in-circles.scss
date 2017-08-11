@@ -4,17 +4,17 @@
 
 // SVG icon in a circle - defining the colours
 @mixin icon-in-circle($bg-color: $icon-color, $color: $white, $border: none) {
-    text-align: center;
+    background-color: #{$bg-color};
+    border: $border;
+    border-radius: 50%;
     display: block;
     margin: 0;
     padding: 0;
-    background-color: #{$bg-color};
-    border-radius: 50%;
-    border: $border;
+    text-align: center;
 
     svg {
-        fill: #{$color};
         box-sizing: content-box;
+        fill: #{$color};
     }
 
     &::before {
@@ -23,29 +23,29 @@
 }
 
 // SVG icon in a circle - defining the size
-@mixin icon-in-circle--size($dimension: rem(40)) {
-    width: $dimension;
-    height: $dimension;
+@mixin icon-in-circle--size($dimension: $circle-icon-size-md) {
     font-size: $dimension / 4;
+    height: $dimension;
+    width: $dimension;
 
     svg {
-        width: $dimension / 2;
         height: $dimension / 2;
-        margin-top: $dimension / 4;
         margin-bottom: $dimension / 4;
+        margin-top: $dimension / 4;
+        width: $dimension / 2;
     }
 }
 
 // SVG icon in a circle - with border
-@mixin icon-in-border-circle--size($dimension: rem(40)) {
-    width: $dimension;
-    height: $dimension;
+@mixin icon-in-border-circle--size($dimension: $circle-icon-size-lg) {
     font-size: $dimension / 4;
+    height: $dimension;
+    width: $dimension;
 
     svg {
-        width: $dimension / 2;
         height: $dimension / 2;
-        margin-top: $dimension / 6;
         margin-bottom: $dimension / 6;
+        margin-top: $dimension / 6;
+        width: $dimension / 2;
     }
 }

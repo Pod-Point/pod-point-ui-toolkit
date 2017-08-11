@@ -4,11 +4,10 @@
 
 // Heading style
 %heading-style {
-    margin: 0;
-    padding-top: $typography-v-spacing;
-    padding-bottom: $typography-v-spacing;
+    @include padding($typography-v-spacing null);
     font-weight: $font-weight-bold;
     line-height: $line-height-heading;
+    margin: 0;
 
     &:first-child {
         padding-top: 0;

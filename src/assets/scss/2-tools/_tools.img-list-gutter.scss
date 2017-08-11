@@ -3,12 +3,10 @@
 // =============================================================================
 
 @mixin inline-list-gutter($gutter) {
-    margin-right: -$gutter;
-    margin-left: -$gutter;
+    @include margin(null (-$gutter));
 
     li {
+        @include margin(null $gutter);
         display: inline-block;
-        margin-right: $gutter;
-        margin-left: $gutter;
     }
 }

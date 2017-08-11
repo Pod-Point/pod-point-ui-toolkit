@@ -24,26 +24,21 @@
     }
 }
 
-
 .btns-container {
-    margin-top: -$buttons-v-spacing;
-    margin-bottom: -$buttons-v-spacing;
+    @include margin((-$buttons-v-spacing) null);
     overflow: hidden;
 
     .btn {
+        @include margin($buttons-v-spacing null);
         display: block;
-        margin-top: $buttons-v-spacing;
-        margin-bottom: $buttons-v-spacing;
     }
 
     &--inline {
-        margin-right: -$buttons-inline-gutter;
-        margin-left: -$buttons-inline-gutter;
+        @include margin(null (-$buttons-inline-gutter));
 
         .btn {
+            @include margin(null $buttons-inline-gutter);
             display: inline-block;
-            margin-right: $buttons-inline-gutter;
-            margin-left: $buttons-inline-gutter;
         }
     }
 }

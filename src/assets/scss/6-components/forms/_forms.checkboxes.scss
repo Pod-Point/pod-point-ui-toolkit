@@ -4,9 +4,9 @@
 
 .checkbox {
     @include font-size-md;
-    text-align: left;
-    position: relative;
     display: block;
+    position: relative;
+    text-align: left;
 
     &--inline {
         display: inline-block;
@@ -19,47 +19,47 @@
 
     > input {
         @include position(absolute, 0 null null 0);
-        display: block;
-        opacity: 0;
-        z-index: 2;
         cursor: pointer;
-        width: $checkbox-size;
+        display: block;
         height: $checkbox-size;
+        opacity: 0;
+        width: $checkbox-size;
+        z-index: 2;
 
         & ~ span {
-            text-transform: none;
+            cursor: pointer;
             display: inline-block;
-            padding-top: 0;
             padding-bottom: $checkbox-text-b-spacing;
             padding-left: $checkbox-text-l-spacing;
-            cursor: pointer;
+            padding-top: 0;
+            text-transform: none;
 
             &::before {
                 @include position(absolute, 0 null null 0);
-                content: '';
-                width: $checkbox-size;
-                height: $checkbox-size;
-                z-index: 1;
                 border: 2px solid $checkbox-border;
                 border-radius: $form-border-radius;
+                content: '';
+                height: $checkbox-size;
+                width: $checkbox-size;
+                z-index: 1;
             }
         }
 
         &:checked ~ span {
             &::before {
-                background-image: url($css-bg-path+'icons/tick-white.svg');
-                background-size: $checkbox-tick-size $checkbox-tick-size;
-                background-repeat: no-repeat;
-                background-position: center;
                 background-color: $primary-color;
+                background-image: url($css-bg-path+'icons/tick-white.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: $checkbox-tick-size $checkbox-tick-size;
                 border-color: $primary-color !important; // sass-lint:disable-line no-important
                 // Important is applied to override if there is an error red border
             }
         }
 
         &:disabled ~ span {
-            opacity: $opacity-disabled;
             cursor: not-allowed;
+            opacity: $opacity-disabled;
         }
     }
 }

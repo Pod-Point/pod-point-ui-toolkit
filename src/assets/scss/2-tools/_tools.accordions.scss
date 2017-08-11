@@ -4,8 +4,7 @@
 
 @mixin accordion-size($v-spacing) {
     .accordion__dt {
-        padding-top: $v-spacing;
-        padding-bottom: $v-spacing;
+        @include padding($v-spacing null);
 
         .accordion__toggle-icon {
             top: $v-spacing;

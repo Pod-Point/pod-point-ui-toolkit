@@ -14,8 +14,8 @@
 
     .accordion__dt {
         @include padding(null 0);
-        position: relative;
         cursor: pointer;
+        position: relative;
 
         .accordion__toggle-icon {
             @include position(absolute, 0 0 null null);
@@ -39,8 +39,8 @@
 
             .accordion__dt {
                 border-bottom: 0;
-                padding: 0;
                 cursor: default;
+                padding: 0;
 
                 .accordion__toggle-icon {
                     display: none;
@@ -76,9 +76,7 @@
         padding-left: $accordion-with-toggle-h-spacing;
 
         .accordion__toggle-icon {
-            position: absolute;
-            right: auto;
-            left: 0;
+            @include position(absolute, null auto null 0);
             margin-top: -.2em;
         }
     }

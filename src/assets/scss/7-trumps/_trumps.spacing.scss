@@ -37,13 +37,13 @@ $spacings: (
     }
 
     .m-h-#{$size} {
-        margin-right: $value !important;
         margin-left: $value !important;
+        margin-right: $value !important;
     }
 
     .m-v-#{$size} {
-        margin-top: $value !important;
         margin-bottom: $value !important;
+        margin-top: $value !important;
     }
 
     .p-#{$size} {
@@ -67,12 +67,12 @@ $spacings: (
     }
 
     .p-h-#{$size} {
-        padding-right: $value !important;
         padding-left: $value !important;
+        padding-right: $value !important;
     }
 
     .p-v-#{$size} {
-        padding-top: $value !important;
         padding-bottom: $value !important;
+        padding-top: $value !important;
     }
 }

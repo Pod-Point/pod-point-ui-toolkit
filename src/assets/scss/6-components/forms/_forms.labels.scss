@@ -4,11 +4,11 @@
 
 .form__label {
     @include font-size-sm;
-    width: 100%;
-    max-width: $form-field-max-width;
-    font-weight: $font-weight-bold;
     display: inline-block;
+    font-weight: $font-weight-bold;
+    max-width: $form-field-max-width;
     padding-bottom: $form-label-b-spacing;
+    width: 100%;
 
     .checkbox &,
     .radio & {

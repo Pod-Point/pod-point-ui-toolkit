@@ -7,22 +7,22 @@
 .btn {
     @extend %remove-link-styles;
     @include padding($button-v-padding $button-h-padding-mobile);
-    cursor: pointer;
+    background-color: $primary-color;
+    border: $border-primary;
+    border-radius: $button-radius;
     box-sizing: border-box;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: $button-font-size;
+    font-weight: $font-weight-bold;
+    letter-spacing: $button-letter-spacing;
+    line-height: $button-line-height;
+    max-width: $button-max-width;
+    min-height: $button-min-height;
+    transition: opacity .2s ease;
     vertical-align: middle;
     width: auto;
-    display: inline-block;
-    min-height: $button-min-height;
-    color: $white;
-    background-color: $primary-color;
-    font-weight: $font-weight-bold;
-    font-size: $button-font-size;
-    line-height: $button-line-height;
-    letter-spacing: $button-letter-spacing;
-    border-radius: $button-radius;
-    border: $border-primary;
-    transition: opacity .2s ease;
-    max-width: $button-max-width;
 
     @include screen-sm-min {
         @include padding(null $button-h-padding);
@@ -35,51 +35,51 @@
     &:hover:not(.is-disabled),
     &:focus:not(.is-disabled),
     &:active:not(.is-disabled) {
-        color: $primary-color;
         background-color: transparent;
         border-color: $primary-color;
+        color: $primary-color;
         opacity: 1;
     }
 
     &.btn--secondary {
-        color: $white;
         background-color: $gray;
         border-color: $gray;
+        color: $white;
 
         &:hover:not(.is-disabled),
         &:focus:not(.is-disabled),
         &:active:not(.is-disabled) {
-            color: $gray;
             background-color: transparent;
             border-color: $gray;
+            color: $gray;
         }
     }
 
     &.btn--tertiary {
-        color: $gray-dark;
         background-color: transparent;
         border-color: $gray-dark;
+        color: $gray-dark;
 
         &:hover:not(.is-disabled),
         &:focus:not(.is-disabled),
         &:active:not(.is-disabled) {
-            color: $white;
             background-color: $gray-dark;
             border-color: $gray-dark;
+            color: $white;
         }
     }
 
     &.btn--danger {
-        color: $white;
         background-color: $error-red;
         border-color: $error-red;
+        color: $white;
 
         &:hover:not(.is-disabled),
         &:focus:not(.is-disabled),
         &:active:not(.is-disabled) {
-            color: $error-red;
             background-color: transparent;
             border-color: $error-red;
+            color: $error-red;
         }
     }
 
@@ -88,12 +88,12 @@
 
         &::before {
             @extend %m-center;
-            display: block;
-            content: '';
             background-image: url($css-bg-path+'icons/tick-white.svg');
             background-size: cover;
-            width: $button-icon-size;
+            content: '';
+            display: block;
             height: $button-icon-size;
+            width: $button-icon-size;
         }
 
         &:hover:not(.is-disabled),
@@ -108,16 +108,16 @@
 
 .btn--passive {
     @extend %clickable;
-    padding: 0;
     background-color: transparent;
     border: 0;
-    display: inline-block;
     color: $font-color-base;
+    display: inline-block;
     font-weight: $font-weight-bold;
-    text-decoration: underline;
     line-height: $line-height-base;
-    min-height: auto;
     max-width: auto;
+    min-height: auto;
+    padding: 0;
+    text-decoration: underline;
 
     @include screen-sm-min {
         padding: 0;

@@ -6,9 +6,9 @@
 
 table,
 .table {
-    width: 100%;
-    max-width: 100%;
     margin-bottom: $line-height-computed;
+    max-width: 100%;
+    width: 100%;
 
     // Cells
     > thead,
@@ -17,19 +17,19 @@ table,
         > tr {
             > th,
             > td {
-                padding: $table-cell-padding;
-                line-height: $table-line-height;
-                vertical-align: top;
                 border-top: 1px solid $table-border-colour;
+                line-height: $table-line-height;
+                padding: $table-cell-padding;
+                vertical-align: top;
             }
         }
     }
 
     // Bottom align for column headings
     > thead > tr > th {
-        vertical-align: bottom;
         border-bottom: 2px solid $table-border-colour;
         text-align: left;
+        vertical-align: bottom;
     }
 
     // Remove top border from thead by default
@@ -108,9 +108,9 @@ table {
     td,
     th {
         &[class*='col-'] {
-            position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
-            float: none;
             display: table-cell;
+            float: none;
+            position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
         }
     }
 }
@@ -120,14 +120,14 @@ table {
 // by enabling horizontal scrolling. Only applies <768px. Everything above that
 // will display normally.
 .table--responsive {
-    overflow-x: auto;
     min-height: .01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
+    overflow-x: auto;
 
     @include screen-sm-min {
-        width: 100%;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
         margin-bottom: ($line-height-computed * .75);
         overflow-y: hidden;
-        -ms-overflow-style: -ms-autohiding-scrollbar;
+        width: 100%;
 
         // Tighten up spacing
         > .table {

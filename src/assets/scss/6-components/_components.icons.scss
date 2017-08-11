@@ -31,8 +31,8 @@
 
         > svg {
             @include position(relative, $icon-inline-text-top null null null);
-            margin: 0;
             height: $icon-inline-text-size;
+            margin: 0;
             width: $icon-inline-text-size;
         }
     }

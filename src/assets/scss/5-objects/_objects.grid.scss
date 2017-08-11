@@ -38,8 +38,8 @@
         margin-bottom: $grid-b-spacing;
 
         &--separator {
-            padding-bottom: $grid-separator-b-spacing;
             border-bottom: $border-thin;
+            padding-bottom: $grid-separator-b-spacing;
         }
     }
 
