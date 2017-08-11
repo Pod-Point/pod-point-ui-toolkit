@@ -7,6 +7,20 @@
     color: $font-color-base;
 }
 
+// Greys
+.bg-very-light-gray {
+    background-color: $gray-very-light;
+}
+
+.bg-light-gray {
+    background-color: $gray-light;
+}
+
+.bg-gray {
+    background-color: $gray;
+    color: $white;
+}
+
 .bg-dark-gray {
     background-color: $gray-dark;
     color: $white;
@@ -17,14 +31,7 @@
     color: $white;
 }
 
-.bg-light-gray {
-    background-color: $gray-light;
-}
-
-.bg-very-light-gray {
-    background-color: $gray-very-light;
-}
-
+// Colours
 .bg-primary {
     background-color: $primary-color;
     color: $white;
@@ -34,6 +41,7 @@
     background-color: $sky-blue;
 }
 
+// Cover and overlays
 .bg-img-cover {
     background-position: center center;
     background-size: cover;
@@ -45,7 +53,7 @@
     z-index: 0;
 
     &::after {
-        @include position(absolute, 0, 0, 0, 0);
+        @include position(absolute, 0 0 0 0);
         z-index: -1;
         content: '';
         background-color: $gray-dark;

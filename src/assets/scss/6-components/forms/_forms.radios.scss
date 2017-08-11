@@ -58,18 +58,14 @@
 
     > span {
         @include font-size-md;
+        @include padding($radio-spacing null 0 $radio-text-l-spacing);
         position: relative;
-        padding-top: $radio-spacing;
-        padding-bottom: 0;
-        padding-left: $radio-text-l-spacing;
 
         &::after,
         &::before {
-            @include margin-v($radio-spacing);
+            @include margin($radio-spacing null);
+            @include position(absolute, 0 null null 0);
             content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
             width: $radio-size;
             height: $radio-size;
             z-index: 0;

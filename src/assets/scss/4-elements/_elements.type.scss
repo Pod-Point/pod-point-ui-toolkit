@@ -40,7 +40,7 @@ s,
 mark,
 .mark,
 .highlight {
-    @include padding-h($highlight-text-padding);
+    @include padding(null $highlight-text-padding);
     background-color: $highlight-color;
 }
 

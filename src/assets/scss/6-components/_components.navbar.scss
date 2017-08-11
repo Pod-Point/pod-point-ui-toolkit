@@ -123,20 +123,20 @@
             }
 
             @include screen-md-min {
-                @include padding-h(10px);
+                @include padding(null 10px);
                 position: static;
                 border-bottom: 0;
                 display: inline-block;
             }
 
             @include screen-lg-min {
-                @include padding-h(20px);
+                @include padding(null 20px);
             }
 
             .navbar__link {
+                @include padding(15px 0);
                 cursor: pointer;
                 text-decoration: none;
-                padding: 15px 0;
                 color: $font-color-base;
                 font-weight: $font-weight-bold;
                 display: block;
@@ -144,8 +144,8 @@
                 text-align: left;
 
                 @include screen-md-min {
+                    @include padding(36px 5px);
                     text-align: center;
-                    padding: 36px 5px;
                 }
 
                 &.find-chargepoint {
@@ -154,7 +154,7 @@
                     position: relative;
 
                     svg {
-                        @include position(absolute, 50%, null, null, 0);
+                        @include position(absolute, 50% null null 0);
                         margin-top: -10px;
                         width: 20px;
                         height: 20px;
@@ -194,7 +194,7 @@
                 }
 
                 .plus-minus-toggle {
-                    @include position(absolute, 17px, 0, null, null);
+                    @include position(absolute, 17px 0 null null);
                     z-index: -1;
 
                     @include screen-md-min {
@@ -227,7 +227,7 @@
     background-color: $white;
 
     @include screen-md-min {
-        @include position(absolute, 96px, 0, null, null);
+        @include position(absolute, 96px 0 null null);
         opacity: 0;
     }
 
@@ -245,7 +245,7 @@
 
         li {
             @extend %clearfix;
-            @include padding-h(20px);
+            @include padding(null 20px);
             border-bottom: 0;
             display: inline-block;
             width: 120px;

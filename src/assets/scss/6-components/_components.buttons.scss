@@ -6,12 +6,12 @@
 
 .btn {
     @extend %remove-link-styles;
+    @include padding($button-v-padding $button-h-padding-mobile);
     cursor: pointer;
     box-sizing: border-box;
     vertical-align: middle;
     width: auto;
     display: inline-block;
-    padding: $button-v-padding $button-h-padding-mobile;
     min-height: $button-min-height;
     color: $white;
     background-color: $primary-color;
@@ -25,7 +25,7 @@
     max-width: $button-max-width;
 
     @include screen-sm-min {
-        @include padding-h($button-h-padding);
+        @include padding(null $button-h-padding);
     }
 
     &:focus {

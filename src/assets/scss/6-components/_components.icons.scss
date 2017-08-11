@@ -3,7 +3,7 @@
 // =============================================================================
 
 .icon {
-    @include margin-h($icon-h-spacing);
+    @include margin(null $icon-h-spacing);
 
     > svg {
         height: $icon-size-md;
@@ -30,9 +30,8 @@
         margin: 0;
 
         > svg {
+            @include position(relative, $icon-inline-text-top null null null);
             margin: 0;
-            position: relative;
-            top: $icon-inline-text-size / 6;
             height: $icon-inline-text-size;
             width: $icon-inline-text-size;
         }

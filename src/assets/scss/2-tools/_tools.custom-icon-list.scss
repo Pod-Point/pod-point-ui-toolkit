@@ -12,7 +12,7 @@
         padding-left: 2em;
 
         &::before {
-            @include position(absolute, rem(3), null, null, 0);
+            @include position(absolute, rem(3) null null 0);
             content: '';
             background-image: url($icon-path);
             background-size: cover;
@@ -32,7 +32,7 @@
         padding-left: 2em;
 
         &::before {
-            @include position(absolute, rem(2), null, null, 0);
+            @include position(absolute, rem(2) null null 0);
             content: '';
             background-image: url($icon-path);
             background-size: cover;

@@ -4,16 +4,16 @@
 
 // This can all be achieved using trump classes, however these classes are nice to keep consistency
 .content-block {
-    @include padding-v($space-xl);
+    @include padding($space-xl null);
 
     &--standout {
         @include screen-md-min {
-            @include padding-v($space-xxxl);
+            @include padding($space-xxxl null);
         }
     }
 
     &--strip {
-        @include padding-v($space-md);
+        @include padding($space-md null);
     }
 
     &--centered {

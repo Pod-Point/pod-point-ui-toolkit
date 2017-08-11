@@ -8,17 +8,17 @@
 
     &.grid-row {
         .grid-col-4 {
-            @include margin-v(0);
+            @include margin(0 null);
         }
     }
 
     .accordion__dt {
-        @include padding-h(0);
+        @include padding(null 0);
         position: relative;
         cursor: pointer;
 
         .accordion__toggle-icon {
-            @include position(absolute, 0, 0, null, null);
+            @include position(absolute, 0 0 null null);
         }
 
         &.is-open {

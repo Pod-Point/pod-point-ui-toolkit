@@ -21,23 +21,23 @@
 
 // Pinning an element in each corner
 .pin-all {
-    @include position(null, 0, 0, 0, 0);
+    @include position(null, 0 0 0 0);
 }
 
 .pin-top-right {
-    @include position(null, 0, 0, auto, auto);
+    @include position(null, 0 0 auto auto);
 }
 
 .pin-bottom-right {
-    @include position(null, auto, 0, 0, auto);
+    @include position(null, auto 0 0 auto);
 }
 
 .pin-top-left {
-    @include position(null, 0, auto, auto, 0);
+    @include position(null, 0 auto auto 0);
 }
 
 .pin-bottom-left {
-    @include position(null, auto, auto, 0, 0);
+    @include position(null, auto auto 0 0);
 }
 
 // z-indexes

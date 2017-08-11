@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
-.container, .content-block--centered, .btn.btn--selected::before, .navbar, .navbar__nav, .navbar__sub-nav ul, .modal__content {
-  margin-right: auto;
-  margin-left: auto; }
-
 h1,
 .h1, h2,
 .h2, h3,
@@ -94,6 +90,10 @@ placeholder {
     width: 100%;
     height: 100%;
     margin: 0; }
+
+.container, .content-block--centered, .btn.btn--selected::before, .navbar, .navbar__nav, .navbar__sub-nav ul, .modal__content {
+  margin-right: auto;
+  margin-left: auto; }
 
 html,
 body {
@@ -912,12 +912,15 @@ img {
       text-decoration: underline; }
 
 .btn {
+  padding-top: 8px;
+  padding-right: 20px;
+  padding-bottom: 8px;
+  padding-left: 20px;
   cursor: pointer;
   box-sizing: border-box;
   vertical-align: middle;
   width: auto;
   display: inline-block;
-  padding: 8px 20px;
   min-height: 40px;
   color: #fff;
   background-color: #8cc63f;
@@ -993,13 +996,14 @@ img {
     opacity: .8; }
 
 .card {
+  padding-top: 25px;
+  padding-right: 25px;
   display: block;
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid #ccc;
   color: #333;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  padding: 25px 25px; }
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); }
   .card ul,
   .card ol {
     padding-left: 20px; }
@@ -1022,7 +1026,10 @@ img {
     .card--options--recommended::before {
       background-color: #8cc63f; }
   .card--padding-lg {
-    padding: 40px 30px; }
+    padding-top: 40px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+    padding-left: 30px; }
   .card--centered {
     text-align: center; }
     .card--centered hr {
@@ -1185,9 +1192,12 @@ img {
         padding-right: 20px;
         padding-left: 20px; } }
     .navbar__nav ul li .navbar__link {
+      padding-top: 15px;
+      padding-right: 0;
+      padding-bottom: 15px;
+      padding-left: 0;
       cursor: pointer;
       text-decoration: none;
-      padding: 15px 0;
       color: #333;
       font-weight: 700;
       display: block;
@@ -1195,8 +1205,11 @@ img {
       text-align: left; }
       @media (min-width: 50em) {
         .navbar__nav ul li .navbar__link {
-          text-align: center;
-          padding: 36px 5px; } }
+          padding-top: 36px;
+          padding-right: 5px;
+          padding-bottom: 36px;
+          padding-left: 5px;
+          text-align: center; } }
       .navbar__nav ul li .navbar__link.find-chargepoint {
         color: #8cc63f;
         padding-left: 25px;
@@ -1547,9 +1560,9 @@ img {
   .icon--inline {
     margin: 0; }
     .icon--inline > svg {
-      margin: 0;
       position: relative;
       top: 0.1667em;
+      margin: 0;
       height: 1em;
       width: 1em; }
   .icon--inline + span {
@@ -1977,20 +1990,20 @@ textarea.form__control {
         background-color: transparent; }
   .radio > span {
     font-size: 0.875rem;
-    position: relative;
     padding-top: 0.4em;
     padding-bottom: 0;
-    padding-left: 1.875rem; }
+    padding-left: 1.875rem;
+    position: relative; }
     @media (min-width: 50em) {
       .radio > span {
         font-size: 1rem; } }
     .radio > span::after, .radio > span::before {
       margin-top: 0.4em;
       margin-bottom: 0.4em;
-      content: '';
       position: absolute;
-      left: 0;
       top: 0;
+      left: 0;
+      content: '';
       width: 1.125rem;
       height: 1.125rem;
       z-index: 0;
@@ -2584,6 +2597,16 @@ textarea.form__control {
   background-color: #fff;
   color: #333; }
 
+.bg-very-light-gray {
+  background-color: #f9fafa; }
+
+.bg-light-gray {
+  background-color: #f2f2f2; }
+
+.bg-gray {
+  background-color: #b3b3b3;
+  color: #fff; }
+
 .bg-dark-gray {
   background-color: #4d4d4d;
   color: #fff; }
@@ -2591,12 +2614,6 @@ textarea.form__control {
 .bg-very-dark-gray {
   background-color: #2a2a2a;
   color: #fff; }
-
-.bg-light-gray {
-  background-color: #f2f2f2; }
-
-.bg-very-light-gray {
-  background-color: #f9fafa; }
 
 .bg-primary {
   background-color: #8cc63f;
@@ -2997,9 +3014,9 @@ textarea.form__control {
   .aspect-radio-10-7 > .aspect-ratio-content {
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
-    bottom: 0; }
+    bottom: 0;
+    left: 0; }
 
 .aspect-radio-9-5 {
   position: relative; }
@@ -3011,6 +3028,6 @@ textarea.form__control {
   .aspect-radio-9-5 > .aspect-ratio-content {
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
-    bottom: 0; }
+    bottom: 0;
+    left: 0; }

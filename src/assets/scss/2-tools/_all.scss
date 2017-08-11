@@ -2,8 +2,14 @@
 //  TOOLS - ALL
 // =============================================================================
 
+// Utitlities taken from bourbon.io
+@import 'utilities/_utilities.compact-shorthand';
+@import 'utilities/_utilities.unpack-shorthand';
+@import 'utilities/_utilities.directional-property';
+
 @import '_tools.media-queries';
-@import '_tools.margin-padding';
+@import '_tools.margin';
+@import '_tools.padding';
 @import '_tools.positioning';
 @import '_tools.headings';
 @import '_tools.font-sizes';

@@ -3,7 +3,7 @@
 // =============================================================================
 
 .confirm-popup {
-    @include position(fixed, 0, 0, 0, 0);
+    @include position(fixed, 0 0 0 0);
     z-index: 101;
     background-color: $transparent-gray;
     overflow-y: scroll;

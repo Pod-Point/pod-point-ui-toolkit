@@ -12,6 +12,7 @@ $icon-h-spacing: rem(2);
 // Icons inline with text
 $icon-inline-text-gutter: .3em;
 $icon-inline-text-size: 1em;
+$icon-inline-text-top: $icon-inline-text-size / 6;
 
 // Circle icon sizes (these are not working within the icon-in-circle--size mixin for some reason)
 $circle-icon-size-sm: rem(25);

@@ -6,20 +6,11 @@
 @import '2-tools/all'; // Required
 
 .demo-header {
-    padding-top: rem(10);
-    padding-bottom: rem(10);
+    @include padding(rem(10) null);
 }
 
 .demo-logo-main {
     img {
         width: rem(120);
-    }
-}
-
-.demo-grid {
-    .grid-row > div {
-        background-color: $gray;
-        color: $white;
-        padding: rem(20);
     }
 }
