@@ -29,15 +29,13 @@
         left: -9999px;
         position: absolute;
 
-        &:checked {
-            // sass-lint:disable-block force-pseudo-nesting
-            & + span::before {
+        &:checked + span {
+            &::before {
                 border: 2px solid transparent;
                 border-radius: 50%;
             }
 
-            // sass-lint:disable-block force-pseudo-nesting
-            & + span::after {
+            &::after {
                 background-color: $radio-fill-color;
                 border: 2px solid $radio-fill-color;
                 border-radius: 50%;

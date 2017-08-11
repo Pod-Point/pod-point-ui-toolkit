@@ -2,8 +2,6 @@
 //  COMPONENTS - BUTONS
 // =============================================================================
 
-// sass-lint:disable force-pseudo-nesting
-
 .btn {
     @extend %remove-link-styles;
     @include padding($button-v-padding $button-h-padding-mobile);
@@ -32,13 +30,15 @@
         outline: none;
     }
 
-    &:hover:not(.is-disabled),
-    &:focus:not(.is-disabled),
-    &:active:not(.is-disabled) {
-        background-color: transparent;
-        border-color: $primary-color;
-        color: $primary-color;
-        opacity: 1;
+    &:hover,
+    &:focus,
+    &:active {
+        &:not(.is-disabled) {
+            background-color: transparent;
+            border-color: $primary-color;
+            color: $primary-color;
+            opacity: 1;
+        }
     }
 
     &.btn--secondary {
@@ -46,12 +46,14 @@
         border-color: $gray;
         color: $white;
 
-        &:hover:not(.is-disabled),
-        &:focus:not(.is-disabled),
-        &:active:not(.is-disabled) {
-            background-color: transparent;
-            border-color: $gray;
-            color: $gray;
+        &:hover,
+        &:focus,
+        &:active {
+            &:not(.is-disabled) {
+                background-color: transparent;
+                border-color: $gray;
+                color: $gray;
+            }
         }
     }
 
@@ -60,12 +62,14 @@
         border-color: $gray-dark;
         color: $gray-dark;
 
-        &:hover:not(.is-disabled),
-        &:focus:not(.is-disabled),
-        &:active:not(.is-disabled) {
-            background-color: $gray-dark;
-            border-color: $gray-dark;
-            color: $white;
+        &:hover,
+        &:focus,
+        &:active {
+            &:not(.is-disabled) {
+                background-color: $gray-dark;
+                border-color: $gray-dark;
+                color: $white;
+            }
         }
     }
 
@@ -74,12 +78,14 @@
         border-color: $error-red;
         color: $white;
 
-        &:hover:not(.is-disabled),
-        &:focus:not(.is-disabled),
-        &:active:not(.is-disabled) {
-            background-color: transparent;
-            border-color: $error-red;
-            color: $error-red;
+        &:hover,
+        &:focus,
+        &:active {
+            &:not(.is-disabled) {
+                background-color: transparent;
+                border-color: $error-red;
+                color: $error-red;
+            }
         }
     }
 
@@ -96,37 +102,41 @@
             width: $button-icon-size;
         }
 
-        &:hover:not(.is-disabled),
-        &:focus:not(.is-disabled),
-        &:active:not(.is-disabled) {
-            &::before {
-                background-image: url($css-bg-path+'icons/tick-primary.svg');
+        &:hover,
+        &:focus,
+        &:active {
+            &:not(.is-disabled) {
+                &::before {
+                    background-image: url($css-bg-path+'icons/tick-primary.svg');
+                }
             }
         }
     }
-}
 
-.btn--passive {
-    @extend %clickable;
-    background-color: transparent;
-    border: 0;
-    color: $font-color-base;
-    display: inline-block;
-    font-weight: $font-weight-bold;
-    line-height: $line-height-base;
-    max-width: auto;
-    min-height: auto;
-    padding: 0;
-    text-decoration: underline;
-
-    @include screen-sm-min {
-        padding: 0;
-    }
-
-    &:hover:not(.is-disabled),
-    &:focus:not(.is-disabled),
-    &:active:not(.is-disabled) {
+    &.btn--passive {
+        @extend %clickable;
+        background-color: transparent;
+        border: 0;
         color: $font-color-base;
-        opacity: .8;
+        display: inline-block;
+        font-weight: $font-weight-bold;
+        line-height: $line-height-base;
+        max-width: auto;
+        min-height: auto;
+        padding: 0;
+        text-decoration: underline;
+
+        @include screen-sm-min {
+            padding: 0;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            &:not(.is-disabled) {
+                color: $font-color-base;
+                opacity: .8;
+            }
+        }
     }
 }

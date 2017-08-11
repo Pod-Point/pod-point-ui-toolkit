@@ -77,9 +77,9 @@ placeholder {
   font-weight: inherit;
   text-decoration: none; }
 
-.btn--passive, .clickable {
+.btn.btn--passive, .clickable {
   cursor: pointer; }
-  .btn--passive:active, .clickable:active, .btn--passive:focus, .clickable:focus, .btn--passive:hover, .clickable:hover {
+  .btn.btn--passive:active, .clickable:active, .btn.btn--passive:focus, .clickable:focus, .btn.btn--passive:hover, .clickable:hover {
     opacity: .7; }
 
 .btn.btn--selected, .tooltip-icon {
@@ -979,24 +979,23 @@ img {
     width: 1.25rem; }
   .btn.btn--selected:hover:not(.is-disabled)::before, .btn.btn--selected:focus:not(.is-disabled)::before, .btn.btn--selected:active:not(.is-disabled)::before {
     background-image: url("../img/css-bg/icons/tick-primary.svg"); }
-
-.btn--passive {
-  background-color: transparent;
-  border: 0;
-  color: #333;
-  display: inline-block;
-  font-weight: 700;
-  line-height: 1.5;
-  max-width: auto;
-  min-height: auto;
-  padding: 0;
-  text-decoration: underline; }
-  @media (min-width: 40em) {
-    .btn--passive {
-      padding: 0; } }
-  .btn--passive:hover:not(.is-disabled), .btn--passive:focus:not(.is-disabled), .btn--passive:active:not(.is-disabled) {
+  .btn.btn--passive {
+    background-color: transparent;
+    border: 0;
     color: #333;
-    opacity: .8; }
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1.5;
+    max-width: auto;
+    min-height: auto;
+    padding: 0;
+    text-decoration: underline; }
+    @media (min-width: 40em) {
+      .btn.btn--passive {
+        padding: 0; } }
+    .btn.btn--passive:hover:not(.is-disabled), .btn.btn--passive:focus:not(.is-disabled), .btn.btn--passive:active:not(.is-disabled) {
+      color: #333;
+      opacity: .8; }
 
 .card {
   background-color: #fff;
