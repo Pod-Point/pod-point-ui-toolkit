@@ -2071,10 +2071,6 @@ textarea.form__control {
       .radio .form__label {
         font-size: 1rem; } }
 
-.checkbox-wrap:not(.is-invalid) .error-message,
-.form-field-wrapper:not(.is-invalid) .error-message {
-  display: none; }
-
 .form__group--error .checkbox > input + span::before {
   border-color: #c1272d; }
 
@@ -2096,8 +2092,8 @@ textarea.form__control {
   .checkbox .form__error {
     margin-top: 0; }
 
-.checkbox-wrap .form__error {
-  margin-left: 2.1875rem; }
+.form__group:not(.form__group--error) .form__error {
+  display: none; }
 
 .is-disabled {
   cursor: not-allowed;

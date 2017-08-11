@@ -2,18 +2,11 @@
 //	COMPONENTS - FORMS - VALIDATION
 // =============================================================================
 
-// sass-lint:disable force-pseudo-nesting
-
-.checkbox-wrap:not(.is-invalid),
-.form-field-wrapper:not(.is-invalid) {
-    .error-message {
-        display: none;
-    }
-}
-
 .form__group--error {
-    .checkbox > input + span::before {
-        border-color: $error-red;
+    .checkbox > input + span {
+        &::before {
+            border-color: $error-red;
+        }
     }
 
     .form__control {
@@ -39,8 +32,10 @@
     }
 }
 
-.checkbox-wrap {
-    .form__error {
-        margin-left: $checkbox-text-l-spacing;
+.form__group {
+    &:not(.form__group--error) {
+        .form__error {
+            display: none;
+        }
     }
 }
