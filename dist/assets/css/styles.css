@@ -1850,8 +1850,11 @@ img {
   .plus-minus-toggle::after {
     -ms-transform: rotate(90deg);
         transform: rotate(90deg); }
-    .sub-nav-open .plus-minus-toggle::after,
-    .accordion .is-open .plus-minus-toggle::after {
+    .sub-nav-open .plus-minus-toggle::after {
+      opacity: 0;
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg); }
+    .is-open .plus-minus-toggle::after .accordion {
       opacity: 0;
       -ms-transform: rotate(360deg);
           transform: rotate(360deg); }
