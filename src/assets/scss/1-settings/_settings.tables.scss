@@ -2,17 +2,19 @@
 //  SETTINGS - TABLES
 // =============================================================================
 
-$table-line-height: $space-lg;
-$table-bg: transparent;
-$table-border-colour: $gray-light;
-$table-cell-padding: ($table-line-height / 4);
-$text-muted: $gray;
-$line-height-computed: $table-line-height;
-$table-border-color: $gray-light;
-$table-condensed-cell-padding: $table-line-height;
-$table-bg-accent: $gray-very-light;
+// Spacing
+$table-line-height: $line-height-base;
+$table-spacing: $space-lg;
+$table-cell-padding: $space-xs;
+$table-condensed-cell-padding: ($space-xs / 2);
 
-$table-bg-hover: mix($table-bg-accent, $black, 10%);
+// Palette
+$table-bg: transparent;
+$table-border-color: $gray-keyline-very-light;
+$table-bg-accent: $gray-very-light;
+$table-bg-hover: $gray-light;
 $table-bg-active: $table-bg-hover;
 
-$table-border-color: $gray-very-light;
+// Borders
+$table-border: 1px solid $table-border-color;
+$table-border-heading: 2px solid $table-border-color;

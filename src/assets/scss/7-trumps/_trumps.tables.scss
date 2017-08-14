@@ -1,0 +1,97 @@
+// =============================================================================
+//  TRUMPS - TABLES
+// =============================================================================
+
+// sass-lint:disable nesting-depth, force-pseudo-nesting, no-vendor-prefixes
+
+// Zebra-striping
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+.table--striped {
+    > tbody > tr:nth-of-type(odd) {
+        background-color: $table-bg-accent;
+    }
+}
+
+// Bordered version
+// Add borders all around the table and between all the columns
+.table--bordered {
+    border: $table-border;
+
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                border: $table-border;
+            }
+        }
+    }
+
+    > thead > tr {
+        > th,
+        > td {
+            border-bottom-width: 2px;
+        }
+    }
+}
+
+// Bordered inside version
+// Add borders between all the columns
+.table--bordered-inbetween {
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                border: $table-border;
+
+                &:last-child {
+                    border-right: 0;
+                }
+
+                &:first-child {
+                    border-left: 0;
+                }
+            }
+
+            &:last-child {
+                > th,
+                > td {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+
+    > thead > tr {
+        > th,
+        > td {
+            border-bottom-width: 2px;
+        }
+    }
+}
+
+// Hover effect
+// Creates hover states on table rows
+.table--hover {
+    > tbody > tr:hover {
+        background-color: $table-bg-hover;
+    }
+}
+
+// Condensed version
+// Condensed table with half padding
+.table--condensed {
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: $table-condensed-cell-padding;
+            }
+        }
+    }
+}
