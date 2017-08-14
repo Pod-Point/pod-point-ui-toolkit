@@ -3,11 +3,9 @@
 // =============================================================================
 
 @import '1-settings/all'; // Required
-@import '2-tools/all'; // Required
+@import "2-tools/all"; // Required
 
-.demo-header {
-    @include padding(rem(10) null);
-}
+.demo-header{@include padding(rem(10) null);}
 
 .demo-logo-main {
     img {
