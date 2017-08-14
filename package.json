@@ -60,10 +60,12 @@
     "jquery": "^3.2.1",
     "require-dir": "^0.3.0",
     "rimraf": "^2.4.4",
+    "sass-lint": "^1.10.2",
     "uglify": "^0.1.5",
     "webpack-stream": "^3.1.0"
   },
   "scripts": {
-    "lint": "eslint ./src"
+    "eslint": "eslint ./src",
+    "sass-lint": "sass-lint -c ./.sass-lint.yml 'src/assets/scss/**/*.scss' -v -q"
   }
 }

@@ -3,7 +3,8 @@ node_js:
   - 6
 sudo: false
 script:
-  - npm run lint
+  - npm run eslint
+  - npm run sass-lint
 cache:
   directories:
     - node_modules
