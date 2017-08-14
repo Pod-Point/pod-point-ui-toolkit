@@ -2,7 +2,7 @@
 //  ELEMENTS - TABLES
 // =============================================================================
 
-// sass-lint:disable nesting-depth, force-pseudo-nesting, no-vendor-prefixes
+// sass-lint:disable nesting-depth
 
 table,
 .table {
@@ -25,20 +25,28 @@ table,
     }
 
     // Bottom align for column headings
-    > thead > tr > th {
-        border-bottom: $table-border-heading;
-        text-align: left;
-        vertical-align: bottom;
+    > thead {
+        > tr {
+            > th {
+                border-bottom: $table-border-heading;
+                text-align: left;
+                vertical-align: bottom;
+            }
+        }
     }
 
     // Remove top border from thead by default
     > caption + thead,
     > colgroup + thead,
-    > thead:first-child {
-        > tr:first-child {
-            > th,
-            > td {
-                border-top: 0;
+    > thead {
+        &:first-child {
+            > tr {
+                &:first-child {
+                    > th,
+                    > td {
+                        border-top: 0;
+                    }
+                }
             }
         }
     }

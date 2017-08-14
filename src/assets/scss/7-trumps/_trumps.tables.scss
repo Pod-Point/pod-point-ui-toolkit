@@ -2,13 +2,17 @@
 //  TRUMPS - TABLES
 // =============================================================================
 
-// sass-lint:disable nesting-depth, force-pseudo-nesting, no-vendor-prefixes
+// sass-lint:disable nesting-depth
 
 // Zebra-striping
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 .table--striped {
-    > tbody > tr:nth-of-type(odd) {
-        background-color: $table-bg-accent;
+    > tbody {
+        > tr {
+            &:nth-of-type(odd) {
+                background-color: $table-bg-accent;
+            }
+        }
     }
 }
 
@@ -65,10 +69,12 @@
         }
     }
 
-    > thead > tr {
-        > th,
-        > td {
-            border-bottom-width: 2px;
+    > thead {
+        > tr {
+            > th,
+            > td {
+                border-bottom-width: 2px;
+            }
         }
     }
 }
@@ -76,8 +82,12 @@
 // Hover effect
 // Creates hover states on table rows
 .table--hover {
-    > tbody > tr:hover {
-        background-color: $table-bg-hover;
+    > tbody {
+        > tr {
+            &:hover {
+                background-color: $table-bg-hover;
+            }
+        }
     }
 }
 
