@@ -53,7 +53,7 @@ placeholder {
     opacity: 1;
     top: 0; } }
 
-.grid-row::after, .navbar::after, .navbar__nav::after, .navbar__sub-nav ul li::after, .clear::after,
+.grid-row::after, .clear::after,
 .clearfix::after {
   clear: both;
   content: '';
@@ -65,11 +65,11 @@ placeholder {
   display: -ms-flexbox;
   display: flex; }
 
-.navbar__nav ul, .list--no-style, .list--featured--ticks, .list--featured--ticks--lg, .list--inline, .list--imgs {
+.list--no-style, .list--featured--ticks, .list--featured--ticks--lg, .list--inline, .list--imgs {
   padding-right: 0;
   padding-left: 0;
   margin: 0; }
-  .navbar__nav ul li, .list--no-style li, .list--featured--ticks li, .list--featured--ticks--lg li, .list--inline li, .list--imgs li {
+  .list--no-style li, .list--featured--ticks li, .list--featured--ticks--lg li, .list--inline li, .list--imgs li {
     list-style: none;
     padding-left: 0; }
 
@@ -91,7 +91,7 @@ placeholder {
     text-indent: 0;
     width: 100%; }
 
-.container, .content-block--centered, .btn.btn--selected::before, .navbar, .navbar__nav, .navbar__sub-nav ul, .modal__content {
+.container, .content-block--centered, .btn.btn--selected::before, .modal__content {
   margin-left: auto;
   margin-right: auto; }
 
@@ -1081,251 +1081,6 @@ img {
         left: 50%;
         margin-left: -375px;
         width: 750px; } }
-
-.is-nav-open body {
-  overflow: hidden; }
-
-.navbar-wrap {
-  background-color: #fff;
-  position: relative;
-  width: 100%;
-  z-index: 100; }
-
-.navbar {
-  padding-right: 25px;
-  padding-left: 25px;
-  max-width: 1100px; }
-  @media (min-width: 50em) {
-    .navbar {
-      padding-right: 30px;
-      padding-left: 30px; } }
-  @media (min-width: 50em) {
-    .navbar {
-      height: 96px; } }
-  .navbar.nav-open {
-    box-shadow: 0 11px 16px -10px rgba(0, 0, 0, 0.1); }
-    @media (min-width: 50em) {
-      .navbar.nav-open {
-        box-shadow: none; }
-        .navbar.nav-open::after {
-          background-color: #fff;
-          box-shadow: 0 11px 16px -10px rgba(0, 0, 0, 0.1);
-          content: '';
-          height: 328px;
-          left: 0;
-          position: absolute;
-          top: 0;
-          width: 100%;
-          z-index: -1; } }
-  .navbar .navicon {
-    float: right;
-    margin-top: 20px; }
-    @media (min-width: 50em) {
-      .navbar .navicon {
-        display: none; } }
-
-.navbar__content {
-  height: 60px;
-  position: relative; }
-  @media (min-width: 50em) {
-    .navbar__content {
-      border-bottom: 0;
-      height: auto; } }
-
-.navbar__pp-logo {
-  float: left;
-  height: 27px;
-  margin-top: 17px;
-  width: 100px; }
-  .navbar__pp-logo svg {
-    height: 100%;
-    width: 100%; }
-  @media (min-width: 50em) {
-    .navbar__pp-logo {
-      height: 38px;
-      margin-top: 30px;
-      width: 140px; } }
-  @media (min-width: 68em) {
-    .navbar__pp-logo {
-      height: 49px;
-      margin-top: 22px;
-      width: 180px; } }
-
-.navbar__nav {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-out;
-  transition: .1s ease-in-out; }
-  @media (min-width: 50em) {
-    .navbar__nav {
-      display: block;
-      float: right;
-      height: 97px;
-      max-height: 100%; } }
-  .nav-open .navbar__nav {
-    max-height: 800px;
-    overflow: hidden;
-    transition: max-height 1s ease-in;
-    height: auto;
-    transition: 1s ease-in-out; }
-  .navbar__nav ul li {
-    font-size: 0.75rem;
-    border-bottom: 1px solid #e2e2e2;
-    padding-bottom: 0;
-    position: relative; }
-    @media (min-width: 50em) {
-      .navbar__nav ul li {
-        font-size: 0.875rem; } }
-    .navbar__nav ul li:last-child {
-      border-bottom: 0; }
-    @media (min-width: 50em) {
-      .navbar__nav ul li {
-        padding-right: 10px;
-        padding-left: 10px;
-        border-bottom: 0;
-        display: inline-block;
-        position: static; } }
-    @media (min-width: 68em) {
-      .navbar__nav ul li {
-        padding-right: 20px;
-        padding-left: 20px; } }
-    .navbar__nav ul li .navbar__link {
-      padding-top: 15px;
-      padding-right: 0;
-      padding-bottom: 15px;
-      padding-left: 0;
-      color: #333;
-      cursor: pointer;
-      display: block;
-      font-weight: 700;
-      text-align: left;
-      text-decoration: none;
-      width: 100%; }
-      @media (min-width: 50em) {
-        .navbar__nav ul li .navbar__link {
-          padding-top: 36px;
-          padding-right: 5px;
-          padding-bottom: 36px;
-          padding-left: 5px;
-          text-align: center; } }
-      .navbar__nav ul li .navbar__link.find-chargepoint {
-        color: #8cc63f;
-        padding-left: 25px;
-        position: relative; }
-        .navbar__nav ul li .navbar__link.find-chargepoint svg {
-          position: absolute;
-          top: 50%;
-          left: 0;
-          fill: #8cc63f;
-          height: 20px;
-          margin-top: -10px;
-          width: 20px; }
-  @media (min-width: 50em) {
-    .navbar__nav > ul {
-      float: right;
-      margin-right: -10px; } }
-  .navbar__nav > ul > li {
-    min-height: 43px; }
-    .navbar__nav > ul > li.has-sub-nav.sub-nav-open .navbar__sub-nav {
-      max-height: 340px;
-      overflow: hidden;
-      transition: max-height 1s ease-in;
-      height: auto;
-      max-height: 340px;
-      transition: 1s ease-in-out; }
-      @media (min-width: 50em) {
-        .navbar__nav > ul > li.has-sub-nav.sub-nav-open .navbar__sub-nav {
-          animation-duration: .3s;
-          animation-fill-mode: both;
-          animation-name: fadeIn;
-          height: 232px;
-          opacity: 1;
-          transition: none; } }
-    .navbar__nav > ul > li.has-sub-nav .plus-minus-toggle {
-      position: absolute;
-      top: 17px;
-      right: 0;
-      z-index: -1; }
-      @media (min-width: 50em) {
-        .navbar__nav > ul > li.has-sub-nav .plus-minus-toggle {
-          display: none; } }
-    .navbar__nav > ul > li > .navbar__link {
-      border-bottom: 2px solid transparent; }
-    @media (min-width: 50em) {
-      .navbar__nav > ul > li.sub-nav-open > .navbar__link, .navbar__nav > ul > li:hover > .navbar__link {
-        border-color: #8cc63f; } }
-
-.navbar__sub-nav {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-out;
-  background-color: #fff;
-  text-align: center;
-  transition: .3s ease-in-out;
-  width: 100%; }
-  @media (min-width: 50em) {
-    .navbar__sub-nav {
-      position: absolute;
-      top: 96px;
-      right: 0;
-      opacity: 0; } }
-  .navbar__sub-nav ul {
-    background-color: #fff;
-    margin-bottom: 20px; }
-    @media (min-width: 40em) {
-      .navbar__sub-nav ul {
-        padding-right: 25px;
-        padding-left: 25px;
-        max-width: 1100px; } }
-  @media (min-width: 40em) and (min-width: 50em) {
-    .navbar__sub-nav ul {
-      padding-right: 30px;
-      padding-left: 30px; } }
-    @media (min-width: 50em) {
-      .navbar__sub-nav ul {
-        margin-bottom: 0; } }
-    .navbar__sub-nav ul li {
-      padding-right: 20px;
-      padding-left: 20px;
-      border-bottom: 0;
-      display: inline-block;
-      width: 120px; }
-      @media (min-width: 40em) {
-        .navbar__sub-nav ul li {
-          width: auto; } }
-      .navbar__sub-nav ul li .navbar__link {
-        text-align: center; }
-        .navbar__sub-nav ul li .navbar__link .navbar__item-img {
-          margin-top: 5px;
-          margin-right: auto;
-          margin-bottom: 10px;
-          margin-left: auto;
-          display: block;
-          height: 60px;
-          width: 60px; }
-          @media (min-width: 40em) {
-            .navbar__sub-nav ul li .navbar__link .navbar__item-img {
-              height: 100px;
-              margin-bottom: 20px;
-              width: 100px; } }
-
-@media (min-width: 50em) {
-  .navbar-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    transition: .1s ease-in-out;
-    width: 100%;
-    z-index: 10; }
-    .navbar-overlay.nav-open {
-      animation-duration: .3s;
-      animation-fill-mode: both;
-      animation-name: fadeIn;
-      display: block;
-      transition: .8s ease-in-out; } }
 
 .hero {
   overflow: hidden;

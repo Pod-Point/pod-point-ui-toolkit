@@ -10,7 +10,6 @@ import formFields from './modules/form-fields';
 import toggleAccordionPanel from './modules/toggle-accordion-panel';
 import toggleElement from './modules/toggle-element';
 import accordion from './modules/accordion';
-import navbar from './modules/navbar';
 
 dom.whenReady(() => {
     loadModules({
@@ -20,7 +19,6 @@ dom.whenReady(() => {
             ajaxForm,
             toggleAccordionPanel,
             toggleElement,
-            navbar,
             accordion,
         }),
     });
