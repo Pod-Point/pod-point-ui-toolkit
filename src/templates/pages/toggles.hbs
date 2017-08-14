@@ -1,33 +1,37 @@
-{{> demo-header }}
-<div data-page="toggles">
-    <header class="content-block content-block--strip bg-primary">
-        <div class="container">
-            <h2>Toggle panels</h2>
-        </div>
-    </header>
+<div data-page="toggles" class="demo-page-content">
 
-    <section>
-        <div class="container content-block">
+    {{> demo-sidebar }}
 
-            <div class="form__group field-row">
-                <label class="form__label">Select dropdown</label>
-                <div class="form-field-wrapper">
-                    <div class="select-wrapper">
-                        <select data-select-toggle-panel="other">
-                            <option value="00">00</option>
-                            <option value="01">01</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                </div>
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
+            <div class="container">
+                <h2>Toggle panels</h2>
+            </div>
+        </header>
 
-                <div data-js-module="toggleAccordionPanel" id="other" class="m-t-sm accordion-panel accordion-panel--xs">
-                    <label class="form__label">Please specify...</label>
+        <section>
+            <div class="container content-block">
+
+                <div class="form__group field-row">
+                    <label class="form__label">Select dropdown</label>
                     <div class="form-field-wrapper">
-                        <input type="text">
+                        <div class="select-wrapper">
+                            <select data-select-toggle-panel="other">
+                                <option value="00">00</option>
+                                <option value="01">01</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div data-js-module="toggleAccordionPanel" id="other" class="m-t-sm accordion-panel accordion-panel--xs">
+                        <label class="form__label">Please specify...</label>
+                        <div class="form-field-wrapper">
+                            <input type="text">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </div>

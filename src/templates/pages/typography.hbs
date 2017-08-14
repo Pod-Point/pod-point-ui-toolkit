@@ -1,170 +1,174 @@
-{{> demo-header }}
-<div data-page="typography">
-    <header class="content-block content-block--strip bg-primary">
-        <div class="container">
-            <h2>Typography</h2>
-        </div>
-    </header>
+<div data-page="typography" class="demo-page-content">
 
+    {{> demo-sidebar }}
 
-    <!-- FONT SIZES -->
-    <section id="typographySizes">
-        <header class="content-block bg-light-gray">
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
             <div class="container">
-                <h3>Font sizes</h3>
-                <p>All font sizes have desktop and mobile sizes which change at the medium screen size (50em/800px)</p>
-                <p>Padding is used for the spacing of all typography, so the global padding helper classes can be used to override if required</p>
-                <p>The file <code>_settings.typography.scss</code> contains all the size variables (variables can be reassigned directly after the file if required)</p>
-                <p>The file <code>_tools.font-sizes.scss</code> contains the mixins for the general font sizes</p>
-                <p>The file <code>_tools.headings.scss</code> contains the mixins for the heading font sizes</p>
+                <h2>Typography</h2>
             </div>
         </header>
-    </section>
 
 
-    <!-- HEADINGS -->
-    <section id="typographyHeadings">
-        <header class="content-block bg-light-gray">
-            <div class="container">
-                <h3>Headings</h3>
-                <p>Use default heading tags or classes <code>.h1</code>, <code>.h2</code>, <code>.h3</code> etc</p>
-                <p>Note: When a heading is the first child, the top padding is removed to keep it at the top of it's wrapping element</p>
+        <!-- FONT SIZES -->
+        <section id="typographySizes">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Font sizes</h3>
+                    <p>All font sizes have desktop and mobile sizes which change at the medium screen size (50em/800px)</p>
+                    <p>Padding is used for the spacing of all typography, so the global padding helper classes can be used to override if required</p>
+                    <p>The file <code>_settings.typography.scss</code> contains all the size variables (variables can be reassigned directly after the file if required)</p>
+                    <p>The file <code>_tools.font-sizes.scss</code> contains the mixins for the general font sizes</p>
+                    <p>The file <code>_tools.headings.scss</code> contains the mixins for the heading font sizes</p>
+                </div>
+            </header>
+        </section>
+
+
+        <!-- HEADINGS -->
+        <section id="typographyHeadings">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Headings</h3>
+                    <p>Use default heading tags or classes <code>.h1</code>, <code>.h2</code>, <code>.h3</code> etc</p>
+                    <p>Note: When a heading is the first child, the top padding is removed to keep it at the top of it's wrapping element</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h1>Heading 1 style</h1>
+                    <h2>Heading 2 style</h2>
+                    <h3>Heading 3 style</h3>
+                    <h4>Heading 4 style</h4>
+                    <h5>Heading 5 style</h5>
+                    <h6>Heading 6 style</h6>
+                </div>
             </div>
-        </header>
-        <div class="content-block">
-            <div class="container">
-                <h1>Heading 1 style</h1>
-                <h2>Heading 2 style</h2>
-                <h3>Heading 3 style</h3>
-                <h4>Heading 4 style</h4>
-                <h5>Heading 5 style</h5>
-                <h6>Heading 6 style</h6>
+        </section>
+
+
+        <!-- BASE TYPOGRAPHY -->
+        <section id="typographyBase">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Base typography <small>(14px/16px)</small></h3>
+                    <p>Default typography styling</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus. Nam risus arcu, malesuada id lectus eget, pretium blandit mi. Quisque molestie, sem nec rhoncus porttitor, lectus libero pretium mi, et mattis mauris erat at tellus. Sed ultricies dignissim volutpat.</p>
+
+                    <hr>
+
+                    <ul>
+                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.
+                            <ul>
+                                <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
+                                <li>Sed sagittis cursus semper. Aenean feugiat, nisl quis scelerisque rhoncus, orci elit consequat arcu.</li>
+                            </ul>
+                        </li>
+                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                    </ul>
+
+                    <ol>
+                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
+                    </ol>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- BASE TYPOGRAPHY -->
-    <section id="typographyBase">
-        <header class="content-block bg-light-gray">
-            <div class="container">
-                <h3>Base typography <small>(14px/16px)</small></h3>
-                <p>Default typography styling</p>
-            </div>
-        </header>
-        <div class="content-block">
-            <div class="container">
-                <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus. Nam risus arcu, malesuada id lectus eget, pretium blandit mi. Quisque molestie, sem nec rhoncus porttitor, lectus libero pretium mi, et mattis mauris erat at tellus. Sed ultricies dignissim volutpat.</p>
+        <!-- SMALL TYPOGRAPHY -->
+        <section id="typographySmall">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Small typography <small>(12px/14px)</small></h3>
+                    <p>Use the class <code>font-size-sm</code> for small typography styling</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <div class="font-size-sm">
+                        <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus. Nam risus arcu, malesuada id lectus eget, pretium blandit mi. Quisque molestie, sem nec rhoncus porttitor, lectus libero pretium mi, et mattis mauris erat at tellus. Sed ultricies dignissim volutpat.</p>
 
-                <hr>
-
-                <ul>
-                    <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
-                    <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.
                         <ul>
-                            <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
-                            <li>Sed sagittis cursus semper. Aenean feugiat, nisl quis scelerisque rhoncus, orci elit consequat arcu.</li>
+                            <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                            <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.
+                                <ul>
+                                    <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
+                                    <li>Sed sagittis cursus semper. Aenean feugiat, nisl quis scelerisque rhoncus, orci elit consequat arcu.</li>
+                                </ul>
+                            </li>
+                            <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
                         </ul>
-                    </li>
-                    <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
-                </ul>
 
-                <ol>
-                    <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
-                    <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
-                    <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
-                </ol>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- SMALL TYPOGRAPHY -->
-    <section id="typographySmall">
-        <header class="content-block bg-light-gray">
-            <div class="container">
-                <h3>Small typography <small>(12px/14px)</small></h3>
-                <p>Use the class <code>font-size-sm</code> for small typography styling</p>
-            </div>
-        </header>
-        <div class="content-block">
-            <div class="container">
-                <div class="font-size-sm">
-                    <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus. Nam risus arcu, malesuada id lectus eget, pretium blandit mi. Quisque molestie, sem nec rhoncus porttitor, lectus libero pretium mi, et mattis mauris erat at tellus. Sed ultricies dignissim volutpat.</p>
-
-                    <ul>
-                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
-                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.
-                            <ul>
-                                <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
-                                <li>Sed sagittis cursus semper. Aenean feugiat, nisl quis scelerisque rhoncus, orci elit consequat arcu.</li>
-                            </ul>
-                        </li>
-                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
-                    </ul>
-
-                    <ol>
-                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
-                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
-                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
-                    </ol>
+                        <ol>
+                            <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                            <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                            <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- LARGE TYPOGRAPHY -->
-    <section id="typographyLarge">
-        <header class="content-block bg-light-gray">
-            <div class="container">
-                <h3>Large typography <small>(16px/20px)</small></h3>
-                <p>Use the class <code>font-size-lg</code> for large typography styling</p>
-            </div>
-        </header>
-        <div class="content-block">
-            <div class="container">
-                <div class="font-size-lg">
-                    <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus. Nam risus arcu, malesuada id lectus eget, pretium blandit mi. Quisque molestie, sem nec rhoncus porttitor, lectus libero pretium mi, et mattis mauris erat at tellus. Sed ultricies dignissim volutpat.</p>
+        <!-- LARGE TYPOGRAPHY -->
+        <section id="typographyLarge">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Large typography <small>(16px/20px)</small></h3>
+                    <p>Use the class <code>font-size-lg</code> for large typography styling</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <div class="font-size-lg">
+                        <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus. Nam risus arcu, malesuada id lectus eget, pretium blandit mi. Quisque molestie, sem nec rhoncus porttitor, lectus libero pretium mi, et mattis mauris erat at tellus. Sed ultricies dignissim volutpat.</p>
 
-                    <ul>
-                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
-                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.
-                            <ul>
-                                <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
-                                <li>Sed sagittis cursus semper. Aenean feugiat, nisl quis scelerisque rhoncus, orci elit consequat arcu.</li>
-                            </ul>
-                        </li>
-                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
-                    </ul>
+                        <ul>
+                            <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                            <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.
+                                <ul>
+                                    <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
+                                    <li>Sed sagittis cursus semper. Aenean feugiat, nisl quis scelerisque rhoncus, orci elit consequat arcu.</li>
+                                </ul>
+                            </li>
+                            <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                        </ul>
 
-                    <ol>
-                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
-                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
-                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
-                    </ol>
+                        <ol>
+                            <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                            <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                            <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- TYPOGRAPHIC FORMATTING -->
-    <section id="typographyFormats">
-        <header class="content-block bg-light-gray">
-            <div class="container">
-                <h3>Typographic formatting</h3>
-                <p>Use the default tags or the same name classes to format text</p>
+        <!-- TYPOGRAPHIC FORMATTING -->
+        <section id="typographyFormats">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Typographic formatting</h3>
+                    <p>Use the default tags or the same name classes to format text</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p><strong>strong</strong> = <code>&lt;strong&gt;</code> or <code>.strong</code> or <code>.bold</code></p>
+                    <p><em>italic</em> = <code>&lt;i&gt;</code> or <code>&lt;em&gt;</code> or <code>.em</code> or <code>.italic</code></p>
+                    <p><small>small</small> = <code>&lt;small&gt;</code> or <code>.small</code></p>
+                    <p><s>strikethrough</s> = <code>&lt;s&gt;</code> or <code>.s</code> or <code>.strikethrough</code></p>
+                    <p><mark>highlight</mark> = <code>&lt;mark&gt;</code> or <code>.mark</code> or <code>.highlight</code></p>
+                </div>
             </div>
-        </header>
-        <div class="content-block">
-            <div class="container">
-                <p><strong>strong</strong> = <code>&lt;strong&gt;</code> or <code>.strong</code> or <code>.bold</code></p>
-                <p><em>italic</em> = <code>&lt;i&gt;</code> or <code>&lt;em&gt;</code> or <code>.em</code> or <code>.italic</code></p>
-                <p><small>small</small> = <code>&lt;small&gt;</code> or <code>.small</code></p>
-                <p><s>strikethrough</s> = <code>&lt;s&gt;</code> or <code>.s</code> or <code>.strikethrough</code></p>
-                <p><mark>highlight</mark> = <code>&lt;mark&gt;</code> or <code>.mark</code> or <code>.highlight</code></p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </div>

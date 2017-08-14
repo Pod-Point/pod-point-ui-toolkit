@@ -1,220 +1,224 @@
-{{> demo-header }}
-<div data-page="lists">
-    <header class="content-block content-block--strip bg-primary">
-        <div class="container">
-            <h2>Lists</h2>
-        </div>
-    </header>
+<div data-page="lists" class="demo-page-content">
 
+    {{> demo-sidebar }}
 
-    <!-- LIST DEFAULT STYLING -->
-    <section id="listsDefault">
-        <header class="content-block bg-light-gray">
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
             <div class="container">
-                <h3>Default styling</h3>
-                <p>The default styling for ordered and unordered lists at the base font size</p>
+                <h2>Lists</h2>
             </div>
         </header>
-        <div class="content-block">
-            <div class="container">
-                <ol>
-                    <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
-                    <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
-                    <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
-                </ol>
-                <ul>
-                    <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
-                    <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.
-                        <ul>
-                            <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
-                            <li>Sed sagittis cursus semper. Aenean feugiat, nisl quis scelerisque rhoncus, orci elit consequat arcu.</li>
-                        </ul>
-                    </li>
-                    <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
-                </ul>
+
+
+        <!-- LIST DEFAULT STYLING -->
+        <section id="listsDefault">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Default styling</h3>
+                    <p>The default styling for ordered and unordered lists at the base font size</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <ol>
+                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
+                    </ol>
+                    <ul>
+                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.
+                            <ul>
+                                <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
+                                <li>Sed sagittis cursus semper. Aenean feugiat, nisl quis scelerisque rhoncus, orci elit consequat arcu.</li>
+                            </ul>
+                        </li>
+                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- LIST NO DEFAULT STYLING -->
-    <section id="listsNoStyle">
-        <header class="content-block bg-light-gray">
-            <div class="container">
-                <h3>Remove default styling</h3>
-                <p>Add the class <code>.list--no-style</code> to remove list bullets and spacing</p>
+        <!-- LIST NO DEFAULT STYLING -->
+        <section id="listsNoStyle">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Remove default styling</h3>
+                    <p>Add the class <code>.list--no-style</code> to remove list bullets and spacing</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <ul class="list--no-style">
+                        <li>In non lacus facilisis</li>
+                        <li>Donec accumsan placerat metus</li>
+                        <li>Etiam tincidunt magna</li>
+                    </ul>
+                </div>
             </div>
-        </header>
-        <div class="content-block">
-            <div class="container">
-                <ul class="list--no-style">
-                    <li>In non lacus facilisis</li>
-                    <li>Donec accumsan placerat metus</li>
-                    <li>Etiam tincidunt magna</li>
-                </ul>
+        </section>
+
+
+        <!-- LIST WITH TIGHTENED UP SPACING -->
+        <section id="listsTightSpace">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Tightens up spacing on the left</h3>
+                    <p>Add the class <code>.list--spacing-left-sm</code> to tighten up spacing on the left</p>
+                    <p>Useful for scenarios with less space to use, such as tooltips or cards</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <ul class="list--spacing-left-sm">
+                        <li>In non lacus facilisis</li>
+                        <li>Donec accumsan placerat metus</li>
+                        <li>Etiam tincidunt magna</li>
+                    </ul>
+                    <ol class="list--spacing-left-sm">
+                        <li>In non lacus facilisis</li>
+                        <li>Donec accumsan placerat metus</li>
+                        <li>Etiam tincidunt magna</li>
+                    </ol>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- LIST WITH TIGHTENED UP SPACING -->
-    <section id="listsTightSpace">
-        <header class="content-block bg-light-gray">
-            <div class="container">
-                <h3>Tightens up spacing on the left</h3>
-                <p>Add the class <code>.list--spacing-left-sm</code> to tighten up spacing on the left</p>
-                <p>Useful for scenarios with less space to use, such as tooltips or cards</p>
+        <!-- LIST INLINE -->
+        <section id="listsInline">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Inline</h3>
+                    <p>Add the class <code>.list--inline</code></p>
+                    <p>For a small gutter add the modifying class <code>.list--inline--gutter-sm</code></p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <ul class="list--inline">
+                        <li>In non lacus facilisis</li>
+                        <li>Donec accumsan placerat metus</li>
+                        <li>Etiam tincidunt magna</li>
+                        <li>Quisque consequat purus</li>
+                        <li>Aliquam nec ligula massa</li>
+                        <li>Nulla ac magna ultricies</li>
+                        <li>Sed laoreet lectus ac nibh finibus</li>
+                        <li>Eu pretium diam semper</li>
+                    </ul>
+
+                    <br>
+                    <br>
+
+                    <ul class="list--inline list--inline--gutter-sm">
+                        <li>In non lacus facilisis</li>
+                        <li>Donec accumsan placerat metus</li>
+                        <li>Etiam tincidunt magna</li>
+                        <li>Quisque consequat purus</li>
+                        <li>Aliquam nec ligula massa</li>
+                        <li>Nulla ac magna ultricies</li>
+                        <li>Sed laoreet lectus ac nibh finibus</li>
+                        <li>Eu pretium diam semper</li>
+                    </ul>
+                </div>
             </div>
-        </header>
-        <div class="content-block">
-            <div class="container">
-                <ul class="list--spacing-left-sm">
-                    <li>In non lacus facilisis</li>
-                    <li>Donec accumsan placerat metus</li>
-                    <li>Etiam tincidunt magna</li>
-                </ul>
-                <ol class="list--spacing-left-sm">
-                    <li>In non lacus facilisis</li>
-                    <li>Donec accumsan placerat metus</li>
-                    <li>Etiam tincidunt magna</li>
-                </ol>
+        </section>
+
+
+        <!-- FEATURED LIST WITH TICK ICONS -->
+        <section id="listsFeaturedTicks">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Featured with tick icons</h3>
+                    <p>Add the class <code>.list--featured--ticks</code></p>
+                    <p>Alternatively you can add your own icon path by using the mixin: <code>@include featured-icon-list($icon-path);</code></p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <ul class="list--featured--ticks">
+                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
+                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- LIST INLINE -->
-    <section id="listsInline">
-        <header class="content-block bg-light-gray">
-            <div class="container">
-                <h3>Inline</h3>
-                <p>Add the class <code>.list--inline</code></p>
-                <p>For a small gutter add the modifying class <code>.list--inline--gutter-sm</code></p>
+        <!-- FEATURED LIST LARGE WITH TICK ICONS -->
+        <section id="listsFeaturedLargeTicks">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Large featured with tick icons</h3>
+                    <p>Add the class <code>.list--featured--ticks--lg</code></p>
+                    <p>Alternatively you can add your own icon path by using the mixin: <code>@include featured-icon-list-lg($icon-path);</code></p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <ul class="list--featured--ticks--lg">
+                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
+                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                    </ul>
+                </div>
             </div>
-        </header>
-        <div class="content-block">
-            <div class="container">
-                <ul class="list--inline">
-                    <li>In non lacus facilisis</li>
-                    <li>Donec accumsan placerat metus</li>
-                    <li>Etiam tincidunt magna</li>
-                    <li>Quisque consequat purus</li>
-                    <li>Aliquam nec ligula massa</li>
-                    <li>Nulla ac magna ultricies</li>
-                    <li>Sed laoreet lectus ac nibh finibus</li>
-                    <li>Eu pretium diam semper</li>
-                </ul>
+        </section>
 
-                <br>
-                <br>
 
-                <ul class="list--inline list--inline--gutter-sm">
-                    <li>In non lacus facilisis</li>
-                    <li>Donec accumsan placerat metus</li>
-                    <li>Etiam tincidunt magna</li>
-                    <li>Quisque consequat purus</li>
-                    <li>Aliquam nec ligula massa</li>
-                    <li>Nulla ac magna ultricies</li>
-                    <li>Sed laoreet lectus ac nibh finibus</li>
-                    <li>Eu pretium diam semper</li>
-                </ul>
+        <!-- LIST OF ICONS OR IMAGES -->
+        <section id="listsImgsIcons">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>List of images or icons</h3>
+                    <p>For a list of images or icons use the class <code>.list--imgs</code></p>
+                    <p>To make the images or icons inline add the modifying class <code>.list--imgs--inline</code></p>
+                    <p>To force the images too be the same height there are various modifying classes available <code>.list--imgs--height-xs</code>, <code>.list--imgs--height-sm</code>, <code>.list--imgs--height-md</code>, <code>.list--imgs--height-lg</code>, <code>.list--imgs--height-xl</code></p>
+                    <p>To change the gutter spacing there are various modifying classes available <code>.list--imgs--inline-gutter-xxs</code>, <code>.list--imgs--inline-gutter-xs</code>, <code>.list--imgs--inline-gutter-sm</code>, <code>.list--imgs--inline-gutter-md</code>, <code>.list--imgs--inline-gutter-lg</code>, <code>.list--imgs--inline-gutter-xl</code></p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>List of images
+                        <span class="font-size-md font-regular"> = <code>.list--imgs</code></span>
+                    </h4>
+                    <ul class="list--imgs">
+                        <li><img src="https://placeholdit.co//i/50x70?&bg=8CC63F&fc=ffffff"></li>
+                        <li><img src="https://placeholdit.co//i/100x50?&bg=8CC63F&fc=ffffff"></li>
+                        <li><img src="https://placeholdit.co//i/70x90?&bg=8CC63F&fc=ffffff"></li>
+                        <li><img src="https://placeholdit.co//i/80x120?&bg=8CC63F&fc=ffffff"></li>
+                        <li><img src="https://placeholdit.co//i/120x100?&bg=8CC63F&fc=ffffff"></li>
+                    </ul>
+                    <br>
+
+                    <h4>List of images inline
+                        <span class="font-size-md font-regular"> = <code>.list--imgs</code>, <code>list--imgs--inline</code></span>
+                    </h4>
+                    <ul class="list--imgs list--imgs--inline">
+                        <li><img src="https://placeholdit.co//i/50x70?&bg=8CC63F&fc=ffffff"></li>
+                        <li><img src="https://placeholdit.co//i/100x50?&bg=8CC63F&fc=ffffff"></li>
+                        <li><img src="https://placeholdit.co//i/70x90?&bg=8CC63F&fc=ffffff"></li>
+                        <li><img src="https://placeholdit.co//i/80x120?&bg=8CC63F&fc=ffffff"></li>
+                        <li><img src="https://placeholdit.co//i/120x100?&bg=8CC63F&fc=ffffff"></li>
+                    </ul>
+                    <br>
+
+                    <h4>List of icons inline with xs gutter
+                        <span class="font-size-md font-regular"> = <code>.list--imgs</code>, <code>list--imgs--inline</code>, <code>list--imgs--inline-gutter-xs</code></span>
+                    </h4>
+                    <ul class="list--imgs list--imgs--inline list--imgs--inline-gutter-xs">
+                        <li><i class="icon">{{> icon-facebook }}</i></li>
+                        <li><i class="icon">{{> icon-twitter }}</i></li>
+                        <li><i class="icon">{{> icon-linkedin }}</i></li>
+                        <li><i class="icon">{{> icon-youtube }}</i></li>
+                        <li><i class="icon">{{> icon-instagram }}</i></li>
+                        <li><i class="icon">{{> icon-google }}</i></li>
+                    </ul>
+
+                </div>
             </div>
-        </div>
-    </section>
-
-
-    <!-- FEATURED LIST WITH TICK ICONS -->
-    <section id="listsFeaturedTicks">
-        <header class="content-block bg-light-gray">
-            <div class="container">
-                <h3>Featured with tick icons</h3>
-                <p>Add the class <code>.list--featured--ticks</code></p>
-                <p>Alternatively you can add your own icon path by using the mixin: <code>@include featured-icon-list($icon-path);</code></p>
-            </div>
-        </header>
-        <div class="content-block">
-            <div class="container">
-                <ul class="list--featured--ticks">
-                    <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
-                    <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
-                    <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- FEATURED LIST LARGE WITH TICK ICONS -->
-    <section id="listsFeaturedLargeTicks">
-        <header class="content-block bg-light-gray">
-            <div class="container">
-                <h3>Large featured with tick icons</h3>
-                <p>Add the class <code>.list--featured--ticks--lg</code></p>
-                <p>Alternatively you can add your own icon path by using the mixin: <code>@include featured-icon-list-lg($icon-path);</code></p>
-            </div>
-        </header>
-        <div class="content-block">
-            <div class="container">
-                <ul class="list--featured--ticks--lg">
-                    <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
-                    <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
-                    <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- LIST OF ICONS OR IMAGES -->
-    <section id="listsImgsIcons">
-        <header class="content-block bg-light-gray">
-            <div class="container">
-                <h3>List of images or icons</h3>
-                <p>For a list of images or icons use the class <code>.list--imgs</code></p>
-                <p>To make the images or icons inline add the modifying class <code>.list--imgs--inline</code></p>
-                <p>To force the images too be the same height there are various modifying classes available <code>.list--imgs--height-xs</code>, <code>.list--imgs--height-sm</code>, <code>.list--imgs--height-md</code>, <code>.list--imgs--height-lg</code>, <code>.list--imgs--height-xl</code></p>
-                <p>To change the gutter spacing there are various modifying classes available <code>.list--imgs--inline-gutter-xxs</code>, <code>.list--imgs--inline-gutter-xs</code>, <code>.list--imgs--inline-gutter-sm</code>, <code>.list--imgs--inline-gutter-md</code>, <code>.list--imgs--inline-gutter-lg</code>, <code>.list--imgs--inline-gutter-xl</code></p>
-            </div>
-        </header>
-        <div class="content-block">
-            <div class="container">
-                <h4>List of images
-                    <span class="font-size-md font-regular"> = <code>.list--imgs</code></span>
-                </h4>
-                <ul class="list--imgs">
-                    <li><img src="https://placeholdit.co//i/50x70?&bg=8CC63F&fc=ffffff"></li>
-                    <li><img src="https://placeholdit.co//i/100x50?&bg=8CC63F&fc=ffffff"></li>
-                    <li><img src="https://placeholdit.co//i/70x90?&bg=8CC63F&fc=ffffff"></li>
-                    <li><img src="https://placeholdit.co//i/80x120?&bg=8CC63F&fc=ffffff"></li>
-                    <li><img src="https://placeholdit.co//i/120x100?&bg=8CC63F&fc=ffffff"></li>
-                </ul>
-                <br>
-
-                <h4>List of images inline
-                    <span class="font-size-md font-regular"> = <code>.list--imgs</code>, <code>list--imgs--inline</code></span>
-                </h4>
-                <ul class="list--imgs list--imgs--inline">
-                    <li><img src="https://placeholdit.co//i/50x70?&bg=8CC63F&fc=ffffff"></li>
-                    <li><img src="https://placeholdit.co//i/100x50?&bg=8CC63F&fc=ffffff"></li>
-                    <li><img src="https://placeholdit.co//i/70x90?&bg=8CC63F&fc=ffffff"></li>
-                    <li><img src="https://placeholdit.co//i/80x120?&bg=8CC63F&fc=ffffff"></li>
-                    <li><img src="https://placeholdit.co//i/120x100?&bg=8CC63F&fc=ffffff"></li>
-                </ul>
-                <br>
-
-                <h4>List of icons inline with xs gutter
-                    <span class="font-size-md font-regular"> = <code>.list--imgs</code>, <code>list--imgs--inline</code>, <code>list--imgs--inline-gutter-xs</code></span>
-                </h4>
-                <ul class="list--imgs list--imgs--inline list--imgs--inline-gutter-xs">
-                    <li><i class="icon">{{> icon-facebook }}</i></li>
-                    <li><i class="icon">{{> icon-twitter }}</i></li>
-                    <li><i class="icon">{{> icon-linkedin }}</i></li>
-                    <li><i class="icon">{{> icon-youtube }}</i></li>
-                    <li><i class="icon">{{> icon-instagram }}</i></li>
-                    <li><i class="icon">{{> icon-google }}</i></li>
-                </ul>
-
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </div>
