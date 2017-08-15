@@ -29,19 +29,46 @@ body {
     min-height: inherit;
 }
 
+.demo-container-with-sidebar {
+    padding-left: $demo-sidebar-width;
+
+    .container {
+        margin-left: 0;
+    }
+}
+
 .demo-fixed-sidebar {
     @include position(fixed, 0 null null 0);
     @include horizontal-spacing;
     box-shadow: $box-shadow-subtle;
     height: 100%;
     min-height: inherit;
+    overflow-y: scroll;
     width: $demo-sidebar-width;
+
+    .nav-link {
+        color: $font-color-light;
+        font-weight: $font-weight-bold;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
 }
 
-.demo-container-with-sidebar {
-    padding-left: $demo-sidebar-width;
+.demo-note {
+    @include font-size-sm;
+    background-color: $gray-light;
+    padding: .5em 10px;
+    margin-bottom: .5em;
+}
 
-    .container {
-        margin-left: 0;
+$pages: ('installation', 'scss', 'css-bg-img', 'javascript', 'inline-svg-icons', 'helper-classes', 'sass-mixins', 'accordions', 'alerts', 'buttons', 'cards', 'confirm-popup', 'forms', 'grid', 'icons', 'labels', 'lists', 'modals', 'tables', 'toggles', 'tooltips', 'typography');
+
+@each $page in $pages {
+    [data-page='#{$page}'] {
+        .nav-link--#{$page} {
+            color: $primary-color;
+        }
     }
 }
