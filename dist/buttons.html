@@ -102,7 +102,8 @@
             <header class="content-block bg-light-gray">
                 <div class="container">
                     <h3>Disabled buttons</h3>
-                    <p>Add the class <code>.is-disabled</code> to apply disabled styles to a button</p>
+                    <p>Add the <code>disabled</code> attribute to a button OR the class <code>.is-disabled</code> is available to add if required eg. if it is an anchor or span element</p>
+                    <p>The below examples use either the attribute or the class to show the styling looks the same for either</p>
                 </div>
             </header>
             <div class="content-block">
@@ -112,6 +113,10 @@
                         <button class="btn btn--secondary is-disabled">Secondary disabled</button>
                         <button class="btn btn--tertiary is-disabled">Tertiary disabled</button>
                         <button class="btn btn--danger is-disabled">Danger disabled</button>
+                        <button disabled class="btn">Primary disabled</button>
+                        <button disabled class="btn btn--secondary">Secondary disabled</button>
+                        <button disabled class="btn btn--tertiary">Tertiary disabled</button>
+                        <button disabled class="btn btn--danger">Danger disabled</button>
                     </div>
                 </div>
             </div>
@@ -131,7 +136,9 @@
                 <div class="container">
                     <div class="btns-container">
                         <button class="btn btn--passive">Passive button</button>
-                        <button class="btn btn--passive"><span>Passive button with cheveron icon</span><i class="icon icon--inline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M249 407c-8.2 0-16-3.6-21.4-9.8L14.9 151.8c-10.2-11.8-9-29.7 2.8-39.9s29.6-9 39.9 2.8L249 335.5l191.3-220.8c10.3-11.8 28.1-13.1 39.9-2.8 11.8 10.2 13.1 28.1 2.8 39.9L270.4 397.2c-5.4 6.2-13.2 9.8-21.4 9.8z"/></svg></i></button>
+                        <button class="btn btn--passive"><span>Passive button with chevron icon</span><i class="icon icon--inline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M249 407c-8.2 0-16-3.6-21.4-9.8L14.9 151.8c-10.2-11.8-9-29.7 2.8-39.9s29.6-9 39.9 2.8L249 335.5l191.3-220.8c10.3-11.8 28.1-13.1 39.9-2.8 11.8 10.2 13.1 28.1 2.8 39.9L270.4 397.2c-5.4 6.2-13.2 9.8-21.4 9.8z"/></svg></i></button>
+
+                        <button class="btn btn--passive is-disabled"><span>Passive button with chevron icon and disabled</span><i class="icon icon--inline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M249 407c-8.2 0-16-3.6-21.4-9.8L14.9 151.8c-10.2-11.8-9-29.7 2.8-39.9s29.6-9 39.9 2.8L249 335.5l191.3-220.8c10.3-11.8 28.1-13.1 39.9-2.8 11.8 10.2 13.1 28.1 2.8 39.9L270.4 397.2c-5.4 6.2-13.2 9.8-21.4 9.8z"/></svg></i></button>
                     </div>
                 </div>
             </div>

@@ -96,10 +96,7 @@ body {
 [data-page='sass-mixins'] .nav-link--sass-mixins {
   color: #8cc63f; }
 
-[data-page='accordions'] .nav-link--accordions {
-  color: #8cc63f; }
-
-[data-page='alerts'] .nav-link--alerts {
+[data-page='accordions alerts'] .nav-link--accordions alerts {
   color: #8cc63f; }
 
 [data-page='buttons'] .nav-link--buttons {

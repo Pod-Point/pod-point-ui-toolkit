@@ -13,11 +13,11 @@
 
     &::after {
         @include position(absolute, 35% $input-h-padding null null);
-        background-image: url($css-bg-path+'icons/cheveron.svg');
+        background-image: url($css-bg-path+'icons/chevron.svg');
         background-size: cover;
         content: '';
-        height: $select-cheveron-size;
-        width: $select-cheveron-size;
+        height: $select-chevron-size;
+        width: $select-chevron-size;
     }
 
     select {

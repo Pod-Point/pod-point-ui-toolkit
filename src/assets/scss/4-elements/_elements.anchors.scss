@@ -13,7 +13,7 @@ a,
     &:active,
     &:focus,
     &:hover {
-        opacity: .7;
+        opacity: $opacity-hover;
     }
 
     &:active,

@@ -234,7 +234,7 @@ a,
   .a:active,
   .a:focus,
   .a:hover {
-    opacity: .7; }
+    opacity: 0.7; }
   a:active, a:focus,
   .a:active,
   .a:focus {
@@ -867,7 +867,7 @@ img {
       padding-left: 35px; } }
   .btn:focus {
     outline: none; }
-  .btn:hover:not(.is-disabled), .btn:focus:not(.is-disabled), .btn:active:not(.is-disabled) {
+  .btn:hover:not(.is-disabled):not([disabled]), .btn:focus:not(.is-disabled):not([disabled]), .btn:active:not(.is-disabled):not([disabled]) {
     background-color: transparent;
     border-color: #8cc63f;
     color: #8cc63f;
@@ -876,7 +876,7 @@ img {
     background-color: #b3b3b3;
     border-color: #b3b3b3;
     color: #fff; }
-    .btn.btn--secondary:hover:not(.is-disabled), .btn.btn--secondary:focus:not(.is-disabled), .btn.btn--secondary:active:not(.is-disabled) {
+    .btn.btn--secondary:hover:not(.is-disabled):not([disabled]), .btn.btn--secondary:focus:not(.is-disabled):not([disabled]), .btn.btn--secondary:active:not(.is-disabled):not([disabled]) {
       background-color: transparent;
       border-color: #b3b3b3;
       color: #b3b3b3; }
@@ -884,7 +884,7 @@ img {
     background-color: transparent;
     border-color: #4d4d4d;
     color: #4d4d4d; }
-    .btn.btn--tertiary:hover:not(.is-disabled), .btn.btn--tertiary:focus:not(.is-disabled), .btn.btn--tertiary:active:not(.is-disabled) {
+    .btn.btn--tertiary:hover:not(.is-disabled):not([disabled]), .btn.btn--tertiary:focus:not(.is-disabled):not([disabled]), .btn.btn--tertiary:active:not(.is-disabled):not([disabled]) {
       background-color: #4d4d4d;
       border-color: #4d4d4d;
       color: #fff; }
@@ -892,7 +892,7 @@ img {
     background-color: #c1272d;
     border-color: #c1272d;
     color: #fff; }
-    .btn.btn--danger:hover:not(.is-disabled), .btn.btn--danger:focus:not(.is-disabled), .btn.btn--danger:active:not(.is-disabled) {
+    .btn.btn--danger:hover:not(.is-disabled):not([disabled]), .btn.btn--danger:focus:not(.is-disabled):not([disabled]), .btn.btn--danger:active:not(.is-disabled):not([disabled]) {
       background-color: transparent;
       border-color: #c1272d;
       color: #c1272d; }
@@ -903,13 +903,12 @@ img {
     display: block;
     height: 1.25rem;
     width: 1.25rem; }
-  .btn.btn--selected:hover:not(.is-disabled)::before, .btn.btn--selected:focus:not(.is-disabled)::before, .btn.btn--selected:active:not(.is-disabled)::before {
+  .btn.btn--selected:hover:not(.is-disabled):not([disabled])::before, .btn.btn--selected:focus:not(.is-disabled):not([disabled])::before, .btn.btn--selected:active:not(.is-disabled):not([disabled])::before {
     background-image: url("../img/css-bg/icons/tick-primary.svg"); }
   .btn.btn--passive {
     background-color: transparent;
     border: 0;
     color: #333;
-    display: inline-block;
     font-weight: 700;
     line-height: 1.5;
     max-width: auto;
@@ -919,9 +918,9 @@ img {
     @media (min-width: 40em) {
       .btn.btn--passive {
         padding: 0; } }
-    .btn.btn--passive:hover:not(.is-disabled), .btn.btn--passive:focus:not(.is-disabled), .btn.btn--passive:active:not(.is-disabled) {
+    .btn.btn--passive:hover:not(.is-disabled):not([disabled]), .btn.btn--passive:focus:not(.is-disabled):not([disabled]), .btn.btn--passive:active:not(.is-disabled):not([disabled]) {
       color: #333;
-      opacity: .8; }
+      opacity: 0.7; }
 
 .card {
   background-color: #fff;
@@ -1716,7 +1715,7 @@ textarea.form__control {
     position: absolute;
     top: 35%;
     right: 10px;
-    background-image: url("../img/css-bg/icons/cheveron.svg");
+    background-image: url("../img/css-bg/icons/chevron.svg");
     background-size: cover;
     content: '';
     height: 0.9375rem;
@@ -1778,9 +1777,15 @@ textarea.form__control {
 .form__group:not(.form__group--error) .form__error {
   display: none; }
 
-.is-disabled {
-  cursor: not-allowed;
+.is-disabled,
+[disabled] {
+  cursor: not-allowed !important;
   opacity: 0.5; }
+  .is-disabled:hover, .is-disabled:focus, .is-disabled:active,
+  [disabled]:hover,
+  [disabled]:focus,
+  [disabled]:active {
+    opacity: 0.5 !important; }
 
 .tel-link:hover {
   cursor: default;
