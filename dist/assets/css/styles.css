@@ -702,93 +702,85 @@ img {
 
 .accordion {
   -webkit-tap-highlight-color: transparent; }
-  .accordion .accordion__dt {
-    padding-top: 20px;
-    padding-bottom: 20px; }
-    .accordion .accordion__dt .accordion__toggle-icon {
-      top: 20px; }
-  .accordion .accordion__dd .accordion__dd-content {
+  .accordion .accordion__toggle {
+    padding-bottom: 20px;
+    padding-top: 20px; }
+  .accordion .accordion__content .accordion__inner {
     padding-bottom: 20px; }
   .accordion.grid-row .grid-col-4 {
     margin-top: 0;
     margin-bottom: 0; }
-  .accordion .accordion__dt {
+  .accordion .accordion__toggle {
     padding-right: 0;
     padding-left: 0;
     cursor: pointer;
     position: relative; }
-    .accordion .accordion__dt .accordion__toggle-icon {
-      position: absolute;
-      top: 0;
-      right: 0; }
-    .accordion .accordion__dt.is-open + dd {
+    .accordion .accordion__toggle.is-open + .accordion__content {
       max-height: 300px;
       overflow: hidden;
       transition: max-height 1s ease-in; }
-  .accordion .accordion__dd {
+  .accordion .accordion__content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s ease-out;
     border-bottom: 1px solid #e2e2e2;
     margin: 0; }
   @media (min-width: 50em) {
-    .accordion--only-mobile .accordion__dt {
+    .accordion--only-mobile .accordion__toggle {
       border-bottom: 0;
       cursor: default;
       padding: 0; }
-      .accordion--only-mobile .accordion__dt .accordion__toggle-icon {
+      .accordion--only-mobile .accordion__toggle .accordion__toggle-icon {
         display: none; }
-    .accordion--only-mobile .accordion__dd {
+    .accordion--only-mobile .accordion__content {
       max-height: 300px;
       overflow: hidden;
       transition: max-height 1s ease-in; } }
 
-.accordion--v-spacing-xs .accordion__dt {
-  padding-top: 10px;
-  padding-bottom: 10px; }
-  .accordion--v-spacing-xs .accordion__dt .accordion__toggle-icon {
-    top: 10px; }
+.accordion--v-spacing-xs .accordion__toggle {
+  padding-bottom: 10px;
+  padding-top: 10px; }
 
-.accordion--v-spacing-xs .accordion__dd .accordion__dd-content {
+.accordion--v-spacing-xs .accordion__content .accordion__inner {
   padding-bottom: 10px; }
 
-.accordion--v-spacing-sm .accordion__dt {
-  padding-top: 15px;
-  padding-bottom: 15px; }
-  .accordion--v-spacing-sm .accordion__dt .accordion__toggle-icon {
-    top: 15px; }
+.accordion--v-spacing-sm .accordion__toggle {
+  padding-bottom: 15px;
+  padding-top: 15px; }
 
-.accordion--v-spacing-sm .accordion__dd .accordion__dd-content {
+.accordion--v-spacing-sm .accordion__content .accordion__inner {
   padding-bottom: 15px; }
 
-.accordion--v-spacing-lg .accordion__dt {
-  padding-top: 30px;
-  padding-bottom: 30px; }
-  .accordion--v-spacing-lg .accordion__dt .accordion__toggle-icon {
-    top: 30px; }
+.accordion--v-spacing-lg .accordion__toggle {
+  padding-bottom: 30px;
+  padding-top: 30px; }
 
-.accordion--v-spacing-lg .accordion__dd .accordion__dd-content {
+.accordion--v-spacing-lg .accordion__content .accordion__inner {
   padding-bottom: 30px; }
 
-.accordion--v-spacing-xl .accordion__dt {
-  padding-top: 40px;
-  padding-bottom: 40px; }
-  .accordion--v-spacing-xl .accordion__dt .accordion__toggle-icon {
-    top: 40px; }
+.accordion--v-spacing-xl .accordion__toggle {
+  padding-bottom: 40px;
+  padding-top: 40px; }
 
-.accordion--v-spacing-xl .accordion__dd .accordion__dd-content {
+.accordion--v-spacing-xl .accordion__content .accordion__inner {
   padding-bottom: 40px; }
 
-.accordion--toggle-icon .accordion__dt {
-  padding-left: 3.5em; }
-  .accordion--toggle-icon .accordion__dt .accordion__toggle-icon {
+.accordion--toggle-icon--lg .accordion__toggle {
+  padding-bottom: 30px;
+  padding-top: 30px; }
+
+.accordion--toggle-icon--lg .accordion__content .accordion__inner {
+  padding-bottom: 30px; }
+
+.accordion--toggle-icon--lg .accordion__toggle {
+  padding-left: 80px; }
+  .accordion--toggle-icon--lg .accordion__toggle .accordion__toggle-icon {
     position: absolute;
-    right: auto;
-    left: 0;
-    margin-top: -.2em; }
+    top: 30px;
+    left: 0; }
 
-.accordion--toggle-icon .accordion__dd {
-  padding-left: 3.5em; }
+.accordion--toggle-icon--lg .accordion__content {
+  padding-left: 80px; }
 
 .alert {
   margin-bottom: 10px;
@@ -1503,7 +1495,6 @@ img {
 .plus-minus-toggle {
   cursor: pointer;
   display: block;
-  float: right;
   height: 1rem;
   -ms-transform: rotate(0deg);
       transform: rotate(0deg);

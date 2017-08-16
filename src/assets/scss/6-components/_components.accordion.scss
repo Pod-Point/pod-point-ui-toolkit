@@ -12,23 +12,19 @@
         }
     }
 
-    .accordion__dt {
+    .accordion__toggle {
         @include padding(null 0);
         cursor: pointer;
         position: relative;
 
-        .accordion__toggle-icon {
-            @include position(absolute, 0 0 null null);
-        }
-
         &.is-open {
-            + dd {
+            + .accordion__content {
                 @include slide-down-active(1s, 300px);
             }
         }
     }
 
-    .accordion__dd {
+    .accordion__content {
         @include slide-down-collapsed(1s);
         border-bottom: $border-thin;
         margin: 0;
@@ -37,7 +33,7 @@
     &--only-mobile {
         @include screen-md-min {
 
-            .accordion__dt {
+            .accordion__toggle {
                 border-bottom: 0;
                 cursor: default;
                 padding: 0;
@@ -47,7 +43,7 @@
                 }
             }
 
-            .accordion__dd {
+            .accordion__content {
                 @include slide-down-active(1s, 300px);
             }
         }
@@ -71,17 +67,7 @@
 }
 
 
-.accordion--toggle-icon {
-    .accordion__dt {
-        padding-left: $accordion-with-toggle-h-spacing;
-
-        .accordion__toggle-icon {
-            @include position(absolute, null auto null 0);
-            margin-top: -.2em;
-        }
-    }
-
-    .accordion__dd {
-        padding-left: $accordion-with-toggle-h-spacing;
-    }
+.accordion--toggle-icon--lg {
+    @include accordion-size($accordion-v-spacing-lg);
+    @include accordion-with-icon($accordion-v-spacing-lg, $icon-size: 50px, $icon-pos-right: false);
 }
