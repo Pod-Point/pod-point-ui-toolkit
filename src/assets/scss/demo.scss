@@ -59,11 +59,11 @@ body {
 .demo-note {
     @include font-size-sm;
     background-color: $gray-light;
-    padding: .5em 10px;
     margin-bottom: .5em;
+    padding: .5em 10px;
 }
 
-$pages: ('installation', 'scss', 'css-bg-img', 'javascript', 'inline-svg-icons', 'helper-classes', 'sass-mixins', 'accordions', 'alerts', 'buttons', 'cards', 'confirm-popup', 'forms', 'grid', 'icons', 'labels', 'lists', 'modals', 'tables', 'toggles', 'tooltips', 'typography');
+$pages: ('installation', 'scss', 'css-bg-img', 'javascript', 'inline-svg-icons', 'helper-classes', 'sass-mixins', 'accordions', 'alerts', 'buttons', 'cards', 'confirm-popup', 'forms', 'grid', 'icons', 'labels', 'lists', 'modals', 'tables', 'tooltips', 'typography');
 
 @each $page in $pages {
     [data-page='#{$page}'] {
