@@ -65,9 +65,3 @@
 .accordion--v-spacing-xl {
     @include accordion-size($accordion-v-spacing-xl);
 }
-
-
-.accordion--toggle-icon--lg {
-    @include accordion-size($accordion-v-spacing-lg);
-    @include accordion-with-icon($accordion-v-spacing-lg, $icon-size: 50px, $icon-pos-right: false);
-}

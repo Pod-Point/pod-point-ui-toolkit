@@ -10,22 +10,98 @@
         </header>
 
 
-        <!-- CONFIRM POPUP -->
-        <section>
+        <header class="content-block bg-light-gray">
+            <div class="container">
+                <h3>Required files</h3>
+                <p>SCSS files required: <code>_components.labels.scss</code></p>
+            </div>
+        </header>
+
+
+        <!-- LABEL STRUCTURE AND SIZES -->
+        <section id="labelsSizes">
             <header class="content-block bg-light-gray">
                 <div class="container">
-                    <h3>Required files</h3>
-                    <p>SCSS files required: <code>_components.labels.scss</code></p>
+                    <h3>Label structure</h3>
+                    <p>The class required for a label is <code>.label</code></p>
+                    <p>To include an inline svg icon add the modifying classes <code>.label--left-icon</code> or <code>.label--right-icon</code></p>
+                    <p>The labels and label icons will resize according to font size, so the resizing will occur by adding a font size class eg <code>.font-size-xs</code></p>
+
+{{> snippet-label }}
 
                 </div>
             </header>
+
             <div class="content-block">
                 <div class="container">
-                    <div class="label m-b-sm">I am a label</div>
-                    <div class="label label--left-icon m-b-sm">{{> icon-cross }} I am a label with an icon on the left</div>
-                    <div class="label label--right-icon m-b-sm">I am a label with an icon on the right {{> icon-charge-location }}</div>
+                    <h4>Labels with font size extra small</h4>
+                    <div class="label font-size-xs m-b-sm">I am a label</div>
+                    <div class="label font-size-xs label--left-icon m-b-sm">{{> icon-cross }} I am a label with an icon on the left</div>
+                    <div class="label font-size-xs label--right-icon m-b-sm">I am a label with an icon on the right {{> icon-charge-location }}</div>
+                    <br>
+                    <h4>Labels with font size small</h4>
+                    <div class="label font-size-sm m-b-sm">I am a label</div>
+                    <div class="label font-size-sm label--left-icon m-b-sm">{{> icon-cross }} I am a label with an icon on the left</div>
+                    <div class="label font-size-sm label--right-icon m-b-sm">I am a label with an icon on the right {{> icon-charge-location }}</div>
+                    <br>
+                    <h4>Labels with font size medium</h4>
+                    <div class="label font-size-md m-b-sm">I am a label</div>
+                    <div class="label font-size-md label--left-icon m-b-sm">{{> icon-cross }} I am a label with an icon on the left</div>
+                    <div class="label font-size-md label--right-icon m-b-sm">I am a label with an icon on the right {{> icon-charge-location }}</div>
+                    <br>
+                    <h4>Labels with font size large</h4>
+                    <div class="label font-size-lg m-b-sm">I am a label</div>
+                    <div class="label font-size-lg label--left-icon m-b-sm">{{> icon-cross }} I am a label with an icon on the left</div>
+                    <div class="label font-size-lg label--right-icon m-b-sm">I am a label with an icon on the right {{> icon-charge-location }}</div>
+                    <br>
+                    <h4>Labels with font size extra large</h4>
+                    <div class="label font-size-xl m-b-sm">I am a label</div>
+                    <div class="label font-size-xl label--left-icon m-b-sm">{{> icon-cross }} I am a label with an icon on the left</div>
+                    <div class="label font-size-xl label--right-icon m-b-sm">I am a label with an icon on the right {{> icon-charge-location }}</div>
                 </div>
             </div>
         </section>
+
+
+        <!-- LABEL COLOURS -->
+        <section id="labelsColours">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Label colours</h3>
+                    <p>To change the label colour, the following modifying classes are available for greys:</p>
+                    <ul class="list--inline">
+                        <li><code>.label--white</code></li>
+                        <li><code>.label--very-light-gray</code></li>
+                        <li><code>.label--light-gray</code></li>
+                        <li><code>.label--gray</code></li>
+                        <li><code>.label--dark-gray</code></li>
+                        <li><code>.label--very-dark-gray</code></li>
+                    </ul>
+                    <br>
+                    <p>And for colours:</p>
+                    <ul class="list--inline">
+                        <li><code>.label--primary</code></li>
+                        <li><code>.label--danger</code></li>
+                    </ul>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <h4>Greyscale</h4>
+                    <div class="label font-size-md label--left-icon label--white m-b-sm">{{> icon-cross }} I am a label</div>
+                    <div class="label font-size-md label--left-icon label--very-light-gray m-b-sm">{{> icon-cross }} I am a label</div>
+                    <div class="label font-size-md label--left-icon label--light-gray m-b-sm">{{> icon-cross }} I am a label</div>
+                    <div class="label font-size-md label--left-icon label--gray m-b-sm">{{> icon-cross }} I am a label</div>
+                    <div class="label font-size-md label--left-icon label--dark-gray m-b-sm">{{> icon-cross }} I am a label</div>
+                    <div class="label font-size-md label--left-icon label--very-dark-gray m-b-sm">{{> icon-cross }} I am a label</div>
+                    <br>
+                    <h4>Other colours</h4>
+                    <div class="label font-size-md label--left-icon label--primary m-b-sm">{{> icon-cross }} I am a label</div>
+                    <div class="label font-size-md label--left-icon label--danger m-b-sm">{{> icon-cross }} I am a label</div>
+                </div>
+            </div>
+        </section>
+
     </div>
 </div>

@@ -40,11 +40,10 @@
             transform: rotate(360deg);
         }
 
-        .accordion {
-            .is-open & {
-                opacity: 0;
-                transform: rotate(360deg);
-            }
+        // sass-lint:disable-block force-element-nesting
+        .accordion__toggle.is-open & {
+            opacity: 0;
+            transform: rotate(360deg);
         }
     }
 }

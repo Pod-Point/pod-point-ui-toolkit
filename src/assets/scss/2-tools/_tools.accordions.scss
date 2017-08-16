@@ -2,6 +2,8 @@
 //  TOOLS - ACCORDIONS
 // =============================================================================
 
+// sass-lint:disable property-sort-order
+
 @mixin accordion-size($v-spacing) {
     .accordion__toggle {
         padding-bottom: $v-spacing;
@@ -9,7 +11,8 @@
     }
 
     .accordion__content {
-        .accordion__inner {
+        .accordion__inner,
+        .accordion__content-inner {
             padding-bottom: $v-spacing;
         }
     }
@@ -20,7 +23,7 @@
     $icon-padding: 0;
 
     @if $icon-size != null {
-        $icon-padding: $v-spacing + $icon-size;
+        $icon-padding: ($v-spacing / 1.3) + $icon-size;
     }
 
     .accordion__toggle {
