@@ -10,17 +10,45 @@
         </header>
 
 
-        <!-- INLINE SVG IMAGES -->
-        <section id="cssBgImg">
+        <!-- INLINE SVG ICONS -->
+        <section id="inlineIcon">
             <header class="content-block bg-light-gray">
                 <div class="container">
-                    <h3>Inline SVG icons</h3>
+                    <h3>Copying icons to your project</h3>
                 </div>
             </header>
 
             <div class="content-block">
                 <div class="container">
-                    <p>[ Where to find the inline SVG icons and suggestions of how to include them (gulp tasks to copy over?) ]</p>
+                    <h4>1. Copy SVG icons to your project</h4>
+                    <p>Copy the contents of the folder named <code>icons</code> which contains the SVG icons used in the toolkit.</p>
+                    <p>The dist folder contains minified SVGs. Full file path is:</p>
+                    <p><code>path/to/node_modules/@pod-point/pod-point-ui-toolkit/dist/assets/img/icons/</code></p>
+                    <p class="demo-note">The toolkit will be continuously updated, therefore it is highly recommended to use a task runner to copy files over rather than manually.</p>
+                    <br>
+                    <h4>2. Make SVG icons inline</h4>
+                    <p>The SVGs can be used inline simply by changing the file extension. So depending on your templating language, you can rename the <code>.svg</code> to be <code>.html</code> or <code>.hbs</code> etc. and then use the file as an includes/partials.</p>
+                    <p>The gulp task <code>gulp-rename</code> is useful for this scenario.</p>
+                    <p class="demo-note">The toolkit will be continuously updated, therefore it is highly recommended to use a task runner to copy files over rather than manually.</p>
+                    <br>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ADD NEW ICONS -->
+        <section id="addIcons">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Add icons to the toolkit</h3>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <p>To add a new icon to the toolkit, drop the new icon in the src icons folder. Full file path is:</p>
+                    <p><code>path/to/node_modules/@pod-point/pod-point-ui-toolkit/src/assets/img/icons/</code></p>
+                    <p>Recompile by running <code>gulp</code></p>
                 </div>
             </div>
         </section>

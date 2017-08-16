@@ -14,15 +14,45 @@
         <section id="cssBgImg">
             <header class="content-block bg-light-gray">
                 <div class="container">
-                    <h3>CSS Background images</h3>
+                    <h3>Copying background images to your project</h3>
                 </div>
             </header>
 
             <div class="content-block">
                 <div class="container">
-                    <p>[ Where to find the images used and how to change the file path variable (gulp tasks to copy over?) ]</p>
+                    <h4>1. Copy image files to your project</h4>
+                    <p>Copy the contents of the folder named <code>css-bg</code> which contains the CSS background images used in the toolkit.</p>
+                    <p>The dist folder contains minified SVGs. Full file path is:</p>
+                    <p><code>path/to/node_modules/@pod-point/pod-point-ui-toolkit/dist/assets/img/css-bg/</code></p>
+                    <p class="demo-note">The toolkit will be continuously updated, therefore it is highly recommended to use a task runner to copy files over rather than manually.</p>
+                    <br>
+                    <h4>2. Relink in the CSS</h4>
+                    <p>There is a SASS variable in the file <code>1-settings/_settings.global.scss</code> which sets the file path to the background images:</p>
+                    <p><code>$css-bg-path: '../img/css-bg/';</code></p>
+                    <p>If your folder structure is different, you can reassign this variable after importing the settings SCSS files. See how to import the SCSS files <a href="scss.html">here</a></p>
                 </div>
             </div>
         </section>
+
+
+        <!-- ADD NEW BG IMGS -->
+        <section id="addBgImg">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Add background images to the toolkit</h3>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <p>To add a new background image to the toolkit, drop the new icon in the src css-bg folder. Full file path is:</p>
+                    <p><code>path/to/node_modules/@pod-point/pod-point-ui-toolkit/src/assets/img/css-bg/</code></p>
+                    <p>Recompile by running <code>gulp</code></p>
+                    <p class="demo-note">The background images don't have to be SVGs but if they are, they will be minified before compiling to the dist folder</p>
+                    <br>
+                </div>
+            </div>
+        </section>
+
     </div>
 </div>
