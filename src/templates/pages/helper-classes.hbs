@@ -33,16 +33,16 @@
                     <br>
                     <h4>Margin and padding syntax</h4>
                     <p>The helper classes start with <code>.m</code> for margin and <code>.p</code> for padding</p>
-                    <p>Next is the direction <code>-t</code> top, <code>-r</code> right, <code>-b</code> bottom, <code>-l</code> left, <code>-h</code> horizontal (right and left), <code>-v</code> vertical (top and bottom)</p>
-                    <p>Note if no direction is applied, it will default to all directions</p>
+                    <p>Next is the direction <code>-a</code> all, <code>-t</code> top, <code>-r</code> right, <code>-b</code> bottom, <code>-l</code> left, <code>-h</code> horizontal (right and left), <code>-v</code> vertical (top and bottom)</p>
                     <p>Finally is the spacing sizes <code>-none</code>, <code>-xxs</code>, <code>-xs</code>, <code>-sm</code>, <code>-md</code>, <code>-lg</code>, <code>-xl</code>, <code>-xxl</code></p>
                     <br>
-                    <h4>Examples</h4>
+                    <h4>Syntax examples</h4>
                     <ul class="list--inline">
-                        <li><code>.p-none</code></li>
-                        <li><code>.m-xs</code></li>
+                        <li><code>.p-a-none</code></li>
+                        <li><code>.m-b-xs</code></li>
                         <li><code>.p-l-sm</code></li>
                         <li><code>.p-h-xl</code></li>
+                        <li><code>.m-a-sm</code></li>
                         <li><code>.m-r-none</code></li>
                         <li><code>.p-b-xl</code></li>
                         <li><code>.m-v-lg</code></li>
@@ -66,23 +66,93 @@
                     <ul class="list--inline">
                         <li><b>base:</b> 2px solid #ccc</li>
                         <li><b>thin:</b> 1px solid #e2e2e2</li>
-                        <li><b>radius:</b> 5px</li>
                     </ul>
                     <br>
                     <h4>Border syntax</h4>
                     <p>The border helper classes start with <code>.b</code></p>
-                    <p>Next is the direction <code>-t</code> top and <code>-b</code> bottom</p>
-                    <p>Note if no direction is applied, it will default to all directions</p>
-                    <p>Finally is the type of border <code>-none</code>, <code>-base</code>, <code>-thin</code>, <code>-radius</code> (radius cannot be used with a direction)</p>
+                    <p>Next is the direction <code>-a</code> all, <code>-t</code> top, <code>-r</code> right, <code>-b</code> bottom, <code>-l</code> left, <code>-h</code> horizontal (right and left), <code>-v</code> vertical (top and bottom)</p>
+                    <p>Finally is the type of border <code>-none</code>, <code>-base</code>, <code>-thin</code></p>
                     <br>
-                    <h4>Examples</h4>
+                    <h4>Syntax examples</h4>
                     <ul class="list--inline">
-                        <li><code>.b-none</code></li>
-                        <li><code>.b-t-thin</code></li>
-                        <li><code>.b-base</code></li>
-                        <li><code>.b-radius</code></li>
                         <li><code>.b-t-none</code></li>
+                        <li><code>.b-a-thin</code></li>
+                        <li><code>.b-t-thin</code></li>
+                        <li><code>.b-h-base</code></li>
+                        <li><code>.b-t-none</code></li>
+                        <li><code>.b-v-thin</code></li>
                     </ul>
+                    <br>
+                    <h4>Visual examples</h4>
+                    <div class="m-b-sm">
+                        <div class="inline-block b-a-base p-a-sm">I am a div with a base border</div>
+                        <p class="inline-block"> = <code>.b-a-base</code></p>
+                    </div>
+                    <div class="m-b-sm">
+                        <div class="inline-block b-a-thin p-a-sm">I am a div with a thin border</div>
+                        <p class="inline-block"> = <code>.b-a-thin</code></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- BORDER RADIUS -->
+        <section id="helpersBorderRadius">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Borders radius</h3>
+                    <p>Helper classes for rounded corners</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Border radius settings</h4>
+                    <ul class="list--inline">
+                        <li><b>sm:</b> 5px</li>
+                        <li><b>md:</b> 10px</li>
+                        <li><b>lg:</b> 20px</li>
+                        <li><b>xl:</b> 30px</li>
+                        <li><b>circle:</b> 50%</li>
+                    </ul>
+                    <br>
+                    <h4>Border radius syntax</h4>
+                    <p>The border radius helper classes start with <code>.br</code></p>
+                    <p>Next is the direction <code>-a</code> all, <code>-t</code> top, <code>-r</code> right, <code>-b</code> bottom, <code>-l</code> left</p>
+                    <p>Finally is the type of border radius <code>-none</code>, <code>-sm</code>, <code>-md</code>, <code>-lg</code>, <code>-xl</code></p>
+                    <p class="demo-note">Note: to make a border radius a circle (50%) the class <code>.br-circle</code> can be applied. It can't be applied to each direction like the rest.</p>
+                    <br>
+                    <h4>Syntax examples</h4>
+                    <ul class="list--inline">
+                        <li><code>.br-t-none</code></li>
+                        <li><code>.br-a-md</code></li>
+                        <li><code>.br-t-sm</code></li>
+                        <li><code>.br-r-xl</code></li>
+                        <li><code>.br-a-lg</code></li>
+                        <li><code>.br-circle</code></li>
+                    </ul>
+                    <br>
+                    <h4>Visual examples</h4>
+                    <div class="m-b-sm">
+                        <div class="inline-block b-a-base br-a-sm p-a-sm">I am a div with a small border radius</div>
+                        <p class="inline-block"> = <code>.br-a-sm</code> - this is the base radius throughout POD Point elements eg. form controls and cards</p>
+                    </div>
+                    <div class="m-b-sm">
+                        <div class="inline-block b-a-base br-a-md p-a-sm">I am a div with a medium border radius</div>
+                        <p class="inline-block"> = <code>.br-a-md</code></p>
+                    </div>
+                    <div class="m-b-sm">
+                        <div class="inline-block b-a-base br-a-lg p-a-sm">I am a div with a large border radius</div>
+                        <p class="inline-block"> = <code>.br-a-lg</code> - this is the radius used for POD Point buttons</p>
+                    </div>
+                    <div class="m-b-sm">
+                        <div class="inline-block b-a-base br-a-xl p-a-sm">I am a div with a extra large border radius</div>
+                        <p class="inline-block"> = <code>.br-a-xl</code></p>
+                    </div>
+                    <div class="m-b-sm">
+                        <div class="demo-circle inline-block b-a-base br-circle p-a-xs">50%</div>
+                        <p class="inline-block">= <code>.br-circle</code></p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -134,7 +204,7 @@
                     <h4>The helpers</h4>
                     <code>.text-center</code>, <code>.text-right</code>, <code>.text-left</code>, <code>.float-right</code>, <code>.float-left</code>, <code>.float-left</code>, <code>.m-center</code>, <code>.hidden</code>, <code>.block</code>, <code>.inline-block</code>, <code>.width-full</code>
                     <br>
-                    <h4>Examples</h4>
+                    <h4>Syntax examples</h4>
                     <ul class="list--inline">
                         <li><code>.text-center</code></li>
                         <li><code>.float-right-sm</code></li>

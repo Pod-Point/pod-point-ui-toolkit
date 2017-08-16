@@ -1,0 +1,43 @@
+// =============================================================================
+//  TRUMPS - BORDER RADIUS
+// =============================================================================
+
+// sass-lint:disable no-important
+
+$border-radius: (
+    'sm': $border-radius-sm,
+    'md': $border-radius-md,
+    'lg': $border-radius-lg,
+    'xl': $border-radius-xl,
+    'none': 0
+);
+
+@each $size, $value in $border-radius {
+    .br-a-#{$size} {
+        border-radius: $value !important;
+    }
+
+    .br-t-#{$size} {
+        border-top-left-radius: $value !important;
+        border-top-right-radius: $value !important;
+    }
+
+    .br-r-#{$size} {
+        border-bottom-right-radius: $value !important;
+        border-top-right-radius: $value !important;
+    }
+
+    .br-b-#{$size} {
+        border-bottom-left-radius: $value !important;
+        border-bottom-right-radius: $value !important;
+    }
+
+    .br-l-#{$size} {
+        border-bottom-left-radius: $value !important;
+        border-top-left-radius: $value !important;
+    }
+}
+
+.br-circle {
+    border-radius: 50% !important;
+}

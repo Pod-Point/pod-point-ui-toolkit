@@ -12,7 +12,7 @@ $button-max-width: 600px;
 $button-min-height: 40px;
 
 // Radius
-$button-radius: 30px;
+$button-radius: $border-radius-xl;
 
 // Text/icons
 $button-font-size: rem(15);
