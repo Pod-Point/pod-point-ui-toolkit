@@ -1,151 +1,155 @@
-{{> demo-header }}
-<div data-page="cards">
-    <header class="content-block content-block--strip bg-primary">
-        <div class="container">
-            <h2>Cards</h2>
-        </div>
-    </header>
+<div data-page="cards" class="demo-page-content">
 
+    {{> demo-sidebar }}
 
-    <section id="cardsRequiredFiles">
-        <header class="content-block bg-light-gray">
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
             <div class="container">
-                <h3>Required files</h3>
-                <p>SCSS files required: <code>_components.cards.scss</code></p>
-                <h3>The markup</h3>
-                <p>A card is defined using the class <code>.card</code> along with various modifying classes explained in the examples below</p>
-                <p>Some of the cards in the below examples are inside a grid system explained <a href="/grids.html">here</a></p>
-            </div>
-        </header>
-    </section>
-
-
-    <!-- DEFAULT CARD (LEFT ALIGNED) -->
-    <section id="cardsDefault">
-        <div class="container content-block">
-            <div class="card">
-                <h3>Default card</h3>
-                <p>This is a default card which is left aligned</p>
-                <hr>
-                <p>It can be used for information or anything else</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CENTRE ALIGNED CARDS -->
-    <section id="cardsCentred">
-        <header class="content-block bg-light-gray">
-            <div class="container">
-                <h3>Centre aligned cards</h3>
-                <p>To make a card centre aligned apply the modifying class <code>.card--centered</code></p>
-                <p>Note that the horizontal rule has a 20% margin on either side when inside a centre aligned card</p>
-                <p>To highlight a card apply the modifying class <code>.card--highlight</code></p>
-                <p>To give a card more padding apply the class <code>.card--padding-lg</code></p>
+                <h2>Cards</h2>
             </div>
         </header>
 
-        <div class="container content-block">
-            <div class="grid-wrap">
-                <div class="grid-row">
-                    <div class="grid-col grid-col--md-4">
-                        <div class="card card--centered">
-                            <h3>Card centred</h3>
-                            <p>This is a card that is centred</p>
-                            <img class="inline-block b-radius" src="http://placehold.it/100x50">
-                        </div>
-                    </div>
-                    <div class="grid-col grid-col--md-4">
-                        <div class="card card--centered card--highlight">
-                            <h3>Card highlighted</h3>
-                            <p>This is a card that is centred and <strong class="primary">highlighted!</strong></p>
-                            <hr>
-                            <p>It could be used as a selected state</p>
-                        </div>
-                    </div>
-                    <div class="grid-col grid-col--md-4">
-                        <div class="card card--centered card--padding-lg">
-                            <h3>Card padded</h3>
-                            <p>This is a card that is centred and it has more padding</p>
-                        </div>
-                    </div>
+
+        <section id="cardsRequiredFiles">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Required files</h3>
+                    <p>SCSS files required: <code>_components.cards.scss</code></p>
+                    <h3>The markup</h3>
+                    <p>A card is defined using the class <code>.card</code> along with various modifying classes explained in the examples below</p>
+                    <p>Some of the cards in the below examples are inside a grid system explained <a href="/grids.html">here</a></p>
+                </div>
+            </header>
+        </section>
+
+
+        <!-- DEFAULT CARD (LEFT ALIGNED) -->
+        <section id="cardsDefault">
+            <div class="container content-block">
+                <div class="card">
+                    <h3>Default card</h3>
+                    <p>This is a default card which is left aligned</p>
+                    <hr>
+                    <p>It can be used for information or anything else</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- CENTRE ALIGNED CARDS -->
+        <section id="cardsCentred">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Centre aligned cards</h3>
+                    <p>To make a card centre aligned apply the modifying class <code>.card--centered</code></p>
+                    <p>Note that the horizontal rule has a 20% margin on either side when inside a centre aligned card</p>
+                    <p>To highlight a card apply the modifying class <code>.card--highlight</code></p>
+                    <p>To give a card more padding apply the class <code>.card--padding-lg</code></p>
+                </div>
+            </header>
 
-    <!-- OPTION CARDS AND SAME HEIGHT -->
-    <section id="cardsOptions">
-        <header class="content-block bg-light-gray">
-            <div class="container">
-                <h3>Option cards</h3>
-                <p>Note that the only difference with an option card is the top border, so all the content inside can be added to any card</p>
-                <p>To create an option card add the modifier class <code>.card--options</code> and for more padding add <code>.card--padding-lg</code></p>
-                <p>For a recommended option card a modifier can be added to the options modifier, so the class is <code>.card--options--recommended</code></p>
-                <p>To make all the cards fill the grid columns and be the same height, add the class <code>.cards-same-height</code> to the <code>.grid-wrap</code> element</p>
-            </div>
-        </header>
-
-        <div class="content-block">
-            <div class="container">
-                <div class="grid-wrap cards-same-height">
+            <div class="container content-block">
+                <div class="grid-wrap">
                     <div class="grid-row">
                         <div class="grid-col grid-col--md-4">
-                            <div class="card card--options card--padding-lg">
-                                <h3 class="h2 text-center">Ullamcorper porttitor</h3>
-                                <hr>
-                                <p><strong class="font-size-lg">£559</strong> Lobortis ut odio quis</p>
-                                <p><strong class="font-size-lg primary">£229</strong> Semper sagittis</p>
-                                <hr>
-                                <p class="bold">Vivamus vel aliquet maecenas</p>
-                                <hr>
-                                <ul class="list--spacing-left-sm">
-                                    <li>In non lacus facilisis, sodales mi sed, ultrices nibh.</li>
-                                    <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
-                                </ul>
-                                <hr>
-                                <p><small>Ut eu faucibus libero. Praesent ac libero neque aptent taciti sociosqu.</small></p>
+                            <div class="card card--centered">
+                                <h3>Card centred</h3>
+                                <p>This is a card that is centred</p>
+                                <img class="inline-block b-radius" src="http://placehold.it/100x50">
                             </div>
                         </div>
                         <div class="grid-col grid-col--md-4">
-                            <div class="card card--options card--padding-lg card--options--recommended">
-                                <h3 class="h2 text-center">Ut eu faucibus libero</h3>
+                            <div class="card card--centered card--highlight">
+                                <h3>Card highlighted</h3>
+                                <p>This is a card that is centred and <strong class="primary">highlighted!</strong></p>
                                 <hr>
-                                <p><strong class="font-size-lg">£669</strong> Lobortis ut odio quis</p>
-                                <p><strong class="font-size-lg primary">£339</strong> Semper sagittis</p>
-                                <hr>
-                                <p class="bold">Vivamus vel aliquet maecenas</p>
-                                <hr>
-                                <ul class="list--spacing-left-sm">
-                                    <li>In non lacus facilisis, sodales mi sed, ultrices nibh.</li>
-                                    <li>Duis dictum, sem ac mattis elementum, lectus quam fringilla eros.</li>
-                                    <li>Donec accumsan placerat metus, eu pretium diam semper sagittis.</li>
-                                </ul>
-                                <hr>
-                                <p><small>Ut eu faucibus libero. Praesent ac libero neque aptent taciti sociosqu.</small></p>
+                                <p>It could be used as a selected state</p>
                             </div>
                         </div>
                         <div class="grid-col grid-col--md-4">
-                            <div class="card card--options card--padding-lg">
-                                <h3 class="h2 text-center">Curabitur in massa</h3>
-                                <hr>
-                                <p><strong class="font-size-lg">£999</strong> Lobortis ut odio quis</p>
-                                <p><strong class="font-size-lg primary">£779</strong> Semper sagittis</p>
-                                <hr>
-                                <p class="bold">Vivamus vel aliquet maecenas</p>
-                                <hr>
-                                <ul class="list--spacing-left-sm">
-                                    <li>In non lacus facilisis, sodales mi sed, ultrices nibh.</li>
-                                    <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
-                                    <li>Donec accumsan placerat metus, eu pretium diam semper sagittis.</li>
-                                </ul>
-                                <hr>
-                                <p><small>Ut eu faucibus libero. Praesent ac libero neque aptent taciti sociosqu.</small></p>
+                            <div class="card card--centered card--padding-lg">
+                                <h3>Card padded</h3>
+                                <p>This is a card that is centred and it has more padding</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+
+        <!-- OPTION CARDS AND SAME HEIGHT -->
+        <section id="cardsOptions">
+            <header class="content-block bg-light-gray">
+                <div class="container">
+                    <h3>Option cards</h3>
+                    <p>Note that the only difference with an option card is the top border, so all the content inside can be added to any card</p>
+                    <p>To create an option card add the modifier class <code>.card--options</code> and for more padding add <code>.card--padding-lg</code></p>
+                    <p>For a recommended option card a modifier can be added to the options modifier, so the class is <code>.card--options--recommended</code></p>
+                    <p>To make all the cards fill the grid columns and be the same height, add the class <code>.cards-same-height</code> to the <code>.grid-wrap</code> element</p>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <div class="grid-wrap cards-same-height">
+                        <div class="grid-row">
+                            <div class="grid-col grid-col--md-4">
+                                <div class="card card--options card--padding-lg">
+                                    <h3 class="h2 text-center">Ullamcorper porttitor</h3>
+                                    <hr>
+                                    <p><strong class="font-size-lg">£559</strong> Lobortis ut odio quis</p>
+                                    <p><strong class="font-size-lg primary">£229</strong> Semper sagittis</p>
+                                    <hr>
+                                    <p class="bold">Vivamus vel aliquet maecenas</p>
+                                    <hr>
+                                    <ul class="list--spacing-left-sm">
+                                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh.</li>
+                                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
+                                    </ul>
+                                    <hr>
+                                    <p><small>Ut eu faucibus libero. Praesent ac libero neque aptent taciti sociosqu.</small></p>
+                                </div>
+                            </div>
+                            <div class="grid-col grid-col--md-4">
+                                <div class="card card--options card--padding-lg card--options--recommended">
+                                    <h3 class="h2 text-center">Ut eu faucibus libero</h3>
+                                    <hr>
+                                    <p><strong class="font-size-lg">£669</strong> Lobortis ut odio quis</p>
+                                    <p><strong class="font-size-lg primary">£339</strong> Semper sagittis</p>
+                                    <hr>
+                                    <p class="bold">Vivamus vel aliquet maecenas</p>
+                                    <hr>
+                                    <ul class="list--spacing-left-sm">
+                                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh.</li>
+                                        <li>Duis dictum, sem ac mattis elementum, lectus quam fringilla eros.</li>
+                                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis.</li>
+                                    </ul>
+                                    <hr>
+                                    <p><small>Ut eu faucibus libero. Praesent ac libero neque aptent taciti sociosqu.</small></p>
+                                </div>
+                            </div>
+                            <div class="grid-col grid-col--md-4">
+                                <div class="card card--options card--padding-lg">
+                                    <h3 class="h2 text-center">Curabitur in massa</h3>
+                                    <hr>
+                                    <p><strong class="font-size-lg">£999</strong> Lobortis ut odio quis</p>
+                                    <p><strong class="font-size-lg primary">£779</strong> Semper sagittis</p>
+                                    <hr>
+                                    <p class="bold">Vivamus vel aliquet maecenas</p>
+                                    <hr>
+                                    <ul class="list--spacing-left-sm">
+                                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh.</li>
+                                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
+                                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis.</li>
+                                    </ul>
+                                    <hr>
+                                    <p><small>Ut eu faucibus libero. Praesent ac libero neque aptent taciti sociosqu.</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </div>

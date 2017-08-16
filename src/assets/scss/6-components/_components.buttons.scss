@@ -2,6 +2,8 @@
 //  COMPONENTS - BUTONS
 // =============================================================================
 
+// sass-lint:disable nesting-depth
+
 .btn {
     @extend %remove-link-styles;
     @include padding($button-v-padding $button-h-padding-mobile);
@@ -34,10 +36,12 @@
     &:focus,
     &:active {
         &:not(.is-disabled) {
-            background-color: transparent;
-            border-color: $primary-color;
-            color: $primary-color;
-            opacity: 1;
+            &:not([disabled]) {
+                background-color: transparent;
+                border-color: $primary-color;
+                color: $primary-color;
+                opacity: 1;
+            }
         }
     }
 
@@ -50,9 +54,11 @@
         &:focus,
         &:active {
             &:not(.is-disabled) {
-                background-color: transparent;
-                border-color: $gray;
-                color: $gray;
+                &:not([disabled]) {
+                    background-color: transparent;
+                    border-color: $gray;
+                    color: $gray;
+                }
             }
         }
     }
@@ -66,9 +72,11 @@
         &:focus,
         &:active {
             &:not(.is-disabled) {
-                background-color: $gray-dark;
-                border-color: $gray-dark;
-                color: $white;
+                &:not([disabled]) {
+                    background-color: $gray-dark;
+                    border-color: $gray-dark;
+                    color: $white;
+                }
             }
         }
     }
@@ -82,9 +90,11 @@
         &:focus,
         &:active {
             &:not(.is-disabled) {
-                background-color: transparent;
-                border-color: $error-red;
-                color: $error-red;
+                &:not([disabled]) {
+                    background-color: transparent;
+                    border-color: $error-red;
+                    color: $error-red;
+                }
             }
         }
     }
@@ -106,8 +116,10 @@
         &:focus,
         &:active {
             &:not(.is-disabled) {
-                &::before {
-                    background-image: url($css-bg-path+'icons/tick-primary.svg');
+                &:not([disabled]) {
+                    &::before {
+                        background-image: url($css-bg-path+'icons/tick-primary.svg');
+                    }
                 }
             }
         }
@@ -118,7 +130,6 @@
         background-color: transparent;
         border: 0;
         color: $font-color-base;
-        display: inline-block;
         font-weight: $font-weight-bold;
         line-height: $line-height-base;
         max-width: auto;
@@ -134,8 +145,10 @@
         &:focus,
         &:active {
             &:not(.is-disabled) {
-                color: $font-color-base;
-                opacity: .8;
+                &:not([disabled]) {
+                    color: $font-color-base;
+                    opacity: $opacity-hover;
+                }
             }
         }
     }

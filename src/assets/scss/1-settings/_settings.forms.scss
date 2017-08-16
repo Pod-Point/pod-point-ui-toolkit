@@ -6,8 +6,6 @@
 $font-size-forms-md: $font-size-md-desktop; // Forms have to be 16px min for IOS
 
 // Borders and shadows
-$form-box-shadow: inset 0 1px 3px rgba($black, .06);
-$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -.3);
 $form-border-radius: $border-radius-base;
 $form-border-base: $border-base;
 
@@ -31,7 +29,7 @@ $alt-input-v-padding: 1.5em;
 $textarea-min-height: rem(130);
 
 // Selects
-$select-cheveron-size: $icon-size-xs;
+$select-chevron-size: $icon-size-xs;
 
 // Checkbox/radios
 $checkbox-radio-inline-gutter: $gutter-lg;

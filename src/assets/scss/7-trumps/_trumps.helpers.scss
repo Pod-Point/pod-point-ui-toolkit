@@ -4,9 +4,18 @@
 
 // Note: some helpers are extracted out into their own files or in the responsive trumps file
 
-.is-disabled {
-    cursor: not-allowed;
+// sass-lint:disable no-important
+
+.is-disabled,
+[disabled] {
+    cursor: not-allowed !important;
     opacity: $opacity-disabled;
+
+    &:hover,
+    &:focus,
+    &:active {
+        opacity: $opacity-disabled !important;
+    }
 }
 
 .tel-link {

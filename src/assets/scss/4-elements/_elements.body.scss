@@ -4,10 +4,10 @@
 
 body {
     @include font-size-md;
+    -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
     color: $font-color-base;
     font-family: $font-family-base;
     font-feature-settings: 'kern' 1, 'liga' 1, 'pnum' 1;
-    font-smoothing: antialiased;
     font-weight: $font-weight-regular;
     line-height: $line-height-base;
     text-shadow: $transparent-white 0 0 1px;
