@@ -1325,6 +1325,9 @@ input[type="checkbox"] {
   .select-wrapper select::-ms-expand {
     display: none; }
 
+fieldset {
+  border: none; }
+
 .field-row {
   margin-bottom: 25px; }
   .field-row:last-child {

@@ -2,6 +2,9 @@
 //  FORM LAYOUT
 // =============================================================================
 
+fieldset {
+	border: none;
+}
 .field-row {
 	margin-bottom: 25px;
 	&:last-child {
