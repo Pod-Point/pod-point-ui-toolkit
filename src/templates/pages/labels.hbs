@@ -10,7 +10,7 @@
         </header>
 
 
-        <header class="content-block bg-light-gray">
+        <header class="content-block bg-light-grey">
             <div class="container">
                 <h3>Required files</h3>
                 <p>SCSS files required: <code>_components.labels.scss</code></p>
@@ -20,7 +20,7 @@
 
         <!-- LABEL STRUCTURE AND SIZES -->
         <section id="labelsSizes">
-            <header class="content-block bg-light-gray">
+            <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Label structure</h3>
                     <p>The class required for a label is <code>.label</code></p>
@@ -65,40 +65,32 @@
 
         <!-- LABEL COLOURS -->
         <section id="labelsColours">
-            <header class="content-block bg-light-gray">
+            <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Label colours</h3>
-                    <p>To change the label colour, the following modifying classes are available for greys:</p>
-                    <ul class="list--inline">
-                        <li><code>.label--white</code></li>
-                        <li><code>.label--very-light-gray</code></li>
-                        <li><code>.label--light-gray</code></li>
-                        <li><code>.label--gray</code></li>
-                        <li><code>.label--dark-gray</code></li>
-                        <li><code>.label--very-dark-gray</code></li>
-                    </ul>
-                    <br>
-                    <p>And for colours:</p>
-                    <ul class="list--inline">
-                        <li><code>.label--primary</code></li>
-                        <li><code>.label--danger</code></li>
-                    </ul>
+                    <p>To change the label colour you can use global background colour helpers. See <a href="helper-classes.html#helpersBackgrounds">here</a></p>
                 </div>
             </header>
 
             <div class="content-block">
-                <div class="container">
-                    <h4>Greyscale</h4>
-                    <div class="label font-size-md label--left-icon label--white m-b-sm">{{> icon-cross }} I am a label</div>
-                    <div class="label font-size-md label--left-icon label--very-light-gray m-b-sm">{{> icon-cross }} I am a label</div>
-                    <div class="label font-size-md label--left-icon label--light-gray m-b-sm">{{> icon-cross }} I am a label</div>
-                    <div class="label font-size-md label--left-icon label--gray m-b-sm">{{> icon-cross }} I am a label</div>
-                    <div class="label font-size-md label--left-icon label--dark-gray m-b-sm">{{> icon-cross }} I am a label</div>
-                    <div class="label font-size-md label--left-icon label--very-dark-gray m-b-sm">{{> icon-cross }} I am a label</div>
-                    <br>
-                    <h4>Other colours</h4>
-                    <div class="label font-size-md label--left-icon label--primary m-b-sm">{{> icon-cross }} I am a label</div>
-                    <div class="label font-size-md label--left-icon label--danger m-b-sm">{{> icon-cross }} I am a label</div>
+                <div class="bg-dark-grey m-t-md p-t-md">
+                    <div class="container">
+                        <span class="label font-size-md label--left-icon bg-white m-b-sm svg-dark">{{> icon-cross }} White</span>
+                        <span class="label font-size-md label--left-icon bg-light-grey m-b-sm svg-dark">{{> icon-cross }} Light grey</span>
+                    </div>
+                </div>
+                <div class="p-t-md">
+                    <div class="container">
+                        <span class="label font-size-md label--left-icon bg-grey m-b-sm">{{> icon-cross }} Grey</span>
+                        <span class="label font-size-md label--left-icon bg-dark-grey m-b-sm">{{> icon-cross }} Dark grey</span>
+                        <span class="label font-size-md label--left-icon bg-very-dark-grey m-b-sm">{{> icon-cross }} Very dark grey</span>
+                        <br>
+                        <span class="label font-size-md label--left-icon bg-primary m-b-sm">{{> icon-cross }}Primary</span>
+                        <span class="label font-size-md label--left-icon bg-info m-b-sm">{{> icon-cross }}Info</span>
+                        <span class="label font-size-md label--left-icon bg-success m-b-sm">{{> icon-cross }}Success</span>
+                        <span class="label font-size-md label--left-icon bg-warning m-b-sm">{{> icon-cross }}Warning</span>
+                        <span class="label font-size-md label--left-icon bg-danger m-b-sm">{{> icon-cross }}Danger</span>
+                    </div>
                 </div>
             </div>
         </section>

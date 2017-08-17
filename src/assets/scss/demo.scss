@@ -47,18 +47,18 @@ body {
     width: $demo-sidebar-width;
 
     .nav-link {
-        color: $font-color-light;
+        color: $font-colour-light;
         font-weight: $font-weight-bold;
 
         &:hover {
-            color: $primary-color;
+            color: $primary-colour;
         }
     }
 }
 
 .demo-note {
     @include font-size-sm;
-    background-color: $gray-light;
+    background-color: $grey-light;
     margin-bottom: .5em;
     padding: .5em 10px;
 }
@@ -90,7 +90,7 @@ $pages: (
 @each $page in $pages {
     [data-page='#{$page}'] {
         .nav-link--#{$page} {
-            color: $primary-color;
+            color: $primary-colour;
         }
     }
 }

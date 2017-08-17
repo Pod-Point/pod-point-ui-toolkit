@@ -6,13 +6,13 @@ $border-stroke-thin: 1px;
 $border-stroke: 2px;
 $border-radius-base: 5px;
 
-$border-color-base: $gray-keyline;
+$border-colour-base: $grey-keyline;
 
-$border-base: $border-stroke solid $border-color-base;
+$border-base: $border-stroke solid $border-colour-base;
 
-$border-font-color: $border-stroke solid $font-color-base;
+$border-font-colour: $border-stroke solid $font-colour-base;
 $border-inverted: $border-stroke solid $white;
-$border-primary: $border-stroke solid $primary-color;
+$border-primary: $border-stroke solid $primary-colour;
 
-$border-thin-dark: $border-stroke-thin solid $border-color-base;
-$border-thin: $border-stroke-thin solid $gray-keyline-very-light;
+$border-thin-dark: $border-stroke-thin solid $border-colour-base;
+$border-thin: $border-stroke-thin solid $grey-keyline-very-light;

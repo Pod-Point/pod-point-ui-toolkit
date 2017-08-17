@@ -31,10 +31,10 @@
 }
 
 .primary {
-    color: $primary-color;
+    color: $primary-colour;
 
     a {
-        border-bottom: 2px solid $primary-color;
+        border-bottom: 2px solid $primary-colour;
     }
 }
 
@@ -44,15 +44,15 @@
 }
 
 .color-base {
-    color: $font-color-base;
+    color: $font-colour-base;
 }
 
 .color-light {
-    color: $font-color-light;
+    color: $font-colour-light;
 }
 
 .color-very-light {
-    color:  $font-color-very-light;
+    color:  $font-colour-very-light;
 }
 
 .remove-link-styles {

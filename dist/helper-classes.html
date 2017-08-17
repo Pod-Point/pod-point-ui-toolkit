@@ -77,7 +77,7 @@
 
         <!-- SPACING -->
         <section id="helpersSpacing">
-            <header class="content-block bg-light-gray">
+            <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Spacing</h3>
                     <p>Helper classes for margin and padding spacing</p>
@@ -119,7 +119,7 @@
 
         <!-- BORDERS -->
         <section id="helpersBorders">
-            <header class="content-block bg-light-gray">
+            <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Borders</h3>
                     <p>Helper classes for borders</p>
@@ -164,7 +164,7 @@
 
         <!-- BORDER RADIUS -->
         <section id="helpersBorderRadius">
-            <header class="content-block bg-light-gray">
+            <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Borders radius</h3>
                     <p>Helper classes for rounded corners</p>
@@ -225,7 +225,7 @@
 
         <!-- POSITIONING -->
         <section id="helpersPosition">
-            <header class="content-block bg-light-gray">
+            <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Position</h3>
                     <p>Helper classes for positioning in each of the four corners</p>
@@ -246,7 +246,7 @@
 
         <!-- RESPONSIVE -->
         <section id="helpersResponsive">
-            <header class="content-block bg-light-gray">
+            <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Responsive helpers</h3>
                     <p>Helper classes that can change according to screen size</p>
@@ -284,7 +284,7 @@
 
         <!-- WIDTHS -->
         <section id="helpersWidths">
-            <header class="content-block bg-light-gray">
+            <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Max widths</h3>
                     <p>Helper classes to define max widths for content, text content and images</p>
@@ -325,11 +325,12 @@
 
         <!-- BACKGROUNDS -->
         <section id="helpersBackgrounds">
-            <header class="content-block bg-light-gray">
+            <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Backgrounds</h3>
-                    <p>Background colour helper classes according to the POD Point colour palette</p>
-                    <p>Note that if it is a dark background colour, the font colour will change appropriately</p>
+                    <p>Background colour helper classes according to the POD Point colour palette.</p>
+                    <p>Note that when applying a background colour class, the font colour will be set as either base font colour or white for readability. There are helper classes <code>.bg-dark-content</code> and <code>.bg-light-content</code> that override this which is useful for nested backgrounds.</p>
+                    <p>To override SVG fill colours you can apply the classes <code>.svg-dark</code>, <code>.svg-light</code>, <code>.svg-primary</code> which targets the direct child SVG.</p>
                 </div>
             </header>
             <div class="content-block">
@@ -339,27 +340,33 @@
                     </h4>
                 </div>
                 <br>
-                <div class="container p-v-md bg-dark-gray">
-                    <h4>Dark grey
-                        <span class="font-size-md font-regular"> = <code>.bg-dark-gray</code></span>
-                    </h4>
-                </div>
-                <br>
-                <div class="container p-v-md bg-very-dark-gray">
-                    <h4>Very dark grey
-                        <span class="font-size-md font-regular"> = <code>.bg-very-dark-gray</code></span>
-                    </h4>
-                </div>
-                <br>
-                <div class="container p-v-md bg-light-gray">
-                    <h4>Light grey
-                        <span class="font-size-md font-regular"> = <code>.bg-light-gray</code></span>
-                    </h4>
-                </div>
-                <br>
-                <div class="container p-v-md bg-very-light-gray">
+                <div class="container p-v-md bg-very-light-grey">
                     <h4>Very light grey
-                        <span class="font-size-md font-regular"> = <code>.bg-very-light-gray</code></span>
+                        <span class="font-size-md font-regular"> = <code>.bg-very-light-grey</code></span>
+                    </h4>
+                </div>
+                <br>
+                <div class="container p-v-md bg-light-grey">
+                    <h4>Light grey
+                        <span class="font-size-md font-regular"> = <code>.bg-light-grey</code></span>
+                    </h4>
+                </div>
+                <br>
+                <div class="container p-v-md bg-grey">
+                    <h4>Grey
+                        <span class="font-size-md font-regular"> = <code>.bg-grey</code></span>
+                    </h4>
+                </div>
+                <br>
+                <div class="container p-v-md bg-dark-grey">
+                    <h4>Dark grey
+                        <span class="font-size-md font-regular"> = <code>.bg-dark-grey</code></span>
+                    </h4>
+                </div>
+                <br>
+                <div class="container p-v-md bg-very-dark-grey">
+                    <h4>Very dark grey
+                        <span class="font-size-md font-regular"> = <code>.bg-very-dark-grey</code></span>
                     </h4>
                 </div>
                 <br>
@@ -372,6 +379,30 @@
                 <div class="container p-v-md bg-sky-blue">
                     <h4>Sky blue
                         <span class="font-size-md font-regular"> = <code>.bg-sky-blue</code></span>
+                    </h4>
+                </div>
+                <br>
+                <div class="container p-v-md bg-success">
+                    <h4>Success
+                        <span class="font-size-md font-regular"> = <code>.bg-success</code></span>
+                    </h4>
+                </div>
+                <br>
+                <div class="container p-v-md bg-info">
+                    <h4>Info
+                        <span class="font-size-md font-regular"> = <code>.bg-info</code></span>
+                    </h4>
+                </div>
+                <br>
+                <div class="container p-v-md bg-warning">
+                    <h4>Warning
+                        <span class="font-size-md font-regular"> = <code>.bg-warning</code></span>
+                    </h4>
+                </div>
+                <br>
+                <div class="container p-v-md bg-danger">
+                    <h4>Danger
+                        <span class="font-size-md font-regular"> = <code>.bg-danger</code></span>
                     </h4>
                 </div>
             </div>

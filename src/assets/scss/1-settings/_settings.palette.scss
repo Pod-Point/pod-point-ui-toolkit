@@ -9,66 +9,68 @@ $opacity-hover: .7;
 
 $transparent: rgba(0, 0, 0, 0);
 $transparent-white: rgba(255, 255, 255, .01);
-$transparent-light-gray: rgba(255, 255, 255, .4);
-$transparent-gray: rgba(215, 215, 215, .7);
-$transparent-dark-gray: rgba(0, 0, 0, .5);
-$transparent-very-dark-gray: rgba(0, 0, 0, .9);
+$transparent-light-grey: rgba(255, 255, 255, .4);
+$transparent-grey: rgba(215, 215, 215, .7);
+$transparent-dark-grey: rgba(0, 0, 0, .5);
+$transparent-very-dark-grey: rgba(0, 0, 0, .9);
 
 // Grey palette
-$background-color-base: $white;
-$gray-very-light: #f9fafa;
-$gray-light: #f2f2f2;
-$gray: #b3b3b3;
-$gray-dark: #4d4d4d;
-$gray-very-dark: #2a2a2a;
+$background-colour-base: $white;
+$grey-very-light: #f9fafa;
+$grey-light: #f2f2f2;
+$grey: #b3b3b3;
+$grey-dark: #4d4d4d;
+$grey-very-dark: #2a2a2a;
 
 // Custom colours
-$primary-color: #8cc63f;
-$primary-color-very-light: #e9eee0;
-$primary-color-light: #e2eecc;
-$primary-color-very-dark: #334217;
+$primary-colour: #8cc63f;
+$primary-colour-very-light: #e9eee0;
+$primary-colour-light: #e2eecc;
+$primary-colour-very-dark: #334217;
 $sky-blue: #deeefc;
 
-$highlight-color: $primary-color;
+$highlight-colour: $primary-colour;
 
-// Keyline colors
-$gray-keyline-very-light: #e2e2e2;
-$gray-keyline-light: #b3b3b3;
-$gray-keyline: #ccc;
-$gray-keyline-dark: #777;
+// Keyline colours
+$grey-keyline-very-light: #e2e2e2;
+$grey-keyline-light: #b3b3b3;
+$grey-keyline: #ccc;
+$grey-keyline-dark: #777;
 
-// Font Colors
-$font-color-base: #333;
-$font-color-light: #999;
-$font-color-very-light: $gray-keyline;
+// Font Colours
+$font-colour-base: #333;
+$font-colour-light: #999;
+$font-colour-very-light: $grey-keyline;
 
-$icon-color: $font-color-base;
+$icon-colour: $font-colour-base;
 
-// Social colors
-$facebook-color: #4b6ead;
-$twitter-color: #00b7f0;
-$pinterest-color: #bd081c;
+// Social colours
+$facebook-colour: #4b6ead;
+$twitter-colour: #00b7f0;
+$pinterest-colour: #bd081c;
 
-// Form colors
-$form-keyline: $gray-keyline;
-$radio-border: $gray-keyline;
-$radio-fill-color: $primary-color;
+// Form colours
+$form-keyline: $grey-keyline;
+$radio-border: $grey-keyline;
+$radio-fill-colour: $primary-colour;
 $checkbox-border: $form-keyline;
-$checked-fill-color: $primary-color;
-$checkbox-bg-color: transparent;
+$checked-fill-colour: $primary-colour;
+$checkbox-bg-colour: transparent;
 $error-red: #c1272d;
 
+// State colours (alerts and labels)
+$success-colour: #5cb85c;
+$success-colour-light: #dff0d8;
+$success-colour-dark: #3c763d;
 
-// State and Alert colours
-$state-success-bg:            #dff0d8;
-$state-success-text:          #3c763d;
-$state-success-border:        darken(adjust-hue($state-success-bg, -10), 5%);
-$state-info-bg:               #d9edf7;
-$state-info-text:             #31708f;
-$state-info-border:           darken(adjust-hue($state-info-bg, -10), 5%);
-$state-warning-bg:            #fcf8e3;
-$state-warning-text:          #8a6d3b;
-$state-warning-border:        darken(adjust-hue($state-warning-bg, -10), 5%);
-$state-danger-bg:             #f2dede;
-$state-danger-text:           #c1272d;
-$state-danger-border:         darken(adjust-hue($state-danger-bg, -10), 5%);
+$info-colour: #5bc0de;
+$info-colour-light: #d9edf7;
+$info-colour-dark: #31708f;
+
+$warning-colour: #f0ad4e;
+$warning-colour-light: #fcf8e3;
+$warning-colour-dark: #8a6d3b;
+
+$danger-colour: $error-red;
+$danger-colour-light: #f2dede;
+$danger-colour-dark: #c1272d;

@@ -41,11 +41,11 @@ mark,
 .mark,
 .highlight {
     @include padding(null $highlight-text-padding);
-    background-color: $highlight-color;
+    background-color: $highlight-colour;
 }
 
 code {
-    background-color: $primary-color-very-light;
-    color: $primary-color-very-dark;
+    background-color: $primary-colour-very-light;
+    color: $primary-colour-very-dark;
     padding: $highlight-text-padding;
 }

@@ -46,3 +46,21 @@
 .img-resp {
     max-width: 100%;
 }
+
+.svg-dark {
+    > svg {
+        fill: $font-colour-base;
+    }
+}
+
+.svg-light {
+    > svg {
+        fill: $white;
+    }
+}
+
+.svg-primary {
+    > svg {
+        fill: $primary-colour;
+    }
+}

@@ -3,7 +3,7 @@
 // =============================================================================
 
 .label {
-    background-color: $gray-dark;
+    background-color: $grey-dark;
     border-radius: $border-radius-base;
     box-sizing: border-box;
     color: $white;
@@ -35,48 +35,5 @@
         margin-top: -.5em;
         position: absolute;
         top: 50%;
-    }
-
-    &--white,
-    &--very-light-gray,
-    &--light-gray,
-    &--sky-blue {
-        color: $font-color-base;
-
-        svg {
-            fill: $font-color-base;
-        }
-    }
-
-    &--white {
-        background-color: $white;
-    }
-
-    &--very-light-gray {
-        background-color: $gray-very-light;
-    }
-
-    &--light-gray {
-        background-color: $gray-light;
-    }
-
-    &--gray {
-        background-color: $gray;
-    }
-
-    &--dark-gray {
-        background-color: $gray-dark;
-    }
-
-    &--very-dark-gray {
-        background-color: $gray-very-dark;
-    }
-
-    &--primary {
-        background-color: $primary-color;
-    }
-
-    &--danger {
-        background-color: $error-red;
     }
 }

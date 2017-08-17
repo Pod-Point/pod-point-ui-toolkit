@@ -7,7 +7,7 @@
     border: $border-thin-dark;
     border-radius: $border-radius-base;
     box-shadow: $box-shadow-subtle;
-    color: $font-color-base;
+    color: $font-colour-base;
     display: block;
     padding: $card-v-padding $card-h-padding;
 
@@ -25,7 +25,7 @@
 
         &::before {
             @include position(absolute, $card-option-highlight-offset null null -1px);
-            background-color: $gray-keyline-very-light;
+            background-color: $grey-keyline-very-light;
             border-top-left-radius: $border-radius-base;
             border-top-right-radius: $border-radius-base;
             content: '';
@@ -36,7 +36,7 @@
 
         &--recommended {
             &::before {
-                background-color: $primary-color;
+                background-color: $primary-colour;
             }
         }
     }

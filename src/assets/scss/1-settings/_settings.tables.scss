@@ -10,11 +10,11 @@ $table-condensed-cell-padding: ($space-xs / 2);
 
 // Palette
 $table-bg: transparent;
-$table-border-color: $gray-keyline-very-light;
-$table-bg-accent: $gray-very-light;
-$table-bg-hover: $gray-light;
+$table-border-colour: $grey-keyline-very-light;
+$table-bg-accent: $grey-very-light;
+$table-bg-hover: $grey-light;
 $table-bg-active: $table-bg-hover;
 
 // Borders
-$table-border: 1px solid $table-border-color;
-$table-border-heading: 2px solid $table-border-color;
+$table-border: 1px solid $table-border-colour;
+$table-border-heading: 2px solid $table-border-colour;

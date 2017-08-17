@@ -14,7 +14,7 @@
 
     span {
         @include position(absolute, null 0 null null);
-        background-color: $icon-color;
+        background-color: $icon-colour;
         border-radius: $navicon-stroke-radius;
         display: block;
         height: $navicon-stroke;
