@@ -2,43 +2,78 @@
 //  TRUMPS - BACKGROUNDS
 // =============================================================================
 
+// sass-lint:disable no-important
+
 .bg-white {
     background-color: $white;
-    color: $font-color-base;
+    color: $font-colour-base;
 }
 
 // Greys
-.bg-very-light-gray {
-    background-color: $gray-very-light;
+.bg-very-light-grey {
+    background-color: $grey-very-light;
+    color: $font-colour-base;
 }
 
-.bg-light-gray {
-    background-color: $gray-light;
+.bg-light-grey {
+    background-color: $grey-light;
+    color: $font-colour-base;
 }
 
-.bg-gray {
-    background-color: $gray;
+.bg-grey {
+    background-color: $grey;
     color: $white;
 }
 
-.bg-dark-gray {
-    background-color: $gray-dark;
+.bg-dark-grey {
+    background-color: $grey-dark;
     color: $white;
 }
 
-.bg-very-dark-gray {
-    background-color: $gray-very-dark;
+.bg-very-dark-grey {
+    background-color: $grey-very-dark;
     color: $white;
 }
 
 // Colours
 .bg-primary {
-    background-color: $primary-color;
+    background-color: $primary-colour;
     color: $white;
 }
 
 .bg-sky-blue {
     background-color: $sky-blue;
+    color: $font-colour-base;
+}
+
+// State colours
+.bg-info {
+    background-color: $info-colour;
+    color: $white;
+}
+
+.bg-success {
+    background-color: $success-colour;
+    color: $white;
+}
+
+.bg-warning {
+    background-color: $warning-colour;
+    color: $white;
+}
+
+.bg-danger {
+    background-color: $error-red;
+    color: $white;
+}
+
+// To override any of the above (especially useful with nested backgrounds)
+.bg-dark-content {
+    color: $font-colour-base !important;
+}
+
+.bg-light-content {
+    color: $white !important;
 }
 
 // Cover and overlays
@@ -54,7 +89,7 @@
 
     &::after {
         @include position(absolute, 0 0 0 0);
-        background-color: $gray-dark;
+        background-color: $grey-dark;
         content: '';
         height: 100%;
         opacity: .65;

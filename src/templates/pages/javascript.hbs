@@ -10,19 +10,95 @@
         </header>
 
 
-        <!-- JAVASCRIPT -->
-        <section id="homeJavascript">
-            <header class="content-block bg-light-gray">
+        <header class="content-block bg-light-grey">
+            <div class="container">
+                <h3>Importing modules</h3>
+                <p>The JavaScript is written in ES6 Modules and the following modules are available to import from the toolkit.</p>
+                <p>The JavaScript modules are due to be refactored as soon as possible, so bare that in mind when using that you may need to update your code when importing a newer version of the toolkit.</p>
+            </div>
+        </header>
+
+
+        <section id="jsBase">
+            <header class="content-block bg-light-grey">
                 <div class="container">
-                    <h3>The JavaScript</h3>
-                    <p>The JavaScript is written in ES6 Modules and Classes, and uses a POD Point written module loader.</p>
+                    <h3>Base</h3>
+                    <p><code>import base from 'path/to/node_modules/@pod-point/pod-point-ui-toolkit/dist/assets/js/modules/base';</code></p>
                 </div>
             </header>
 
             <div class="content-block">
                 <div class="container">
-                    <p>[ The structure and how to include modules ]</p>
+                    <p>Detects very basic but useful info about screen size and device:</p>
+                    <p><code>window.isTouchDevice</code> detects if touch device</p>
+                    <p>Also adds a class to the body to identify if desktop or touch device <code>.is-desktop</code> or <code>.is-touch</code></p>
+                    <p><code>window.isMobileSize</code> detects if window width is under 800px</p>
+                    <p><code>window.isIE</code> detects if browser is IE</p>
+                    <p><code>window.isIE10OrBelow</code> detects if browser is IE10 or below</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="jsToggleElement">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Toggle Element</h3>
                     <p><code>import toggleElement from 'path/to/node_modules/@pod-point/pod-point-ui-toolkit/dist/assets/js/modules/toggle-element';</code></p>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <p>This module is due to be refactored and merged with ToggleAccordionPanel</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="jsToggleAccordionPanel">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Toggle Accordion Panel</h3>
+                    <p><code>import toggleAccordionPanel from 'path/to/node_modules/@pod-point/pod-point-ui-toolkit/dist/assets/js/modules/toggle-accordion-panel';</code></p>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <p>This module is due to be refactored and merged with ToggleElement</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="jsModal">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Modal</h3>
+                    <p><code>import modal from 'path/to/node_modules/@pod-point/pod-point-ui-toolkit/dist/assets/js/modules/modal';</code></p>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <p>This module may also be refactored and merged with ToggleElement. However there is an example page on how to use it as it works currently <a href="modals.html">here</a>.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="jsAccordion">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Accordion</h3>
+                    <p><code>import accordion from 'path/to/node_modules/@pod-point/pod-point-ui-toolkit/dist/assets/js/modules/accordion';</code></p>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <p>This module may also be refactored. However there is an example page on how to use it as it works currently <a href="accordions.html">here</a>.</p>
                 </div>
             </div>
         </section>

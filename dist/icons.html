@@ -27,7 +27,7 @@
 		<div data-page="icons" class="demo-page-content">
 
     <div class="pos-rel">
-        <div class="demo-fixed-sidebar bg-white">
+        <div class="demo-fixed-sidebar bg-white p-b-lg">
             <a class="demo-logo-main" href="/">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180.5 49.6" width="180" height="49"><path d="M95 25.6c-1.6 1-3.7 1.5-6.3 1.5H81c0-.6.5-1.2 1.1-1.2h6.5c3.6 0 7.9-1 7.9-5.8 0-3.7-2.7-5.6-7.9-5.6h-8.8c-.1 0-.2.1-.2.2v21.7c0 .6-.5 1.1-1.2 1.1v-23c0-.6.5-1.1 1.2-1.1h9c7.5 0 9.1 3.7 9.1 6.7 0 2.5-.9 4.4-2.7 5.5 0 .1 0 0 0 0zm17.7 12.1c-6.8 0-12.3-5.6-12.3-12.4S105.9 13 112.7 13c6.8 0 12.3 5.5 12.3 12.4 0 6.8-5.5 12.3-12.3 12.3zm0-23.5c-6.1 0-11.1 5-11.1 11.2s5 11.2 11.1 11.2c6.2 0 11.1-5 11.1-11.2 0-6.2-5-11.2-11.1-11.2zm17.6 23.4c-.6 0-1.1-.5-1.1-1.1V13.4c.6 0 1.2.5 1.2 1.1l-.1 23.1c.1 0 0 0 0 0zm25.3-.1c-.3 0-.6-.1-.8-.4l-17.3-22.3v21.6c0 .7-.5 1.1-1.2 1.2V14.5c0-.6.5-1.2 1.1-1.2.3 0 .5.1.7.4l17.4 22.5V14.5c0-.6.5-1.1 1.2-1.1v23.1c-.1.5-.6 1-1.1 1zm23.7-22.8h-8.4v22.8c-.7 0-1.2-.5-1.2-1.1V14.7h-8.5c-.6 0-1.2-.5-1.2-1.2h20.4c.1.7-.4 1.2-1.1 1.2zM67.4 24.8V3.5c-.8-1.2-1.6-2.4-2.5-3.5v24.8c0 5.3-4.3 9.6-9.6 9.6-5.1 0-9.3-4.1-9.5-9.1v-.4c0-6.6-5.4-12-12-12s-12 5.4-12 12v.4c-.2 5.1-4.4 9.1-9.5 9.1-5.3 0-9.6-4.3-9.6-9.6H.2c0 6.6 5.4 12 12 12s12-5.4 12-12v-.4c.2-5.1 4.4-9.1 9.5-9.1s9.3 4.1 9.5 9.1v.4c0 6.6 5.4 12 12 12 6.8 0 12.2-5.4 12.2-12z" fill="#6e7473"/><path d="M45.8 25.4c-.1 1.7-.5 3.3-1.3 4.8.1.2.2.5.4.7v-.1c1-1.4 1-3.8.9-4.9.1-.2 0-.4 0-.5zm-24.1 0v.5c-.1 1-.1 3.5.9 4.9v.1c.1-.2.2-.4.4-.7-.7-1.6-1.2-3.2-1.3-4.8z" fill="#171717"/><path d="M64.9 17.5c-2.3-3-5.8-4.7-9.6-4.7-6.6 0-12 5.4-12 12v.4c-.2 5.1-4.4 9.1-9.5 9.1s-9.3-4.1-9.5-9.1v-.4c0-6.6-5.4-12-12-12s-12 5.4-12 12v21.3c.8 1.2 1.6 2.4 2.5 3.5V24.8c0-5.3 4.3-9.6 9.6-9.6 5.1 0 9.3 4.1 9.5 9.1v.4c0 6.6 5.4 12 12 12s12-5.4 12-12v-.4c.2-5.1 4.4-9.1 9.5-9.1 5.3 0 9.5 4.3 9.6 9.5l-.1-7.2" fill="#8cc63f"/></svg>        </a>
             <nav class="demo-nav">
@@ -36,8 +36,8 @@
                     <li><a class="nav-link nav-link--installation" href="installation.html">Installation</a></li>
                     <li><a class="nav-link nav-link--scss" href="scss.html">CSS/SCSS</a></li>
                     <li><a class="nav-link nav-link--css-bg-img" href="css-bg-img.html">CSS Background images</a></li>
-                    <li><a class="nav-link nav-link--javascript" href="javascript.html">Javascript</a></li>
                     <li><a class="nav-link nav-link--inline-svg-icons" href="inline-svg-icons.html">Inline SVG icons</a></li>
+                    <li><a class="nav-link nav-link--javascript" href="javascript.html">Javascript</a></li>
                 </ul>
     
                 <h5>Helpers</h5>
@@ -75,9 +75,18 @@
         </header>
 
 
+        <header class="content-block bg-light-grey">
+            <div class="container">
+                <h3>Required files</h3>
+                <p>SCSS files required: <code>_components.icons.scss</code></p>
+                <p>SCSS files optional: <code>_components.circle-icons.scss</code></p>
+            </div>
+        </header>
+
+
         <!-- SVG ICONS -->
         <section id="iconsSvg">
-            <header class="content-block bg-light-gray">
+            <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>SVG icons</h3>
                     <p>The below icon SVGs are included in the toolkit. Icons can be added to the toolkit as explained <a href="#">here</a></p>
@@ -122,7 +131,7 @@
 
         <!-- ICONS INLINE -->
         <section id="iconsInline">
-            <header class="content-block bg-light-gray">
+            <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Icons inline</h3>
                     <p>Icons can be placed inline with text and they will scale relative to the size of the text</p>
@@ -156,7 +165,7 @@
 
         <!-- ICONS IN CIRCLES - SIZES -->
         <section id="iconCirclesSizes">
-            <header class="content-block bg-light-gray">
+            <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Icons in circles - sizes</h3>
                     <p>To create an icon in a circle, add a wrapping element to the <code>.icon</code> with the class of <code>.circle-icon</code></p>
@@ -215,13 +224,13 @@
         </section>
 
 
-        <!-- ICONS IN CIRCLES - COLORS -->
+        <!-- ICONS IN CIRCLES - COLOURS -->
         <section id="iconCirclesColours">
-            <header class="content-block bg-light-gray">
+            <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Icons in circles - colours</h3>
                     <p>The colour variations can be applied using the modifying classes <code>.circle-icon--primary</code>, <code>.circle-icon--outlined</code>, <code>.circle-icon--outlined--primary</code>, <code>.circle-icon--outlined--inverted</code>, <code>.circle-icon--white-outline</code></p>
-                    <p>There is also a mixin available to customise the circle icon color and border <code>@include icon-in-circle($bgColor: transparent, $color: $primary-color, $border: 2px solid $primary-color);</code></p>
+                    <p>There is also a mixin available to customise the circle icon colour and border <code>@include icon-in-circle($bgColour: transparent, $colour: $primary-colour, $border: 2px solid $primary-colour);</code></p>
 
 <figure>
 <pre>
@@ -276,7 +285,7 @@
                     <li><a class="circle-icon circle-icon--outlined--primary" href="#"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M159.4 228.9v54h89.4c-3.6 23.1-27 67.9-89.4 67.9-53.9 0-97.6-44.6-97.6-99.4s43.9-99.4 97.6-99.4c30.5 0 51 13.1 62.9 24.3l42.6-41.1c-27.5-25.6-63-41.1-105.6-41.1C72.4 94 1.9 164.4 1.9 251.6s70.4 157.6 157.6 157.6c90.9 0 151.1-63.9 151.1-154 0-10.4-1.1-18.2-2.5-26.1l-148.7-.2zM497 229h-44.9v-45H407v45h-45v45h45v45.2h45.1V274H497z"/></svg></i></a></li>
                 </ul>
             </div>
-            <div class="bg-dark-gray">
+            <div class="bg-dark-grey">
                 <div class="container content-block">
                     <h4>Outlined with inverted icon colour and border
                         <span class="font-size-md font-regular"> = <code>.circle-icon--outlined--inverted</code></span>

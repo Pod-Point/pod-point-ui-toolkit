@@ -5,7 +5,7 @@
 body {
     @include font-size-md;
     -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
-    color: $font-color-base;
+    color: $font-colour-base;
     font-family: $font-family-base;
     font-feature-settings: 'kern' 1, 'liga' 1, 'pnum' 1;
     font-weight: $font-weight-regular;

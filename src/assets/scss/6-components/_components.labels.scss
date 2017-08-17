@@ -3,43 +3,37 @@
 // =============================================================================
 
 .label {
-    @include font-size-md;
-    background-color: $gray-dark;
+    background-color: $grey-dark;
     border-radius: $border-radius-base;
     box-sizing: border-box;
     color: $white;
     display: inline-block;
     font-weight: $font-weight-bold;
     min-height: $label-min-height;
-    padding: $label-v-padding $label-h-padding;
+    padding: .1em .5em;
     position: relative;
 
     &--left-icon {
-        padding-left: $label-with-icon-h-spacing;
+        padding-left: 2em;
 
         svg {
-            left: $label-h-padding;
+            left: .5em;
         }
     }
 
     &--right-icon {
-        padding-right: $label-with-icon-h-spacing;
+        padding-right: 2em;
 
         svg {
-            right: $label-h-padding;
+            right: .5em;
         }
     }
 
     svg {
         fill: $white;
-        height: $label-icon-size;
-        margin-top: $label-icon-t-spacing;
+        height: 1em;
+        margin-top: -.5em;
         position: absolute;
         top: 50%;
-        width: $label-icon-size;
-    }
-
-    &--gray {
-        background-color: $gray;
     }
 }

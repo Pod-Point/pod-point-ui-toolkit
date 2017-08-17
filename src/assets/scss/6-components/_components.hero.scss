@@ -29,7 +29,7 @@
     }
 
     &::before {
-        @include full-overlay($gray-dark);
+        @include full-overlay($grey-dark);
         animation-delay: 1s;
         animation-duration: 1.5s;
         animation-fill-mode: both;

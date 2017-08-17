@@ -2,18 +2,54 @@
 //  TOOLS - ACCORDIONS
 // =============================================================================
 
+// sass-lint:disable property-sort-order
+
 @mixin accordion-size($v-spacing) {
-    .accordion__dt {
-        @include padding($v-spacing null);
+    .accordion__toggle {
+        padding-bottom: $v-spacing;
+        padding-top: $v-spacing;
+    }
+
+    .accordion__content {
+        .accordion__inner,
+        .accordion__content-inner {
+            padding-bottom: $v-spacing;
+        }
+    }
+}
+
+@mixin accordion-with-icon($v-spacing, $icon-size: null, $icon-pos-right: false) {
+
+    $icon-padding: 0;
+
+    @if $icon-size != null {
+        $icon-padding: ($v-spacing / 1.3) + $icon-size;
+    }
+
+    .accordion__toggle {
+        @if $icon-pos-right == true {
+            padding-right: $icon-padding;
+        } @else {
+            padding-left: $icon-padding;
+        }
 
         .accordion__toggle-icon {
+            position: absolute;
             top: $v-spacing;
+
+            @if $icon-pos-right == true {
+                right: 0;
+            } @else {
+                left: 0;
+            }
         }
     }
 
-    .accordion__dd {
-        .accordion__dd-content {
-            padding-bottom: $v-spacing;
+    .accordion__content {
+        @if $icon-pos-right == true {
+            padding-right: $icon-padding;
+        } @else {
+            padding-left: $icon-padding;
         }
     }
 }

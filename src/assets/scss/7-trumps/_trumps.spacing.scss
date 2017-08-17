@@ -16,7 +16,7 @@ $spacings: (
 );
 
 @each $size, $value in $spacings {
-    .m-#{$size} {
+    .m-a-#{$size} {
         margin: $value !important;
     }
 
@@ -46,7 +46,7 @@ $spacings: (
         margin-top: $value !important;
     }
 
-    .p-#{$size} {
+    .p-a-#{$size} {
         padding: $value !important;
     }
 

@@ -10,7 +10,7 @@
 
 .modal {
     @include position(fixed, 0 0 0 0);
-    background-color: $transparent-very-dark-gray;
+    background-color: $transparent-very-dark-grey;
     min-height: 100%;
     overflow-y: scroll;
     width: 100%;

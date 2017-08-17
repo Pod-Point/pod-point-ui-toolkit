@@ -7,7 +7,7 @@
 .btn {
     @extend %remove-link-styles;
     @include padding($button-v-padding $button-h-padding-mobile);
-    background-color: $primary-color;
+    background-color: $primary-colour;
     border: $border-primary;
     border-radius: $button-radius;
     box-sizing: border-box;
@@ -38,16 +38,16 @@
         &:not(.is-disabled) {
             &:not([disabled]) {
                 background-color: transparent;
-                border-color: $primary-color;
-                color: $primary-color;
+                border-color: $primary-colour;
+                color: $primary-colour;
                 opacity: 1;
             }
         }
     }
 
     &.btn--secondary {
-        background-color: $gray;
-        border-color: $gray;
+        background-color: $grey;
+        border-color: $grey;
         color: $white;
 
         &:hover,
@@ -56,8 +56,8 @@
             &:not(.is-disabled) {
                 &:not([disabled]) {
                     background-color: transparent;
-                    border-color: $gray;
-                    color: $gray;
+                    border-color: $grey;
+                    color: $grey;
                 }
             }
         }
@@ -65,16 +65,16 @@
 
     &.btn--tertiary {
         background-color: transparent;
-        border-color: $gray-dark;
-        color: $gray-dark;
+        border-color: $grey-dark;
+        color: $grey-dark;
 
         &:hover,
         &:focus,
         &:active {
             &:not(.is-disabled) {
                 &:not([disabled]) {
-                    background-color: $gray-dark;
-                    border-color: $gray-dark;
+                    background-color: $grey-dark;
+                    border-color: $grey-dark;
                     color: $white;
                 }
             }
@@ -129,7 +129,7 @@
         @extend %clickable;
         background-color: transparent;
         border: 0;
-        color: $font-color-base;
+        color: $font-colour-base;
         font-weight: $font-weight-bold;
         line-height: $line-height-base;
         max-width: auto;
@@ -146,7 +146,7 @@
         &:active {
             &:not(.is-disabled) {
                 &:not([disabled]) {
-                    color: $font-color-base;
+                    color: $font-colour-base;
                     opacity: $opacity-hover;
                 }
             }

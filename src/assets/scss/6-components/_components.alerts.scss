@@ -8,7 +8,7 @@
     width: 100%;
 
     h4 {
-        // Specified for the h4 to prevent conflicts of changing $headings-color
+        // Specified for the h4 to prevent conflicts of changing $headings-colour
         color: inherit;
     }
 
@@ -18,18 +18,18 @@
     }
 
     &--success {
-        @include alert-variant($state-success-bg, $state-success-border, $state-success-text);
+        @include alert-variant($success-colour-light, $success-colour-dark);
     }
 
     &--info {
-        @include alert-variant($state-info-bg, $state-info-border, $state-info-text);
+        @include alert-variant($info-colour-light, $info-colour-dark);
     }
 
     &--warning {
-        @include alert-variant($state-warning-bg, $state-warning-border, $state-warning-text);
+        @include alert-variant($warning-colour-light, $warning-colour-dark);
     }
 
     &--danger {
-        @include alert-variant($state-danger-bg, $state-danger-border, $state-danger-text);
+        @include alert-variant($danger-colour-light, $danger-colour-dark);
     }
 }

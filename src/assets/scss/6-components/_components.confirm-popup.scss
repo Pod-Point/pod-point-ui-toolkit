@@ -4,7 +4,7 @@
 
 .confirm-popup {
     @include position(fixed, 0 0 0 0);
-    background-color: $transparent-gray;
+    background-color: $transparent-grey;
     min-height: 100%;
     overflow-y: scroll;
     width: 100%;

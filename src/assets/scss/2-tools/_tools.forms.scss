@@ -9,7 +9,7 @@
 }
 
 @include placeholder {
-    color: $input-placeholder-color;
+    color: $input-placeholder-colour;
 }
 
 @mixin input-styles {
@@ -23,25 +23,25 @@
 }
 
 @mixin input-border {
-    background-color: $background-color-base;
+    background-color: $background-colour-base;
     border: $form-border-base;
     border-radius: $form-border-radius;
-    transition: border-color;
+    transition: border-colour;
 }
 
 @mixin input-border--focus {
-    border-color: $font-color-base;
-    color: $font-color-base;
+    border-color: $font-colour-base;
+    color: $font-colour-base;
     outline: none;
 }
 
 @mixin input-border--hover {
-    border-color: $font-color-base;
-    color: $font-color-base;
+    border-color: $font-colour-base;
+    color: $font-colour-base;
 }
 
 @mixin input-border--disabled {
-    background-color: $gray-very-light;
+    background-color: $grey-very-light;
     cursor: not-allowed;
     opacity: .4;
 }

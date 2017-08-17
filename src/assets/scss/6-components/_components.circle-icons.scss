@@ -28,35 +28,35 @@
     }
 
     &--primary {
-        @include icon-in-circle($bg-color: $primary-color, $color: $white, $border: $border-primary);
+        @include icon-in-circle($bg-colour: $primary-colour, $colour: $white, $border: $border-primary);
     }
 
     &--outlined {
-        @include icon-in-circle($bg-color: transparent, $color: $font-color-base, $border: $border-font-color);
+        @include icon-in-circle($bg-colour: transparent, $colour: $font-colour-base, $border: $border-font-colour);
     }
 
     &--outlined--primary {
-        @include icon-in-circle($bg-color: transparent, $color: $primary-color, $border: $border-primary);
+        @include icon-in-circle($bg-colour: transparent, $colour: $primary-colour, $border: $border-primary);
     }
 
     &--outlined--inverted {
-        @include icon-in-circle($bg-color: transparent, $color: $white, $border: $border-inverted);
+        @include icon-in-circle($bg-colour: transparent, $colour: $white, $border: $border-inverted);
     }
 }
 
 .toggle-panel-icon {
-    @include icon-in-circle($bg-color: transparent, $color: $primary-color, $border: $border-primary);
+    @include icon-in-circle($bg-colour: transparent, $colour: $primary-colour, $border: $border-primary);
     @include icon-in-circle--size($dimension: $circle-icon-size-sm);
     @include icon-in-border-circle--size($dimension: $circle-icon-size-sm);
 }
 
 .toggle-panel-icon--secondary {
-    @include icon-in-circle($bg-color: transparent, $color: $font-color-base, $border: $border-font-color);
+    @include icon-in-circle($bg-colour: transparent, $colour: $font-colour-base, $border: $border-font-colour);
     @include icon-in-border-circle--size($dimension: $circle-icon-size-sm);
 }
 
 .circle-icon--close-panel {
-    @include icon-in-circle($bg-color: transparent, $color: $primary-color, $border: $border-primary);
+    @include icon-in-circle($bg-colour: transparent, $colour: $primary-colour, $border: $border-primary);
     @include icon-in-border-circle--size;
     transform: rotate(180deg);
 }

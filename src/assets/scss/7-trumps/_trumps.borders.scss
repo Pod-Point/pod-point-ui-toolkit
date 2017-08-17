@@ -4,48 +4,40 @@
 
 // sass-lint:disable no-important
 
-.b {
-    // Base border
-    &-base {
-        border: $border-base;
+$borders: (
+    'base': $border-base,
+    'thin': $border-thin,
+    'none': 0
+);
+
+@each $size, $value in $borders {
+    .b-a-#{$size} {
+        border: $value !important;
     }
 
-    &-t-base {
-        border-top: $border-base;
+    .b-t-#{$size} {
+        border-top: $value !important;
     }
 
-    &-b-base {
-        border-bottom: $border-base;
+    .b-r-#{$size} {
+        border-right: $value !important;
     }
 
-    // Thin border
-    &-thin {
-        border: $border-thin;
+    .b-b-#{$size} {
+        border-bottom: $value !important;
     }
 
-    &-t-thin {
-        border-top: $border-thin;
+    .b-l-#{$size} {
+        border-left: $value !important;
     }
 
-    &-b-thin {
-        border-bottom: $border-thin;
+    .b-h-#{$size} {
+        border-left: $value !important;
+        border-right: $value !important;
     }
 
-    // No border
-    &-none {
-        border: 0 !important;
-    }
-
-    &-t-none {
-        border-top: 0 !important;
-    }
-
-    &-b-none {
-        border-bottom: 0 !important;
-    }
-
-    // Border radius
-    &-radius {
-        border-radius: $border-radius-base;
+    .b-v-#{$size} {
+        border-bottom: $value !important;
+        border-top: $value !important;
     }
 }
