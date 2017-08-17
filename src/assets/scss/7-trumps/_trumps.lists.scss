@@ -43,7 +43,15 @@
     }
 
     &--gutter-xs {
-        @include inline-list-gutter($img-list-inline-gutter-xxs);
+        @include inline-list-gutter($img-list-inline-gutter-xs);
+    }
+
+    &--gutter-sm {
+        @include inline-list-gutter($img-list-inline-gutter-sm);
+    }
+
+    &--gutter-md {
+        @include inline-list-gutter($img-list-inline-gutter-md);
     }
 
     &--gutter-lg {

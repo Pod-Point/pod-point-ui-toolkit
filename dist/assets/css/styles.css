@@ -2617,11 +2617,25 @@ textarea.form__control {
       margin-left: 2.5px;
       display: inline-block; }
   .list--inline--gutter-xs {
-    margin-right: -2.5px;
-    margin-left: -2.5px; }
+    margin-right: -5px;
+    margin-left: -5px; }
     .list--inline--gutter-xs li {
-      margin-right: 2.5px;
-      margin-left: 2.5px;
+      margin-right: 5px;
+      margin-left: 5px;
+      display: inline-block; }
+  .list--inline--gutter-sm {
+    margin-right: -7.5px;
+    margin-left: -7.5px; }
+    .list--inline--gutter-sm li {
+      margin-right: 7.5px;
+      margin-left: 7.5px;
+      display: inline-block; }
+  .list--inline--gutter-md {
+    margin-right: -10px;
+    margin-left: -10px; }
+    .list--inline--gutter-md li {
+      margin-right: 10px;
+      margin-left: 10px;
       display: inline-block; }
   .list--inline--gutter-lg {
     margin-right: -15px;
