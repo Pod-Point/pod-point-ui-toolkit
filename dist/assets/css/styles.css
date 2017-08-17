@@ -106,11 +106,11 @@ placeholder {
   display: -ms-flexbox;
   display: flex; }
 
-.list--no-style, .list--featured--ticks, .list--featured--ticks--lg, .list--inline, .list--imgs {
+.list--no-style, .list--featured--ticks, .list--featured--ticks--lg, .list--inline {
   padding-right: 0;
   padding-left: 0;
   margin: 0; }
-  .list--no-style li, .list--featured--ticks li, .list--featured--ticks--lg li, .list--inline li, .list--imgs li {
+  .list--no-style li, .list--featured--ticks li, .list--featured--ticks--lg li, .list--inline li {
     list-style: none;
     padding-left: 0; }
 
@@ -2890,66 +2890,61 @@ textarea.form__control {
     width: 1.4375rem; }
 
 .list--inline {
-  margin: -0.5em -1em; }
-  .list--inline li {
-    display: inline-block;
-    padding: 0.5em 1em; }
-  .list--inline--gutter-sm {
-    margin-right: -0.5em;
-    margin-left: -0.5em; }
-    .list--inline--gutter-sm li {
-      margin-right: 0.5em;
-      margin-left: 0.5em;
-      padding-right: 0;
-      padding-left: 0; }
-
-.list--imgs--inline, .list--imgs--inline-gutter-md {
   margin-right: -10px;
   margin-left: -10px; }
-  .list--imgs--inline li, .list--imgs--inline-gutter-md li {
+  .list--inline li {
     margin-right: 10px;
     margin-left: 10px;
     display: inline-block; }
-
-.list--imgs--inline-gutter-xl {
-  margin-right: -25px;
-  margin-left: -25px; }
-  .list--imgs--inline-gutter-xl li {
-    margin-right: 25px;
-    margin-left: 25px;
-    display: inline-block; }
-
-.list--imgs--inline-gutter-lg {
-  margin-right: -15px;
-  margin-left: -15px; }
-  .list--imgs--inline-gutter-lg li {
-    margin-right: 15px;
-    margin-left: 15px;
-    display: inline-block; }
-
-.list--imgs--inline-gutter-sm {
-  margin-right: -7.5px;
-  margin-left: -7.5px; }
-  .list--imgs--inline-gutter-sm li {
-    margin-right: 7.5px;
-    margin-left: 7.5px;
-    display: inline-block; }
-
-.list--imgs--inline-gutter-xs {
-  margin-right: -5px;
-  margin-left: -5px; }
-  .list--imgs--inline-gutter-xs li {
-    margin-right: 5px;
-    margin-left: 5px;
-    display: inline-block; }
-
-.list--imgs--inline-gutter-xxs {
-  margin-right: -2.5px;
-  margin-left: -2.5px; }
-  .list--imgs--inline-gutter-xxs li {
-    margin-right: 2.5px;
-    margin-left: 2.5px;
-    display: inline-block; }
+  .list--inline--gutter-xxs {
+    margin-right: -2.5px;
+    margin-left: -2.5px; }
+    .list--inline--gutter-xxs li {
+      margin-right: 2.5px;
+      margin-left: 2.5px;
+      display: inline-block; }
+  .list--inline--gutter-xs {
+    margin-right: -5px;
+    margin-left: -5px; }
+    .list--inline--gutter-xs li {
+      margin-right: 5px;
+      margin-left: 5px;
+      display: inline-block; }
+  .list--inline--gutter-sm {
+    margin-right: -7.5px;
+    margin-left: -7.5px; }
+    .list--inline--gutter-sm li {
+      margin-right: 7.5px;
+      margin-left: 7.5px;
+      display: inline-block; }
+  .list--inline--gutter-md {
+    margin-right: -10px;
+    margin-left: -10px; }
+    .list--inline--gutter-md li {
+      margin-right: 10px;
+      margin-left: 10px;
+      display: inline-block; }
+  .list--inline--gutter-lg {
+    margin-right: -15px;
+    margin-left: -15px; }
+    .list--inline--gutter-lg li {
+      margin-right: 15px;
+      margin-left: 15px;
+      display: inline-block; }
+  .list--inline--gutter-xl {
+    margin-right: -25px;
+    margin-left: -25px; }
+    .list--inline--gutter-xl li {
+      margin-right: 25px;
+      margin-left: 25px;
+      display: inline-block; }
+  .list--inline--gutter-xxl {
+    margin-right: -35px;
+    margin-left: -35px; }
+    .list--inline--gutter-xxl li {
+      margin-right: 35px;
+      margin-left: 35px;
+      display: inline-block; }
 
 .table--striped > tbody > tr:nth-of-type(odd) {
   background-color: #f9fafa; }

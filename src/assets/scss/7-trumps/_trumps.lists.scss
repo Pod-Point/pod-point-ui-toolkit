@@ -32,52 +32,37 @@
     @include featured-icon-list-lg($css-bg-path+'icons/tick-primary.svg');
 }
 
-// Inline list
+// List inline
 .list--inline {
     @extend %remove-list-styles;
-    margin: (-$list-inline-v-spacing) (-$list-inline-gutter);
 
-    li {
-        display: inline-block;
-        padding: $list-inline-v-spacing $list-inline-gutter;
+    @include inline-list-gutter($img-list-inline-gutter-md);
+
+    &--gutter-xxs {
+        @include inline-list-gutter($img-list-inline-gutter-xxs);
     }
 
-    &--gutter-sm {
-        @include margin(null (-$list-inline-gutter-sm));
-
-        li {
-            @include margin(null $list-inline-gutter-sm);
-            @include padding(null 0);
-        }
-    }
-}
-
-// Image lists
-.list--imgs {
-    @extend %remove-list-styles;
-
-    &--inline,
-    &--inline-gutter-md {
-        @include inline-list-gutter($img-list-inline-gutter-md);
-    }
-
-    &--inline-gutter-xl {
-        @include inline-list-gutter($img-list-inline-gutter-xl);
-    }
-
-    &--inline-gutter-lg {
-        @include inline-list-gutter($img-list-inline-gutter-lg);
-    }
-
-    &--inline-gutter-sm {
-        @include inline-list-gutter($img-list-inline-gutter-sm);
-    }
-
-    &--inline-gutter-xs {
+    &--gutter-xs {
         @include inline-list-gutter($img-list-inline-gutter-xs);
     }
 
-    &--inline-gutter-xxs {
-        @include inline-list-gutter($img-list-inline-gutter-xxs);
+    &--gutter-sm {
+        @include inline-list-gutter($img-list-inline-gutter-sm);
+    }
+
+    &--gutter-md {
+        @include inline-list-gutter($img-list-inline-gutter-md);
+    }
+
+    &--gutter-lg {
+        @include inline-list-gutter($img-list-inline-gutter-lg);
+    }
+
+    &--gutter-xl {
+        @include inline-list-gutter($img-list-inline-gutter-xl);
+    }
+
+    &--gutter-xxl {
+        @include inline-list-gutter($img-list-inline-gutter-xxl);
     }
 }
