@@ -2,8 +2,5 @@
 //  SETTINGS - GRID
 // =============================================================================
 
-$grid-gutter: 2%; // Flex calc doesn't work in IE so this has to be a percentage
-$grid-gutter-mobile: .5%;
-$grid-b-spacing: 4%;
-$grid-b-spacing-lg-mobile: 80px;
-$grid-separator-b-spacing: $v-spacing;
+$default-grid-columns: 12;
+$default-grid-gutter: 2%; // Flex calc doesn't work in IE so this has to be a percentage

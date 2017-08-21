@@ -9,6 +9,7 @@ figure {
     box-shadow: $box-shadow-inset;
     color: $white;
     margin: 0;
-    overflow-x: scroll;
+    max-height: 300px;
+    overflow: scroll;
     padding: 0 $h-spacing-mobile;
 }
