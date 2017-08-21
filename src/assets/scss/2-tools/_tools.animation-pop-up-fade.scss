@@ -20,7 +20,7 @@
 }
 
 // Pop up and fade in mixin
-@mixin pop-up-fade-in {
-    animation: pop-up-fade-in 2s;
+@mixin pop-up-fade-in($duration: 2s) {
+    animation: pop-up-fade-in $duration;
     position: relative;
 }

@@ -1,13 +1,13 @@
 placeholder {
   color: #ccc; }
 
-@keyframes fadeIn {
+@keyframes fade-in {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
 
-@keyframes fadeOut {
+@keyframes fade-out {
   0% {
     opacity: 1; }
   100% {
@@ -93,7 +93,7 @@ body {
 [data-page='helper-classes'] .nav-link--helper-classes {
   color: #8cc63f; }
 
-[data-page='sass-mixins'] .nav-link--sass-mixins {
+[data-page='sass-tools'] .nav-link--sass-tools {
   color: #8cc63f; }
 
 [data-page='accordions alerts'] .nav-link--accordions alerts {

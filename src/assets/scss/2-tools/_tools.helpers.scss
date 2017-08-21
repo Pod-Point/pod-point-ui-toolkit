@@ -12,7 +12,7 @@
 }
 
 // Vertically align center
-%vertical-align {
+%v-align {
     align-items: center;
     display: flex;
 }
@@ -41,7 +41,7 @@
     &:active,
     &:focus,
     &:hover {
-        opacity: .7;
+        opacity: $opacity-hover;
     }
 }
 
@@ -73,7 +73,7 @@
 }
 
 // Margin centre
-%m-center {
+%m-centre {
     margin-left: auto;
     margin-right: auto;
 }
@@ -87,7 +87,7 @@
     width: 100%;
 }
 
-@mixin horizontal-spacing {
+@mixin horizontal-spacing($h-spacing: $h-spacing, $h-spacing-mobile: $h-spacing-mobile) {
     @include padding(null $h-spacing-mobile);
 
     @include screen-md-min {
@@ -96,8 +96,34 @@
 }
 
 // A container that center aligns with padding and max width
-@mixin container {
-    @extend %m-center;
+@mixin container($max-width-content: $max-width-content) {
+    @extend %m-centre;
     @include horizontal-spacing;
     max-width: $max-width-content;
+}
+
+// Maintain aspect radio mixin
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        padding-top: ($height / $width) * 100%;
+        width: 100%;
+    }
+
+    > .aspect-ratio-content {
+        @include position(absolute, 0 0 0 0);
+    }
+}
+
+// Inline list gutter
+@mixin inline-list-gutter($gutter) {
+    @include margin(null (-$gutter));
+
+    li {
+        @include margin(null $gutter);
+        display: inline-block;
+    }
 }

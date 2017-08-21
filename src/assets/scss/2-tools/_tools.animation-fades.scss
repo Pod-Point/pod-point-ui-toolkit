@@ -3,7 +3,7 @@
 // =============================================================================
 
 // Fade in
-@keyframes fadeIn {
+@keyframes fade-in {
     0% {
         opacity: 0;
     }
@@ -14,7 +14,7 @@
 }
 
 // Fade out
-@keyframes fadeOut {
+@keyframes fade-out {
     0% {
         opacity: 1;
     }
@@ -22,4 +22,17 @@
     100% {
         opacity: 0;
     }
+}
+
+
+@mixin fade-in($duration: .3s) {
+    animation-duration: $duration;
+    animation-fill-mode: both;
+    animation-name: fade-in;
+}
+
+@mixin fade-out($duration: .3s) {
+    animation-duration: $duration;
+    animation-fill-mode: both;
+    animation-name: fade-out;
 }

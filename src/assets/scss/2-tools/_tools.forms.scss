@@ -12,36 +12,47 @@
     color: $input-placeholder-colour;
 }
 
-@mixin input-styles {
+@mixin input-styles(
+    $font-size: $font-size-forms-md,
+    $height: $input-height,
+    $max-width: $form-field-max-width,
+    $v-padding: $input-v-padding,
+    $h-padding: $input-h-padding
+) {
     appearance: none;
     display: block;
-    font-size: $font-size-forms-md;
-    height: $input-height;
-    max-width: $form-field-max-width;
-    padding: $input-v-padding $input-h-padding;
+    font-size: $font-size;
+    height: $height;
+    max-width: $max-width;
+    padding: $v-padding $h-padding;
     width: 100%;
 }
 
-@mixin input-border {
-    background-color: $background-colour-base;
-    border: $form-border-base;
-    border-radius: $form-border-radius;
+@mixin input-border(
+    $background-color: $background-colour-base,
+    $border: $form-border-base,
+    $border-radius: $form-border-radius
+) {
+    background-color: $background-color;
+    border: $border;
+    border-radius: $border-radius;
     transition: border-colour;
 }
 
-@mixin input-border--focus {
-    border-color: $font-colour-base;
-    color: $font-colour-base;
+@mixin input-border--hover(
+    $border-color: $font-colour-base,
+    $color: $font-colour-base
+) {
+    border-color: $border-color;
+    color: $color;
     outline: none;
 }
 
-@mixin input-border--hover {
-    border-color: $font-colour-base;
-    color: $font-colour-base;
-}
-
-@mixin input-border--disabled {
-    background-color: $grey-very-light;
+@mixin input-border--disabled(
+    $background-color: $grey-very-light,
+    $opacity: $opacity-disabled
+) {
+    background-color: $background-color;
     cursor: not-allowed;
-    opacity: .4;
+    opacity: $opacity;
 }

@@ -36,7 +36,7 @@
 }
 
 .v-align-content {
-    @extend %vertical-align;
+    @extend %v-align;
 }
 
 .clickable {
@@ -63,4 +63,13 @@
     > svg {
         fill: $primary-colour;
     }
+}
+
+.figure--light {
+    background-color: $white;
+    border: $border-thin;
+    border-radius: $border-radius-base;
+    box-shadow: none;
+    color: inherit;
+    padding: 0 ($h-spacing-mobile / 2);
 }
