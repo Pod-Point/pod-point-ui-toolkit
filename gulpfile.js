@@ -24,8 +24,7 @@ gulp.task('watch', [
 // Dev task
 gulp.task('dev', [
     'set-env-dev',
-    'common',
-    'browser-sync'
+    'common'
 ]);
 
 // Prod task

@@ -3,54 +3,9 @@
 
 The POD Point frontend framework is a library of base styles and components designed for rapid prototyping.
 
-[View demo](https://pod-point.github.io/pod-point-ui-toolkit)
+This project is still in beta so you will need to clone the repo to access the full documentation and example pages.
 
 ## Installation
-
-Install via `npm`:
-
-```bash
-npm install @pod-point/pod-point-ui-toolkit
-```
-
-Then either link to the production ready files:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Document</title>
-    <link rel="stylesheet" href="/path/to/node_modules/pod-point/pod-point-ui-toolkit/dist/css/style.min.css">
-</head>
-<body>
-    <script src="/path/to/node_modules/pod-point/pod-point-ui-toolkit/dist/js/script.js"></script>
-</body>
-</html>
-```
-
-Or import the entry points into your project. For Sass, this is done by:
-
-```sass
-@import 'path/to/node_modules/pod-point/pod-point-ui-toolkit/src/scss/style.scss';
-```
-
-And for the JavaScripts:
-
-```js
-import modal from '/path/to/node_modules/pod-point/pod-point-ui-toolkit/dist/js/modal';
-```
-
-## Deploy
-To publish a new version to NPM run the following commands:
-```bash
-npm version [patch|minor|major]
-git push --tags
-```
-
-
-## Development
 
 First, install all of the Node modules needed:
 
@@ -60,20 +15,33 @@ cd pod-point-ui-toolkit
 npm install
 ```
 
-Then run the following command:
+## Gulp tasks
+
+Gulp and gulp dev - compiles pages and assets
+
+```bash
+gulp
+```
+
+```bash
+gulp dev
+```
+
+Gulp watch - compiles pages and assets and spins up a new development server at [http://localhost:3000](http://localhost:3000) with `/dist` as the document root.
 
 ```bash
 gulp watch
 ```
 
-This will spin up a new development server at [http://localhost:3000](http://localhost:3000) with `/dist` as the
-document root.
+Gulp prod - compiles pages and assets and minifies CSS and JS
+
+```bash
+gulp prod
+```
+
 
 ## Documentation
 
-The `gh-pages` branch is a snapshot of `/dist`, hence why it is important to copy the build folder across. To generate
-new documentation online, run the following anywhere within the project:
+Once you have the repo locally, you can access the docs by opening `/dist/index.html`.
 
-```bash
-git subtree push --prefix="dist" origin gh-pages
-```
+Note: Whilst in beta the dist folder is being tracked my git so you don't need to compile to view the documentaion files.
