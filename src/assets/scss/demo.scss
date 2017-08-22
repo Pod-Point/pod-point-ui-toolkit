@@ -9,11 +9,11 @@ $demo-sidebar-width: 250px;
 $demo-header-height: 75px;
 
 .demo-logo-main {
-    @include padding(10px null 60px null);
+    @include padding(10px null 10px null);
     display: block;
 
-    img {
-        width: rem(120);
+    svg {
+        width: rem(140);
     }
 }
 
