@@ -115,6 +115,12 @@ body {
     .demo-note {
       font-size: 0.875rem; } }
 
+[data-page='grid'] [class*='grid__col'] {
+  background-color: #4d4d4d;
+  color: #fff;
+  font-weight: 700;
+  text-align: center; }
+
 [data-page='installation'] .nav-link--installation {
   color: #8cc63f; }
 
