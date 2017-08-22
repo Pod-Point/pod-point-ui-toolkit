@@ -1,0 +1,466 @@
+<div data-page="sass-tools" class="demo-page-content">
+
+    {{> demo-sidebar }}
+
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
+            <div class="container">
+                <h2>SASS Tools</h2>
+                <ul class="list--inline remove-link-styles font-bold">
+                    <li><a href="#toolsAccordions">Accordions</a></li>
+                    <li><a href="#toolsAlerts">Alerts</a></li>
+                    <li><a href="#toolsAnimationFades">Animations fades</a></li>
+                    <li><a href="#toolsAnimationPopUpFadeIn">Animation pop up fade in</a></li>
+                    <li><a href="#toolsAnimationSlides">Animation slides</a></li>
+                    <li><a href="#toolsAspectRatio">Aspect ratio</a></li>
+                    <li><a href="#toolsContainer">Container</a></li>
+                    <li><a href="#toolsCustomIconLists">Custom icon lists</a></li>
+                    <li><a href="#toolsFormControls">Form controls</a></li>
+                    <li><a href="#toolsFontSizes">Font sizes</a></li>
+                    <li><a href="#toolsFullOverlay">Full overlay</a></li>
+                    <li><a href="#toolsHeadings">Headings</a></li>
+                    <li><a href="#toolsHorizontalSpacing">Horizontal spacing</a></li>
+                    <li><a href="#toolsIconsInCircles">Icons in circles</a></li>
+                    <li><a href="#toolsInlineListGutter">Inline list gutter</a></li>
+                    <li><a href="#toolsMargin">Margin</a></li>
+                    <li><a href="#toolsMediaQueries">Media queries</a></li>
+                    <li><a href="#toolsPadding">Padding</a></li>
+                    <li><a href="#toolsPositioning">Positioning</a></li>
+                </ul>
+                <br>
+                <ul class="list--inline remove-link-styles font-bold">
+                    <li><a href="#placeholderClearfix">Clearfix</a></li>
+                    <li><a href="#placeholderVAlign">Vertical align centre</a></li>
+                    <li><a href="#placeholderRemoveListStyles">Remove list styles</a></li>
+                    <li><a href="#placeholderRemoveLinkStyles">Remove link styles</a></li>
+                    <li><a href="#placeholderClickable">Clickable</a></li>
+                    <li><a href="#placeholderHideTextNotPseudo">Hide text not pseudo</a></li>
+                    <li><a href="#placeholderBgCover">Background cover</a></li>
+                    <li><a href="#placeholderHideText">Hide text</a></li>
+                    <li><a href="#placeholderMarginCentre">Margin centre</a></li>
+                </ul>
+            </div>
+        </header>
+
+
+        <!-- ACCORDIONS -->
+        <section id="toolsAccordions">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Accordions</h3>
+                    <p>Allows you to define the vertical padding.</p>
+                    <p>Visual examples of classes that use the accordion mixin <a href="accordions.html#accordionVerticalSpacing">here</a></p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixins</h4>
+{{> mixin-accordions }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-accordion }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ALERTS -->
+        <section id="toolsAlerts">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Alerts</h3>
+                    <p>Border and text colours have default settings, but background colour is required.</p>
+                    <p>Visual examples of classes that use the alert mixin <a href="alerts.html">here</a>.</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixin</h4>
+{{> mixin-alerts }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-alert }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ANIMATION FADES -->
+        <section id="toolsAnimationFades">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Animation fade in/out</h3>
+                    <p>These mixins use keyframe animations that toggles the opacity.</p>
+                    <p>A duration can be passed as an argument or left as default.</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixins</h4>
+{{> mixins-fades }}
+                <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-fades }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ANIMATION POP UP FADE IN -->
+        <section id="toolsAnimationPopUpFadeIn">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Animation pop up fade in</h3>
+                    <p>This mixin makes the element <code>position: relative</code> and uses a keyframe animation which makes the element <code>top: 100%</code> and <code>opacity: 0</code> and animates it to <code>top: 0</code> and <code>opacity: 1</code>.</p>
+                    <p>A duration can be passed as an argument or left as default.</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixin</h4>
+{{> mixin-pop-up-fade-in }}
+                <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-pop-up-fade-in }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ANIMATION SLIDES -->
+        <section id="toolsAnimationSlides">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Animation slides</h3>
+                    <p>This mixin slides content up and down using a max height transition.</p>
+                    <p>The mixin <code>slide-down-collapsed</code> should be applied to the collapsed element and <code>slide-down-active</code> should be applied to the element when it is open/active.</p>
+                    <p>Note that because the max-height is used to perform the animation, an approximate max-height is required on the <code>slide-down-active</code> mixin. If the height is too large it will cause a delay in the animation and if it is too small it will not open fully.</p>
+                    <p>Visual examples of accordions that use the slide mixins <a href="accordions.html">here</a>.</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixin</h4>
+{{> mixins-slides }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-slides }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ASPECT RATIO -->
+        <section id="toolsAspectRatio">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Aspect ratio</h3>
+                    <p>This mixin is available instead of using a transparent image as a hack to maintain aspect ratio which is very handy for making video iframes act responsively.</p>
+                    <p>The content needs to go in a nested element called <code>.aspect-ratio-content</code>.</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixin</h4>
+{{> mixin-aspect-ratio }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-aspect-ratio }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CONTAINER -->
+        <section id="toolsContainer">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Container</h3>
+                    <p>This is useful to define the main container of your site/app as it makes the container centred, gives horizontal spacing for mobile and desktop as well as a max width.</p>
+                    <p>Note that the container mixin includes the <code>horizontal-spacing</code> mixin <a href="#toolsHorizontalSpacing">here</a>, so it will use the default spacing set unless you reset the mixin arguments.</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixin</h4>
+{{> mixin-container }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-container }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CUSTOM ICON LISTS -->
+        <section id="toolsCustomIconLists">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Custom icon lists</h3>
+                    <p>Allows you to define your own custom icon for featured lists.</p>
+                    <p>Visual examples of classes that use the featured icon list mixins <a href="lists.html#listsFeaturedTicks">here</a>.</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixins</h4>
+{{> mixins-custom-icon-lists }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-custom-icon-list }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FORM CONTROLS -->
+        <section id="toolsFormControls">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Form controls</h3>
+                    <p>Mixins for form controls and their hover/focus/disabled states.</p>
+                    <p>The mixins all include default settings so can be used with or without arguments passed in the parameters.</p>
+                    <p>Visual examples of classes that use the input mixins <a href="forms.html#formInputs">here</a></p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixins</h4>
+{{> mixins-inputs }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-input }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FONT SIZES -->
+        <section id="toolsFontSizes">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Font sizes</h3>
+                    <p>The font size mixins define sizes for mobile and desktop.</p>
+                    <p>Note that font sizes are defined in rems but for ease of use they are noted in pixels below.</p>
+                    <p>Visual examples of classes that use the font size mixins <a href="typography.html">here</a></p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixins</h4>
+{{> mixins-font-sizes }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-font-size }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FULL OVERLAY -->
+        <section id="toolsFullOverlay">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Full overlay</h3>
+                    <p>Creates an element with full height and width and absolute positioned pinned to all corners.</p>
+                    <p>Useful to use on an element or a before/after element.</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixin</h4>
+{{> mixin-full-overlay }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-full-overlay }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- HEADINGS -->
+        <section id="toolsHeadings">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Headings</h3>
+                    <p>The heading-style placeholder defines general heading styling such as font weight, padding etc. and it is included in all the mixins.</p>
+                    <p>The heading style mixins define the font sizes for mobile and desktop.</p>
+                    <p>Note that font sizes are defined in rems but for ease of use they are noted in pixels below.</p>
+                    <p>Visual examples of classes that use the heading mixins <a href="typography.html">here</a></p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixins</h4>
+{{> mixins-headings }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-heading }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- HORIZONTAL SPACING -->
+        <section id="toolsHorizontalSpacing">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Horizontal spacing</h3>
+                    <p>Defines padding on the right and left for mobile and desktop.</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixin</h4>
+{{> mixin-horizontal-spacing }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-horizontal-spacing }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ICONS IN CIRCLES -->
+        <section id="toolsIconsInCircles">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Icons in circles</h3>
+                    <p>Each mixin does a different job and can be used one at the time or all at once on an element</p>
+                    <p>Note that all mixins here have default values that can be used by not passing any arguments or overriden by passing arguments</p>
+                    <p>Visual examples of classes that use the icons-in-circles mixins <a href="icons.html#iconCirclesSizes">here</a></p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixins</h4>
+{{> mixins-icons-in-circles }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-icon-in-circle }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- INLINE LIST GUTTER -->
+        <section id="toolsInlineListGutter">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Inline list gutter</h3>
+                    <p></p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixin</h4>
+{{> mixin-inline-list-gutter }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-inline-list-gutter }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- MARGIN -->
+        <section id="toolsMargin">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Margin</h3>
+                    <p>A shorthand notation for defining margin with null values</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixin</h4>
+{{> mixin-margin }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-margin }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- MEDIA QUERIES -->
+        <section id="toolsMediaQueries">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Media queries</h3>
+                    <p>Mixins for mobile first media query breakpoints, based on screen widths.</p>
+                    <p>Breakpoints are defined in EMs to cater cross browser for users who zoom in or change their font size settings. There are various articles explaining conclusions to these experiments such as <a href="https://zellwk.com/blog/media-query-units/" target="_blank">zellwk.com</a> and <a href="https://cloudfour.com/thinks/the-ems-have-it-proportional-media-queries-ftw/" target="_blank">cloudfour.com</a>.</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixins</h4>
+{{> mixins-media-queries }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-media-query }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PADDING -->
+        <section id="toolsPadding">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Padding</h3>
+                    <p>A shorthand notation for defining padding with null values</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixin</h4>
+{{> mixin-padding }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-padding }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- POSITIONING -->
+        <section id="toolsPositioning">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Positioning</h3>
+                    <p>A shorthand notation for positioning elements</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Mixin</h4>
+{{> mixin-position }}
+                    <br>
+                    <h4>Example usage</h4>
+{{> mixin-example-position }}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PLACEHOLDER HELPERS -->
+        <section id="toolsPlaceholderHelpers">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Placeholder helpers</h3>
+                    <p>Some handy helper placeholders.</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Placeholders</h4>
+{{> placeholder-helpers }}
+                <br>
+                    <h4>Example usage</h4>
+{{> placeholder-example }}
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

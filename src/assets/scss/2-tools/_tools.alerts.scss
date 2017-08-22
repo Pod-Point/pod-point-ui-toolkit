@@ -3,8 +3,9 @@
 // =============================================================================
 
 // Mixin for alert boxes/messages
-@mixin alert-variant($background, $text-colour) {
+@mixin alert-variant($background, $text-colour: $font-colour-base, $border: 0) {
     background-color: $background;
+    border: $border;
     color: $text-colour;
     font-weight: $font-weight-bold;
 

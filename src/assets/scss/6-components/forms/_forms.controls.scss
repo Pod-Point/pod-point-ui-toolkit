@@ -8,7 +8,7 @@
 
     &:focus {
         &:not(disabled) {
-            @include input-border--focus;
+            @include input-border--hover;
         }
     }
 
