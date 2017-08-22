@@ -71,15 +71,64 @@
         <header class="content-block content-block--strip bg-primary">
             <div class="container">
                 <h2>The CSS/SCSS</h2>
+                <ul class="list--inline remove-link-styles font-bold">
+                    <li><a href="#cssNamingConvention">Naming conventions</a></li>
+                    <li><a href="#cssUnits">Units</a></li>
+                    <li><a href="#cssStructureImports">Structure and importing</a></li>
+                </ul>
             </div>
         </header>
 
 
-        <!-- STYLES -->
-        <section id="homeStyles">
+        <!-- NAMING CONVENTIONS -->
+        <section id="cssNamingConvention">
             <header class="content-block bg-light-grey">
                 <div class="container">
-                    <h3>The CSS/SCSS</h3>
+                    <h3>Naming conventions</h3>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <p>BEM is being used throughout as the naming convention. For more info about bem see <a href="http://getbem.com/" target="blank">here</a>.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- UNITS -->
+        <section id="cssUnits">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Units used (PX EM REM %)</h3>
+                    <p>There have been countless debates about which units to use for the web, with no strict right or wrong answer.</p>
+                    <p>All units serve different purposes and the rationale behind the use in this toolkit are outlined below.</p>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <h4>Media queries in EM</h4>
+                    <p>Breakpoints are defined in EMs to cater cross browser for users who zoom in or change their font size settings. There are various articles explaining conclusions to these experiments such as <a href="https://zellwk.com/blog/media-query-units/" target="_blank">zellwk.com</a> and <a href="https://cloudfour.com/thinks/the-ems-have-it-proportional-media-queries-ftw/" target="_blank">cloudfour.com</a>.</p>
+                    <h4>Fonts and icons in REM</h4>
+                    <p>Fonts and icons are defined in REMs for users who change their base font size settings.</p>
+                    <p>To make it easier, a helper function is available to convert pixel values to REMs by passing a pixel value in the rem function like so <code>rem(24);</code></p>
+                    <h4>Font spacing in EM</h4>
+                    <p>To keep the spacing relative to the size of the font, the EM unit is being used. If the font size changes, the spacing around the text doesn't need to be altered.</p>
+                    <p>Note only padding is used for vertical spacing.</p>
+                    <h4>Everything else in PX or %</h4>
+                    <p>Widths and spacing should not be altered based on font size. For example if the text increases, the horizontal spacing and widths of content boxes and images should not be altered since the screen width remains the same.</p>
+                    <p>If the font increases it should flow vertically therefore the height of a text container should never be rigidly set to allow for text changes (a min-height could be used).</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- STRUCTURE AND IMPORTING -->
+        <section id="cssStructureImports">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Structure and importing</h3>
                     <p>It is highly recommended to use this toolkit with individual SCSS imports, however the compiled CSS file is also available from the dist folder: <code>dist/assets/css/styles.css</code> and all the SCSS files are imported into the styles.scss file in the src folder: <code>src/assets/scss/styles.scss</code></p>
                     <p>Some influence for the concepts and structure is taken from ITCSS. There is a curated list of ITCSS articles, videos and code examples <a href="https://github.com/ahmadajmi/awesome-itcss" target="_blank">here</a></p>
                     <p>To import any SCSS file you need to specify the path to your node modules folder and then the path to the SCSS files. This would look something like this: <code>path/to/node_modules/@pod-point/pod-point-ui-toolkit/src/assets/scss/6-components/_components.buttons</code></p>
