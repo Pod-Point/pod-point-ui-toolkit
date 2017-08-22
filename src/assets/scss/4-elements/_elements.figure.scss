@@ -3,13 +3,6 @@
 // =============================================================================
 
 figure {
-    background-color: $grey-dark;
-    border: $border-base;
-    border-radius: $border-radius-base;
-    box-shadow: $box-shadow-inset;
-    color: $white;
     margin: 0;
-    max-height: 300px;
-    overflow: scroll;
-    padding: 0 $h-spacing-mobile;
+    padding: 0;
 }

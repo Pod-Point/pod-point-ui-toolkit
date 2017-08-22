@@ -2,6 +2,8 @@
 //  TRUMPS - TYPOGRAPHY
 // =============================================================================
 
+// sass-lint:disable no-important
+
 .font-size-xs {
     @include font-size-xs;
 }
@@ -23,40 +25,40 @@
 }
 
 .uppercase {
-    text-transform: uppercase;
+    text-transform: uppercase !important;
 }
 
 .lowercase {
-    text-transform: lowercase;
+    text-transform: lowercase !important;
 }
 
 .primary {
-    color: $primary-colour;
+    color: $primary-colour !important;
 
     a {
-        border-bottom: 2px solid $primary-colour;
+        border-bottom: 1px solid $primary-colour !important;
     }
 }
 
 .font-regular {
-    font-family: $font-weight-regular;
-    font-weight: normal;
+    font-family: $font-weight-regular !important;
+    font-weight: normal !important;
 }
 
 .font-bold {
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-bold !important;
 }
 
 .color-base {
-    color: $font-colour-base;
+    color: $font-colour-base !important;
 }
 
 .color-light {
-    color: $font-colour-light;
+    color: $font-colour-light !important;
 }
 
 .color-very-light {
-    color:  $font-colour-very-light;
+    color:  $font-colour-very-light !important;
 }
 
 .remove-link-styles {

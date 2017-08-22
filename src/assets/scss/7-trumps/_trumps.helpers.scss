@@ -55,21 +55,12 @@
 
 .svg-light {
     > svg {
-        fill: $white;
+        fill: $white !important;
     }
 }
 
 .svg-primary {
     > svg {
-        fill: $primary-colour;
+        fill: $primary-colour !important;
     }
-}
-
-.figure--light {
-    background-color: $white;
-    border: $border-thin;
-    border-radius: $border-radius-base;
-    box-shadow: none;
-    color: inherit;
-    padding: 0 ($h-spacing-mobile / 2);
 }

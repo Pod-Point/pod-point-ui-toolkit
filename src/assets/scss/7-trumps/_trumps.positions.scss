@@ -2,21 +2,23 @@
 //  TRUMPS - POSITIONS
 // =============================================================================
 
+// sass-lint:disable no-important
+
 // Position properties
 .pos-sta {
-    position: static;
+    position: static !important;
 }
 
 .pos-rel {
-    position: relative;
+    position: relative !important;
 }
 
 .pos-abs {
-    position: absolute;
+    position: absolute !important;
 }
 
 .pos-fix {
-    position: fixed;
+    position: fixed !important;
 }
 
 // Pinning an element in each corner
@@ -42,45 +44,45 @@
 
 // z-indexes
 .z-index-1 {
-    z-index: 1;
+    z-index: 1 !important;
 }
 
 .z-index-2 {
-    z-index: 2;
+    z-index: 2 !important;
 }
 
 .z-index-3 {
-    z-index: 3;
+    z-index: 3 !important;
 }
 
 .z-index-4 {
-    z-index: 4;
+    z-index: 4 !important;
 }
 
 .z-index-5 {
-    z-index: 5;
+    z-index: 5 !important;
 }
 
 .z-index-10 {
-    z-index: 10;
+    z-index: 10 !important;
 }
 
 .z-index-20 {
-    z-index: 20;
+    z-index: 20 !important;
 }
 
 .z-index-30 {
-    z-index: 30;
+    z-index: 30 !important;
 }
 
 .z-index-40 {
-    z-index: 40;
+    z-index: 40 !important;
 }
 
 .z-index-50 {
-    z-index: 50;
+    z-index: 50 !important;
 }
 
 .z-index-99 {
-    z-index: 99;
+    z-index: 99 !important;
 }
