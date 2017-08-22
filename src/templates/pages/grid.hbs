@@ -6,17 +6,29 @@
         <header class="content-block content-block--strip bg-primary">
             <div class="container">
                 <h2>Grid</h2>
+                <ul class="list--inline remove-link-styles font-bold">
+                    <li><a href="#gridRequired">Required files</a></li>
+                    <li><a href="#gridBasic">Basic fluid grid</a></li>
+                    <li><a href="#gridStacking">Grid stacking on mobile</a></li>
+                    <li><a href="#gridResponsive">Fully responsive grid</a></li>
+                </ul>
             </div>
         </header>
 
 
-        <header class="content-block bg-light-grey">
-            <div class="container">
-                <h3>Required files</h3>
-                <p>SCSS files required: <code>_objects.grid.scss</code></p>
+        <!-- REQUIRED FILES -->
+        <section id="gridRequired">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Required files</h3>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p>SCSS files required: <code>_objects.grid.scss</code></p>
+                </div>
             </div>
-        </header>
-
+        </section>
 
         <header class="content-block bg-light-grey">
             <div class="container">
@@ -30,7 +42,7 @@
 
 
         <!-- BASIC FLUID GRID -->
-        <section>
+        <section id="gridBasic">
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Basic fluid grid</h3>
@@ -107,10 +119,10 @@
 
 
         <!-- RESPONSIVE STACKING GRID -->
-        <section>
+        <section class="gridStacking">
             <header class="content-block bg-light-grey">
                 <div class="container">
-                    <h3>Responsive fluid grid - stacks on mobile</h3>
+                    <h3>Grid stacking on mobile</h3>
                     <p>To make the columns stack to be full width on mobile, the full width column class needs to be applied to all columns <code>grid__col-12</code> and then a breakpoint class with the required width eg. <code>grid__col-md-6</code>.</p>
 {{> snippet-grid-stacks }}
                 </div>
@@ -183,10 +195,10 @@
 
 
         <!-- RESPONSIVE STACKING GRID -->
-        <section>
+        <section id="gridResponsive">
             <header class="content-block bg-light-grey">
                 <div class="container">
-                    <h3>Responsive fluid grid - changes at different breakpoints</h3>
+                    <h3>Fully responsive grid</h3>
                     <p>There are 3 more breakpoint classes available for the column widths <code>sm</code>, <code>md</code>, <code>lg</code>.</p>
                     <p>The below example illustrates all 4 breakpoint classes being applied.</p>
 {{> snippet-grid-breakpoints }}

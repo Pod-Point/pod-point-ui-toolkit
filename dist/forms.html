@@ -71,17 +71,34 @@
         <header class="content-block content-block--strip bg-primary">
             <div class="container">
                 <h2>Forms</h2>
+                <ul class="list--inline remove-link-styles font-bold">
+                    <li><a href="#formRequired">Required files</a></li>
+                    <li><a href="#formLayout">Form layout</a></li>
+                    <li><a href="#formInputs">Inputs</a></li>
+                    <li><a href="#formTextareas">Text areas</a></li>
+                    <li><a href="#formSelects"></a>Selects</li>
+                    <li><a href="#formControlAlt">Form controls alternative</a></li>
+                    <li><a href="#formCheckboxes">Checkboxes</a></li>
+                    <li><a href="#formRadios"></a>Radios</li>
+                    <li><a href="#formFieldsInline">Fields inline</a></li>
+                </ul>
             </div>
         </header>
 
-
-        <header class="content-block bg-light-grey">
-            <div class="container">
-                <h3>Required files</h3>
-                <p>SCSS files required: <code>_forms.controls.scss</code>, <code>_forms.selects.scss</code>, <code>_forms.radios.scss</code>, <code>_forms.checkboxes.scss</code>, <code>_forms.labels.scss</code></p>
-                <p>SCSS files optional: <code>_objects.form-layout.scss</code>, <code>_forms.validation.scss</code></p>
+        <!-- REQUIRED FILES -->
+        <section id="formRequired">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Required files</h3>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p>SCSS files required: <code>_forms.controls.scss</code>, <code>_forms.selects.scss</code>, <code>_forms.radios.scss</code>, <code>_forms.checkboxes.scss</code>, <code>_forms.labels.scss</code></p>
+                    <p>SCSS files optional: <code>_objects.form-layout.scss</code>, <code>_forms.validation.scss</code></p>
+                </div>
             </div>
-        </header>
+        </section>
 
 
         <!-- FORM LAYOUT -->
@@ -89,33 +106,35 @@
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Form layout</h3>
-
                     <p>Note: some variables are in the settings file <code>settings.forms.scss</code> and can be reassigned after the include of the file if required</p>
-
                     <p>Use the class <code>.form</code> on the element that contains all the form elements</p>
+                </div>
+            </header>
 
-                    <h5>Form group</h5>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Form group</h4>
                     <p>Use the class <code>.form__group</code> to wrap each form field or group of fields. You could apply the class to a <code>&lt;fieldset&gt;</code> as it has a similar meaning.</p>
                     <p>Form group includes a bottom margin of 30px (variable: <code>$form-group-base-spacing</code>) to give space between fields</p>
                     <p>Note: global spacing helper classes can also be applied <code>.m-b-none</code>, <code>.m-b-xs</code>, <code>.m-b-sm</code>, <code>.m-b-md</code> etc.</p>
 
-                    <h5>Form field</h5>
+                    <h4>Form field</h4>
                     <p>Use the class <code>.form__field</code> for each field (placement of class varies across elements).</p>
                     <p>The form field includes the max-width style (variable: <code>$form-field-max-width</code>)</p>
                     <p>Note: Form fields can be used for the placement of error messages directly underneath, therefore it is best not to add a bottom margin</p>
 
-                    <h5>Form label</h5>
+                    <h4>Form label</h4>
                     <p>Use the class <code>.form__label</code> for a form field label - which is styled as small, bold font.</p>
                     <p>The form label includes the max-width style (variable: <code>$form-field-max-width</code>)</p>
 
-                    <h5>Disabled fields</h5>
+                    <h4>Disabled fields</h4>
                     <p>All fields can use the disabled attribute which will apply the disabled styles, however the select element needs a class <code>.is-disabled</code> added to the <code>.select</code></p>
 
-                    <h5>Form validation</h5>
+                    <h4>Form validation</h4>
                     <p>The following modifying classes can be applied the form group <code>.form__group--error</code> and <code>.form__group--valid</code>, which will apply validation styling to the field inside.</p>
                     <p>Error messages can be wrapped in the class <code>.form__error</code> and placed directly following the form field</p>
                 </div>
-            </header>
+            </div>
         </section>
 
 
