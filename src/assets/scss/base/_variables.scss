@@ -2,7 +2,7 @@
 //	VARIABLES
 // =============================================================================
 
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 
 @function rem($size) {
 	$remSize: $size / 16;
@@ -22,9 +22,7 @@ $xlarge-screen: 100em;
 $font-family-base: "Quicksand", sans-serif;
 
 // font weights
-$font-weight-light: 300;
 $font-weight-regular: 400;
-$font-weight-medium: 500;
 $font-weight-bold: 700;
 
 // Line height
