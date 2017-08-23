@@ -80,7 +80,7 @@
 }
 
 .tooltip__title {
-    @include heading-style-5;
+    @include heading-style-responsive($font-size-h5-mobile, $font-size-h5-desktop);
 }
 
 .tooltip__close {

@@ -8,28 +8,12 @@
     width: 100% !important;
 }
 
-.max-width-content {
-    max-width: $max-width-content !important;
-}
-
-.max-width-text {
-    max-width: $max-width-text !important;
-}
-
-.max-width-text-wider {
-    max-width: $max-width-text-wider !important;
-}
-
-.max-width-text-wide {
-    max-width: $max-width-text-wide !important;
-}
-
-.max-width-text-narrow {
-    max-width: $max-width-text-narrow !important;
+.max-width-100 {
+    max-width: 100% !important;
 }
 
 .max-width {
-
+    // Max widths (useful for images)
     &-xxs {
         max-width: $max-width-xxs !important;
     }
@@ -60,5 +44,26 @@
 
     &-xxxl {
         max-width: $max-width-xxxl !important;
+    }
+
+    // Widths for content and text (variables can be reset according to your preference)
+    &-content {
+        max-width: $max-width-content !important;
+    }
+
+    &-text {
+        max-width: $max-width-text !important;
+    }
+
+    &-text-wider {
+        max-width: $max-width-text-wider !important;
+    }
+
+    &-text-wide {
+        max-width: $max-width-text-wide !important;
+    }
+
+    &-text-narrow {
+        max-width: $max-width-text-narrow !important;
     }
 }

@@ -71,13 +71,16 @@
         <header class="content-block content-block--strip bg-primary">
             <div class="container">
                 <h2>Typography</h2>
-                <ul class="list--inline remove-link-styles font-bold">
+                <ul class="list--inline remove-link-styles font-weight-bold">
                     <li><a href="#typographyRequired">Required files</a></li>
-                    <li><a href="#typographySizes">Font sizes</a></li>
+                    <li><a href="#typographySizes">Sizes</a></li>
                     <li><a href="#typographyHeadings">Headings</a></li>
-                    <li><a href="#typographyBase">Base type</a></li>
+                    <li><a href="#typographySizes">Font sizes</a></li>
+                    <li><a href="#typographyExtraSmall">Extra small type</a></li>
                     <li><a href="#typographySmall">Small type</a></li>
+                    <li><a href="#typographyBase">Base/medium type</a></li>
                     <li><a href="#typographyLarge">Large type</a></li>
+                    <li><a href="#typographyExtraLarge">Extra large type</a></li>
                     <li><a href="#typographyFormatting">Formatting</a></li>
                 </ul>
             </div>
@@ -99,16 +102,14 @@
         </section>
 
 
-        <!-- FONT SIZES -->
+        <!-- SIZES -->
         <section id="typographySizes">
             <header class="content-block bg-light-grey">
                 <div class="container">
-                    <h3>Font sizes</h3>
-                    <p>All font sizes have desktop and mobile sizes which change at the medium screen size (50em/800px)</p>
-                    <p>Padding is used for the spacing of all typography, so the global padding helper classes can be used to override if required</p>
-                    <p>The file <code>_settings.typography.scss</code> contains all the size variables (variables can be reassigned directly after the file if required)</p>
-                    <p>The file <code>_tools.font-sizes.scss</code> contains the mixins for the general font sizes</p>
-                    <p>The file <code>_tools.headings.scss</code> contains the mixins for the heading font sizes</p>
+                    <h3>Sizes</h3>
+                    <p>Note that it is recommeded that all font sizes are defined in REMs as explained <a href="scss.html#cssUnits">here</a>.</p>
+                    <p>(However the sizes are outlined below in pixels to make it easier to understand)</p>
+                    <p>The size variables used in the classes below are defined in settings: <code>_settings.typography.scss</code> and can be reasigned to suit your project.</p>
                 </div>
             </header>
         </section>
@@ -119,53 +120,74 @@
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Headings</h3>
-                    <p>Use default heading tags or classes <code>.h1</code>, <code>.h2</code>, <code>.h3</code> etc</p>
+                    <p>Use default heading tags or the classes are also available <code>.h1</code>, <code>.h2</code>, <code>.h3</code> etc</p>
                     <p>Note: When a heading is the first child, the top padding is removed to keep it at the top of it's wrapping element</p>
+                    <p>There are mixins available to create responsive heading styles here <a href="sass-tools.html#toolsHeadings">here</a></p>
                 </div>
             </header>
             <div class="content-block">
                 <div class="container">
-                    <h1>Heading 1 style</h1>
-                    <h2>Heading 2 style</h2>
-                    <h3>Heading 3 style</h3>
-                    <h4>Heading 4 style</h4>
-                    <h5>Heading 5 style</h5>
-                    <h6>Heading 6 style</h6>
+                    <h1>Heading 1 style (24px/28px)</h1>
+                    <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus.</p>
+                    <h2>Heading 2 style (22px/26px)</h2>
+                    <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus.</p>
+                    <h3>Heading 3 style (20px/24px)</h3>
+                    <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus.</p>
+                    <h4>Heading 4 style (18px/22px)</h4>
+                    <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus.</p>
+                    <h5>Heading 5 style (16px/20px)</h5>
+                    <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus.</p>
+                    <h6>Heading 6 style (14px/18px)</h6>
+                    <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus.</p>
                 </div>
             </div>
         </section>
 
 
-        <!-- BASE TYPOGRAPHY -->
-        <section id="typographyBase">
+        <!-- FONT SIZES -->
+        <section id="typographySizes">
             <header class="content-block bg-light-grey">
                 <div class="container">
-                    <h3>Base typography <small>(14px/16px)</small></h3>
-                    <p>Default typography styling</p>
+                    <h3>Font sizes</h3>
+                    <p>All font sizes have desktop and mobile sizes which change at the medium screen size (50em/800px)</p>
+                    <p>Padding is used for the spacing of all typography, so the global padding helper classes can be used to override if required</p>
+                    <p>The file <code>_settings.typography.scss</code> contains all the size variables (variables can be reassigned directly after the file if required)</p>
+                    <p>There are mixins available for the font sizes here <a href="sass-tools.html#toolsFontSizes">here</a></p>
+                </div>
+            </header>
+        </section>
+
+
+        <!-- EXTRA SMALL TYPOGRAPHY -->
+        <section id="typographyExtraSmall">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Extra small typography <small>(10px/12px)</small></h3>
+                    <p>Use the class <code>font-size-xs</code> for extra small typography styling</p>
                 </div>
             </header>
             <div class="content-block">
                 <div class="container">
-                    <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus. Nam risus arcu, malesuada id lectus eget, pretium blandit mi. Quisque molestie, sem nec rhoncus porttitor, lectus libero pretium mi, et mattis mauris erat at tellus. Sed ultricies dignissim volutpat.</p>
+                    <div class="font-size-xs">
+                        <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus. Nam risus arcu, malesuada id lectus eget, pretium blandit mi. Quisque molestie, sem nec rhoncus porttitor, lectus libero pretium mi, et mattis mauris erat at tellus. Sed ultricies dignissim volutpat.</p>
 
-                    <hr>
+                        <ul>
+                            <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                            <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.
+                                <ul>
+                                    <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
+                                    <li>Sed sagittis cursus semper. Aenean feugiat, nisl quis scelerisque rhoncus, orci elit consequat arcu.</li>
+                                </ul>
+                            </li>
+                            <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                        </ul>
 
-                    <ul>
-                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
-                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.
-                            <ul>
-                                <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
-                                <li>Sed sagittis cursus semper. Aenean feugiat, nisl quis scelerisque rhoncus, orci elit consequat arcu.</li>
-                            </ul>
-                        </li>
-                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
-                    </ul>
-
-                    <ol>
-                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
-                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
-                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
-                    </ol>
+                        <ol>
+                            <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                            <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                            <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </section>
@@ -206,6 +228,39 @@
         </section>
 
 
+        <!-- BASE TYPOGRAPHY -->
+        <section id="typographyBase">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Base typography <small>(14px/16px)</small></h3>
+                    <p>Use the class <code>font-size-md</code> for base/medium typography styling</p>
+                    <p>Note that this is the size defined on the body already.</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus. Nam risus arcu, malesuada id lectus eget, pretium blandit mi. Quisque molestie, sem nec rhoncus porttitor, lectus libero pretium mi, et mattis mauris erat at tellus. Sed ultricies dignissim volutpat.</p>
+                    <ul>
+                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.
+                            <ul>
+                                <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
+                                <li>Sed sagittis cursus semper. Aenean feugiat, nisl quis scelerisque rhoncus, orci elit consequat arcu.</li>
+                            </ul>
+                        </li>
+                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                    </ul>
+
+                    <ol>
+                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+
         <!-- LARGE TYPOGRAPHY -->
         <section id="typographyLarge">
             <header class="content-block bg-light-grey">
@@ -217,6 +272,41 @@
             <div class="content-block">
                 <div class="container">
                     <div class="font-size-lg">
+                        <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus. Nam risus arcu, malesuada id lectus eget, pretium blandit mi. Quisque molestie, sem nec rhoncus porttitor, lectus libero pretium mi, et mattis mauris erat at tellus. Sed ultricies dignissim volutpat.</p>
+
+                        <ul>
+                            <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                            <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.
+                                <ul>
+                                    <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
+                                    <li>Sed sagittis cursus semper. Aenean feugiat, nisl quis scelerisque rhoncus, orci elit consequat arcu.</li>
+                                </ul>
+                            </li>
+                            <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                        </ul>
+
+                        <ol>
+                            <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                            <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                            <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- EXTRA LARGE TYPOGRAPHY -->
+        <section id="typographyExtraLarge">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Extra large typography <small>(20px/36px)</small></h3>
+                    <p>Use the class <code>font-size-xl</code> for extra large typography styling</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <div class="font-size-xl">
                         <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus. Nam risus arcu, malesuada id lectus eget, pretium blandit mi. Quisque molestie, sem nec rhoncus porttitor, lectus libero pretium mi, et mattis mauris erat at tellus. Sed ultricies dignissim volutpat.</p>
 
                         <ul>

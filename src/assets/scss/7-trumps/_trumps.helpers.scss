@@ -1,11 +1,10 @@
 // =============================================================================
-//  TRUMPS - OVERRIDES
+//  TRUMPS - HELPERS
 // =============================================================================
-
-// Note: some helpers are extracted out into their own files or in the responsive trumps file
 
 // sass-lint:disable no-important
 
+// For fields with disabled attribute or .is-disabled class
 .is-disabled,
 [disabled] {
     cursor: not-allowed !important;
@@ -18,49 +17,30 @@
     }
 }
 
-.tel-link {
-    &:hover {
-        cursor: default;
-        opacity: 1;
-    }
-}
-
+// Apply clearfix styles with classes .clearfix or .clear
 .clear,
 .clearfix {
     @extend %clearfix;
 }
 
-.flip-x {
+// Flip element horizontally
+.flip-h {
     filter: FlipH;
     transform: scaleX(-1);
 }
 
+// Flip element vertically
+.flip-v {
+    filter: FlipV;
+    transform: scaleY(-1);
+}
+
+// Uses display flex to vertically align content
 .v-align-content {
     @extend %v-align;
 }
 
+// Styles element to appear clickable
 .clickable {
     @extend %clickable;
-}
-
-.img-resp {
-    max-width: 100%;
-}
-
-.svg-dark {
-    > svg {
-        fill: $font-colour-base;
-    }
-}
-
-.svg-light {
-    > svg {
-        fill: $white !important;
-    }
-}
-
-.svg-primary {
-    > svg {
-        fill: $primary-colour !important;
-    }
 }

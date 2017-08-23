@@ -6,7 +6,7 @@
     @extend %remove-list-styles;
 
     li {
-        @include font-size-md;
+        @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
         padding-bottom: $typography-v-spacing / 1.5;
         padding-left: 2em;
         position: relative;
@@ -26,7 +26,7 @@
     @extend %remove-list-styles;
 
     li {
-        @include font-size-lg;
+        @include font-size-responsive($font-size-lg-mobile, $font-size-lg-desktop);
         padding-bottom: $typography-v-spacing / 1.5;
         padding-left: 2em;
         position: relative;

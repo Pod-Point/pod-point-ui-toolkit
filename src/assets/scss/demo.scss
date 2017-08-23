@@ -57,7 +57,7 @@ body {
 }
 
 .demo-note {
-    @include font-size-sm;
+    @include font-size-responsive($font-size-sm-mobile, $font-size-sm-desktop);
     background-color: $grey-light;
     margin-bottom: .5em;
     padding: .5em 10px;
