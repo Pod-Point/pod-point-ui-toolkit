@@ -1,0 +1,39 @@
+// =============================================================================
+//  COMPONENTS - FIGURE BOX
+// =============================================================================
+
+.figure-box {
+    background-color: $figure-box-bg-colour;
+    border: $figure-box-border;
+    border-radius: $figure-box-border-radius;
+    box-shadow: none;
+    overflow: scroll;
+    padding: $figure-box-v-padding $figure-box-h-padding;
+
+    &--dark {
+        background-color: $figure-box-dark-bg-colour;
+        border: $figure-box-dark-border;
+        box-shadow: $figure-box-dark-box-shadow;
+        color: $figure-box-dark-colour;
+    }
+
+    &--max-height-xs {
+        max-height: $figure-box-max-height-xs;
+    }
+
+    &--max-height-sm {
+        max-height: $figure-box-max-height-sm;
+    }
+
+    &--max-height-md {
+        max-height: $figure-box-max-height-md;
+    }
+
+    &--max-height-lg {
+        max-height: $figure-box-max-height-lg;
+    }
+
+    &--max-height-xl {
+        max-height: $figure-box-max-height-xl;
+    }
+}

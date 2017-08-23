@@ -9,11 +9,11 @@ $demo-sidebar-width: 250px;
 $demo-header-height: 75px;
 
 .demo-logo-main {
-    @include padding(10px null 60px null);
+    @include padding(10px null 10px null);
     display: block;
 
-    img {
-        width: rem(120);
+    svg {
+        width: rem(140);
     }
 }
 
@@ -57,7 +57,7 @@ body {
 }
 
 .demo-note {
-    @include font-size-sm;
+    @include font-size-responsive($font-size-sm-mobile, $font-size-sm-desktop);
     background-color: $grey-light;
     margin-bottom: .5em;
     padding: .5em 10px;

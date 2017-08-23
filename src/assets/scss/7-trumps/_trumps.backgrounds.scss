@@ -5,66 +5,66 @@
 // sass-lint:disable no-important
 
 .bg-white {
-    background-color: $white;
-    color: $font-colour-base;
+    background-color: $white !important;
+    color: $font-colour-base !important;
 }
 
 // Greys
 .bg-very-light-grey {
-    background-color: $grey-very-light;
-    color: $font-colour-base;
+    background-color: $grey-very-light !important;
+    color: $font-colour-base !important;
 }
 
 .bg-light-grey {
-    background-color: $grey-light;
-    color: $font-colour-base;
+    background-color: $grey-light !important;
+    color: $font-colour-base !important;
 }
 
 .bg-grey {
-    background-color: $grey;
-    color: $white;
+    background-color: $grey !important;
+    color: $white !important;
 }
 
 .bg-dark-grey {
-    background-color: $grey-dark;
-    color: $white;
+    background-color: $grey-dark !important;
+    color: $white !important;
 }
 
 .bg-very-dark-grey {
-    background-color: $grey-very-dark;
-    color: $white;
+    background-color: $grey-very-dark !important;
+    color: $white !important;
 }
 
 // Colours
 .bg-primary {
-    background-color: $primary-colour;
-    color: $white;
+    background-color: $primary-colour !important;
+    color: $white !important;
 }
 
 .bg-sky-blue {
-    background-color: $sky-blue;
-    color: $font-colour-base;
+    background-color: $sky-blue !important;
+    color: $font-colour-base !important;
 }
 
 // State colours
 .bg-info {
-    background-color: $info-colour;
-    color: $white;
+    background-color: $info-colour !important;
+    color: $white !important;
 }
 
 .bg-success {
-    background-color: $success-colour;
-    color: $white;
+    background-color: $success-colour !important;
+    color: $white !important;
 }
 
 .bg-warning {
-    background-color: $warning-colour;
-    color: $white;
+    background-color: $warning-colour !important;
+    color: $white !important;
 }
 
 .bg-danger {
-    background-color: $error-red;
-    color: $white;
+    background-color: $error-red !important;
+    color: $white !important;
 }
 
 // To override any of the above (especially useful with nested backgrounds)

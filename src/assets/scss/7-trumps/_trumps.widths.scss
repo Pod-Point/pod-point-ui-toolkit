@@ -2,61 +2,68 @@
 //  TRUMPS - WIDTHS
 // =============================================================================
 
+// sass-lint:disable no-important
+
 .width-100 {
-    width: 100%;
+    width: 100% !important;
 }
 
-.max-width-content {
-    max-width: $max-width-content;
-}
-
-.max-width-text {
-    max-width: $max-width-text;
-}
-
-.max-width-text-wider {
-    max-width: $max-width-text-wider;
-}
-
-.max-width-text-wide {
-    max-width: $max-width-text-wide;
-}
-
-.max-width-text-narrow {
-    max-width: $max-width-text-narrow;
+.max-width-100 {
+    max-width: 100% !important;
 }
 
 .max-width {
-
+    // Max widths (useful for images)
     &-xxs {
-        max-width: $max-width-xxs;
+        max-width: $max-width-xxs !important;
     }
 
     &-xs {
-        max-width: $max-width-xs;
+        max-width: $max-width-xs !important;
     }
 
     &-sm {
-        max-width: $max-width-sm;
+        max-width: $max-width-sm !important;
     }
 
     &-md {
-        max-width: $max-width-md;
+        max-width: $max-width-md !important;
     }
 
     &-lg {
-        max-width: $max-width-lg;
+        max-width: $max-width-lg !important;
     }
 
     &-xl {
-        max-width: $max-width-xl;
+        max-width: $max-width-xl !important;
     }
 
     &-xxl {
-        max-width: $max-width-xxl;
+        max-width: $max-width-xxl !important;
     }
 
     &-xxxl {
-        max-width: $max-width-xxxl;
+        max-width: $max-width-xxxl !important;
+    }
+
+    // Widths for content and text (variables can be reset according to your preference)
+    &-content {
+        max-width: $max-width-content !important;
+    }
+
+    &-text {
+        max-width: $max-width-text !important;
+    }
+
+    &-text-wider {
+        max-width: $max-width-text-wider !important;
+    }
+
+    &-text-wide {
+        max-width: $max-width-text-wide !important;
+    }
+
+    &-text-narrow {
+        max-width: $max-width-text-narrow !important;
     }
 }

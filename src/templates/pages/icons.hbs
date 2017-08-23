@@ -6,9 +6,10 @@
         <header class="content-block content-block--strip bg-primary">
             <div class="container">
                 <h2>Icons</h2>
-                <ul class="list--inline remove-link-styles font-bold">
+                <ul class="list--inline remove-link-styles font-weight-bold">
                     <li><a href="#iconsRequired">Required files</a></li>
                     <li><a href="#iconsSvg">SVG icons</a></li>
+                    <li><a href="#iconsSvgColours">SVG icon colours</a></li>
                     <li><a href="#iconsInline">Icons inline with text</a></li>
                     <li><a href="#iconCirclesSizes">Icons in circles - sizes</a></li>
                     <li><a href="#iconCirclesColours">Icons in circles - colours</a></li>
@@ -74,6 +75,52 @@
         </section>
 
 
+        <!-- SVG ICON COLOURS -->
+        <section id="iconsSvgColours">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>SVG icons colours</h3>
+                    <p>There are three colour modifying classes available, which will alter the fill colour of the svg <code>.icon--base</code>, <code>.icon--inverted</code>, <code>.icon--primary</code>.</p>
+                    <p>Note that the base colour doesn't need that class unless you are trying to override.</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+
+                    <ul class="list--inline list--inline--gutter-xxs">
+                        <li><a href="#" class="icon">{{> icon-facebook }}</a></li>
+                        <li><a href="#" class="icon">{{> icon-twitter }}</a></li>
+                        <li><a href="#" class="icon">{{> icon-linkedin }}</a></li>
+                        <li><a href="#" class="icon">{{> icon-youtube }}</a></li>
+                        <li><a href="#" class="icon">{{> icon-instagram }}</a></li>
+                        <li><a href="#" class="icon">{{> icon-google }}</a></li>
+                    </ul>
+                    <br>
+                    <ul class="list--inline list--inline--gutter-xxs m-b-none">
+                        <li><a href="#" class="icon icon--primary">{{> icon-facebook }}</a></li>
+                        <li><a href="#" class="icon icon--primary">{{> icon-twitter }}</a></li>
+                        <li><a href="#" class="icon icon--primary">{{> icon-linkedin }}</a></li>
+                        <li><a href="#" class="icon icon--primary">{{> icon-youtube }}</a></li>
+                        <li><a href="#" class="icon icon--primary">{{> icon-instagram }}</a></li>
+                        <li><a href="#" class="icon icon--primary">{{> icon-google }}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-block bg-dark-grey">
+                <div class="container">
+                    <ul class="list--inline list--inline--gutter-xxs m-b-none">
+                        <li><a href="#" class="icon icon--inverted">{{> icon-facebook }}</a></li>
+                        <li><a href="#" class="icon icon--inverted">{{> icon-twitter }}</a></li>
+                        <li><a href="#" class="icon icon--inverted">{{> icon-linkedin }}</a></li>
+                        <li><a href="#" class="icon icon--inverted">{{> icon-youtube }}</a></li>
+                        <li><a href="#" class="icon icon--inverted">{{> icon-instagram }}</a></li>
+                        <li><a href="#" class="icon icon--inverted">{{> icon-google }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
         <!-- ICONS INLINE -->
         <section id="iconsInline">
             <header class="content-block bg-light-grey">
@@ -109,7 +156,7 @@
                     <h3>Icons in circles - sizes</h3>
                     <p>To create an icon in a circle, add a wrapping element to the <code>.icon</code> with the class of <code>.circle-icon</code></p>
                     <p>The alternative sizes available can be applied using the modifying classes <code>.circle-icon--sm</code>, <code>.circle-icon--sm-resp</code>, <code>.circle-icon--lg</code>, <code>.circle-icon--lg-resp</code> ('resp' meaning it has a different size on mobile and desktop)</p>
-                    <p>There is also a mixin available to customise the circle icon size <code>@include icon-in-circle--size($dimension: 25px);</code></p>
+                    <p>There is also a mixin available to customise the circle icon size <a href="sass-tools.html#toolsIconsInCircles">here</a></p>
 
 {{> snippet-icon-circle-sizes }}
 
@@ -117,7 +164,7 @@
             </header>
             <div class="container content-block">
                 <h4>Non responsive
-                    <span class="font-size-md font-regular">= <code>.circle-icon</code></span>
+                    <span class="font-size-md font-weight-regular">= <code>.circle-icon</code></span>
                 </h4>
                 <ul class="list--inline list--inline--gutter-xxs">
                     <li><a class="circle-icon" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
@@ -129,7 +176,7 @@
                 </ul>
                 <br>
                 <h4>Small responsive
-                    <span class="font-size-md font-regular">= <code>.circle-icon--sm-resp</code></span>
+                    <span class="font-size-md font-weight-regular">= <code>.circle-icon--sm-resp</code></span>
                 </h4>
                 <ul class="list--inline list--inline--gutter-xxs">
                     <li><a class="circle-icon circle-icon--sm-resp" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
@@ -141,7 +188,7 @@
                 </ul>
                 <br>
                 <h4>Large responsive
-                    <span class="font-size-md font-regular">= <code>.circle-icon--lg-resp</code></span>
+                    <span class="font-size-md font-weight-regular">= <code>.circle-icon--lg-resp</code></span>
                 </h4>
                 <ul class="list--inline list--inline--gutter-xxs">
                     <li><a class="circle-icon circle-icon--lg-resp" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
@@ -161,7 +208,7 @@
                 <div class="container">
                     <h3>Icons in circles - colours</h3>
                     <p>The colour variations can be applied using the modifying classes <code>.circle-icon--primary</code>, <code>.circle-icon--outlined</code>, <code>.circle-icon--outlined--primary</code>, <code>.circle-icon--outlined--inverted</code>, <code>.circle-icon--white-outline</code></p>
-                    <p>There is also a mixin available to customise the circle icon colour and border <code>@include icon-in-circle($bgColour: transparent, $colour: $primary-colour, $border: 2px solid $primary-colour);</code></p>
+                    <p>There is also a mixin available to customise the circle icon colour and border <a href="sass-tools.html#toolsIconsInCircles">here</a></p>
 
 {{> snippet-icon-circle-colours }}
 
@@ -169,7 +216,7 @@
             </header>
             <div class="container content-block">
                 <h4>Primary colour background
-                    <span class="font-size-md font-regular"> = <code>.circle-icon--primary</code></span>
+                    <span class="font-size-md font-weight-regular"> = <code>.circle-icon--primary</code></span>
                 </h4>
                 <ul class="list--inline list--inline--gutter-xxs">
                     <li><a class="circle-icon circle-icon--primary" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
@@ -182,7 +229,7 @@
                 <br>
 
                 <h4>Outlined with base colour border
-                    <span class="font-size-md font-regular"> = <code>.circle-icon--outlined</code></span>
+                    <span class="font-size-md font-weight-regular"> = <code>.circle-icon--outlined</code></span>
                 </h4>
                 <ul class="list--inline list--inline--gutter-xxs">
                     <li><a class="circle-icon circle-icon--outlined" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
@@ -195,7 +242,7 @@
                 <br>
 
                 <h4>Outlined with primary colour border
-                    <span class="font-size-md font-regular"> = <code>.circle-icon--outlined--primary</code></span>
+                    <span class="font-size-md font-weight-regular"> = <code>.circle-icon--outlined--primary</code></span>
                 </h4>
                 <ul class="list--inline list--inline--gutter-xxs">
                     <li><a class="circle-icon circle-icon--outlined--primary" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
@@ -209,7 +256,7 @@
             <div class="bg-dark-grey">
                 <div class="container content-block">
                     <h4>Outlined with inverted icon colour and border
-                        <span class="font-size-md font-regular"> = <code>.circle-icon--outlined--inverted</code></span>
+                        <span class="font-size-md font-weight-regular"> = <code>.circle-icon--outlined--inverted</code></span>
                     </h4>
                     <ul class="list--inline list--inline--gutter-xxs">
                         <li><a class="circle-icon circle-icon--outlined--inverted" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>

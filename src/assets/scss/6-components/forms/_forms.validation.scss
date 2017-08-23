@@ -21,7 +21,7 @@
 }
 
 .form__error {
-    @include font-size-sm;
+    @include font-size-responsive($font-size-sm-mobile, $font-size-sm-desktop);
     color: $error-red;
     display: block;
     font-weight: $font-weight-bold;

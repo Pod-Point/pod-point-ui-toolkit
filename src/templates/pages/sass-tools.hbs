@@ -6,7 +6,7 @@
         <header class="content-block content-block--strip bg-primary">
             <div class="container">
                 <h2>SASS Tools</h2>
-                <ul class="list--inline remove-link-styles font-bold">
+                <ul class="list--inline remove-link-styles font-weight-bold">
                     <li><a href="#toolsAccordions">Accordions</a></li>
                     <li><a href="#toolsAlerts">Alerts</a></li>
                     <li><a href="#toolsAnimationFades">Animations fades</a></li>
@@ -28,7 +28,7 @@
                     <li><a href="#toolsPositioning">Positioning</a></li>
                 </ul>
                 <br>
-                <ul class="list--inline remove-link-styles font-bold">
+                <ul class="list--inline remove-link-styles font-weight-bold">
                     <li><a href="#placeholderClearfix">Clearfix</a></li>
                     <li><a href="#placeholderVAlign">Vertical align centre</a></li>
                     <li><a href="#placeholderRemoveListStyles">Remove list styles</a></li>
@@ -240,14 +240,14 @@
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Font sizes</h3>
-                    <p>The font size mixins define sizes for mobile and desktop.</p>
-                    <p>Note that font sizes are defined in rems but for ease of use they are noted in pixels below.</p>
+                    <p>The font size mixin defines the sizes passed in for mobile and desktop.</p>
+                    <p>Note that font sizes should be declared in rems as explained in more detail <a href="scss.html#cssUnits">here</a>.</p>
                     <p>Visual examples of classes that use the font size mixins <a href="typography.html">here</a></p>
                 </div>
             </header>
             <div class="content-block">
                 <div class="container">
-                    <h4>Mixins</h4>
+                    <h4>Mixin</h4>
 {{> mixins-font-sizes }}
                     <br>
                     <h4>Example usage</h4>
@@ -283,15 +283,15 @@
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Headings</h3>
-                    <p>The heading-style placeholder defines general heading styling such as font weight, padding etc. and it is included in all the mixins.</p>
-                    <p>The heading style mixins define the font sizes for mobile and desktop.</p>
-                    <p>Note that font sizes are defined in rems but for ease of use they are noted in pixels below.</p>
+                    <p>The heading-style placeholder defines general heading styling such as font weight, padding etc.</p>
+                    <p>The heading-style-responsive mixin defines the font sizes passed in for mobile and desktop as well as includes the heading-style placeholder.</p>
+                    <p>Note that font sizes should be declared in rems as explained in more detail <a href="scss.html#cssUnits">here</a>.</p>
                     <p>Visual examples of classes that use the heading mixins <a href="typography.html">here</a></p>
                 </div>
             </header>
             <div class="content-block">
                 <div class="container">
-                    <h4>Mixins</h4>
+                    <h4>Placeholder and mixin</h4>
 {{> mixins-headings }}
                     <br>
                     <h4>Example usage</h4>

@@ -1,0 +1,38 @@
+// =============================================================================
+//  TOOLS - TYPOGRAPHY
+// =============================================================================
+
+// Heading styles
+%heading-style {
+    @include padding($typography-v-spacing null);
+    font-weight: $font-weight-bold;
+    line-height: $line-height-heading;
+    margin: 0;
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    &:last-child {
+        padding-bottom: 0;
+    }
+}
+
+// Defines heading size at mobile and desktop and includes heading styles
+@mixin heading-style-responsive($mobile-size, $desktop-size) {
+    @extend %heading-style;
+    font-size: $mobile-size;
+
+    @include screen-md-min {
+        font-size: $desktop-size;
+    }
+}
+
+// Defines font size at mobile and desktop
+@mixin font-size-responsive($mobile-size, $desktop-size) {
+    font-size: $mobile-size;
+
+    @include screen-md-min {
+        font-size: $desktop-size;
+    }
+}

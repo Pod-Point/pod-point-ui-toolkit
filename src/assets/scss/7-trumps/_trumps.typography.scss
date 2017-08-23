@@ -2,63 +2,70 @@
 //  TRUMPS - TYPOGRAPHY
 // =============================================================================
 
+// sass-lint:disable no-important
+
+// Font sizes
 .font-size-xs {
-    @include font-size-xs;
+    @include font-size-responsive($font-size-xs-mobile, $font-size-xs-desktop);
 }
 
 .font-size-sm {
-    @include font-size-sm;
+    @include font-size-responsive($font-size-sm-mobile, $font-size-sm-desktop);
 }
 
 .font-size-md {
-    @include font-size-md;
+    @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
 }
 
 .font-size-lg {
-    @include font-size-lg;
+    @include font-size-responsive($font-size-lg-mobile, $font-size-lg-desktop);
 }
 
 .font-size-xl {
-    @include font-size-xl;
+    @include font-size-responsive($font-size-xl-mobile, $font-size-xl-desktop);
 }
 
-.uppercase {
-    text-transform: uppercase;
+// Font weights
+.font-weight-regular {
+    font-family: $font-weight-regular !important;
+    font-weight: normal !important;
 }
 
-.lowercase {
-    text-transform: lowercase;
+.font-weight-bold {
+    font-weight: $font-weight-bold !important;
 }
 
-.primary {
-    color: $primary-colour;
-
-    a {
-        border-bottom: 2px solid $primary-colour;
-    }
+// Font transform upper/lower
+.font-uppercase {
+    text-transform: uppercase !important;
 }
 
-.font-regular {
-    font-family: $font-weight-regular;
-    font-weight: normal;
+.font-lowercase {
+    text-transform: lowercase !important;
 }
 
-.font-bold {
-    font-weight: $font-weight-bold;
+// Font colours
+.colour-base {
+    color: $font-colour-base !important;
 }
 
-.color-base {
-    color: $font-colour-base;
+.colour-primary {
+    color: $primary-colour !important;
 }
 
-.color-light {
-    color: $font-colour-light;
+.colour-inverted {
+    color: $white !important;
 }
 
-.color-very-light {
-    color:  $font-colour-very-light;
+.colour-light {
+    color: $font-colour-light !important;
 }
 
+.colour-very-light {
+    color:  $font-colour-very-light !important;
+}
+
+// Helper to remove link styles (can be used on a wrapping element or the element itself)
 .remove-link-styles {
     @extend %remove-link-styles;
 

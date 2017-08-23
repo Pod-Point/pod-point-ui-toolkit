@@ -64,11 +64,16 @@ placeholder {
 =======
 .demo-logo-main {
   padding-top: 10px;
-  padding-bottom: 60px;
+  padding-bottom: 10px;
   display: block; }
+<<<<<<< HEAD
   .demo-logo-main img {
     width: 7.5rem; }
 >>>>>>> Structure docs (#54)
+=======
+  .demo-logo-main svg {
+    width: 8.75rem; }
+>>>>>>> Moving scss files (#61)
 
 html,
 body {

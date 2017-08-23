@@ -55,7 +55,7 @@
     }
 
     > span {
-        @include font-size-md;
+        @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
         @include padding($radio-spacing null 0 $radio-text-l-spacing);
         position: relative;
 

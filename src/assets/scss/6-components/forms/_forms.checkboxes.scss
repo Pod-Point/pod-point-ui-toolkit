@@ -3,7 +3,7 @@
 // =============================================================================
 
 .checkbox {
-    @include font-size-md;
+    @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
     display: block;
     position: relative;
     text-align: left;

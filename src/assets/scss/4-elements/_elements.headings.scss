@@ -4,30 +4,30 @@
 
 h1,
 .h1 {
-    @include heading-style-1;
+    @include heading-style-responsive($font-size-h1-mobile, $font-size-h1-desktop);
 }
 
 h2,
 .h2 {
-    @include heading-style-2;
+    @include heading-style-responsive($font-size-h2-mobile, $font-size-h2-desktop);
 }
 
 h3,
 .h3 {
-    @include heading-style-3;
+    @include heading-style-responsive($font-size-h3-mobile, $font-size-h3-desktop);
 }
 
 h4,
 .h4 {
-    @include heading-style-4;
+    @include heading-style-responsive($font-size-h4-mobile, $font-size-h4-desktop);
 }
 
 h5,
 .h5 {
-    @include heading-style-5;
+    @include heading-style-responsive($font-size-h5-mobile, $font-size-h5-desktop);
 }
 
 h6,
 .h6 {
-    @include heading-style-6;
+    @include heading-style-responsive($font-size-h6-mobile, $font-size-h6-desktop);
 }

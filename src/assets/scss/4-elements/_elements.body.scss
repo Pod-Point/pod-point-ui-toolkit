@@ -3,7 +3,7 @@
 // =============================================================================
 
 body {
-    @include font-size-md;
+    @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
     -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
     color: $font-colour-base;
     font-family: $font-family-base;

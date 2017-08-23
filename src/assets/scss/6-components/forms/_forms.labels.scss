@@ -3,7 +3,7 @@
 // =============================================================================
 
 .form__label {
-    @include font-size-sm;
+    @include font-size-responsive($font-size-sm-mobile, $font-size-sm-desktop);
     display: inline-block;
     font-weight: $font-weight-bold;
     max-width: $form-field-max-width;
@@ -12,6 +12,6 @@
 
     .checkbox &,
     .radio & {
-        @include font-size-md;
+        @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
     }
 }

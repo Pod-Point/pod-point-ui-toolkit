@@ -10,6 +10,7 @@
         width: $icon-size-md;
     }
 
+    // Change size of the svg
     &--sm > svg {
         height: $icon-size-sm;
         width: $icon-size-sm;
@@ -23,6 +24,19 @@
     &--xxs > svg {
         height: $icon-size-xxs;
         width: $icon-size-xxs;
+    }
+
+    // Change fill colour of the svg
+    &--base > svg {
+        fill: $font-colour-base;
+    }
+
+    &--inverted > svg {
+        fill: $white;
+    }
+
+    &--primary > svg {
+        fill: $primary-colour;
     }
 
     // Icon inline with text
@@ -46,4 +60,3 @@
         margin-left: $icon-inline-text-gutter;
     }
 }
-

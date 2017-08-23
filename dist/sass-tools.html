@@ -71,7 +71,7 @@
         <header class="content-block content-block--strip bg-primary">
             <div class="container">
                 <h2>SASS Tools</h2>
-                <ul class="list--inline remove-link-styles font-bold">
+                <ul class="list--inline remove-link-styles font-weight-bold">
                     <li><a href="#toolsAccordions">Accordions</a></li>
                     <li><a href="#toolsAlerts">Alerts</a></li>
                     <li><a href="#toolsAnimationFades">Animations fades</a></li>
@@ -93,7 +93,7 @@
                     <li><a href="#toolsPositioning">Positioning</a></li>
                 </ul>
                 <br>
-                <ul class="list--inline remove-link-styles font-bold">
+                <ul class="list--inline remove-link-styles font-weight-bold">
                     <li><a href="#placeholderClearfix">Clearfix</a></li>
                     <li><a href="#placeholderVAlign">Vertical align centre</a></li>
                     <li><a href="#placeholderRemoveListStyles">Remove list styles</a></li>
@@ -120,14 +120,14 @@
             <div class="content-block">
                 <div class="container">
                     <h4>Mixins</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin accordion-size(
     $v-spacing
 );
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @include accordion-size(20px);
 }
@@ -149,7 +149,7 @@
             <div class="content-block">
                 <div class="container">
                     <h4>Mixin</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin alert-variant(
     $background,
     $text-colour: $font-colour-base,
@@ -158,7 +158,7 @@
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @include alert-variant($background: #CCC, $text-colour: #000, $border: #000 1px solid);
 }
@@ -180,20 +180,20 @@
             <div class="content-block">
                 <div class="container">
                     <h4>Mixins</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin fade-in(
     $duration: .3s
 );
 </pre></figure>
 <br>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin fade-out(
     $duration: .3s
 );
 </pre></figure>
                 <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @include fade-in($duration: .5s);
 }
@@ -219,14 +219,14 @@
             <div class="content-block">
                 <div class="container">
                     <h4>Mixin</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin pop-up-fade-in(
     $duration: .2s
 );
 </pre></figure>
                 <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @include pop-up-fade-in($duration: 1.5s);
 }
@@ -250,13 +250,13 @@
             <div class="content-block">
                 <div class="container">
                     <h4>Mixin</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin slide-down-collapsed(
     $duration: .8s
 );
 </pre></figure>
 <br>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 slide-down-active(
     $duration: .8s,
     $approx-height: 500px
@@ -264,7 +264,7 @@ slide-down-active(
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @include slide-down-collapsed($duration: 1s);
 }
@@ -290,7 +290,7 @@ slide-down-active(
             <div class="content-block">
                 <div class="container">
                     <h4>Mixin</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin aspect-ratio(
     $width,
     $height
@@ -298,7 +298,7 @@ slide-down-active(
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @include aspect-ratio(150px, 200px);
 
@@ -324,14 +324,14 @@ slide-down-active(
             <div class="content-block">
                 <div class="container">
                     <h4>Mixin</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin container(
     $max-width-content: $max-width-content
 );
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @include container($max-width-content: 900px);
 }
@@ -353,20 +353,20 @@ slide-down-active(
             <div class="content-block">
                 <div class="container">
                     <h4>Mixins</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin featured-icon-list(
     $icon-path
 );
 </pre></figure>
 <br>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin featured-icon-list-lg(
     $icon-path
 );
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 ul {
     @include featured-icon-list($css-bg-path+'icons/tick-primary.svg');
 }
@@ -393,7 +393,7 @@ ul.lg {
             <div class="content-block">
                 <div class="container">
                     <h4>Mixins</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin input-styles(
     $font-size: $font-size-forms-md,
     $height: $input-height,
@@ -403,7 +403,7 @@ ul.lg {
 );
 </pre></figure>
 <br>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin input-border(
     $background-colour-base,
     $border: $form-border-base,
@@ -411,14 +411,14 @@ ul.lg {
 );
 </pre></figure>
 <br>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin input-border--hover(
     $border-color: $font-colour-base,
     $color: $font-colour-base
 );
 </pre></figure>
 <br>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin input-border--disabled(
     $background-color: $grey-very-light,
     $opacity: $opacity-disabled
@@ -426,7 +426,7 @@ ul.lg {
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @include input-styles;
     @include input-border;
@@ -451,43 +451,22 @@ ul.lg {
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Font sizes</h3>
-                    <p>The font size mixins define sizes for mobile and desktop.</p>
-                    <p>Note that font sizes are defined in rems but for ease of use they are noted in pixels below.</p>
+                    <p>The font size mixin defines the sizes passed in for mobile and desktop.</p>
+                    <p>Note that font sizes should be declared in rems as explained in more detail <a href="scss.html#cssUnits">here</a>.</p>
                     <p>Visual examples of classes that use the font size mixins <a href="typography.html">here</a></p>
                 </div>
             </header>
             <div class="content-block">
                 <div class="container">
-                    <h4>Mixins</h4>
-<p>12px/10px:</p>
-<figure class="figure--light"><pre>
-@mixin font-size-xs;
-</pre></figure>
-<br>
-<p>14px/10px:</p>
-<figure class="figure--light"><pre>
-@mixin font-size-sm;
-</pre></figure>
-<br>
-<p>16px/14px:</p>
-<figure class="figure--light"><pre>
-@mixin font-size-md;
-</pre></figure>
-<br>
-<p>20px/16px:</p>
-<figure class="figure--light"><pre>
-@mixin font-size-lg;
-</pre></figure>
-<br>
-<p>36px/20px:</p>
-<figure class="figure--light"><pre>
-@mixin font-size-xl;
+                    <h4>Mixin</h4>
+<figure class="figure-box"><pre>
+@mixin font-size-responsive($mobile-size, $desktop-size);
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
-    @include font-size-lg;
+    @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
 }
 </pre></figure>
                 </div>
@@ -507,14 +486,14 @@ ul.lg {
             <div class="content-block">
                 <div class="container">
                     <h4>Mixin</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin full-overlay(
     $bg-colour: $black
 );
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @include full-overlay(#FFF);
 }
@@ -529,53 +508,31 @@ ul.lg {
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Headings</h3>
-                    <p>The heading-style placeholder defines general heading styling such as font weight, padding etc. and it is included in all the mixins.</p>
-                    <p>The heading style mixins define the font sizes for mobile and desktop.</p>
-                    <p>Note that font sizes are defined in rems but for ease of use they are noted in pixels below.</p>
+                    <p>The heading-style placeholder defines general heading styling such as font weight, padding etc.</p>
+                    <p>The heading-style-responsive mixin defines the font sizes passed in for mobile and desktop as well as includes the heading-style placeholder.</p>
+                    <p>Note that font sizes should be declared in rems as explained in more detail <a href="scss.html#cssUnits">here</a>.</p>
                     <p>Visual examples of classes that use the heading mixins <a href="typography.html">here</a></p>
                 </div>
             </header>
             <div class="content-block">
                 <div class="container">
-                    <h4>Mixins</h4>
-<figure class="figure--light"><pre>
+                    <h4>Placeholder and mixin</h4>
+<figure class="figure-box"><pre>
 %heading-style;
 </pre></figure>
 <br>
-<p>28px/20px:</p>
-<figure class="figure--light"><pre>
-@mixin heading-style-1;
-</pre></figure>
-<br>
-<p>24px/18px:</p>
-<figure class="figure--light"><pre>
-@mixin heading-style-2;
-</pre></figure>
-<br>
-<p>22px/14px:</p>
-<figure class="figure--light"><pre>
-@mixin heading-style-3;
-</pre></figure>
-<br>
-<p>20px/14px:</p>
-<figure class="figure--light"><pre>
-@mixin heading-style-4;
-</pre></figure>
-<br>
-<p>18px/14px:</p>
-<figure class="figure--light"><pre>
-@mixin heading-style-5;
-</pre></figure>
-<br>
-<p>16px/14px:</p>
-<figure class="figure--light"><pre>
-@mixin heading-style-6;
+<figure class="figure-box"><pre>
+@mixin heading-style-responsive($mobile-size, $desktop-size);
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
-    @include heading-style-3;
+    @extend %heading-style;
+}
+
+.element {
+    @include heading-style-responsive($font-size-h2-mobile, $font-size-h2-desktop);
 }
 </pre></figure>
                 </div>
@@ -594,7 +551,7 @@ ul.lg {
             <div class="content-block">
                 <div class="container">
                     <h4>Mixin</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin horizontal-spacing(
     $h-spacing: $h-spacing,
     $h-spacing-mobile: $h-spacing-mobile
@@ -602,7 +559,7 @@ ul.lg {
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @include horizontal-spacing($h-spacing: 30px, $h-spacing-mobile: 20px);
 }
@@ -625,7 +582,7 @@ ul.lg {
             <div class="content-block">
                 <div class="container">
                     <h4>Mixins</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin icon-in-circle(
     $bg-colour: $icon-colour,
     $colour: $white,
@@ -633,20 +590,20 @@ ul.lg {
 );
 </pre></figure>
 <br>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin icon-in-circle--size(
     $dimension: $circle-icon-size-md
 );
 </pre></figure>
 <br>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin icon-in-border-circle--size(
     $dimension: $circle-icon-size-lg
 );
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @include icon-in-circle($bg-colour: transparent, $colour: #000, $border: #FFF);
     @include icon-in-circle--size($dimension: 2.5rem);
@@ -669,14 +626,14 @@ ul.lg {
             <div class="content-block">
                 <div class="container">
                     <h4>Mixin</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin inline-list-gutter(
     $gutter
 );
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @include inline-list-gutter(20px);
 }
@@ -697,14 +654,14 @@ ul.lg {
             <div class="content-block">
                 <div class="container">
                     <h4>Mixin</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin margin(
     $values
 );
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @include margin(20px auto null 1%);
 }
@@ -727,32 +684,32 @@ ul.lg {
                 <div class="container">
                     <h4>Mixins</h4>
 <p>24em (384px) and above:</p>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin screen-xs-min;
 </pre></figure>
 <br>
 <p>40em (640px) and above:</p>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin screen-sm-min;
 </pre></figure>
 <br>
 <p>50em (800px) and above:</p>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin screen-md-min;
 </pre></figure>
 <br>
 <p>68em (1088px) and above:</p>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin screen-lg-min;
 </pre></figure>
 <br>
 <p>100em (1600px) and above:</p>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin screen-xl-min;
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @include screen-xs-min {
         [STYLES FOR SCREENS ABOVE 24EM (384PX)]
@@ -775,14 +732,14 @@ ul.lg {
             <div class="content-block">
                 <div class="container">
                     <h4>Mixin</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin padding(
     $values
 );
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @include padding(20px null 10px null);
 }
@@ -803,7 +760,7 @@ ul.lg {
             <div class="content-block">
                 <div class="container">
                     <h4>Mixin</h4>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 @mixin position(
     $position,
     $box-edge-values
@@ -811,7 +768,7 @@ ul.lg {
 </pre></figure>
                     <br>
                     <h4>Example usage</h4>
-<figure>
+<figure class="figure-box figure-box--dark figure-box--max-height-md">
 <pre>
 .element {
     @include position(absolute, 0 20px 2rem null);
@@ -835,52 +792,52 @@ ul.lg {
                 <div class="container">
                     <h4>Placeholders</h4>
 <p id="placeholderClearfix">Clearfix:</p>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 %clearfix;
 </pre></figure>
 <br>
 <p id="placeholderVAlign">Vertically align centre using flexbox:</p>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 %v-align;
 </pre></figure>
 <br>
 <p id="placeholderRemoveListStyles">Removes default list styling:</p>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 %remove-list-styles;
 </pre></figure>
 <br>
 <p id="placeholderRemoveLinkStyles">Removes default link styling:</p>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 %remove-link-styles;
 </pre></figure>
 <br>
 <p id="placeholderClickable">Style to appear clickable (pointer as cursor and opacity on hover/active/focus):</p>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 %clickable;
 </pre></figure>
 <br>
 <p id="placeholderHideTextNotPseudo">Hides text but not before/after element:</p>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 %hide-text-not-pseudo;
 </pre></figure>
 <br>
 <p id="placeholderBgCover">Sets background centre, cover and no repeat:</p>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 %bg-cover;
 </pre></figure>
 <br>
 <p id="placeholderHideText">Hides text with a text indent and overflow hidden:</p>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 %hide-text;
 </pre></figure>
 <br>
 <p id="placeholderMarginCentre">Sets margin right and left to auto:</p>
-<figure class="figure--light"><pre>
+<figure class="figure-box"><pre>
 %m-centre
 </pre></figure>
                 <br>
                     <h4>Example usage</h4>
-<figure><pre>
+<figure class="figure-box figure-box--dark figure-box--max-height-md"><pre>
 .element {
     @extend %clearfix;
 }
