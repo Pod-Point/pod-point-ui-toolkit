@@ -2,14 +2,16 @@
 //  TOOLS - FORMS
 // =============================================================================
 
-@mixin placeholder {
-    placeholder {
+@mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
         @content;
     }
 }
 
-@include placeholder {
-    color: $input-placeholder-colour;
+@mixin placeholder {
+    @include optional-at-root('::placeholder') {
+        @content;
+    }
 }
 
 @mixin input-styles(
@@ -17,8 +19,13 @@
     $height: $input-height,
     $max-width: $form-field-max-width,
     $v-padding: $input-v-padding,
-    $h-padding: $input-h-padding
+    $h-padding: $input-h-padding,
+    $placeholder-colour: $input-placeholder-colour,
+    $chrome-autofill-colour: $input-chrome-autofill-colour
 ) {
+    @include placeholder {
+        color: $placeholder-colour;
+    }
     appearance: none;
     display: block;
     font-size: $font-size;
@@ -26,6 +33,11 @@
     max-width: $max-width;
     padding: $v-padding $h-padding;
     width: 100%;
+
+    // sass-lint:disable-block no-vendor-prefixes force-pseudo-nesting
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px $chrome-autofill-colour inset;
+    }
 }
 
 @mixin input-border(

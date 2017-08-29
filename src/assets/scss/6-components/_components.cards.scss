@@ -4,7 +4,7 @@
 
 .card {
     background-color: $white;
-    border: $border-thin-dark;
+    border: $border-thin-base;
     border-radius: $border-radius-base;
     box-shadow: $box-shadow-subtle;
     color: $font-colour-base;
@@ -45,7 +45,7 @@
         padding: $card-v-padding-lg $card-h-padding-lg;
     }
 
-    &--centered {
+    &--centred {
         text-align: center;
 
         hr {

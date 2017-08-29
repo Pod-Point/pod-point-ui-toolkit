@@ -37,4 +37,10 @@
             }
         }
     }
+
+    &--p-b-none {
+        > [class*='grid__col'] {
+            margin-bottom: 0;
+        }
+    }
 }

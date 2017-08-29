@@ -16,7 +16,7 @@
         @include padding($space-md null);
     }
 
-    &--centered {
+    &--centred {
         @extend %m-centre;
         text-align: center;
     }
