@@ -818,245 +818,296 @@ fieldset {
 =======
     -ms-flex: 0 0 6.3333%;
         flex: 0 0 6.3333%;
+<<<<<<< HEAD
 >>>>>>> Simplified and documented a grid system (#59)
+=======
+    max-width: 6.3333%;
+>>>>>>> Included flexbox-grid-mixins dependency in ui-toolkit (#66)
     margin: 0 1% 2%; }
   .grid > .grid__col-2 {
     box-sizing: border-box;
     -ms-flex: 0 0 14.6667%;
         flex: 0 0 14.6667%;
+    max-width: 14.6667%;
     margin: 0 1% 2%; }
   .grid > .grid__col-3 {
     box-sizing: border-box;
     -ms-flex: 0 0 23%;
         flex: 0 0 23%;
+    max-width: 23%;
     margin: 0 1% 2%; }
   .grid > .grid__col-4 {
     box-sizing: border-box;
     -ms-flex: 0 0 31.3333%;
         flex: 0 0 31.3333%;
+    max-width: 31.3333%;
     margin: 0 1% 2%; }
   .grid > .grid__col-5 {
     box-sizing: border-box;
     -ms-flex: 0 0 39.6667%;
         flex: 0 0 39.6667%;
+    max-width: 39.6667%;
     margin: 0 1% 2%; }
   .grid > .grid__col-6 {
     box-sizing: border-box;
     -ms-flex: 0 0 48%;
         flex: 0 0 48%;
+    max-width: 48%;
     margin: 0 1% 2%; }
   .grid > .grid__col-7 {
     box-sizing: border-box;
     -ms-flex: 0 0 56.3333%;
         flex: 0 0 56.3333%;
+    max-width: 56.3333%;
     margin: 0 1% 2%; }
   .grid > .grid__col-8 {
     box-sizing: border-box;
     -ms-flex: 0 0 64.6667%;
         flex: 0 0 64.6667%;
+    max-width: 64.6667%;
     margin: 0 1% 2%; }
   .grid > .grid__col-9 {
     box-sizing: border-box;
     -ms-flex: 0 0 73%;
         flex: 0 0 73%;
+    max-width: 73%;
     margin: 0 1% 2%; }
   .grid > .grid__col-10 {
     box-sizing: border-box;
     -ms-flex: 0 0 81.3333%;
         flex: 0 0 81.3333%;
+    max-width: 81.3333%;
     margin: 0 1% 2%; }
   .grid > .grid__col-11 {
     box-sizing: border-box;
     -ms-flex: 0 0 89.6667%;
         flex: 0 0 89.6667%;
+    max-width: 89.6667%;
     margin: 0 1% 2%; }
   .grid > .grid__col-12 {
     box-sizing: border-box;
     -ms-flex: 0 0 98%;
         flex: 0 0 98%;
+    max-width: 98%;
     margin: 0 1% 2%; }
   @media (min-width: 40em) {
     .grid > .grid__col-sm-1 {
       box-sizing: border-box;
       -ms-flex: 0 0 6.3333%;
           flex: 0 0 6.3333%;
+      max-width: 6.3333%;
       margin: 0 1% 2%; }
     .grid > .grid__col-sm-2 {
       box-sizing: border-box;
       -ms-flex: 0 0 14.6667%;
           flex: 0 0 14.6667%;
+      max-width: 14.6667%;
       margin: 0 1% 2%; }
     .grid > .grid__col-sm-3 {
       box-sizing: border-box;
       -ms-flex: 0 0 23%;
           flex: 0 0 23%;
+      max-width: 23%;
       margin: 0 1% 2%; }
     .grid > .grid__col-sm-4 {
       box-sizing: border-box;
       -ms-flex: 0 0 31.3333%;
           flex: 0 0 31.3333%;
+      max-width: 31.3333%;
       margin: 0 1% 2%; }
     .grid > .grid__col-sm-5 {
       box-sizing: border-box;
       -ms-flex: 0 0 39.6667%;
           flex: 0 0 39.6667%;
+      max-width: 39.6667%;
       margin: 0 1% 2%; }
     .grid > .grid__col-sm-6 {
       box-sizing: border-box;
       -ms-flex: 0 0 48%;
           flex: 0 0 48%;
+      max-width: 48%;
       margin: 0 1% 2%; }
     .grid > .grid__col-sm-7 {
       box-sizing: border-box;
       -ms-flex: 0 0 56.3333%;
           flex: 0 0 56.3333%;
+      max-width: 56.3333%;
       margin: 0 1% 2%; }
     .grid > .grid__col-sm-8 {
       box-sizing: border-box;
       -ms-flex: 0 0 64.6667%;
           flex: 0 0 64.6667%;
+      max-width: 64.6667%;
       margin: 0 1% 2%; }
     .grid > .grid__col-sm-9 {
       box-sizing: border-box;
       -ms-flex: 0 0 73%;
           flex: 0 0 73%;
+      max-width: 73%;
       margin: 0 1% 2%; }
     .grid > .grid__col-sm-10 {
       box-sizing: border-box;
       -ms-flex: 0 0 81.3333%;
           flex: 0 0 81.3333%;
+      max-width: 81.3333%;
       margin: 0 1% 2%; }
     .grid > .grid__col-sm-11 {
       box-sizing: border-box;
       -ms-flex: 0 0 89.6667%;
           flex: 0 0 89.6667%;
+      max-width: 89.6667%;
       margin: 0 1% 2%; }
     .grid > .grid__col-sm-12 {
       box-sizing: border-box;
       -ms-flex: 0 0 98%;
           flex: 0 0 98%;
+      max-width: 98%;
       margin: 0 1% 2%; } }
   @media (min-width: 50em) {
     .grid > .grid__col-md-1 {
       box-sizing: border-box;
       -ms-flex: 0 0 6.3333%;
           flex: 0 0 6.3333%;
+      max-width: 6.3333%;
       margin: 0 1% 2%; }
     .grid > .grid__col-md-2 {
       box-sizing: border-box;
       -ms-flex: 0 0 14.6667%;
           flex: 0 0 14.6667%;
+      max-width: 14.6667%;
       margin: 0 1% 2%; }
     .grid > .grid__col-md-3 {
       box-sizing: border-box;
       -ms-flex: 0 0 23%;
           flex: 0 0 23%;
+      max-width: 23%;
       margin: 0 1% 2%; }
     .grid > .grid__col-md-4 {
       box-sizing: border-box;
       -ms-flex: 0 0 31.3333%;
           flex: 0 0 31.3333%;
+      max-width: 31.3333%;
       margin: 0 1% 2%; }
     .grid > .grid__col-md-5 {
       box-sizing: border-box;
       -ms-flex: 0 0 39.6667%;
           flex: 0 0 39.6667%;
+      max-width: 39.6667%;
       margin: 0 1% 2%; }
     .grid > .grid__col-md-6 {
       box-sizing: border-box;
       -ms-flex: 0 0 48%;
           flex: 0 0 48%;
+      max-width: 48%;
       margin: 0 1% 2%; }
     .grid > .grid__col-md-7 {
       box-sizing: border-box;
       -ms-flex: 0 0 56.3333%;
           flex: 0 0 56.3333%;
+      max-width: 56.3333%;
       margin: 0 1% 2%; }
     .grid > .grid__col-md-8 {
       box-sizing: border-box;
       -ms-flex: 0 0 64.6667%;
           flex: 0 0 64.6667%;
+      max-width: 64.6667%;
       margin: 0 1% 2%; }
     .grid > .grid__col-md-9 {
       box-sizing: border-box;
       -ms-flex: 0 0 73%;
           flex: 0 0 73%;
+      max-width: 73%;
       margin: 0 1% 2%; }
     .grid > .grid__col-md-10 {
       box-sizing: border-box;
       -ms-flex: 0 0 81.3333%;
           flex: 0 0 81.3333%;
+      max-width: 81.3333%;
       margin: 0 1% 2%; }
     .grid > .grid__col-md-11 {
       box-sizing: border-box;
       -ms-flex: 0 0 89.6667%;
           flex: 0 0 89.6667%;
+      max-width: 89.6667%;
       margin: 0 1% 2%; }
     .grid > .grid__col-md-12 {
       box-sizing: border-box;
       -ms-flex: 0 0 98%;
           flex: 0 0 98%;
+      max-width: 98%;
       margin: 0 1% 2%; } }
   @media (min-width: 68em) {
     .grid > .grid__col-lg-1 {
       box-sizing: border-box;
       -ms-flex: 0 0 6.3333%;
           flex: 0 0 6.3333%;
+      max-width: 6.3333%;
       margin: 0 1% 2%; }
     .grid > .grid__col-lg-2 {
       box-sizing: border-box;
       -ms-flex: 0 0 14.6667%;
           flex: 0 0 14.6667%;
+      max-width: 14.6667%;
       margin: 0 1% 2%; }
     .grid > .grid__col-lg-3 {
       box-sizing: border-box;
       -ms-flex: 0 0 23%;
           flex: 0 0 23%;
+      max-width: 23%;
       margin: 0 1% 2%; }
     .grid > .grid__col-lg-4 {
       box-sizing: border-box;
       -ms-flex: 0 0 31.3333%;
           flex: 0 0 31.3333%;
+      max-width: 31.3333%;
       margin: 0 1% 2%; }
     .grid > .grid__col-lg-5 {
       box-sizing: border-box;
       -ms-flex: 0 0 39.6667%;
           flex: 0 0 39.6667%;
+      max-width: 39.6667%;
       margin: 0 1% 2%; }
     .grid > .grid__col-lg-6 {
       box-sizing: border-box;
       -ms-flex: 0 0 48%;
           flex: 0 0 48%;
+      max-width: 48%;
       margin: 0 1% 2%; }
     .grid > .grid__col-lg-7 {
       box-sizing: border-box;
       -ms-flex: 0 0 56.3333%;
           flex: 0 0 56.3333%;
+      max-width: 56.3333%;
       margin: 0 1% 2%; }
     .grid > .grid__col-lg-8 {
       box-sizing: border-box;
       -ms-flex: 0 0 64.6667%;
           flex: 0 0 64.6667%;
+      max-width: 64.6667%;
       margin: 0 1% 2%; }
     .grid > .grid__col-lg-9 {
       box-sizing: border-box;
       -ms-flex: 0 0 73%;
           flex: 0 0 73%;
+      max-width: 73%;
       margin: 0 1% 2%; }
     .grid > .grid__col-lg-10 {
       box-sizing: border-box;
       -ms-flex: 0 0 81.3333%;
           flex: 0 0 81.3333%;
+      max-width: 81.3333%;
       margin: 0 1% 2%; }
     .grid > .grid__col-lg-11 {
       box-sizing: border-box;
       -ms-flex: 0 0 89.6667%;
           flex: 0 0 89.6667%;
+      max-width: 89.6667%;
       margin: 0 1% 2%; }
     .grid > .grid__col-lg-12 {
       box-sizing: border-box;
       -ms-flex: 0 0 98%;
           flex: 0 0 98%;
+      max-width: 98%;
       margin: 0 1% 2%; } }
 
 .container {
