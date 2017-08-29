@@ -3,7 +3,7 @@
 // =============================================================================
 
 // SVG icon in a circle - defining the colours
-@mixin icon-in-circle($bg-colour: $icon-colour, $colour: $white, $border: none) {
+@mixin icon-in-circle($bg-colour: $icon-colour, $colour: $white, $border: 0) {
     background-color: #{$bg-colour};
     border: $border;
     border-radius: 50%;
