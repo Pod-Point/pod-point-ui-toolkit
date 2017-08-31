@@ -799,8 +799,6 @@ img {
 .form__field {
   max-width: 600px;
   width: 100%; }
-  .form__field--min-width {
-    min-width: 300px; }
 
 .form__group {
   margin-bottom: 30px; }
@@ -2888,6 +2886,30 @@ textarea.form__control {
 
 .max-width-100 {
   max-width: 100% !important; }
+
+.min-width-xxs {
+  max-width: 100px !important; }
+
+.min-width-xs {
+  max-width: 150px !important; }
+
+.min-width-sm {
+  max-width: 200px !important; }
+
+.min-width-md {
+  max-width: 300px !important; }
+
+.min-width-lg {
+  max-width: 400px !important; }
+
+.min-width-xl {
+  max-width: 500px !important; }
+
+.min-width-xxl {
+  max-width: 600px !important; }
+
+.min-width-xxxl {
+  max-width: 700px !important; }
 
 .max-width-xxs {
   max-width: 100px !important; }

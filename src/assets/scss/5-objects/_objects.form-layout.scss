@@ -5,10 +5,6 @@
 .form__field {
     max-width: $form-field-max-width;
     width: 100%;
-
-    &--min-width {
-        min-width: $form-field-min-width;
-    }
 }
 
 .form__group {

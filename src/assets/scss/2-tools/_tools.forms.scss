@@ -34,7 +34,7 @@
     padding: $v-padding $h-padding;
     width: 100%;
 
-    // sass-lint:disable-block no-vendor-prefixes force-pseudo-nesting
+    // sass-lint:disable-block no-vendor-prefixes
     &:-webkit-autofill {
         -webkit-box-shadow: 0 0 0 30px $chrome-autofill-colour inset;
     }
