@@ -28,6 +28,12 @@ h1,
   .h6:last-child, .tooltip__title:last-child {
     padding-bottom: 0; }
 
+p, .p {
+  margin: 0;
+  padding-bottom: 1em; }
+  p:last-child, .p:last-child {
+    padding-bottom: 0; }
+
 @keyframes fade-in {
   0% {
     opacity: 0; }
@@ -206,12 +212,12 @@ table {
 
 body {
   font-size: 0.875rem;
-  -webkit-font-smoothing: antialiased;
   color: #333;
   font-family: "Quicksand", sans-serif;
-  font-feature-settings: 'kern' 1, 'liga' 1, 'pnum' 1;
   font-weight: 400;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'pnum' 1;
   text-shadow: rgba(255, 255, 255, 0.01) 0 0 1px;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
@@ -236,14 +242,6 @@ a,
   .a:active,
   .a:focus {
     outline: none; }
-
-p,
-.p {
-  margin: 0;
-  padding-bottom: 1em; }
-  p:last-child,
-  .p:last-child {
-    padding-bottom: 0; }
 
 small,
 .small {
@@ -2816,6 +2814,16 @@ textarea.form__control {
 
 .br-circle {
   border-radius: 50% !important; }
+
+.p {
+  font-size: 0.875rem;
+  color: #333;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  line-height: 1.5; }
+  @media (min-width: 50em) {
+    .p {
+      font-size: 1rem; } }
 
 .font-size-xs {
   font-size: 0.625rem; }

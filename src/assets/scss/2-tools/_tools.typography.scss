@@ -36,3 +36,22 @@
         font-size: $desktop-size;
     }
 }
+
+// Defines the base font size
+@mixin font-base {
+    @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
+    color: $font-colour-base;
+    font-family: $font-family-base;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-base;
+}
+
+// Paragraph vertical spacing
+%p-v-spacing {
+    margin: 0;
+    padding-bottom: $typography-v-spacing;
+
+    &:last-child {
+        padding-bottom: 0;
+    }
+}

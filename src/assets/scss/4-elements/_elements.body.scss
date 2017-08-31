@@ -3,13 +3,9 @@
 // =============================================================================
 
 body {
-    @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
+    @include font-base;
     -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
-    color: $font-colour-base;
-    font-family: $font-family-base;
     font-feature-settings: 'kern' 1, 'liga' 1, 'pnum' 1;
-    font-weight: $font-weight-regular;
-    line-height: $line-height-base;
     text-shadow: $transparent-white 0 0 1px;
     text-size-adjust: 100%;
 }
