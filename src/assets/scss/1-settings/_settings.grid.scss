@@ -2,5 +2,7 @@
 //  SETTINGS - GRID
 // =============================================================================
 
-$default-grid-columns: 12;
-$default-grid-gutter: 2%; // Flex calc doesn't work in IE so this has to be a percentage
+$default-grid-cols-columns: 12;
+$default-grid-cols-h-gutter: 2%; // Flex calc doesn't work in IE so this has to be a percentage
+
+$grid-cols-v-gutter: $space-md; // Cols have no vertical gutter by default, this gutter is applied only when adding a modifying class to the grid
