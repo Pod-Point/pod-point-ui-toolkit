@@ -41,11 +41,9 @@
 
 // To add vertical spacing between the cols
 .grid--cols-v-gutter {
+    margin-bottom: -$grid-cols-v-gutter;
+
     > [class*='grid__col'] {
         margin-bottom: $grid-cols-v-gutter;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
     }
 }
