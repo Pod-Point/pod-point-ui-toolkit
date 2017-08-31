@@ -4,6 +4,11 @@
 
 // sass-lint:disable no-important
 
+.p {
+    @extend %p-v-spacing;
+    @include font-base;
+}
+
 // Font sizes
 .font-size-xs {
     @include font-size-responsive($font-size-xs-mobile, $font-size-xs-desktop);

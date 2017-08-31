@@ -8,7 +8,6 @@ fieldset {
 
 .form__field {
     max-width: $form-field-max-width;
-    min-width: $form-field-min-width;
     width: 100%;
 }
 
@@ -17,6 +16,15 @@ fieldset {
 
     &:last-child {
         margin-bottom: 0;
+    }
+}
+
+// When inside a grid col, keep bottom spacing on the form__group last child
+[class*='grid__col'] {
+    > .form__group {
+        &:last-child {
+            margin-bottom: $form-group-b-spacing;
+        }
     }
 }
 

@@ -12,38 +12,71 @@
     max-width: 100% !important;
 }
 
-.max-width {
-    // Max widths (useful for images)
+.min-width {
     &-xxs {
-        max-width: $max-width-xxs !important;
+        max-width: $width-xxs !important;
     }
 
     &-xs {
-        max-width: $max-width-xs !important;
+        max-width: $width-xs !important;
     }
 
     &-sm {
-        max-width: $max-width-sm !important;
+        max-width: $width-sm !important;
     }
 
     &-md {
-        max-width: $max-width-md !important;
+        max-width: $width-md !important;
     }
 
     &-lg {
-        max-width: $max-width-lg !important;
+        max-width: $width-lg !important;
     }
 
     &-xl {
-        max-width: $max-width-xl !important;
+        max-width: $width-xl !important;
     }
 
     &-xxl {
-        max-width: $max-width-xxl !important;
+        max-width: $width-xxl !important;
     }
 
     &-xxxl {
-        max-width: $max-width-xxxl !important;
+        max-width: $width-xxxl !important;
+    }
+}
+
+.max-width {
+    &-xxs {
+        max-width: $width-xxs !important;
+    }
+
+    &-xs {
+        max-width: $width-xs !important;
+    }
+
+    &-sm {
+        max-width: $width-sm !important;
+    }
+
+    &-md {
+        max-width: $width-md !important;
+    }
+
+    &-lg {
+        max-width: $width-lg !important;
+    }
+
+    &-xl {
+        max-width: $width-xl !important;
+    }
+
+    &-xxl {
+        max-width: $width-xxl !important;
+    }
+
+    &-xxxl {
+        max-width: $width-xxxl !important;
     }
 
     // Widths for content and text (variables can be reset according to your preference)

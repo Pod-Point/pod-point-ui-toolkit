@@ -11,7 +11,7 @@
     }
 }
 
-// Vertically align center
+// Vertically align centre
 %v-align {
     align-items: center;
     display: flex;
@@ -95,7 +95,7 @@
     }
 }
 
-// A container that center aligns with padding and max width
+// A container that centre aligns with padding and max width
 @mixin container($max-width-content: $max-width-content) {
     @extend %m-centre;
     @include horizontal-spacing;

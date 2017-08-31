@@ -2,14 +2,8 @@
 //	ELEMENTS - TEXT
 // =============================================================================
 
-p,
-.p {
-    margin: 0;
-    padding-bottom: $typography-v-spacing;
-
-    &:last-child {
-        padding-bottom: 0;
-    }
+p {
+    @extend %p-v-spacing;
 }
 
 small,

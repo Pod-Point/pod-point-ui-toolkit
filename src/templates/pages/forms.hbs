@@ -14,7 +14,7 @@
                     <li><a href="#formSelects"></a>Selects</li>
                     <li><a href="#formControlAlt">Form controls alternative</a></li>
                     <li><a href="#formCheckboxes">Checkboxes</a></li>
-                    <li><a href="#formRadios"></a>Radios</li>
+                    <li><a href="#formRadios">Radios</a></li>
                     <li><a href="#formFieldsInline">Fields inline</a></li>
                 </ul>
             </div>
@@ -254,8 +254,8 @@
 
                     <br>
                     <div class="form__group">
-                        <label class="form__label text-center font-size-lg">Sign up to our newsletter!</label>
-                        <input class="form__control form__control--alt form__field text-center p-t-lg p-b-lg" type="text" placeholder="Sample placeholder text" />
+                        <label class="form__label text-centre font-size-lg">Sign up to our newsletter!</label>
+                        <input class="form__control form__control--alt form__field text-centre p-t-lg p-b-lg" type="text" placeholder="Sample placeholder text" />
                     </div>
                 </div>
             </div>
@@ -360,6 +360,7 @@
                     <h3>Fields inline</h3>
                     <p>To display form fields inline, wrap all the form groups in a wrapper with a class <code>.form__groups-inline</code></p>
                     <p>To include any other elements eg. button or text amongst the inline elements, they should also be wrapped with the class <code>.form__group</code></p>
+                    <p>Note that the fields are now inline-block and won't stretch to 100%, so the modifying class <code>.form__field--min-width</code> can be added to the fields that require it.</p>
                 </div>
             </header>
             <div class="content-block">
@@ -368,11 +369,11 @@
                     <div class="form__groups-inline">
                         <div class="form__group">
                             <label class="form__label">Input field</label>
-                            <input class="form__control form__field" type="text" placeholder="Sample placeholder text">
+                            <input class="form__control form__field form__field--min-width" type="text" placeholder="Sample placeholder text">
                         </div>
                         <div class="form__group">
                             <label class="form__label">Input field</label>
-                            <input class="form__control form__field" type="text" placeholder="Sample placeholder text">
+                            <input class="form__control form__field form__field--min-width" type="text" placeholder="Sample placeholder text">
                         </div>
                         <div class="form__group">
                             <label class="checkbox form__field" for="checkboxExampleInline">
@@ -382,7 +383,7 @@
                         </div>
                         <div class="form__group">
                             <label class="form__label">Select dropdown</label>
-                            <div class="select form__field">
+                            <div class="select form__field form__field--min-width">
                                 <select class="form__control">
                                     <option value="00">00</option>
                                     <option selected value="01">01</option>
@@ -405,6 +406,76 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FIELDS IN A GRID -->
+        <section id="formFieldsGrid">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Fields in a grid</h3>
+
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <div class="max-width-text-wide">
+                        <div class="grid grid--p-b-none">
+                            <div class="grid__col-12 grid__col-md-6">
+                                <div class="form__group">
+                                    <input class="form__control form__field" type="text" placeholder="Sample placeholder">
+                                </div>
+                            </div>
+                            <div class="grid__col-12 grid__col-md-6">
+                                <div class="form__group">
+                                    <input class="form__control form__field" type="text" placeholder="Sample placeholder">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid--p-b-none">
+                            <div class="grid__col-12 grid__col-md-4">
+                                <div class="form__group">
+                                    <input class="form__control form__field" type="text" placeholder="Sample placeholder">
+                                </div>
+                            </div>
+                            <div class="grid__col-12 grid__col-md-4">
+                                <div class="form__group">
+                                    <input class="form__control form__field" type="text" placeholder="Sample placeholder">
+                                </div>
+                            </div>
+                            <div class="grid__col-12 grid__col-md-4">
+                                <div class="form__group">
+                                    <input class="form__control form__field" type="text" placeholder="Sample placeholder">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid--p-b-none">
+                            <div class="grid__col-12 grid__col-md-6">
+                                <div class="form__group">
+                                    <div class="select form__field">
+                                        <select class="form__control">
+                                            <option value="00">00</option>
+                                            <option selected value="01">01</option>
+                                            <option value="02">02</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid__col-12 grid__col-md-6">
+                                <div class="form__group">
+                                    <div class="select form__field">
+                                        <select class="form__control">
+                                            <option value="00">00</option>
+                                            <option selected value="01">01</option>
+                                            <option value="02">02</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

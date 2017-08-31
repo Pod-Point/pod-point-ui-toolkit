@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
 =======
 @import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
@@ -21,6 +22,8 @@ placeholder {
 >>>>>>> Sass lint (#45)
   color: #ccc; }
 
+=======
+>>>>>>> Small fixes/tweaks - card border colour, spelling centre, input place… (#68)
 @keyframes fade-in {
   0% {
     opacity: 0; }
