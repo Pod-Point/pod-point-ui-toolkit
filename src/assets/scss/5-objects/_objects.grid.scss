@@ -10,14 +10,14 @@
 
     @for $i from 1 through $default-grid-columns {
         > .grid__col-#{$i} {
-            @include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter);
+            @include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter, $condensed: true);
         }
     }
 
     @include screen-sm-min {
         @for $i from 1 through $default-grid-columns {
             > .grid__col-sm-#{$i} {
-                @include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter);
+                @include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter, $condensed: true);
             }
         }
     }
@@ -25,7 +25,7 @@
     @include screen-md-min {
         @for $i from 1 through $default-grid-columns {
             > .grid__col-md-#{$i} {
-                @include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter);
+                @include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter, $condensed: true);
             }
         }
     }
@@ -33,14 +33,14 @@
     @include screen-lg-min {
         @for $i from 1 through $default-grid-columns {
             > .grid__col-lg-#{$i} {
-                @include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter);
+                @include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter, $condensed: true);
             }
         }
     }
 
-    &--p-b-none {
+    &--m-b-md {
         > [class*='grid__col'] {
-            margin-bottom: 0;
+            margin-bottom: $space-md;
         }
     }
 }
