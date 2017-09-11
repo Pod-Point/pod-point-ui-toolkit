@@ -1869,16 +1869,21 @@ fieldset {
 .icon {
   margin-right: 0.125rem;
   margin-left: 0.125rem; }
-  .icon > svg {
+  .icon > svg,
+  .icon > .icon__img {
+    fill: #333;
     height: 1.5625rem;
     width: 1.5625rem; }
-  .icon--sm > svg {
+  .icon--sm > svg,
+  .icon--sm > .icon__img {
     height: 1.25rem;
     width: 1.25rem; }
-  .icon--xs > svg {
+  .icon--xs > svg,
+  .icon--xs > .icon__img {
     height: 0.9375rem;
     width: 0.9375rem; }
-  .icon--xxs > svg {
+  .icon--xxs > svg,
+  .icon--xxs > .icon__img {
     height: 0.625rem;
     width: 0.625rem; }
   .icon--base > svg {
@@ -1889,9 +1894,11 @@ fieldset {
     fill: #8cc63f; }
   .icon--inline {
     margin: 0; }
-    .icon--inline > svg {
+    .icon--inline > svg,
+    .icon--inline > .icon__img {
       position: relative;
       top: 0.1667em;
+      display: inline-block;
       height: 1em;
       margin: 0;
       width: 1em; }

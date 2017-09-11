@@ -5,23 +5,28 @@
 .icon {
     @include margin(null $icon-h-spacing);
 
-    > svg {
+    > svg,
+    > .icon__img {
+        fill: $font-colour-base;
         height: $icon-size-md;
         width: $icon-size-md;
     }
 
     // Change size of the svg
-    &--sm > svg {
+    &--sm > svg,
+    &--sm > .icon__img {
         height: $icon-size-sm;
         width: $icon-size-sm;
     }
 
-    &--xs > svg {
+    &--xs > svg,
+    &--xs > .icon__img {
         height: $icon-size-xs;
         width: $icon-size-xs;
     }
 
-    &--xxs > svg {
+    &--xxs > svg,
+    &--xxs > .icon__img {
         height: $icon-size-xxs;
         width: $icon-size-xxs;
     }
@@ -43,8 +48,10 @@
     &--inline {
         margin: 0;
 
-        > svg {
+        > svg,
+        > .icon__img {
             @include position(relative, $icon-inline-text-top null null null);
+            display: inline-block;
             height: $icon-inline-text-size;
             margin: 0;
             width: $icon-inline-text-size;
