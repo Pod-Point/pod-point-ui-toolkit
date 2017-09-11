@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
-=======
-@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
-=======
->>>>>>> Extracting variables and refactoring (#41)
-::-webkit-input-placeholder {
-  color: #ccc; }
-
-:-moz-placeholder {
-  color: #ccc; }
-
-::-moz-placeholder {
-  color: #ccc; }
-
-:-ms-input-placeholder {
-=======
-placeholder {
->>>>>>> Sass lint (#45)
-  color: #ccc; }
-
-=======
->>>>>>> Small fixes/tweaks - card border colour, spelling centre, input place… (#68)
 @keyframes fade-in {
   0% {
     opacity: 0; }
@@ -46,37 +20,12 @@ placeholder {
     opacity: 1;
     top: 0; } }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-.hide {
-  display: none !important; }
-
-.tel-link:hover {
-  opacity: 1;
-  cursor: default; }
-
-.full-img {
-  width: 100%; }
-
->>>>>>> More restructuring in folders including adding form elements
-=======
->>>>>>> Cleaning up typography formatting and naming conventions
-.demo-header {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem; }
-=======
 .demo-logo-main {
   padding-top: 10px;
   padding-bottom: 10px;
   display: block; }
-<<<<<<< HEAD
-  .demo-logo-main img {
-    width: 7.5rem; }
->>>>>>> Structure docs (#54)
-=======
   .demo-logo-main svg {
     width: 8.75rem; }
->>>>>>> Moving scss files (#61)
 
 html,
 body {
