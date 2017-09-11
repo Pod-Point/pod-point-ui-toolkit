@@ -1,0 +1,35 @@
+// =============================================================================
+//  COMPONENTS - ALERT
+// =============================================================================
+
+.alert {
+    margin-bottom: $space-xs;
+    padding: $alert-padding;
+    width: 100%;
+
+    h4 {
+        // Specified for the h4 to prevent conflicts of changing $headings-colour
+        color: inherit;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+    &--success {
+        @include alert-variant($background: $success-colour-light, $text-colour: $success-colour-dark);
+    }
+
+    &--info {
+        @include alert-variant($background: $info-colour-light, $text-colour: $info-colour-dark);
+    }
+
+    &--warning {
+        @include alert-variant($background: $warning-colour-light, $text-colour: $warning-colour-dark);
+    }
+
+    &--danger {
+        @include alert-variant($background: $danger-colour-light, $text-colour: $danger-colour-dark);
+    }
+}

@@ -1,0 +1,28 @@
+// =============================================================================
+//  SETTINGS - BORDERS
+// =============================================================================
+
+$border-stroke-thin: 1px;
+$border-stroke: 2px;
+$border-radius-base: 5px;
+
+$border-colour-base: $grey-keyline;
+
+$border-base: $border-stroke solid $border-colour-base;
+$border-dark: $border-stroke solid $grey-keyline-dark;
+$border-light: $border-stroke solid $grey-keyline-light;
+$border-very-light: $border-stroke solid $grey-keyline-very-light;
+$border-inverted: $border-stroke solid $white;
+$border-font-colour: $border-stroke solid $font-colour-base;
+$border-primary: $border-stroke solid $primary-colour;
+
+$border-thin-base: $border-stroke-thin solid $border-colour-base;
+$border-thin-dark: $border-stroke-thin solid $grey-keyline-dark;
+$border-thin-light: $border-stroke-thin solid $grey-keyline-light;
+$border-thin-very-light: $border-stroke-thin solid $grey-keyline-very-light;
+$border-thin-inverted: $border-stroke-thin solid $white;
+$border-thin-font-colour: $border-stroke solid $font-colour-base;
+$border-thin-primary: $border-stroke-thin solid $primary-colour;
+
+$border: $border-base;
+$border-thin: $border-thin-base;

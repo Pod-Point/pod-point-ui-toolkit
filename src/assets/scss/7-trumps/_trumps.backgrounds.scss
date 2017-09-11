@@ -1,0 +1,107 @@
+// =============================================================================
+//  TRUMPS - BACKGROUNDS
+// =============================================================================
+
+// sass-lint:disable no-important
+
+.bg-white {
+    background-color: $white !important;
+    color: $font-colour-base !important;
+}
+
+// Greys
+.bg-very-light-grey {
+    background-color: $grey-very-light !important;
+    color: $font-colour-base !important;
+}
+
+.bg-light-grey {
+    background-color: $grey-light !important;
+    color: $font-colour-base !important;
+}
+
+.bg-grey {
+    background-color: $grey !important;
+    color: $white !important;
+}
+
+.bg-dark-grey {
+    background-color: $grey-dark !important;
+    color: $white !important;
+}
+
+.bg-very-dark-grey {
+    background-color: $grey-very-dark !important;
+    color: $white !important;
+}
+
+// Colours
+.bg-primary {
+    background-color: $primary-colour !important;
+    color: $white !important;
+}
+
+.bg-sky-blue {
+    background-color: $sky-blue !important;
+    color: $font-colour-base !important;
+}
+
+// State colours
+.bg-info {
+    background-color: $info-colour !important;
+    color: $white !important;
+}
+
+.bg-success {
+    background-color: $success-colour !important;
+    color: $white !important;
+}
+
+.bg-warning {
+    background-color: $warning-colour !important;
+    color: $white !important;
+}
+
+.bg-danger {
+    background-color: $error-red !important;
+    color: $white !important;
+}
+
+// To override any of the above (especially useful with nested backgrounds)
+.bg-dark-content {
+    color: $font-colour-base !important;
+}
+
+.bg-light-content {
+    color: $white !important;
+}
+
+// Cover and overlays
+.bg-img-cover {
+    background-position: center center;
+    background-size: cover;
+}
+
+.bg-img-overlay {
+    color: $white;
+    position: relative;
+    z-index: 0;
+
+    &::after {
+        @include position(absolute, 0 0 0 0);
+        background-color: $grey-dark;
+        content: '';
+        height: 100%;
+        opacity: .65;
+        width: 100%;
+        z-index: -1;
+    }
+
+    &--black {
+
+        &::after {
+            background-color: $black;
+            opacity: .55;
+        }
+    }
+}

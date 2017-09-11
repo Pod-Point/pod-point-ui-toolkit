@@ -1,0 +1,185 @@
+<div data-page="lists" class="demo-page-content">
+
+    {{> demo-sidebar }}
+
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
+            <div class="container">
+                <h2>Lists</h2>
+                <ul class="list--inline remove-link-styles font-weight-bold">
+                    <li><a href="#listsRequired">Required files</a></li>
+                    <li><a href="#listsDefault">Default list style</a></li>
+                    <li><a href="#listsNoStyle">Remove list style</a></li>
+                    <li><a href="#listsTightSpace">List with tightened space on left</a></li>
+                    <li><a href="#listsInline">List inline</a></li>
+                    <li><a href="#listsFeaturedTicks">Featured list with tick icons</a></li>
+                </ul>
+            </div>
+        </header>
+
+
+        <!-- REQUIRED FILES -->
+        <section id="listsRequired">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Required files</h3>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p>SCSS files required: <code>_components.lists.scss</code></p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- LIST DEFAULT STYLE -->
+        <section id="listsDefault">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Default list style</h3>
+                    <p>The default styling for ordered and unordered lists at the base font size</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <ol>
+                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
+                    </ol>
+                    <ul>
+                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.
+                            <ul>
+                                <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat.</li>
+                                <li>Sed sagittis cursus semper. Aenean feugiat, nisl quis scelerisque rhoncus, orci elit consequat arcu.</li>
+                            </ul>
+                        </li>
+                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- LIST NO DEFAULT STYLE -->
+        <section id="listsNoStyle">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Remove list style</h3>
+                    <p>Add the class <code>.list--no-style</code> to remove list bullets and spacing</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <ul class="list--no-style">
+                        <li>In non lacus facilisis</li>
+                        <li>Donec accumsan placerat metus</li>
+                        <li>Etiam tincidunt magna</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- LIST WITH TIGHTENED UP SPACING -->
+        <section id="listsTightSpace">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>List with tightened space on left</h3>
+                    <p>Add the class <code>.list--spacing-left-sm</code> to tighten up spacing on the left</p>
+                    <p>Useful for scenarios with less space to use, such as tooltips or cards</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <ul class="list--spacing-left-sm">
+                        <li>In non lacus facilisis</li>
+                        <li>Donec accumsan placerat metus</li>
+                        <li>Etiam tincidunt magna</li>
+                    </ul>
+                    <ol class="list--spacing-left-sm">
+                        <li>In non lacus facilisis</li>
+                        <li>Donec accumsan placerat metus</li>
+                        <li>Etiam tincidunt magna</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- LIST INLINE -->
+        <section id="listsInline">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>List inline</h3>
+                    <p>Add the class <code>.list--inline</code></p>
+                    <p>Inline lists are useful for various elements such as text, images and icons</p>
+                    <p>Modifying classes are available for gutter sizes:</p>
+                    <ul class="list--inline">
+                        <li><code>.list--inline--gutter-xxs</code></li>
+                        <li><code>.list--inline--gutter-xs</code></li>
+                        <li><code>.list--inline--gutter-sm</code></li>
+                        <li><code>.list--inline--gutter-md</code></li>
+                        <li><code>.list--inline--gutter-lg</code></li>
+                        <li><code>.list--inline--gutter-xl</code></li>
+                        <li><code>.list--inline--gutter-xxl</code></li>
+                    </ul>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <h4>Inline list default</h4>
+                    <ul class="list--inline m-b-md">
+                        <li>In non lacus facilisis</li>
+                        <li>Donec accumsan placerat metus</li>
+                        <li>Etiam tincidunt magna</li>
+                        <li>Quisque consequat purus</li>
+                        <li>Aliquam nec ligula massa</li>
+                        <li>Nulla ac magna ultricies</li>
+                        <li>Sed laoreet lectus ac nibh finibus</li>
+                        <li>Eu pretium diam semper</li>
+                    </ul>
+
+                    <h4>Inline list extra large gutter</h4>
+
+                    <ul class="list--inline list--inline--gutter-xl">
+                        <li><img src="https://placeholdit.co//i/50x70?&bg=8CC63F&fc=ffffff"></li>
+                        <li><img src="https://placeholdit.co//i/100x50?&bg=8CC63F&fc=ffffff"></li>
+                        <li><img src="https://placeholdit.co//i/70x90?&bg=8CC63F&fc=ffffff"></li>
+                        <li><img src="https://placeholdit.co//i/80x120?&bg=8CC63F&fc=ffffff"></li>
+                        <li><img src="https://placeholdit.co//i/120x100?&bg=8CC63F&fc=ffffff"></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FEATURED LIST WITH TICK ICONS -->
+        <section id="listsFeaturedTicks">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Featured list with tick icons</h3>
+                    <p>Add the class <code>.list--featured--ticks</code> or <code>.list--featured--ticks--lg</code></p>
+                    <p>Alternatively you can add your own icon path by using the mixins described <a href="sass-tools.html#toolsCustomIconLists">here</a>.</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <ul class="list--featured--ticks m-b-md">
+                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
+                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                    </ul>
+
+                    <ul class="list--featured--ticks--lg">
+                        <li>In non lacus facilisis, sodales mi sed, ultrices nibh. Maecenas non dolor tincidunt, pharetra leo sit amet, consequat elit. Nulla ac magna ultricies, suscipit nisl vitae, luctus nulla.</li>
+                        <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
+                        <li>Etiam tincidunt magna in arcu accumsan consequat. Vivamus blandit massa gravida augue semper volutpat. Duis quis aliquet ligula, quis varius elit. Quisque consequat purus tincidunt tempus dapibus.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

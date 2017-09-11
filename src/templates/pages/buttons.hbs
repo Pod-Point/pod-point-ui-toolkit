@@ -1,45 +1,115 @@
-{{> demo-header }}
-<div data-page="buttons">
-	<header class="demo-section-heading">
-		<div class="container content-block">
-			<h2>Buttons</h2>
-		</div>
-	</header>
+<div data-page="buttons" class="demo-page-content">
+
+    {{> demo-sidebar }}
+
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
+            <div class="container">
+                <h2>Buttons</h2>
+                <ul class="list--inline remove-link-styles font-weight-bold">
+                    <li><a href="#buttonsRequired">Required files</a></li>
+                    <li><a href="#buttonsActive">Buttons</a></li>
+                    <li><a href="#buttonsDisabled">Buttons disabled</a></li>
+                    <li><a href="#buttonsPassive">Buttons passive</a></li>
+                    <li><a href="#buttonsContainer">Buttons container</a></li>
+                </ul>
+            </div>
+        </header>
 
 
-	<!-- ACTIVE BUTTONS -->
-	<section>
-		<header class="demo-section-sub-heading">
-			<div class="container">
-				<h3>Active buttons</h3>
-			</div>
-		</header>
-		<div class="container content-block">
-			<div class="buttons-container">
-				<button class="button">Primary button</button>
-				<a href="#" class="button button--secondary">Secondary button</a>
-				<button class="button button--tertiary">Tertiary button</button>
-				<button class="button button--tertiary uppercase">Tertiary button uppercase</button>
-				<button class="button button--selected">Selected button</button>
-				<button class="button button--auto-width">Primary button (auto width on mobile)</button>
-			</div>
-		</div>
-	</section>
+        <!-- REQUIRED FILES -->
+        <section id="buttonsRequired">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Required files</h3>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p>SCSS files required: <code>_components.buttons.scss</code></p>
+                </div>
+            </div>
+        </section>
 
 
-	<!-- DISABLED BUTTONS -->
-	<section>
-		<header class="demo-section-sub-heading">
-			<div class="container">
-				<h3>Disabled buttons</h3>
-			</div>
-		</header>
-		<div class="container content-block">
-			<div class="buttons-container">
-				<button class="button is-disabled">Primary button disabled</button>
-				<button class="button button--secondary is-disabled">Secondary button disabled</button>
-				<button class="button button--tertiary is-disabled">Tertiary button disabled</button>
-			</div>
-		</div>
-	</section>
+        <!-- ACTIVE BUTTONS -->
+        <section id="buttonsActive">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Active buttons</h3>
+                    <p>Use the class <code>.btn</code> on any element eg. button, anchor, div, span</p>
+                    <p>Add the modifying classes to apply the secondary, tertiary and danger (delete) button styles <code>.btn--secondary</code>, <code>.btn--tertiary</code>, <code>.btn--danger</code></p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <div class="btns-container btns-container--inline">
+                        <button type="button" class="btn">Primary</button>
+                        <a href="#" class="btn btn--secondary">Secondary</a>
+                        <button type="button" class="btn btn--tertiary">Tertiary</button>
+                        <span class="btn btn--danger">Danger</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- DISABLED BUTTONS -->
+        <section id="buttonsDisabled">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Disabled buttons</h3>
+                    <p>Add the <code>disabled</code> attribute to a button OR the class <code>.is-disabled</code> is available to add if required eg. if it is an anchor or span element</p>
+                    <p>The below examples use either the attribute or the class to show the styling looks the same for either</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <div class="btns-container btns-container--inline">
+                        <button class="btn is-disabled">Primary disabled</button>
+                        <button class="btn btn--secondary is-disabled">Secondary disabled</button>
+                        <button class="btn btn--tertiary is-disabled">Tertiary disabled</button>
+                        <button class="btn btn--danger is-disabled">Danger disabled</button>
+                        <button disabled class="btn">Primary disabled</button>
+                        <button disabled class="btn btn--secondary">Secondary disabled</button>
+                        <button disabled class="btn btn--tertiary">Tertiary disabled</button>
+                        <button disabled class="btn btn--danger">Danger disabled</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PASSIVE BUTTON -->
+        <section id="buttonsPassive">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Passive buttons</h3>
+                    <p>Use the class <code>.btn</code> as well as the modifying class <code>.btn--passive</code></p>
+                    <p>There is an option to add an svg icon embed inside the button. See the <a href="/icons.html#iconsInline">icons example page</a> for more info on inline icons</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <div class="btns-container">
+                        <button class="btn btn--passive">Passive button</button>
+                        <button class="btn btn--passive"><span>Passive button with cheveron icon</span><i class="icon icon--inline">{{> icon-cheveron }}</i></button>
+
+                        <button class="btn btn--passive is-disabled"><span>Passive button with cheveron icon and disabled</span><i class="icon icon--inline">{{> icon-cheveron }}</i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- BUTTON CONTAINERS -->
+        <section id="buttonsContainer">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Button containers</h3>
+                    <p>The buttons have no spacing around them by default. However to stack buttons together nicely (as the examples above) add a wrapper with the class <code>.btns-container</code> or for inline <code>.btns-container--inline</code> which will add a 10px margin around each button and minus margins on the wrapper to counteract.</p>
+                </div>
+            </header>
+        </section>
+    </div>
 </div>

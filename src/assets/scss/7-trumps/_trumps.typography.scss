@@ -1,0 +1,80 @@
+// =============================================================================
+//  TRUMPS - TYPOGRAPHY
+// =============================================================================
+
+// sass-lint:disable no-important
+
+.p {
+    @extend %p-v-spacing;
+    @include font-base;
+}
+
+// Font sizes
+.font-size-xs {
+    @include font-size-responsive($font-size-xs-mobile, $font-size-xs-desktop);
+}
+
+.font-size-sm {
+    @include font-size-responsive($font-size-sm-mobile, $font-size-sm-desktop);
+}
+
+.font-size-md {
+    @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
+}
+
+.font-size-lg {
+    @include font-size-responsive($font-size-lg-mobile, $font-size-lg-desktop);
+}
+
+.font-size-xl {
+    @include font-size-responsive($font-size-xl-mobile, $font-size-xl-desktop);
+}
+
+// Font weights
+.font-weight-regular {
+    font-family: $font-weight-regular !important;
+    font-weight: normal !important;
+}
+
+.font-weight-bold {
+    font-weight: $font-weight-bold !important;
+}
+
+// Font transform upper/lower
+.font-uppercase {
+    text-transform: uppercase !important;
+}
+
+.font-lowercase {
+    text-transform: lowercase !important;
+}
+
+// Font colours
+.colour-base {
+    color: $font-colour-base !important;
+}
+
+.colour-primary {
+    color: $primary-colour !important;
+}
+
+.colour-inverted {
+    color: $white !important;
+}
+
+.colour-light {
+    color: $font-colour-light !important;
+}
+
+.colour-very-light {
+    color:  $font-colour-very-light !important;
+}
+
+// Helper to remove link styles (can be used on a wrapping element or the element itself)
+.remove-link-styles {
+    @extend %remove-link-styles;
+
+    a {
+        @extend %remove-link-styles;
+    }
+}

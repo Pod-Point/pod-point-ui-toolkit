@@ -1,0 +1,47 @@
+// =============================================================================
+//  COMPONENTS - CONFIRM POPUP
+// =============================================================================
+
+.confirm-popup {
+    @include position(fixed, 0 0 0 0);
+    background-color: $transparent-grey;
+    min-height: 100%;
+    overflow-y: scroll;
+    width: 100%;
+    z-index: 101;
+
+    &__box {
+        background-color: $white;
+        border: $border-base;
+        border-radius: $border-radius-base;
+        box-shadow: $box-shadow-front;
+        box-sizing: border-box;
+        left: ((100% - $confirm-box-width-mobile) / 2);
+        padding: $confirm-box-v-padding $confirm-box-h-padding;
+        position: absolute;
+        text-align: center;
+        top: $confirm-box-t-spacing;
+        width: $confirm-box-width-mobile;
+        z-index: auto;
+
+        @include screen-sm-min {
+            left: 50%;
+            margin-left: -($confirm-box-width / 2);
+            width: $confirm-box-width;
+
+            &--lg {
+                left: ((100% - $confirm-box-width-mobile) / 2);
+                margin-left: 0;
+                width: $confirm-box-width-mobile;
+            }
+        }
+
+        @include screen-md-min {
+            &--lg {
+                left: 50%;
+                margin-left: -($confirm-box-width-lg / 2);
+                width: $confirm-box-width-lg;
+            }
+        }
+    }
+}

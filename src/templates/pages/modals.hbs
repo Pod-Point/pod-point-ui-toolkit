@@ -1,70 +1,102 @@
-{{> demo-header }}
-<div data-page="modals">
+<div data-page="modals" class="demo-page-content">
 
-	<header class="demo-section-heading">
-		<div class="container content-block">
-			<h2>Modals</h2>
-		</div>
-	</header>
+    {{> demo-sidebar }}
 
-	<div class="container content-block">
-		<div class="buttons-container">
-			<button class="button" data-js-module="modal" data-modal="testModal">Open a modal</button>
-			<button class="button button--secondary" data-js-module="modal" data-modal="anotherTestModal">Open another modal</button>
-		</div>
-	</div>
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
+            <div class="container">
+                <h2>Modals</h2>
+            </div>
+        </header>
 
 
-	<!-- HIDDEN MODALS -->
-	<div class="modal hidden fade-in" id="testModal">
-		<div class="modal__content">
-			<button type="button" class="circle-icon circle-icon--close circle-icon--outlined-dark circle-icon--small-resp modal-close"><i class="icon">{{> icon-cross }}</i></button>
-			<div class="panel">
-				<img class="img--resp img--rounded-corners inline-block" src="http://placehold.it/700x400">
-				<div class="content-block">
-					<h2 class="panel__title">Pricing</h2>
-					<div class="panel__text-content" class="font-style-large">
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
-					</div>
-				</div>
-				<div class="grid-wrap">
-					<div class="grid-row">
-						<div class="grid-col grid-col--md-4">
-							<div class="card card--centered card--no-border">
-								<h3>3.7kW</h3>
-								<img class="img--resp img--rounded-corners inline-block" src="http://placehold.it/100x50">
-								<p>(Up to 15 miles RPH)<br>from <strong class="green">&pound;279*</strong></p>
-							</div>
-						</div>
-						<div class="grid-col grid-col--md-4">
-							<div class="card card--centered card--no-border">
-								<h3>7kW</h3>
-								<img class="img--resp img--rounded-corners inline-block" src="http://placehold.it/100x50">
-								<p>(Up to 30 miles RPH)<br>from <strong class="green">&pound;359*</strong></p>
-							</div>
-						</div>
-						<div class="grid-col grid-col--md-4">
-							<div class="card card--centered card--no-border">
-								<h3>22kW</h3>
-								<img class="img--resp img--rounded-corners inline-block" src="http://placehold.it/100x50">
-								<p>(Up to 80 miles RPH)<br>from <strong class="green">&pound;999*</strong></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+        <!-- REQUIRED FILES -->
+        <section id="modalsRequired">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Required files</h3>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p>SCSS files required: <code>_components.modal.scss</code></p>
+                    <p>JS files required: <code>modal.js</code></p>
+                </div>
+            </div>
+        </section>
 
-	<div class="modal hidden fade-in" id="anotherTestModal">
-		<div class="modal__content">
-			<button type="button" class="circle-icon circle-icon--close circle-icon--outlined-dark circle-icon--small-resp modal-close"><i class="icon">{{> icon-cross }}</i></button>
-			<div class="panel">
-				<img class="img--resp" src="http://placehold.it/1000x400">
-				<h2 class="panel__title">A Title For This Panel</h2>
-			</div>
-		</div>
-	</div>
 
+        <!-- MODAL -->
+        <section id="modalsRequiredFiles">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>The markup</h3>
+                    <p>The button to trigger the modal should have the attribute to initiate the javascript <code>data-js-module="modal"</code> plus an attribute to target the modal ID <code>data-modal="testModal"</code></p>
+                    <p>The modal itself needs an ID and the following classes <code>.modal</code>, <code>.hidden</code>, <code>.fade-in</code></p>
+                    <p>Inside the modal should be an element with the class <code>.modal__content</code></p>
+                    <p>Inside the modal content element should be the close button with a class <code>.modal__close</code> and optional styling. (In the below examples various classes are applied to create a spinning cross icon in a circle)</p>
+                    <p>There is also the option to add an element following the button with the class <code>.modal__panel</code>. This is useful if you want a different background colour or a border</p>
+                    <p>Note: To customise the panel you can apply various global helper classes such as <code>.bg-white</code> and <code>b-radius</code> and on the <code>.modal__content</code> element you might want to apply a max width class.</p>
+
+{{> snippet-modal }}
+
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <div class="btns-container">
+                        <button type="button" class="btn" data-js-module="modal" data-modal="testModal1">Open a classic modal</button>
+                        <button type="button" class="btn btn--secondary" data-js-module="modal" data-modal="testModal2">Open a modal with a white panel</button>
+                        <button type="button" class="btn btn--tertiary" data-js-module="modal" data-modal="testModal3">Open a modal with a narrow white panel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- HIDDEN MODALS -->
+        <div class="modal hidden fade-in" id="testModal1">
+            <div class="modal__content">
+                <button type="button" class="modal__close circle-icon circle-icon--close circle-icon--outlined--inverted circle-icon--sm-resp"><i class="icon">{{> icon-cross }}</i></button>
+
+                <img class="border-radius block m-centre max-width-100" src="http://placehold.it/700x400">
+
+                <div class="content-block p-b-none">
+                    <h2 class="h1">I am a modal title</h2>
+                    <div class="font-size-lg">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque hendrerit tempus. Morbi eget enim quis nisl commodo aliquet eget sed quam. Morbi ut condimentum nisl. Nam elementum suscipit elit, ut consequat libero interdum.</p>
+                        <p>In hac habitasse platea dictumst. Duis aliquet turpis quis arcu euismod, et luctus sapien facilisis. Sed imperdiet dui id mi varius gravida. Etiam convallis risus ac nulla consequat mattis. Nulla condimentum egestas pulvinar. Maecenas commodo leo in nunc luctus euismod. Sed id mi nec magna vehicula dictum ac eu velit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal hidden fade-in" id="testModal2">
+            <div class="modal__content">
+                <button type="button" class="modal__close circle-icon circle-icon--close circle-icon--outlined--inverted circle-icon--sm-resp modal-close"><i class="icon">{{> icon-cross }}</i></button>
+                <div class="modal__panel bg-white b-radius">
+                    <h2 class="h1">I am a modal title</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque hendrerit tempus. Morbi eget enim quis nisl commodo aliquet eget sed quam. Morbi ut condimentum nisl. Nam elementum suscipit elit, ut consequat libero interdum a. In hac habitasse platea dictumst. Duis aliquet turpis quis arcu euismod, et luctus sapien facilisis. Sed imperdiet dui id mi varius gravida. Etiam convallis risus ac nulla consequat mattis. Nulla condimentum egestas pulvinar. Maecenas commodo leo in nunc luctus euismod. Sed id mi nec magna vehicula dictum ac eu velit. Praesent ex sapien, vulputate quis tristique id, elementum at purus. Suspendisse laoreet sed diam.</p>
+
+                    <p>Nam at tortor interdum, commodo quam sit amet, tincidunt ante. Suspendisse in purus ut dui venenatis ultrices. Nunc dictum ipsum vitae risus condimentum fringilla. Pellentesque efficitur nibh vitae ipsum tempus venenatis. Etiam nec odio erat. Ut fringilla ac lectus vitae lacinia. Nullam rutrum nulla id placerat facilisis. Ut at ornare urna, vitae dignissim eros. Vivamus auctor neque vitae justo accumsan rutrum. Donec pulvinar mollis purus vitae ultricies. Donec hendrerit, urna id posuere gravida, velit lorem volutpat tellus, quis scelerisque diam urna ut urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                    <p>Nullam ut tortor tincidunt, luctus nunc ut, placerat neque. Nunc id dolor ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac massa bibendum, vehicula tortor eu, fermentum lacus. Phasellus dapibus lacinia dui, nec porttitor lorem efficitur vel. Quisque a ligula mollis, sagittis purus ut, fermentum urna. Ut ornare leo lorem, id iaculis ante semper a. Quisque tortor risus, tincidunt ac ipsum nec, cursus ultrices nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vel luctus diam. Morbi vulputate ac justo at placerat. Etiam a augue vel odio tempor accumsan. Morbi vel auctor nisi, a tempor diam. Aenean ornare aliquam libero nec egestas. Nulla commodo ipsum eget tortor imperdiet, nec convallis dolor lacinia.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal hidden fade-in" id="testModal3">
+            <div class="modal__content max-width-text-wide">
+                <button type="button" class="modal__close circle-icon circle-icon--close circle-icon--outlined--inverted circle-icon--sm-resp"><i class="icon">{{> icon-cross }}</i></button>
+                <div class="modal__panel bg-white b-radius">
+                    <h2 class="h1">I am a modal title</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque hendrerit tempus. Morbi eget enim quis nisl commodo aliquet eget sed quam. Morbi ut condimentum nisl. Nam elementum suscipit elit, ut consequat libero interdum a. In hac habitasse platea dictumst. Duis aliquet turpis quis arcu euismod, et luctus sapien facilisis. Sed imperdiet dui id mi varius gravida. Etiam convallis risus ac nulla consequat mattis. Nulla condimentum egestas pulvinar. Maecenas commodo leo in nunc luctus euismod. Sed id mi nec magna vehicula dictum ac eu velit. Praesent ex sapien, vulputate quis tristique id, elementum at purus. Suspendisse laoreet sed diam.</p>
+
+                    <p>Nam at tortor interdum, commodo quam sit amet, tincidunt ante. Suspendisse in purus ut dui venenatis ultrices. Nunc dictum ipsum vitae risus condimentum fringilla. Pellentesque efficitur nibh vitae ipsum tempus venenatis. Etiam nec odio erat. Ut fringilla ac lectus vitae lacinia. Nullam rutrum nulla id placerat facilisis. Ut at ornare urna, vitae dignissim eros. Vivamus auctor neque vitae justo accumsan rutrum. Donec pulvinar mollis purus vitae ultricies. Donec hendrerit, urna id posuere gravida, velit lorem volutpat tellus, quis scelerisque diam urna ut urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                    <p>Nullam ut tortor tincidunt, luctus nunc ut, placerat neque. Nunc id dolor ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac massa bibendum, vehicula tortor eu, fermentum lacus. Phasellus dapibus lacinia dui, nec porttitor lorem efficitur vel. Quisque a ligula mollis, sagittis purus ut, fermentum urna. Ut ornare leo lorem, id iaculis ante semper a. Quisque tortor risus, tincidunt ac ipsum nec, cursus ultrices nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vel luctus diam. Morbi vulputate ac justo at placerat. Etiam a augue vel odio tempor accumsan. Morbi vel auctor nisi, a tempor diam. Aenean ornare aliquam libero nec egestas. Nulla commodo ipsum eget tortor imperdiet, nec convallis dolor lacinia.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

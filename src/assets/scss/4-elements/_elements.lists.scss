@@ -1,0 +1,52 @@
+// =============================================================================
+//  ELEMENTS - LISTS
+// =============================================================================
+
+// sass-lint:disable nesting-depth
+
+ul,
+ol {
+    @include padding(null null $typography-v-spacing-half $list-l-spacing);
+    margin: 0;
+
+    &:last-child {
+        padding-bottom: 0;
+    }
+
+    li {
+        padding-bottom: $typography-v-spacing-half;
+
+        ul,
+        ol {
+            @include padding($typography-v-spacing-half null 0 null);
+
+            li {
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+ul {
+    li {
+        list-style-type: disc;
+        padding-left: $list-l-spacing-half;
+
+        ul {
+            li {
+                list-style-type: circle;
+                margin-left: $list-l-spacing-quarter;
+                padding-left: $list-l-spacing-half;
+            }
+        }
+    }
+}
+
+ol {
+    li {
+        list-style-type: decimal;
+        padding-left: $list-l-spacing-half;
+    }
+}

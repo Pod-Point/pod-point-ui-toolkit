@@ -1,0 +1,12 @@
+// =============================================================================
+//	ELEMENTS - HORIZONTAL RULE (HR)
+// =============================================================================
+
+hr {
+    @include margin(0 0 $typography-v-spacing);
+    background-color: $grey-keyline-very-light;
+    border-bottom: $border-thin;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}

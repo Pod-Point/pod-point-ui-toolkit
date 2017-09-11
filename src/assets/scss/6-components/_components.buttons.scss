@@ -1,0 +1,155 @@
+// =============================================================================
+//  COMPONENTS - BUTONS
+// =============================================================================
+
+// sass-lint:disable nesting-depth
+
+.btn {
+    @extend %remove-link-styles;
+    @include padding($button-v-padding $button-h-padding-mobile);
+    background-color: $primary-colour;
+    border: $border-primary;
+    border-radius: $button-radius;
+    box-sizing: border-box;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: $button-font-size;
+    font-weight: $font-weight-bold;
+    letter-spacing: $button-letter-spacing;
+    line-height: $button-line-height;
+    max-width: $button-max-width;
+    min-height: $button-min-height;
+    transition: opacity .2s ease;
+    vertical-align: middle;
+    width: auto;
+
+    @include screen-sm-min {
+        @include padding(null $button-h-padding);
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        &:not(.is-disabled) {
+            &:not([disabled]) {
+                background-color: transparent;
+                border-color: $primary-colour;
+                color: $primary-colour;
+                opacity: 1;
+            }
+        }
+    }
+
+    &.btn--secondary {
+        background-color: $grey;
+        border-color: $grey;
+        color: $white;
+
+        &:hover,
+        &:focus,
+        &:active {
+            &:not(.is-disabled) {
+                &:not([disabled]) {
+                    background-color: transparent;
+                    border-color: $grey;
+                    color: $grey;
+                }
+            }
+        }
+    }
+
+    &.btn--tertiary {
+        background-color: transparent;
+        border-color: $grey-dark;
+        color: $grey-dark;
+
+        &:hover,
+        &:focus,
+        &:active {
+            &:not(.is-disabled) {
+                &:not([disabled]) {
+                    background-color: $grey-dark;
+                    border-color: $grey-dark;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    &.btn--danger {
+        background-color: $error-red;
+        border-color: $error-red;
+        color: $white;
+
+        &:hover,
+        &:focus,
+        &:active {
+            &:not(.is-disabled) {
+                &:not([disabled]) {
+                    background-color: transparent;
+                    border-color: $error-red;
+                    color: $error-red;
+                }
+            }
+        }
+    }
+
+    &.btn--selected {
+        @extend %hide-text-not-pseudo;
+
+        &::before {
+            @extend %m-centre;
+            background-image: url($css-bg-path+'icons/tick-white.svg');
+            background-size: cover;
+            content: '';
+            display: block;
+            height: $button-icon-size;
+            width: $button-icon-size;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            &:not(.is-disabled) {
+                &:not([disabled]) {
+                    &::before {
+                        background-image: url($css-bg-path+'icons/tick-primary.svg');
+                    }
+                }
+            }
+        }
+    }
+
+    &.btn--passive {
+        @extend %clickable;
+        background-color: transparent;
+        border: 0;
+        color: $font-colour-base;
+        font-weight: $font-weight-bold;
+        line-height: $line-height-base;
+        max-width: auto;
+        min-height: auto;
+        padding: 0;
+        text-decoration: underline;
+
+        @include screen-sm-min {
+            padding: 0;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            &:not(.is-disabled) {
+                &:not([disabled]) {
+                    color: $font-colour-base;
+                    opacity: $opacity-hover;
+                }
+            }
+        }
+    }
+}

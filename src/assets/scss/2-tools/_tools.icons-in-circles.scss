@@ -1,0 +1,51 @@
+// =============================================================================
+//  TOOLS - ICONS IN CIRCLES
+// =============================================================================
+
+// SVG icon in a circle - defining the colours
+@mixin icon-in-circle($bg-colour: $icon-colour, $colour: $white, $border: 0) {
+    background-color: #{$bg-colour};
+    border: $border;
+    border-radius: 50%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    svg {
+        box-sizing: content-box;
+        fill: #{$colour};
+    }
+
+    &::before {
+        color: $colour;
+    }
+}
+
+// SVG icon in a circle - defining the size
+@mixin icon-in-circle--size($dimension: $circle-icon-size-md) {
+    font-size: $dimension / 4;
+    height: $dimension;
+    width: $dimension;
+
+    svg {
+        height: $dimension / 2;
+        margin-bottom: $dimension / 4;
+        margin-top: $dimension / 4;
+        width: $dimension / 2;
+    }
+}
+
+// SVG icon in a circle - with border
+@mixin icon-in-border-circle--size($dimension: $circle-icon-size-lg) {
+    font-size: $dimension / 4;
+    height: $dimension;
+    width: $dimension;
+
+    svg {
+        height: $dimension / 2;
+        margin-bottom: $dimension / 6;
+        margin-top: $dimension / 6;
+        width: $dimension / 2;
+    }
+}

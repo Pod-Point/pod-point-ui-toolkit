@@ -1,0 +1,41 @@
+// =============================================================================
+//	COMPONENTS - FORMS - VALIDATION
+// =============================================================================
+
+.form__group--error {
+    .checkbox > input + span {
+        &::before {
+            border-color: $error-red;
+        }
+    }
+
+    .form__control {
+        border-color: $error-red;
+    }
+}
+
+.form__group--valid {
+    .form__control {
+        border-color: $primary-colour;
+    }
+}
+
+.form__error {
+    @include font-size-responsive($font-size-sm-mobile, $font-size-sm-desktop);
+    color: $error-red;
+    display: block;
+    font-weight: $font-weight-bold;
+    padding-top: $form-error-t-spacing;
+
+    .checkbox & {
+        margin-top: 0;
+    }
+}
+
+.form__group {
+    &:not(.form__group--error) {
+        .form__error {
+            display: none;
+        }
+    }
+}

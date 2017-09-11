@@ -1,0 +1,46 @@
+// =============================================================================
+//	ELEMENTS - FORMS - SELECTS
+// =============================================================================
+
+.select {
+    display: block;
+    height: $input-height;
+    margin-top: 0;
+    max-width: $form-field-max-width;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+
+    &::after {
+        @include position(absolute, 35% $input-h-padding null null);
+        background-image: url($css-bg-path+'icons/chevron.svg');
+        background-size: cover;
+        content: '';
+        height: $select-chevron-size;
+        width: $select-chevron-size;
+    }
+
+    select {
+        appearance: none;
+        background-color: transparent;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+
+        &::-ms-expand { // sass-lint:disable-line no-vendor-prefixes
+            display: none;
+        }
+    }
+
+    &.is-disabled {
+        select {
+            cursor: not-allowed;
+        }
+    }
+
+    &--alt {
+        &::after {
+            right: 0;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+// =============================================================================
+//  SETTINGS - TOOLTIP
+// =============================================================================
+
+// Tooltip icon
+$tooltip-icon-circle-size: $icon-size-xs;
+$tooltip-icon-size: 9px;
+$tooltip-icon-line-height: 12px;
+
+$tooltip-padding: $base-spacing-mobile;
+$tooltip-b-spacing: $space-md;
+
+$tooltip-width: $max-width-content-tablet / 1.5;
+$tooltip-width-lg: $max-width-content-tablet - ($h-spacing-mobile * 2);

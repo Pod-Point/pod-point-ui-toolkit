@@ -1,0 +1,43 @@
+// =============================================================================
+//  TRUMPS - BORDERS
+// =============================================================================
+
+// sass-lint:disable no-important
+
+$borders: (
+    'base': $border-base,
+    'thin': $border-thin,
+    'none': 0
+);
+
+@each $size, $value in $borders {
+    .b-a-#{$size} {
+        border: $value !important;
+    }
+
+    .b-t-#{$size} {
+        border-top: $value !important;
+    }
+
+    .b-r-#{$size} {
+        border-right: $value !important;
+    }
+
+    .b-b-#{$size} {
+        border-bottom: $value !important;
+    }
+
+    .b-l-#{$size} {
+        border-left: $value !important;
+    }
+
+    .b-h-#{$size} {
+        border-left: $value !important;
+        border-right: $value !important;
+    }
+
+    .b-v-#{$size} {
+        border-bottom: $value !important;
+        border-top: $value !important;
+    }
+}

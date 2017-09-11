@@ -1,0 +1,17 @@
+// =============================================================================
+//  COMPONENTS - VIDEO
+// =============================================================================
+
+.video-wrapper {
+    height: 0;
+    padding-bottom: 56.25%; // 16:9
+    padding-top: 25px;
+    position: relative;
+    z-index: 9999;
+
+    iframe {
+        @include position(absolute, 0 null null 0);
+        height: 100%;
+        width: 100%;
+    }
+}

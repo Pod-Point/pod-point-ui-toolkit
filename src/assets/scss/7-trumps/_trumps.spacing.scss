@@ -1,0 +1,78 @@
+// =============================================================================
+//  TRUMPS - SPACING HELPERS
+// =============================================================================
+
+// sass-lint:disable no-important
+
+$spacings: (
+    'none': 0,
+    'xxs': $space-xxs,
+    'xs': $space-xs,
+    'sm': $space-sm,
+    'md': $space-md,
+    'lg': $space-lg,
+    'xl': $space-xl,
+    'xxl': $space-xxl
+);
+
+@each $size, $value in $spacings {
+    .m-a-#{$size} {
+        margin: $value !important;
+    }
+
+    .m-t-#{$size} {
+        margin-top: $value !important;
+    }
+
+    .m-r-#{$size} {
+        margin-right: $value !important;
+    }
+
+    .m-b-#{$size} {
+        margin-bottom: $value !important;
+    }
+
+    .m-l-#{$size} {
+        margin-left: $value !important;
+    }
+
+    .m-h-#{$size} {
+        margin-left: $value !important;
+        margin-right: $value !important;
+    }
+
+    .m-v-#{$size} {
+        margin-bottom: $value !important;
+        margin-top: $value !important;
+    }
+
+    .p-a-#{$size} {
+        padding: $value !important;
+    }
+
+    .p-t-#{$size} {
+        padding-top: $value !important;
+    }
+
+    .p-r-#{$size} {
+        padding-right: $value !important;
+    }
+
+    .p-b-#{$size} {
+        padding-bottom: $value !important;
+    }
+
+    .p-l-#{$size} {
+        padding-left: $value !important;
+    }
+
+    .p-h-#{$size} {
+        padding-left: $value !important;
+        padding-right: $value !important;
+    }
+
+    .p-v-#{$size} {
+        padding-bottom: $value !important;
+        padding-top: $value !important;
+    }
+}

@@ -1,0 +1,39 @@
+// =============================================================================
+//  SETTINGS - SPACING
+// =============================================================================
+
+$typography-v-spacing: 1em;
+$typography-v-spacing-half: $typography-v-spacing / 2;
+
+$base-spacing-mobile: 25px;
+$gutter-base: 10px;
+$gutter-lg: 25px;
+
+// Horizontal spacing
+$h-spacing-mobile: $base-spacing-mobile;
+$h-spacing: 30px;
+
+// Vertical spacing
+$v-spacing-mobile: $base-spacing-mobile;
+$v-spacing: 40px;
+
+// V spacing for buttons, labels, inputs
+$v-spacing-xxs: 8px;
+
+// Spacing
+$space-xxs: 5px;
+$space-xs: 10px;
+$space-sm: 15px;
+$space-md: 20px;
+$space-lg: 30px;
+$space-xl: 50px;
+$space-xxl: 70px;
+$space-xxxl: 100px;
+
+$dl-h-spacing: 15px;
+
+$alert-padding: $space-md;
+
+$highlight-text-padding: .3em;
+
+$list-l-spacing-sm: $space-md;

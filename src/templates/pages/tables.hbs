@@ -1,93 +1,263 @@
-{{> demo-header }}
-<div data-page="tables">
-	<header class="demo-section-heading">
-		<div class="container content-block">
-			<h2>Tables</h2>
-		</div>
-	</header>
+<div data-page="tables" class="demo-page-content">
+
+    {{> demo-sidebar }}
+
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
+            <div class="container">
+                <h2>Tables</h2>
+                <ul class="list--inline remove-link-styles font-weight-bold">
+                    <li><a href="#tablesRequired">Required files</a></li>
+                    <li><a href="#tablesDefault">Default table</a></li>
+                    <li><a href="#tablesStriped">Striped table</a></li>
+                    <li><a href="#tableCondensed">Condensed table</a></li>
+                    <li><a href="#tableBordered">Bordered table</a></li>
+                    <li><a href="#tableBorderedInbetween">Bordered inbetween table</a></li>
+                </ul>
+            </div>
+        </header>
 
 
-	<!-- DEFAULT TABLE -->
-	<section>
-		<header class="demo-section-sub-heading">
-			<div class="container">
-				<h3>Default table</h3>
-			</div>
-		</header>
-		<div class="container content-block">
-			<table class="table">
-				<caption>Optional table caption.</caption>
-				<thead>
-					<tr>
-						<th>Site</th>
-						<th># of PODs</th>
-						<th>Energy Used</th>
-						<th>CO2 Saved</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>3743 CH</td>
-						<td>1</td>
-						<td>45.50kWh</td>
-						<td>25.48kg</td>
-					</tr>
-					<tr>
-						<td>6681PN</td>
-						<td>1</td>
-						<td>0.00kWh</td>
-						<td>0.00kg</td>
-					</tr>
-					<tr>
-						<td>6852 MC</td>
-						<td>1</td>
-						<td>0.00kWh</td>
-						<td>0.00kg</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</section>
+        <!-- REQUIRED FILES -->
+        <section id="tablesRequired">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Required files</h3>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p>SCSS files required: <code>_components.tables.scss</code></p>
+                </div>
+            </div>
+        </section>
 
 
-	<!-- STRIPED TABLE -->
-	<section>
-		<header class="demo-section-sub-heading">
-			<div class="container">
-				<h3>Striped table</h3>
-			</div>
-		</header>
-		<div class="container content-block">
-			<table class="table table--striped">
-				<thead>
-					<tr>
-						<th>Site</th>
-						<th># of PODs</th>
-						<th>Energy Used</th>
-						<th>CO2 Saved</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>3743 CH</td>
-						<td>1</td>
-						<td>45.50kWh</td>
-						<td>25.48kg</td>
-					</tr>
-					<tr>
-						<td>6681PN</td>
-						<td>1</td>
-						<td>0.00kWh</td>
-						<td>0.00kg</td>
-					</tr>
-					<tr>
-						<td>6852 MC</td>
-						<td>1</td>
-						<td>0.00kWh</td>
-						<td>0.00kg</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</section>
+        <!-- DEFAULT TABLE -->
+        <section id="tablesDefault">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Default table</h3>
+                    <p>Use default table tags to create a fluid table</p>
+                    <p>The example below has the modifying class <code>.table--hover</code> also added to illustrate an optional hover effect</p>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <table class="table--hover">
+                        <thead>
+                            <tr>
+                                <th>Site</th>
+                                <th># of PODs</th>
+                                <th>Energy Used</th>
+                                <th>CO2 Saved</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3743 CH</td>
+                                <td>1</td>
+                                <td>45.50kWh</td>
+                                <td>25.48kg</td>
+                            </tr>
+                            <tr>
+                                <td>6681PN</td>
+                                <td>1</td>
+                                <td>0.00kWh</td>
+                                <td>0.00kg</td>
+                            </tr>
+                            <tr>
+                                <td>6852 MC</td>
+                                <td>1</td>
+                                <td>0.00kWh</td>
+                                <td>0.00kg</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- STRIPED TABLE -->
+        <section id="tablesStriped">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Striped table</h3>
+                    <p>Add the modifying class <code>.table--striped</code> to make the table striped</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <table class="table--striped">
+                        <thead>
+                            <tr>
+                                <th>Site</th>
+                                <th># of PODs</th>
+                                <th>Energy Used</th>
+                                <th>CO2 Saved</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3743 CH</td>
+                                <td>1</td>
+                                <td>45.50kWh</td>
+                                <td>25.48kg</td>
+                            </tr>
+                            <tr>
+                                <td>6681PN</td>
+                                <td>1</td>
+                                <td>0.00kWh</td>
+                                <td>0.00kg</td>
+                            </tr>
+                            <tr>
+                                <td>6852 MC</td>
+                                <td>1</td>
+                                <td>0.00kWh</td>
+                                <td>0.00kg</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CONDENSED TABLE -->
+        <section id="tableCondensed">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Condensed table</h3>
+                    <p>Add the modifying class <code>.table--condensed</code> to make the table condensed</p>
+                    <p>The example below has the class <code>.font-size-sm</code> also added to illustrate when you may use a condensed table</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <table class="table--condensed font-size-sm">
+                        <thead>
+                            <tr>
+                                <th>Site</th>
+                                <th># of PODs</th>
+                                <th>Energy Used</th>
+                                <th>CO2 Saved</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3743 CH</td>
+                                <td>1</td>
+                                <td>45.50kWh</td>
+                                <td>25.48kg</td>
+                            </tr>
+                            <tr>
+                                <td>6681PN</td>
+                                <td>1</td>
+                                <td>0.00kWh</td>
+                                <td>0.00kg</td>
+                            </tr>
+                            <tr>
+                                <td>6852 MC</td>
+                                <td>1</td>
+                                <td>0.00kWh</td>
+                                <td>0.00kg</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- BORDERED TABLE -->
+        <section id="tableBordered">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Bordered table</h3>
+                    <p>Add the modifying class <code>.table--bordered</code> to make the table bordered</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <table class="table--bordered">
+                        <thead>
+                            <tr>
+                                <th>Site</th>
+                                <th># of PODs</th>
+                                <th>Energy Used</th>
+                                <th>CO2 Saved</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3743 CH</td>
+                                <td>1</td>
+                                <td>45.50kWh</td>
+                                <td>25.48kg</td>
+                            </tr>
+                            <tr>
+                                <td>6681PN</td>
+                                <td>1</td>
+                                <td>0.00kWh</td>
+                                <td>0.00kg</td>
+                            </tr>
+                            <tr>
+                                <td>6852 MC</td>
+                                <td>1</td>
+                                <td>0.00kWh</td>
+                                <td>0.00kg</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- BORDERED inbetween TABLE -->
+        <section id="tableBorderedInbetween">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Bordered inbetween table</h3>
+                    <p>Add the modifying class <code>.table--bordered-inbetween</code> to make the table bordered inbetween rows and columns</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <table class="table--bordered-inbetween">
+                        <thead>
+                            <tr>
+                                <th>Site</th>
+                                <th># of PODs</th>
+                                <th>Energy Used</th>
+                                <th>CO2 Saved</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3743 CH</td>
+                                <td>1</td>
+                                <td>45.50kWh</td>
+                                <td>25.48kg</td>
+                            </tr>
+                            <tr>
+                                <td>6681PN</td>
+                                <td>1</td>
+                                <td>0.00kWh</td>
+                                <td>0.00kg</td>
+                            </tr>
+                            <tr>
+                                <td>6852 MC</td>
+                                <td>1</td>
+                                <td>0.00kWh</td>
+                                <td>0.00kg</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
 </div>

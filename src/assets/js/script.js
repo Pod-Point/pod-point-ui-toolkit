@@ -9,15 +9,7 @@ import ajaxForm from './modules/ajax-form';
 import formFields from './modules/form-fields';
 import toggleAccordionPanel from './modules/toggle-accordion-panel';
 import toggleElement from './modules/toggle-element';
-import gallerySimple from './modules/gallery-simple';
 import accordion from './modules/accordion';
-import headerNav from './modules/header-nav';
-import carousel from './modules/carousel';
-import * as addressLookup from './modules/address-lookup';
-
-window.initAutocomplete = addressLookup.initAutocomplete;
-window.geolocate = addressLookup.geolocate;
-window.fillInAddress = addressLookup.fillInAddress;
 
 dom.whenReady(() => {
     loadModules({
@@ -27,11 +19,7 @@ dom.whenReady(() => {
             ajaxForm,
             toggleAccordionPanel,
             toggleElement,
-            gallerySimple,
-            headerNav,
             accordion,
-            carousel,
-            addressLookup,
         }),
     });
 });

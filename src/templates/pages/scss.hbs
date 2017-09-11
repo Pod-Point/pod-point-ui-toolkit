@@ -1,0 +1,139 @@
+<div data-page="scss" class="demo-page-content">
+
+    {{> demo-sidebar }}
+
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
+            <div class="container">
+                <h2>The CSS/SCSS</h2>
+                <ul class="list--inline remove-link-styles font-weight-bold">
+                    <li><a href="#cssNamingConvention">Naming conventions</a></li>
+                    <li><a href="#cssUnits">Units</a></li>
+                    <li><a href="#cssStructureImports">Structure and importing</a></li>
+                </ul>
+            </div>
+        </header>
+
+
+        <!-- NAMING CONVENTIONS -->
+        <section id="cssNamingConvention">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Naming conventions</h3>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <p>BEM is being used throughout as the naming convention. For more info about bem see <a href="http://getbem.com/" target="blank">here</a>.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- UNITS -->
+        <section id="cssUnits">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Units used (PX EM REM %)</h3>
+                    <p>There have been countless debates about which units to use for the web, with no strict right or wrong answer.</p>
+                    <p>All units serve different purposes and the rationale behind the use in this toolkit are outlined below.</p>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <h4>Media queries in EM</h4>
+                    <p>Breakpoints are defined in EMs to cater cross browser for users who zoom in or change their font size settings. There are various articles explaining conclusions to these experiments such as <a href="https://zellwk.com/blog/media-query-units/" target="_blank">zellwk.com</a> and <a href="https://cloudfour.com/thinks/the-ems-have-it-proportional-media-queries-ftw/" target="_blank">cloudfour.com</a>.</p>
+                    <h4>Fonts and icons in REM</h4>
+                    <p>Fonts and icons are defined in REMs for users who change their base font size settings.</p>
+                    <p>To make it easier, a helper function is available to convert pixel values to REMs by passing a pixel value in the rem function like so <code>rem(24);</code></p>
+                    <h4>Font spacing in EM</h4>
+                    <p>To keep the spacing relative to the size of the font, the EM unit is being used. If the font size changes, the spacing around the text doesn't need to be altered.</p>
+                    <p>Note only padding is used for vertical spacing.</p>
+                    <h4>Everything else in PX or %</h4>
+                    <p>Widths and spacing should not be altered based on font size. For example if the text increases, the horizontal spacing and widths of content boxes and images should not be altered since the screen width remains the same.</p>
+                    <p>If the font increases it should flow vertically therefore the height of a text container should never be rigidly set to allow for text changes (a min-height could be used).</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- STRUCTURE AND IMPORTING -->
+        <section id="cssStructureImports">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Structure and importing</h3>
+                    <p>It is highly recommended to use this toolkit with individual SCSS imports, however the compiled CSS file is also available from the dist folder: <code>dist/assets/css/styles.css</code> and all the SCSS files are imported into the styles.scss file in the src folder: <code>src/assets/scss/styles.scss</code></p>
+                    <p>Some influence for the concepts and structure is taken from ITCSS. There is a curated list of ITCSS articles, videos and code examples <a href="https://github.com/ahmadajmi/awesome-itcss" target="_blank">here</a></p>
+                    <p>To import any SCSS file you need to specify the path to your node modules folder and then the path to the SCSS files. This would look something like this: <code>path/to/node_modules/@pod-point/pod-point-ui-toolkit/src/assets/scss/6-components/_components.buttons</code></p>
+                    <p>Depending on your project, some files may not be required so it is useful to understand what is within each folder. The following explains the role for each folder/set of files.</p>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <h4>1. Settings <small class="font-weight-regular">- Global variables config switches</small></h4>
+                    <p><strong>It is highly recommended that all settings files are imported</strong> as these are settings used throughout the toolkit.</p>
+                    <p>The option is available to reasign variables in your own SCSS, so it may be useful to include all the settings files individually so that you can override/reasign directly after each file import. The main settings file has all the individual file imports, so the order of importing should be followed from there.</p>
+                    <p class="demo-note">Note: no CSS will be compiled from the settings files, so it will not add to the size of your built CSS file to include all the files.</p>
+                    <h5 class="h6">Settings SCSS imports</h5>
+                    <p>To include all settings: <code>@import 'path/to/file/1-settings/_all';</code></p>
+                    <p>To include an individual setting file: <code>@import 'path/to/file/1-settings/_settings.palette';</code></p>
+                    <br>
+                    <hr>
+
+                    <h4>2. Tools <small class="font-weight-regular">- Functions and mixins</small></h4>
+                    <p><strong>It is highly recommended that all tools files are imported</strong> as these are tools used throughout the toolkit.</p>
+                    <p>The tools are helpers made up of mixins, placeholders and keyframe animations that are all utilised throughout the toolkit SCSS and also available for you to use. See <a href="sass-tools.html">here</a> for available mixins.</p>
+                    <p class="demo-note">Note: no CSS will be compiled from the tools files, so it will not add to the size of your built CSS file to include all the files.</p>
+                    <h5 class="h6">Tools SCSS imports</h5>
+                    <p>To include all tools: <code>@import 'path/to/file/2-tools/_all';</code></p>
+                    <p>To include an individual tools file: <code>@import 'path/to/file/2-tools/_tools.headings';</code></p>
+                    <br>
+                    <hr>
+
+                    <h4>3. Generic <small class="font-weight-regular">- Ground-zero styles</small></h4>
+                    <p><strong>It is highly recommended that all generic files are imported</strong> as it includes a normalize file which will reset base elements.</p>
+                    <h5 class="h6">Generic SCSS imports</h5>
+                    <p>To include all generic: <code>@import 'path/to/file/3-generic/_all';</code></p>
+                    <p>To include an individual generic file: <code>@import 'path/to/file/3-generic/_generic.normalize';</code></p>
+                    <br>
+                    <hr>
+
+                    <h4>4. Elements <small class="font-weight-regular">- Styling for bare HTML elements (with some helper classes)</small></h4>
+                    <p><strong>It is recommended that elements files are imported</strong> as it includes all the base styles for the main elements.</p>
+                    <p>The elements are loosely based on ITCSS, however there are also some helper classes to another element look like that element eg. an <code>&lt;a&gt;</code> also has the class <code>.a</code> available to use which the styles are applied to both. Same applies to tables <code>.table</code>, headings <code>.h1</code>, <code>.h2</code>, <code>.h3</code>, <code>.h4</code>, <code>.h5</code>, <code>.h6</code> and typographical formatting <code>.p</code>, <code>.small</code> etc. see more formatting classes <a href="typography.html#typographyFormats">here</a>.</p>
+                    <h5 class="h6">Elements SCSS imports</h5>
+                    <p>To include all elements: <code>@import 'path/to/file/4-elements/_all';</code></p>
+                    <p>To include an individual elements file: <code>@import 'path/to/file/4-elements/_elements.tables';</code></p>
+                    <br>
+                    <hr>
+
+                    <h4>5. Objects <small class="font-weight-regular">- Class-based selectors which define undecorated design patterns eg. layouts.</small></h4>
+                    <p>This folder contains structure and layout styles, eg. grid system, form layout, containers etc. Each file can be imported individually based on the requirements of your project.</p>
+                    <h5 class="h6">Objects SCSS imports</h5>
+                    <p>To include all objects: <code>@import 'path/to/file/5-objects/_all';</code></p>
+                    <p>To include an individual objects file: <code>@import 'path/to/file/5-objects/_objects.grid';</code></p>
+                    <br>
+                    <hr>
+
+                    <h4>6. Components <small class="font-weight-regular">- Specific UI components</small></h4>
+                    <p>This folder contains components that can be imported individually based on the requirements of your project. However there are components such as <code>_components.buttons</code>, <code>_components.icons</code>, <code>_components.lists</code> all the form elements and various others that are commonly used.</p>
+                    <h5 class="h6">Components SCSS imports</h5>
+                    <p>To include all components: <code>@import 'path/to/file/6-components/_all';</code></p>
+                    <p>To include an individual objects file: <code>@import 'path/to/file/6-components/_components.cards';</code></p>
+                    <br>
+                    <hr>
+
+                    <h4>7. Trumps <small class="font-weight-regular">- Utilities and helper classes with ability to override</small></h4>
+                    <p>This folder contains overrides and really useful helpers. Documentation for most of the helper classes can be found <a href="helper-classes.html">here</a></p>
+                    <h5 class="h6">Trumps SCSS imports</h5>
+                    <p>To include all trumps: <code>@import 'path/to/file/7-trumps/_all';</code></p>
+                    <p>To include an individual trumps file: <code>@import 'path/to/file/7-trumps/_trumps.spacing';</code></p>
+                    <br>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+// =============================================================================
+//  TRUMPS - WIDTHS
+// =============================================================================
+
+// sass-lint:disable no-important
+
+.width-100 {
+    width: 100% !important;
+}
+
+.max-width-100 {
+    max-width: 100% !important;
+}
+
+.min-width {
+    &-xxs {
+        max-width: $width-xxs !important;
+    }
+
+    &-xs {
+        max-width: $width-xs !important;
+    }
+
+    &-sm {
+        max-width: $width-sm !important;
+    }
+
+    &-md {
+        max-width: $width-md !important;
+    }
+
+    &-lg {
+        max-width: $width-lg !important;
+    }
+
+    &-xl {
+        max-width: $width-xl !important;
+    }
+
+    &-xxl {
+        max-width: $width-xxl !important;
+    }
+
+    &-xxxl {
+        max-width: $width-xxxl !important;
+    }
+}
+
+.max-width {
+    &-xxs {
+        max-width: $width-xxs !important;
+    }
+
+    &-xs {
+        max-width: $width-xs !important;
+    }
+
+    &-sm {
+        max-width: $width-sm !important;
+    }
+
+    &-md {
+        max-width: $width-md !important;
+    }
+
+    &-lg {
+        max-width: $width-lg !important;
+    }
+
+    &-xl {
+        max-width: $width-xl !important;
+    }
+
+    &-xxl {
+        max-width: $width-xxl !important;
+    }
+
+    &-xxxl {
+        max-width: $width-xxxl !important;
+    }
+
+    // Widths for content and text (variables can be reset according to your preference)
+    &-content {
+        max-width: $max-width-content !important;
+    }
+
+    &-text {
+        max-width: $max-width-text !important;
+    }
+
+    &-text-wider {
+        max-width: $max-width-text-wider !important;
+    }
+
+    &-text-wide {
+        max-width: $max-width-text-wide !important;
+    }
+
+    &-text-narrow {
+        max-width: $max-width-text-narrow !important;
+    }
+}

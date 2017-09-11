@@ -1,0 +1,86 @@
+// =============================================================================
+//	COMPONENTS - FORMS - RADIOS
+// =============================================================================
+
+.radio {
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: .5em;
+    transition: scale .28s ease;
+    user-select: none;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &--inline {
+        display: inline-block;
+        margin-bottom: 0;
+        margin-right: $checkbox-radio-inline-gutter;
+        max-width: auto;
+        min-width: auto;
+        width: auto;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    > input {
+        left: -9999px;
+        position: absolute;
+
+        &:checked + span {
+            &::before {
+                border: 2px solid transparent;
+                border-radius: 50%;
+            }
+
+            &::after {
+                background-color: $radio-fill-colour;
+                border: 2px solid $radio-fill-colour;
+                border-radius: 50%;
+                transform: scale(1.02);
+                z-index: 0;
+            }
+        }
+
+        &:disabled + span {
+            cursor: not-allowed;
+            opacity: $opacity-disabled;
+
+            &::before {
+                background-color: transparent;
+            }
+        }
+    }
+
+    > span {
+        @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
+        @include padding($radio-spacing null 0 $radio-text-l-spacing);
+        position: relative;
+
+        &::after,
+        &::before {
+            @include margin($radio-spacing null);
+            @include position(absolute, 0 null null 0);
+            content: '';
+            height: $radio-size;
+            transition: .28s ease;
+            width: $radio-size;
+            z-index: 0;
+        }
+
+        &::before {
+            border: 2px solid $radio-border;
+            border-radius: 50%;
+        }
+
+        &::after {
+            border: 2px solid $radio-border;
+            border-radius: 50%;
+            transform: scale(0);
+            z-index: -1;
+        }
+    }
+}

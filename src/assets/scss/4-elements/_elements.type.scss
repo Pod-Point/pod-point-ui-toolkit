@@ -1,0 +1,45 @@
+// =============================================================================
+//	ELEMENTS - TEXT
+// =============================================================================
+
+p {
+    @extend %p-v-spacing;
+}
+
+small,
+.small {
+    font-size: .8em;
+}
+
+strong,
+.strong,
+.bold {
+    font-weight: $font-weight-bold;
+}
+
+em,
+i,
+.em,
+.italic {
+    font-style: italic;
+}
+
+s,
+.s,
+.strike,
+.strikethrough {
+    text-decoration: line-through;
+}
+
+mark,
+.mark,
+.highlight {
+    @include padding(null $highlight-text-padding);
+    background-color: $highlight-colour;
+}
+
+code {
+    background-color: $primary-colour-very-light;
+    color: $primary-colour-very-dark;
+    padding: $highlight-text-padding;
+}

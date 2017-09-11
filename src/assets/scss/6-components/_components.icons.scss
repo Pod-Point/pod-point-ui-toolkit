@@ -1,0 +1,69 @@
+// =============================================================================
+//  COMPONENTS - ICONS
+// =============================================================================
+
+.icon {
+    @include margin(null $icon-h-spacing);
+
+    > svg,
+    > .icon__img {
+        fill: $font-colour-base;
+        height: $icon-size-md;
+        width: $icon-size-md;
+    }
+
+    // Change size of the svg
+    &--sm > svg,
+    &--sm > .icon__img {
+        height: $icon-size-sm;
+        width: $icon-size-sm;
+    }
+
+    &--xs > svg,
+    &--xs > .icon__img {
+        height: $icon-size-xs;
+        width: $icon-size-xs;
+    }
+
+    &--xxs > svg,
+    &--xxs > .icon__img {
+        height: $icon-size-xxs;
+        width: $icon-size-xxs;
+    }
+
+    // Change fill colour of the svg
+    &--base > svg {
+        fill: $font-colour-base;
+    }
+
+    &--inverted > svg {
+        fill: $white;
+    }
+
+    &--primary > svg {
+        fill: $primary-colour;
+    }
+
+    // Icon inline with text
+    &--inline {
+        margin: 0;
+
+        > svg,
+        > .icon__img {
+            @include position(relative, $icon-inline-text-top null null null);
+            display: inline-block;
+            height: $icon-inline-text-size;
+            margin: 0;
+            width: $icon-inline-text-size;
+        }
+    }
+
+    // To create spacing between the text and the icon, you can wrap the text in a span
+    &--inline + span {
+        margin-left: $icon-inline-text-gutter;
+    }
+
+    span + &--inline {
+        margin-left: $icon-inline-text-gutter;
+    }
+}

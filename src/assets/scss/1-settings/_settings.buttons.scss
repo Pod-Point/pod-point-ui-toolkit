@@ -1,0 +1,25 @@
+// =============================================================================
+//  SETTINGS - BUTTONS
+// =============================================================================
+
+// Padding
+$button-h-padding-mobile: 20px;
+$button-h-padding: 35px;
+$button-v-padding: $v-spacing-xxs;
+
+// Width/height
+$button-max-width: 600px;
+$button-min-height: 40px;
+
+// Radius
+$button-radius: $border-radius-xl;
+
+// Text/icons
+$button-font-size: rem(15);
+$button-line-height: 1.2;
+$button-letter-spacing: rem(1);
+$button-icon-size: rem(20);
+
+// Spacing when in containers
+$buttons-inline-gutter: $gutter-base;
+$buttons-v-spacing: $space-xs;

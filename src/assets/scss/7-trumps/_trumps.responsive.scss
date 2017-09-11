@@ -1,0 +1,59 @@
+// =============================================================================
+//  TRUMPS - RESPONSIVE HELPERS
+// =============================================================================
+
+// sass-lint:disable no-important, one-declaration-per-line
+
+.text-centre { text-align: center !important; }
+.text-right { text-align: right !important; }
+.text-left { text-align: left !important; }
+.float-right { float: right !important; }
+.float-left { float: left !important; }
+.m-l-none { margin-left: 0 !important; }
+.m-centre { margin-left: auto !important; margin-right: auto !important; }
+.hidden { display: none !important; }
+.block { display: block !important; }
+.inline-block { display: inline-block !important; }
+.width-full { max-width: 100% !important; width: 100% !important; }
+
+@include screen-sm-min {
+    .text-centre-sm { text-align: center !important; }
+    .text-right-sm { text-align: right !important; }
+    .text-left-sm { text-align: left !important; }
+    .float-right-sm { float: right !important; }
+    .float-left-sm { float: left !important; }
+    .m-l-none-sm { margin-left: 0 !important; }
+    .m-centre-sm { margin-left: auto !important; margin-right: auto !important; }
+    .hidden-sm { display: none !important; }
+    .block-sm { display: block !important; }
+    .inline-block-sm { display: inline-block !important; }
+    .width-full-sm { max-width: 100% !important; width: 100% !important; }
+}
+
+@include screen-md-min {
+    .text-centre-md { text-align: center !important; }
+    .text-right-md { text-align: right !important; }
+    .text-left-md { text-align: left !important; }
+    .float-right-md { float: right !important; }
+    .float-left-md { float: left !important; }
+    .m-l-none-md { margin-left: 0 !important; }
+    .m-centre-md { margin-left: auto !important; margin-right: auto !important; }
+    .hidden-md { display: none !important; }
+    .block-md { display: block !important; }
+    .inline-block-md { display: inline-block !important; }
+    .width-full-md { max-width: 100% !important; width: 100% !important; }
+}
+
+@include screen-lg-min {
+    .text-centre-lg { text-align: center !important; }
+    .text-right-lg { text-align: right !important; }
+    .text-left-lg { text-align: left !important; }
+    .float-right-lg { float: right !important; }
+    .float-left-lg { float: left !important; }
+    .m-l-none-lg { margin-left: 0 !important; }
+    .m-centre-lg { margin-left: auto !important; margin-right: auto !important; }
+    .hidden-lg { display: none !important; }
+    .block-lg { display: block !important; }
+    .inline-block-lg { display: inline-block !important; }
+    .width-full-lg { max-width: 100% !important; width: 100% !important; }
+}

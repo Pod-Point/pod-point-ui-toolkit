@@ -2,41 +2,104 @@
 //	DEMO STYLES
 // =============================================================================
 
-@import 'base/variables';
-@import 'includes/media-queries';
+@import '1-settings/all'; // Required
+@import '2-tools/all'; // Required
 
-.demo-header {
-	padding-top: rem(10);
-	padding-bottom: rem(10);
-}
+$demo-sidebar-width: 250px;
+$demo-header-height: 75px;
+
 .demo-logo-main {
-	img {
-		width: rem(120);
-	}
-}
-.demo-section-heading {
-	background-color: $primary-color;
-	color: white;
-}
-.demo-section-sub-heading {
-	background-color: $gray-very-light;
-	padding-top: rem(20);
-	padding-bottom: rem(20);
+    @include padding(10px null 10px null);
+    display: block;
 
-	h3 {
-		text-transform: uppercase;
-		font-size: rem(12);
-		font-weight: $font-weight-bold;
-		@include medium-and-up {
-			font-size: rem(14);
-		}
-	}
+    svg {
+        width: rem(140);
+    }
 }
 
-.demo-grid {
-	.grid-row > div {
-		background-color: $gray;
-		color: white;
-		padding: rem(20);
-	}
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+}
+
+.global-wrapper,
+.demo-page-content {
+    height: inherit;
+    min-height: inherit;
+}
+
+.demo-container-with-sidebar {
+    padding-left: $demo-sidebar-width;
+
+    .container {
+        margin-left: 0;
+    }
+}
+
+.demo-fixed-sidebar {
+    @include position(fixed, 0 null null 0);
+    @include horizontal-spacing;
+    box-shadow: $box-shadow-subtle;
+    height: 100%;
+    min-height: inherit;
+    overflow-y: scroll;
+    width: $demo-sidebar-width;
+
+    .nav-link {
+        color: $font-colour-light;
+        font-weight: $font-weight-bold;
+
+        &:hover {
+            color: $primary-colour;
+        }
+    }
+}
+
+.demo-note {
+    @include font-size-responsive($font-size-sm-mobile, $font-size-sm-desktop);
+    background-color: $grey-light;
+    margin-bottom: .5em;
+    padding: .5em 10px;
+}
+
+[data-page='grid'] {
+    [class*='grid__col'] {
+        background-color: $grey-dark;
+        color: $white;
+        font-weight: $font-weight-bold;
+        text-align: center;
+    }
+}
+
+$pages: (
+    'installation',
+    'scss',
+    'css-bg-img',
+    'javascript',
+    'inline-svg-icons',
+    'helper-classes',
+    'sass-tools',
+    'accordions'
+    'alerts',
+    'buttons',
+    'cards',
+    'confirm-popup',
+    'forms',
+    'grid',
+    'icons',
+    'labels',
+    'lists',
+    'modals',
+    'tables',
+    'tooltips',
+    'typography'
+);
+
+@each $page in $pages {
+    [data-page='#{$page}'] {
+        .nav-link--#{$page} {
+            color: $primary-colour;
+        }
+    }
 }

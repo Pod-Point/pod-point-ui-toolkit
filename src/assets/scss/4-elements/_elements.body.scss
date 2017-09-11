@@ -1,0 +1,11 @@
+// =============================================================================
+//  ELEMENTS - BODY
+// =============================================================================
+
+body {
+    @include font-base;
+    -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
+    font-feature-settings: 'kern' 1, 'liga' 1, 'pnum' 1;
+    text-shadow: $transparent-white 0 0 1px;
+    text-size-adjust: 100%;
+}

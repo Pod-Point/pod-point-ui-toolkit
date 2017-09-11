@@ -1,0 +1,67 @@
+// =============================================================================
+//  COMPONENTS - ACCORDION
+// =============================================================================
+
+.accordion {
+    @include accordion-size($accordion-v-spacing-md);
+    -webkit-tap-highlight-color: $transparent; // sass-lint:disable-line no-vendor-prefixes
+
+    &.grid-row {
+        .grid-col-4 {
+            @include margin(0 null);
+        }
+    }
+
+    .accordion__toggle {
+        @include padding(null 0);
+        cursor: pointer;
+        position: relative;
+
+        &.is-open {
+            + .accordion__content {
+                @include slide-down-active(1s, 300px);
+            }
+        }
+    }
+
+    .accordion__content {
+        @include slide-down-collapsed(1s);
+        border-bottom: $border-thin;
+        margin: 0;
+    }
+
+    &--only-mobile {
+        @include screen-md-min {
+
+            .accordion__toggle {
+                border-bottom: 0;
+                cursor: default;
+                padding: 0;
+
+                .accordion__toggle-icon {
+                    display: none;
+                }
+            }
+
+            .accordion__content {
+                @include slide-down-active(1s, 300px);
+            }
+        }
+    }
+}
+
+.accordion--v-spacing-xs {
+    @include accordion-size($accordion-v-spacing-xs);
+}
+
+.accordion--v-spacing-sm {
+    @include accordion-size($accordion-v-spacing-sm);
+}
+
+.accordion--v-spacing-lg {
+    @include accordion-size($accordion-v-spacing-lg);
+}
+
+.accordion--v-spacing-xl {
+    @include accordion-size($accordion-v-spacing-xl);
+}

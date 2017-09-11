@@ -1,0 +1,17 @@
+// =============================================================================
+//	COMPONENTS - FORMS - LABELS
+// =============================================================================
+
+.form__label {
+    @include font-size-responsive($font-size-sm-mobile, $font-size-sm-desktop);
+    display: inline-block;
+    font-weight: $font-weight-bold;
+    max-width: $form-field-max-width;
+    padding-bottom: $form-label-b-spacing;
+    width: 100%;
+
+    .checkbox &,
+    .radio & {
+        @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
+    }
+}

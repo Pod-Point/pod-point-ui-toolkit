@@ -1,0 +1,91 @@
+// =============================================================================
+//  COMPONENTS - TOOLTIP
+// =============================================================================
+
+.tooltip-icon {
+    @extend %hide-text-not-pseudo;
+    @include icon-in-circle($bg-colour: transparent, $colour: $font-colour-base, $border: $border-font-colour);
+    @include icon-in-border-circle--size($dimension: $tooltip-icon-circle-size);
+    display: inline-block;
+
+    &::before {
+        content: '?';
+        font-size: $tooltip-icon-size;
+        font-weight: $font-weight-bold;
+        line-height: $tooltip-icon-line-height;
+    }
+}
+
+.tooltip {
+    display: block;
+    position: relative;
+    width: 100%;
+
+    @include screen-md-min {
+        width: auto;
+    }
+}
+
+.tooltip__box {
+    @include position(absolute, 0 null null 0);
+    background-color: $white;
+    border: $border-base;
+    border-radius: $border-radius-base;
+    box-shadow: $box-shadow-front;
+    box-sizing: border-box;
+    margin-bottom: $tooltip-b-spacing;
+    padding: $tooltip-padding;
+    width: 100%;
+    z-index: auto;
+
+    @include screen-xs-min {
+        width: $tooltip-width;
+    }
+}
+
+.tooltip--lg {
+    .tooltip__box {
+        @include screen-xs-min {
+            width: 100%;
+        }
+
+        @include screen-sm-min {
+            width: $tooltip-width-lg;
+        }
+    }
+}
+
+.tooltip--right {
+    .tooltip__box {
+        left: auto;
+        right: 0;
+    }
+}
+
+.tooltip--centre {
+    .tooltip__box {
+        @include screen-xs-min {
+            left: 50%;
+            margin-left: -($tooltip-width / 2);
+        }
+    }
+
+    &.tooltip--lg {
+        .tooltip__box {
+            @include screen-xs-min {
+                margin-left: -($tooltip-width-lg / 2);
+            }
+        }
+    }
+}
+
+.tooltip__title {
+    @include heading-style-responsive($font-size-h5-mobile, $font-size-h5-desktop);
+}
+
+.tooltip__close {
+    position: absolute;
+    right: $tooltip-padding / 2.5;
+    top: $tooltip-padding / 1.5;
+}
+

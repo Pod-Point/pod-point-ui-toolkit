@@ -1,0 +1,67 @@
+// =============================================================================
+//  COMPONENTS - LISTS
+// =============================================================================
+
+// Removing default list styling
+.list--no-style {
+    @extend %remove-list-styles;
+    padding-bottom: $typography-v-spacing;
+
+    li {
+        padding-bottom: 0;
+    }
+}
+
+// Tightens up left spacing
+.list--spacing-left-sm {
+    padding-left: $list-l-spacing / 3;
+
+    li {
+        padding-left: 0;
+    }
+}
+
+// List with primary colour tick icons instead of bullets
+.list--featured--ticks {
+    @include featured-icon-list($css-bg-path+'icons/tick-primary.svg');
+}
+
+// List with primary colour tick icons instead of bullets
+.list--featured--ticks--lg {
+    @include featured-icon-list-lg($css-bg-path+'icons/tick-primary.svg');
+}
+
+// List inline
+.list--inline {
+    @extend %remove-list-styles;
+
+    @include inline-list-gutter($img-list-inline-gutter-md);
+
+    &--gutter-xxs {
+        @include inline-list-gutter($img-list-inline-gutter-xxs);
+    }
+
+    &--gutter-xs {
+        @include inline-list-gutter($img-list-inline-gutter-xs);
+    }
+
+    &--gutter-sm {
+        @include inline-list-gutter($img-list-inline-gutter-sm);
+    }
+
+    &--gutter-md {
+        @include inline-list-gutter($img-list-inline-gutter-md);
+    }
+
+    &--gutter-lg {
+        @include inline-list-gutter($img-list-inline-gutter-lg);
+    }
+
+    &--gutter-xl {
+        @include inline-list-gutter($img-list-inline-gutter-xl);
+    }
+
+    &--gutter-xxl {
+        @include inline-list-gutter($img-list-inline-gutter-xxl);
+    }
+}

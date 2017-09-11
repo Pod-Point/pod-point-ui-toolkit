@@ -1,0 +1,39 @@
+// =============================================================================
+//	OBJECTS - FORM LAYOUT
+// =============================================================================
+
+fieldset {
+    border: 0;
+}
+
+.form__field {
+    max-width: $form-field-max-width;
+    width: 100%;
+}
+
+.form__group {
+    margin-bottom: $form-group-b-spacing;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// When inside a grid col, keep bottom spacing on the form__group last child
+[class*='grid__col'] {
+    > .form__group {
+        &:last-child {
+            margin-bottom: $form-group-b-spacing;
+        }
+    }
+}
+
+.form__groups-inline {
+    margin: -$form-groups-inline-gutter;
+    overflow: hidden;
+
+    .form__group {
+        display: inline-block;
+        margin: $form-groups-inline-gutter;
+    }
+}

@@ -2,11 +2,13 @@
 //	IMPORT ALL SCSS
 // =============================================================================
 
-@import 'base/__base'; // Required
-@import 'includes/__includes'; // Required
-@import 'layout/__layout';
-@import 'typography/__typography';
-@import 'forms/__forms';
-@import 'shared/__shared';
-@import 'modules/__modules'; // Each module can be used on it's own
-@import 'overrides/__overrides'; // Needs to be included last
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700'); // sass-lint:disable-line no-url-protocols, no-url-domains
+
+@import '1-settings/all'; // Required
+@import '2-tools/all'; // Required
+
+@import '3-generic/all';
+@import '4-elements/all';
+@import '5-objects/all';
+@import '6-components/all';
+@import '7-trumps/all';

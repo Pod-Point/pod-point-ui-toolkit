@@ -1,0 +1,33 @@
+// =============================================================================
+//  SETTINGS - ICONS
+// =============================================================================
+
+// Icon
+$icon-size-xxs: rem(10);
+$icon-size-xs: rem(15);
+$icon-size-sm: rem(20);
+$icon-size-md: rem(25);
+$icon-h-spacing: rem(2);
+
+// Icons inline with text
+$icon-inline-text-gutter: .3em;
+$icon-inline-text-size: 1em;
+$icon-inline-text-top: $icon-inline-text-size / 6;
+
+// Circle icon sizes (the rem function doesn't seem to work within the icon-in-circle--size mixin)
+$circle-icon-size-sm: 1.6rem; // 25px
+$circle-icon-size-md: 2.5rem; // 40px
+$circle-icon-size-lg: 3.75rem; // 60px
+
+// Navicon
+$navicon-width: $icon-size-md;
+$navicon-height: 21px;
+$navicon-stroke: $border-stroke;
+$navicon-stroke-radius: $border-radius-base;
+
+// Plus minus toggle
+$plus-minus-size: rem(16);
+$plus-minus-stroke: $border-stroke;
+$plus-minus-stroke-radius: $border-radius-base;
+$plus-minus-t-pos: $plus-minus-size / 2;
+$plus-minus-circle-size: rem(30);

@@ -1,0 +1,46 @@
+// =============================================================================
+//  SETTINGS - FORMS
+// =============================================================================
+
+// Form font sizes
+$font-size-forms-md: $font-size-md-desktop; // Forms have to be 16px min for IOS
+
+// Borders and shadows
+$form-border-radius: $border-radius-base;
+$form-border-base: $border-base;
+
+// Form fields
+$form-field-max-width: $width-xxl;
+
+// Form groups
+$form-group-b-spacing: $space-lg;
+$form-groups-inline-gutter: $gutter-base;
+
+// Inputs
+$input-height: rem(40);
+$input-h-padding: $space-xs;
+$input-v-padding: 6px;
+$input-text-colour: $font-colour-base;
+$input-chrome-autofill-colour: $white;
+$input-placeholder-colour: $font-colour-very-light;
+$alt-input-v-padding: 1.5em;
+
+// Text areas
+$textarea-min-height: rem(130);
+
+// Selects
+$select-chevron-size: $icon-size-xs;
+
+// Checkbox/radios
+$checkbox-radio-inline-gutter: $gutter-lg;
+$checkbox-size: rem(23);
+$checkbox-tick-size: rem(15);
+$radio-size: rem(18);
+$radio-spacing: .4em;
+$radio-text-l-spacing: rem(30);
+$checkbox-text-l-spacing: rem(35);
+$checkbox-text-b-spacing: $space-xxs;
+
+// Label/errors
+$form-label-b-spacing: $space-xxs;
+$form-error-t-spacing: $space-xxs;

@@ -1,0 +1,41 @@
+// =============================================================================
+//  TRUMPS - SLIDE PANEL
+// =============================================================================
+
+// Using CSS to animate the height of a container means we need to give it an explicit max-height
+// However if we give it an extra large max-height on a small panel it will cause a delay effect on the animation // So here are some slide panel modifying classes for the different approx sizes we might need
+
+.slide-panel {
+
+    &--xs {
+        @include slide-down-collapsed(.8s);
+
+        &.is-open {
+            @include slide-down-active(.5s, 200px);
+        }
+    }
+
+    &--sm {
+        @include slide-down-collapsed(.8s);
+
+        &.is-open {
+            @include slide-down-active(.5s, 400px);
+        }
+    }
+
+    &--md {
+        @include slide-down-collapsed(.8s);
+
+        &.is-open {
+            @include slide-down-active(1s, 1000px);
+        }
+    }
+
+    &--xl {
+        @include slide-down-collapsed(.8s);
+
+        &.is-open {
+            @include slide-down-active(1s, 3000px);
+        }
+    }
+}

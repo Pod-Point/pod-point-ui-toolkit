@@ -1,0 +1,70 @@
+// =============================================================================
+//  TOOLS - FORMS
+// =============================================================================
+
+@mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+        @content;
+    }
+}
+
+@mixin placeholder {
+    @include optional-at-root('::placeholder') {
+        @content;
+    }
+}
+
+@mixin input-styles(
+    $font-size: $font-size-forms-md,
+    $height: $input-height,
+    $max-width: $form-field-max-width,
+    $v-padding: $input-v-padding,
+    $h-padding: $input-h-padding,
+    $placeholder-colour: $input-placeholder-colour,
+    $chrome-autofill-colour: $input-chrome-autofill-colour
+) {
+    @include placeholder {
+        color: $placeholder-colour;
+    }
+    appearance: none;
+    display: block;
+    font-size: $font-size;
+    height: $height;
+    max-width: $max-width;
+    padding: $v-padding $h-padding;
+    width: 100%;
+
+    // sass-lint:disable-block no-vendor-prefixes
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px $chrome-autofill-colour inset;
+    }
+}
+
+@mixin input-border(
+    $background-color: $background-colour-base,
+    $border: $form-border-base,
+    $border-radius: $form-border-radius
+) {
+    background-color: $background-color;
+    border: $border;
+    border-radius: $border-radius;
+    transition: border-colour;
+}
+
+@mixin input-border--hover(
+    $border-color: $font-colour-base,
+    $color: $font-colour-base
+) {
+    border-color: $border-color;
+    color: $color;
+    outline: none;
+}
+
+@mixin input-border--disabled(
+    $background-color: $grey-very-light,
+    $opacity: $opacity-disabled
+) {
+    background-color: $background-color;
+    cursor: not-allowed;
+    opacity: $opacity;
+}

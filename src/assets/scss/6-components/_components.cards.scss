@@ -1,0 +1,73 @@
+// =============================================================================
+//  COMPONENTS - CARDS
+// =============================================================================
+
+.card {
+    background-color: $white;
+    border: $border-thin-base;
+    border-radius: $border-radius-base;
+    box-shadow: $box-shadow-subtle;
+    color: $font-colour-base;
+    display: block;
+    padding: $card-v-padding $card-h-padding;
+
+    ul,
+    ol {
+        padding-left: $list-l-spacing-sm;
+
+        li {
+            padding-left: 0;
+        }
+    }
+
+    &--options {
+        position: relative;
+
+        &::before {
+            @include position(absolute, $card-option-highlight-offset null null -1px);
+            background-color: $grey-keyline-very-light;
+            border-top-left-radius: $border-radius-base;
+            border-top-right-radius: $border-radius-base;
+            content: '';
+            height: $card-option-highlight-height;
+            width: calc(100% + 2px);
+            z-index: -1;
+        }
+
+        &--recommended {
+            &::before {
+                background-color: $primary-colour;
+            }
+        }
+    }
+
+    &--padding-lg {
+        padding: $card-v-padding-lg $card-h-padding-lg;
+    }
+
+    &--centred {
+        text-align: center;
+
+        hr {
+            @include margin(null 20%);
+        }
+    }
+
+    &--highlight {
+        border: $border-primary;
+    }
+
+    &--informative {
+        border: $border-base;
+
+        hr {
+            opacity: 1;
+        }
+    }
+}
+
+.cards-same-height {
+    .card {
+        min-height: 100%;
+    }
+}

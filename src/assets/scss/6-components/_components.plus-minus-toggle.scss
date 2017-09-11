@@ -1,0 +1,63 @@
+// =============================================================================
+//  COMPONENTS - PLUS MINUS TOGGLE
+// =============================================================================
+
+.plus-minus-toggle {
+    cursor: pointer;
+    display: block;
+    height: $plus-minus-size;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    width: $plus-minus-size;
+
+    &::before,
+    &::after {
+        background-color: $icon-colour;
+        border-radius: $plus-minus-stroke-radius;
+        content: '';
+        display: block;
+        height: $plus-minus-stroke;
+        margin-top: -1px;
+        opacity: 1;
+        position: absolute;
+        top: 50%;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+        width: 100%;
+    }
+
+    &::before {
+        .sub-nav-open & {
+            transform: rotate(180deg);
+        }
+    }
+
+    &::after {
+        transform: rotate(90deg);
+
+        .sub-nav-open & {
+            opacity: 0;
+            transform: rotate(360deg);
+        }
+
+        // sass-lint:disable-block force-element-nesting
+        .accordion__toggle.is-open & {
+            opacity: 0;
+            transform: rotate(360deg);
+        }
+    }
+}
+
+.plus-minus-toggle--in-circle--primary {
+    border: $plus-minus-stroke solid $primary-colour;
+    border-radius: 50%;
+    height: $plus-minus-circle-size;
+    width: $plus-minus-circle-size;
+
+    &::before,
+    &::after {
+        background-color: $primary-colour;
+        left: 20%;
+        width: 60%;
+    }
+}

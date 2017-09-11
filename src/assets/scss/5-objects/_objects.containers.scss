@@ -1,0 +1,44 @@
+// =============================================================================
+//  OBJECTS - CONTAINERS
+// =============================================================================
+
+.container {
+    @include container;
+    box-sizing: border-box;
+    max-width: $max-width-content-tablet;
+
+    @include screen-md-min {
+        max-width: $max-width-content;
+    }
+}
+
+.max-width-text {
+    max-width: $max-width-text;
+
+    &--wide {
+        max-width: $max-width-text-wide;
+    }
+
+    &--narrow {
+        max-width: $max-width-text-narrow;
+    }
+}
+
+.btns-container {
+    @include margin((-$buttons-v-spacing) null);
+    overflow: hidden;
+
+    .btn {
+        @include margin($buttons-v-spacing null);
+        display: block;
+    }
+
+    &--inline {
+        @include margin(null (-$buttons-inline-gutter));
+
+        .btn {
+            @include margin(null $buttons-inline-gutter);
+            display: inline-block;
+        }
+    }
+}

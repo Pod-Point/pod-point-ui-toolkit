@@ -1,0 +1,13 @@
+// =============================================================================
+//  SETTINGS - LABELS
+// =============================================================================
+
+$label-v-padding: .2em;
+$label-h-padding: $space-sm;
+
+$label-min-height: $font-size-md-desktop + ($label-v-padding * 2);
+
+$label-icon-size: $icon-size-sm;
+
+$label-with-icon-h-spacing: $label-icon-size + ($label-h-padding * 1.8);
+$label-icon-t-spacing: -($label-icon-size / 2);

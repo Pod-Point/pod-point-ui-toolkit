@@ -1,0 +1,40 @@
+// =============================================================================
+//  COMPONENTS - HERO
+// =============================================================================
+
+.hero {
+    overflow: hidden;
+    position: relative;
+
+    .container {
+        position: relative;
+        z-index: 3;
+    }
+
+    .content-block {
+        min-height: $hero-content-min-height-mobile;
+
+        @include screen-md-min {
+            min-height: $hero-content-min-height;
+        }
+    }
+
+    &__content {
+        @include pop-up-fade-in;
+        max-width: $hero-content-max-width-mobile;
+
+        @include screen-md-min {
+            max-width: $hero-content-max-width;
+        }
+    }
+
+    &::before {
+        @include full-overlay($grey-dark);
+        animation-delay: 1s;
+        animation-duration: 1.5s;
+        animation-fill-mode: both;
+        animation-name: fadeOut;
+        content: '';
+        opacity: 1;
+    }
+}

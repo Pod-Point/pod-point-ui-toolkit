@@ -1,0 +1,26 @@
+// =============================================================================
+//  TOOLS - ANIMATION POP UP FADES
+// =============================================================================
+
+// Pop up and fade in keyframes
+@keyframes pop-up-fade-in {
+    0% {
+        opacity: 0;
+        top: 100px;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+// Pop up and fade in mixin
+@mixin pop-up-fade-in($duration: 2s) {
+    animation: pop-up-fade-in $duration;
+    position: relative;
+}
