@@ -1,0 +1,38 @@
+// =============================================================================
+//  TRUMPS - BOX SHADOWS
+// =============================================================================
+
+// Box shadows (all sides)
+.bs-a-subtle {
+    box-shadow: $shadow-subtle;
+}
+
+.bs-a-base {
+    box-shadow: $shadow;
+}
+
+.bs-a-forward {
+    box-shadow: $shadow-forward;
+}
+
+.bs-a-obvious {
+    box-shadow: $shadow-obvious;
+}
+
+// Box shadows bottom
+.bs-b-base {
+    box-shadow: $shadow-bottom;
+}
+
+.bs-b-subtle {
+    box-shadow: $shadow-bottom-subtle;
+}
+
+// Box shadows top
+.bs-t-base {
+    box-shadow: $shadow-top;
+}
+
+.bs-t-subtle {
+    box-shadow: $shadow-top-subtle;
+}

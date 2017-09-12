@@ -17,6 +17,11 @@
     }
 }
 
+// To remove disabled styles applied
+.is-not-disabled {
+    @extend %override-disabled-styles;
+}
+
 // Apply clearfix styles with classes .clearfix or .clear
 .clear,
 .clearfix {

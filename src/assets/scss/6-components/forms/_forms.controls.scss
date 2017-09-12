@@ -31,6 +31,10 @@
         border-right: 0;
         border-top: 0;
     }
+
+    &--stripe {
+        @include padding(9px null);
+    }
 }
 
 textarea {
