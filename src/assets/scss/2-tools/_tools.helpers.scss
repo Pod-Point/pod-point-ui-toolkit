@@ -17,6 +17,18 @@
     display: flex;
 }
 
+// Centre element that is absolutely positioned
+@mixin abs-centre {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+// Reset an element that is absolutely positioned centred
+@mixin abs-cancel-centre {
+    left: auto;
+    transform: translateX(0);
+}
+
 // Remove default list styling
 %remove-list-styles {
     @include padding(null 0);
@@ -42,6 +54,20 @@
     &:focus,
     &:hover {
         opacity: $opacity-hover;
+    }
+}
+
+// Override disabled styles
+// sass-lint:disable-block no-important
+%override-disabled-styles {
+    cursor: inherit !important;
+    opacity: inherit !important;
+
+    &:active,
+    &:focus,
+    &:hover {
+        cursor: inherit !important;
+        opacity: inherit !important;
     }
 }
 

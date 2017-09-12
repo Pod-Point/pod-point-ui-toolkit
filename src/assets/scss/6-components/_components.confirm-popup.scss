@@ -14,7 +14,7 @@
         background-color: $white;
         border: $border-base;
         border-radius: $border-radius-base;
-        box-shadow: $box-shadow-front;
+        box-shadow: $shadow-forward;
         box-sizing: border-box;
         left: ((100% - $confirm-box-width-mobile) / 2);
         padding: $confirm-box-v-padding $confirm-box-h-padding;

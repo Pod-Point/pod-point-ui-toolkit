@@ -6,7 +6,7 @@
     background-color: $white;
     border: $border-thin-base;
     border-radius: $border-radius-base;
-    box-shadow: $box-shadow-subtle;
+    box-shadow: $shadow-subtle;
     color: $font-colour-base;
     display: block;
     padding: $card-v-padding $card-h-padding;
@@ -55,6 +55,8 @@
 
     &--highlight {
         border: $border-primary;
+        border-color: $primary-colour;
+        box-shadow: $shadow-subtle, $shadow-inset-primary-thin;
     }
 
     &--informative {

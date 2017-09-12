@@ -2,6 +2,8 @@
 //  SETTINGS - GLOBAL
 // =============================================================================
 
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700'); // sass-lint:disable-line no-url-protocols, no-url-domains
+
 // Function to turn pixels to rems
 @function rem($size) {
     $rem-size: $size / 16;

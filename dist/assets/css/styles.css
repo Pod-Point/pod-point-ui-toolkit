@@ -85,6 +85,13 @@ p, .p {
   .btn.btn--passive:active, .clickable:active, .btn.btn--passive:focus, .clickable:focus, .btn.btn--passive:hover, .clickable:hover {
     opacity: 0.7; }
 
+.is-not-disabled {
+  cursor: inherit !important;
+  opacity: inherit !important; }
+  .is-not-disabled:active, .is-not-disabled:focus, .is-not-disabled:hover {
+    cursor: inherit !important;
+    opacity: inherit !important; }
+
 .btn.btn--selected, .tooltip-icon {
   text-indent: -9999px; }
   .btn.btn--selected::before, .tooltip-icon::before, .btn.btn--selected::after, .tooltip-icon::after {
@@ -272,7 +279,7 @@ mark,
   background-color: #8cc63f; }
 
 code {
-  background-color: #e9eee0;
+  background-color: #f6faf1;
   color: #334217;
   padding: 0.3em; }
 
@@ -294,6 +301,7 @@ button {
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  padding: 0;
   text-decoration: none;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1057,7 +1065,9 @@ fieldset {
       margin-right: 20%;
       margin-left: 20%; }
   .card--highlight {
-    border: 2px solid #8cc63f; }
+    border: 2px solid #8cc63f;
+    border-color: #8cc63f;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 2px #8cc63f; }
   .card--informative {
     border: 2px solid #ccc; }
     .card--informative hr {
@@ -1879,6 +1889,9 @@ fieldset {
     border-radius: 0;
     border-right: 0;
     border-top: 0; }
+  .form__control--stripe {
+    padding-top: 9px;
+    padding-bottom: 9px; }
 
 textarea.form__control {
   min-height: 8.125rem;
@@ -2605,6 +2618,10 @@ textarea.form__control {
 .bg-primary {
   background-color: #8cc63f !important;
   color: #fff !important; }
+
+.bg-very-light-primary {
+  background-color: #f6faf1 !important;
+  color: #333 !important; }
 
 .bg-sky-blue {
   background-color: #deeefc !important;
