@@ -14,4 +14,12 @@
     .radio & {
         @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
     }
+
+    &--required {
+        &::after {
+            color: $error-red;
+            content: '*';
+            padding-left: $space-xxs;
+        }
+    }
 }
