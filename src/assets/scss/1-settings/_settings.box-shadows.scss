@@ -2,40 +2,47 @@
 //  SETTINGS - SHADOWS
 // =============================================================================
 
-// Shadows
-$shadow-light: 0 0 12px 0 rgba(0, 0, 0, .1);
-$shadow-base: 0 0 12px 0 rgba(0, 0, 0, .2);
-$shadow-heavy: 0 0 12px rgba(0, 0, 0, .3);
-$shadow-floating: 0 0 30px 0 rgba(0, 0, 0, .2);
+// Common shadow vars
+$shadow-blur-base: 12px;
+$shadow-colour-light: rgba(0, 0, 0, .1);
+$shadow-colour-base: rgba(0, 0, 0, .2);
+$shadow-colour-heavy: rgba(0, 0, 0, .3);
+$shadow-spread: -5px;
+
+// Shadows all sides
+$shadow-light: 0 0 $shadow-blur-base 0 $shadow-colour-light;
+$shadow-base: 0 0 $shadow-blur-base 0 $shadow-colour-base;
+$shadow-heavy: 0 0 $shadow-blur-base 0 $shadow-colour-heavy;
+$shadow-floating: 0 0 30px 0 $shadow-colour-base;
 
 // Shadow insets
-$shadow-inset: inset 0 0 12px -5px rgba(0, 0, 0, .3);
+$shadow-inset: inset 0 0 $shadow-blur-base -5px $shadow-colour-heavy;
 $shadow-inset-primary-thin: inset 0 0 0 2px $primary-colour;
 $shadow-inset-primary: inset 0 0 0 1px $primary-colour;
 
 // Top shadows
-$shadow-top-light: 0 -5px 12px -5px rgba(0, 0, 0, .1);
-$shadow-top-base: 0 -5px 12px -5px rgba(0, 0, 0, .2);
-$shadow-top-heavy: 0 -5px 12px -5px rgba(0, 0, 0, .3);
-$shadow-top-floating: 0 -10px 20px -10px rgba(0, 0, 0, .2);
+$shadow-top-light: 0 -5px $shadow-blur-base $shadow-spread $shadow-colour-light;
+$shadow-top-base: 0 -5px $shadow-blur-base $shadow-spread $shadow-colour-base;
+$shadow-top-heavy: 0 -5px $shadow-blur-base $shadow-spread $shadow-colour-heavy;
+$shadow-top-floating: 0 -10px 20px -10px $shadow-colour-base;
 
 // Right shadows
-$shadow-right-light: 5px 0 12px -5px rgba(0, 0, 0, .1);
-$shadow-right-base: 5px 0 12px -5px rgba(0, 0, 0, .2);
-$shadow-right-heavy: 5px 0 12px -5px rgba(0, 0, 0, .3);
-$shadow-right-floating: 10px 0 20px -10px rgba(0, 0, 0, .2);
+$shadow-right-light: 5px 0 $shadow-blur-base $shadow-spread $shadow-colour-light;
+$shadow-right-base: 5px 0 $shadow-blur-base $shadow-spread $shadow-colour-base;
+$shadow-right-heavy: 5px 0 $shadow-blur-base $shadow-spread $shadow-colour-heavy;
+$shadow-right-floating: 10px 0 20px -10px $shadow-colour-base;
 
 // Bottom shadows
-$shadow-bottom-light: 0 5px 12px -5px rgba(0, 0, 0, .1);
-$shadow-bottom-base: 0 5px 12px -5px rgba(0, 0, 0, .2);
-$shadow-bottom-heavy: 0 5px 12px -5px rgba(0, 0, 0, .3);
-$shadow-bottom-floating: 0 10px 20px -10px rgba(0, 0, 0, .2);
+$shadow-bottom-light: 0 5px $shadow-blur-base $shadow-spread $shadow-colour-light;
+$shadow-bottom-base: 0 5px $shadow-blur-base $shadow-spread $shadow-colour-base;
+$shadow-bottom-heavy: 0 5px $shadow-blur-base $shadow-spread $shadow-colour-heavy;
+$shadow-bottom-floating: 0 10px 20px -10px $shadow-colour-base;
 
 // Left shadows
-$shadow-left-light: -5px 0 12px -5px rgba(0, 0, 0, .1);
-$shadow-left-base: -5px 0 12px -5px rgba(0, 0, 0, .2);
-$shadow-left-heavy: -5px 0 12px -5px rgba(0, 0, 0, .3);
-$shadow-left-floating: -10px 0 20px -10px rgba(0, 0, 0, .2);
+$shadow-left-light: -5px 0 $shadow-blur-base $shadow-spread $shadow-colour-light;
+$shadow-left-base: -5px 0 $shadow-blur-base $shadow-spread $shadow-colour-base;
+$shadow-left-heavy: -5px 0 $shadow-blur-base $shadow-spread $shadow-colour-heavy;
+$shadow-left-floating: -10px 0 20px -10px $shadow-colour-base;
 
 // Base shadows
 $shadow: $shadow-base;

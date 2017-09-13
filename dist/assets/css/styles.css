@@ -2936,7 +2936,7 @@ textarea.form__control {
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2) !important; }
 
 .bs-a-heavy {
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3) !important; }
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.3) !important; }
 
 .bs-t-base {
   box-shadow: 0 -5px 12px -5px rgba(0, 0, 0, 0.2) !important; }
