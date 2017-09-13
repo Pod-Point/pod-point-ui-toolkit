@@ -29,15 +29,15 @@
                 </ul>
                 <br>
                 <ul class="list--inline remove-link-styles font-weight-bold">
-                    <li><a href="#placeholderClearfix">Clearfix</a></li>
-                    <li><a href="#placeholderVAlign">Vertical align centre</a></li>
-                    <li><a href="#placeholderRemoveListStyles">Remove list styles</a></li>
-                    <li><a href="#placeholderRemoveLinkStyles">Remove link styles</a></li>
-                    <li><a href="#placeholderClickable">Clickable</a></li>
-                    <li><a href="#placeholderHideTextNotPseudo">Hide text not pseudo</a></li>
-                    <li><a href="#placeholderBgCover">Background cover</a></li>
-                    <li><a href="#placeholderHideText">Hide text</a></li>
-                    <li><a href="#placeholderMarginCentre">Margin centre</a></li>
+                    <li><a href="#toolsClearfix">Clearfix</a></li>
+                    <li><a href="#toolsVAlign">Vertical align centre</a></li>
+                    <li><a href="#toolsRemoveListStyles">Remove list styles</a></li>
+                    <li><a href="#toolsRemoveLinkStyles">Remove link styles</a></li>
+                    <li><a href="#toolsClickable">Clickable</a></li>
+                    <li><a href="#toolsHideTextNotPseudo">Hide text not pseudo</a></li>
+                    <li><a href="#toolsBgCover">Background cover</a></li>
+                    <li><a href="#toolsHideText">Hide text</a></li>
+                    <li><a href="#toolsMarginCentre">Margin centre</a></li>
                 </ul>
             </div>
         </header>
@@ -283,15 +283,15 @@
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Headings</h3>
-                    <p>The heading-style placeholder defines general heading styling such as font weight, padding etc.</p>
-                    <p>The heading-style-responsive mixin defines the font sizes passed in for mobile and desktop as well as includes the heading-style placeholder.</p>
+                    <p>The heading-style mixin defines general heading styling such as font weight, padding etc.</p>
+                    <p>The heading-style-responsive mixin defines the font sizes passed in for mobile and desktop as well as includes the heading-style mixin.</p>
                     <p>Note that font sizes should be declared in rems as explained in more detail <a href="scss.html#cssUnits">here</a>.</p>
                     <p>Visual examples of classes that use the heading mixins <a href="typography.html">here</a></p>
                 </div>
             </header>
             <div class="content-block">
                 <div class="container">
-                    <h4>Placeholder and mixin</h4>
+                    <h4>Mixin</h4>
 {{> mixins-headings }}
                     <br>
                     <h4>Example usage</h4>
@@ -444,21 +444,21 @@
         </section>
 
 
-        <!-- PLACEHOLDER HELPERS -->
-        <section id="toolsPlaceholderHelpers">
+        <!-- HELPERS -->
+        <section id="toolsHelpers">
             <header class="content-block bg-light-grey">
                 <div class="container">
-                    <h3>Placeholder helpers</h3>
-                    <p>Some handy helper placeholders.</p>
+                    <h3>Helpers</h3>
+                    <p>Some handy helpers</p>
                 </div>
             </header>
             <div class="content-block">
                 <div class="container">
-                    <h4>Placeholders</h4>
-{{> placeholder-helpers }}
+                    <h4>Mixins</h4>
+{{> mixin-helpers }}
                 <br>
                     <h4>Example usage</h4>
-{{> placeholder-example }}
+{{> mixin-helpers-example }}
                 </div>
             </div>
         </section>

@@ -19,13 +19,13 @@
 
 // To remove disabled styles applied
 .is-not-disabled {
-    @extend %override-disabled-styles;
+    @include override-disabled-styles;
 }
 
 // Apply clearfix styles with classes .clearfix or .clear
 .clear,
 .clearfix {
-    @extend %clearfix;
+    @include clearfix;
 }
 
 // Flip element horizontally
@@ -42,10 +42,10 @@
 
 // Uses display flex to vertically align content
 .v-align-content {
-    @extend %v-align;
+    @include v-align;
 }
 
 // Styles element to appear clickable
 .clickable {
-    @extend %clickable;
+    @include clickable;
 }

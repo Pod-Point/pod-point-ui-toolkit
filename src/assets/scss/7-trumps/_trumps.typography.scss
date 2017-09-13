@@ -5,7 +5,7 @@
 // sass-lint:disable no-important
 
 .p {
-    @extend %p-v-spacing;
+    @include p-v-spacing;
     @include font-base;
 }
 
@@ -70,11 +70,14 @@
     color:  $font-colour-very-light !important;
 }
 
-// Helper to remove link styles (can be used on a wrapping element or the element itself)
-.remove-link-styles {
-    @extend %remove-link-styles;
+// Helper to remove link style on element
+.remove-link-style {
+    @include remove-link-styles;
+}
 
+// Helper to remove link styles on all anchor elements inside
+.remove-link-styles {
     a {
-        @extend %remove-link-styles;
+        @include remove-link-styles;
     }
 }

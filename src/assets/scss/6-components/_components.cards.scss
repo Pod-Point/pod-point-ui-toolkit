@@ -6,7 +6,7 @@
     background-color: $white;
     border: $border-thin-base;
     border-radius: $border-radius-base;
-    box-shadow: $shadow-subtle;
+    box-shadow: $shadow-light;
     color: $font-colour-base;
     display: block;
     padding: $card-v-padding $card-h-padding;
@@ -56,7 +56,7 @@
     &--highlight {
         border: $border-primary;
         border-color: $primary-colour;
-        box-shadow: $shadow-subtle, $shadow-inset-primary-thin;
+        box-shadow: $shadow-light, $shadow-inset-primary-thin;
     }
 
     &--informative {
@@ -64,6 +64,14 @@
 
         hr {
             opacity: 1;
+        }
+    }
+
+    &--clickable {
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: $shadow-floating;
         }
     }
 }

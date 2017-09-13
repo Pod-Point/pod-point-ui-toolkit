@@ -3,7 +3,7 @@
 // =============================================================================
 
 @mixin featured-icon-list($icon-path) {
-    @extend %remove-list-styles;
+    @include remove-list-styles;
 
     li {
         @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
@@ -23,7 +23,7 @@
 }
 
 @mixin featured-icon-list-lg($icon-path) {
-    @extend %remove-list-styles;
+    @include remove-list-styles;
 
     li {
         @include font-size-responsive($font-size-lg-mobile, $font-size-lg-desktop);

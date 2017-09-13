@@ -3,7 +3,7 @@
 // =============================================================================
 
 // Clearfix
-%clearfix {
+@mixin clearfix {
     &::after {
         clear: both;
         content: '';
@@ -12,25 +12,25 @@
 }
 
 // Vertically align centre
-%v-align {
+@mixin v-align {
     align-items: center;
     display: flex;
 }
 
 // Centre element that is absolutely positioned
-@mixin abs-centre {
+@mixin abs-h-centre {
     left: 50%;
     transform: translateX(-50%);
 }
 
 // Reset an element that is absolutely positioned centred
-@mixin abs-cancel-centre {
+@mixin abs-cancel-h-centre {
     left: auto;
     transform: translateX(0);
 }
 
 // Remove default list styling
-%remove-list-styles {
+@mixin remove-list-styles {
     @include padding(null 0);
     margin: 0;
 
@@ -41,13 +41,13 @@
 }
 
 // Remove default link styling
-%remove-link-styles {
+@mixin remove-link-styles {
     font-weight: inherit;
     text-decoration: none;
 }
 
 // Clickable elements that are not an anchor
-%clickable {
+@mixin clickable {
     cursor: pointer;
 
     &:active,
@@ -59,7 +59,7 @@
 
 // Override disabled styles
 // sass-lint:disable-block no-important
-%override-disabled-styles {
+@mixin override-disabled-styles {
     cursor: inherit !important;
     opacity: inherit !important;
 
@@ -72,7 +72,7 @@
 }
 
 // Hide text not the pseudo
-%hide-text-not-pseudo {
+@mixin hide-text-not-pseudo {
     text-indent: -9999px;
 
     &::before,
@@ -86,20 +86,20 @@
 }
 
 // BG Images
-%bg-cover {
+@mixin bg-cover {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 // Hide text
-%hide-text {
+@mixin hide-text {
     overflow: hidden;
     text-indent: -9999px;
 }
 
 // Margin centre
-%m-centre {
+@mixin m-centre {
     margin-left: auto;
     margin-right: auto;
 }
@@ -123,7 +123,7 @@
 
 // A container that centre aligns with padding and max width
 @mixin container($max-width-content: $max-width-content) {
-    @extend %m-centre;
+    @include m-centre;
     @include horizontal-spacing;
     max-width: $max-width-content;
 }

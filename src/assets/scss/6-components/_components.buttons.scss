@@ -5,7 +5,7 @@
 // sass-lint:disable nesting-depth
 
 .btn {
-    @extend %remove-link-styles;
+    @include remove-link-styles;
     @include padding($button-v-padding $button-h-padding-mobile);
     background-color: $primary-colour;
     border: $border-primary;
@@ -100,10 +100,10 @@
     }
 
     &.btn--selected {
-        @extend %hide-text-not-pseudo;
+        @include hide-text-not-pseudo;
 
         &::before {
-            @extend %m-centre;
+            @include m-centre;
             background-image: url($css-bg-path+'icons/tick-white.svg');
             background-size: cover;
             content: '';
@@ -126,7 +126,7 @@
     }
 
     &.btn--passive {
-        @extend %clickable;
+        @include clickable;
         background-color: transparent;
         border: 0;
         color: $font-colour-base;

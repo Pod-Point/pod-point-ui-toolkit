@@ -40,7 +40,6 @@ body {
 .demo-fixed-sidebar {
     @include position(fixed, 0 null null 0);
     @include horizontal-spacing;
-    box-shadow: $shadow-subtle;
     height: 100%;
     min-height: inherit;
     overflow-y: scroll;

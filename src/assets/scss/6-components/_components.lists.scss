@@ -4,7 +4,7 @@
 
 // Removing default list styling
 .list--no-style {
-    @extend %remove-list-styles;
+    @include remove-list-styles;
     padding-bottom: $typography-v-spacing;
 
     li {
@@ -33,7 +33,7 @@
 
 // List inline
 .list--inline {
-    @extend %remove-list-styles;
+    @include remove-list-styles;
 
     @include inline-list-gutter($img-list-inline-gutter-md);
 
