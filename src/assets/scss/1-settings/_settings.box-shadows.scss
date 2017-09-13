@@ -3,22 +3,43 @@
 // =============================================================================
 
 // Shadows
-$shadow-subtle: 0 0 10px 0 rgba(0, 0, 0, .1);
-$shadow-forward: 0 0 12px 0 rgba(0, 0, 0, .2);
-$shadow-base: 0 0 5px 0 rgba(0, 0, 0, .4);
-$shadow-obvious: 0 0 15px rgba(0, 0, 0, .3);
-
-$shadow: $shadow-base;
+$shadow-light: 0 0 12px 0 rgba(0, 0, 0, .1);
+$shadow-base: 0 0 12px 0 rgba(0, 0, 0, .2);
+$shadow-heavy: 0 0 12px rgba(0, 0, 0, .3);
+$shadow-floating: 0 0 30px 0 rgba(0, 0, 0, .2);
 
 // Shadow insets
-$shadow-inset: inset 0 0 15px -5px rgba(0, 0, 0, .3);
+$shadow-inset: inset 0 0 12px -5px rgba(0, 0, 0, .3);
 $shadow-inset-primary-thin: inset 0 0 0 2px $primary-colour;
 $shadow-inset-primary: inset 0 0 0 1px $primary-colour;
 
-// Bottom shadows
-$shadow-bottom: 0 11px 16px -10px rgba(0, 0, 0, .1);
-$shadow-bottom-subtle: 0 11px 16px -10px rgba(0, 0, 0, .05);
-
 // Top shadows
-$shadow-top: 0 -3px 16px 0 rgba(0, 0, 0, .1);
-$shadow-top-subtle: 0 -3px 16px 0 rgba(0, 0, 0, .05);
+$shadow-top-light: 0 -5px 12px -5px rgba(0, 0, 0, .1);
+$shadow-top-base: 0 -5px 12px -5px rgba(0, 0, 0, .2);
+$shadow-top-heavy: 0 -5px 12px -5px rgba(0, 0, 0, .3);
+$shadow-top-floating: 0 -10px 20px -10px rgba(0, 0, 0, .2);
+
+// Right shadows
+$shadow-right-light: 5px 0 12px -5px rgba(0, 0, 0, .1);
+$shadow-right-base: 5px 0 12px -5px rgba(0, 0, 0, .2);
+$shadow-right-heavy: 5px 0 12px -5px rgba(0, 0, 0, .3);
+$shadow-right-floating: 10px 0 20px -10px rgba(0, 0, 0, .2);
+
+// Bottom shadows
+$shadow-bottom-light: 0 5px 12px -5px rgba(0, 0, 0, .1);
+$shadow-bottom-base: 0 5px 12px -5px rgba(0, 0, 0, .2);
+$shadow-bottom-heavy: 0 5px 12px -5px rgba(0, 0, 0, .3);
+$shadow-bottom-floating: 0 10px 20px -10px rgba(0, 0, 0, .2);
+
+// Left shadows
+$shadow-left-light: -5px 0 12px -5px rgba(0, 0, 0, .1);
+$shadow-left-base: -5px 0 12px -5px rgba(0, 0, 0, .2);
+$shadow-left-heavy: -5px 0 12px -5px rgba(0, 0, 0, .3);
+$shadow-left-floating: -10px 0 20px -10px rgba(0, 0, 0, .2);
+
+// Base shadows
+$shadow: $shadow-base;
+$shadow-top: $shadow-top-base;
+$shadow-right: $shadow-right-base;
+$shadow-bottom: $shadow-bottom-base;
+$shadow-left: $shadow-left-base;

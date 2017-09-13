@@ -42,7 +42,7 @@
 
                     <p>Inside the tooltip should be an element with the class <code>.tooltip__box</code> and inside that should be the close button</p>
 
-                    <p>The modifying classes available are to make the tooltip box wider <code>.tooltip--lg</code> and to change the positioning <code>.tooltip--right</code> and <code>.tooltip--centre</code>. These classes are all applied to the tooltip element but they actually modify the tooltip box, so other global helpers can be used on the tooltip box itself if required.</p>
+                    <p>The modifying classes available are to make the tooltip box wider <code>.tooltip--lg</code>, to change the positioning <code>.tooltip--right</code>, <code>.tooltip--centre</code>, and to invert the colour theme <code>.tooltip--inverted</code>. These classes are all applied to the tooltip element but they actually modify the tooltip box, so other global helpers can be used on the tooltip box itself if required.</p>
 
                     <p>The tooltip close trigger should be a button with the data attribute with the ID name of the tooltip <code>data-close-el="[TOOLTIP ID NAME]"</code>. The close button in the examples below include a small cross <a href="/icons.html">icon</a> and the class <code>.tooltip__close</code> is used for the positioning.</p>
 
@@ -72,6 +72,18 @@
             <div data-js-module="toggleElement" id="tooltipExampleLarge" class="tooltip tooltip--lg hidden">
                 <div class="tooltip__box">
                     <button type="button" class="tooltip__close" data-close-el="tooltipExampleLarge"><i class="icon icon--xs">{{> icon-cross }}</i></button>
+                    <div class="font-size-sm">
+                        <h5>Tooltip title</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate aliquam nunc eget pretium. Nunc vel lectus elementum, sodales sem eu, ultrices risus. Aliquam nunc diam, ultricies at tristique sit amet, facilisis eu dui. Cras eu nisl justo. Aliquam efficitur turpis velit, nec euismod odio vulputate id.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <p>Text with an inverted colour tooltip <button type="button" data-toggle-el="tooltipExampleInverted" class="tooltip-icon"></button></p>
+            <div data-js-module="toggleElement" id="tooltipExampleInverted" class="tooltip tooltip--inverted hidden">
+                <div class="tooltip__box">
+                    <button type="button" class="tooltip__close" data-close-el="tooltipExampleInverted"><i class="icon icon--xs">{{> icon-cross }}</i></button>
                     <div class="font-size-sm">
                         <h5>Tooltip title</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate aliquam nunc eget pretium. Nunc vel lectus elementum, sodales sem eu, ultrices risus. Aliquam nunc diam, ultricies at tristique sit amet, facilisis eu dui. Cras eu nisl justo. Aliquam efficitur turpis velit, nec euismod odio vulputate id.</p>

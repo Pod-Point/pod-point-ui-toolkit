@@ -3,7 +3,7 @@
 // =============================================================================
 
 .tooltip-icon {
-    @extend %hide-text-not-pseudo;
+    @include hide-text-not-pseudo;
     @include icon-in-circle($bg-colour: transparent, $colour: $font-colour-base, $border: $border-font-colour);
     @include icon-in-border-circle--size($dimension: $tooltip-icon-circle-size);
     display: inline-block;
@@ -29,9 +29,9 @@
 .tooltip__box {
     @include position(absolute, 0 null null 0);
     background-color: $white;
-    border: $border-base;
+    border: $border-thin;
     border-radius: $border-radius-base;
-    box-shadow: $shadow-forward;
+    box-shadow: $shadow-floating;
     box-sizing: border-box;
     margin-bottom: $tooltip-b-spacing;
     padding: $tooltip-padding;
@@ -51,6 +51,21 @@
 
         @include screen-sm-min {
             width: $tooltip-width-lg;
+        }
+    }
+}
+
+.tooltip--inverted {
+    .tooltip__box {
+        background-color: $grey-dark;
+        color: $white;
+    }
+
+    .tooltip__close {
+        .icon {
+            svg {
+                fill: $white;
+            }
         }
     }
 }
@@ -85,7 +100,7 @@
 
 .tooltip__close {
     position: absolute;
-    right: $tooltip-padding / 2.5;
+    right: $tooltip-padding / 1.5;
     top: $tooltip-padding / 1.5;
 }
 

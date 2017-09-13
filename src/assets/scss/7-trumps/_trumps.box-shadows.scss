@@ -2,37 +2,90 @@
 //  TRUMPS - BOX SHADOWS
 // =============================================================================
 
+// sass-lint:disable no-important
+
 // Box shadows (all sides)
-.bs-a-subtle {
-    box-shadow: $shadow-subtle;
+.bs-a-light {
+    box-shadow: $shadow-light !important;
 }
 
 .bs-a-base {
-    box-shadow: $shadow;
+    box-shadow: $shadow !important;
 }
 
-.bs-a-forward {
-    box-shadow: $shadow-forward;
+.bs-a-floating {
+    box-shadow: $shadow-floating !important;
 }
 
-.bs-a-obvious {
-    box-shadow: $shadow-obvious;
+.bs-a-heavy {
+    box-shadow: $shadow-heavy !important;
 }
 
-// Box shadows bottom
-.bs-b-base {
-    box-shadow: $shadow-bottom;
-}
 
-.bs-b-subtle {
-    box-shadow: $shadow-bottom-subtle;
-}
-
-// Box shadows top
+// Top
 .bs-t-base {
-    box-shadow: $shadow-top;
+    box-shadow: $shadow-top-base !important;
 }
 
-.bs-t-subtle {
-    box-shadow: $shadow-top-subtle;
+.bs-t-light {
+    box-shadow: $shadow-top-light !important;
+}
+
+.bs-t-heavy {
+    box-shadow: $shadow-top-heavy !important;
+}
+
+.bs-t-floating {
+    box-shadow: $shadow-top-floating !important;
+}
+
+// Right
+.bs-r-base {
+    box-shadow: $shadow-right-base !important;
+}
+
+.bs-r-light {
+    box-shadow: $shadow-right-light !important;
+}
+
+.bs-r-heavy {
+    box-shadow: $shadow-right-heavy !important;
+}
+
+.bs-r-floating {
+    box-shadow: $shadow-right-floating !important;
+}
+
+// Bottom
+.bs-b-base {
+    box-shadow: $shadow-bottom-base !important;
+}
+
+.bs-b-light {
+    box-shadow: $shadow-bottom-light !important;
+}
+
+.bs-b-heavy {
+    box-shadow: $shadow-bottom-heavy !important;
+}
+
+.bs-b-floating {
+    box-shadow: $shadow-bottom-floating !important;
+}
+
+// Left
+.bs-l-base {
+    box-shadow: $shadow-left-base !important;
+}
+
+.bs-l-light {
+    box-shadow: $shadow-left-light !important;
+}
+
+.bs-l-heavy {
+    box-shadow: $shadow-left-heavy !important;
+}
+
+.bs-l-floating {
+    box-shadow: $shadow-left-floating !important;
 }
