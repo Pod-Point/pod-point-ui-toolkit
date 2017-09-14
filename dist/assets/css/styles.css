@@ -445,16 +445,16 @@ img {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-  .grid > [class^='grid__col'] {
+  .grid > .grid__col {
     padding-top: 20px;
     padding-right: 20px;
     width: 100%; }
-  .grid--gutter-none > [class^='grid__col'] {
+  .grid--gutter-none > .grid__col {
     padding: 0; }
-  .grid--v-gutter-none > [class^='grid__col'] {
+  .grid--v-gutter-none > .grid__col {
     padding-top: 0;
     padding-bottom: 0; }
-  .grid--h-gutter-none > [class^='grid__col'] {
+  .grid--h-gutter-none > .grid__col {
     padding-right: 0;
     padding-left: 0; }
   .grid > .grid__col-1 {

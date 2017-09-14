@@ -7,25 +7,25 @@
     display: flex;
     flex-wrap: wrap;
 
-    > [class^='grid__col'] {
+    > .grid__col {
         @include padding($grid-gutter);
         width: 100%;
     }
 
     &--gutter-none {
-        > [class^='grid__col'] {
+        > .grid__col {
             padding: 0;
         }
     }
 
     &--v-gutter-none {
-        > [class^='grid__col'] {
+        > .grid__col {
             @include padding(0 null);
         }
     }
 
     &--h-gutter-none {
-        > [class^='grid__col'] {
+        > .grid__col {
             @include padding(null 0);
         }
     }

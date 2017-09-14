@@ -45,8 +45,9 @@
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Grid responsive</h3>
-                    <p>The container requires the class <code>.grid</code> and each grid column requires a class starting with <code>.grid__col-</code> plus the amount of columns eg. <code>.grid__col-12</code> for full width and <code>.grid__col-6</code> for half width.</p>
-                    <p>The column widths can be modified at each breakpoint. For example the following classes can all be added to one grid column and the width of the column will change at all the breakpoints: <code>grid__col-12</code> <code>grid__col-sm-3</code> <code>grid__col-md-6</code> <code>grid__col-lg-7</code></p>
+                    <p>The container requires the class <code>.grid</code> and each grid column requires the class <code>.grid__col</code> which is full width by default.</p>
+                    <p>Classes can then be added starting with <code>.grid__col-</code> plus the amount of columns eg. <code>.grid__col</code> for full width and <code>.grid__col-6</code> for half width.</p>
+                    <p>The column widths can be modified at each breakpoint. For example the following classes can all be added to one grid column and the width of the column will change at all the breakpoints: <code>grid__col</code> <code>grid__col-sm-3</code> <code>grid__col-md-6</code> <code>grid__col-lg-7</code></p>
                     <p>The following grid example uses the default grid column class at 12 column width (full width) and then applies one more to each at the medium breakpoint. Resulting that all columns will be full width at mobile size and then various column widths at the medium breakpoint.</p>
                     <p>The grid includes 20px gutters as default but can be removed with the modifying classes for vertical, horizontal gutters or both: <code>.grid--v-gutter-none</code>, <code>.grid--h-gutter-none</code>, <code>.grid--gutter-none</code>.</p>
 {{> snippet-grid-responsive }}
@@ -56,49 +57,49 @@
             <div class="content-block">
                 <div class="container">
                     <div class="grid">
-                        <div class="grid__col-12">
+                        <div class="grid__col">
                             <div class="bg-dark-grey text-centre font-weight-bold">12</div>
                         </div>
 
-                        <div class="grid__col-12 grid__col-md-1">
+                        <div class="grid__col grid__col-md-1">
                             <div class="bg-dark-grey text-centre font-weight-bold">1</div>
                         </div>
-                        <div class="grid__col-12 grid__col-md-11">
+                        <div class="grid__col grid__col-md-11">
                             <div class="bg-dark-grey text-centre font-weight-bold">11</div>
                         </div>
 
-                        <div class="grid__col-12 grid__col-md-2">
+                        <div class="grid__col grid__col-md-2">
                             <div class="bg-dark-grey text-centre font-weight-bold">2</div>
                         </div>
-                        <div class="grid__col-12 grid__col-md-10">
+                        <div class="grid__col grid__col-md-10">
                             <div class="bg-dark-grey text-centre font-weight-bold">10</div>
                         </div>
 
-                        <div class="grid__col-12 grid__col-md-3">
+                        <div class="grid__col grid__col-md-3">
                             <div class="bg-dark-grey text-centre font-weight-bold">3</div>
                         </div>
-                        <div class="grid__col-12 grid__col-md-9">
+                        <div class="grid__col grid__col-md-9">
                             <div class="bg-dark-grey text-centre font-weight-bold">9</div>
                         </div>
 
-                        <div class="grid__col-12 grid__col-md-4">
+                        <div class="grid__col grid__col-md-4">
                             <div class="bg-dark-grey text-centre font-weight-bold">4</div>
                         </div>
-                        <div class="grid__col-12 grid__col-md-8">
+                        <div class="grid__col grid__col-md-8">
                             <div class="bg-dark-grey text-centre font-weight-bold">8</div>
                         </div>
 
-                        <div class="grid__col-12 grid__col-md-5">
+                        <div class="grid__col grid__col-md-5">
                             <div class="bg-dark-grey text-centre font-weight-bold">5</div>
                         </div>
-                        <div class="grid__col-12 grid__col-md-7">
+                        <div class="grid__col grid__col-md-7">
                             <div class="bg-dark-grey text-centre font-weight-bold">7</div>
                         </div>
 
-                        <div class="grid__col-12 grid__col-md-6">
+                        <div class="grid__col grid__col-md-6">
                             <div class="bg-dark-grey text-centre font-weight-bold">6</div>
                         </div>
-                        <div class="grid__col-12 grid__col-md-6">
+                        <div class="grid__col grid__col-md-6">
                             <div class="bg-dark-grey text-centre font-weight-bold">6</div>
                         </div>
                     </div>
@@ -121,33 +122,33 @@
             <div class="content-block">
                 <div class="container">
                     <div class="grid">
-                        <div class="grid__col-12">
+                        <div class="grid__col">
                             <div class="grid__col-inner">
                                 <div class="bg-dark-grey text-centre font-weight-bold">12</div>
                             </div>
                         </div>
 
-                        <div class="grid__col-12 grid__col-md-11 grid__col-offset-md-1">
+                        <div class="grid__col grid__col-md-11 grid__col-offset-md-1">
                             <div class="bg-dark-grey text-centre font-weight-bold">11</div>
                         </div>
 
-                        <div class="grid__col-12 grid__col-md-10 grid__col-offset-md-2">
+                        <div class="grid__col grid__col-md-10 grid__col-offset-md-2">
                             <div class="bg-dark-grey text-centre font-weight-bold">10</div>
                         </div>
 
-                        <div class="grid__col-12 grid__col-md-9 grid__col-offset-md-3">
+                        <div class="grid__col grid__col-md-9 grid__col-offset-md-3">
                             <div class="bg-dark-grey text-centre font-weight-bold">9</div>
                         </div>
 
-                        <div class="grid__col-12 grid__col-md-8 grid__col-offset-md-4">
+                        <div class="grid__col grid__col-md-8 grid__col-offset-md-4">
                             <div class="bg-dark-grey text-centre font-weight-bold">8</div>
                         </div>
 
-                        <div class="grid__col-12 grid__col-md-7 grid__col-offset-md-5">
+                        <div class="grid__col grid__col-md-7 grid__col-offset-md-5">
                             <div class="bg-dark-grey text-centre font-weight-bold">7</div>
                         </div>
 
-                        <div class="grid__col-12 grid__col-md-6 grid__col-offset-md-6">
+                        <div class="grid__col grid__col-md-6 grid__col-offset-md-6">
                             <div class="bg-dark-grey text-centre font-weight-bold">6</div>
                         </div>
                     </div>
@@ -169,40 +170,40 @@
             <div class="content-block">
                 <div class="container">
                     <div class="grid">
-                        <div class="grid__col-12">
+                        <div class="grid__col">
                             <div class="bg-dark-grey text-centre font-weight-bold">12</div>
                         </div>
 
-                        <div class="grid__col-12 grid__col-md-1">
+                        <div class="grid__col grid__col-md-1">
                             <div class="bg-dark-grey text-centre font-weight-bold">1</div>
                         </div>
-                        <div class="grid__col-12 grid__col-md-11">
+                        <div class="grid__col grid__col-md-11">
                             <div class="grid grid--v-gutter-sm grid--h-gutter-sm">
-                                <div class="grid__col-12 grid__col-md-6">
+                                <div class="grid__col grid__col-md-6">
                                     <div class="bg-dark-grey text-centre font-weight-bold">Nested 6</div>
                                 </div>
-                                <div class="grid__col-12 grid__col-md-6">
+                                <div class="grid__col grid__col-md-6">
                                     <div class="bg-dark-grey text-centre font-weight-bold">Nested 6</div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="grid__col-12 grid__col-md-2">
+                        <div class="grid__col grid__col-md-2">
                             <div class="bg-dark-grey text-centre font-weight-bold">2</div>
                         </div>
-                        <div class="grid__col-12 grid__col-md-10">
+                        <div class="grid__col grid__col-md-10">
                             <div class="bg-dark-grey text-centre font-weight-bold">10</div>
                         </div>
 
-                        <div class="grid__col-12 grid__col-md-3">
+                        <div class="grid__col grid__col-md-3">
                             <div class="bg-dark-grey text-centre font-weight-bold">3</div>
                         </div>
-                        <div class="grid__col-12 grid__col-md-9">
+                        <div class="grid__col grid__col-md-9">
                             <div class="grid grid--v-gutter-sm grid--h-gutter-sm">
-                                <div class="grid__col-12 grid__col-md-4">
+                                <div class="grid__col grid__col-md-4">
                                     <div class="bg-dark-grey text-centre font-weight-bold">Nested 4</div>
                                 </div>
-                                <div class="grid__col-12 grid__col-md-8">
+                                <div class="grid__col grid__col-md-8">
                                     <div class="bg-dark-grey text-centre font-weight-bold">Nested 8</div>
                                 </div>
                             </div>
