@@ -2127,6 +2127,10 @@ textarea.form__control {
       .checkbox .form__label,
       .radio .form__label {
         font-size: 1rem; } }
+  .form__label--required::after {
+    color: #c1272d;
+    content: '*';
+    padding-left: 5px; }
 
 .form__group--error .checkbox > input + span::before {
   border-color: #c1272d; }
