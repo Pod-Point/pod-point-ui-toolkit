@@ -6,12 +6,12 @@
 @import 'utilities/_utilities.compact-shorthand';
 @import 'utilities/_utilities.unpack-shorthand';
 @import 'utilities/_utilities.directional-property';
-@import 'utilities/_utilities.flex-grid';
 
 @import '_tools.media-queries';
 @import '_tools.margin';
 @import '_tools.padding';
 @import '_tools.positioning';
+@import '_tools.grid';
 @import '_tools.typography';
 @import '_tools.forms';
 @import '_tools.alerts';

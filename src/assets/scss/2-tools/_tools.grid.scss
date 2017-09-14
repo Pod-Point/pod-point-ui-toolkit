@@ -1,0 +1,9 @@
+// =============================================================================
+//  TOOLS - GRID
+// =============================================================================
+
+// Gets column width in percentage
+@function col-width($col, $grid-cols) {
+    $col-width: ((100% / $grid-cols) * $col);
+    @return #{$col-width};
+}
