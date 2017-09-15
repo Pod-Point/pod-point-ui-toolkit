@@ -39,4 +39,4 @@ gulp prod
 
 ## Documentation
 
-Once you have the repo locally, you can access the docs by opening `/dist/index.html`.
+See full docs [https://pod-point.github.io/pod-point-ui-toolkit/dist/index.html](here)
