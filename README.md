@@ -15,7 +15,7 @@ npm install
 
 ## Gulp tasks
 
-Gulp and gulp dev - compiles pages, assets and creates SASS sourcemaps
+Gulp and gulp dev - compiles pages, assets and creates Sass sourcemaps
 
 ```bash
 gulp
