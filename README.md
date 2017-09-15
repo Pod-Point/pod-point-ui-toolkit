@@ -39,4 +39,4 @@ gulp prod
 
 ## Documentation
 
-See full docs [https://pod-point.github.io/pod-point-ui-toolkit/dist/index.html](here)
+See full docs [here](https://pod-point.github.io/pod-point-ui-toolkit/dist/index.html)
