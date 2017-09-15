@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const requireDir = require('require-dir');
 const browserSync = require('browser-sync');
+const gulpSequence = require('gulp-sequence');
 
 global.waitingWatch = true;
 require('es6-promise').polyfill();
@@ -11,12 +12,13 @@ gulp.task('set-env-dev', () => { global.env = 'dev' });
 gulp.task('set-env-prod', () => { global.env = 'prod' });
 
 // Global tasks
-gulp.task('common', ['assembleHtml', 'copyAll', 'svgs', 'js', 'sass']);
+gulp.task('build', ['assembleHtml', 'copyAll', 'svgs', 'js', 'sass']);
+gulp.task('fresh-build', gulpSequence('clean', 'build'));
 
 // Watch task
 gulp.task('watch', [
     'set-env-dev',
-    'common',
+    'build',
     'browser-sync',
     'watch-files'
 ]);
@@ -24,13 +26,13 @@ gulp.task('watch', [
 // Dev task
 gulp.task('dev', [
     'set-env-dev',
-    'common'
+    'fresh-build'
 ]);
 
 // Prod task
 gulp.task('prod', [
     'set-env-prod',
-    'common'
+    'fresh-build'
 ]);
 
 gulp.task('default', ['dev']);

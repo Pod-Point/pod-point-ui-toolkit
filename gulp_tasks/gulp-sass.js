@@ -22,11 +22,12 @@ const autoprefixerOptions = {
 
 gulp.task('sass-compile', () => {
     return gulp.src(config.src.scss + '**/*.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(autoprefixer(autoprefixerOptions))
         .pipe(gulpif(global.env === 'prod', combineMq()))
         .pipe(gulpif(global.env === 'prod', minifyCss()))
-        .pipe(gulpif(global.env === 'prod', sourcemaps.write('./')))
+        .pipe(gulpif(global.env === 'dev', sourcemaps.write('./')))
         .pipe(gulp.dest(config.dist.css))
         .pipe(gulpif(global.waitingWatch === false, browserSync.stream()));
 });
