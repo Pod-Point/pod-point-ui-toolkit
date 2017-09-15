@@ -76,10 +76,12 @@
                     <li><a href="#formInputs">Inputs</a></li>
                     <li><a href="#formTextareas">Text areas</a></li>
                     <li><a href="#formSelects"></a>Selects</li>
+                    <li><a href="#formFieldsGrid">Fields in a grid</a></li>
                     <li><a href="#formControlAlt">Form controls alternative</a></li>
                     <li><a href="#formCheckboxes">Checkboxes</a></li>
                     <li><a href="#formRadios">Radios</a></li>
-                    <li><a href="#formFieldsInline">Fields inline</a></li>
+                    <li><a href="#formFieldsRequired">Fields required</a></li>
+                    <li><a href="#formFieldsGrid">Fields in a grid</a></li>
                 </ul>
             </div>
         </header>
@@ -310,6 +312,25 @@
         </section>
 
 
+        <!-- FIELDS REQUIRED -->
+        <section id="formFieldsRequired">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Fields required</h3>
+                    <p>Add the modifying class to the form label <code>.form__label--required</code></p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <div class="form__group">
+                        <label class="form__label form__label--required">Input field</label>
+                        <input class="form__control form__field min-width-md" type="text" placeholder="Sample placeholder text">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <!-- ALTERNATIVE FORM CONTROLS -->
         <section id="formControlAlt">
             <header class="content-block bg-light-grey">
@@ -475,7 +496,7 @@
                     <h3>Fields inline</h3>
                     <p>To display form fields inline, wrap all the form groups in a wrapper with a class <code>.form__groups-inline</code></p>
                     <p>To include any other elements eg. button or text amongst the inline elements, they should also be wrapped with the class <code>.form__group</code></p>
-                    <p>Note that the fields are now inline-block and won't stretch to 100%, so the modifying class <code>.form__field--min-width</code> can be added to the fields that require it.</p>
+                    <p>Note that the fields are now inline-block and won't stretch to 100%, so you can add a min width helper class eg. <code>.min-width-md</code></p>
                 </div>
             </header>
             <div class="content-block">
@@ -484,11 +505,11 @@
                     <div class="form__groups-inline">
                         <div class="form__group">
                             <label class="form__label">Input field</label>
-                            <input class="form__control form__field form__field--min-width" type="text" placeholder="Sample placeholder text">
+                            <input class="form__control form__field min-width-md" type="text" placeholder="Sample placeholder text">
                         </div>
                         <div class="form__group">
                             <label class="form__label">Input field</label>
-                            <input class="form__control form__field form__field--min-width" type="text" placeholder="Sample placeholder text">
+                            <input class="form__control form__field min-width-md" type="text" placeholder="Sample placeholder text">
                         </div>
                         <div class="form__group">
                             <label class="checkbox form__field" for="checkboxExampleInline">
@@ -498,7 +519,7 @@
                         </div>
                         <div class="form__group">
                             <label class="form__label">Select dropdown</label>
-                            <div class="select form__field form__field--min-width">
+                            <div class="select form__field min-width-md">
                                 <select class="form__control">
                                     <option value="00">00</option>
                                     <option selected value="01">01</option>

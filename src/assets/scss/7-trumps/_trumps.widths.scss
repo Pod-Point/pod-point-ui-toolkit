@@ -14,35 +14,35 @@
 
 .min-width {
     &-xxs {
-        max-width: $width-xxs !important;
+        min-width: $width-xxs !important;
     }
 
     &-xs {
-        max-width: $width-xs !important;
+        min-width: $width-xs !important;
     }
 
     &-sm {
-        max-width: $width-sm !important;
+        min-width: $width-sm !important;
     }
 
     &-md {
-        max-width: $width-md !important;
+        min-width: $width-md !important;
     }
 
     &-lg {
-        max-width: $width-lg !important;
+        min-width: $width-lg !important;
     }
 
     &-xl {
-        max-width: $width-xl !important;
+        min-width: $width-xl !important;
     }
 
     &-xxl {
-        max-width: $width-xxl !important;
+        min-width: $width-xxl !important;
     }
 
     &-xxxl {
-        max-width: $width-xxxl !important;
+        min-width: $width-xxxl !important;
     }
 }
 
