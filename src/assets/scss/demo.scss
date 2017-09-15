@@ -62,15 +62,6 @@ body {
     padding: .5em 10px;
 }
 
-[data-page='grid'] {
-    [class*='grid__col'] {
-        background-color: $grey-dark;
-        color: $white;
-        font-weight: $font-weight-bold;
-        text-align: center;
-    }
-}
-
 $pages: (
     'installation',
     'scss',
