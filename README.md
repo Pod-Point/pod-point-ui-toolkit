@@ -3,8 +3,6 @@
 
 The POD Point frontend framework is a library of base styles and components designed for rapid prototyping.
 
-This project is still in beta so you will need to clone the repo to access the full documentation and example pages.
-
 ## Installation
 
 First, install all of the Node modules needed:
@@ -17,7 +15,7 @@ npm install
 
 ## Gulp tasks
 
-Gulp and gulp dev - compiles pages and assets
+Gulp and gulp dev - compiles pages, assets and creates SASS sourcemaps
 
 ```bash
 gulp
@@ -33,15 +31,12 @@ Gulp watch - compiles pages and assets and spins up a new development server at 
 gulp watch
 ```
 
-Gulp prod - compiles pages and assets and minifies CSS and JS
+Gulp prod - compiles pages and assets, minifies CSS and JS and creates SASS sourcemaps
 
 ```bash
 gulp prod
 ```
 
-
 ## Documentation
 
 Once you have the repo locally, you can access the docs by opening `/dist/index.html`.
-
-Note: Whilst in beta the dist folder is being tracked my git so you don't need to compile to view the documentaion files.
