@@ -4,6 +4,10 @@
 
 // sass-lint:disable nesting-depth
 
+.responsive-table-wrapper {
+    overflow: auto;
+}
+
 // Zebra-striping
 // Default zebra-stripe styles (alternating grey and transparent backgrounds)
 .table--striped {
