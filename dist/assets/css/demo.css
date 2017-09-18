@@ -42,6 +42,8 @@ body {
   padding-left: 250px; }
   .demo-container-with-sidebar .container {
     margin-left: 0; }
+  .demo-container-with-sidebar .hero .container {
+    margin-left: auto; }
 
 .demo-fixed-sidebar {
   position: fixed;

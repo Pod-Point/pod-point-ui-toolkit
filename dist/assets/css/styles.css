@@ -1049,13 +1049,11 @@ fieldset {
       .hero .content-block {
         min-height: 420px; } }
   .hero__content {
-    animation: pop-up-fade-in 2s;
-    position: relative;
     max-width: 300px; }
     @media (min-width: 50em) {
       .hero__content {
         max-width: 500px; } }
-  .hero::before {
+  .hero--fade-in::before {
     position: absolute;
     top: 0;
     right: 0;
@@ -1064,12 +1062,21 @@ fieldset {
     background-color: #4d4d4d;
     height: 100%;
     width: 100%;
-    animation-delay: 1s;
     animation-duration: 1.5s;
     animation-fill-mode: both;
-    animation-name: fadeOut;
+    animation-name: fade-out;
     content: '';
     opacity: 1; }
+  .hero--content-pop-in .hero__content {
+    animation: pop-up-fade-in 2s;
+    position: relative; }
+  .hero--content-right .hero__content {
+    margin-left: auto;
+    text-align: right; }
+  .hero--content-centre .hero__content {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center; }
 
 .label {
   background-color: #4d4d4d;
