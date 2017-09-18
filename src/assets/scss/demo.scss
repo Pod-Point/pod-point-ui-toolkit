@@ -35,6 +35,12 @@ body {
     .container {
         margin-left: 0;
     }
+
+    .hero {
+        .container {
+            margin-left: auto;
+        }
+    }
 }
 
 .demo-fixed-sidebar {

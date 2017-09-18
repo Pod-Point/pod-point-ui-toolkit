@@ -20,7 +20,6 @@
     }
 
     &__content {
-        @include pop-up-fade-in;
         max-width: $hero-content-max-width-mobile;
 
         @include screen-md-min {
@@ -28,13 +27,32 @@
         }
     }
 
-    &::before {
-        @include full-overlay($grey-dark);
-        animation-delay: 1s;
-        animation-duration: 1.5s;
-        animation-fill-mode: both;
-        animation-name: fadeOut;
-        content: '';
-        opacity: 1;
+    &--fade-in {
+        &::before {
+            @include full-overlay($grey-dark);
+            @include fade-out($duration: 1.5s);
+            content: '';
+            opacity: 1;
+        }
+    }
+
+    &--content-pop-in {
+        .hero__content {
+            @include pop-up-fade-in;
+        }
+    }
+
+    &--content-right {
+        .hero__content {
+            margin-left: auto;
+            text-align: right;
+        }
+    }
+
+    &--content-centre {
+        .hero__content {
+            @include margin(null auto);
+            text-align: center;
+        }
     }
 }

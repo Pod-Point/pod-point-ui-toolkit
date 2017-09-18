@@ -24,7 +24,7 @@
 	<![endif]-->
 
 	<div class="global-wrapper">
-		<div data-page="confirm-popup" class="demo-page-content">
+		<div data-page="hero" class="demo-page-content">
 
     <div class="pos-rel">
         <div class="demo-fixed-sidebar bs-r-light bg-white p-b-lg">
@@ -71,13 +71,19 @@
     <div class="demo-container-with-sidebar">
         <header class="content-block content-block--strip bg-primary">
             <div class="container">
-                <h2>Confirm popup</h2>
+                <h2>Heros</h2>
+                <ul class="list--inline remove-link-styles font-weight-bold">
+                    <li><a href="#heroMarkup">Hero markup</a></li>
+                    <li><a href="#heroCentred">Hero centred</a></li>
+                    <li><a href="#heroLeft">Hero left</a></li>
+                    <li><a href="#heroRight">Hero right</a></li>
+                </ul>
             </div>
         </header>
 
 
         <!-- REQUIRED FILES -->
-        <section id="confirmRequired">
+        <section id="heroRequired">
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Required files</h3>
@@ -85,58 +91,123 @@
             </header>
             <div class="content-block">
                 <div class="container">
-                    <p>SCSS files required: <code>_components.confirm-popup.scss</code></p>
-                    <p>JS files required: <code>toggle-element.js</code></p>
+                    <p>SCSS files required: <code>_components.hero.scss</code></p>
                 </div>
             </div>
         </section>
 
 
-        <!-- CONFIRM POPUP -->
-        <section id="confirmMarkup">
+        <!-- HEROS CENTRED -->
+        <section id="heroCentred">
             <header class="content-block bg-light-grey">
                 <div class="container">
-                    <h3>The markup</h3>
+                    <h3>Hero centred</h3>
+                    <p>Classes applied to the <code>.hero</code> element:</p>
+                    <p><code>.hero--content-centre</code>, <code>.hero--fade-in</code>, <code>.hero--content-pop-in</code>, <code>.bg-img-cover</code>, <code>.bg-img-overlay</code>, <code>.bg-img-overlay--black</code></p>
+                </div>
+            </header>
+            <section class="hero hero--content-centre hero--fade-in hero--content-pop-in bg-img-cover bg-img-overlay bg-img-overlay--black" style="background-image: url(https://unsplash.it/2000/440)">
+                <div class="container">
+                    <div class="content-block v-align-content">
+                        <div class="hero__content">
+                            <h1>Lorem ipsum dolor sit amet</h1>
+                            <div class="font-size-lg">
+                                <p>Etiam ultrices dui lorem, id pretium augue porttitor sed. Ut bibendum tincidunt ante, vel fringilla nisl tristique dignissim. Ut elementum turpis molestie scelerisque hendrerit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
 
-                    <p>The confirm box wrapping element requires an ID eg <code>#confirmBoxExample</code> to be targeted, the two classes <code>.confirm-popup</code> and <code>.hidden</code>, and the javascript module to be applied <code>data-js-module="toggleElement"</code></p>
 
-                    <p>The box itself required the class <code>.confirm-popup__box</code> and a modifying class can be added to create a wider box <code>.confirm-popup__box--lg</code></p>
+        <!-- HEROS MARKUP -->
+        <section id="heroMarkup">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Hero markup</h3>
 
-                    <p>To trigger opening the popup use the 'data-open-el' attribute and ID of the confirm box <code>data-open-el="confirmBoxExample"</code></p>
-
-                    <p>To trigger closing the popup use the 'data-close-el' attribute and ID of the confirm box <code>data-close-el="confirmBoxExample"</code></p>
+                    <h4>Hero structure</h4>
+                    <p>The basic structure of a hero component is <code>.hero</code> &gt; <code>.container</code> &gt; <code>.content-block</code> &amp; <code>.v-align-content</code> &gt; <code>.hero__content</code>.</p>
 
 <figure class="figure-box figure-box--dark figure-box--max-height-md">
 <pre>
-&#x3C;button type=&#x22;button&#x22; class=&#x22;btn&#x22; data-open-el=&#x22;confirmBoxExample&#x22;&#x3E;Open confirm popup&#x3C;/button&#x3E;
-
-&#x3C;div id=&#x22;confirmBoxExample&#x22; class=&#x22;confirm-popup hidden&#x22; data-js-module=&#x22;toggleElement&#x22;&#x3E;
-    &#x3C;div class=&#x22;confirm-popup__box&#x22;&#x3E;
-        &#x3C;p&#x3E;Hi, I am a confirm box&#x3C;/p&#x3E;
-        &#x3C;button type=&#x22;button&#x22; class=&#x22;btn&#x22; data-close-el=&#x22;confirmBoxExample&#x22;&#x3E;Confirm&#x3C;/button&#x3E;
+&#x3C;section class=&#x22;hero&#x22; style=&#x22;background-image: url([IMAGE URL HERE])&#x22;&#x3E;
+    &#x3C;div class=&#x22;container&#x22;&#x3E;
+        &#x3C;div class=&#x22;content-block v-align-content&#x22;&#x3E;
+            &#x3C;div class=&#x22;hero__content&#x22;&#x3E;
+                &#x3C;h1&#x3E;[TITLE HERE]&#x3C;/h1&#x3E;
+                &#x3C;div class=&#x22;font-size-lg&#x22;&#x3E;[TEXT HERE]&#x3C;/div&#x3E;
+            &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
     &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;
+&#x3C;/section&#x3E;
 </pre>
 </figure>
 
+                    <p class="m-t-md">However there are lots of modifying classes and helper classes that can be added to create different types of heros...</p>
+
+                    <h4>Background image and opacity</h4>
+                    <p>A background image can be applied on the <code>.hero</code> element (inline or in your separate styles), and helper classes can be added such as <code>.bg-img-cover</code> which applies a background cover and centre positioning, <code>.bg-img-overlay</code>, adds a grey overlay to darken the image so the text is more legible, and <code>.bg-img-overlay--black</code> to increase the overlay intensity.</p>
+                    <p>Note that the <code>.bg-img-overlay</code> also makes the text color white. Otherwise the helper class <code>.bg-light-content</code> is also available.</p>
+
+                    <h4>Content alignment</h4>
+                    <p>The content is aligned left as default and there are two modifying classes available <code>.hero--content-right</code> and <code>.hero--content-centre</code></p>
+
+                    <h3>Animations</h3>
+                    <p>There are also modifying classes for the hero that can add the animations <code>.hero--fade-in</code>, <code>.hero--content-pop-in</code></p>
+
                 </div>
             </header>
-            <div class="content-block">
-                <div class="container">
-                    <button type="button" class="btn" data-open-el="confirmBoxExample">Open confirm popup</button>
-                </div>
-            </div>
         </section>
 
-        <div id="confirmBoxExample" class="confirm-popup hidden" data-js-module="toggleElement">
-            <div class="confirm-popup__box">
-                <p>Hi, I am a confirm box</p>
-                <div class="btns-container btns-container--inline">
-                    <button type="button" class="btn" data-close-el="confirmBoxExample">Confirm</button>
-                    <button type="button" class="btn btn--tertiary" data-close-el="confirmBoxExample">Cancel</button>
+
+        <!-- HERO LEFT -->
+        <section id="heroLeft">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Hero left</h3>
+                    <p>Classes applied to the <code>.hero</code> element:</p>
+                    <p><code>.bg-img-cover</code>, <code>.bg-img-overlay</code>.</p>
                 </div>
-            </div>
-        </div>
+            </header>
+            <section class="hero bg-img-cover bg-img-overlay" style="background-image: url(https://unsplash.it/2200/520)">
+                <div class="container">
+                    <div class="content-block v-align-content">
+                        <div class="hero__content">
+                            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+                            <div class="font-size-lg">
+                                <p>Etiam ultrices dui lorem, id pretium augue porttitor sed. Ut bibendum tincidunt ante, vel fringilla nisl tristique dignissim. Ut elementum turpis molestie scelerisque hendrerit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+
+        <!-- HERO RIGHT -->
+        <section id="heroRight">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Hero right</h3>
+                    <p>Classes applied to the <code>.hero</code> element:</p>
+                    <p><code>.hero--content-right</code>, <code>.bg-img-cover</code>, <code>.bg-img-overlay</code></p>
+                </div>
+            </header>
+            <section class="hero hero--content-right bg-img-cover bg-img-overlay bg-img-overlay--black" style="background-image: url(https://unsplash.it/2000/420)">
+                <div class="container">
+                    <div class="content-block v-align-content">
+                        <div class="hero__content">
+                            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+                            <div class="font-size-lg">
+                                <p>Etiam ultrices dui lorem, id pretium augue porttitor sed. Ut bibendum tincidunt ante, vel fringilla nisl tristique dignissim. Ut elementum turpis molestie scelerisque hendrerit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
     </div>
 </div>
 
