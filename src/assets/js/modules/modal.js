@@ -15,7 +15,7 @@ class Modal {
         this.openButton = element;
         const modalID = this.openButton.getAttribute('data-modal');
         this.modal = document.querySelector(`#${modalID}`);
-        this.closeButton = this.modal.querySelector('.modal-close');
+        this.closeButton = this.modal.querySelector('.modal__close');
         this.videoWrapper = this.modal.querySelector('.video-wrapper');
         this.bindEvents();
     }
