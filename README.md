@@ -27,7 +27,7 @@ Then you need to push the version commit and the tags up:
 git push && git push --tags
 ```
 
-Once your version change in `package.json` is merged into master travis will deploy this to NPM for you.
+Once your version change in `package.json` is merged into master Travis will deploy this to NPM for you.
 
 ## Gulp tasks
 
