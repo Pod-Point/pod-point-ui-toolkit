@@ -1,5 +1,5 @@
 # pod-point-ui-toolkit
-[![npm](https://img.shields.io/npm/v/@pod-point/pod-point-ui-toolkit.svg)](https://www.npmjs.com/package/@pod-point/pod-point-ui-toolkit)
+[![npm](https://img.shields.io/npm/v/@pod-point/pod-point-ui-toolkit.svg)](https://www.npmjs.com/package/@pod-point/pod-point-ui-toolkit) [![Build Status](https://travis-ci.com/Pod-Point/pod-point-ui-toolkit.svg?token=F7wj2GWZpNRsZSDUXLya&branch=master)](https://travis-ci.com/Pod-Point/pod-point-ui-toolkit)
 
 The POD Point frontend framework is a library of base styles and components designed for rapid prototyping.
 
@@ -12,6 +12,22 @@ git clone git@github.com:Pod-Point/pod-point-ui-toolkit.git
 cd pod-point-ui-toolkit
 npm install
 ```
+
+## Versioning
+
+Use NPM to create a new version in your PR branch:
+
+```bash
+npm version [major | minor | patch]
+```
+
+Then you need to push the version commit and the tags up:
+
+```bash
+git push && git push --tags
+```
+
+Once your version change in `package.json` is merged into master Travis will deploy this to NPM for you.
 
 ## Gulp tasks
 
