@@ -553,43 +553,41 @@
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Fields in a grid</h3>
+                    <p>Fields can easily be put in a grid. When a <code>.form__group</code> is used, the margin needs to be removed as the grid takes care of spacing.</p>
+                    <p>The grid below has a <code>.grid--gutter-sm</code> modifying class applied and a <code>.m-b-none</code> helper class on each <code>form__group</code> element.</p>
                 </div>
             </header>
             <div class="content-block">
                 <div class="container">
                     <div class="max-width-text-wide">
-                        <div class="grid grid--p-b-none">
+                        <div class="grid grid--gutter-sm">
                             <div class="grid__col grid__col-md-6">
-                                <div class="form__group">
+                                <div class="form__group m-b-none">
                                     <input class="form__control form__field" type="text" placeholder="Sample placeholder">
                                 </div>
                             </div>
                             <div class="grid__col grid__col-md-6">
-                                <div class="form__group">
-                                    <input class="form__control form__field" type="text" placeholder="Sample placeholder">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid grid--p-b-none">
-                            <div class="grid__col grid__col-md-4">
-                                <div class="form__group">
+                                <div class="form__group m-b-none">
                                     <input class="form__control form__field" type="text" placeholder="Sample placeholder">
                                 </div>
                             </div>
                             <div class="grid__col grid__col-md-4">
-                                <div class="form__group">
+                                <div class="form__group m-b-none">
                                     <input class="form__control form__field" type="text" placeholder="Sample placeholder">
                                 </div>
                             </div>
                             <div class="grid__col grid__col-md-4">
-                                <div class="form__group">
+                                <div class="form__group m-b-none">
                                     <input class="form__control form__field" type="text" placeholder="Sample placeholder">
                                 </div>
                             </div>
-                        </div>
-                        <div class="grid grid--p-b-none">
+                            <div class="grid__col grid__col-md-4">
+                                <div class="form__group m-b-none">
+                                    <input class="form__control form__field" type="text" placeholder="Sample placeholder">
+                                </div>
+                            </div>
                             <div class="grid__col grid__col-md-6">
-                                <div class="form__group">
+                                <div class="form__group m-b-none">
                                     <div class="select form__field">
                                         <select class="form__control">
                                             <option value="00">00</option>
@@ -600,7 +598,7 @@
                                 </div>
                             </div>
                             <div class="grid__col grid__col-md-6">
-                                <div class="form__group">
+                                <div class="form__group m-b-none">
                                     <div class="select form__field">
                                         <select class="form__control">
                                             <option value="00">00</option>

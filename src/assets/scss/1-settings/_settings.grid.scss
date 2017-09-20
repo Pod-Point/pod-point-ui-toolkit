@@ -3,4 +3,7 @@
 // =============================================================================
 
 $default-grid-cols: 12;
-$grid-gutter: $space-md;
+$grid-gutter-md: $space-md;
+$grid-gutter-sm: $space-sm;
+
+$grid-gutter: $grid-gutter-md;
