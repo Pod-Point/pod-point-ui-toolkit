@@ -10,6 +10,7 @@
                     <li><a href="#iconsSvg">SVG icons</a></li>
                     <li><a href="#iconsSvgColours">SVG icon colours</a></li>
                     <li><a href="#iconsInline">Icons inline with text</a></li>
+                    <li><a href="#iconCircles">Icons in circles</a></li>
                     <li><a href="#iconCirclesSizes">Icons in circles - sizes</a></li>
                     <li><a href="#iconCirclesColours">Icons in circles - colours</a></li>
                 </ul>
@@ -49,7 +50,7 @@
             </header>
             <div class="content-block">
                 <div class="container">
-                    <ul class="list--inline list--inline--gutter-xxs">
+                    <ul class="list--inline list--inline--gutter-xs">
                         <li><i class="clickable icon">{{> icon-cross }}</i></li>
                         <li><i class="clickable icon">{{> icon-charge-location }}</i></li>
                         <li><i class="clickable icon">{{> icon-bolt }}</i></li>
@@ -64,7 +65,7 @@
                         <li><i class="clickable icon">{{> icon-image-file }}</i></li>
                     </ul>
                     <br>
-                    <ul class="list--inline list--inline--gutter-xxs">
+                    <ul class="list--inline list--inline--gutter-xs">
                         <li><a href="#" class="icon">{{> icon-facebook }}</a></li>
                         <li><a href="#" class="icon">{{> icon-twitter }}</a></li>
                         <li><a href="#" class="icon">{{> icon-linkedin }}</a></li>
@@ -89,7 +90,7 @@
             <div class="content-block">
                 <div class="container">
 
-                    <ul class="list--inline list--inline--gutter-xxs">
+                    <ul class="list--inline list--inline--gutter-xs">
                         <li><a href="#" class="icon">{{> icon-facebook }}</a></li>
                         <li><a href="#" class="icon">{{> icon-twitter }}</a></li>
                         <li><a href="#" class="icon">{{> icon-linkedin }}</a></li>
@@ -98,7 +99,7 @@
                         <li><a href="#" class="icon">{{> icon-google }}</a></li>
                     </ul>
                     <br>
-                    <ul class="list--inline list--inline--gutter-xxs m-b-none">
+                    <ul class="list--inline list--inline--gutter-xs m-b-none">
                         <li><a href="#" class="icon icon--primary">{{> icon-facebook }}</a></li>
                         <li><a href="#" class="icon icon--primary">{{> icon-twitter }}</a></li>
                         <li><a href="#" class="icon icon--primary">{{> icon-linkedin }}</a></li>
@@ -110,7 +111,7 @@
             </div>
             <div class="content-block bg-dark-grey">
                 <div class="container">
-                    <ul class="list--inline list--inline--gutter-xxs m-b-none">
+                    <ul class="list--inline list--inline--gutter-xs m-b-none">
                         <li><a href="#" class="icon icon--inverted">{{> icon-facebook }}</a></li>
                         <li><a href="#" class="icon icon--inverted">{{> icon-twitter }}</a></li>
                         <li><a href="#" class="icon icon--inverted">{{> icon-linkedin }}</a></li>
@@ -130,18 +131,18 @@
                     <h3>Icons inline with text</h3>
                     <p>Icons can be placed inline with text and they will scale relative to the size of the text</p>
                     <p>The svg icon should be wrapped in an inline element such as a <code>&lt;span&gt;</code> or <code>&lt;i&gt;</code> and then as above, apply the <code>.icon</code> class as well as the modifying class <code>.icon--inline</code> to that element and place inside the text element.</p>
-                    <p>To create spacing between the text and the icon, you can either just add a space or there is an option to wrap the text in a <code>&lt;span&gt;</code> and a margin will be added dependant on which side the icon is of the text. This is useful when you have a link that you don't want the underline to extend.</p>
+                    <p>To create spacing between the text and the icon, you can either add a helper class eg. <code>.m-l-xxs</code> or there is an option to wrap the text in a <code>&lt;span&gt;</code> and a margin will be added dependant on which side the icon is of the text. This is useful when you have a link that you don't want the underline to extend.</p>
 
 {{> snippet-icon-text-inline }}
 
                 </div>
             </header>
             <div class="container content-block">
-                <p>I am base font size with an inline icon<i class="icon icon--inline"> {{> icon-cheveron }}</i></p>
+                <p>I am base font size with an inline icon<i class="icon icon--inline m-l-xxs">{{> icon-cheveron }}</i></p>
                 <br>
-                <p class="font-size-sm">I am small font size with an inline icon<i class="icon icon--inline"> {{> icon-cheveron }}</i></p>
+                <p class="font-size-sm">I am small font size with an inline icon<i class="icon icon--inline m-l-xxs">{{> icon-cheveron }}</i></p>
                 <br>
-                <p class="font-size-lg">I am large font size with an inline icon<i class="icon icon--inline"> {{> icon-cheveron }}</i></p>
+                <p class="font-size-lg">I am large font size with an inline icon<i class="icon icon--inline m-l-xxs">{{> icon-cheveron }}</i></p>
                 <br>
                 <p><a href="#"><span>I am a link with an inline icon</span><i class="icon icon--inline">{{> icon-cheveron }}</i></a></p>
                 <br>
@@ -151,12 +152,33 @@
         </section>
 
 
+        <!-- ICONS IN CIRCLES -->
+        <section id="iconCircles">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Icons in circles</h3>
+                    <p>To create an icon in a circle, add a wrapping element to the <code>.icon</code> with the class of <code>.circle-icon</code></p>
+                    <p>You can use an inline svg or an image but if you use an image it required a class <code>.icon__img</code>.</p>
+
+{{> snippet-icon-circle }}
+                </div>
+            </header>
+
+            <div class="container content-block">
+                <h4>SVG inline</h4>
+                <a class="circle-icon circle-icon--outlined" href="#"><i class="icon">{{> icon-twitter }}</i></a>
+                <br>
+                <h4>SVG image</h4>
+                <a class="circle-icon circle-icon--outlined" href="#"><i class="icon"><img alt="twitter icon" class="icon__img" src="assets/img/icons/social/twitter.svg"></i></a>
+            </div>
+        </section>
+
+
         <!-- ICONS IN CIRCLES - SIZES -->
         <section id="iconCirclesSizes">
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Icons in circles - sizes</h3>
-                    <p>To create an icon in a circle, add a wrapping element to the <code>.icon</code> with the class of <code>.circle-icon</code></p>
                     <p>The alternative sizes available can be applied using the modifying classes <code>.circle-icon--sm</code>, <code>.circle-icon--sm-resp</code>, <code>.circle-icon--lg</code>, <code>.circle-icon--lg-resp</code> ('resp' meaning it has a different size on mobile and desktop)</p>
                     <p>There is also a mixin available to customise the circle icon size <a href="sass-tools.html#toolsIconsInCircles">here</a></p>
 
@@ -168,7 +190,7 @@
                 <h4>Non responsive
                     <span class="font-size-md font-weight-regular">= <code>.circle-icon</code></span>
                 </h4>
-                <ul class="list--inline list--inline--gutter-xxs">
+                <ul class="list--inline list--inline--gutter-xs">
                     <li><a class="circle-icon" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
                     <li><a class="circle-icon" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
                     <li><a class="circle-icon" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
@@ -180,7 +202,7 @@
                 <h4>Small responsive
                     <span class="font-size-md font-weight-regular">= <code>.circle-icon--sm-resp</code></span>
                 </h4>
-                <ul class="list--inline list--inline--gutter-xxs">
+                <ul class="list--inline list--inline--gutter-xs">
                     <li><a class="circle-icon circle-icon--sm-resp" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
                     <li><a class="circle-icon circle-icon--sm-resp" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
                     <li><a class="circle-icon circle-icon--sm-resp" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
@@ -192,7 +214,7 @@
                 <h4>Large responsive
                     <span class="font-size-md font-weight-regular">= <code>.circle-icon--lg-resp</code></span>
                 </h4>
-                <ul class="list--inline list--inline--gutter-xxs">
+                <ul class="list--inline list--inline--gutter-xs">
                     <li><a class="circle-icon circle-icon--lg-resp" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
                     <li><a class="circle-icon circle-icon--lg-resp" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
                     <li><a class="circle-icon circle-icon--lg-resp" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
@@ -220,7 +242,7 @@
                 <h4>Primary colour background
                     <span class="font-size-md font-weight-regular"> = <code>.circle-icon--primary</code></span>
                 </h4>
-                <ul class="list--inline list--inline--gutter-xxs">
+                <ul class="list--inline list--inline--gutter-xs">
                     <li><a class="circle-icon circle-icon--primary" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
                     <li><a class="circle-icon circle-icon--primary" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
                     <li><a class="circle-icon circle-icon--primary" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
@@ -233,7 +255,7 @@
                 <h4>Outlined with base colour border
                     <span class="font-size-md font-weight-regular"> = <code>.circle-icon--outlined</code></span>
                 </h4>
-                <ul class="list--inline list--inline--gutter-xxs">
+                <ul class="list--inline list--inline--gutter-xs">
                     <li><a class="circle-icon circle-icon--outlined" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
                     <li><a class="circle-icon circle-icon--outlined" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
                     <li><a class="circle-icon circle-icon--outlined" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
@@ -246,7 +268,7 @@
                 <h4>Outlined with primary colour border
                     <span class="font-size-md font-weight-regular"> = <code>.circle-icon--outlined--primary</code></span>
                 </h4>
-                <ul class="list--inline list--inline--gutter-xxs">
+                <ul class="list--inline list--inline--gutter-xs">
                     <li><a class="circle-icon circle-icon--outlined--primary" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
                     <li><a class="circle-icon circle-icon--outlined--primary" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
                     <li><a class="circle-icon circle-icon--outlined--primary" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>
@@ -260,7 +282,7 @@
                     <h4>Outlined with inverted icon colour and border
                         <span class="font-size-md font-weight-regular"> = <code>.circle-icon--outlined--inverted</code></span>
                     </h4>
-                    <ul class="list--inline list--inline--gutter-xxs">
+                    <ul class="list--inline list--inline--gutter-xs">
                         <li><a class="circle-icon circle-icon--outlined--inverted" href="#"><i class="icon">{{> icon-facebook }}</i></a></li>
                         <li><a class="circle-icon circle-icon--outlined--inverted" href="#"><i class="icon">{{> icon-twitter }}</i></a></li>
                         <li><a class="circle-icon circle-icon--outlined--inverted" href="#"><i class="icon">{{> icon-linkedin }}</i></a></li>

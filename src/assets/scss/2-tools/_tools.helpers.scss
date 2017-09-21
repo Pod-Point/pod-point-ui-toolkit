@@ -146,10 +146,12 @@
 
 // Inline list gutter
 @mixin inline-list-gutter($gutter) {
-    @include margin(null (-$gutter));
+    margin: -$gutter;
+    padding: 0;
 
     li {
-        @include margin(null $gutter);
         display: inline-block;
+        margin: $gutter;
+        padding: 0;
     }
 }

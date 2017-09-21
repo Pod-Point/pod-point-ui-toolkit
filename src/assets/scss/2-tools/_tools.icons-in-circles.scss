@@ -12,8 +12,18 @@
     padding: 0;
     text-align: center;
 
+    .icon {
+        height: 100%;
+        margin: 0;
+        width: 100%;
+    }
+
+    svg,
+    .icon__img {
+        margin: 0 auto;
+    }
+
     svg {
-        box-sizing: content-box;
         fill: #{$colour};
     }
 
@@ -28,24 +38,9 @@
     height: $dimension;
     width: $dimension;
 
-    svg {
+    svg,
+    .icon__img {
         height: $dimension / 2;
-        margin-bottom: $dimension / 4;
-        margin-top: $dimension / 4;
-        width: $dimension / 2;
-    }
-}
-
-// SVG icon in a circle - with border
-@mixin icon-in-border-circle--size($dimension: $circle-icon-size-lg) {
-    font-size: $dimension / 4;
-    height: $dimension;
-    width: $dimension;
-
-    svg {
-        height: $dimension / 2;
-        margin-bottom: $dimension / 6;
-        margin-top: $dimension / 6;
         width: $dimension / 2;
     }
 }

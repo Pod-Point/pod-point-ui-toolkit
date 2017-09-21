@@ -3,7 +3,7 @@
 // =============================================================================
 
 .icon {
-    @include margin(null $icon-h-spacing);
+    @include v-align;
 
     > svg,
     > .icon__img {
@@ -46,7 +46,7 @@
 
     // Icon inline with text
     &--inline {
-        margin: 0;
+        display: inline-block;
 
         > svg,
         > .icon__img {
