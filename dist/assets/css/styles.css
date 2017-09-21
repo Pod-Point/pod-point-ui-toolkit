@@ -438,6 +438,9 @@ img {
   .dl dd {
     margin: 0; }
 
+.grid-wrap {
+  overflow: hidden; }
+
 .grid {
   display: -ms-flexbox;
   display: flex;
@@ -715,12 +718,12 @@ img {
     max-width: 500px; }
 
 .btns-container {
-  margin-top: -10px;
-  margin-bottom: -10px;
+  margin-top: -15px;
+  margin-bottom: -15px;
   overflow: hidden; }
   .btns-container .btn {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     display: block; }
   .btns-container--inline {
     margin-right: -10px;
@@ -1051,6 +1054,7 @@ fieldset {
       justify-content: center;
   min-height: 100%;
   overflow-y: scroll;
+  padding: 20px;
   width: 100%;
   z-index: 101; }
   .popup__box {
@@ -1058,8 +1062,7 @@ fieldset {
     border: 2px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
-    padding: 25px 25px;
-    text-align: center;
+    position: relative;
     width: calc(100% - (25px * 2));
     z-index: auto; }
     @media (min-width: 40em) {
@@ -2196,6 +2199,21 @@ textarea.form__control {
   cursor: pointer; }
   .clickable:active, .clickable:focus, .clickable:hover {
     opacity: 0.7; }
+
+.overflow-hidden {
+  overflow: hidden; }
+
+.p-a-resp {
+  padding: 20px !important; }
+  @media (min-width: 50em) {
+    .p-a-resp {
+      padding: 30px !important; } }
+
+.p-a-resp-lg {
+  padding: 20px !important; }
+  @media (min-width: 50em) {
+    .p-a-resp-lg {
+      padding: 50px !important; } }
 
 .text-centre {
   text-align: center !important; }

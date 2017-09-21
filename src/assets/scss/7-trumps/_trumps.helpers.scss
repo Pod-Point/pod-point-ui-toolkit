@@ -49,3 +49,23 @@
 .clickable {
     @include clickable;
 }
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.p-a-resp {
+    padding: $space-md !important;
+
+    @include screen-md-min {
+        padding: $space-lg !important;
+    }
+}
+
+.p-a-resp-lg {
+    padding: $space-md !important;
+
+    @include screen-md-min {
+        padding: $space-xl !important;
+    }
+}

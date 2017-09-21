@@ -9,6 +9,7 @@
     justify-content: center;
     min-height: 100%;
     overflow-y: scroll;
+    padding: $space-md;
     width: 100%;
     z-index: 101;
 
@@ -17,8 +18,7 @@
         border: $border-base;
         border-radius: $border-radius-base;
         box-shadow: $shadow-floating;
-        padding: $popup-box-v-padding $popup-box-h-padding;
-        text-align: center;
+        position: relative;
         width: $popup-box-width-mobile;
         z-index: auto;
 

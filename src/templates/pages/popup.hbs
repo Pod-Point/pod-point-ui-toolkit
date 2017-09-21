@@ -46,17 +46,40 @@
             </header>
             <div class="content-block">
                 <div class="container">
-                    <button type="button" class="btn" data-open-el="popupExample">Open popup</button>
+                    <div class="btns-container">
+                        <button type="button" class="btn" data-open-el="popupConfirm">Open confirm popup</button>
+                        <button type="button" class="btn" data-open-el="popupProduct">Open product popup</button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <div id="popupExample" class="popup hidden" data-js-module="toggleElement">
-            <div class="popup__box">
-                <p>Hi, I am a popup box</p>
+        <div id="popupConfirm" class="popup hidden" data-js-module="toggleElement">
+            <div class="popup__box popup__box--sm p-a-lg text-centre">
+                <p>Hi, I am a confirm style popup box</p>
                 <div class="btns-container btns-container--inline">
-                    <button type="button" class="btn" data-close-el="popupExample">Ok great</button>
-                    <button type="button" class="btn btn--tertiary" data-close-el="popupExample">Cancel</button>
+                    <button type="button" class="btn" data-close-el="popupConfirm">Confirm</button>
+                    <button type="button" class="btn btn--tertiary" data-close-el="popupConfirm">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="popupProduct" class="popup hidden" data-js-module="toggleElement">
+            <div class="popup__box popup__box--lg p-a-none overflow-hidden">
+                <button type="button" class="pos-abs pin-top-right m-t-md m-r-md" data-close-el="popupProduct"><i class="icon">{{> icon-cross }}</i></button>
+                <div class="grid grid--gutter-none">
+                    <div class="grid__col grid__col-md-6 p-a-resp-lg">
+                        HJello
+                    </div>
+                    <div class="grid__col grid__col-md-6 bg-light-grey p-a-resp-lg">
+                        <h3>Best product</h3>
+                        <p>This product is amazing because of the following reasons...</p>
+                        <ul class="list--featured--ticks">
+                            <li>It has excellent features</li>
+                            <li>All the mod cons</li>
+                            <li>Great assets</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

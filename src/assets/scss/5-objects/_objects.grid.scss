@@ -2,6 +2,10 @@
 //  OBJECTS - GRID
 // =============================================================================
 
+.grid-wrap {
+    overflow: hidden;
+}
+
 .grid {
     display: flex;
     flex-wrap: wrap;
