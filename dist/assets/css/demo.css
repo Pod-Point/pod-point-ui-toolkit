@@ -113,6 +113,9 @@ body {
 [data-page='grid'] .nav-link--grid {
   color: #8cc63f; }
 
+[data-page='heros'] .nav-link--heros {
+  color: #8cc63f; }
+
 [data-page='icons'] .nav-link--icons {
   color: #8cc63f; }
 

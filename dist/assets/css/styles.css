@@ -1214,15 +1214,20 @@ fieldset {
     margin: 0;
     text-indent: 0;
     width: 100%; }
+  .tooltip-icon .icon {
+    height: 100%;
+    margin: 0;
+    width: 100%; }
+  .tooltip-icon svg,
+  .tooltip-icon .icon__img {
+    margin: 0 auto; }
   .tooltip-icon svg {
-    box-sizing: content-box;
     fill: #333; }
   .tooltip-icon::before {
     color: #333; }
-  .tooltip-icon svg {
+  .tooltip-icon svg,
+  .tooltip-icon .icon__img {
     height: 0.9375rem/2;
-    margin-bottom: 0.9375rem/6;
-    margin-top: 0.9375rem/6;
     width: 0.9375rem/2; }
   .tooltip-icon::before {
     content: '?';
@@ -1386,64 +1391,64 @@ fieldset {
   padding-right: 0;
   padding-left: 0;
   margin: 0;
-  margin-right: -10px;
-  margin-left: -10px; }
+  margin: -10px;
+  padding: 0; }
   .list--inline li {
     list-style: none;
     padding-left: 0; }
   .list--inline li {
-    margin-right: 10px;
-    margin-left: 10px;
-    display: inline-block; }
+    display: inline-block;
+    margin: 10px;
+    padding: 0; }
   .list--inline--gutter-xxs {
-    margin-right: -2.5px;
-    margin-left: -2.5px; }
+    margin: -2.5px;
+    padding: 0; }
     .list--inline--gutter-xxs li {
-      margin-right: 2.5px;
-      margin-left: 2.5px;
-      display: inline-block; }
+      display: inline-block;
+      margin: 2.5px;
+      padding: 0; }
   .list--inline--gutter-xs {
-    margin-right: -5px;
-    margin-left: -5px; }
+    margin: -5px;
+    padding: 0; }
     .list--inline--gutter-xs li {
-      margin-right: 5px;
-      margin-left: 5px;
-      display: inline-block; }
+      display: inline-block;
+      margin: 5px;
+      padding: 0; }
   .list--inline--gutter-sm {
-    margin-right: -7.5px;
-    margin-left: -7.5px; }
+    margin: -7.5px;
+    padding: 0; }
     .list--inline--gutter-sm li {
-      margin-right: 7.5px;
-      margin-left: 7.5px;
-      display: inline-block; }
+      display: inline-block;
+      margin: 7.5px;
+      padding: 0; }
   .list--inline--gutter-md {
-    margin-right: -10px;
-    margin-left: -10px; }
+    margin: -10px;
+    padding: 0; }
     .list--inline--gutter-md li {
-      margin-right: 10px;
-      margin-left: 10px;
-      display: inline-block; }
+      display: inline-block;
+      margin: 10px;
+      padding: 0; }
   .list--inline--gutter-lg {
-    margin-right: -15px;
-    margin-left: -15px; }
+    margin: -15px;
+    padding: 0; }
     .list--inline--gutter-lg li {
-      margin-right: 15px;
-      margin-left: 15px;
-      display: inline-block; }
+      display: inline-block;
+      margin: 15px;
+      padding: 0; }
   .list--inline--gutter-xl {
-    margin-right: -25px;
-    margin-left: -25px; }
+    margin: -25px;
+    padding: 0; }
     .list--inline--gutter-xl li {
-      margin-right: 25px;
-      margin-left: 25px;
-      display: inline-block; }
+      display: inline-block;
+      margin: 25px;
+      padding: 0; }
   .list--inline--gutter-xxl {
-    margin-right: -35px;
-    margin-left: -35px; }
+    margin: -35px;
+    padding: 0; }
     .list--inline--gutter-xxl li {
-      margin-right: 35px;
-      margin-left: 35px;
-      display: inline-block; }
+      display: inline-block;
+      margin: 35px;
+      padding: 0; }
 
 .responsive-table-wrapper {
   overflow: auto; }
@@ -1533,8 +1538,10 @@ fieldset {
     max-height: 600px; }
 
 .icon {
-  margin-right: 0.125rem;
-  margin-left: 0.125rem; }
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex; }
   .icon > svg,
   .icon > .icon__img {
     fill: #333;
@@ -1559,7 +1566,7 @@ fieldset {
   .icon--primary > svg {
     fill: #8cc63f; }
   .icon--inline {
-    margin: 0; }
+    display: inline-block; }
     .icon--inline > svg,
     .icon--inline > .icon__img {
       position: relative;
@@ -1585,62 +1592,62 @@ fieldset {
   height: 2.5rem;
   width: 2.5rem;
   box-sizing: content-box; }
+  .circle-icon .icon {
+    height: 100%;
+    margin: 0;
+    width: 100%; }
+  .circle-icon svg,
+  .circle-icon .icon__img {
+    margin: 0 auto; }
   .circle-icon svg {
-    box-sizing: content-box;
     fill: #fff; }
   .circle-icon::before {
     color: #fff; }
-  .circle-icon svg {
+  .circle-icon svg,
+  .circle-icon .icon__img {
     height: 1.25rem;
-    margin-bottom: 0.625rem;
-    margin-top: 0.625rem;
     width: 1.25rem; }
   .circle-icon--sm {
     font-size: 0.4rem;
     height: 1.6rem;
     width: 1.6rem; }
-    .circle-icon--sm svg {
+    .circle-icon--sm svg,
+    .circle-icon--sm .icon__img {
       height: 0.8rem;
-      margin-bottom: 0.4rem;
-      margin-top: 0.4rem;
       width: 0.8rem; }
   .circle-icon--sm-resp {
     font-size: 0.4rem;
     height: 1.6rem;
     width: 1.6rem; }
-    .circle-icon--sm-resp svg {
+    .circle-icon--sm-resp svg,
+    .circle-icon--sm-resp .icon__img {
       height: 0.8rem;
-      margin-bottom: 0.4rem;
-      margin-top: 0.4rem;
       width: 0.8rem; }
     @media (min-width: 50em) {
       .circle-icon--sm-resp {
         font-size: 0.625rem;
         height: 2.5rem;
         width: 2.5rem; }
-        .circle-icon--sm-resp svg {
+        .circle-icon--sm-resp svg,
+        .circle-icon--sm-resp .icon__img {
           height: 1.25rem;
-          margin-bottom: 0.625rem;
-          margin-top: 0.625rem;
           width: 1.25rem; } }
   .circle-icon--lg-resp {
     font-size: 0.625rem;
     height: 2.5rem;
     width: 2.5rem; }
-    .circle-icon--lg-resp svg {
+    .circle-icon--lg-resp svg,
+    .circle-icon--lg-resp .icon__img {
       height: 1.25rem;
-      margin-bottom: 0.625rem;
-      margin-top: 0.625rem;
       width: 1.25rem; }
     @media (min-width: 50em) {
       .circle-icon--lg-resp {
         font-size: 0.9375rem;
         height: 3.75rem;
         width: 3.75rem; }
-        .circle-icon--lg-resp svg {
+        .circle-icon--lg-resp svg,
+        .circle-icon--lg-resp .icon__img {
           height: 1.875rem;
-          margin-bottom: 0.9375rem;
-          margin-top: 0.9375rem;
           width: 1.875rem; } }
   .circle-icon--primary {
     background-color: #8cc63f;
@@ -1650,8 +1657,14 @@ fieldset {
     margin: 0;
     padding: 0;
     text-align: center; }
+    .circle-icon--primary .icon {
+      height: 100%;
+      margin: 0;
+      width: 100%; }
+    .circle-icon--primary svg,
+    .circle-icon--primary .icon__img {
+      margin: 0 auto; }
     .circle-icon--primary svg {
-      box-sizing: content-box;
       fill: #fff; }
     .circle-icon--primary::before {
       color: #fff; }
@@ -1663,8 +1676,14 @@ fieldset {
     margin: 0;
     padding: 0;
     text-align: center; }
+    .circle-icon--outlined .icon {
+      height: 100%;
+      margin: 0;
+      width: 100%; }
+    .circle-icon--outlined svg,
+    .circle-icon--outlined .icon__img {
+      margin: 0 auto; }
     .circle-icon--outlined svg {
-      box-sizing: content-box;
       fill: #333; }
     .circle-icon--outlined::before {
       color: #333; }
@@ -1676,8 +1695,14 @@ fieldset {
     margin: 0;
     padding: 0;
     text-align: center; }
+    .circle-icon--outlined--primary .icon {
+      height: 100%;
+      margin: 0;
+      width: 100%; }
+    .circle-icon--outlined--primary svg,
+    .circle-icon--outlined--primary .icon__img {
+      margin: 0 auto; }
     .circle-icon--outlined--primary svg {
-      box-sizing: content-box;
       fill: #8cc63f; }
     .circle-icon--outlined--primary::before {
       color: #8cc63f; }
@@ -1689,8 +1714,14 @@ fieldset {
     margin: 0;
     padding: 0;
     text-align: center; }
+    .circle-icon--outlined--inverted .icon {
+      height: 100%;
+      margin: 0;
+      width: 100%; }
+    .circle-icon--outlined--inverted svg,
+    .circle-icon--outlined--inverted .icon__img {
+      margin: 0 auto; }
     .circle-icon--outlined--inverted svg {
-      box-sizing: content-box;
       fill: #fff; }
     .circle-icon--outlined--inverted::before {
       color: #fff; }
@@ -1705,24 +1736,21 @@ fieldset {
   text-align: center;
   font-size: 0.4rem;
   height: 1.6rem;
-  width: 1.6rem;
-  font-size: 0.4rem;
-  height: 1.6rem;
   width: 1.6rem; }
+  .toggle-panel-icon .icon {
+    height: 100%;
+    margin: 0;
+    width: 100%; }
+  .toggle-panel-icon svg,
+  .toggle-panel-icon .icon__img {
+    margin: 0 auto; }
   .toggle-panel-icon svg {
-    box-sizing: content-box;
     fill: #8cc63f; }
   .toggle-panel-icon::before {
     color: #8cc63f; }
-  .toggle-panel-icon svg {
+  .toggle-panel-icon svg,
+  .toggle-panel-icon .icon__img {
     height: 0.8rem;
-    margin-bottom: 0.4rem;
-    margin-top: 0.4rem;
-    width: 0.8rem; }
-  .toggle-panel-icon svg {
-    height: 0.8rem;
-    margin-bottom: 0.2667rem;
-    margin-top: 0.2667rem;
     width: 0.8rem; }
 
 .toggle-panel-icon--secondary {
@@ -1736,15 +1764,20 @@ fieldset {
   font-size: 0.4rem;
   height: 1.6rem;
   width: 1.6rem; }
+  .toggle-panel-icon--secondary .icon {
+    height: 100%;
+    margin: 0;
+    width: 100%; }
+  .toggle-panel-icon--secondary svg,
+  .toggle-panel-icon--secondary .icon__img {
+    margin: 0 auto; }
   .toggle-panel-icon--secondary svg {
-    box-sizing: content-box;
     fill: #333; }
   .toggle-panel-icon--secondary::before {
     color: #333; }
-  .toggle-panel-icon--secondary svg {
+  .toggle-panel-icon--secondary svg,
+  .toggle-panel-icon--secondary .icon__img {
     height: 0.8rem;
-    margin-bottom: 0.2667rem;
-    margin-top: 0.2667rem;
     width: 0.8rem; }
 
 .circle-icon--close-panel {
@@ -1755,21 +1788,26 @@ fieldset {
   margin: 0;
   padding: 0;
   text-align: center;
-  font-size: 0.9375rem;
-  height: 3.75rem;
-  width: 3.75rem;
+  font-size: 0.625rem;
+  height: 2.5rem;
+  width: 2.5rem;
   -ms-transform: rotate(180deg);
       transform: rotate(180deg); }
+  .circle-icon--close-panel .icon {
+    height: 100%;
+    margin: 0;
+    width: 100%; }
+  .circle-icon--close-panel svg,
+  .circle-icon--close-panel .icon__img {
+    margin: 0 auto; }
   .circle-icon--close-panel svg {
-    box-sizing: content-box;
     fill: #8cc63f; }
   .circle-icon--close-panel::before {
     color: #8cc63f; }
-  .circle-icon--close-panel svg {
-    height: 1.875rem;
-    margin-bottom: 0.625rem;
-    margin-top: 0.625rem;
-    width: 1.875rem; }
+  .circle-icon--close-panel svg,
+  .circle-icon--close-panel .icon__img {
+    height: 1.25rem;
+    width: 1.25rem; }
 
 .toggle-rotate-icon {
   display: inline-block;
