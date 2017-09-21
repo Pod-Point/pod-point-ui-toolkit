@@ -1036,44 +1036,44 @@ fieldset {
 .cards-same-height .card {
   min-height: 100%; }
 
-.confirm-popup {
+.popup {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
   background-color: rgba(215, 215, 215, 0.7);
+  -ms-flex-pack: center;
+      justify-content: center;
   min-height: 100%;
   overflow-y: scroll;
   width: 100%;
   z-index: 101; }
-  .confirm-popup__box {
+  .popup__box {
     background-color: #fff;
     border: 2px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    left: 5%;
     padding: 25px 25px;
-    position: absolute;
     text-align: center;
-    top: 30%;
-    width: 90%;
+    width: calc(100% - (25px * 2));
     z-index: auto; }
     @media (min-width: 40em) {
-      .confirm-popup__box {
-        left: 50%;
-        margin-left: -245px;
-        width: 490px; }
-        .confirm-popup__box--lg {
-          left: 5%;
-          margin-left: 0;
-          width: 90%; } }
+      .popup__box--sm {
+        width: 400px; }
+      .popup__box--xs {
+        width: 300px; } }
     @media (min-width: 50em) {
-      .confirm-popup__box--lg {
-        left: 50%;
-        margin-left: -375px;
-        width: 750px; } }
+      .popup__box {
+        width: 600px; }
+        .popup__box--lg {
+          width: 700px; }
+        .popup__box--xl {
+          width: 800px; } }
 
 .hero {
   overflow: hidden;

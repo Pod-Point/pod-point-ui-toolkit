@@ -1,0 +1,47 @@
+// =============================================================================
+//  COMPONENTS - POPUP
+// =============================================================================
+
+.popup {
+    @include position(fixed, 0 0 0 0);
+    @include v-align;
+    background-color: $transparent-grey;
+    justify-content: center;
+    min-height: 100%;
+    overflow-y: scroll;
+    width: 100%;
+    z-index: 101;
+
+    &__box {
+        background-color: $white;
+        border: $border-base;
+        border-radius: $border-radius-base;
+        box-shadow: $shadow-floating;
+        padding: $popup-box-v-padding $popup-box-h-padding;
+        text-align: center;
+        width: $popup-box-width-mobile;
+        z-index: auto;
+
+        @include screen-sm-min {
+            &--sm {
+                width: $popup-box-width-sm;
+            }
+
+            &--xs {
+                width: $popup-box-width-xs;
+            }
+        }
+
+        @include screen-md-min {
+            width: $popup-box-width-md;
+
+            &--lg {
+                width: $popup-box-width-lg;
+            }
+
+            &--xl {
+                width: $popup-box-width-xl;
+            }
+        }
+    }
+}
