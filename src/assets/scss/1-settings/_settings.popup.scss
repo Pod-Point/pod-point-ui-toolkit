@@ -2,13 +2,8 @@
 //  SETTINGS - CONFIRM POPUP
 // =============================================================================
 
-$popup-box-v-padding: $base-spacing-mobile;
-$popup-box-h-padding: $base-spacing-mobile;
-
 $popup-box-width-xs: $width-md;
 $popup-box-width-sm: $width-lg;
 $popup-box-width-md: $width-xxl;
 $popup-box-width-lg: $width-xxxl;
-$popup-box-width-xl: $width-xxxl + 100px;
-
-$popup-box-width-mobile: calc(100% - (#{$base-spacing-mobile} * 2));
+$popup-box-width-xl: $width-xxxl + $width-xxs;
