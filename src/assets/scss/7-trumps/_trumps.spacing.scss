@@ -76,3 +76,25 @@ $spacings: (
         padding-top: $value !important;
     }
 }
+
+
+.p-a-resp {
+    padding: $space-md !important;
+
+    @include screen-md-min {
+        padding: $space-lg !important;
+    }
+}
+
+.p-a-resp-lg {
+    padding: $space-md !important;
+
+    @include screen-md-min {
+        padding: $space-xl !important;
+    }
+}
+
+// Base horizontal spacing
+.p-h-resp {
+    @include p-h-resp;
+}

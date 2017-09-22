@@ -1,0 +1,115 @@
+<div data-page="popups" class="demo-page-content">
+
+    {{> demo-sidebar }}
+
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
+            <div class="container">
+                <h2>Popup</h2>
+            </div>
+        </header>
+
+
+        <!-- REQUIRED FILES -->
+        <section id="popupRequired">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Required files</h3>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p>SCSS files required: <code>_components.popup.scss</code></p>
+                    <p>JS files required: <code>toggle-element.js</code></p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- POPUP MARKUP -->
+        <section id="popupMarkup">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>The markup</h3>
+
+                    <p>The box wrapping element requires an ID eg <code>#popupExample</code> to be targeted, the two classes <code>.popup</code> and <code>.hidden</code>, and the javascript module to be applied <code>data-js-module="toggleElement"</code></p>
+
+                    <p>The box itself required the class <code>.popup__box</code></P>
+
+                    <p>To trigger opening the popup use the 'data-open-el' attribute and ID of the box <code>data-open-el="popupExample"</code></p>
+
+                    <p>To trigger closing the popup use the 'data-close-el' attribute and ID of the box <code>data-close-el="popupExample"</code></p>
+
+                    <h4>Box sizes</h4>
+
+                    <p>Modifying classes can be added to create size variations <code>.popup__box--xs</code>, <code>.popup__box--sm</code>, <code>.popup__box--lg</code>, <code>.popup__box--xl</code>.</p>
+                </div>
+            </header>
+        </section>
+
+
+        <!-- POPUP CONFIRM -->
+        <section id="popupConfirm">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h4>Popup box - Confirm</h4>
+                    <p>The example below illustrates how the popup could be used as a confirm message box.</p>
+
+{{> snippet-popup-confirm }}
+                <div class="container">
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <button type="button" class="btn" data-open-el="popupConfirm">Open popup</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- POPUP PRODUCT -->
+        <section id="popupProduct">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h4>Popup box - Product</h4>
+                    <p>The example below illustrates how the popup could be used as a popup to show details of a product.</p>
+                    <p>This is a bit more complex and includes a grid inside and lot of helper classes.</p>
+                    <p>For the Add the class <code>.popup__close</code> on the close button itself and a modifier class <code>.popup__box--with-close</code> to help with positioning.</p>
+
+{{> snippet-popup-product }}
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <button type="button" class="btn" data-open-el="popupProduct">Open popup</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="popupConfirm" class="popup hidden" data-js-module="toggleElement">
+            <div class="popup__box popup__box--sm p-a-lg text-centre">
+                <p>Hi, I am a confirm style popup box</p>
+                <button type="button" class="btn" data-close-el="popupConfirm">Confirm</button>
+            </div>
+        </div>
+
+        <div id="popupProduct" class="popup hidden" data-js-module="toggleElement">
+            <div class="popup__box popup__box--lg popup__box--with-close overflow-hidden">
+                <button type="button" class="popup__close" data-close-el="popupProduct"><i class="icon">{{> icon-cross }}</i></button>
+                <div class="grid grid--gutter-none">
+                    <div class="grid__col grid__col-md-6 p-a-resp-lg align-centre">
+                        <img class="width-100 max-width-sm" src="https://unsplash.it/300/300" alt="Placeholder image">
+                    </div>
+                    <div class="grid__col grid__col-md-6 bg-light-grey p-a-resp-lg">
+                        <h3>Donec ut ipsum</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac convallis arcu. Integer at tellus velit. Etiam placerat nunc eros, vel tincidunt erat dapibus in. Curabitur ultrices sagittis elit, sed porta sem bibendum nec.</p>
+                        <ul class="list--featured--ticks">
+                            <li>Nunc non sapien ac erat vehicula suscipit</li>
+                            <li>Curabitur sit amet enim odio</li>
+                            <li>Fusce cursus eu enim nec venenatis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

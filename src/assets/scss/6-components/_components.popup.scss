@@ -4,12 +4,13 @@
 
 .popup {
     @include position(fixed, 0 0 0 0);
-    @include v-align;
+    @include p-h-resp;
+    @include align-centre;
     background-color: $transparent-grey;
-    justify-content: center;
     min-height: 100%;
     overflow-y: scroll;
-    padding: $space-md;
+    padding-bottom: $space-md;
+    padding-top: $space-md;
     width: 100%;
     z-index: 101;
 
@@ -18,30 +19,46 @@
         border: $border-base;
         border-radius: $border-radius-base;
         box-shadow: $shadow-floating;
+        margin: auto;
+        max-width: $popup-box-width-md;
         position: relative;
-        width: $popup-box-width-mobile;
         z-index: auto;
 
-        @include screen-sm-min {
-            &--sm {
-                width: $popup-box-width-sm;
-            }
-
-            &--xs {
-                width: $popup-box-width-xs;
-            }
+        &--sm {
+            max-width: $popup-box-width-sm;
         }
 
+        &--xs {
+            max-width: $popup-box-width-xs;
+        }
+
+        &--lg {
+            max-width: $popup-box-width-lg;
+        }
+
+        &--xl {
+            max-width: $popup-box-width-xl;
+        }
+
+        &--with-close {
+            padding-top: $space-sm * 2.5;
+
+            @include screen-md-min {
+                padding-top: 0;
+            }
+
+        }
+    }
+
+    &__close {
+        @include position(absolute, $space-sm $space-sm null null);
+        @include clickable;
+        width: $icon-size-sm;
+
         @include screen-md-min {
-            width: $popup-box-width-md;
-
-            &--lg {
-                width: $popup-box-width-lg;
-            }
-
-            &--xl {
-                width: $popup-box-width-xl;
-            }
+            right: $space-md;
+            top: $space-md;
+            width: $icon-size-md;
         }
     }
 }

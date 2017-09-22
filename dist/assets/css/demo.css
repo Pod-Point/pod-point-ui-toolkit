@@ -104,7 +104,7 @@ body {
 [data-page='cards'] .nav-link--cards {
   color: #8cc63f; }
 
-[data-page='confirm-popup'] .nav-link--confirm-popup {
+[data-page='popups'] .nav-link--popups {
   color: #8cc63f; }
 
 [data-page='forms'] .nav-link--forms {

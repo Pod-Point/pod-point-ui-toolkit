@@ -40,9 +40,13 @@
     transform: scaleY(-1);
 }
 
-// Uses display flex to vertically align content
-.v-align-content {
-    @include v-align;
+// Uses display flex to centre align content
+.align-centre {
+    @include align-centre;
+}
+
+.v-align-centre {
+    @include v-align-centre;
 }
 
 // Styles element to appear clickable
@@ -52,20 +56,4 @@
 
 .overflow-hidden {
     overflow: hidden;
-}
-
-.p-a-resp {
-    padding: $space-md !important;
-
-    @include screen-md-min {
-        padding: $space-lg !important;
-    }
-}
-
-.p-a-resp-lg {
-    padding: $space-md !important;
-
-    @include screen-md-min {
-        padding: $space-xl !important;
-    }
 }

@@ -59,7 +59,7 @@
                     <li><a class="nav-link nav-link--labels" href="labels.html">Labels</a></li>
                     <li><a class="nav-link nav-link--lists" href="lists.html">Lists</a></li>
                     <li><a class="nav-link nav-link--modals" href="modals.html">Modals</a></li>
-                    <li><a class="nav-link nav-link--popup" href="popup.html">Popup</a></li>
+                    <li><a class="nav-link nav-link--popups" href="popups.html">Popups</a></li>
                     <li><a class="nav-link nav-link--tables" href="tables.html">Tables</a></li>
                     <li><a class="nav-link nav-link--tooltips" href="tooltips.html">Tooltips</a></li>
                     <li><a class="nav-link nav-link--typography" href="typography.html">Typography</a></i></li>
@@ -96,7 +96,7 @@
                 <br>
                 <ul class="list--inline remove-link-styles font-weight-bold">
                     <li><a href="#toolsClearfix">Clearfix</a></li>
-                    <li><a href="#toolsVAlign">Vertical align centre</a></li>
+                    <li><a href="#toolsAlignCentre">Align centre</a></li>
                     <li><a href="#toolsRemoveListStyles">Remove list styles</a></li>
                     <li><a href="#toolsRemoveLinkStyles">Remove link styles</a></li>
                     <li><a href="#toolsClickable">Clickable</a></li>
@@ -793,9 +793,10 @@ ul.lg {
 @include clearfix;
 </pre></figure>
 <br>
-<p id="toolsVAlign">Vertically align centre using flexbox:</p>
+<p id="toolsAlignCentre">Align centre using flexbox:</p>
 <figure class="figure-box"><pre>
-@include v-align;
+@include align-centre;
+@include v-align-centre;
 </pre></figure>
 <br>
 <p id="toolsRemoveListStyles">Removes default list styling:</p>

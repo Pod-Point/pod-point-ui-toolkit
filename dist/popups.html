@@ -24,7 +24,7 @@
 	<![endif]-->
 
 	<div class="global-wrapper">
-		<div data-page="popup" class="demo-page-content">
+		<div data-page="popups" class="demo-page-content">
 
     <div class="pos-rel">
         <div class="demo-fixed-sidebar bs-r-light bg-white p-b-lg">
@@ -59,7 +59,7 @@
                     <li><a class="nav-link nav-link--labels" href="labels.html">Labels</a></li>
                     <li><a class="nav-link nav-link--lists" href="lists.html">Lists</a></li>
                     <li><a class="nav-link nav-link--modals" href="modals.html">Modals</a></li>
-                    <li><a class="nav-link nav-link--popup" href="popup.html">Popup</a></li>
+                    <li><a class="nav-link nav-link--popups" href="popups.html">Popups</a></li>
                     <li><a class="nav-link nav-link--tables" href="tables.html">Tables</a></li>
                     <li><a class="nav-link nav-link--tooltips" href="tooltips.html">Tooltips</a></li>
                     <li><a class="nav-link nav-link--typography" href="typography.html">Typography</a></i></li>
@@ -77,7 +77,7 @@
 
 
         <!-- REQUIRED FILES -->
-        <section id="confirmRequired">
+        <section id="popupRequired">
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Required files</h3>
@@ -92,41 +92,96 @@
         </section>
 
 
-        <!-- CONFIRM POPUP -->
-        <section id="confirmMarkup">
+        <!-- POPUP MARKUP -->
+        <section id="popupMarkup">
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>The markup</h3>
 
                     <p>The box wrapping element requires an ID eg <code>#popupExample</code> to be targeted, the two classes <code>.popup</code> and <code>.hidden</code>, and the javascript module to be applied <code>data-js-module="toggleElement"</code></p>
 
-                    <p>The box itself required the class <code>.popup__box</code> and a modifying class can be added to create a wider box <code>.popup__box--lg</code></p>
+                    <p>The box itself required the class <code>.popup__box</code></P>
 
                     <p>To trigger opening the popup use the 'data-open-el' attribute and ID of the box <code>data-open-el="popupExample"</code></p>
 
                     <p>To trigger closing the popup use the 'data-close-el' attribute and ID of the box <code>data-close-el="popupExample"</code></p>
 
+                    <h4>Box sizes</h4>
+
+                    <p>Modifying classes can be added to create size variations <code>.popup__box--xs</code>, <code>.popup__box--sm</code>, <code>.popup__box--lg</code>, <code>.popup__box--xl</code>.</p>
+                </div>
+            </header>
+        </section>
+
+
+        <!-- POPUP CONFIRM -->
+        <section id="popupConfirm">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h4>Popup box - Confirm</h4>
+                    <p>The example below illustrates how the popup could be used as a confirm message box.</p>
+
 <figure class="figure-box figure-box--dark figure-box--max-height-md">
 <pre>
-&#x3C;button type=&#x22;button&#x22; class=&#x22;btn&#x22; data-open-el=&#x22;popupExample&#x22;&#x3E;Open popup&#x3C;/button&#x3E;
+&#x3C;button type=&#x22;button&#x22; class=&#x22;btn&#x22; data-open-el=&#x22;popupConfirm&#x22;&#x3E;Open popup&#x3C;/button&#x3E;
 
-&#x3C;div id=&#x22;popupExample&#x22; class=&#x22;popup hidden&#x22; data-js-module=&#x22;toggleElement&#x22;&#x3E;
-    &#x3C;div class=&#x22;confirm-popup__box&#x22;&#x3E;
+&#x3C;div id=&#x22;popupConfirm&#x22; class=&#x22;popup hidden&#x22; data-js-module=&#x22;toggleElement&#x22;&#x3E;
+    &#x3C;div class=&#x22;popup__box&#x22;&#x3E;
         &#x3C;p&#x3E;Hi, I am a popup box&#x3C;/p&#x3E;
-        &#x3C;button type=&#x22;button&#x22; class=&#x22;btn&#x22; data-close-el=&#x22;popupExample&#x22;&#x3E;Confirm&#x3C;/button&#x3E;
+        &#x3C;button type=&#x22;button&#x22; class=&#x22;btn&#x22; data-close-el=&#x22;popupConfirm&#x22;&#x3E;Confirm&#x3C;/button&#x3E;
     &#x3C;/div&#x3E;
 &#x3C;/div&#x3E;
 </pre>
 </figure>
+                <div class="container">
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <button type="button" class="btn" data-open-el="popupConfirm">Open popup</button>
+                </div>
+            </div>
+        </section>
 
+
+        <!-- POPUP PRODUCT -->
+        <section id="popupProduct">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h4>Popup box - Product</h4>
+                    <p>The example below illustrates how the popup could be used as a popup to show details of a product.</p>
+                    <p>This is a bit more complex and includes a grid inside and lot of helper classes.</p>
+                    <p>For the Add the class <code>.popup__close</code> on the close button itself and a modifier class <code>.popup__box--with-close</code> to help with positioning.</p>
+
+<figure class="figure-box figure-box--dark figure-box--max-height-md">
+<pre>
+&#x3C;button type=&#x22;button&#x22; class=&#x22;btn&#x22; data-open-el=&#x22;popupProduct&#x22;&#x3E;Open popup&#x3C;/button&#x3E;
+
+&#x3C;div id=&#x22;popupProduct&#x22; class=&#x22;popup hidden&#x22; data-js-module=&#x22;toggleElement&#x22;&#x3E;
+    &#x3C;div class=&#x22;popup__box popup__box--lg popup__box--with-close overflow-hidden&#x22;&#x3E;
+        &#x3C;button type=&#x22;button&#x22; class=&#x22;popup__close&#x22; data-close-el=&#x22;popupProduct&#x22;&#x3E;&#x3C;i class=&#x22;icon&#x22;&#x3E;[SVG CROSS ICON]&#x3C;/i&#x3E;&#x3C;/button&#x3E;
+        &#x3C;div class=&#x22;grid grid--gutter-none&#x22;&#x3E;
+            &#x3C;div class=&#x22;grid__col grid__col-md-6 p-a-resp-lg align-centre&#x22;&#x3E;
+                &#x3C;img class=&#x22;width-100 max-width-sm&#x22; src=&#x22;https://unsplash.it/300/300&#x22; alt=&#x22;Placeholder image&#x22;&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;grid__col grid__col-md-6 bg-light-grey p-a-resp-lg&#x22;&#x3E;
+                &#x3C;h3&#x3E;Donec ut ipsum&#x3C;/h3&#x3E;
+                &#x3C;p&#x3E;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac convallis arcu. Integer at tellus velit. Etiam placerat nunc eros, vel tincidunt erat dapibus in. Curabitur ultrices sagittis elit, sed porta sem bibendum nec.&#x3C;/p&#x3E;
+                &#x3C;ul class=&#x22;list--featured--ticks&#x22;&#x3E;
+                    &#x3C;li&#x3E;Nunc non sapien ac erat vehicula suscipit&#x3C;/li&#x3E;
+                    &#x3C;li&#x3E;Curabitur sit amet enim odio&#x3C;/li&#x3E;
+                    &#x3C;li&#x3E;Fusce cursus eu enim nec venenatis&#x3C;/li&#x3E;
+                &#x3C;/ul&#x3E;
+            &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</pre>
+</figure>
                 </div>
             </header>
             <div class="content-block">
                 <div class="container">
-                    <div class="btns-container">
-                        <button type="button" class="btn" data-open-el="popupConfirm">Open confirm popup</button>
-                        <button type="button" class="btn" data-open-el="popupProduct">Open product popup</button>
-                    </div>
+                    <button type="button" class="btn" data-open-el="popupProduct">Open popup</button>
                 </div>
             </div>
         </section>
@@ -134,27 +189,24 @@
         <div id="popupConfirm" class="popup hidden" data-js-module="toggleElement">
             <div class="popup__box popup__box--sm p-a-lg text-centre">
                 <p>Hi, I am a confirm style popup box</p>
-                <div class="btns-container btns-container--inline">
-                    <button type="button" class="btn" data-close-el="popupConfirm">Confirm</button>
-                    <button type="button" class="btn btn--tertiary" data-close-el="popupConfirm">Cancel</button>
-                </div>
+                <button type="button" class="btn" data-close-el="popupConfirm">Confirm</button>
             </div>
         </div>
 
         <div id="popupProduct" class="popup hidden" data-js-module="toggleElement">
-            <div class="popup__box popup__box--lg p-a-none overflow-hidden">
-                <button type="button" class="pos-abs pin-top-right m-t-md m-r-md" data-close-el="popupProduct"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M281 250.6L472.4 59.2c8.7-8.7 8.7-22.7 0-31.4s-22.7-8.7-31.4 0L249.7 219.2 58.3 27.9c-8.7-8.7-22.7-8.7-31.4 0s-8.7 22.7 0 31.4l191.4 191.4L26.9 442c-8.7 8.7-8.7 22.7 0 31.4 4.4 4.4 10 6.5 15.7 6.5s11.3-2.1 15.7-6.5L249.7 282l191.4 191.4c4.4 4.4 10 6.5 15.7 6.5 5.7 0 11.3-2.1 15.7-6.5 8.7-8.7 8.7-22.7 0-31.4L281 250.6z"/></svg></i></button>
+            <div class="popup__box popup__box--lg popup__box--with-close overflow-hidden">
+                <button type="button" class="popup__close" data-close-el="popupProduct"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M281 250.6L472.4 59.2c8.7-8.7 8.7-22.7 0-31.4s-22.7-8.7-31.4 0L249.7 219.2 58.3 27.9c-8.7-8.7-22.7-8.7-31.4 0s-8.7 22.7 0 31.4l191.4 191.4L26.9 442c-8.7 8.7-8.7 22.7 0 31.4 4.4 4.4 10 6.5 15.7 6.5s11.3-2.1 15.7-6.5L249.7 282l191.4 191.4c4.4 4.4 10 6.5 15.7 6.5 5.7 0 11.3-2.1 15.7-6.5 8.7-8.7 8.7-22.7 0-31.4L281 250.6z"/></svg></i></button>
                 <div class="grid grid--gutter-none">
-                    <div class="grid__col grid__col-md-6 p-a-resp-lg">
-                        HJello
+                    <div class="grid__col grid__col-md-6 p-a-resp-lg align-centre">
+                        <img class="width-100 max-width-sm" src="https://unsplash.it/300/300" alt="Placeholder image">
                     </div>
                     <div class="grid__col grid__col-md-6 bg-light-grey p-a-resp-lg">
-                        <h3>Best product</h3>
-                        <p>This product is amazing because of the following reasons...</p>
+                        <h3>Donec ut ipsum</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac convallis arcu. Integer at tellus velit. Etiam placerat nunc eros, vel tincidunt erat dapibus in. Curabitur ultrices sagittis elit, sed porta sem bibendum nec.</p>
                         <ul class="list--featured--ticks">
-                            <li>It has excellent features</li>
-                            <li>All the mod cons</li>
-                            <li>Great assets</li>
+                            <li>Nunc non sapien ac erat vehicula suscipit</li>
+                            <li>Curabitur sit amet enim odio</li>
+                            <li>Fusce cursus eu enim nec venenatis</li>
                         </ul>
                     </div>
                 </div>

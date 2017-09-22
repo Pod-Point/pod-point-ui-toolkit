@@ -41,7 +41,8 @@
     }
 
     &__panel {
-        @include horizontal-spacing;
+        @include p-h-resp;
         @include padding($modal-panel-v-spacing null);
     }
 }
+
