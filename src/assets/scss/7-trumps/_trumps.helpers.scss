@@ -41,12 +41,12 @@
 }
 
 // Uses display flex to centre align content
-.align-centre {
-    @include align-centre;
+.align-content-centre {
+    @include align-content-centre;
 }
 
-.v-align-centre {
-    @include v-align-centre;
+.v-align-content-centre {
+    @include v-align-content-centre;
 }
 
 // Styles element to appear clickable

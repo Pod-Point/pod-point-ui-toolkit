@@ -438,9 +438,6 @@ img {
   .dl dd {
     margin: 0; }
 
-.grid-wrap {
-  overflow: hidden; }
-
 .grid {
   display: -ms-flexbox;
   display: flex;
@@ -2592,7 +2589,7 @@ textarea.form__control {
   -ms-transform: scaleY(-1);
       transform: scaleY(-1); }
 
-.align-centre {
+.align-content-centre {
   -ms-flex-align: center;
       align-items: center;
   display: -ms-flexbox;
@@ -2600,7 +2597,7 @@ textarea.form__control {
   -ms-flex-pack: center;
       justify-content: center; }
 
-.v-align-centre {
+.v-align-content-centre {
   -ms-flex-align: center;
       align-items: center;
   display: -ms-flexbox;

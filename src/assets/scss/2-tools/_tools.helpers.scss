@@ -11,15 +11,15 @@
     }
 }
 
-// Align centre with flexbox
-@mixin align-centre {
+// Align centre content with flexbox
+@mixin align-content-centre {
     align-items: center;
     display: flex;
     justify-content: center;
 }
 
-// Vertically align centre with flexbox
-@mixin v-align-centre {
+// Vertically align content centre with flexbox
+@mixin v-align-content-centre {
     align-items: center;
     display: flex;
 }

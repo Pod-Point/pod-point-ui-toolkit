@@ -3,7 +3,7 @@
 // =============================================================================
 
 .icon {
-    @include align-centre;
+    @include align-content-centre;
 
     > svg,
     > .icon__img {
