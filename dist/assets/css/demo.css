@@ -42,7 +42,8 @@ body {
   padding-left: 250px; }
   .demo-container-with-sidebar .container {
     margin-left: 0; }
-  .demo-container-with-sidebar .hero .container {
+  .demo-container-with-sidebar .hero .container,
+  .demo-container-with-sidebar .modal .container {
     margin-left: auto; }
 
 .demo-fixed-sidebar {
@@ -102,9 +103,6 @@ body {
   color: #8cc63f; }
 
 [data-page='cards'] .nav-link--cards {
-  color: #8cc63f; }
-
-[data-page='popups'] .nav-link--popups {
   color: #8cc63f; }
 
 [data-page='forms'] .nav-link--forms {

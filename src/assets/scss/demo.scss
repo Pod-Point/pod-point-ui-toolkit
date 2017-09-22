@@ -36,7 +36,8 @@ body {
         margin-left: 0;
     }
 
-    .hero {
+    .hero,
+    .modal {
         .container {
             margin-left: auto;
         }
@@ -80,7 +81,6 @@ $pages: (
     'alerts',
     'buttons',
     'cards',
-    'popups',
     'forms',
     'grid',
     'heros',

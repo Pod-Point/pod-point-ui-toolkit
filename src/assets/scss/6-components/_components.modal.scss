@@ -2,47 +2,50 @@
 //  COMPONENTS - MODAL
 // =============================================================================
 
-.is-modal-open {
-    body {
-        overflow: hidden;
-    }
-}
-
 .modal {
     @include position(fixed, 0 0 0 0);
-    background-color: $transparent-very-dark-grey;
+    @include align-content-centre;
+    background-color: $transparent-grey;
     min-height: 100%;
     overflow-y: scroll;
     width: 100%;
     z-index: 101;
 
-    .modal__close {
-        @include position(absolute, $modal-close-t-offset-mobile $h-spacing-mobile null null);
-
-        @include screen-md-min {
-            @include position(absolute, $modal-close-t-offset $h-spacing null null);
-        }
-    }
-
     &__content {
-        @include container;
-        @include margin($modal-content-v-spacing-mobile null);
-        color: $white;
-        position: relative;
-        text-align: center;
-
-        @include screen-md-min {
-            @include margin($modal-content-v-spacing null);
-        }
-
-        &--narrow {
-            max-width: $modal-content-narrow;
-        }
+        margin: auto;
     }
 
-    &__panel {
-        @include p-h-resp;
-        @include padding($modal-panel-v-spacing null);
+    &__close {
+        @include clickable;
+    }
+
+    &__box {
+        background-color: $white;
+        border: $border-base;
+        border-radius: $border-radius-base;
+        box-shadow: $shadow-floating;
+        margin: auto;
+        max-width: $popup-box-width-md;
+        position: relative;
+        z-index: auto;
+
+        &--with-close {
+            padding-top: $space-sm * 2.5;
+
+            @include screen-md-min {
+                padding-top: 0;
+            }
+        }
+
+        .modal__close {
+            @include position(absolute, $space-sm $space-sm null null);
+            width: $icon-size-sm;
+
+            @include screen-md-min {
+                right: $space-md;
+                top: $space-md;
+                width: $icon-size-md;
+            }
+        }
     }
 }
-

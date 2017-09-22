@@ -62,27 +62,23 @@
 	
 	__webpack_require__(6);
 	
-	var _modal = __webpack_require__(7);
-	
-	var _modal2 = _interopRequireDefault(_modal);
-	
-	var _ajaxForm = __webpack_require__(9);
+	var _ajaxForm = __webpack_require__(7);
 	
 	var _ajaxForm2 = _interopRequireDefault(_ajaxForm);
 	
-	var _formFields = __webpack_require__(19);
+	var _formFields = __webpack_require__(17);
 	
 	var _formFields2 = _interopRequireDefault(_formFields);
 	
-	var _toggleAccordionPanel = __webpack_require__(21);
+	var _toggleAccordionPanel = __webpack_require__(20);
 	
 	var _toggleAccordionPanel2 = _interopRequireDefault(_toggleAccordionPanel);
 	
-	var _toggleElement = __webpack_require__(22);
+	var _toggleElement = __webpack_require__(21);
 	
 	var _toggleElement2 = _interopRequireDefault(_toggleElement);
 	
-	var _accordion = __webpack_require__(23);
+	var _accordion = __webpack_require__(22);
 	
 	var _accordion2 = _interopRequireDefault(_accordion);
 	
@@ -94,7 +90,6 @@
 	    (0, _moduleLoader2.default)({
 	        formFields: _formFields2.default,
 	        domModules: (0, _domModuleLoader2.default)({
-	            modal: _modal2.default,
 	            ajaxForm: _ajaxForm2.default,
 	            toggleAccordionPanel: _toggleAccordionPanel2.default,
 	            toggleElement: _toggleElement2.default,
@@ -770,410 +765,13 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domOps = __webpack_require__(5);
+	var _domDelegate = __webpack_require__(8);
 	
-	var _utilities = __webpack_require__(8);
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	var instances = [];
-	var MODAL_OPEN = 'is-modal-open';
-	
-	var Modal = function () {
-	
-	    /**
-	     * Creates a new modal window
-	     *
-	     * @param {element}
-	     */
-	    function Modal(element) {
-	        _classCallCheck(this, Modal);
-	
-	        this.openButton = element;
-	        var modalID = this.openButton.getAttribute('data-modal');
-	        this.modal = document.querySelector('#' + modalID);
-	        this.closeButton = this.modal.querySelector('.modal__close');
-	        this.videoWrapper = this.modal.querySelector('.video-wrapper');
-	        this.bindEvents();
-	    }
-	
-	    /**
-	     * Binds the event listeners from the elements
-	     */
-	
-	
-	    _createClass(Modal, [{
-	        key: 'bindEvents',
-	        value: function bindEvents() {
-	            var _this = this;
-	
-	            this.openButton.addEventListener('click', function () {
-	                _this.openModal();
-	            });
-	
-	            this.closeButton.addEventListener('click', function (event) {
-	                event.preventDefault();
-	                _this.closeModal();
-	            });
-	
-	            this.modal.addEventListener('click', function (event) {
-	                if (event.target === _this.modal) {
-	                    _this.closeModal();
-	                }
-	            });
-	
-	            document.body.addEventListener('keyup', function (event) {
-	                if (event.keyCode === 27) {
-	                    _this.closeModal();
-	                }
-	            });
-	        }
-	
-	        /**
-	         * Handle the modal opening
-	         *
-	         * @param {event}
-	         */
-	
-	    }, {
-	        key: 'doModal',
-	        value: function doModal(event) {
-	            event.preventDefault();
-	
-	            if ((0, _utilities.isVisible)(this.modal)) {
-	                this.closeModal();
-	            } else {
-	                this.openModal();
-	            }
-	        }
-	
-	        /**
-	         * Handle the modal opening
-	         */
-	
-	    }, {
-	        key: 'openModal',
-	        value: function openModal() {
-	            (0, _domOps.addClass)(document.documentElement, MODAL_OPEN);
-	            (0, _utilities.show)(this.modal);
-	
-	            var overlay = document.createElement('div');
-	            overlay.className = 'modal-overlay';
-	            document.body.appendChild(overlay);
-	        }
-	
-	        /**
-	         * Handle the modal closing
-	         */
-	
-	    }, {
-	        key: 'closeModal',
-	        value: function closeModal() {
-	            (0, _domOps.removeClass)(document.documentElement, MODAL_OPEN);
-	            (0, _utilities.hide)(this.modal);
-	
-	            if (this.videoWrapper) {
-	                var wrapperId = this.videoWrapper.getAttribute('id');
-	                if (window[wrapperId].pause) {
-	                    window[wrapperId].pause();
-	                } else if (window[wrapperId].pauseVideo) {
-	                    window[wrapperId].pauseVideo();
-	                }
-	            }
-	
-	            var overlay = document.querySelector('.modal-overlay');
-	            if (overlay !== null) {
-	                document.body.removeChild(overlay);
-	            }
-	        }
-	
-	        /**
-	         * Unbinds the event listeners from the elements
-	         */
-	
-	    }, {
-	        key: 'unbindEvents',
-	        value: function unbindEvents() {
-	            this.openListener.destroy();
-	            this.closeListener.destroy();
-	            this.overlayListener.destroy();
-	            this.windowListener.destroy();
-	        }
-	    }]);
-	
-	    return Modal;
-	}();
-	
-	exports.default = {
-	    init: function init(element) {
-	        instances.push(new Modal(element));
-	    },
-	
-	    destroy: function destroy() {
-	        instances.forEach(function (instance) {
-	            return instance.unbindEvents();
-	        });
-	        instances = [];
-	    }
-	};
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.show = show;
-	exports.hide = hide;
-	exports.isHidden = isHidden;
-	exports.isVisible = isVisible;
-	exports.disableOrEnableButton = disableOrEnableButton;
-	exports.addItemToCookie = addItemToCookie;
-	exports.readItemFromCookie = readItemFromCookie;
-	exports.deleteItemFromCookie = deleteItemFromCookie;
-	exports.openPanel = openPanel;
-	exports.closePanel = closePanel;
-	exports.allRadiosSelected = allRadiosSelected;
-	exports.aRadioContains = aRadioContains;
-	exports.getRandomInt = getRandomInt;
-	exports.roundNumberTo = roundNumberTo;
-	exports.registerEvent = registerEvent;
-	exports.removeEvents = removeEvents;
-	
-	var _domOps = __webpack_require__(5);
-	
-	var IS_OPEN = 'is-open';
-	
-	/**
-	 * Remove hidden class from element, showing it via CSS
-	 *
-	 * @param {element}
-	 */
-	function show(element) {
-	    element.classList.remove('hidden');
-	}
-	
-	/**
-	 * Apply hidden class to element, hiding it via CSS
-	 *
-	 * @param {element}
-	 */
-	function hide(element) {
-	    element.classList.add('hidden');
-	}
-	
-	/**
-	 * Check if an element is hidden (by CSS)
-	 *
-	 * @param {element}
-	 * @returns {boolean} is hidden
-	 */
-	function isHidden(element) {
-	    return element.classList.contains('hidden');
-	}
-	
-	/**
-	 * Check if an element is visible (isn't hidden by CSS)
-	 *
-	 * @param {element}
-	 * @returns {boolean} is visible
-	 */
-	function isVisible(element) {
-	    return !isHidden(element);
-	}
-	
-	/**
-	 * Disable or enable button element
-	 *
-	 * @param {element} button
-	 * @param {boolean} disable
-	 */
-	function disableOrEnableButton(element, disable) {
-	    var button = element;
-	    if (disable) {
-	        button.disabled = true;
-	        button.classList.add('is-disabled');
-	    } else {
-	        button.disabled = false;
-	        button.classList.remove('is-disabled');
-	    }
-	}
-	
-	/**
-	 * Add item to cookie
-	 *
-	 * @param {string} name of cookie
-	 * @param {obj} value of cookie
-	 */
-	function addItemToCookie(name, value) {
-	    var cookie = [name + '=' + JSON.stringify(value)];
-	    document.cookie = cookie;
-	}
-	
-	/**
-	 * Read item from cookie
-	 *
-	 * @param {string} name of cookie
-	 * @returns {obj} result
-	 */
-	function readItemFromCookie(name) {
-	    var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
-	    if (result) result = JSON.parse(result[1]);
-	    return result;
-	}
-	
-	/**
-	 * Delete item from cookie
-	 *
-	 * @param {string} name of cookie
-	 */
-	function deleteItemFromCookie(name) {
-	    var domain = window.location.host.toString();
-	    var expiry = '01-Jan-1970 00:00:01 GMT';
-	    document.cookie = name + '=; expires=' + expiry + '; path=/; domain=.' + domain;
-	}
-	
-	/**
-	 * Open panel
-	 *
-	 * @param {element} panel
-	 */
-	function openPanel(panel) {
-	    var panelId = panel.getAttribute('id');
-	    var toggleIcon = document.querySelector('[data-toggle-icon="' + panelId + '"]');
-	
-	    panel.classList.add(IS_OPEN);
-	    if (toggleIcon) {
-	        toggleIcon.classList.add('rotate');
-	    }
-	}
-	
-	/**
-	 * Close panel
-	 *
-	 * @param {element} panel
-	 */
-	function closePanel(panel) {
-	    var panelId = panel.getAttribute('id');
-	    var toggleIcon = document.querySelector('[data-toggle-icon="' + panelId + '"]');
-	
-	    panel.classList.remove(IS_OPEN);
-	    if (toggleIcon) {
-	        toggleIcon.classList.remove('rotate');
-	    }
-	}
-	
-	/**
-	 * All radios selected
-	 *
-	 * @param {nodeList} radio wrap elements
-	 * @return {boolean} all radios have been selected
-	 */
-	function allRadiosSelected(radiosWraps) {
-	    var numberOfRadioGroups = (0, _domOps.nodesToArray)(radiosWraps).length;
-	    var numberOfRadiosSelected = 0;
-	
-	    radiosWraps.forEach(function (radiosWrap) {
-	        var checkedRadios = (0, _domOps.nodesToArray)(radiosWrap.querySelectorAll('input[type="radio"]:checked'));
-	        if (checkedRadios.length === 1) {
-	            numberOfRadiosSelected += 1;
-	        }
-	    });
-	    return numberOfRadioGroups === numberOfRadiosSelected;
-	}
-	
-	/**
-	 * A radio contains a class
-	 *
-	 * @param {nodeList} radios
-	 * @param {string} the class
-	 * @return {boolean} a radio contains the specified class
-	 */
-	function aRadioContains(radios, specifiedClass) {
-	    var containsClass = false;
-	    radios.forEach(function (radio) {
-	        if (radio.checked) {
-	            if (radio.classList.contains(specifiedClass)) {
-	                containsClass = true;
-	            }
-	        }
-	    });
-	    return containsClass;
-	}
-	
-	/**
-	 * Get random integar
-	 *
-	 * @param {integar} min
-	 * @param {integar} max
-	 * @return {integar} a random integar between the specified min and max
-	 */
-	function getRandomInt(min, max) {
-	    return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
-	
-	/**
-	 * Round number to
-	 *
-	 * @param {integar} number
-	 * @param {integar} number to round to
-	 * @return {integar} a number rounded to the specified number
-	 */
-	function roundNumberTo(num, roundTo) {
-	    var resto = num % roundTo;
-	    return resto <= roundTo / 2 ? num - resto : num + roundTo - resto;
-	}
-	
-	/**
-	 * Register an event in order to later on remove the event
-	 *
-	 * @param {array} events array
-	 * @param {element} element
-	 * @param {string} event name
-	 * @param {func} listener
-	 */
-	function registerEvent(eventsArray, element, eventName, listener) {
-	    eventsArray.push({ element: element, eventName: eventName, listener: listener });
-	}
-	
-	/**
-	 * Remove the events from the events array
-	 *
-	 * @param {array} events array
-	 * @param {callback} callback
-	 */
-	function removeEvents(eventsArray) {
-	    eventsArray.forEach(function (eventObj) {
-	        var element = eventObj.element,
-	            eventName = eventObj.eventName,
-	            listener = eventObj.listener;
-	
-	        element.removeEventListener(eventName, listener);
-	    });
-	}
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _domDelegate = __webpack_require__(10);
-	
-	var _superagent = __webpack_require__(12);
+	var _superagent = __webpack_require__(10);
 	
 	var _superagent2 = _interopRequireDefault(_superagent);
 	
-	var _progressButton = __webpack_require__(18);
+	var _progressButton = __webpack_require__(16);
 	
 	var _progressButton2 = _interopRequireDefault(_progressButton);
 	
@@ -1272,7 +870,7 @@
 	};
 
 /***/ }),
-/* 10 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*jshint browser:true, node:true*/
@@ -1287,7 +885,7 @@
 	 * @copyright The Financial Times Limited [All Rights Reserved]
 	 * @license MIT License (see LICENSE.txt)
 	 */
-	var Delegate = __webpack_require__(11);
+	var Delegate = __webpack_require__(9);
 	
 	module.exports = function(root) {
 	  return new Delegate(root);
@@ -1297,7 +895,7 @@
 
 
 /***/ }),
-/* 11 */
+/* 9 */
 /***/ (function(module, exports) {
 
 	/*jshint browser:true, node:true*/
@@ -1732,17 +1330,17 @@
 
 
 /***/ }),
-/* 12 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Module dependencies.
 	 */
 	
-	var Emitter = __webpack_require__(13);
-	var reduce = __webpack_require__(14);
-	var requestBase = __webpack_require__(15);
-	var isObject = __webpack_require__(16);
+	var Emitter = __webpack_require__(11);
+	var reduce = __webpack_require__(12);
+	var requestBase = __webpack_require__(13);
+	var isObject = __webpack_require__(14);
 	
 	/**
 	 * Root reference for iframes.
@@ -1791,7 +1389,7 @@
 	 * Expose `request`.
 	 */
 	
-	var request = module.exports = __webpack_require__(17).bind(null, Request);
+	var request = module.exports = __webpack_require__(15).bind(null, Request);
 	
 	/**
 	 * Determine XHR.
@@ -2815,7 +2413,7 @@
 
 
 /***/ }),
-/* 13 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
@@ -2984,7 +2582,7 @@
 
 
 /***/ }),
-/* 14 */
+/* 12 */
 /***/ (function(module, exports) {
 
 	
@@ -3013,13 +2611,13 @@
 	};
 
 /***/ }),
-/* 15 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Module of mixed-in functions shared between node and client code
 	 */
-	var isObject = __webpack_require__(16);
+	var isObject = __webpack_require__(14);
 	
 	/**
 	 * Clear previous timeout.
@@ -3185,7 +2783,7 @@
 
 
 /***/ }),
-/* 16 */
+/* 14 */
 /***/ (function(module, exports) {
 
 	/**
@@ -3204,7 +2802,7 @@
 
 
 /***/ }),
-/* 17 */
+/* 15 */
 /***/ (function(module, exports) {
 
 	// The node and browser modules expose versions of this with the
@@ -3242,7 +2840,7 @@
 
 
 /***/ }),
-/* 18 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3313,7 +2911,7 @@
 	};
 
 /***/ }),
-/* 19 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3324,13 +2922,13 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domDelegate = __webpack_require__(10);
+	var _domDelegate = __webpack_require__(8);
 	
 	var _domOps = __webpack_require__(5);
 	
-	var _validationRules = __webpack_require__(20);
+	var _validationRules = __webpack_require__(18);
 	
-	var _utilities = __webpack_require__(8);
+	var _utilities = __webpack_require__(19);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -3535,7 +3133,7 @@
 	};
 
 /***/ }),
-/* 20 */
+/* 18 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -3568,7 +3166,245 @@
 	}
 
 /***/ }),
-/* 21 */
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.show = show;
+	exports.hide = hide;
+	exports.isHidden = isHidden;
+	exports.isVisible = isVisible;
+	exports.disableOrEnableButton = disableOrEnableButton;
+	exports.addItemToCookie = addItemToCookie;
+	exports.readItemFromCookie = readItemFromCookie;
+	exports.deleteItemFromCookie = deleteItemFromCookie;
+	exports.openPanel = openPanel;
+	exports.closePanel = closePanel;
+	exports.allRadiosSelected = allRadiosSelected;
+	exports.aRadioContains = aRadioContains;
+	exports.getRandomInt = getRandomInt;
+	exports.roundNumberTo = roundNumberTo;
+	exports.registerEvent = registerEvent;
+	exports.removeEvents = removeEvents;
+	
+	var _domOps = __webpack_require__(5);
+	
+	var IS_OPEN = 'is-open';
+	
+	/**
+	 * Remove hidden class from element, showing it via CSS
+	 *
+	 * @param {element}
+	 */
+	function show(element) {
+	    element.classList.remove('hidden');
+	}
+	
+	/**
+	 * Apply hidden class to element, hiding it via CSS
+	 *
+	 * @param {element}
+	 */
+	function hide(element) {
+	    element.classList.add('hidden');
+	}
+	
+	/**
+	 * Check if an element is hidden (by CSS)
+	 *
+	 * @param {element}
+	 * @returns {boolean} is hidden
+	 */
+	function isHidden(element) {
+	    return element.classList.contains('hidden');
+	}
+	
+	/**
+	 * Check if an element is visible (isn't hidden by CSS)
+	 *
+	 * @param {element}
+	 * @returns {boolean} is visible
+	 */
+	function isVisible(element) {
+	    return !isHidden(element);
+	}
+	
+	/**
+	 * Disable or enable button element
+	 *
+	 * @param {element} button
+	 * @param {boolean} disable
+	 */
+	function disableOrEnableButton(element, disable) {
+	    var button = element;
+	    if (disable) {
+	        button.disabled = true;
+	        button.classList.add('is-disabled');
+	    } else {
+	        button.disabled = false;
+	        button.classList.remove('is-disabled');
+	    }
+	}
+	
+	/**
+	 * Add item to cookie
+	 *
+	 * @param {string} name of cookie
+	 * @param {obj} value of cookie
+	 */
+	function addItemToCookie(name, value) {
+	    var cookie = [name + '=' + JSON.stringify(value)];
+	    document.cookie = cookie;
+	}
+	
+	/**
+	 * Read item from cookie
+	 *
+	 * @param {string} name of cookie
+	 * @returns {obj} result
+	 */
+	function readItemFromCookie(name) {
+	    var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+	    if (result) result = JSON.parse(result[1]);
+	    return result;
+	}
+	
+	/**
+	 * Delete item from cookie
+	 *
+	 * @param {string} name of cookie
+	 */
+	function deleteItemFromCookie(name) {
+	    var domain = window.location.host.toString();
+	    var expiry = '01-Jan-1970 00:00:01 GMT';
+	    document.cookie = name + '=; expires=' + expiry + '; path=/; domain=.' + domain;
+	}
+	
+	/**
+	 * Open panel
+	 *
+	 * @param {element} panel
+	 */
+	function openPanel(panel) {
+	    var panelId = panel.getAttribute('id');
+	    var toggleIcon = document.querySelector('[data-toggle-icon="' + panelId + '"]');
+	
+	    panel.classList.add(IS_OPEN);
+	    if (toggleIcon) {
+	        toggleIcon.classList.add('rotate');
+	    }
+	}
+	
+	/**
+	 * Close panel
+	 *
+	 * @param {element} panel
+	 */
+	function closePanel(panel) {
+	    var panelId = panel.getAttribute('id');
+	    var toggleIcon = document.querySelector('[data-toggle-icon="' + panelId + '"]');
+	
+	    panel.classList.remove(IS_OPEN);
+	    if (toggleIcon) {
+	        toggleIcon.classList.remove('rotate');
+	    }
+	}
+	
+	/**
+	 * All radios selected
+	 *
+	 * @param {nodeList} radio wrap elements
+	 * @return {boolean} all radios have been selected
+	 */
+	function allRadiosSelected(radiosWraps) {
+	    var numberOfRadioGroups = (0, _domOps.nodesToArray)(radiosWraps).length;
+	    var numberOfRadiosSelected = 0;
+	
+	    radiosWraps.forEach(function (radiosWrap) {
+	        var checkedRadios = (0, _domOps.nodesToArray)(radiosWrap.querySelectorAll('input[type="radio"]:checked'));
+	        if (checkedRadios.length === 1) {
+	            numberOfRadiosSelected += 1;
+	        }
+	    });
+	    return numberOfRadioGroups === numberOfRadiosSelected;
+	}
+	
+	/**
+	 * A radio contains a class
+	 *
+	 * @param {nodeList} radios
+	 * @param {string} the class
+	 * @return {boolean} a radio contains the specified class
+	 */
+	function aRadioContains(radios, specifiedClass) {
+	    var containsClass = false;
+	    radios.forEach(function (radio) {
+	        if (radio.checked) {
+	            if (radio.classList.contains(specifiedClass)) {
+	                containsClass = true;
+	            }
+	        }
+	    });
+	    return containsClass;
+	}
+	
+	/**
+	 * Get random integar
+	 *
+	 * @param {integar} min
+	 * @param {integar} max
+	 * @return {integar} a random integar between the specified min and max
+	 */
+	function getRandomInt(min, max) {
+	    return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	
+	/**
+	 * Round number to
+	 *
+	 * @param {integar} number
+	 * @param {integar} number to round to
+	 * @return {integar} a number rounded to the specified number
+	 */
+	function roundNumberTo(num, roundTo) {
+	    var resto = num % roundTo;
+	    return resto <= roundTo / 2 ? num - resto : num + roundTo - resto;
+	}
+	
+	/**
+	 * Register an event in order to later on remove the event
+	 *
+	 * @param {array} events array
+	 * @param {element} element
+	 * @param {string} event name
+	 * @param {func} listener
+	 */
+	function registerEvent(eventsArray, element, eventName, listener) {
+	    eventsArray.push({ element: element, eventName: eventName, listener: listener });
+	}
+	
+	/**
+	 * Remove the events from the events array
+	 *
+	 * @param {array} events array
+	 * @param {callback} callback
+	 */
+	function removeEvents(eventsArray) {
+	    eventsArray.forEach(function (eventObj) {
+	        var element = eventObj.element,
+	            eventName = eventObj.eventName,
+	            listener = eventObj.listener;
+	
+	        element.removeEventListener(eventName, listener);
+	    });
+	}
+
+/***/ }),
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3579,11 +3415,11 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domDelegate = __webpack_require__(10);
+	var _domDelegate = __webpack_require__(8);
 	
 	var _domOps = __webpack_require__(5);
 	
-	var _utilities = __webpack_require__(8);
+	var _utilities = __webpack_require__(19);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -3771,7 +3607,7 @@
 	};
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3939,7 +3775,7 @@
 	};
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3950,7 +3786,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _domDelegate = __webpack_require__(10);
+	var _domDelegate = __webpack_require__(8);
 	
 	var _domOps = __webpack_require__(5);
 	
