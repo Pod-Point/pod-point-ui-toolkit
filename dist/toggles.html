@@ -24,7 +24,7 @@
 	<![endif]-->
 
 	<div class="global-wrapper">
-		<div data-page="inline-svg-icons" class="demo-page-content">
+		<div data-page="toggles" class="demo-page-content">
 
     <div class="pos-rel">
         <div class="demo-fixed-sidebar bs-r-light bg-white p-b-lg">
@@ -71,53 +71,134 @@
     <div class="demo-container-with-sidebar">
         <header class="content-block content-block--strip bg-primary">
             <div class="container">
-                <h2>Inline SVG icons</h2>
+                <h2>Toggles</h2>
+                <ul class="list--inline remove-link-styles font-weight-bold">
+                    <li><a href="#toggleStructure">Toggle structure</a></li>
+                    <li><a href="#toggleDisplay">Toggle display</a></li>
+                    <li><a href="#toggleFade">Toggle fade</a></li>
+                    <li><a href="#toggleSlide">Toggle slide</a></li>
+                </ul>
             </div>
         </header>
 
 
-        <!-- INLINE SVG ICONS -->
-        <section id="inlineIcon">
+        <!-- REQUIRED FILES -->
+        <section id="toggleRequired">
             <header class="content-block bg-light-grey">
                 <div class="container">
-                    <h3>Copying icons to your project</h3>
+                    <h3>Required files</h3>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p>SCSS files required: <code>_components.toggles.scss</code></p>
+                    <p>JS files required: <code>toggle-element.js</code></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="toggleStructure">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Toggle structure</h3>
+                    <p>The element to be toggled requires the data attribute <code>data-js-module="toggleElement"</code> which fires the creates a new instance of the JavaScript Toggle Element and an ID to target.</p>
+                    <p>The trigger/button to show and hide the element can be open, close or toggle by applying the following data attributes and including the ID as the value:
+                    <code>data-toggle-el</code>, <code>data-open-el</code>, <code>data-close-el</code>.</p>
+                    <p>The javascript toggles the class <code>.is-active</code> on the element, so the CSS can do the work of hiding and showing in various ways. Some are defined in the toolkit, however you can also define your own.</p>
+                </div>
+            </header>
+        </section>
+
+
+        <!-- TOGGLE -->
+        <section id="toggleDisplay">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Toggle</h3>
+                    <p>To create a basic toggle, the class <code>.toggle</code> can be applied to the element.</p>
+                    <p>Note: all this does is toggles display none/block.</p>
                 </div>
             </header>
 
             <div class="content-block">
                 <div class="container">
-                    <h4>1. Copy SVG icons to your project</h4>
-                    <p>Copy the contents of the folder named <code>icons</code> which contains the SVG icons used in the toolkit.</p>
-                    <p>The dist folder contains minified SVGs. Full file path is:</p>
-                    <p><code>path/to/node_modules/@pod-point/pod-point-ui-toolkit/dist/assets/img/icons/</code></p>
-                    <p class="demo-note">The toolkit will be continuously updated, therefore it is highly recommended to use a task runner to copy files over rather than manually.</p>
-                    <br>
-                    <h4>2. Make SVG icons inline</h4>
-                    <p>The SVGs can be used inline simply by changing the file extension. So depending on your templating language, you can rename the <code>.svg</code> to be <code>.html</code> or <code>.hbs</code> etc. and then use the file as an includes/partials.</p>
-                    <p>The gulp task <code>gulp-rename</code> is useful for this scenario.</p>
-                    <p class="demo-note">The toolkit will be continuously updated, therefore it is highly recommended to use a task runner to copy files over rather than manually.</p>
-                    <br>
+                    <button type="button" class="btn" data-toggle-el="toggleExample">Toggle element</button>
+
+                    <div class="pos-rel m-t-md">
+                        <div class="pos-abs">
+                            <div id="toggleExample" data-js-module="toggleElement" class="toggle">
+                                <div class="card max-width-md text-centre">
+                                    <p>
+                                        Donec quis luctus odio. Aenean nunc diam, tincidunt in est nec, tincidunt imperdiet lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec id nisi urna. Integer maximus dui eu ullamcorper scelerisque. Nunc augue sem, tempor in fringilla non, volutpat et nulla. Vivamus volutpat nisi metus. Nulla sed justo non urna eleifend semper at quis felis.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
 
-        <!-- ADD NEW ICONS -->
-        <section id="addIcons">
+        <!-- FADES -->
+        <section id="toggleFade">
             <header class="content-block bg-light-grey">
                 <div class="container">
-                    <h3>Add icons to the toolkit</h3>
+                    <h3>Toggle fade</h3>
+                    <p>To create a fade effect, the class <code>.toggle-fade</code> can be applied to the element.</p>
                 </div>
             </header>
 
             <div class="content-block">
                 <div class="container">
-                    <p>To add a new icon to the toolkit, drop the new icon in the src icons folder. Full file path is:</p>
-                    <p><code>path/to/node_modules/@pod-point/pod-point-ui-toolkit/src/assets/img/icons/</code></p>
-                    <p>Recompile by running <code>gulp</code></p>
+                    <button type="button" class="btn" data-toggle-el="toggleFadeExample">Toggle element</button>
+
+                    <div class="pos-rel m-t-md">
+                        <div class="pos-abs">
+                            <div id="toggleFadeExample" data-js-module="toggleElement" class="toggle-fade">
+                                <div class="card max-width-md text-centre">
+                                    <p>
+                                        Donec quis luctus odio. Aenean nunc diam, tincidunt in est nec, tincidunt imperdiet lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec id nisi urna. Integer maximus dui eu ullamcorper scelerisque. Nunc augue sem, tempor in fringilla non, volutpat et nulla. Vivamus volutpat nisi metus. Nulla sed justo non urna eleifend semper at quis felis.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+
+        <!-- SLIDES -->
+        <section id="toggleSlide">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Toggle slide</h3>
+                    <p>To create a slide down effect, the class <code>.toggle-slide</code> can be applied to the element.</p>
+                    <p>The CSS uses a max height to create the slide mechanism, therefore there are modifying classes available which use varying max heights: <code>.toggle-slide--sm</code>, <code>.toggle-slide--md</code>, <code>.toggle-slide--lg</code>.</p>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <button type="button" class="btn" data-toggle-el="toggleSlideExample">Toggle element</button>
+
+                    <div class="pos-rel m-t-md">
+                        <div class="pos-abs">
+                            <div id="toggleSlideExample" data-js-module="toggleElement" class="toggle-slide">
+                                <div class="card max-width-md text-centre">
+                                    <p>
+                                        Donec quis luctus odio. Aenean nunc diam, tincidunt in est nec, tincidunt imperdiet lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec id nisi urna. Integer maximus dui eu ullamcorper scelerisque. Nunc augue sem, tempor in fringilla non, volutpat et nulla. Vivamus volutpat nisi metus. Nulla sed justo non urna eleifend semper at quis felis.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </div>
 </div>
 

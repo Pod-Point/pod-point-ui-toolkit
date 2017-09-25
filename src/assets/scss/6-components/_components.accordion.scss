@@ -2,15 +2,11 @@
 //  COMPONENTS - ACCORDION
 // =============================================================================
 
+// sass-lint:disable nesting-depth
+
 .accordion {
     @include accordion-size($accordion-v-spacing-md);
     -webkit-tap-highlight-color: $transparent; // sass-lint:disable-line no-vendor-prefixes
-
-    &.grid-row {
-        .grid-col-4 {
-            @include margin(0 null);
-        }
-    }
 
     .accordion__toggle {
         @include padding(null 0);

@@ -37,7 +37,7 @@
                     <li><a class="nav-link nav-link--scss" href="scss.html">CSS/SCSS</a></li>
                     <li><a class="nav-link nav-link--css-bg-img" href="css-bg-img.html">CSS Background images</a></li>
                     <li><a class="nav-link nav-link--inline-svg-icons" href="inline-svg-icons.html">Inline SVG icons</a></li>
-                    <li><a class="nav-link nav-link--javascript" href="javascript.html">Javascript</a></li>
+                    <li><a class="nav-link nav-link--javascript" href="javascript.html">JavaScript</a></li>
                 </ul>
     
                 <h5>Helpers</h5>
@@ -60,6 +60,7 @@
                     <li><a class="nav-link nav-link--lists" href="lists.html">Lists</a></li>
                     <li><a class="nav-link nav-link--modals" href="modals.html">Modals</a></li>
                     <li><a class="nav-link nav-link--tables" href="tables.html">Tables</a></li>
+                    <li><a class="nav-link nav-link--toggles" href="toggles.html">Toggles</a></li>
                     <li><a class="nav-link nav-link--tooltips" href="tooltips.html">Tooltips</a></li>
                     <li><a class="nav-link nav-link--typography" href="typography.html">Typography</a></i></li>
                 </ul>
@@ -97,9 +98,11 @@
                 <div class="container">
                     <h3>The markup</h3>
 
-                    <p>The box wrapping element requires an ID eg <code>#modalExample</code> to be targeted, the two classes <code>.modal</code> and <code>.hidden</code>, and the javascript module to be applied <code>data-js-module="toggleElement"</code></p>
+                    <p>The box wrapping element requires an ID eg <code>#modalExample</code> to be targeted, the two classes <code>.modal</code> and <code>.toggle-fade</code>, and the javascript module to be applied <code>data-js-module="toggleElement"</code></p>
 
-                    <p>The inner element requires the class <code>.modal__content</code></p>
+                    <p>The modal itself should be soley for toggling, and an inner element is required with the class <code>.modal__bg</code> where the positioning, alignment, background colour etc is/can be applied.</p>
+
+                    <p>Another inner element is also required with the class <code>.modal__content</code> which is where the content can go.</p>
 
                     <p>To trigger opening the modal use the 'data-open-el' attribute and ID of the box <code>data-open-el="modalExample"</code></p>
 
@@ -124,11 +127,13 @@
 <pre>
 &#x3C;button type=&#x22;button&#x22; class=&#x22;btn&#x22; data-open-el=&#x22;modalConfirm&#x22;&#x3E;Open modal&#x3C;/button&#x3E;
 
-&#x3C;div id=&#x22;modalConfirm&#x22; class=&#x22;modal hidden&#x22; data-js-module=&#x22;toggleElement&#x22;&#x3E;
-    &#x3C;div class=&#x22;modal__content p-v-md container&#x22;&#x3E;
-        &#x3C;div class=&#x22;modal__box p-a-lg text-centre&#x22;&#x3E;
-            &#x3C;p&#x3E;[INSERT TEXT CONTENT]&#x3C;/p&#x3E;
-            &#x3C;button type=&#x22;button&#x22; class=&#x22;btn&#x22; data-close-el=&#x22;modalConfirm&#x22;&#x3E;Confirm&#x3C;/button&#x3E;
+&#x3C;div id=&#x22;modalConfirm&#x22; class=&#x22;modal toggle-fade&#x22; data-js-module=&#x22;toggleElement&#x22;&#x3E;
+    &#x3C;div class=&#x22;modal__bg&#x22;&#x3E;
+        &#x3C;div class=&#x22;modal__content p-v-md container&#x22;&#x3E;
+            &#x3C;div class=&#x22;modal__box p-a-lg text-centre&#x22;&#x3E;
+                &#x3C;p&#x3E;[INSERT TEXT CONTENT]&#x3C;/p&#x3E;
+                &#x3C;button type=&#x22;button&#x22; class=&#x22;btn&#x22; data-close-el=&#x22;modalConfirm&#x22;&#x3E;Confirm&#x3C;/button&#x3E;
+            &#x3C;/div&#x3E;
         &#x3C;/div&#x3E;
     &#x3C;/div&#x3E;
 &#x3C;/div&#x3E;
@@ -149,51 +154,57 @@
 
 
         <!-- HIDDEN MODALS -->
-        <div id="modalExample1" class="modal hidden" data-js-module="toggleElement">
-            <div class="modal__content p-v-md container">
-                <div class="modal__box p-a-lg text-centre">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque hendrerit tempus. Morbi eget enim quis nisl commodo aliquet eget sed quam. Morbi ut condimentum nisl. Nam elementum suscipit elit, ut consequat libero interdum.</p>
-                    <button type="button" class="btn" data-close-el="modalExample1">Confirm</button>
+        <div id="modalExample1" class="modal toggle-fade" data-js-module="toggleElement">
+            <div class="modal__bg">
+                <div class="modal__content p-v-md container">
+                    <div class="modal__box p-a-lg text-centre">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque hendrerit tempus. Morbi eget enim quis nisl commodo aliquet eget sed quam. Morbi ut condimentum nisl. Nam elementum suscipit elit, ut consequat libero interdum.</p>
+                        <button type="button" class="btn" data-close-el="modalExample1">Confirm</button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div id="modalExample2" class="modal hidden" data-js-module="toggleElement">
-            <div class="modal__content container p-v-md">
-                <div class="modal__box max-width-text-wide modal__box--with-close overflow-hidden">
-                    <button type="button" class="modal__close" data-close-el="modalExample2"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M281 250.6L472.4 59.2c8.7-8.7 8.7-22.7 0-31.4s-22.7-8.7-31.4 0L249.7 219.2 58.3 27.9c-8.7-8.7-22.7-8.7-31.4 0s-8.7 22.7 0 31.4l191.4 191.4L26.9 442c-8.7 8.7-8.7 22.7 0 31.4 4.4 4.4 10 6.5 15.7 6.5s11.3-2.1 15.7-6.5L249.7 282l191.4 191.4c4.4 4.4 10 6.5 15.7 6.5 5.7 0 11.3-2.1 15.7-6.5 8.7-8.7 8.7-22.7 0-31.4L281 250.6z"/></svg></i></button>
-                    <div class="grid grid--gutter-none">
-                        <div class="grid__col grid__col-md-6 p-a-resp-lg align-content-centre">
-                            <img class="width-100 max-width-sm" src="https://unsplash.it/300/300" alt="Placeholder image">
-                        </div>
-                        <div class="grid__col grid__col-md-6 bg-light-grey p-a-resp-lg">
-                            <h3>Donec ut ipsum</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac convallis arcu. Integer at tellus velit. Etiam placerat nunc eros, vel tincidunt erat dapibus in. Curabitur ultrices sagittis elit, sed porta sem bibendum nec.</p>
-                            <ul class="list--featured--ticks">
-                                <li>Nunc non sapien ac erat vehicula suscipit</li>
-                                <li>Curabitur sit amet enim odio</li>
-                                <li>Fusce cursus eu enim nec venenatis</li>
-                            </ul>
+        <div id="modalExample2" class="modal toggle-fade" data-js-module="toggleElement">
+            <div class="modal__bg">
+                <div class="modal__content container p-v-md">
+                    <div class="modal__box max-width-text-wide modal__box--with-close overflow-hidden">
+                        <button type="button" class="modal__close" data-close-el="modalExample2"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M281 250.6L472.4 59.2c8.7-8.7 8.7-22.7 0-31.4s-22.7-8.7-31.4 0L249.7 219.2 58.3 27.9c-8.7-8.7-22.7-8.7-31.4 0s-8.7 22.7 0 31.4l191.4 191.4L26.9 442c-8.7 8.7-8.7 22.7 0 31.4 4.4 4.4 10 6.5 15.7 6.5s11.3-2.1 15.7-6.5L249.7 282l191.4 191.4c4.4 4.4 10 6.5 15.7 6.5 5.7 0 11.3-2.1 15.7-6.5 8.7-8.7 8.7-22.7 0-31.4L281 250.6z"/></svg></i></button>
+                        <div class="grid grid--gutter-none">
+                            <div class="grid__col grid__col-md-6 p-a-resp-lg align-content-centre">
+                                <img class="width-100 max-width-sm" src="https://unsplash.it/300/300" alt="Placeholder image">
+                            </div>
+                            <div class="grid__col grid__col-md-6 bg-light-grey p-a-resp-lg">
+                                <h3>Donec ut ipsum</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac convallis arcu. Integer at tellus velit. Etiam placerat nunc eros, vel tincidunt erat dapibus in. Curabitur ultrices sagittis elit, sed porta sem bibendum nec.</p>
+                                <ul class="list--featured--ticks">
+                                    <li>Nunc non sapien ac erat vehicula suscipit</li>
+                                    <li>Curabitur sit amet enim odio</li>
+                                    <li>Fusce cursus eu enim nec venenatis</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="modalExample3" class="modal bg-transparent-very-dark-grey hidden text-centre" data-js-module="toggleElement">
-            <div class="modal__content p-v-md">
-                <div class="container clear m-b-md">
-                    <button type="button" class="float-right circle-icon circle-icon--close circle-icon--outlined--inverted circle-icon--sm-resp" data-close-el="modalExample3"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M281 250.6L472.4 59.2c8.7-8.7 8.7-22.7 0-31.4s-22.7-8.7-31.4 0L249.7 219.2 58.3 27.9c-8.7-8.7-22.7-8.7-31.4 0s-8.7 22.7 0 31.4l191.4 191.4L26.9 442c-8.7 8.7-8.7 22.7 0 31.4 4.4 4.4 10 6.5 15.7 6.5s11.3-2.1 15.7-6.5L249.7 282l191.4 191.4c4.4 4.4 10 6.5 15.7 6.5 5.7 0 11.3-2.1 15.7-6.5 8.7-8.7 8.7-22.7 0-31.4L281 250.6z"/></svg></i></button>
-                </div>
+        <div id="modalExample3" class="modal toggle-fade" data-js-module="toggleElement">
+            <div class="modal__bg bg-transparent-very-dark-grey text-centre">
+                <div class="modal__content p-v-md">
+                    <div class="container clear m-b-md">
+                        <button type="button" class="float-right circle-icon circle-icon--close circle-icon--outlined--inverted circle-icon--sm-resp" data-close-el="modalExample3"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M281 250.6L472.4 59.2c8.7-8.7 8.7-22.7 0-31.4s-22.7-8.7-31.4 0L249.7 219.2 58.3 27.9c-8.7-8.7-22.7-8.7-31.4 0s-8.7 22.7 0 31.4l191.4 191.4L26.9 442c-8.7 8.7-8.7 22.7 0 31.4 4.4 4.4 10 6.5 15.7 6.5s11.3-2.1 15.7-6.5L249.7 282l191.4 191.4c4.4 4.4 10 6.5 15.7 6.5 5.7 0 11.3-2.1 15.7-6.5 8.7-8.7 8.7-22.7 0-31.4L281 250.6z"/></svg></i></button>
+                    </div>
 
-                <div class="container">
-                    <img class="border-radius block m-centre max-width-100" src="http://placehold.it/700x400">
+                    <div class="container">
+                        <img class="border-radius block m-centre max-width-100" src="http://placehold.it/700x400">
 
-                    <div class="content-block p-b-none">
-                        <h2 class="h1">I am a modal title</h2>
-                        <div class="font-size-lg">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque hendrerit tempus. Morbi eget enim quis nisl commodo aliquet eget sed quam. Morbi ut condimentum nisl. Nam elementum suscipit elit, ut consequat libero interdum.</p>
-                            <p>In hac habitasse platea dictumst. Duis aliquet turpis quis arcu euismod, et luctus sapien facilisis. Sed imperdiet dui id mi varius gravida. Etiam convallis risus ac nulla consequat mattis. Nulla condimentum egestas pulvinar. Maecenas commodo leo in nunc luctus euismod. Sed id mi nec magna vehicula dictum ac eu velit.</p>
+                        <div class="content-block p-b-none">
+                            <h2 class="h1">I am a modal title</h2>
+                            <div class="font-size-lg">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque hendrerit tempus. Morbi eget enim quis nisl commodo aliquet eget sed quam. Morbi ut condimentum nisl. Nam elementum suscipit elit, ut consequat libero interdum.</p>
+                                <p>In hac habitasse platea dictumst. Duis aliquet turpis quis arcu euismod, et luctus sapien facilisis. Sed imperdiet dui id mi varius gravida. Etiam convallis risus ac nulla consequat mattis. Nulla condimentum egestas pulvinar. Maecenas commodo leo in nunc luctus euismod. Sed id mi nec magna vehicula dictum ac eu velit.</p>
+                            </div>
                         </div>
                     </div>
                 </div>

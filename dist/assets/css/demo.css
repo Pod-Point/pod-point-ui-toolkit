@@ -129,6 +129,9 @@ body {
 [data-page='tables'] .nav-link--tables {
   color: #8cc63f; }
 
+[data-page='toggles'] .nav-link--toggles {
+  color: #8cc63f; }
+
 [data-page='tooltips'] .nav-link--tooltips {
   color: #8cc63f; }
 

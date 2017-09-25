@@ -3,13 +3,16 @@
 // =============================================================================
 
 .modal {
-    @include position(fixed, 0 0 0 0);
-    @include align-content-centre;
-    background-color: $transparent-grey;
-    min-height: 100%;
-    overflow-y: scroll;
-    width: 100%;
-    z-index: 101;
+
+    &__bg {
+        @include position(fixed, 0 0 0 0);
+        @include align-content-centre;
+        background-color: $transparent-grey;
+        min-height: 100%;
+        overflow-y: scroll;
+        width: 100%;
+        z-index: 101;
+    }
 
     &__content {
         margin: auto;

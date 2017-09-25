@@ -1,7 +1,7 @@
-import { nodesToArray } from '@pod-point/dom-ops';
+import { nodesToArray, addClass, removeClass, hasClass } from '@pod-point/dom-ops';
 
 let instances = [];
-const IS_OPEN = 'fade-in';
+const IS_ACTIVE = 'is-active';
 
 class ToggleElement {
 
@@ -24,8 +24,6 @@ class ToggleElement {
         this.closeButtons = nodesToArray(document.querySelectorAll(closeButtonsSelector)) || [];
 
         this.allElements = nodesToArray(document.querySelectorAll(allElementsSelector));
-
-        this.elementIsVisible = false;
 
         this.bindEvents();
     }
@@ -66,10 +64,10 @@ class ToggleElement {
     }
 
     /**
-     * Toggle element depending if already open or not
+     * Toggle element depending if already active or not
      */
     toggleElement() {
-        if (this.elementIsVisible) {
+        if (hasClass(this.element, IS_ACTIVE)) {
             this.closeElement();
         } else {
             this.openElement();
@@ -80,19 +78,14 @@ class ToggleElement {
      * Handle the element opening
      */
     openElement() {
-        this.closeAllElements();
-        this.elementIsVisible = true;
-        this.element.classList.remove('hidden');
-        this.element.classList.add(IS_OPEN);
+        addClass(this.element, IS_ACTIVE);
     }
 
     /**
      * Handle the element closing
      */
     closeElement() {
-        this.element.classList.add('hidden');
-        this.element.classList.remove(IS_OPEN);
-        this.elementIsVisible = false;
+        removeClass(this.element, IS_ACTIVE);
     }
 
     /**
@@ -100,10 +93,8 @@ class ToggleElement {
      */
     closeAllElements() {
         this.allElements.forEach(el => {
-            el.classList.add('hidden');
-            el.classList.remove(IS_OPEN);
+            removeClass(el, IS_ACTIVE);
         });
-        this.elementIsVisible = false;
     }
 }
 

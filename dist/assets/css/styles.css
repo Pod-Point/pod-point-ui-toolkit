@@ -766,9 +766,6 @@ fieldset {
   .accordion .accordion__content .accordion__inner,
   .accordion .accordion__content .accordion__content-inner {
     padding-bottom: 20px; }
-  .accordion.grid-row .grid-col-4 {
-    margin-top: 0;
-    margin-bottom: 0; }
   .accordion .accordion__toggle {
     padding-right: 0;
     padding-left: 0;
@@ -1093,7 +1090,7 @@ fieldset {
     position: absolute;
     top: 50%; }
 
-.modal {
+.modal__bg {
   position: fixed;
   top: 0;
   right: 0;
@@ -1110,36 +1107,39 @@ fieldset {
   overflow-y: scroll;
   width: 100%;
   z-index: 101; }
-  .modal__content {
-    margin: auto; }
-  .modal__close {
-    cursor: pointer; }
-    .modal__close:active, .modal__close:focus, .modal__close:hover {
-      opacity: 0.7; }
-  .modal__box {
-    background-color: #fff;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
-    margin: auto;
-    max-width: 600px;
-    position: relative;
-    z-index: auto; }
-    .modal__box--with-close {
-      padding-top: 37.5px; }
-      @media (min-width: 50em) {
-        .modal__box--with-close {
-          padding-top: 0; } }
-    .modal__box .modal__close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      width: 1.25rem; }
-      @media (min-width: 50em) {
-        .modal__box .modal__close {
-          right: 20px;
-          top: 20px;
-          width: 1.5625rem; } }
+
+.modal__content {
+  margin: auto; }
+
+.modal__close {
+  cursor: pointer; }
+  .modal__close:active, .modal__close:focus, .modal__close:hover {
+    opacity: 0.7; }
+
+.modal__box {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+  margin: auto;
+  max-width: 600px;
+  position: relative;
+  z-index: auto; }
+  .modal__box--with-close {
+    padding-top: 37.5px; }
+    @media (min-width: 50em) {
+      .modal__box--with-close {
+        padding-top: 0; } }
+  .modal__box .modal__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 1.25rem; }
+    @media (min-width: 50em) {
+      .modal__box .modal__close {
+        right: 20px;
+        top: 20px;
+        width: 1.5625rem; } }
 
 .tooltip-icon {
   text-indent: -9999px;
@@ -2544,6 +2544,9 @@ textarea.form__control {
 .overflow-hidden {
   overflow: hidden; }
 
+.height-100 {
+  height: 100%; }
+
 .text-centre {
   text-align: center !important; }
 
@@ -3246,6 +3249,44 @@ textarea.form__control {
   overflow: hidden;
   transition: max-height 0.8s ease-out; }
   .slide-panel--xl.is-open {
+    max-height: 3000px;
+    overflow: hidden;
+    transition: max-height 1s ease-in; }
+
+.toggle {
+  display: none; }
+  .toggle.is-active {
+    display: block; }
+
+.toggle-fade {
+  display: none; }
+  .toggle-fade.is-active {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-name: fade-in;
+    display: block; }
+
+.toggle-slide {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease-out; }
+  .toggle-slide.is-active {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 1s ease-in; }
+  .toggle-slide--xs.is-active {
+    max-height: 200px;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in; }
+  .toggle-slide--sm.is-active {
+    max-height: 400px;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in; }
+  .toggle-slide--md.is-active {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 1s ease-in; }
+  .toggle-slide--xl.is-active {
     max-height: 3000px;
     overflow: hidden;
     transition: max-height 1s ease-in; }
