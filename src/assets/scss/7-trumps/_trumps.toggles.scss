@@ -1,0 +1,52 @@
+// =============================================================================
+//  TRUMPS - TOGGLES
+// =============================================================================
+
+.toggle {
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}
+
+.toggle-fade {
+    display: none;
+
+    &.is-active {
+        @include fade-in($duration: .3s);
+        display: block;
+    }
+}
+
+.toggle-slide {
+    @include slide-down-collapsed(.8s);
+
+    &.is-active {
+        @include slide-down-active(1s, 1000px);
+    }
+
+    &--xs {
+        &.is-active {
+            @include slide-down-active(.8s, 200px);
+        }
+    }
+
+    &--sm {
+        &.is-active {
+            @include slide-down-active(.8s, 400px);
+        }
+    }
+
+    &--md {
+        &.is-active {
+            @include slide-down-active(1s, 1000px);
+        }
+    }
+
+    &--xl {
+        &.is-active {
+            @include slide-down-active(1s, 3000px);
+        }
+    }
+}

@@ -11,8 +11,15 @@
     }
 }
 
-// Vertically align centre
-@mixin v-align {
+// Align centre content with flexbox
+@mixin align-content-centre {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+// Vertically align content centre with flexbox
+@mixin v-align-content-centre {
     align-items: center;
     display: flex;
 }
@@ -113,18 +120,10 @@
     width: 100%;
 }
 
-@mixin horizontal-spacing($h-spacing: $h-spacing, $h-spacing-mobile: $h-spacing-mobile) {
-    @include padding(null $h-spacing-mobile);
-
-    @include screen-md-min {
-        @include padding(null $h-spacing);
-    }
-}
-
 // A container that centre aligns with padding and max width
 @mixin container($max-width-content: $max-width-content) {
     @include m-centre;
-    @include horizontal-spacing;
+    @include p-h-resp;
     max-width: $max-width-content;
 }
 

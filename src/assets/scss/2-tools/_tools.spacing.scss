@@ -1,0 +1,11 @@
+// =============================================================================
+//	TOOLS - HELPERS
+// =============================================================================
+
+@mixin p-h-resp($h-spacing: $h-spacing, $h-spacing-mobile: $h-spacing-mobile) {
+    @include padding(null $h-spacing-mobile);
+
+    @include screen-md-min {
+        @include padding(null $h-spacing);
+    }
+}

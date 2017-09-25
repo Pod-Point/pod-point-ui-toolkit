@@ -72,6 +72,11 @@
     color: $white !important;
 }
 
+.bg-transparent-very-dark-grey {
+    background-color: $transparent-very-dark-grey !important;
+    color: $white !important;
+}
+
 // To override any of the above (especially useful with nested backgrounds)
 .bg-dark-content {
     color: $font-colour-base !important;

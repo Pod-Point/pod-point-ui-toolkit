@@ -36,7 +36,8 @@ body {
         margin-left: 0;
     }
 
-    .hero {
+    .hero,
+    .modal {
         .container {
             margin-left: auto;
         }
@@ -45,7 +46,7 @@ body {
 
 .demo-fixed-sidebar {
     @include position(fixed, 0 null null 0);
-    @include horizontal-spacing;
+    @include p-h-resp;
     height: 100%;
     min-height: inherit;
     overflow-y: scroll;
@@ -80,7 +81,6 @@ $pages: (
     'alerts',
     'buttons',
     'cards',
-    'confirm-popup',
     'forms',
     'grid',
     'heros',
@@ -89,6 +89,7 @@ $pages: (
     'lists',
     'modals',
     'tables',
+    'toggles',
     'tooltips',
     'typography'
 );

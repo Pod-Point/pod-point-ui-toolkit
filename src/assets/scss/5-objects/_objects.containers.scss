@@ -25,20 +25,11 @@
 }
 
 .btns-container {
-    @include margin((-$buttons-v-spacing) null);
+    margin: -$buttons-gutter;
     overflow: hidden;
 
     .btn {
-        @include margin($buttons-v-spacing null);
-        display: block;
-    }
-
-    &--inline {
-        @include margin(null (-$buttons-inline-gutter));
-
-        .btn {
-            @include margin(null $buttons-inline-gutter);
-            display: inline-block;
-        }
+        display: inline-block;
+        margin: $buttons-gutter;
     }
 }

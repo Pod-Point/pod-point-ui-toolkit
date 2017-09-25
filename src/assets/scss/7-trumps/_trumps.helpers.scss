@@ -40,12 +40,24 @@
     transform: scaleY(-1);
 }
 
-// Uses display flex to vertically align content
-.v-align-content {
-    @include v-align;
+// Uses display flex to centre align content
+.align-content-centre {
+    @include align-content-centre;
+}
+
+.v-align-content-centre {
+    @include v-align-content-centre;
 }
 
 // Styles element to appear clickable
 .clickable {
     @include clickable;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.height-100 {
+    height: 100%;
 }

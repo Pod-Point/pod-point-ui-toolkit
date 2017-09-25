@@ -11,7 +11,7 @@ var _domOps = require('@pod-point/dom-ops');
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var instances = [];
-var IS_OPEN = 'fade-in';
+var IS_ACTIVE = 'is-active';
 
 var ToggleElement = function () {
 
@@ -36,8 +36,6 @@ var ToggleElement = function () {
         this.closeButtons = (0, _domOps.nodesToArray)(document.querySelectorAll(closeButtonsSelector)) || [];
 
         this.allElements = (0, _domOps.nodesToArray)(document.querySelectorAll(allElementsSelector));
-
-        this.elementIsVisible = false;
 
         this.bindEvents();
     }
@@ -93,13 +91,13 @@ var ToggleElement = function () {
         }
 
         /**
-         * Toggle element depending if already open or not
+         * Toggle element depending if already active or not
          */
 
     }, {
         key: 'toggleElement',
         value: function toggleElement() {
-            if (this.elementIsVisible) {
+            if ((0, _domOps.hasClass)(this.element, IS_ACTIVE)) {
                 this.closeElement();
             } else {
                 this.openElement();
@@ -113,10 +111,7 @@ var ToggleElement = function () {
     }, {
         key: 'openElement',
         value: function openElement() {
-            this.closeAllElements();
-            this.elementIsVisible = true;
-            this.element.classList.remove('hidden');
-            this.element.classList.add(IS_OPEN);
+            (0, _domOps.addClass)(this.element, IS_ACTIVE);
         }
 
         /**
@@ -126,9 +121,7 @@ var ToggleElement = function () {
     }, {
         key: 'closeElement',
         value: function closeElement() {
-            this.element.classList.add('hidden');
-            this.element.classList.remove(IS_OPEN);
-            this.elementIsVisible = false;
+            (0, _domOps.removeClass)(this.element, IS_ACTIVE);
         }
 
         /**
@@ -139,10 +132,8 @@ var ToggleElement = function () {
         key: 'closeAllElements',
         value: function closeAllElements() {
             this.allElements.forEach(function (el) {
-                el.classList.add('hidden');
-                el.classList.remove(IS_OPEN);
+                (0, _domOps.removeClass)(el, IS_ACTIVE);
             });
-            this.elementIsVisible = false;
         }
     }]);
 
