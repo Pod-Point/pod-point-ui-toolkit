@@ -33,7 +33,7 @@
         z-index: auto;
 
         &--with-close {
-            padding-top: $space-sm * 2.5;
+            padding-top: $space-md * 2;
 
             @include screen-md-min {
                 padding-top: 0;
@@ -42,12 +42,10 @@
 
         .modal__close {
             @include position(absolute, $space-sm $space-sm null null);
-            width: $icon-size-sm;
 
             @include screen-md-min {
                 right: $space-md;
                 top: $space-md;
-                width: $icon-size-md;
             }
         }
     }

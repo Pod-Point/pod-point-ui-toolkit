@@ -1126,20 +1126,18 @@ fieldset {
   position: relative;
   z-index: auto; }
   .modal__box--with-close {
-    padding-top: 37.5px; }
+    padding-top: 40px; }
     @media (min-width: 50em) {
       .modal__box--with-close {
         padding-top: 0; } }
   .modal__box .modal__close {
     position: absolute;
     top: 15px;
-    right: 15px;
-    width: 1.25rem; }
+    right: 15px; }
     @media (min-width: 50em) {
       .modal__box .modal__close {
         right: 20px;
-        top: 20px;
-        width: 1.5625rem; } }
+        top: 20px; } }
 
 .tooltip-icon {
   text-indent: -9999px;
