@@ -104,7 +104,7 @@
 
                     <p>The tooltip trigger icon should be a button with the class <code>.tooltip-icon</code> and the data attribute with the ID name of the tooltip <code>data-toggle-el="[TOOLTIP ID NAME]"</code></p>
 
-                    <p>The tooltip needs an ID, the toggle-element.js data attribute <code>data-js-module="toggleElement"</code> and the classes <code>.tooltip</code> and <code>.hidden</code></p>
+                    <p>The tooltip needs an ID, the toggle-element.js data attribute <code>data-js-module="toggleElement"</code> and the classes <code>.tooltip</code> and <code>.toggle-fade</code></p>
 
                     <p>Inside the tooltip should be an element with the class <code>.tooltip__box</code> and inside that should be the close button</p>
 
@@ -117,7 +117,7 @@
 <figure class="figure-box figure-box--dark figure-box--max-height-md">
 <pre>
 &#x3C;h3&#x3E;Title with a tooltip &#x3C;button type=&#x22;button&#x22; data-toggle-el=&#x22;tooltipExample&#x22; class=&#x22;tooltip-icon&#x22;&#x3E;&#x3C;/button&#x3E;&#x3C;/h3&#x3E;
-&#x3C;div data-js-module=&#x22;toggleElement&#x22; id=&#x22;tooltipExample&#x22; class=&#x22;tooltip hidden&#x22;&#x3E;
+&#x3C;div data-js-module=&#x22;toggleElement&#x22; id=&#x22;tooltipExample&#x22; class=&#x22;tooltip toggle-fade&#x22;&#x3E;
     &#x3C;div class=&#x22;tooltip__box&#x22;&#x3E;
         &#x3C;button type=&#x22;button&#x22; class=&#x22;tooltip__close&#x22; data-close-el=&#x22;tooltipExample&#x22;&#x3E;&#x3C;i class=&#x22;icon icon--xs&#x22;&#x3E;&#x3C;svg&#x3E;[SVG CROSS ICON]&#x3C;/svg&#x3E;&#x3C;/i&#x3E;&#x3C;/button&#x3E;
         &#x3C;div class=&#x22;font-size-sm&#x22;&#x3E;
@@ -136,7 +136,7 @@
 
         <div class="container content-block">
             <h3>Title with a tooltip <button type="button" data-toggle-el="tooltipExample" class="tooltip-icon"></button></h3>
-            <div data-js-module="toggleElement" id="tooltipExample" class="tooltip hidden">
+            <div data-js-module="toggleElement" id="tooltipExample" class="tooltip toggle-fade">
                 <div class="tooltip__box">
                     <button type="button" class="tooltip__close" data-close-el="tooltipExample"><i class="icon icon--xs"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M281 250.6L472.4 59.2c8.7-8.7 8.7-22.7 0-31.4s-22.7-8.7-31.4 0L249.7 219.2 58.3 27.9c-8.7-8.7-22.7-8.7-31.4 0s-8.7 22.7 0 31.4l191.4 191.4L26.9 442c-8.7 8.7-8.7 22.7 0 31.4 4.4 4.4 10 6.5 15.7 6.5s11.3-2.1 15.7-6.5L249.7 282l191.4 191.4c4.4 4.4 10 6.5 15.7 6.5 5.7 0 11.3-2.1 15.7-6.5 8.7-8.7 8.7-22.7 0-31.4L281 250.6z"/></svg></i></button>
                     <div class="font-size-sm">
@@ -148,7 +148,7 @@
 
 
             <p>Text with a large tooltip <button type="button" data-toggle-el="tooltipExampleLarge" class="tooltip-icon"></button></p>
-            <div data-js-module="toggleElement" id="tooltipExampleLarge" class="tooltip tooltip--lg hidden">
+            <div data-js-module="toggleElement" id="tooltipExampleLarge" class="tooltip tooltip--lg toggle-fade">
                 <div class="tooltip__box">
                     <button type="button" class="tooltip__close" data-close-el="tooltipExampleLarge"><i class="icon icon--xs"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M281 250.6L472.4 59.2c8.7-8.7 8.7-22.7 0-31.4s-22.7-8.7-31.4 0L249.7 219.2 58.3 27.9c-8.7-8.7-22.7-8.7-31.4 0s-8.7 22.7 0 31.4l191.4 191.4L26.9 442c-8.7 8.7-8.7 22.7 0 31.4 4.4 4.4 10 6.5 15.7 6.5s11.3-2.1 15.7-6.5L249.7 282l191.4 191.4c4.4 4.4 10 6.5 15.7 6.5 5.7 0 11.3-2.1 15.7-6.5 8.7-8.7 8.7-22.7 0-31.4L281 250.6z"/></svg></i></button>
                     <div class="font-size-sm">
@@ -160,7 +160,7 @@
 
 
             <p>Text with an inverted colour tooltip <button type="button" data-toggle-el="tooltipExampleInverted" class="tooltip-icon"></button></p>
-            <div data-js-module="toggleElement" id="tooltipExampleInverted" class="tooltip tooltip--inverted hidden">
+            <div data-js-module="toggleElement" id="tooltipExampleInverted" class="tooltip tooltip--inverted toggle-fade">
                 <div class="tooltip__box">
                     <button type="button" class="tooltip__close" data-close-el="tooltipExampleInverted"><i class="icon icon--xs"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M281 250.6L472.4 59.2c8.7-8.7 8.7-22.7 0-31.4s-22.7-8.7-31.4 0L249.7 219.2 58.3 27.9c-8.7-8.7-22.7-8.7-31.4 0s-8.7 22.7 0 31.4l191.4 191.4L26.9 442c-8.7 8.7-8.7 22.7 0 31.4 4.4 4.4 10 6.5 15.7 6.5s11.3-2.1 15.7-6.5L249.7 282l191.4 191.4c4.4 4.4 10 6.5 15.7 6.5 5.7 0 11.3-2.1 15.7-6.5 8.7-8.7 8.7-22.7 0-31.4L281 250.6z"/></svg></i></button>
                     <div class="font-size-sm">
@@ -172,7 +172,7 @@
 
 
             <p class="text-right">Text right aligned with tooltip <button type="button" data-toggle-el="tooltipExampleRight" class="tooltip-icon"></button></p>
-            <div data-js-module="toggleElement" id="tooltipExampleRight" class="tooltip tooltip--right hidden">
+            <div data-js-module="toggleElement" id="tooltipExampleRight" class="tooltip tooltip--right toggle-fade">
                 <div class="tooltip__box">
                     <button type="button" class="tooltip__close" data-close-el="tooltipExampleRight"><i class="icon icon--xs"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M281 250.6L472.4 59.2c8.7-8.7 8.7-22.7 0-31.4s-22.7-8.7-31.4 0L249.7 219.2 58.3 27.9c-8.7-8.7-22.7-8.7-31.4 0s-8.7 22.7 0 31.4l191.4 191.4L26.9 442c-8.7 8.7-8.7 22.7 0 31.4 4.4 4.4 10 6.5 15.7 6.5s11.3-2.1 15.7-6.5L249.7 282l191.4 191.4c4.4 4.4 10 6.5 15.7 6.5 5.7 0 11.3-2.1 15.7-6.5 8.7-8.7 8.7-22.7 0-31.4L281 250.6z"/></svg></i></button>
                     <div class="font-size-sm">
@@ -183,7 +183,7 @@
             </div>
 
             <p class="text-centre">Text centre aligned with tooltip <button type="button" data-toggle-el="tooltipExampleCentre" class="tooltip-icon"></button></p>
-            <div data-js-module="toggleElement" id="tooltipExampleCentre" class="tooltip tooltip--centre hidden">
+            <div data-js-module="toggleElement" id="tooltipExampleCentre" class="tooltip tooltip--centre toggle-fade">
                 <div class="tooltip__box">
                     <button type="button" class="tooltip__close" data-close-el="tooltipExampleCentre"><i class="icon icon--xs"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M281 250.6L472.4 59.2c8.7-8.7 8.7-22.7 0-31.4s-22.7-8.7-31.4 0L249.7 219.2 58.3 27.9c-8.7-8.7-22.7-8.7-31.4 0s-8.7 22.7 0 31.4l191.4 191.4L26.9 442c-8.7 8.7-8.7 22.7 0 31.4 4.4 4.4 10 6.5 15.7 6.5s11.3-2.1 15.7-6.5L249.7 282l191.4 191.4c4.4 4.4 10 6.5 15.7 6.5 5.7 0 11.3-2.1 15.7-6.5 8.7-8.7 8.7-22.7 0-31.4L281 250.6z"/></svg></i></button>
                     <div class="font-size-sm">
