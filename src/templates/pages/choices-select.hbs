@@ -1,0 +1,159 @@
+<div data-page="choices-select" class="demo-page-content">
+
+    {{> demo-sidebar }}
+
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
+            <div class="container">
+                <h2>Choices Select</h2>
+            </div>
+        </header>
+
+
+        <!-- REQUIRED FILES -->
+        <section id="accordionsRequired">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Required files</h3>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p>SCSS files required: <code>_components.choices-select.scss</code></p>
+                    <p>JS files required: <code>choices-select.js</code></p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CHOICES SELECT -->
+        <section id="accordionsMarkup">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Choices Select structure</h3>
+                    <p>The Choices Select element uses the feature rich <a href="https://github.com/jshjohnson/Choices" target="_blank"><code>choices.js</code></a> library to wrap an ordinary select dropdown.</p>
+                    <p>A Choices Select element is created using an existing select and the Choices Select js module <code>data-js-module="choicesSelect"</code>.</p>
+                    <p>A Choices Select element options are defined by the <code>data-options</code> attribute, which accepts a JSON string in the following format:</p>
+                    <pre>
+                        [
+                          {
+                            "value": "1",
+                            "label": "One",
+                            "customProperties": {
+                              "description": "One"
+                            }
+                          },
+                          {
+                            "value": "2",
+                            "label": "Two",
+                            "customProperties": {
+                              "description": "Two"
+                            }
+                          }
+                        ]
+                    </pre>
+                    <p>Where <code>value</code> is the value of the option, <code>label</code> is what is displayed and <code>customProperties.description</code> is what is searchable.</p>
+                    <p>A Choices Select element default option is defined by the <code>data-default</code> attribute, which accepts the value of one of your JSON options.</p>
+                    <p>You can also specify the css classes to style the outer and inner containers via the <code>data-container-outer-class</code> and <code>data-container-inner-class</code> attributes; applying the <code>.choices-select .form__field</code> and <code>.form__control</code> classes, respectively, will give the Choices Select element the same styling as other form elements.</p>
+
+{{> snippet-choices-select }}
+
+                </div>
+            </header>
+
+            <!-- DEFAULT SELECT -->
+            <section id="defaultSelect">
+                <div class="content-block">
+                    <div class="container">
+                        <h3>Default Select</h3>
+
+                        <div class="form__group">
+                            <label class="form__label">Select</label>
+
+                            <select data-js-module="choicesSelect" data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]' data-default="1" data-container-outer-class="choices-select form__field" data-container-inner-class="form__control"></select>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label">Select - disabled</label>
+
+                            <select data-js-module="choicesSelect" data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]' data-default="2" data-container-outer-class="choices-select form__field" data-container-inner-class="form__control" disabled="true"></select>
+                        </div>
+                        <div class="form__group form__group--valid">
+                            <label class="form__label">Select - valid</label>
+
+                            <select data-js-module="choicesSelect" data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]' data-default="1" data-container-outer-class="choices-select form__field" data-container-inner-class="form__control"></select>
+                        </div>
+                        <div class="form__group form__group--error">
+                            <label class="form__label">Select - invalid</label>
+
+                            <select data-js-module="choicesSelect" data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]' data-default="2" data-container-outer-class="choices-select form__field" data-container-inner-class="form__control"></select>
+
+                            <span class="form__error">This is an error message.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COUNTRY CODE SELECT -->
+            <section id=countryCodeSelect>
+                <div class="content-block">
+                    <div class="container">
+                        <h3>Country Code Select</h3>
+                        <p>You can wrap the select, along with an input, in a div with the class <code>.choices-country-code</code> to create a country code phone number widget.</p>
+
+                        <div class="form__group">
+                            <label class="form__label">Phone Number</label>
+                            <div class="choices-country-code">
+                                <select data-js-module="choicesSelect" data-options='[
+                                  {
+                                    "label": "Default",
+                                    "id": 1,
+                                    "choices": [
+                                      {
+                                        "value": "GB",
+                                        "label": "🇬🇧 <span class=\"country-name\">United Kingdom</span> <span class=\"country-dialling-code\">(+44)</span>",
+                                        "customProperties": {
+                                          "description": "United Kingdom"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "Other Countries",
+                                    "id": 2,
+                                    "choices": [
+                                      {
+                                        "value": "DE",
+                                        "label": "🇩🇪 <span class=\"country-name\"></span>Germany <span class=\"country-dialling-code\">(+49)</span>",
+                                        "customProperties": {
+                                          "description": "Germany"
+                                        }
+                                      },
+                                      {
+                                        "value": "FR",
+                                        "label": "🇫🇷 <span class=\"country-name\"></span>France <span class=\"country-dialling-code\">(+33)</span>",
+                                        "customProperties": {
+                                          "description": "France"
+                                        }
+                                      },
+                                      {
+                                        "value": "IT",
+                                        "label": "🇮🇹 <span class=\"country-name\"></span>Italy <span class=\"country-dialling-code\">(+39)</span>",
+                                        "customProperties": {
+                                          "description": "Italy"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]' data-default="GB" data-container-outer-class="choices-select form__field" data-container-inner-class="form__control">
+                                </select>
+                                <input class="form__control form__field" type="text" placeholder="Phone number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </section>
+    </div>
+</div>

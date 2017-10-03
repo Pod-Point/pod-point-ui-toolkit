@@ -6,12 +6,14 @@ import './modules/base';
 
 import toggleElement from './modules/toggle-element';
 import accordion from './modules/accordion';
+import choicesSelect from './modules/choices-select';
 
 dom.whenReady(() => {
     loadModules({
         domModules: combineDomModules({
             toggleElement,
             accordion,
+            choicesSelect,
         }),
     });
 });
