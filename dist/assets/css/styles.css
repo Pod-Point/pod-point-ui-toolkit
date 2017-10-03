@@ -1326,11 +1326,12 @@ fieldset {
         .choices-country-code .choices .choices__list.choices__list--dropdown.is-active {
           max-width: 600px;
           min-width: 340px; } }
-    .choices-country-code .choices .choices__list.choices__list--single .choices__item.choices__item--selectable .country-name,
-    .choices-country-code .choices .choices__list.choices__list--single .choices__item.choices__item--selectable .country-dialling-code {
-      display: none; }
-    .choices-country-code .choices .choices__list.choices__list--dropdown .country-name {
-      margin-left: 5px; }
+    @media (min-width: 40em) {
+      .choices-country-code .choices .choices__list.choices__list--single .choices__item.choices__item--selectable .country-name,
+      .choices-country-code .choices .choices__list.choices__list--single .choices__item.choices__item--selectable .country-dialling-code {
+        display: none; }
+      .choices-country-code .choices .choices__list.choices__list--dropdown .country-name {
+        margin-left: 5px; } }
   .choices-country-code input.form__control, .choices-country-code .choices-select.form__field input.choices__list--dropdown.is-active, .choices-select.form__field .choices-country-code input.choices__list--dropdown.is-active {
     max-width: 600px; }
     @media (min-width: 40em) {

@@ -23,18 +23,20 @@
             }
         }
 
-        .choices__list.choices__list--single {
-            .choices__item.choices__item--selectable {
-                .country-name,
-                .country-dialling-code {
-                    display: none;
+        @include screen-sm-min {
+            .choices__list.choices__list--single {
+                .choices__item.choices__item--selectable {
+                    .country-name,
+                    .country-dialling-code {
+                        display: none;
+                    }
                 }
-          }
-        }
+            }
 
-        .choices__list.choices__list--dropdown {
-            .country-name {
-                margin-left: $choices-country-code-margin;
+            .choices__list.choices__list--dropdown {
+                .country-name {
+                    margin-left: $choices-country-code-margin;
+                }
             }
         }
     }
