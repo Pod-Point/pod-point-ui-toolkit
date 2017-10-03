@@ -34,9 +34,9 @@ gulp.task('sass-compile', () => {
 
 gulp.task('sass-lint', () => {
     return gulp.src(config.src.scss + '**/**/*.scss')
-        // .pipe(sassLint())
-        // .pipe(sassLint.format())
-        // .pipe(sassLint.failOnError())
+        .pipe(sassLint())
+        .pipe(sassLint.format())
+        .pipe(sassLint.failOnError())
 });
 
-gulp.task('sass', ['sass-compile']);
+gulp.task('sass', ['sass-compile', 'sass-lint']);
