@@ -39,7 +39,7 @@
     overflow: hidden;
 
     .btn--control {
-        display: inline-block;
         @include margin($buttons-controls-gutter ($buttons-controls-gutter - 2px)); // Inline-block creates 2px more space
+        display: inline-block;
     }
 }
