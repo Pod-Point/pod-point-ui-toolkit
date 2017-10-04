@@ -33,3 +33,13 @@
         margin: $buttons-gutter;
     }
 }
+
+.control-btns-container {
+    margin: -$buttons-controls-gutter;
+    overflow: hidden;
+
+    .btn--control {
+        display: inline-block;
+        @include margin($buttons-controls-gutter ($buttons-controls-gutter - 2px)); // Inline-block creates 2px more space
+    }
+}

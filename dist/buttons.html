@@ -73,10 +73,10 @@
             <div class="container">
                 <h2>Buttons</h2>
                 <ul class="list--inline remove-link-styles font-weight-bold">
-                    <li><a href="#buttonsActive">Buttons</a></li>
+                    <li><a href="#buttonsCta">CTA Buttons</a></li>
+                    <li><a href="#buttonsControl">Control buttons</a></li>
+                    <li><a href="#buttonsPassive">Passive button</a></li>
                     <li><a href="#buttonsDisabled">Buttons disabled</a></li>
-                    <li><a href="#buttonsPassive">Buttons passive</a></li>
-                    <li><a href="#buttonsContainer">Buttons container</a></li>
                 </ul>
             </div>
         </header>
@@ -97,13 +97,14 @@
         </section>
 
 
-        <!-- ACTIVE BUTTONS -->
-        <section id="buttonsActive">
+        <!-- CTA BUTTONS -->
+        <section id="buttonsCta">
             <header class="content-block bg-light-grey">
                 <div class="container">
-                    <h3>Active buttons</h3>
-                    <p>Use the class <code>.btn</code> on any element eg. button, anchor, div, span</p>
-                    <p>Add the modifying classes to apply the secondary, tertiary and danger (delete) button styles <code>.btn--secondary</code>, <code>.btn--tertiary</code>, <code>.btn--danger</code></p>
+                    <h3>CTA buttons</h3>
+                    <p>Use the class <code>.btn</code> on any element eg. button, anchor, div, span.</p>
+                    <p>Add the modifying classes to apply the secondary, tertiary and danger (delete) button styles <code>.btn--secondary</code>, <code>.btn--tertiary</code>, <code>.btn--danger</code>.</p>
+                    <p>The buttons have no spacing around them by default. However to stack buttons together nicely inline (as the examples below) add a wrapper with the class <code>.btns-container</code>.</p>
                 </div>
             </header>
             <div class="content-block">
@@ -119,26 +120,22 @@
         </section>
 
 
-        <!-- DISABLED BUTTONS -->
-        <section id="buttonsDisabled">
+        <!-- CONTROL BUTTONS -->
+        <section id="buttonsControl">
             <header class="content-block bg-light-grey">
                 <div class="container">
-                    <h3>Disabled buttons</h3>
-                    <p>Add the <code>disabled</code> attribute to a button OR the class <code>.is-disabled</code> is available to add if required eg. if it is an anchor or span element</p>
-                    <p>The below examples use either the attribute or the class to show the styling looks the same for either</p>
+                    <h3>Control buttons</h3>
+                    <p>Use the class <code>.btn</code> and the modifying class <code>.btn--control</code> on any element eg. button, anchor, div, span.</p>
+                    <p>Add the modifying classes to apply the secondary and danger (delete) button styles <code>.btn--secondary</code>, <code>.btn--danger</code>.</p>
+                    <p>The control buttons have no spacing around them by default. However to stack buttons together nicely inline (as the examples below) add a wrapper with the classes <code>.control-btns-container</code>.</p>
                 </div>
             </header>
             <div class="content-block">
                 <div class="container">
-                    <div class="btns-container">
-                        <button class="btn is-disabled">Primary disabled</button>
-                        <button class="btn btn--secondary is-disabled">Secondary disabled</button>
-                        <button class="btn btn--tertiary is-disabled">Tertiary disabled</button>
-                        <button class="btn btn--danger is-disabled">Danger disabled</button>
-                        <button disabled class="btn">Primary disabled</button>
-                        <button disabled class="btn btn--secondary">Secondary disabled</button>
-                        <button disabled class="btn btn--tertiary">Tertiary disabled</button>
-                        <button disabled class="btn btn--danger">Danger disabled</button>
+                    <div class="control-btns-container">
+                        <button type="button" class="btn btn--control">Primary</button>
+                        <a href="#" class="btn btn--control btn--secondary">Secondary</a>
+                        <span class="btn btn--control btn--danger">Danger</span>
                     </div>
                 </div>
             </div>
@@ -150,8 +147,8 @@
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Passive buttons</h3>
-                    <p>Use the class <code>.btn</code> as well as the modifying class <code>.btn--passive</code></p>
-                    <p>There is an option to add an svg icon embed inside the button. See the <a href="/icons.html#iconsInline">icons example page</a> for more info on inline icons</p>
+                    <p>Use the class <code>.btn</code> as well as the modifying class <code>.btn--passive</code>.</p>
+                    <p>There is an option to add an svg icon embed inside the button. See the <a href="/icons.html#iconsInline">icons example page</a> for more info on inline icons.</p>
                 </div>
             </header>
             <div class="content-block">
@@ -159,22 +156,41 @@
                     <div class="btns-container">
                         <button class="btn btn--passive">Passive button</button>
                         <button class="btn btn--passive"><span>Passive button with chevron icon</span><i class="icon icon--inline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M250.3 405.6c-6 0-11.6-2.7-15.4-7.3L14.4 131.9c-7-8.5-5.8-21.1 2.7-28.2 8.5-7 21.1-5.8 28.2 2.7l205 247.8 204.5-247.8c7-8.5 19.6-9.7 28.2-2.7 8.5 7 9.7 19.6 2.7 28.2l-220 266.5c-3.8 4.6-9.4 7.2-15.4 7.2z"/></svg></i></button>
-
-                        <button class="btn btn--passive is-disabled"><span>Passive button with chevron icon and disabled</span><i class="icon icon--inline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M250.3 405.6c-6 0-11.6-2.7-15.4-7.3L14.4 131.9c-7-8.5-5.8-21.1 2.7-28.2 8.5-7 21.1-5.8 28.2 2.7l205 247.8 204.5-247.8c7-8.5 19.6-9.7 28.2-2.7 8.5 7 9.7 19.6 2.7 28.2l-220 266.5c-3.8 4.6-9.4 7.2-15.4 7.2z"/></svg></i></button>
                     </div>
                 </div>
             </div>
         </section>
 
 
-        <!-- BUTTON CONTAINERS -->
-        <section id="buttonsContainer">
+        <!-- DISABLED BUTTONS -->
+        <section id="buttonsDisabled">
             <header class="content-block bg-light-grey">
                 <div class="container">
-                    <h3>Button containers</h3>
-                    <p>The buttons have no spacing around them by default. However to stack buttons together nicely inline (as the examples above) add a wrapper with the class <code>.btns-container</code>.</p>
+                    <h3>Disabled buttons</h3>
+                    <p>Add the <code>disabled</code> attribute to any button OR the class <code>.is-disabled</code> is available to add if required eg. if it is an anchor or span element.</p>
+                    <p>The below examples use either the attribute or the class to show the styling looks the same for either.</p>
                 </div>
             </header>
+            <div class="container">
+                <div class="content-block">
+                    <div class="btns-container">
+                        <button class="btn is-disabled">Primary disabled</button>
+                        <button disabled class="btn btn--secondary">Secondary disabled</button>
+                        <button class="btn btn--tertiary is-disabled">Tertiary disabled</button>
+                        <button disabled class="btn btn--danger">Danger disabled</button>
+                    </div>
+                </div>
+                <div class="content-block p-t-none">
+                    <div class="control-btns-container">
+                        <button disabled type="button" class="btn btn--control">Primary</button>
+                        <a href="#" class="btn btn--control btn--secondary is-disabled">Secondary</a>
+                        <span class="btn btn--control btn--danger is-disabled">Danger</span>
+                    </div>
+                </div>
+                <div class="content-block p-t-none">
+                    <button class="btn btn--passive is-disabled"><span>Passive button with chevron icon and disabled</span><i class="icon icon--inline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M250.3 405.6c-6 0-11.6-2.7-15.4-7.3L14.4 131.9c-7-8.5-5.8-21.1 2.7-28.2 8.5-7 21.1-5.8 28.2 2.7l205 247.8 204.5-247.8c7-8.5 19.6-9.7 28.2-2.7 8.5 7 9.7 19.6 2.7 28.2l-220 266.5c-3.8 4.6-9.4 7.2-15.4 7.2z"/></svg></i></button>
+                </div>
+            </div>
         </section>
     </div>
 </div>

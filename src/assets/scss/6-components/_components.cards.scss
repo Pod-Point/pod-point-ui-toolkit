@@ -25,7 +25,7 @@
 
         &::before {
             @include position(absolute, $card-option-highlight-offset null null -1px);
-            background-color: $grey-keyline-very-light;
+            background-color: $grey-keyline-light;
             border-top-left-radius: $border-radius-base;
             border-top-right-radius: $border-radius-base;
             content: '';

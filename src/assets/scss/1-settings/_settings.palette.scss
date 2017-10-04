@@ -2,12 +2,55 @@
 //	SETTINGS - PALETTE
 // =============================================================================
 
+// PALETTE //
+
+// Black/white
 $black: #000;
 $white: #fff;
 
+// Grey palette
+$grey-base: #333;
+$grey-lighten-80: tint($grey-base, 80);
+$grey-lighten-60: tint($grey-base, 60);
+$grey-lighten-50: tint($grey-base, 50);
+$grey-lighten-40: tint($grey-base, 40);
+$grey-lighten-30: tint($grey-base, 30);
+$grey-lighten-20: tint($grey-base, 20);
+$grey-lighten-15: tint($grey-base, 15);
+$grey-lighten-6: tint($grey-base, 6);
+$grey-lighten-3: tint($grey-base, 3);
+
+// Primary palette
+$primary-base: #8cc63f;
+$primary-lighten-5: tint($primary-base, 5);
+$primary-darken-30: shade($primary-base, 30);
+
+// Other colours
+$sky-blue: #deeefc;
+$red: #c1272d;
+
+// State colours (alerts and labels)
+$success-colour: #5cb85c;
+$success-colour-light: tint($success-colour, 20);
+$success-colour-dark: shade($success-colour, 70);
+
+$info-colour: #5bc0de;
+$info-colour-light: tint($info-colour, 20);
+$info-colour-dark: shade($info-colour, 70);
+
+$warning-colour: #f0ad4e;
+$warning-colour-light: tint($warning-colour, 20);
+$warning-colour-dark: shade($warning-colour, 70);
+
+$danger-colour: $red;
+$danger-colour-light: tint($danger-colour, 20);
+$danger-colour-dark: shade($danger-colour, 95);
+
+// Opacities
 $opacity-hover: .7;
 $opacity-disabled: .5;
 
+// Transparencies
 $transparent: rgba(0, 0, 0, 0);
 $transparent-white: rgba(255, 255, 255, .01);
 $transparent-light-grey: rgba(255, 255, 255, .4);
@@ -15,63 +58,41 @@ $transparent-grey: rgba(215, 215, 215, .7);
 $transparent-dark-grey: rgba(0, 0, 0, .5);
 $transparent-very-dark-grey: rgba(0, 0, 0, .9);
 
-// Grey palette
+
+// PALETTE USAGE //
+
+// Greys
 $background-colour-base: $white;
-$grey-very-light: #f9fafa;
-$grey-light: #f2f2f2;
-$grey: #b3b3b3;
-$grey-dark: #4d4d4d;
-$grey-very-dark: #2a2a2a;
+$grey-very-light: $grey-lighten-3;
+$grey-light: $grey-lighten-6;
+$grey: $grey-lighten-40;
+$grey-dark: $grey-lighten-80;
+$grey-very-dark: $grey-base;
 
-// Custom colours
-$primary-colour: #8cc63f;
-$primary-colour-very-light: #f6faf1;
-$primary-colour-light: #e2eecc;
-$primary-colour-very-dark: #334217;
-$sky-blue: #deeefc;
+// Primarys
+$primary-colour: $primary-base;
+$primary-colour-very-light: $primary-lighten-5;
+$primary-colour-very-dark: $primary-darken-30;
 
-$highlight-colour: $primary-colour;
+// Keylines
+$grey-keyline-light: $grey-lighten-15;
+$grey-keyline: $grey-lighten-20;
+$grey-keyline-dark: $grey-lighten-30;
 
-// Keyline colours
-$grey-keyline-very-light: #e2e2e2;
-$grey-keyline-light: #b3b3b3;
-$grey-keyline: #ccc;
-$grey-keyline-dark: #777;
-
-// Font Colours
-$font-colour-base: #333;
-$font-colour-light: #999;
+// Typography
+$font-colour-base: $grey-base;
+$font-colour-light: $grey-lighten-50;
 $font-colour-very-light: $grey-keyline;
 
-$icon-colour: $font-colour-base;
-
-// Social colours
-$facebook-colour: #4b6ead;
-$twitter-colour: #00b7f0;
-$pinterest-colour: #bd081c;
-
-// Form colours
+// Forms
 $form-keyline: $grey-keyline;
 $radio-border: $grey-keyline;
 $radio-fill-colour: $primary-colour;
 $checkbox-border: $form-keyline;
 $checked-fill-colour: $primary-colour;
 $checkbox-bg-colour: transparent;
-$error-red: #c1272d;
+$error-red: $red;
 
-// State colours (alerts and labels)
-$success-colour: #5cb85c;
-$success-colour-light: #dff0d8;
-$success-colour-dark: #3c763d;
-
-$info-colour: #5bc0de;
-$info-colour-light: #d9edf7;
-$info-colour-dark: #31708f;
-
-$warning-colour: #f0ad4e;
-$warning-colour-light: #fcf8e3;
-$warning-colour-dark: #8a6d3b;
-
-$danger-colour: $error-red;
-$danger-colour-light: #f2dede;
-$danger-colour-dark: #c1272d;
+// Other
+$icon-colour: $font-colour-base;
+$highlight-colour: $primary-colour;
