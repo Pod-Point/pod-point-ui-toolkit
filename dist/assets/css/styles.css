@@ -1295,24 +1295,62 @@ fieldset {
   margin-bottom: 4px; }
 
 .choices-select.form__field::after {
+  position: absolute;
+  top: 35%;
+  right: 10px;
+  background-image: url("../img/css-bg/icons/chevron.svg");
+  background-size: cover;
   border: 0;
-  margin-top: 0; }
+  content: '';
+  height: 0.9375rem;
+  margin-top: 0;
+  width: 0.9375rem; }
+
+.choices-select.form__field .choices__list--dropdown .choices__item,
+.choices-select.form__field .choices__list--dropdown .choices__input--cloned {
+  font-size: 1rem; }
 
 .choices-select.form__field .choices__list--dropdown.is-active {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: block;
+  font-size: 1rem;
+  height: 2.5rem;
+  max-width: 600px;
+  padding: 6px 10px;
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  transition: border-colour;
   height: inherit !important;
   margin-bottom: 0;
   margin-top: 0;
   padding: 0 !important; }
+  ::-webkit-input-placeholder {
+    color: #ccc; }
+  :-ms-input-placeholder {
+    color: #ccc; }
+  ::placeholder {
+    color: #ccc; }
+  .choices-select.form__field .choices__list--dropdown.is-active:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #fff inset; }
+  .choices-select.form__field .choices__list--dropdown.is-active:focus {
+    border-color: #333;
+    color: #333;
+    outline: none; }
+  .choices-select.form__field .choices__list--dropdown.is-active:hover {
+    border-color: #333;
+    color: #333;
+    outline: none; }
 
-.choices-select.form__field .choices__list--dropdown .choices__item,
-.choices-select.form__field .choices__list--dropdown .choices__input.choices__input--cloned {
-  font-size: 1rem; }
-
-.choices-select.form__field .choices__inner.form__control, .choices-select.form__field .choices__inner.choices__list--dropdown.is-active {
+.choices-select.form__field .choices__inner.form__control {
   min-height: 0;
   padding-top: .4em; }
-  .choices-select.form__field .choices__inner.form__control .choices__list--single, .choices-select.form__field .choices__inner.choices__list--dropdown.is-active .choices__list--single {
-    padding: 0 1em 0 0.2em; }
+
+.choices-select.form__field .choices__list--single {
+  padding: 0 .2em 1em 0; }
 
 .choices-country-code {
   max-width: 600px; }
@@ -1320,22 +1358,21 @@ fieldset {
     float: left;
     margin-right: 5px;
     max-width: 600px; }
+    .choices-country-code .choices .country-name {
+      margin-left: 5px; }
     @media (min-width: 40em) {
       .choices-country-code .choices {
         max-width: 80px; }
-        .choices-country-code .choices .choices__list.choices__list--dropdown.is-active {
+        .choices-country-code .choices .choices__list--dropdown.is-active {
           max-width: 600px;
-          min-width: 340px; } }
-    @media (min-width: 40em) {
-      .choices-country-code .choices .choices__list.choices__list--single .choices__item.choices__item--selectable .country-name,
-      .choices-country-code .choices .choices__list.choices__list--single .choices__item.choices__item--selectable .country-dialling-code {
-        display: none; }
-      .choices-country-code .choices .choices__list.choices__list--dropdown .country-name {
-        margin-left: 5px; } }
-  .choices-country-code input.form__control, .choices-country-code .choices-select.form__field input.choices__list--dropdown.is-active, .choices-select.form__field .choices-country-code input.choices__list--dropdown.is-active {
+          min-width: 340px; }
+        .choices-country-code .choices .choices__list--single .choices__item--selectable .country-name,
+        .choices-country-code .choices .choices__list--single .choices__item--selectable .country-dialling-code {
+          display: none; } }
+  .choices-country-code input.form__control {
     max-width: 600px; }
     @media (min-width: 40em) {
-      .choices-country-code input.form__control, .choices-country-code .choices-select.form__field input.choices__list--dropdown.is-active, .choices-select.form__field .choices-country-code input.choices__list--dropdown.is-active {
+      .choices-country-code input.form__control {
         max-width: calc(100% - 80px - 5px); } }
 
 .hero {
@@ -2167,7 +2204,7 @@ fieldset {
     left: 20%;
     width: 60%; }
 
-.form__control, .choices-select.form__field .choices__list--dropdown.is-active {
+.form__control {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -2187,17 +2224,17 @@ fieldset {
     color: #ccc; }
   ::placeholder {
     color: #ccc; }
-  .form__control:-webkit-autofill, .choices-select.form__field .choices__list--dropdown.is-active:-webkit-autofill {
+  .form__control:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px #fff inset; }
-  .form__control:focus:not(disabled), .choices-select.form__field .choices__list--dropdown.is-active:focus:not(disabled) {
+  .form__control:focus:not(disabled) {
     border-color: #333;
     color: #333;
     outline: none; }
-  .form__control:hover:not(:disabled), .choices-select.form__field .choices__list--dropdown.is-active:hover:not(:disabled) {
+  .form__control:hover:not(:disabled) {
     border-color: #333;
     color: #333;
     outline: none; }
-  .form__control:disabled:not(select), .choices-select.form__field .choices__list--dropdown.is-active:disabled:not(select) {
+  .form__control:disabled:not(select) {
     background-color: #f9fafa;
     cursor: not-allowed;
     opacity: 0.5; }
@@ -2212,7 +2249,7 @@ fieldset {
     padding-top: 9px;
     padding-bottom: 9px; }
 
-textarea.form__control, .choices-select.form__field textarea.choices__list--dropdown.is-active {
+textarea.form__control {
   min-height: 8.125rem;
   resize: vertical; }
 
@@ -2343,7 +2380,7 @@ textarea.form__control, .choices-select.form__field textarea.choices__list--drop
   position: relative;
   vertical-align: middle;
   width: 100%; }
-  .select::after, .choices-select.form__field::after {
+  .select::after {
     position: absolute;
     top: 35%;
     right: 10px;
@@ -2392,10 +2429,10 @@ textarea.form__control, .choices-select.form__field textarea.choices__list--drop
 .form__group--error .checkbox > input + span::before {
   border-color: #c1272d; }
 
-.form__group--error .form__control, .form__group--error .choices-select.form__field .choices__list--dropdown.is-active, .choices-select.form__field .form__group--error .choices__list--dropdown.is-active {
+.form__group--error .form__control {
   border-color: #c1272d; }
 
-.form__group--valid .form__control, .form__group--valid .choices-select.form__field .choices__list--dropdown.is-active, .choices-select.form__field .form__group--valid .choices__list--dropdown.is-active {
+.form__group--valid .form__control {
   border-color: #8cc63f; }
 
 .form__error {
