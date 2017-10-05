@@ -111,7 +111,7 @@
         }
 
         &.btn--secondary {
-            @include button-colour-inverted($font-colour-base);
+            @include button-colour-inverted($grey-lighten-80);
             border-color: $grey-keyline;
         }
 

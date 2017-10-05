@@ -715,21 +715,20 @@ img {
     max-width: 500px; }
 
 .btns-container {
-  margin: -10px;
-  overflow: hidden; }
+  margin-bottom: -10px;
+  margin-right: -10px; }
   .btns-container .btn {
     display: inline-block;
-    margin: 10px; }
+    margin-bottom: 10px;
+    margin-right: 6px; }
 
 .control-btns-container {
-  margin: -3px;
-  overflow: hidden; }
+  margin-bottom: -3px;
+  margin-right: -3px; }
   .control-btns-container .btn--control {
-    margin-top: 3px;
-    margin-right: 1px;
+    display: inline-block;
     margin-bottom: 3px;
-    margin-left: 1px;
-    display: inline-block; }
+    margin-right: -1px; }
 
 .content-block {
   padding-top: 50px;
@@ -1009,12 +1008,12 @@ fieldset {
         padding-left: 10px; } }
     .btn.btn--control.btn--secondary {
       background-color: transparent;
-      border-color: #333;
-      color: #333;
+      border-color: #5c5c5c;
+      color: #5c5c5c;
       border-color: #d6d6d6; }
       .btn.btn--control.btn--secondary:hover:not(.is-disabled):not([disabled]), .btn.btn--control.btn--secondary:focus:not(.is-disabled):not([disabled]), .btn.btn--control.btn--secondary:active:not(.is-disabled):not([disabled]) {
-        background-color: #333;
-        border-color: #333;
+        background-color: #5c5c5c;
+        border-color: #5c5c5c;
         color: #fff;
         opacity: 1; }
     .btn.btn--control.btn--danger {

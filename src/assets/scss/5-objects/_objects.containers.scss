@@ -25,21 +25,23 @@
 }
 
 .btns-container {
-    margin: -$buttons-gutter;
-    overflow: hidden;
+    margin-bottom: -$buttons-gutter;
+    margin-right: -$buttons-gutter;
 
     .btn {
         display: inline-block;
-        margin: $buttons-gutter;
+        margin-bottom: $buttons-gutter;
+        margin-right: ($buttons-gutter - 4px); // Inline-block creates 4px more space
     }
 }
 
 .control-btns-container {
-    margin: -$buttons-controls-gutter;
-    overflow: hidden;
+    margin-bottom: -$buttons-controls-gutter;
+    margin-right: -$buttons-controls-gutter;
 
     .btn--control {
-        @include margin($buttons-controls-gutter ($buttons-controls-gutter - 2px)); // Inline-block creates 2px more space
         display: inline-block;
+        margin-bottom: $buttons-controls-gutter;
+        margin-right: ($buttons-controls-gutter - 4px); // Inline-block creates 4px more space
     }
 }
