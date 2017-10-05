@@ -83,7 +83,7 @@
 	        domModules: (0, _domModuleLoader2.default)({
 	            toggleElement: _toggleElement2.default,
 	            accordion: _accordion2.default,
-	            typeAhead: _typeahead2.default
+	            typeahead: _typeahead2.default
 	        })
 	    });
 	});
