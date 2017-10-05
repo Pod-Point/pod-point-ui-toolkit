@@ -1,0 +1,41 @@
+// =============================================================================
+//  TOOLS - BUTONS
+// =============================================================================
+
+@mixin button-colour($colour) {
+    background-color: $colour;
+    border-color: $colour;
+    color: $white;
+
+    &:hover,
+    &:focus,
+    &:active {
+        &:not(.is-disabled) {
+            &:not([disabled]) {
+                background-color: transparent;
+                border-color: $colour;
+                color: $colour;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@mixin button-colour-inverted($colour) {
+    background-color: transparent;
+    border-color: $colour;
+    color: $colour;
+
+    &:hover,
+    &:focus,
+    &:active {
+        &:not(.is-disabled) {
+            &:not([disabled]) {
+                background-color: $colour;
+                border-color: $colour;
+                color: $white;
+                opacity: 1;
+            }
+        }
+    }
+}

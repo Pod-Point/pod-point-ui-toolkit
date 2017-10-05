@@ -7,11 +7,10 @@
 .btn {
     @include remove-link-styles;
     @include padding($button-v-padding $button-h-padding-mobile);
-    background-color: $primary-colour;
+    @include button-colour($primary-colour);
     border: $border-primary;
     border-radius: $button-radius;
     box-sizing: border-box;
-    color: $white;
     cursor: pointer;
     display: inline-block;
     font-size: $button-font-size;
@@ -32,71 +31,16 @@
         outline: none;
     }
 
-    &:hover,
-    &:focus,
-    &:active {
-        &:not(.is-disabled) {
-            &:not([disabled]) {
-                background-color: transparent;
-                border-color: $primary-colour;
-                color: $primary-colour;
-                opacity: 1;
-            }
-        }
-    }
-
     &.btn--secondary {
-        background-color: $grey;
-        border-color: $grey;
-        color: $white;
-
-        &:hover,
-        &:focus,
-        &:active {
-            &:not(.is-disabled) {
-                &:not([disabled]) {
-                    background-color: transparent;
-                    border-color: $grey;
-                    color: $grey;
-                }
-            }
-        }
+        @include button-colour($grey);
     }
 
     &.btn--tertiary {
-        background-color: transparent;
-        border-color: $grey-dark;
-        color: $grey-dark;
-
-        &:hover,
-        &:focus,
-        &:active {
-            &:not(.is-disabled) {
-                &:not([disabled]) {
-                    background-color: $grey-dark;
-                    border-color: $grey-dark;
-                    color: $white;
-                }
-            }
-        }
+        @include button-colour-inverted($grey-dark);
     }
 
     &.btn--danger {
-        background-color: $error-red;
-        border-color: $error-red;
-        color: $white;
-
-        &:hover,
-        &:focus,
-        &:active {
-            &:not(.is-disabled) {
-                &:not([disabled]) {
-                    background-color: transparent;
-                    border-color: $error-red;
-                    color: $error-red;
-                }
-            }
-        }
+        @include button-colour($error-red);
     }
 
     &.btn--selected {
@@ -150,6 +94,30 @@
                     opacity: $opacity-hover;
                 }
             }
+        }
+    }
+
+    &.btn--control {
+        @include padding($button-control-v-padding $button-control-h-padding-mobile);
+        @include button-colour-inverted($primary-colour);
+        border-color: $grey-keyline;
+        border-radius: 2px;
+        border-width: 1px;
+        font-size: $button-control-font-size;
+        min-height: $button-control-min-height;
+
+        @include screen-sm-min {
+            @include padding(null $button-control-h-padding);
+        }
+
+        &.btn--secondary {
+            @include button-colour-inverted($grey-lighten-80);
+            border-color: $grey-keyline;
+        }
+
+        &.btn--danger {
+            @include button-colour-inverted($error-red);
+            border-color: $grey-keyline;
         }
     }
 }
