@@ -24,7 +24,7 @@
     }
 }
 
-.btns-container {
+.btn-group {
     margin-bottom: -$buttons-gutter;
     margin-right: -$buttons-gutter;
 
@@ -32,16 +32,5 @@
         display: inline-block;
         margin-bottom: $buttons-gutter;
         margin-right: ($buttons-gutter - 4px); // Inline-block creates 4px more space
-    }
-}
-
-.control-btns-container {
-    margin-bottom: -$buttons-controls-gutter;
-    margin-right: -$buttons-controls-gutter;
-
-    .btn--control {
-        display: inline-block;
-        margin-bottom: $buttons-controls-gutter;
-        margin-right: ($buttons-controls-gutter - 4px); // Inline-block creates 4px more space
     }
 }

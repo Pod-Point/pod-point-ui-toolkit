@@ -11,6 +11,7 @@
                     <li><a href="#buttons-control">Control buttons</a></li>
                     <li><a href="#buttons-passive">Passive button</a></li>
                     <li><a href="#buttons-disabled">Buttons disabled</a></li>
+                    <li><a href="#button-group">Button group</a></li>
                 </ul>
             </div>
         </header>
@@ -38,12 +39,11 @@
                     <h3>CTA buttons</h3>
                     <p>Use the class <code>.btn</code> on any element eg. button, anchor, div, span.</p>
                     <p>Add the modifying classes to apply the secondary, tertiary and danger (delete) button styles <code>.btn--secondary</code>, <code>.btn--tertiary</code>, <code>.btn--danger</code>.</p>
-                    <p>The buttons have no spacing around them by default. However to stack buttons together nicely inline (as the examples below) add a wrapper with the class <code>.btns-container</code>.</p>
                 </div>
             </header>
             <div class="content-block">
                 <div class="container">
-                    <div class="btns-container">
+                    <div class="btn-group">
                         <button type="button" class="btn">Primary</button>
                         <a href="#" class="btn btn--secondary">Secondary</a>
                         <button type="button" class="btn btn--tertiary">Tertiary</button>
@@ -61,12 +61,11 @@
                     <h3>Control buttons</h3>
                     <p>Use the class <code>.btn</code> and the modifying class <code>.btn--control</code> on any element eg. button, anchor, div, span.</p>
                     <p>Add the modifying classes to apply the secondary and danger (delete) button styles <code>.btn--secondary</code>, <code>.btn--danger</code>.</p>
-                    <p>The control buttons have no spacing around them by default. However to stack buttons together nicely inline (as the examples below) add a wrapper with the classes <code>.control-btns-container</code>.</p>
                 </div>
             </header>
             <div class="content-block">
                 <div class="container">
-                    <div class="control-btns-container">
+                    <div class="btn-group">
                         <button type="button" class="btn btn--control">Primary</button>
                         <a href="#" class="btn btn--control btn--secondary">Secondary</a>
                         <span class="btn btn--control btn--danger">Danger</span>
@@ -87,7 +86,7 @@
             </header>
             <div class="content-block">
                 <div class="container">
-                    <div class="btns-container">
+                    <div class="btn-group">
                         <button class="btn btn--passive">Passive button</button>
                         <button class="btn btn--passive"><span>Passive button with chevron icon</span><i class="icon icon--inline">{{> icon-chevron }}</i></button>
                     </div>
@@ -107,7 +106,7 @@
             </header>
             <div class="container">
                 <div class="content-block">
-                    <div class="btns-container">
+                    <div class="btn-group">
                         <button class="btn is-disabled">Primary disabled</button>
                         <button disabled class="btn btn--secondary">Secondary disabled</button>
                         <button class="btn btn--tertiary is-disabled">Tertiary disabled</button>
@@ -115,7 +114,7 @@
                     </div>
                 </div>
                 <div class="content-block p-t-none">
-                    <div class="control-btns-container">
+                    <div class="btn-group">
                         <button disabled type="button" class="btn btn--control">Primary</button>
                         <a href="#" class="btn btn--control btn--secondary is-disabled">Secondary</a>
                         <span class="btn btn--control btn--danger is-disabled">Danger</span>
@@ -123,6 +122,32 @@
                 </div>
                 <div class="content-block p-t-none">
                     <button class="btn btn--passive is-disabled"><span>Passive button with chevron icon and disabled</span><i class="icon icon--inline">{{> icon-chevron }}</i></button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- BUTTON GROUP -->
+        <section id="button-group">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Button group</h3>
+                    <p>The buttons have no spacing around them by default. However to stack buttons together nicely inline (as the examples) add a wrapper with the class <code>.btn-group</code>.</p>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <div class="btn-group">
+                        <button type="button" class="btn">Primary</button>
+                        <a href="#" class="btn btn--secondary">Secondary</a>
+                        <button type="button" class="btn btn--tertiary">Tertiary</button>
+                        <span class="btn btn--danger">Danger</span>
+                        <button class="btn btn--passive">Passive button</button>
+                        <button class="btn btn--passive"><span>Passive button with chevron icon</span><i class="icon icon--inline">{{> icon-chevron }}</i></button>
+                        <button type="button" class="btn btn--control">Primary</button>
+                        <a href="#" class="btn btn--control btn--secondary">Secondary</a>
+                        <span class="btn btn--control btn--danger">Danger</span>
+                    </div>
                 </div>
             </div>
         </section>
