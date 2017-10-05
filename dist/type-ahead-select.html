@@ -24,7 +24,7 @@
 	<![endif]-->
 
 	<div class="global-wrapper">
-		<div data-page="choices-select" class="demo-page-content">
+		<div data-page="type-ahead-select" class="demo-page-content">
 
     <div class="pos-rel">
         <div class="demo-fixed-sidebar bs-r-light bg-white p-b-lg">
@@ -52,8 +52,6 @@
                     <li><a class="nav-link nav-link--alerts" href="alerts.html">Alerts</a></li>
                     <li><a class="nav-link nav-link--buttons" href="buttons.html">Buttons</a></li>
                     <li><a class="nav-link nav-link--cards" href="cards.html">Cards</a></li>
-                    <li><a class="nav-link nav-link--choices-select" href="choices-select.html">Choices Select</a></li>
-    
                     <li><a class="nav-link nav-link--forms" href="forms.html">Forms</a></li>
                     <li><a class="nav-link nav-link--grid" href="grid.html">Grid</a></li>
                     <li><a class="nav-link nav-link--heros" href="heros.html">Heros</a></li>
@@ -64,6 +62,7 @@
                     <li><a class="nav-link nav-link--tables" href="tables.html">Tables</a></li>
                     <li><a class="nav-link nav-link--toggles" href="toggles.html">Toggles</a></li>
                     <li><a class="nav-link nav-link--tooltips" href="tooltips.html">Tooltips</a></li>
+                    <li><a class="nav-link nav-link--typography" href="type-ahead-select.html">Type Ahead Select</a></li>
                     <li><a class="nav-link nav-link--typography" href="typography.html">Typography</a></li>
                 </ul>
             </nav>
@@ -73,7 +72,7 @@
     <div class="demo-container-with-sidebar">
         <header class="content-block content-block--strip bg-primary">
             <div class="container">
-                <h2>Choices Select</h2>
+                <h2>Type Ahead Select</h2>
             </div>
         </header>
 
@@ -87,22 +86,26 @@
             </header>
             <div class="content-block">
                 <div class="container">
-                    <p>SCSS files required: <code>_components.choices-select.scss</code></p>
+                    <p>SCSS files required: <code>_components.type-ahead-select.scss</code></p>
                     <p>SCSS files optional: <code>_components.choices-country-code.scss</code></p>
-                    <p>JS files required: <code>choices-select.js</code></p>
+                    <p>JS files required: <code>typeahead.js</code></p>
                 </div>
             </div>
         </section>
 
 
-        <!-- CHOICES SELECT -->
+        <!-- TYPE AHEAD SELECT -->
         <section id="accordionsMarkup">
             <header class="content-block bg-light-grey">
                 <div class="container">
-                    <h3>Choices Select structure</h3>
-                    <p>The Choices Select element uses the feature rich <a href="https://github.com/jshjohnson/Choices" target="_blank"><code>choices.js</code></a> library to wrap an ordinary select dropdown.</p>
-                    <p>A Choices Select element is created using an existing select and the Choices Select js module <code>data-js-module="choicesSelect"</code>.</p>
-                    <p>A Choices Select element options are defined by the <code>data-options</code> attribute, which accepts a JSON string in the following format:</p>
+                    <h3>Type Ahead Select structure</h3>
+                    <p>The Type Ahead Select element uses the feature rich <a
+                            href="https://github.com/jshjohnson/Choices" target="_blank"><code>choices.js</code></a>
+                        library to wrap an ordinary select dropdown.</p>
+                    <p>A Type Ahead Select element is created using an existing select and the Type Ahead Select js
+                        module <code>data-js-module="typeAheadSelect"</code>.</p>
+                    <p>A Type Ahead Select element options are defined by the <code>data-options</code> attribute, which
+                        accepts a JSON string in the following format:</p>
                     <pre>
                         [
                           {
@@ -121,13 +124,18 @@
                           }
                         ]
                     </pre>
-                    <p>Where <code>value</code> is the value of the option, <code>label</code> is what is displayed and <code>customProperties.description</code> is what is searchable.</p>
-                    <p>A Choices Select element default option is defined by the <code>data-default</code> attribute, which accepts the value of one of your JSON options.</p>
-                    <p>You can also specify the css classes to style the outer and inner containers via the <code>data-container-outer-class</code> and <code>data-container-inner-class</code> attributes; applying the <code>.choices-select .form__field</code> and <code>.form__control</code> classes, respectively, will give the Choices Select element the same styling as other form elements.</p>
+                    <p>Where <code>value</code> is the value of the option, <code>label</code> is what is displayed and
+                        <code>customProperties.description</code> is what is searchable.</p>
+                    <p>A Type Ahead Select element default option is defined by the <code>data-default</code> attribute,
+                        which accepts the value of one of your JSON options.</p>
+                    <p>You can also specify the css classes to style the outer and inner containers via the <code>data-container-outer-class</code>
+                        and <code>data-container-inner-class</code> attributes; applying the <code>.type-ahead-select
+                            .form__field</code> and <code>.form__control</code> classes, respectively, will give the
+                        Type Ahead Select element the same styling as other form elements.</p>
 
 <figure class="figure-box figure-box--dark figure-box--max-height-md">
 <pre>
-&#x3C;select data-js-module=&#x22;choicesSelect&#x22; data-options=&#39;[
+&#x3C;select data-js-module=&#x22;typeAheadSelect&#x22; data-options=&#39;[
   {
     "value": "1",
     "label": "One",
@@ -142,7 +150,7 @@
       "description": "Two"
     }
   }
-]&#39; data-default=&#x22;1&#x22; data-container-outer-class=&#x22;choices-select form__field&#x22; data-container-inner-class=&#x22;form__control&#x22;&#x3E;
+]&#39; data-default=&#x22;1&#x22; data-container-outer-class=&#x22;type-ahead-select form__field&#x22; data-container-inner-class=&#x22;form__control&#x22;&#x3E;
 &#x3C;/select&#x3E;
 </pre>
 </figure>
@@ -159,22 +167,34 @@
                         <div class="form__group">
                             <label class="form__label">Select</label>
 
-                            <select data-js-module="choicesSelect" data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]' data-default="1" data-container-outer-class="choices-select form__field" data-container-inner-class="form__control"></select>
+                            <select data-js-module="typeAheadSelect"
+                                    data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]'
+                                    data-default="1" data-container-outer-class="type-ahead-select form__field"
+                                    data-container-inner-class="form__control"></select>
                         </div>
                         <div class="form__group">
                             <label class="form__label">Select - disabled</label>
 
-                            <select data-js-module="choicesSelect" data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]' data-default="2" data-container-outer-class="choices-select form__field" data-container-inner-class="form__control" disabled="true"></select>
+                            <select data-js-module="typeAheadSelect"
+                                    data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]'
+                                    data-default="2" data-container-outer-class="type-ahead-select form__field"
+                                    data-container-inner-class="form__control" disabled="true"></select>
                         </div>
                         <div class="form__group form__group--valid">
                             <label class="form__label">Select - valid</label>
 
-                            <select data-js-module="choicesSelect" data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]' data-default="1" data-container-outer-class="choices-select form__field" data-container-inner-class="form__control"></select>
+                            <select data-js-module="typeAheadSelect"
+                                    data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]'
+                                    data-default="1" data-container-outer-class="type-ahead-select form__field"
+                                    data-container-inner-class="form__control"></select>
                         </div>
                         <div class="form__group form__group--error">
                             <label class="form__label">Select - invalid</label>
 
-                            <select data-js-module="choicesSelect" data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]' data-default="2" data-container-outer-class="choices-select form__field" data-container-inner-class="form__control"></select>
+                            <select data-js-module="typeAheadSelect"
+                                    data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]'
+                                    data-default="2" data-container-outer-class="type-ahead-select form__field"
+                                    data-container-inner-class="form__control"></select>
 
                             <span class="form__error">This is an error message.</span>
                         </div>
@@ -187,13 +207,14 @@
                 <div class="content-block">
                     <div class="container">
                         <h3>Country Code Select</h3>
-                        <p>You can wrap the select, along with an input, in a div with the class <code>.choices-country-code</code> to create a country code phone number widget.</p>
+                        <p>You can wrap the select, along with an input, in a div with the class <code>.choices-country-code</code>
+                            to create a country code phone number widget.</p>
                         <p>Note: you must include the <code>_components.choices-country-code.scss</code> file.</p>
 
                         <div class="form__group">
                             <label class="form__label">Phone Number</label>
                             <div class="choices-country-code">
-                                <select data-js-module="choicesSelect" data-options='[
+                                <select data-js-module="typeAheadSelect" data-options='[
                                   {
                                     "label": "Default",
                                     "id": 1,
@@ -234,7 +255,8 @@
                                       }
                                     ]
                                   }
-                                ]' data-default="GB" data-container-outer-class="choices-select form__field" data-container-inner-class="form__control">
+                                ]' data-default="GB" data-container-outer-class="type-ahead-select form__field"
+                                        data-container-inner-class="form__control">
                                 </select>
                                 <input class="form__control form__field" type="text" placeholder="Phone number">
                             </div>
@@ -242,6 +264,115 @@
                     </div>
                 </div>
             </section>
+
+            <section id="markupOnlu">
+                <div class="content-block">
+                    <div class="container">
+                        <h3>Select Markup Only</h3>
+
+                        <p>If you would like to run the component using your own javascript, but would like to use themarkup and css available in the toolkit:</p>
+
+<figure class="figure-box figure-box--dark figure-box--max-height-md">
+<pre>
+&#x3C;select data-js-module=&#x22;typeAheadSelect&#x22; data-options=&#39;[
+  {
+    "value": "1",
+    "label": "One",
+    "customProperties": {
+      "description": "One"
+    }
+  },
+  {
+    "value": "2",
+    "label": "Two",
+    "customProperties": {
+      "description": "Two"
+    }
+  }
+]&#39; data-default=&#x22;1&#x22; data-container-outer-class=&#x22;type-ahead-select form__field&#x22; data-container-inner-class=&#x22;form__control&#x22;&#x3E;
+&#x3C;/select&#x3E;
+</pre>
+</figure>
+
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <div class="container">
+                        <div class="type-ahead-select form__field">
+                            <div class="choices__inner form__control">
+                                <select class="choices__input is-hidden">
+                                    <option value="1" selected="">One</option>
+                                </select>
+                                <div class="choices__list choices__list--single">
+                                    <div class="choices__item choices__item--selectable">
+                                        One
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="choices__list choices__list--dropdown">
+                                <input type="text" class="choices__input choices__input--cloned" placeholder="Search">
+                                <div class="choices__list">
+                                    <div class="choices__item choices__item--choice choices__item--selectable is-highlighted" data-value="1">
+                                        One
+                                    </div>
+                                    <div class="choices__item choices__item--choice choices__item--selectable" data-value="2">
+                                        Two
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <div class="container">
+                        <p>To show the options, you can add the <code>.is-active</code> class to the div element with class <code>.choices__list .choices__list--dropdown</code>.</p>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <div class="container">
+                        <div class="type-ahead form__field">
+                            <div class="choices__inner form__control">
+                                <select class="type-ahead__select">
+                                    <option value="1" selected="">One</option>
+                                </select>
+                                <div class="choices__list choices__list--single">
+                                    <div class="choices__item choices__item--selectable">
+                                        One
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="choices__list choices__list--dropdown is-active">
+                                <input type="text" class="type-ahead__input form__field form__control" placeholder="Search">
+                                <div class="choices__list">
+                                    <div class="choices__item choices__item--choice choices__item--selectable is-highlighted"
+                                         data-value="1">
+                                        One
+                                    </div>
+                                    <div class="choices__item choices__item--choice choices__item--selectable" data-value="2">
+                                        Two
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!--<div class="type-ahead-select form__field" role="combobox" aria-autocomplete="list" data-type="select-one" tabindex="0" aria-haspopup="true" aria-expanded="false" dir="ltr" aria-activedescendant="choices-lphq-item-choice-1">-->
+            <!--<div class="choices__inner form__control"><select data-js-module="typeAheadSelect" data-options="[{&quot;value&quot;:&quot;1&quot;,&quot;label&quot;:&quot;One&quot;,&quot;customProperties&quot;:{&quot;description&quot;:&quot;One&quot;}},{&quot;value&quot;:&quot;2&quot;,&quot;label&quot;:&quot;Two&quot;,&quot;customProperties&quot;:{&quot;description&quot;:&quot;Two&quot;}}]" data-default="2" data-container-outer-class="type-ahead-select form__field" data-container-inner-class="form__control" class="choices__input is-hidden" tabindex="-1" style="display:none;" aria-hidden="true" data-choice="active"><option value="2" selected="">Two</option></select><div class="choices__list choices__list--single"><div class="choices__item choices__item--selectable" data-item="" data-id="1" data-value="2" aria-selected="true">-->
+            <!--Two-->
+            <!--</div></div></div><div class="choices__list choices__list--dropdown" aria-expanded="false"><input type="text" class="choices__input choices__input--cloned" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="Search">-->
+            <!--<div class="choices__list" dir="ltr" role="listbox"><div class="choices__item choices__item--choice choices__item--selectable is-highlighted" data-select-text="" data-choice="" data-id="1" data-value="1" data-choice-selectable="" id="choices-lphq-item-choice-1" role="option" aria-selected="true">-->
+            <!--One-->
+            <!--</div><div class="choices__item choices__item--choice choices__item--selectable" data-select-text="" data-choice="" data-id="2" data-value="2" data-choice-selectable="" id="choices-lphq-item-choice-2" role="option">-->
+            <!--Two-->
+            <!--</div></div></div></div>-->
 
 
         </section>

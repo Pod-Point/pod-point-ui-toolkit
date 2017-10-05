@@ -16,27 +16,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var instances = [];
 
-var ChoicesSelect = function () {
+var TypeAhead = function () {
 
     /**
-     * ChoicesSelect constructor.
-     * Wraps `choices.js` for a dynamic and feature rich select dropdown.
-     * Binds to a typical html select dropdown.
+     * TypeAheadSelect constructor.
      *
      * @param {Object} select The select html element to bind to
      *
      * @return {void}
      */
-    function ChoicesSelect(select) {
-        _classCallCheck(this, ChoicesSelect);
+    function TypeAhead(select) {
+        _classCallCheck(this, TypeAhead);
 
         this.select = select;
 
         var defaultOption = this.select.dataset.default || '';
         var disabled = this.select.getAttribute('disabled') || false;
         var _select$dataset = this.select.dataset,
-            containerOuterClass = _select$dataset.containerOuterClass,
-            containerInnerClass = _select$dataset.containerInnerClass;
+            _select$dataset$conta = _select$dataset.containerClass,
+            containerClass = _select$dataset$conta === undefined ? 'type-ahead form__field' : _select$dataset$conta,
+            _select$dataset$selec = _select$dataset.selectClass,
+            selectClass = _select$dataset$selec === undefined ? 'form__control' : _select$dataset$selec,
+            _select$dataset$dropd = _select$dataset.dropdownClass,
+            dropdownClass = _select$dataset$dropd === undefined ? 'form__control type-ahead__list type-ahead__list--dropdown' : _select$dataset$dropd;
 
 
         var options = void 0;
@@ -51,9 +53,17 @@ var ChoicesSelect = function () {
             searchFields: 'customProperties.description',
             itemSelectText: '',
             classNames: {
-                containerOuter: 'choices choices-select ' + (containerOuterClass || ''),
-                containerInner: 'choices__inner ' + (containerInnerClass || ''),
-                openState: 'choices-select--is-open'
+                containerOuter: containerClass,
+                containerInner: selectClass,
+                list: 'type-ahead__list',
+                listDropdown: dropdownClass,
+                listSingle: 'type-ahead__list--single',
+                groupHeading: 'type-ahead__list--heading',
+                openState: 'type-ahead--is-open',
+                input: 'type-ahead__input',
+                item: 'type-ahead__item',
+                itemSelectable: 'type-ahead__item--selectable',
+                activeState: 'is-active'
             }
         });
 
@@ -72,19 +82,19 @@ var ChoicesSelect = function () {
      */
 
 
-    _createClass(ChoicesSelect, [{
+    _createClass(TypeAhead, [{
         key: 'destroy',
         value: function destroy() {
             this.choices.destroy();
         }
     }]);
 
-    return ChoicesSelect;
+    return TypeAhead;
 }();
 
 exports.default = {
     init: function init(select) {
-        instances.push(new ChoicesSelect(select));
+        instances.push(new TypeAhead(select));
     },
     destroy: function destroy() {
         instances.forEach(function (instance) {

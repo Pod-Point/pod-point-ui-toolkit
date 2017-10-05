@@ -1,0 +1,104 @@
+// =============================================================================
+//  COMPONENTS - TYPEAHEAD
+// =============================================================================
+
+.typeahead {
+    $margin-bottom-select: 4px;
+    $margin-bottom-options: 2px;
+    $item-padding: 10px;
+    $list-margin-top: -2px;
+    $input-border-bottom: 1px;
+
+    cursor: pointer;
+    display: block;
+    margin-bottom: $margin-bottom-select;
+    margin-top: 0;
+    max-width: $form-field-max-width;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+    }
+
+    &::after {
+        @include position(absolute, 35% $input-h-padding null null);
+        background-image: url($css-bg-path+'icons/chevron.svg');
+        background-size: cover;
+        content: '';
+        height: $select-chevron-size;
+        width: $select-chevron-size;
+    }
+
+    .typeahead__select {
+        display: none;
+    }
+
+    .typeahead__input {
+        @include input-styles;
+
+        border: 0;
+        border-bottom: $input-border-bottom solid $grey-light;
+        font-size: 1rem;
+
+        &:focus {
+            &:not(disabled) {
+                @include input-border--hover($grey-light);
+            }
+        }
+
+        &:hover {
+            &:not(:disabled) {
+                @include input-border--hover($grey-light);
+            }
+        }
+    }
+
+    .typeahead__item {
+        font-size: 1rem;
+        padding: $item-padding;
+    }
+
+    .typeahead__list {
+        &--dropdown {
+            border-color: $grey-keyline !important; // sass-lint:disable-line no-important
+            display: none;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+
+            &.is-active {
+                display: block;
+                height: inherit;
+                margin-bottom: $margin-bottom-options;
+                margin-top: $margin-bottom-options;
+                padding: 0;
+            }
+
+            .typeahead__item {
+                &:hover {
+                    background-color: $grey-light;
+                }
+            }
+        }
+
+        &--single {
+            margin-top: $list-margin-top;
+            padding: .1em .2em 1em 0;
+
+            .typeahead__item {
+                &--selectable {
+                    margin-right: $select-chevron-size;
+                    overflow: hidden;
+                    padding: 0;
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        &--heading {
+            padding-left: .2em;
+        }
+    }
+}

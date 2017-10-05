@@ -2,12 +2,10 @@ import Choices from 'choices.js';
 
 let instances = [];
 
-class ChoicesSelect {
+class Typeahead {
 
     /**
-     * ChoicesSelect constructor.
-     * Wraps `choices.js` for a dynamic and feature rich select dropdown.
-     * Binds to a typical html select dropdown.
+     * Typeahead constructor.
      *
      * @param {Object} select The select html element to bind to
      *
@@ -19,8 +17,9 @@ class ChoicesSelect {
         const defaultOption = this.select.dataset.default || '';
         const disabled = this.select.getAttribute('disabled') || false;
         const {
-            containerOuterClass,
-            containerInnerClass,
+            containerClass = 'typeahead form__field',
+            selectClass = 'form__control',
+            dropdownClass = 'typeahead__list typeahead__list--dropdown form__control',
         } = this.select.dataset;
 
         let options;
@@ -35,9 +34,17 @@ class ChoicesSelect {
             searchFields: 'customProperties.description',
             itemSelectText: '',
             classNames: {
-                containerOuter: `choices choices-select ${containerOuterClass || ''}`,
-                containerInner: `choices__inner ${containerInnerClass || ''}`,
-                openState: 'choices-select--is-open',
+                containerOuter: containerClass,
+                containerInner: selectClass,
+                listDropdown: dropdownClass,
+                list: 'typeahead__list',
+                listSingle: 'typeahead__list--single',
+                groupHeading: 'typeahead__list--heading',
+                openState: 'typeahead--is-open',
+                input: 'typeahead__input',
+                item: 'typeahead__item',
+                itemSelectable: 'typeahead__item--selectable',
+                activeState: 'is-active',
             },
         });
 
@@ -61,7 +68,7 @@ class ChoicesSelect {
 
 export default {
     init(select) {
-        instances.push(new ChoicesSelect(select));
+        instances.push(new Typeahead(select));
     },
     destroy() {
         instances.forEach(instance => instance.destroy());

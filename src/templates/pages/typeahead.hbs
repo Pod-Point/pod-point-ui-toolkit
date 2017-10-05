@@ -1,0 +1,252 @@
+<div data-page="typeahead-select" class="demo-page-content">
+
+    {{> demo-sidebar }}
+
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
+            <div class="container">
+                <h2>Typeahead</h2>
+            </div>
+        </header>
+
+
+        <!-- REQUIRED FILES -->
+        <section id="accordionsRequired">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Required files</h3>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p>SCSS files required: <code>_components.typeahead.scss</code></p>
+                    <p>SCSS files optional: <code>_components.typeahead-group.scss</code></p>
+                    <p>JS files required: <code>typeahead.js</code></p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- TYPEAHEAD -->
+        <section id="accordionsMarkup">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Typeahead structure</h3>
+                    <p>The Typeahead element uses the feature rich <a
+                            href="https://github.com/jshjohnson/Choices" target="_blank"><code>choices.js</code></a>
+                        library to wrap an ordinary select dropdown.</p>
+                    <p>A Typeahead element is created using an existing select and the Typeahead js
+                        module <code>data-js-module="typeAhead"</code>.</p>
+                    <p>A Typeahead element options are defined by the <code>data-options</code> attribute, which
+                        accepts a JSON string of options, where <code>value</code> is the value of the option, <code>label</code> is what is displayed and
+                        <code>customProperties.description</code> is what is searchable.</p>
+                    <p>A Typeahead element default option is defined by the <code>data-default</code> attribute,
+                        which accepts the value of one of your JSON options.</p>
+                    <p>You can also specify the css classes to style the container, select and dropdown via the <code>data-container-class</code>, <code>data-select-class</code>
+                        and <code>data-dropdown-class</code> attributes.</p>
+                    <p>By default the classes <code>.typeahead .form__field</code>, <code>.form__control</code> and <code>.typeahead__list .typeahead__list--dropdown .form__control</code>, respectively, will be applied.</p>
+
+{{> snippet-typeahead }}
+
+                </div>
+            </header>
+
+            <!-- DEFAULT SELECT -->
+            <section id="defaultSelect">
+                <div class="content-block">
+                    <div class="container">
+                        <h3>Default Select</h3>
+
+                        <div class="form__group">
+                            <label class="form__label">Select</label>
+
+                            <select data-js-module="typeAhead"
+                                    data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]'
+                                    data-default="1">
+                            </select>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label">Select - disabled</label>
+
+                            <select data-js-module="typeAhead"
+                                    data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]'
+                                    data-default="2"
+                                    disabled="true">
+                            </select>
+                        </div>
+
+                        <div class="form__group form__group--valid">
+                            <label class="form__label">Select - valid</label>
+
+                            <select data-js-module="typeAhead"
+                                    data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]'
+                                    data-default="1">
+                            </select>
+                        </div>
+
+                        <div class="form__group form__group--error">
+                            <label class="form__label">Select - invalid</label>
+
+                            <select data-js-module="typeAhead"
+                                    data-options='[{"value":"1","label":"One","customProperties":{"description":"One"}},{"value":"2","label":"Two","customProperties":{"description":"Two"}}]'
+                                    data-default="2">
+                            </select>
+
+                            <span class="form__error">This is an error message.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GROUPED INPUTS WIDGET-->
+            <section id=groupedInputsWidget>
+                <div class="content-block">
+                    <div class="container">
+                        <h3>Grouped Inputs Widget</h3>
+                        <p>You can wrap the select, along with an input, in a div with the class <code>.typeahead-group</code>
+                            to create a grouped inputs widget, which is particularly useful for phone number fields.</p>
+                        <p>Note: you must include the <code>_components.typeahead-group.scss</code> file.</p>
+
+                        <div class="form__group">
+                            <label class="form__label">Phone Number</label>
+                            <div class="typeahead-group">
+                                <select data-js-module="typeAhead" data-options='[
+                                  {
+                                    "label": "Default",
+                                    "id": 1,
+                                    "choices": [
+                                      {
+                                        "value": "GB",
+                                        "label": "🇬🇧 <span class=\"typeahead__item--single-hidden-sm\">United Kingdom (+44)</span>",
+                                        "customProperties": {
+                                          "description": "United Kingdom"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "Other Countries",
+                                    "id": 2,
+                                    "choices": [
+                                      {
+                                        "value": "DE",
+                                        "label": "🇩🇪 <span class=\"typeahead__item--single-hidden-sm\">Germany (+49)</span>",
+                                        "customProperties": {
+                                          "description": "Germany"
+                                        }
+                                      },
+                                      {
+                                        "value": "FR",
+                                        "label": "🇫🇷 <span class=\"typeahead__item--single-hidden-sm\">France (+33)</span>",
+                                        "customProperties": {
+                                          "description": "France"
+                                        }
+                                      },
+                                      {
+                                        "value": "IT",
+                                        "label": "🇮🇹 <span class=\"typeahead__item--single-hidden-sm\">Italy (+39)</span>",
+                                        "customProperties": {
+                                          "description": "Italy"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]'
+                                        data-default="GB">
+                                </select>
+
+                                <input class="form__control form__field" type="text" placeholder="Phone number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="markupOnly">
+                <div class="content-block bg-light-grey">
+                    <div class="container">
+                        <h3>Markup Only</h3>
+
+                        <p>If you would like to run the component using your own javascript, but would like to use the markup and css available in the toolkit, simply copy the below markup in your code:</p>
+
+{{> snippet-typeahead-markup }}
+
+                    </div>
+                </div>
+                <div class="content-block">
+                    <div class="container">
+
+                        <div class="form__group">
+                            <label class="form__label">Select</label>
+
+                            <div class="typeahead form__field">
+                                <div class="form__control">
+                                    <select class="typeahead__select">
+                                        <option value="1" selected="">One</option>
+                                    </select>
+
+                                    <div class="typeahead__list typeahead__list--single">
+                                        <div class="typeahead__item typeahead__item--selectable">
+                                            One
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="typeahead__list typeahead__list--dropdown form__control">
+                                    <input type="text" class="typeahead__input form__field form__control" placeholder="Search">
+
+                                    <div class="typeahead__list">
+                                        <div class="typeahead__item typeahead__item--selectable" data-value="1">One</div>
+
+                                        <div class="typeahead__item typeahead__item--selectable" data-value="2">Two</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>To show the options dropdown, you can add the <code>.is-active</code> class to the div element with class <code>.typeahead__list .typeahead__list--dropdown</code>.</p>
+
+                        <div class="form__group">
+                            <label class="form__label">Select</label>
+
+                            <div class="typeahead form__field">
+                                <div class="form__control">
+                                    <select class="typeahead__select">
+                                        <option value="1" selected="">One</option>
+                                    </select>
+
+                                    <div class="typeahead__list typeahead__list--single">
+                                        <div class="typeahead__item typeahead__item--selectable">
+                                            One
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="typeahead__list typeahead__list--dropdown form__control is-active">
+                                    <input type="text" class="typeahead__input" placeholder="Search">
+
+                                    <div class="typeahead__list typeahead__list--options">
+                                        <div class="typeahead__item typeahead__item--selectable" data-value="1">One</div>
+
+                                        <div class="typeahead__item typeahead__item--selectable" data-value="2">Two</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                        <p>Remember, in order to work with a <code>form</code> submit, your javascript must set the selected option into the <code>select</code> element.</p>
+
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>

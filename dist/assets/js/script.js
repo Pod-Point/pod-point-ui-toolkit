@@ -70,9 +70,9 @@
 	
 	var _accordion2 = _interopRequireDefault(_accordion);
 	
-	var _choicesSelect = __webpack_require__(11);
+	var _typeahead = __webpack_require__(11);
 	
-	var _choicesSelect2 = _interopRequireDefault(_choicesSelect);
+	var _typeahead2 = _interopRequireDefault(_typeahead);
 	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
@@ -83,7 +83,7 @@
 	        domModules: (0, _domModuleLoader2.default)({
 	            toggleElement: _toggleElement2.default,
 	            accordion: _accordion2.default,
-	            choicesSelect: _choicesSelect2.default
+	            typeAhead: _typeahead2.default
 	        })
 	    });
 	});
@@ -1489,27 +1489,29 @@
 	
 	var instances = [];
 	
-	var ChoicesSelect = function () {
+	var Typeahead = function () {
 	
 	    /**
-	     * ChoicesSelect constructor.
-	     * Wraps `choices.js` for a dynamic and feature rich select dropdown.
-	     * Binds to a typical html select dropdown.
+	     * Typeahead constructor.
 	     *
 	     * @param {Object} select The select html element to bind to
 	     *
 	     * @return {void}
 	     */
-	    function ChoicesSelect(select) {
-	        _classCallCheck(this, ChoicesSelect);
+	    function Typeahead(select) {
+	        _classCallCheck(this, Typeahead);
 	
 	        this.select = select;
 	
 	        var defaultOption = this.select.dataset.default || '';
 	        var disabled = this.select.getAttribute('disabled') || false;
 	        var _select$dataset = this.select.dataset,
-	            containerOuterClass = _select$dataset.containerOuterClass,
-	            containerInnerClass = _select$dataset.containerInnerClass;
+	            _select$dataset$conta = _select$dataset.containerClass,
+	            containerClass = _select$dataset$conta === undefined ? 'typeahead form__field' : _select$dataset$conta,
+	            _select$dataset$selec = _select$dataset.selectClass,
+	            selectClass = _select$dataset$selec === undefined ? 'form__control' : _select$dataset$selec,
+	            _select$dataset$dropd = _select$dataset.dropdownClass,
+	            dropdownClass = _select$dataset$dropd === undefined ? 'typeahead__list typeahead__list--dropdown form__control' : _select$dataset$dropd;
 	
 	
 	        var options = void 0;
@@ -1524,9 +1526,17 @@
 	            searchFields: 'customProperties.description',
 	            itemSelectText: '',
 	            classNames: {
-	                containerOuter: 'choices choices-select ' + (containerOuterClass || ''),
-	                containerInner: 'choices__inner ' + (containerInnerClass || ''),
-	                openState: 'choices-select--is-open'
+	                containerOuter: containerClass,
+	                containerInner: selectClass,
+	                listDropdown: dropdownClass,
+	                list: 'typeahead__list',
+	                listSingle: 'typeahead__list--single',
+	                groupHeading: 'typeahead__list--heading',
+	                openState: 'typeahead--is-open',
+	                input: 'typeahead__input',
+	                item: 'typeahead__item',
+	                itemSelectable: 'typeahead__item--selectable',
+	                activeState: 'is-active'
 	            }
 	        });
 	
@@ -1545,19 +1555,19 @@
 	     */
 	
 	
-	    _createClass(ChoicesSelect, [{
+	    _createClass(Typeahead, [{
 	        key: 'destroy',
 	        value: function destroy() {
 	            this.choices.destroy();
 	        }
 	    }]);
 	
-	    return ChoicesSelect;
+	    return Typeahead;
 	}();
 	
 	exports.default = {
 	    init: function init(select) {
-	        instances.push(new ChoicesSelect(select));
+	        instances.push(new Typeahead(select));
 	    },
 	    destroy: function destroy() {
 	        instances.forEach(function (instance) {

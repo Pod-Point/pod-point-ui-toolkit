@@ -1,0 +1,50 @@
+// =============================================================================
+//  COMPONENTS - TYPEAHEAD GROUP
+// =============================================================================
+
+.typeahead-group {
+    $typeahead-group-width: 80px;
+    $typeahead-group-selection-width: 340px;
+    $typeahead-group-margin: 5px;
+
+    max-width: $max-width-text;
+
+    .typeahead {
+        float: left;
+        margin-right: $typeahead-group-margin;
+        max-width: $max-width-text;
+
+        @include screen-sm-min {
+            max-width: $typeahead-group-width;
+
+            .typeahead__list {
+                overflow: hidden;
+
+                &--dropdown {
+                    &.is-active {
+                        max-width: $max-width-text;
+                        min-width: $typeahead-group-selection-width;
+                    }
+                }
+
+                &--single {
+                    .typeahead__item {
+                        &--single-hidden-sm {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    input {
+        &.form__control {
+            max-width: $max-width-text;
+
+            @include screen-sm-min {
+                max-width: calc(100% - #{$typeahead-group-width} - #{$typeahead-group-margin});
+            }
+      }
+    }
+}
