@@ -61,14 +61,14 @@ body {
       padding-right: 30px;
       padding-left: 30px; } }
   .demo-fixed-sidebar .nav-link {
-    color: #999;
+    color: #999999;
     font-weight: 700; }
     .demo-fixed-sidebar .nav-link:hover {
       color: #8cc63f; }
 
 .demo-note {
   font-size: 0.75rem;
-  background-color: #f2f2f2;
+  background-color: #f3f3f3;
   margin-bottom: .5em;
   padding: .5em 10px; }
   @media (min-width: 50em) {

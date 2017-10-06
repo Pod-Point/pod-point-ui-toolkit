@@ -24,12 +24,13 @@
     }
 }
 
-.btns-container {
-    margin: -$buttons-gutter;
-    overflow: hidden;
+.btn-group {
+    margin-bottom: -$buttons-gutter;
+    margin-right: -$buttons-gutter;
 
     .btn {
         display: inline-block;
-        margin: $buttons-gutter;
+        margin-bottom: $buttons-gutter;
+        margin-right: ($buttons-gutter - 4px); // Inline-block creates 4px more space
     }
 }
