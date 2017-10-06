@@ -101,7 +101,7 @@
         @include padding($button-control-v-padding $button-control-h-padding-mobile);
         @include button-colour-inverted($primary-colour);
         border-color: $grey-keyline;
-        border-radius: 2px;
+        border-radius: $button-control-radius;
         border-width: 1px;
         font-size: $button-control-font-size;
         min-height: $button-control-min-height;
