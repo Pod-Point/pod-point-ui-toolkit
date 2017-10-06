@@ -4,7 +4,7 @@
 
 .typeahead-group {
     $typeahead-group-width: 80px;
-    $typeahead-group-selection-width: 340px;
+    $typeahead-group-dropdown-width: 340px;
     $typeahead-group-margin: 5px;
 
     max-width: $max-width-text;
@@ -22,8 +22,7 @@
 
                 &--dropdown {
                     &.is-active {
-                        max-width: $max-width-text;
-                        min-width: $typeahead-group-selection-width;
+                        min-width: $typeahead-group-dropdown-width;
                     }
                 }
 

@@ -3,15 +3,15 @@
 // =============================================================================
 
 .typeahead {
-    $margin-bottom-select: 4px;
-    $margin-bottom-options: 2px;
-    $item-padding: 10px;
-    $list-margin-top: -2px;
-    $input-border-bottom: 1px;
+    $typeahead-select-margin-bottom: 4px;
+    $typeahead-option-margin: 2px;
+    $typeahead-list-margin-top: -2px;
+    $typeahead-item-padding: 10px;
+    $typeahead-input-border-bottom: 1px;
 
     cursor: pointer;
     display: block;
-    margin-bottom: $margin-bottom-select;
+    margin-bottom: $typeahead-select-margin-bottom;
     margin-top: 0;
     max-width: $form-field-max-width;
     position: relative;
@@ -39,7 +39,7 @@
         @include input-styles;
 
         border: 0;
-        border-bottom: $input-border-bottom solid $grey-light;
+        border-bottom: $typeahead-input-border-bottom solid $grey-light;
         font-size: 1rem;
 
         &:focus {
@@ -57,7 +57,7 @@
 
     .typeahead__item {
         font-size: 1rem;
-        padding: $item-padding;
+        padding: $typeahead-item-padding;
     }
 
     .typeahead__list {
@@ -71,8 +71,8 @@
             &.is-active {
                 display: block;
                 height: inherit;
-                margin-bottom: $margin-bottom-options;
-                margin-top: $margin-bottom-options;
+                margin-bottom: $typeahead-option-margin;
+                margin-top: $typeahead-option-margin;
                 padding: 0;
             }
 
@@ -84,7 +84,7 @@
         }
 
         &--single {
-            margin-top: $list-margin-top;
+            margin-top: $typeahead-list-margin-top;
             padding: .1em .2em 1em 0;
 
             .typeahead__item {

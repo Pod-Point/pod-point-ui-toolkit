@@ -1115,7 +1115,6 @@ fieldset {
         .typeahead-group .typeahead .typeahead__list {
           overflow: hidden; }
           .typeahead-group .typeahead .typeahead__list--dropdown.is-active {
-            max-width: 600px;
             min-width: 340px; }
           .typeahead-group .typeahead .typeahead__list--single .typeahead__item--single-hidden-sm {
             display: none; } }
