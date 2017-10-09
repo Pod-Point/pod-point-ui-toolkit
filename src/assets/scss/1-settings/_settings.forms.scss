@@ -19,7 +19,7 @@ $form-groups-inline-gutter: $gutter-base;
 // Inputs
 $input-height: rem(40);
 $input-h-padding: $space-xs;
-$input-v-padding: 6px;
+$input-v-padding: rem(6);
 $input-text-colour: $font-colour-base;
 $input-chrome-autofill-colour: $white;
 $input-placeholder-colour: $font-colour-very-light;
@@ -44,3 +44,6 @@ $checkbox-text-b-spacing: $space-xxs;
 // Label/errors
 $form-label-b-spacing: $space-xxs;
 $form-error-t-spacing: $space-xxs;
+
+// Icon sizes
+$form-control-icon-size: $icon-size-xs;

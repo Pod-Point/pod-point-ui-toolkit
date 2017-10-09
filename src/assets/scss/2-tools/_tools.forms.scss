@@ -68,3 +68,16 @@
     cursor: not-allowed;
     opacity: $opacity;
 }
+
+@mixin form-control-icon($bg-icon-url) {
+    position: relative;
+
+    &::after {
+        @include position(absolute, 35% $input-h-padding null null);
+        background-image: url($bg-icon-url);
+        background-size: cover;
+        content: '';
+        height: $form-control-icon-size;
+        width: $form-control-icon-size;
+    }
+}

@@ -3,18 +3,16 @@
 // =============================================================================
 
 .typeahead-group {
-    $typeahead-group-width: 80px;
-    $typeahead-group-dropdown-width: 340px;
-    $typeahead-group-margin: 5px;
-
     max-width: $max-width-text;
 
     .typeahead {
         float: left;
-        margin-right: $typeahead-group-margin;
+        margin-bottom: $space-xxs;
+        margin-right: $space-xxs;
         max-width: $max-width-text;
 
         @include screen-sm-min {
+            margin-bottom: 0;
             max-width: $typeahead-group-width;
 
             .typeahead__list {
@@ -42,8 +40,8 @@
             max-width: $max-width-text;
 
             @include screen-sm-min {
-                max-width: calc(100% - #{$typeahead-group-width} - #{$typeahead-group-margin});
+                max-width: calc(100% - #{$typeahead-group-width} - #{$space-xxs});
             }
-      }
+        }
     }
 }

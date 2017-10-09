@@ -3,32 +3,16 @@
 // =============================================================================
 
 .typeahead {
-    $typeahead-select-margin-bottom: 4px;
-    $typeahead-option-margin: 2px;
-    $typeahead-list-margin-top: -2px;
-    $typeahead-item-padding: 10px;
-    $typeahead-input-border-bottom: 1px;
+    @include form-control-icon($css-bg-path+'icons/chevron.svg');
 
     cursor: pointer;
     display: block;
-    margin-bottom: $typeahead-select-margin-bottom;
     margin-top: 0;
-    max-width: $form-field-max-width;
     position: relative;
     vertical-align: middle;
-    width: 100%;
 
     &:focus {
         outline: none;
-    }
-
-    &::after {
-        @include position(absolute, 35% $input-h-padding null null);
-        background-image: url($css-bg-path+'icons/chevron.svg');
-        background-size: cover;
-        content: '';
-        height: $select-chevron-size;
-        width: $select-chevron-size;
     }
 
     .typeahead__select {
@@ -37,42 +21,44 @@
 
     .typeahead__input {
         @include input-styles;
+        @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
 
         border: 0;
-        border-bottom: $typeahead-input-border-bottom solid $grey-light;
-        font-size: 1rem;
+        border-bottom: $border-thin-light;
 
         &:focus {
             &:not(disabled) {
-                @include input-border--hover($grey-light);
+                @include input-border--hover($grey-keyline-light);
             }
         }
 
         &:hover {
             &:not(:disabled) {
-                @include input-border--hover($grey-light);
+                @include input-border--hover($grey-keyline-light);
             }
         }
     }
 
     .typeahead__item {
-        font-size: 1rem;
-        padding: $typeahead-item-padding;
+        @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
+
+        padding: $space-xs;
     }
 
     .typeahead__list {
         &--dropdown {
             border-color: $grey-keyline !important; // sass-lint:disable-line no-important
             display: none;
+            overflow: hidden;
             position: absolute;
             width: 100%;
             z-index: 1;
 
             &.is-active {
+                @include margin($typeahead-option-margin 0 $typeahead-option-margin);
+
                 display: block;
                 height: inherit;
-                margin-bottom: $typeahead-option-margin;
-                margin-top: $typeahead-option-margin;
                 padding: 0;
             }
 
@@ -84,12 +70,11 @@
         }
 
         &--single {
-            margin-top: $typeahead-list-margin-top;
-            padding: .1em .2em 1em 0;
+            padding-right: .2em;
 
             .typeahead__item {
                 &--selectable {
-                    margin-right: $select-chevron-size;
+                    margin-right: $typeahead-selectable-margin-right;
                     overflow: hidden;
                     padding: 0;
                     white-space: nowrap;
