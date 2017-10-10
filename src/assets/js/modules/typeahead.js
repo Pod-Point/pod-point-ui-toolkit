@@ -18,7 +18,7 @@ class Typeahead {
         const disabled = this.select.getAttribute('disabled') || false;
         const {
             containerClass = 'typeahead form__field',
-            selectClass = 'form__control',
+            selectedClass = 'form__control',
             dropdownClass = 'typeahead__list typeahead__list--dropdown form__control',
         } = this.select.dataset;
 
@@ -35,7 +35,7 @@ class Typeahead {
             itemSelectText: '',
             classNames: {
                 containerOuter: containerClass,
-                containerInner: selectClass,
+                containerInner: selectedClass,
                 listDropdown: dropdownClass,
                 list: 'typeahead__list',
                 listSingle: 'typeahead__list--single',

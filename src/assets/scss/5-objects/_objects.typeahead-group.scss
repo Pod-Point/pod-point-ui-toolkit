@@ -20,7 +20,7 @@
 
                 &--dropdown {
                     &.is-active {
-                        min-width: $typeahead-group-dropdown-width;
+                        min-width: $typeahead-group-dropdown-min-width;
                     }
                 }
 

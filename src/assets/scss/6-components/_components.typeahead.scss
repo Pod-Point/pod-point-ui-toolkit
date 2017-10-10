@@ -21,7 +21,7 @@
 
     .typeahead__input {
         @include input-styles;
-        @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
+        @include font-size-responsive($typeahead-font-size-mobile, $typeahead-font-size-desktop);
 
         border: 0;
         border-bottom: $border-thin-light;
@@ -40,7 +40,7 @@
     }
 
     .typeahead__item {
-        @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
+        @include font-size-responsive($typeahead-font-size-mobile, $typeahead-font-size-desktop);
 
         padding: $space-xs;
     }
@@ -70,7 +70,7 @@
         }
 
         &--single {
-            padding-right: .2em;
+            padding-right: $typeahead-padding;
 
             .typeahead__item {
                 &--selectable {
@@ -83,7 +83,7 @@
         }
 
         &--heading {
-            padding-left: .2em;
+            padding-left: $typeahead-padding;
         }
     }
 }

@@ -1508,8 +1508,8 @@
 	        var _select$dataset = this.select.dataset,
 	            _select$dataset$conta = _select$dataset.containerClass,
 	            containerClass = _select$dataset$conta === undefined ? 'typeahead form__field' : _select$dataset$conta,
-	            _select$dataset$selec = _select$dataset.selectClass,
-	            selectClass = _select$dataset$selec === undefined ? 'form__control' : _select$dataset$selec,
+	            _select$dataset$selec = _select$dataset.selectedClass,
+	            selectedClass = _select$dataset$selec === undefined ? 'form__control' : _select$dataset$selec,
 	            _select$dataset$dropd = _select$dataset.dropdownClass,
 	            dropdownClass = _select$dataset$dropd === undefined ? 'typeahead__list typeahead__list--dropdown form__control' : _select$dataset$dropd;
 	
@@ -1527,7 +1527,7 @@
 	            itemSelectText: '',
 	            classNames: {
 	                containerOuter: containerClass,
-	                containerInner: selectClass,
+	                containerInner: selectedClass,
 	                listDropdown: dropdownClass,
 	                list: 'typeahead__list',
 	                listSingle: 'typeahead__list--single',

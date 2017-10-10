@@ -1170,14 +1170,14 @@ fieldset {
     .typeahead .typeahead__list--dropdown .typeahead__item:hover {
       background-color: #f3f3f3; }
   .typeahead .typeahead__list--single {
-    padding-right: .2em; }
+    padding-right: 0.2em; }
     .typeahead .typeahead__list--single .typeahead__item--selectable {
       margin-right: 0.9375rem;
       overflow: hidden;
       padding: 0;
       white-space: nowrap; }
   .typeahead .typeahead__list--heading {
-    padding-left: .2em; }
+    padding-left: 0.2em; }
 
 .hero {
   overflow: hidden;

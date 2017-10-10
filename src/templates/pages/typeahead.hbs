@@ -20,7 +20,7 @@
             <div class="content-block">
                 <div class="container">
                     <p>SCSS files required: <code>_components.typeahead.scss</code></p>
-                    <p>SCSS files optional: <code>_components.objects-group.scss</code></p>
+                    <p>SCSS files optional: <code>_objects.typeahead-group.scss</code></p>
                     <p>JS files required: <code>typeahead.js</code></p>
                 </div>
             </div>
@@ -34,17 +34,17 @@
                     <h3>Typeahead structure</h3>
                     <p>The Typeahead element uses the feature rich <a
                             href="https://github.com/jshjohnson/Choices" target="_blank"><code>choices.js</code></a>
-                        library to wrap an ordinary select dropdown.</p>
-                    <p>A Typeahead element is created using an existing select and the Typeahead js
+                        library to wrap an ordinary <code>select</code> dropdown.</p>
+                    <p>A Typeahead element is created using an existing <code>select</code> and the Typeahead js
                         module <code>data-js-module="typeahead"</code>.</p>
                     <p>A Typeahead element options are defined by the <code>data-options</code> attribute, which
                         accepts a JSON string of options, where <code>value</code> is the value of the option, <code>label</code> is what is displayed and
                         <code>customProperties.description</code> is what is searchable.</p>
                     <p>A Typeahead element default option is defined by the <code>data-default</code> attribute,
                         which accepts the value of one of your JSON options.</p>
-                    <p>You can also specify the css classes to style the container, select and dropdown via the <code>data-container-class</code>, <code>data-select-class</code>
+                    <p>You can also specify the css classes to style the container, selected and dropdown elements via the <code>data-container-class</code>, <code>data-selected-class</code>
                         and <code>data-dropdown-class</code> attributes.</p>
-                    <p>By default the classes <code>.typeahead .form__field</code>, <code>.form__control</code> and <code>.typeahead__list .typeahead__list--dropdown .form__control</code>, respectively, will be applied.</p>
+                    <p>By default the classes <code>.typeahead .form__field</code>, <code>.form__control</code> and <code>.typeahead__list .typeahead__list--dropdown .form__control</code> will be applied, respectively.</p>
 
 {{> snippet-typeahead }}
 
@@ -104,9 +104,9 @@
                 <div class="content-block">
                     <div class="container">
                         <h3>Grouped Inputs Widget</h3>
-                        <p>You can wrap the select, along with an input, in a div with the class <code>.typeahead-group</code>
-                            to create a grouped inputs widget, which is particularly useful for phone number fields.</p>
-                        <p>Note: you must include the <code>_components.typeahead-group.scss</code> file.</p>
+                        <p>You can place a <code>select</code> and an <code>input</code> into a <code>div</code> with the class <code>.typeahead-group</code>
+                            to create a grouped inputs widget, which is particularly useful for telephone number and currency selection fields.</p>
+                        <p>Note: you must include the <code>_objects.typeahead-group.scss</code> file.</p>
 
                         <div class="form__group">
                             <label class="form__label">Phone Number</label>
@@ -205,6 +205,42 @@
                             </div>
                         </div>
 
+                        <div class="form__group">
+                            <label class="form__label">Phone Number</label>
+
+                            <div class="typeahead-group">
+                                <div class="typeahead form__field">
+                                    <div class="form__control">
+                                        <select class="typeahead__select">
+                                            <option value="1" selected="">One</option>
+                                        </select>
+
+                                        <div class="typeahead__list typeahead__list--single">
+                                            <div class="typeahead__item typeahead__item--selectable">
+                                                🇬🇧 <span class="typeahead__item--single-hidden-sm">United Kingdom (+44)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="typeahead__list typeahead__list--dropdown form__control">
+                                        <input type="text" class="typeahead__input" placeholder="Search">
+
+                                        <div class="typeahead__list typeahead__list--options">
+                                            <div class="typeahead__item typeahead__item--selectable" data-value="GB">
+                                                🇬🇧
+                                                <span class="typeahead__item--single-hidden-sm">
+                                                    United Kingdom (+44)
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input class="form__control form__field" type="text" placeholder="Phone number">
+                            </div>
+                        </div>
+
+
                         <p>To show the options dropdown, you can add the <code>.is-active</code> class to the div element with class <code>.typeahead__list .typeahead__list--dropdown</code>.</p>
 
                         <div class="form__group m-b-xxl">
@@ -234,6 +270,46 @@
                                 </div>
                             </div>
                         </div>
+
+                        <br>
+
+                        <div class="form__group m-t-xxl m-b-xxl">
+                            <label class="form__label">Phone Number</label>
+
+                            <div class="typeahead-group">
+                                <div class="typeahead form__field">
+                                    <div class="form__control">
+                                        <select class="typeahead__select">
+                                            <option value="1" selected="">One</option>
+                                        </select>
+
+                                        <div class="typeahead__list typeahead__list--single">
+                                            <div class="typeahead__item typeahead__item--selectable">
+                                                🇬🇧 <span class="typeahead__item--single-hidden-sm">United Kingdom (+44)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="typeahead__list typeahead__list--dropdown form__control is-active">
+                                        <input type="text" class="typeahead__input" placeholder="Search">
+
+                                        <div class="typeahead__list typeahead__list--options">
+                                            <div class="typeahead__item typeahead__item--selectable" data-value="GB">
+                                                🇬🇧
+                                                <span class="typeahead__item--single-hidden-sm">
+                                                    United Kingdom (+44)
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input class="form__control form__field" type="text" placeholder="Phone number">
+                            </div>
+                        </div>
+
+                        <br>
+                        <br>
 
                         <p>Remember, in order to work with a <code>form</code> submit, your javascript must set the selected option into the <code>select</code> element.</p>
 
