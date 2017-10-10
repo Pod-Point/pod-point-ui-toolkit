@@ -5,10 +5,16 @@
 .grid {
     display: flex;
     flex-wrap: wrap;
-    margin: -$grid-gutter;
+    margin-bottom: -$grid-gutter;
+    margin-left: -$grid-gutter;
+    margin-right: -$grid-gutter;
+    margin-top: -$grid-gutter;
 
     > .grid__col {
-        padding: $grid-gutter;
+        padding-bottom: $grid-gutter;
+        padding-left: $grid-gutter;
+        padding-right: $grid-gutter;
+        padding-top: $grid-gutter;
         width: 100%;
     }
 
@@ -59,16 +65,22 @@
     }
 
     &.grid--gutter-sm {
-        margin: (-$grid-gutter-sm);
+        margin-bottom: -$grid-gutter-sm;
+        margin-left: -$grid-gutter-sm;
+        margin-right: -$grid-gutter-sm;
+        margin-top: -$grid-gutter-sm;
 
         > .grid__col {
-            padding: $grid-gutter-sm;
+            padding-bottom: -$grid-gutter-sm;
+            padding-left: -$grid-gutter-sm;
+            padding-right: -$grid-gutter-sm;
+            padding-top: -$grid-gutter-sm;
         }
     }
 
     &.grid--v-gutter-sm {
-        margin-bottom: (-$grid-gutter-sm);
-        margin-top: (-$grid-gutter-sm);
+        margin-bottom: -$grid-gutter-sm;
+        margin-top: -$grid-gutter-sm;
 
         > .grid__col {
             padding-bottom: $grid-gutter-sm;
@@ -77,8 +89,8 @@
     }
 
     &.grid--h-gutter-sm {
-        margin-left: (-$grid-gutter-sm);
-        margin-right: (-$grid-gutter-sm);
+        margin-left: -$grid-gutter-sm;
+        margin-right: -$grid-gutter-sm;
 
         > .grid__col {
             padding-left: $grid-gutter-sm;
@@ -87,7 +99,7 @@
     }
 
     &.grid--gutter-xs {
-        margin: (-$grid-gutter-xs);
+        margin: -$grid-gutter-xs;
 
         > .grid__col {
             padding: $grid-gutter-xs;
@@ -95,8 +107,8 @@
     }
 
     &.grid--v-gutter-xs {
-        margin-bottom: (-$grid-gutter-xs);
-        margin-top: (-$grid-gutter-xs);
+        margin-bottom: -$grid-gutter-xs;
+        margin-top: -$grid-gutter-xs;
 
         > .grid__col {
             padding-bottom: $grid-gutter-xs;
@@ -105,8 +117,8 @@
     }
 
     &.grid--h-gutter-xs {
-        margin-left: (-$grid-gutter-xs);
-        margin-right: (-$grid-gutter-xs);
+        margin-left: -$grid-gutter-xs;
+        margin-right: -$grid-gutter-xs;
 
         > .grid__col {
             padding-left: $grid-gutter-xs;
