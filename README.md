@@ -1,5 +1,5 @@
 # pod-point-ui-toolkit
-[![npm](https://img.shields.io/npm/v/@pod-point/pod-point-ui-toolkit.svg)](https://www.npmjs.com/package/@pod-point/pod-point-ui-toolkit) [![Build Status](https://travis-ci.com/Pod-Point/pod-point-ui-toolkit.svg?token=F7wj2GWZpNRsZSDUXLya&branch=master)](https://travis-ci.com/Pod-Point/pod-point-ui-toolkit)
+[![npm](https://img.shields.io/npm/v/@pod-point/pod-point-ui-toolkit.svg)](https://www.npmjs.com/package/@pod-point/pod-point-ui-toolkit) [![Build Status](https://travis-ci.org/Pod-Point/pod-point-ui-toolkit.svg?branch=master)](https://travis-ci.org/Pod-Point/pod-point-ui-toolkit)
 
 The POD Point frontend framework is a library of base styles and components designed for rapid prototyping.
 
@@ -55,4 +55,4 @@ gulp prod
 
 ## Documentation
 
-See full docs [here](https://pod-point.github.io/pod-point-ui-toolkit/dist/index.html)
+See full docs [here](https://pod-point.github.io/pod-point-ui-toolkit)

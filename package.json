@@ -71,6 +71,7 @@
   },
   "scripts": {
     "eslint": "eslint ./src",
-    "sass-lint": "sass-lint -c ./.sass-lint.yml 'src/assets/scss/**/*.scss' -v -q"
+    "sass-lint": "sass-lint -c ./.sass-lint.yml 'src/assets/scss/**/*.scss' -v -q",
+    "build": "gulp prod"
   }
 }

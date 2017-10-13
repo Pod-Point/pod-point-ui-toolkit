@@ -5,14 +5,24 @@ sudo: false
 script:
   - npm run eslint
   - npm run sass-lint
+  - npm run build
 cache:
   directories:
     - node_modules
 deploy:
-  provider: npm
-  email: software@pod-point.com
-  api_key:
-    secure: WW/oqmqcK1p796avFvWqs2SS7GmTPD3vGQ2eLu4HQGDqk7m02UA8CZajgcMrkrr0ozI4uiI3RJwDNa3wLdc07CPt9lYLL7eZuvFfKszSGaKInaOhDOFVlp4t2RWjidu3dRQrcxOcHeQ+9giUvsO/OZnNQuLNxoxmViMqNQuZpVHvImG5OQPwSvYp8Gn8ch39ap96lzNUgZHytioDY3mKYIKuSGLN7HEl2LpK90L5rAPpa29xs7aPiqit/KAKW8DLTakFi767xq3pK8DCbvPGiA45nUXLp/qv5xI6llqc36i2yC6q04SZkM+oSmHxhFf27Wnn6erXHoyH6gcJXj5LH2uGv99aDbVEdOUF4cJHTZIH9IxLuIha6yZACB6EOBTSCB+Pxvy+j+w9DI4bWdRwOQfYhviESNKgKHFRs5pRNwo5SXreXmqAcVVICxBzLcarECG2WJe7GXNFkKbFTzQcgauoEWXDqJyP32VbmlPNtYA9j8Ig57Ww0+PQYs9Li4IiIXDZuK5hmi503lI0vjTX8KZ2VKU1zBlPIvKQXgl2e4ZHnuNAJSj2kRCM7dLrsJj5Ohf1YHQ5IAV8VNnOBCoTTE4wht0xNF7coBWfN0zlmbBGDKUBtV6ZXC4BJ2EEJa4PRU2PnABREkkXRtlyt4DrpRiD6zlHlnr/ftSrJUaQgUM=
-  on:
-    branch: master
-    repo: Pod-Point/pod-point-ui-toolkit
+  - provider: npm
+    email: software@pod-point.com
+    api_key:
+      secure: V1GU5h4NplZ6Eca7RSoNykhKE+7pWSTYXuhsFyv0XKiD1hFHxHVtdGgbS0M+jbP1QywVl6/c2TdwWaN7voAZh4RuCH4KWRIAsOvH+FFAJ5/0aPOdUp2aVV8hN5FTfRwDaWHLQqHrmUUIWUybEnBC2IpHRbZcwkKKnI1Hr+LaG6X3jDyNZWB6OMyAAHY3N21wACtRCpXpM5kJ3ex0yMXZnHLCSkiXftlapdHrRUIKgcag+AoCrLSpw/9/UOl8ENuIw593YDS0fQKYqS3tmBad/DuNFy7oCh4s47iYGw1QRbeR7HdHyubFZLzvCTeQjETbfNxNTtS0cJi+RyIWtyDbjSSYVycFul6byqau4WKb0bJrlb2KN5G9tBD281Vb5EgXXfSEhSvIB/NgHnuKkMxz9c9702aJrL0GaXFjMX7Ykci0JDSS7zLWeWN1cIoXwJ2d/DGPy72dQRgZ+yQXn5tyjvBbCwiz5KU17+C29yskUk26JVYlq9KBlC4e4fh6Hwk9O8+1LLA14hAlc/b3o/2JsUljzZ1sbPmtKtSVAjfwhrnGi8wvIdQNdwb2MGaBiX/K+tFgKT2qho/AFDRHqnBRTlq7KbHI93gOla6vNNOtcGhLpQLwlzKUhYaYqqlVl/MXhMGtp6+PHQt4DapNLOVo0OBfZbKDWybGikT7D0ftSnc=
+    on:
+      branch: master
+      repo: Pod-Point/pod-point-ui-toolkit
+  - provider: pages
+    local_dir: dist
+    skip_cleanup: true
+    on:
+      branch: master
+    github_token: $GITHUB_TOKEN
+env:
+  global:
+    secure: ipwW8a0bpsGKBBwFnHl5148Mp2fGhigmvNXqFl8ruyily7sZOMGfLVIuDppndteDG4GGpXcWdPjLr1TuIqfz8svZu3fePb7wj2ygLbi5zn2qmuTvxYcQTNq3wGbmaT+xN/zGYeQl9U5Q6BpVVPjFegIyhH/SiiJjOtGf4gaS409NKTOyvxkHn3zP42Tm1twFZ1ZlgmpokLZqJYw+NdiOxi2lW+80jYDVArO4eVdAPNLCWPyALLmrXWUFTCygBZYTPbeKDmd23RzhWO9XmOhdXdV2Xfj2SRtqrbPF303APeypMYebZHpLmdWg9MOf6hFj2fy+CulrdceeKX92TPfZFc1DM8NC8YPYcirEBbkeP01XiQyMAvwfB5Pj9Lyd5i7LY7CiwD9MQLrLg+5A5tKluj4Uz1s39t/eOqiWaBrHk1x/aUBjPwunPxVSobAIu/cRg40rKqBziYWi32b1tUu0ugUSZx34f8tsRbWpUnAJ3lad80Q6oPfg6G+yHPKHkzLXxTg2OyxAKCHPyOSRmxIT9DK/nbqA0One8icVzV+AiIkxJgoChHgSVI469EhI/oGSUykfsdzIKOUmxHfpYGs8Lis+UHLpEgosnzVJkszAY5UTPtqsGoCsaNg0Zvz4ryfVhzxMVKl2lIZSBz7dnhD9IGvT/aI21HO7hcnZPokzbog=
