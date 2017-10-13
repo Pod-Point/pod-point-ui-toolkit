@@ -5,11 +5,11 @@ sudo: false
 script:
   - npm run eslint
   - npm run sass-lint
+  - npm run build
 cache:
   directories:
     - node_modules
 deploy:
-  matrix:
   - provider: npm
     email: software@pod-point.com
     api_key:
@@ -20,5 +20,7 @@ deploy:
   - provider: pages
     local_dir: dist
     skip_cleanup: true
+    on:
+      branch: master
     github_token:
       secure: gY8bTI2hWf5c2noyReo0KUV6nnzCo1rzVK8ys1cnHkcF0/N2AtmLPOTA9hB12D35n016wxNon4MTODMas8q9eWyqwWzj/cZmVYT/vIeMbdKSUOSesvyB1koTZNUU15cpB4IGKOesGdw6ZAVuebJzAGa8BsFdlDHw0n9cIKu7TAFFLQwd/hd2lRdPEn4UvueFiqK/vUtgaSTz16ANvPxPx3JnfgGqY+OQxigV2UoViPJ12MKKl4wckaccRVC5isPQHPmDHe1N74v99NRofxVYlK5qYRfWzSqoHOqMu6spB7xM2UbIzq+NCqZQBAnKHSE/mX6YMBrqAYq4wm1af/+ccwsITcPot3fVGPmVl0decbYM7x2F0iunjPJZ5yyVw6OCuaCZYIDWo+V+t5VgH+jGwIrDGUwgEel69mfdaoOfPmA08rIE7EuOiHtelC/XnQTG5metMrNZXQqmZcA2VqICG3oOcd+EIxKengrDX01l1D6meNO63xWtYWKdi/XMSUgB/rqxYZJvnePkaO0twaEH5kvE4M3ayjoXgLdKsPw8ANGoKCAYLYiJUSC6fSRj1vBRco1Lfh1NqR45PHOVcxSZnrTNGozeb8BrVJad3eo0ExnRDAJmj+pwcJxBB52zf9NDDT8CJ/9eV0NwsKr+rHIF1i6SzwsHFg8h5PlS/VJA9tI=
