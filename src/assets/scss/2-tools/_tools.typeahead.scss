@@ -1,0 +1,26 @@
+// =============================================================================
+//  TOOLS - TYPEAHEAD
+// =============================================================================
+
+// Multiple list
+@mixin multiple-list {
+    border-color: $grey-keyline !important; // sass-lint:disable-line no-important
+    display: none;
+    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+
+    &.is-active {
+        @include margin($typeahead-option-margin 0 $typeahead-option-margin);
+
+        display: block;
+        height: inherit;
+        padding: 0;
+    }
+
+    .typeahead__item {
+        &:hover {
+            background-color: $grey-light;
+        }
+    }
+}

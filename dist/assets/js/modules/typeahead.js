@@ -38,7 +38,7 @@ var Typeahead = function () {
             _select$dataset$selec = _select$dataset.selectedClass,
             selectedClass = _select$dataset$selec === undefined ? 'form__control' : _select$dataset$selec,
             _select$dataset$dropd = _select$dataset.dropdownClass,
-            dropdownClass = _select$dataset$dropd === undefined ? 'typeahead__list typeahead__list--dropdown form__control' : _select$dataset$dropd;
+            dropdownClass = _select$dataset$dropd === undefined ? 'typeahead__list--dropdown form__control' : _select$dataset$dropd;
 
 
         var options = void 0;

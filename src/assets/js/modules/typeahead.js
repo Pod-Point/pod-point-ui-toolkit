@@ -19,7 +19,7 @@ class Typeahead {
         const {
             containerClass = 'typeahead form__field',
             selectedClass = 'form__control',
-            dropdownClass = 'typeahead__list typeahead__list--dropdown form__control',
+            dropdownClass = 'typeahead__list--dropdown form__control',
         } = this.select.dataset;
 
         let options;

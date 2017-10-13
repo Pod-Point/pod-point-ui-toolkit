@@ -1095,21 +1095,11 @@ fieldset {
   min-height: 100%; }
 
 .typeahead {
-  position: relative;
   cursor: pointer;
   display: block;
   margin-top: 0;
   position: relative;
   vertical-align: middle; }
-  .typeahead::after {
-    position: absolute;
-    top: 35%;
-    right: 10px;
-    background-image: url("../img/css-bg/icons/chevron.svg");
-    background-size: cover;
-    content: '';
-    height: 0.9375rem;
-    width: 0.9375rem; }
   .typeahead:focus {
     outline: none; }
   .typeahead .typeahead__select {
@@ -1126,7 +1116,8 @@ fieldset {
     width: 100%;
     font-size: 0.875rem;
     border: 0;
-    border-bottom: 1px solid #e0e0e0; }
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: -1px; }
     ::-webkit-input-placeholder {
       color: #d6d6d6; }
     :-ms-input-placeholder {
@@ -1156,9 +1147,9 @@ fieldset {
     border-color: #d6d6d6 !important;
     display: none;
     overflow: hidden;
-    position: absolute;
     width: 100%;
-    z-index: 1; }
+    z-index: 1;
+    position: absolute; }
     .typeahead .typeahead__list--dropdown.is-active {
       margin-top: 2px;
       margin-right: 0;
@@ -1170,14 +1161,40 @@ fieldset {
     .typeahead .typeahead__list--dropdown .typeahead__item:hover {
       background-color: #f3f3f3; }
   .typeahead .typeahead__list--single {
-    padding-right: 0.2em; }
+    position: relative;
+    padding-right: 0.2em;
+    position: initial; }
+    .typeahead .typeahead__list--single::after {
+      position: absolute;
+      top: 35%;
+      right: 10px;
+      background-image: url("../img/css-bg/icons/chevron.svg");
+      background-size: cover;
+      content: '';
+      height: 0.9375rem;
+      width: 0.9375rem; }
     .typeahead .typeahead__list--single .typeahead__item--selectable {
       margin-right: 0.9375rem;
       overflow: hidden;
       padding: 0;
       white-space: nowrap; }
-  .typeahead .typeahead__list--heading {
-    padding-left: 0.2em; }
+  .typeahead .typeahead__list--multiple {
+    border-color: #d6d6d6 !important;
+    display: none;
+    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+    position: relative; }
+    .typeahead .typeahead__list--multiple.is-active {
+      margin-top: 2px;
+      margin-right: 0;
+      margin-bottom: 2px;
+      margin-left: 0;
+      display: block;
+      height: inherit;
+      padding: 0; }
+    .typeahead .typeahead__list--multiple .typeahead__item:hover {
+      background-color: #f3f3f3; }
 
 .hero {
   overflow: hidden;
