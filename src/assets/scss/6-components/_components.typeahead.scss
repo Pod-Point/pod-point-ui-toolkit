@@ -3,8 +3,6 @@
 // =============================================================================
 
 .typeahead {
-    @include form-control-icon($css-bg-path+'icons/chevron.svg');
-
     cursor: pointer;
     display: block;
     margin-top: 0;
@@ -25,6 +23,7 @@
 
         border: 0;
         border-bottom: $border-thin-light;
+        margin-bottom: -1px;
 
         &:focus {
             &:not(disabled) {
@@ -47,30 +46,16 @@
 
     .typeahead__list {
         &--dropdown {
-            border-color: $grey-keyline !important; // sass-lint:disable-line no-important
-            display: none;
-            overflow: hidden;
+            @include multiple-list;
+
             position: absolute;
-            width: 100%;
-            z-index: 1;
-
-            &.is-active {
-                @include margin($typeahead-option-margin 0 $typeahead-option-margin);
-
-                display: block;
-                height: inherit;
-                padding: 0;
-            }
-
-            .typeahead__item {
-                &:hover {
-                    background-color: $grey-light;
-                }
-            }
         }
 
         &--single {
+            @include form-control-icon($css-bg-path+'icons/chevron.svg');
+
             padding-right: $typeahead-padding;
+            position: initial;
 
             .typeahead__item {
                 &--selectable {
@@ -82,8 +67,10 @@
             }
         }
 
-        &--heading {
-            padding-left: $typeahead-padding;
+        &--multiple {
+            @include multiple-list;
+
+            position: relative;
         }
     }
 }

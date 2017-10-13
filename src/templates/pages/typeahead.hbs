@@ -269,7 +269,7 @@
                             </div>
                         </div>
 
-                        <br>
+                        <br />
 
                         <div class="form__group m-t-xxl m-b-xxl">
                             <label class="form__label">Phone Number</label>
@@ -306,10 +306,52 @@
                             </div>
                         </div>
 
-                        <br>
+                        <br />
 
                         <p class="m-t-xxl">Remember, in order to work with a <code>form</code> submit, your javascript must set the selected option into the <code>select</code> element.</p>
 
+                    </div>
+                </div>
+            </section>
+
+            <section id=autocomplete-widget>
+                <div class="content-block bg-light-grey">
+                    <div class="container">
+                        <h3>Autocomplete Widget</h3>
+                        <p>You can use the input and list elements to create an autocomplete style widget, substituting the <code>.typeahead__list--dropdown</code> class for the <code>.typeahead__list--multiple</code> class and removing any unneeded markup.</p>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <div class="container">
+
+                        <div class="form__group">
+                            <label class="form__label">Autocomplete</label>
+
+                            <div class="typeahead form__field">
+                                <div class="typeahead__list typeahead__list--multiple form__control is-active">
+                                    <input type="text" class="typeahead__input" placeholder="Search">
+
+                                    <div class="typeahead__list typeahead__list--options"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label">Autocomplete</label>
+
+                            <div class="typeahead form__field">
+                                <div class="typeahead__list typeahead__list--multiple form__control is-active">
+                                    <input type="text" class="typeahead__input" placeholder="Search">
+
+                                    <div class="typeahead__list typeahead__list--options">
+                                        <div class="typeahead__item typeahead__item--selectable" data-value="1">One</div>
+
+                                        <div class="typeahead__item typeahead__item--selectable" data-value="2">Two</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
