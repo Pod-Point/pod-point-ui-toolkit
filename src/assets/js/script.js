@@ -6,12 +6,14 @@ import './modules/base';
 
 import toggleElement from './modules/toggle-element';
 import accordion from './modules/accordion';
+import typeahead from './modules/typeahead';
 
 dom.whenReady(() => {
     loadModules({
         domModules: combineDomModules({
             toggleElement,
             accordion,
+            typeahead,
         }),
     });
 });

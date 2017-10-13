@@ -3,6 +3,8 @@
 // =============================================================================
 
 .select {
+    @include form-control-icon($css-bg-path+'icons/chevron.svg');
+
     display: block;
     height: $input-height;
     margin-top: 0;
@@ -10,15 +12,6 @@
     position: relative;
     vertical-align: middle;
     width: 100%;
-
-    &::after {
-        @include position(absolute, 35% $input-h-padding null null);
-        background-image: url($css-bg-path+'icons/chevron.svg');
-        background-size: cover;
-        content: '';
-        height: $select-chevron-size;
-        width: $select-chevron-size;
-    }
 
     select {
         appearance: none;

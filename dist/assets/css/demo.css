@@ -135,6 +135,9 @@ body {
 [data-page='tooltips'] .nav-link--tooltips {
   color: #8cc63f; }
 
+[data-page='typeahead'] .nav-link--typeahead {
+  color: #8cc63f; }
+
 [data-page='typography'] .nav-link--typography {
   color: #8cc63f; }
 

@@ -1,0 +1,89 @@
+// =============================================================================
+//  COMPONENTS - TYPEAHEAD
+// =============================================================================
+
+.typeahead {
+    @include form-control-icon($css-bg-path+'icons/chevron.svg');
+
+    cursor: pointer;
+    display: block;
+    margin-top: 0;
+    position: relative;
+    vertical-align: middle;
+
+    &:focus {
+        outline: none;
+    }
+
+    .typeahead__select {
+        display: none;
+    }
+
+    .typeahead__input {
+        @include input-styles;
+        @include font-size-responsive($typeahead-font-size-mobile, $typeahead-font-size-desktop);
+
+        border: 0;
+        border-bottom: $border-thin-light;
+
+        &:focus {
+            &:not(disabled) {
+                @include input-border--hover($grey-keyline-light);
+            }
+        }
+
+        &:hover {
+            &:not(:disabled) {
+                @include input-border--hover($grey-keyline-light);
+            }
+        }
+    }
+
+    .typeahead__item {
+        @include font-size-responsive($typeahead-font-size-mobile, $typeahead-font-size-desktop);
+
+        padding: $space-xs;
+    }
+
+    .typeahead__list {
+        &--dropdown {
+            border-color: $grey-keyline !important; // sass-lint:disable-line no-important
+            display: none;
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+
+            &.is-active {
+                @include margin($typeahead-option-margin 0 $typeahead-option-margin);
+
+                display: block;
+                height: inherit;
+                padding: 0;
+            }
+
+            .typeahead__item {
+                &:hover {
+                    background-color: $grey-light;
+                }
+            }
+        }
+
+        &--single {
+            padding-right: $typeahead-padding;
+
+            .typeahead__item {
+                &--selectable {
+                    margin-right: $typeahead-selectable-margin-right;
+                    overflow: hidden;
+                    padding: 0;
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        &--heading {
+            padding-left: $typeahead-padding;
+        }
+    }
+}
