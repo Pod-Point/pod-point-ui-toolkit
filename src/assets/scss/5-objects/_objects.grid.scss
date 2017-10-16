@@ -58,6 +58,10 @@
         }
     }
 
+    &.grid--reverse {
+        flex-direction: row-reverse;
+    }
+
     &.grid--gutter-sm {
         margin: (-$grid-gutter-sm);
 
