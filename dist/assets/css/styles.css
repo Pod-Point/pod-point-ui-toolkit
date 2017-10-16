@@ -642,6 +642,9 @@ img {
       width: 100%; }
     .grid > .grid__col-offset-lg-12 {
       margin-left: 100%; } }
+  .grid.grid--reverse {
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse; }
   .grid.grid--gutter-sm {
     margin: -15px; }
     .grid.grid--gutter-sm > .grid__col {
