@@ -5,6 +5,12 @@ The POD Point frontend framework is a library of base styles and components desi
 
 ## Installation
 
+```bash
+npm install --save @pod-point/pod-point-ui-toolkit
+```
+
+## Development
+
 First, install all of the Node modules needed:
 
 ```bash
