@@ -7,6 +7,8 @@
             <div class="container">
                 <h2>Version updates</h2>
                 <ul class="list--inline remove-link-styles font-weight-bold">
+                    <li><a href="#v1.3.0">v1.3.0</a></li>
+                    <li><a href="#v1.2.2">v1.2.2</a></li>
                     <li><a href="#v1.1.0">v1.1.0</a></li>
                 </ul>
             </div>
@@ -25,7 +27,17 @@
                     <div id="v1.3.0">
                         <h4>v1.3.0</h4>
                         <p>Javascript files are now exported from a main index file.</p>
-                        <p>You don't need to import full paths to js files anymore. You can import modules as per the docs <a href="javascript.html">here</a>.</pre></p>
+                        <p>The dist folder has been added back in to the NPM package so you can import transpiled JS files. But you don't need to import full paths any more, you can import modules as per the docs <a href="javascript.html">here</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <div class="container">
+                    <div id="v1.2.2">
+                        <h4>v1.2.2</h4>
+                        <p>Dist folder has been removed.</p>
+                        <p>Assets are now compiled in Travis so this folder has been deleted and gitignored. You no longer need to run Gulp before committing.</p>
                     </div>
                 </div>
             </div>
