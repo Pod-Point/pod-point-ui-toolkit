@@ -1,0 +1,45 @@
+<div data-page="contributing" class="demo-page-content">
+
+    {{> demo-sidebar }}
+
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
+            <div class="container">
+                <h2>Contributing to the UI Toolkit</h2>
+            </div>
+        </header>
+
+
+        <section>
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <p>Some pointers for contributing to the UI Toolkit.</p>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <h4>General updates</h4>
+                    <ul>
+                        <li>All updates to the UI Toolkit should be documented in the example pages and/or in the <a href="helper-classes.html">helper classes</a>, and new mixins in <a href="sass-tools.html">Sass tools</a>.</li>
+                        <li>Any code snippets should be creates as a partial and included with Handlebars include syntax.</li>
+                        <li>If you add a new section of a page, create a nav item at the top of the page and then include the item on the <a href="index.html">index</a> page as well.</li>
+                    </ul>
+                    <h4>Creating a new page</h4>
+                    <ol>
+                        <li>Create a new page <code>.hbs</code> template in <code>templates/pages/</code> by copying an existing one and following the format.</li>
+                        <li>Update the <code>data-page</code> attribute at the top of the page with a unique name.</li>
+                        <li>Add the page to the sidebar navigation <code>templates/partials/demo/demo-sidebar.hbs</code></li>
+                        <li>For the navigation highlighting to work, the classname in the nav needs to correlate to the page name eg. <code>.nav-link--{insert page name here}</code> and the page name also needs to be added to the array in the <code>demo.scss</code> file.</li>
+                        <li>Also add the page and any sub sections to the navigation list on the <a href="index.html">index</a> page.</li>
+                    </ol>
+                    <h4>Publishing releases</h4>
+                    <p>Once your Pull Request has been approved, but before merging into master, create a new version on NPM and push the version and tags. See instructions in the <a href="https://github.com/Pod-Point/pod-point-ui-toolkit" target="_blank">README</a>.</p>
+                    <p>The tag will be created on GitHub but the realease will not. So you will need to add it along with release notes on the <a href="https://github.com/Pod-Point/pod-point-ui-toolkit/releases">Release page</a></p>
+                    <p>For any changes that may cause issues for users, add it to the <a href="version-updates.html">version updates page</a>.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>

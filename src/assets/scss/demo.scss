@@ -74,6 +74,7 @@ $pages: (
     'installation',
     'scss',
     'css-bg-img',
+    'contributing',
     'javascript',
     'inline-svg-icons',
     'helper-classes',
@@ -93,7 +94,8 @@ $pages: (
     'toggles',
     'tooltips',
     'typeahead',
-    'typography'
+    'typography',
+    'version-updates'
 );
 
 @each $page in $pages {

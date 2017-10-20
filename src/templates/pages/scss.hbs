@@ -37,7 +37,7 @@
                 <div class="container">
                     <h3>Units used (PX EM REM %)</h3>
                     <p>There have been countless debates about which units to use for the web, with no strict right or wrong answer.</p>
-                    <p>All units serve different purposes and the rationale behind the use in this toolkit are outlined below.</p>
+                    <p>All units serve different purposes and the rationale behind the use in this UI Toolkit are outlined below.</p>
                 </div>
             </header>
 
@@ -64,7 +64,7 @@
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>Structure and importing</h3>
-                    <p>It is highly recommended to use this toolkit with individual SCSS imports, however the compiled CSS file is also available from the dist folder: <code>dist/assets/css/styles.css</code> and all the SCSS files are imported into the styles.scss file in the src folder: <code>src/assets/scss/styles.scss</code></p>
+                    <p>It is highly recommended to use this UI Toolkit with individual SCSS imports, however the compiled CSS file is also available from the dist folder: <code>dist/assets/css/styles.css</code> and all the SCSS files are imported into the styles.scss file in the src folder: <code>src/assets/scss/styles.scss</code></p>
                     <p>Some influence for the concepts and structure is taken from ITCSS. There is a curated list of ITCSS articles, videos and code examples <a href="https://github.com/ahmadajmi/awesome-itcss" target="_blank">here</a></p>
                     <p>To import any SCSS file you need to specify the path to your node modules folder and then the path to the SCSS files. This would look something like this: <code>path/to/node_modules/@pod-point/pod-point-ui-toolkit/src/assets/scss/6-components/_components.buttons</code></p>
                     <p>Depending on your project, some files may not be required so it is useful to understand what is within each folder. The following explains the role for each folder/set of files.</p>
@@ -75,7 +75,7 @@
                 <div class="container">
                     <h4>0. Utilities <small class="colour-primary">Required</small></h4>
                     <p class="font-weight-bold">Standalone functions and mixins or external imports</p>
-                    <p>The utilities are made up of functions and mixins that are all utilised throughout the toolkit SCSS from the very beginning so they need to be included first.</p>
+                    <p>The utilities are made up of functions and mixins that are all utilised throughout the UI Toolkit SCSS from the very beginning so they need to be included first.</p>
                     <p class="demo-note">Note: no CSS will be compiled from the utilities files, so it will not add to the size of your built CSS file to include all the files.</p>
                     <h5 class="h6">Utilities SCSS imports</h5>
                     <p>To include all utilities: <code>@import 'path/to/file/0-utilities/_all';</code></p>
@@ -95,7 +95,7 @@
 
                     <h4>2. Tools <small class="colour-primary">Required</small></h4>
                     <p class="font-weight-bold">Functions and mixins</p>
-                    <p>The tools are helpers made up of mixins, placeholders and keyframe animations that are all utilised throughout the toolkit SCSS and also available for you to use. See <a href="sass-tools.html">here</a> for available mixins.</p>
+                    <p>The tools are helpers made up of mixins, placeholders and keyframe animations that are all utilised throughout the UI Toolkit SCSS and also available for you to use. See <a href="sass-tools.html">here</a> for available mixins.</p>
                     <p class="demo-note">Note: no CSS will be compiled from the tools files, so it will not add to the size of your built CSS file to include all the files.</p>
                     <h5 class="h6">Tools SCSS imports</h5>
                     <p>To include all tools: <code>@import 'path/to/file/2-tools/_all';</code></p>
