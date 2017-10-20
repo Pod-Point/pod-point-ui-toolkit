@@ -69,6 +69,7 @@
     "uglify": "^0.1.5",
     "webpack-stream": "^3.1.0"
   },
+  "main": "dist/assets/js",
   "scripts": {
     "eslint": "eslint ./src",
     "sass-lint": "sass-lint -c ./.sass-lint.yml 'src/assets/scss/**/*.scss' -v -q",
