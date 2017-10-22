@@ -1,0 +1,17 @@
+// =============================================================================
+//  TOOLS - ANIMATION ROTATE
+// =============================================================================
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@mixin rotate($duration: 2s, $iteration-count: infinite) {
+    animation: rotate $duration linear $iteration-count;
+}
