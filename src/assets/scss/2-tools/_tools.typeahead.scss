@@ -8,7 +8,7 @@
     display: none;
     overflow: hidden;
     width: 100%;
-    z-index: 1;
+    z-index: $typeahead-z-index;
 
     &.is-active {
         @include margin($typeahead-option-margin 0 $typeahead-option-margin);
