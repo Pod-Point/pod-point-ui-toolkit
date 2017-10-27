@@ -314,11 +314,11 @@
                 </div>
             </section>
 
-            <section id=autocomplete-widget>
+            <section id=autocomplete">
                 <div class="content-block bg-light-grey">
                     <div class="container">
-                        <h3>Autocomplete Widget</h3>
-                        <p>You can use the input and list elements to create an autocomplete style widget, substituting the <code>.typeahead__list--dropdown</code> class for the <code>.typeahead__list--multiple</code> class and removing any unneeded markup.</p>
+                        <h3>Autocomplete</h3>
+                        <p>You can use a variation of the typeahead to create an autocomplete style component by taking the input element out of the typeahead list and removing the <code>.typeahead__input</code> class from it to prevent the overriding of the default form control styles.</p>
                     </div>
                 </div>
 
@@ -328,10 +328,12 @@
                             <label class="form__label">Autocomplete</label>
 
                             <div class="typeahead form__field">
-                                <div class="typeahead__list typeahead__list--multiple form__control is-active">
-                                    <input type="text" class="typeahead__input" placeholder="Search">
+                                <input type="text" class="form__control" placeholder="Search" />
 
-                                    <div class="typeahead__list typeahead__list--options"></div>
+                                <div class="typeahead__list typeahead__list--dropdown typeahead__list--options form__control">
+                                    <div class="typeahead__item typeahead__item--selectable" data-value="1">One</div>
+
+                                    <div class="typeahead__item typeahead__item--selectable" data-value="2">Two</div>
                                 </div>
                             </div>
                         </div>
@@ -340,14 +342,12 @@
                             <label class="form__label">Autocomplete</label>
 
                             <div class="typeahead form__field">
-                                <div class="typeahead__list typeahead__list--multiple form__control is-active">
-                                    <input type="text" class="typeahead__input" placeholder="Search">
+                                <input type="text" class="form__control" placeholder="Search" />
 
-                                    <div class="typeahead__list typeahead__list--options">
-                                        <div class="typeahead__item typeahead__item--selectable" data-value="1">One</div>
+                                <div class="typeahead__list typeahead__list--dropdown typeahead__list--options form__control is-active">
+                                    <div class="typeahead__item typeahead__item--selectable" data-value="1">One</div>
 
-                                        <div class="typeahead__item typeahead__item--selectable" data-value="2">Two</div>
-                                    </div>
+                                    <div class="typeahead__item typeahead__item--selectable" data-value="2">Two</div>
                                 </div>
                             </div>
                         </div>

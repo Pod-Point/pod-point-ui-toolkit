@@ -4,11 +4,12 @@
 
 // Multiple list
 @mixin multiple-list {
+    @extend %z-index-4;
+
     border-color: $grey-keyline !important; // sass-lint:disable-line no-important
     display: none;
     overflow: hidden;
     width: 100%;
-    z-index: 1;
 
     &.is-active {
         @include margin($typeahead-option-margin 0 $typeahead-option-margin);
