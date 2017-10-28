@@ -72,5 +72,10 @@
 
             position: relative;
         }
+
+        .typeahead__list {
+            max-height: $typeahead-group-dropdown-max-height;
+            overflow-y: scroll;
+        }
     }
 }
