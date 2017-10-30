@@ -7,6 +7,7 @@
 
     > svg,
     > .icon__img {
+        display: inline-block;
         fill: $font-colour-base;
         height: $icon-size-md;
         width: $icon-size-md;
