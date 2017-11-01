@@ -92,14 +92,14 @@
     background-size: cover;
 }
 
-.bg-img-overlay {
+.bg-overlay {
     color: $white;
     position: relative;
     z-index: 0;
 
     &::after {
         @include position(absolute, 0 0 0 0);
-        background-color: $grey-dark;
+        background: $grey-dark;
         content: '';
         height: 100%;
         opacity: .65;
@@ -108,10 +108,45 @@
     }
 
     &--black {
-
         &::after {
-            background-color: $black;
+            background: $black;
             opacity: .55;
+        }
+    }
+
+    &--left {
+        &::after {
+            background: linear-gradient(to left, $transparent, $grey-dark);
+        }
+
+        &.bg-overlay--black {
+            &::after {
+                background: linear-gradient(to left, $transparent, $black);
+            }
+        }
+    }
+
+    &--right {
+        &::after {
+            background: linear-gradient(to right, $transparent, $grey-dark);
+        }
+
+        &.bg-overlay--black {
+            &::after {
+                background: linear-gradient(to right, $transparent, $black);
+            }
+        }
+    }
+
+    &--centre {
+        &::after {
+            background: radial-gradient(circle, $grey-dark, $transparent);
+        }
+
+        &.bg-overlay--black {
+            &::after {
+                background: radial-gradient(circle, $black, $transparent);
+            }
         }
     }
 }

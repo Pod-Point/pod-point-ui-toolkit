@@ -8,9 +8,10 @@
                 <h2>Heros</h2>
                 <ul class="list--inline remove-link-styles font-weight-bold">
                     <li><a href="#hero-markup">Hero markup</a></li>
-                    <li><a href="#hero-centred">Hero centred</a></li>
+                    <li><a href="#hero-animated">Hero animated</a></li>
                     <li><a href="#hero-left">Hero left</a></li>
                     <li><a href="#hero-right">Hero right</a></li>
+                    <li><a href="#hero-centre">Hero centre</a></li>
                 </ul>
             </div>
         </header>
@@ -31,16 +32,16 @@
         </section>
 
 
-        <!-- HEROS CENTRED -->
-        <section id="hero-centred">
+        <!-- HEROS ANIMATED -->
+        <section id="hero-animated">
             <header class="content-block bg-light-grey">
                 <div class="container">
-                    <h3>Hero centred</h3>
+                    <h3>Hero animated</h3>
                     <p>Classes applied to the <code>.hero</code> element:</p>
-                    <p><code>.hero--content-centre</code>, <code>.hero--fade-in</code>, <code>.hero--content-pop-in</code>, <code>.bg-img-cover</code>, <code>.bg-img-overlay</code>, <code>.bg-img-overlay--black</code>.</p>
+                    <p><code>.hero--content-centre</code>, <code>.hero--fade-in</code>, <code>.hero--content-pop-in</code>, <code>.bg-img-cover</code>, <code>.bg-overlay</code>, <code>.bg-overlay--black</code>.</p>
                 </div>
             </header>
-            <section class="hero hero--content-centre hero--fade-in hero--content-pop-in bg-img-cover bg-img-overlay bg-img-overlay--black" style="background-image: url(https://unsplash.it/2000/440)">
+            <section class="hero hero--content-centre hero--fade-in hero--content-pop-in bg-img-cover bg-overlay bg-overlay--black" style="background-image: url(https://unsplash.it/2000/440)">
                 <div class="container">
                     <div class="content-block align-content-centre">
                         <div class="hero__content">
@@ -69,12 +70,18 @@
 
                     <p class="m-t-md">However there are lots of modifying classes and helper classes that can be added to create different types of heros...</p>
 
-                    <h4>Background image and opacity</h4>
-                    <p>A background image can be applied on the <code>.hero</code> element (inline or in your separate styles), and helper classes can be added such as <code>.bg-img-cover</code> which applies a background cover and centre positioning, <code>.bg-img-overlay</code>, adds a grey overlay to darken the image so the text is more legible, and <code>.bg-img-overlay--black</code> to increase the overlay intensity.</p>
-                    <p>Note that the <code>.bg-img-overlay</code> also makes the text color white. Otherwise the helper class <code>.bg-light-content</code> is also available.</p>
-
                     <h4>Content alignment</h4>
                     <p>The content is aligned left as default and there are two modifying classes available <code>.hero--content-right</code> and <code>.hero--content-centre</code>.</p>
+
+                    <h4>Background image</h4>
+                    <p>A background image can be applied on the <code>.hero</code> element (inline or in your separate styles), and the helper class can be added <code>.bg-img-cover</code> which applies a background cover and centre positioning.
+
+                    <h4>Background overlay</h4>
+                    <p>The overlay class <code>.bg-overlay</code> adds a grey overlay covering the entire background and then there are modifying classes available such as <code>.bg-overlay--black</code> to increase the overlay intensity and alignment classes <code>.bg-overlay--left</code>, <code>.bg-overlay--right</code>, <code>.bg-overlay--centre</code>.</p>
+
+                    <p>Note that the <code>.bg-overlay--black</code> and the alignment overlay classes can be used together.</p>
+
+                    <p>Note that the <code>.bg-overlay</code> also makes the text color white. Otherwise the helper class <code>.bg-light-content</code> is also available.</p>
 
                     <h3>Animations</h3>
                     <p>There are also modifying classes for the hero that can add the animations <code>.hero--fade-in</code>, <code>.hero--content-pop-in</code>.</p>
@@ -90,10 +97,10 @@
                 <div class="container">
                     <h3>Hero left</h3>
                     <p>Classes applied to the <code>.hero</code> element:</p>
-                    <p><code>.bg-img-cover</code>, <code>.bg-img-overlay</code>.</p>
+                    <p><code>.bg-img-cover</code>, <code>.bg-overlay</code>, <code>.bg-overlay--black</code>, <code>.bg-overlay--left</code>.</p>
                 </div>
             </header>
-            <section class="hero bg-img-cover bg-img-overlay" style="background-image: url(https://unsplash.it/2200/520)">
+            <section class="hero bg-img-cover bg-overlay bg-overlay--black bg-overlay--left" style="background-image: url(https://unsplash.it/2200/520)">
                 <div class="container">
                     <div class="content-block v-align-content-centre">
                         <div class="hero__content">
@@ -114,10 +121,34 @@
                 <div class="container">
                     <h3>Hero right</h3>
                     <p>Classes applied to the <code>.hero</code> element:</p>
-                    <p><code>.hero--content-right</code>, <code>.bg-img-cover</code>, <code>.bg-img-overlay</code>.</p>
+                    <p><code>.hero--content-right</code>, <code>.bg-img-cover</code>, <code>.bg-overlay</code>, <code>.bg-overlay--right</code>.</p>
                 </div>
             </header>
-            <section class="hero hero--content-right bg-img-cover bg-img-overlay bg-img-overlay--black" style="background-image: url(https://unsplash.it/2000/420)">
+            <section class="hero hero--content-right bg-img-cover bg-overlay bg-overlay--right" style="background-image: url(https://unsplash.it/2000/420)">
+                <div class="container">
+                    <div class="content-block v-align-content-centre">
+                        <div class="hero__content">
+                            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+                            <div class="font-size-lg">
+                                <p>Etiam ultrices dui lorem, id pretium augue porttitor sed. Ut bibendum tincidunt ante, vel fringilla nisl tristique dignissim. Ut elementum turpis molestie scelerisque hendrerit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+
+        <!-- HERO CENTRE -->
+        <section id="hero-centre">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Hero centre</h3>
+                    <p>Classes applied to the <code>.hero</code> element:</p>
+                    <p><code>.hero--content-centre</code>, <code>.bg-img-cover</code>, <code>.bg-overlay</code>, <code>.bg-overlay--black</code>, <code>.bg-overlay--centre</code>.</p>
+                </div>
+            </header>
+            <section class="hero hero--content-centre bg-img-cover bg-overlay bg-overlay--black bg-overlay--centre" style="background-image: url(https://unsplash.it/2100/420)">
                 <div class="container">
                     <div class="content-block v-align-content-centre">
                         <div class="hero__content">
