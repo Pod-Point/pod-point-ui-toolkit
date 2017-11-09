@@ -24,8 +24,8 @@
     "superagent": "^1.8.3"
   },
   "devDependencies": {
-    "@pod-point/eslint-config-podpoint-base": "github:pod-point/eslint-config-podpoint-base",
-    "@pod-point/sass-lint-config-podpoint-base": "github:pod-point/sass-lint-config-podpoint-base",
+    "@pod-point/eslint-config-podpoint-base": "^0.1.9",
+    "@pod-point/sass-lint-config-podpoint-base": "^1.0.0",
     "assemble": "^0.23.0",
     "assemble-render-file": "^1.0.2",
     "autoprefixer": "^6.3.6",
