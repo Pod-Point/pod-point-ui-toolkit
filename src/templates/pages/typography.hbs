@@ -7,7 +7,6 @@
             <div class="container">
                 <h2>Typography</h2>
                 <ul class="list--inline remove-link-styles font-weight-bold">
-                    <li><a href="#typography-formatting">Formatting</a></li>
                     <li><a href="#typography-size-definitions">Size definitions</a></li>
                     <li><a href="#typography-headings">Headings</a></li>
                     <li><a href="#typography-sizes">Font sizes</a></li>
@@ -15,7 +14,10 @@
                     <li><a href="#typography-small">Small type</a></li>
                     <li><a href="#typography-base">Base/medium type</a></li>
                     <li><a href="#typography-large">Large type</a></li>
-                    <li><a href="#typography-extra-large">Extra large type</a></li>
+                    <li><a href="#typography-weights">Font weights</a></li>
+                    <li><a href="#typography-transforms">Text transforms</a></li>
+                    <li><a href="#typography-formatting">Text formatting</a></li>
+                    <li><a href="#typography-palette">Text palette</a></li>
                 </ul>
             </div>
         </header>
@@ -28,6 +30,7 @@
                     <h3>Required files</h3>
                 </div>
             </header>
+
             <div class="content-block">
                 <div class="container">
                     <p>SCSS files required: <code>_trumps.typography.scss</code></p>
@@ -49,27 +52,6 @@
         </section>
 
 
-        <!-- TYPOGRAPHIC FORMATTING -->
-        <section id="typography-formatting">
-            <header class="content-block bg-light-grey">
-                <div class="container">
-                    <h3>Typographic formatting</h3>
-                    <p>Use the default tags or the same name classes to format text</p>
-                    <p>Note there are some helper classes are also available for font colours, weights and transforms <a href="helper-classes.html#helpersTypography">here</a>.</p>
-                </div>
-            </header>
-            <div class="content-block">
-                <div class="container">
-                    <p><strong>strong</strong> = <code>&lt;strong&gt;</code> or <code>.strong</code> or <code>.bold</code></p>
-                    <p><em>italic</em> = <code>&lt;i&gt;</code> or <code>&lt;em&gt;</code> or <code>.em</code> or <code>.italic</code></p>
-                    <p><small>small</small> = <code>&lt;small&gt;</code> or <code>.small</code></p>
-                    <p><s>strikethrough</s> = <code>&lt;s&gt;</code> or <code>.s</code> or <code>.strikethrough</code></p>
-                    <p><mark>highlight</mark> = <code>&lt;mark&gt;</code> or <code>.mark</code> or <code>.highlight</code></p>
-                </div>
-            </div>
-        </section>
-
-
         <!-- HEADINGS -->
         <section id="typography-headings">
             <header class="content-block bg-light-grey">
@@ -80,6 +62,7 @@
                     <p>There are mixins available to create responsive heading styles here <a href="sass-tools.html#toolsHeadings">here</a></p>
                 </div>
             </header>
+
             <div class="content-block">
                 <div class="container">
                     <h1>Heading 1 style (24px/28px)</h1>
@@ -121,6 +104,7 @@
                     <p>Use the class <code>font-size-xs</code> for extra small typography styling</p>
                 </div>
             </header>
+
             <div class="content-block">
                 <div class="container">
                     <div class="font-size-xs">
@@ -156,6 +140,7 @@
                     <p>Use the class <code>font-size-sm</code> for small typography styling</p>
                 </div>
             </header>
+
             <div class="content-block">
                 <div class="container">
                     <div class="font-size-sm">
@@ -192,6 +177,7 @@
                     <p>Note that this is the size defined on the body already.</p>
                 </div>
             </header>
+
             <div class="content-block">
                 <div class="container">
                     <p>Aenean sapien est, convallis sit amet euismod sit amet, porttitor at quam. Suspendisse consectetur nulla odio, et fringilla magna feugiat et. Quisque nec est non scelerisque rhoncus, orci elit consequat arcu, et dictum sapien risus id lectus. Nam risus arcu, malesuada id lectus eget, pretium blandit mi. Quisque molestie, sem nec rhoncus porttitor, lectus libero pretium mi, et mattis mauris erat at tellus. Sed ultricies dignissim volutpat.</p>
@@ -224,6 +210,7 @@
                     <p>Use the class <code>font-size-lg</code> for large typography styling</p>
                 </div>
             </header>
+
             <div class="content-block">
                 <div class="container">
                     <div class="font-size-lg">
@@ -259,6 +246,7 @@
                     <p>Use the class <code>font-size-xl</code> for extra large typography styling</p>
                 </div>
             </header>
+
             <div class="content-block">
                 <div class="container">
                     <div class="font-size-xl">
@@ -281,6 +269,80 @@
                             <li>Donec accumsan placerat metus, eu pretium diam semper sagittis. Aliquam nec ligula massa. Praesent ac massa velit. Sed laoreet lectus ac nibh finibus varius. Aenean pulvinar malesuada nulla id finibus.</li>
                         </ol>
                     </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- WEIGHTS -->
+        <section id="typography-weights">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Font weights</h3>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <p>Regular and bold helpers: <code>.font-weight-regular</code>, <code>.font-weight-bold</code></p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- TRANSFORMS -->
+        <section id="typography-transforms">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Text transforms</h3>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <p>Uppercase and lowercase helpers: <code>.font-uppercase</code>, <code>.font-lowercase</code></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMATTING -->
+        <section id="typography-formatting">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Text formatting</h3>
+                    <p>Use the default tags or the same name classes to format text</p>
+                    <p>Note there are some helper classes are also available for font colours, weights and transforms <a href="helper-classes.html#helpersTypography">here</a>.</p>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <p><strong>strong</strong> = <code>&lt;strong&gt;</code> or <code>.strong</code> or <code>.bold</code></p>
+                    <p><em>italic</em> = <code>&lt;i&gt;</code> or <code>&lt;em&gt;</code> or <code>.em</code> or <code>.italic</code></p>
+                    <p><small>small</small> = <code>&lt;small&gt;</code> or <code>.small</code></p>
+                    <p><s>strikethrough</s> = <code>&lt;s&gt;</code> or <code>.s</code> or <code>.strikethrough</code></p>
+                    <p><mark>highlight</mark> = <code>&lt;mark&gt;</code> or <code>.mark</code> or <code>.highlight</code></p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PALETTE -->
+        <section id="typography-palette">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Text palette</h3>
+                    <p>Note the base colour is already the default, but the class can be used to override if required.</p>
+                </div>
+            </header>
+
+            <div class="content-block">
+                <div class="container">
+                    <p><strong>Base font colour (#333) = </strong> <code>.colour-base</code></p>
+                    <p><strong class="colour-light">Light font colour (#999) = </strong> <code>.colour-light</code></p>
+                    <p><strong class="colour-very-light">Very light font colour (#d6d6d6) = </strong> <code>.colour-very-light</code></p>
+                    <p><strong class="bg-dark-grey colour-inverted">Inverted font colour (#fff) = </strong> <code>.colour-inverted</code></p>
+                    <p><strong class="colour-primary">Primary font colour (#8cc63f) </strong><code>.colour-primary</code></p>
                 </div>
             </div>
         </section>
