@@ -1,0 +1,50 @@
+<div data-page="pagination" class="demo-page-content">
+
+    {{> demo-sidebar }}
+
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
+            <div class="container">
+                <h2>Pagination</h2>
+            </div>
+        </header>
+
+
+        <!-- REQUIRED FILES -->
+        <section id="buttons-required">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Required files</h3>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p>SCSS files required: <code>_components.pagination.scss</code></p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PAGINATION MARKUP -->
+        <section id="pagination-markup">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>The markup</h3>
+                    <p>Based on the standard Laravel pagination markup.</p>
+                    <p>The two classes available are <code>disabled</code> and <code>active</code>.</p>
+{{> snippet-pagination }}
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <ul class="pagination">
+                        <li class="disabled"><span>«</span></li>
+                        <li class="active"><span>1</span></li>
+                        <li><a href="?page=2">2</a></li>
+                        <li><a href="?page=2" rel="next">»</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

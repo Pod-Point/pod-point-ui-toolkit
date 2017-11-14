@@ -64,6 +64,12 @@
     }
 }
 
+// Disabled styles
+@mixin disabled {
+    cursor: not-allowed;
+    opacity: $opacity-disabled;
+}
+
 // Override disabled styles
 // sass-lint:disable-block no-important
 @mixin override-disabled-styles {

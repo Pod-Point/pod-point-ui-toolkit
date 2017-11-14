@@ -95,7 +95,8 @@ $pages: (
     'tooltips',
     'typeahead',
     'typography',
-    'version-updates'
+    'version-updates',
+    'pagination'
 );
 
 @each $page in $pages {
