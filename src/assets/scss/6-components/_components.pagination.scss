@@ -1,0 +1,51 @@
+// =============================================================================
+//  COMPONENTS - PAGINATION
+// =============================================================================
+
+.pagination {
+    @include remove-list-styles;
+    @include clearfix;
+
+    li {
+        border: $border-thin-base;
+        border-left: 0;
+        float: left;
+        padding-bottom: 0;
+
+        &:first-child {
+            border-bottom-left-radius: $pagination-button-radius;
+            border-left: $border-thin-base;
+            border-top-left-radius: $pagination-button-radius;
+        }
+
+        &:last-child {
+            border-bottom-right-radius: $pagination-button-radius;
+            border-top-right-radius: $pagination-button-radius;
+        }
+
+        &.disabled {
+            a,
+            span {
+                @include disabled;
+            }
+        }
+
+        &:not(.disabled) {
+            &.active,
+            &:hover {
+                background-color: $grey-light;
+            }
+        }
+
+        a,
+        span {
+            @include remove-link-styles;
+            @include padding($pagination-button-v-padding $pagination-button-h-padding);
+            display: block;
+            font-size: $pagination-button-font-size;
+            font-weight: $font-weight-bold;
+            min-height: $pagination-button-min-height;
+            min-width: $pagination-button-min-width;
+        }
+    }
+}

@@ -70,6 +70,14 @@ body {
     padding: .5em 10px;
 }
 
+.demo-page-content {
+    code {
+        background-color: $primary-colour-very-light;
+        color: $primary-colour-very-dark;
+        padding: $highlight-text-padding;
+    }
+}
+
 $pages: (
     'installation',
     'scss',
@@ -95,7 +103,8 @@ $pages: (
     'tooltips',
     'typeahead',
     'typography',
-    'version-updates'
+    'version-updates',
+    'pagination'
 );
 
 @each $page in $pages {

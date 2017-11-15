@@ -37,9 +37,3 @@ mark,
     @include padding(null $highlight-text-padding);
     background-color: $highlight-colour;
 }
-
-code {
-    background-color: $primary-colour-very-light;
-    color: $primary-colour-very-dark;
-    padding: $highlight-text-padding;
-}
