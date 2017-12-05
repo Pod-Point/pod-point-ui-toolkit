@@ -1,0 +1,85 @@
+// sass-lint:disable no-important, nesting-depth
+
+
+.navbar {
+    border-bottom: $border-thin-light;
+}
+
+.navbar__brand {
+    display: block;
+    padding: ($typography-v-spacing * .75) 0;
+
+    > img {
+        max-height: $space-xl;
+        padding: 0 $space-xs;
+    }
+}
+
+.navbar__nav {
+    .nav__link {
+        padding: $typography-v-spacing;
+        text-decoration: none;
+    }
+
+    > .nav__item {
+        &:hover > .nav__link {
+            background-color: $grey-very-light;
+        }
+    }
+}
+
+.dropdown {
+    position: relative;
+
+    > .nav__link {
+        background: url($css-bg-path+'icons/chevron-down.svg') no-repeat;
+        background-position: 95% center;
+        background-size: $caret-size;
+        padding-right: ($caret-size * 3);
+
+        &.is-active {
+            background-image: url($css-bg-path+'icons/chevron-up.svg');
+        }
+    }
+}
+
+.dropdown-menu {
+    background-color: $dropdown-background-colour;
+    border: $border-light;
+    font-size: $font-size-sm-desktop;
+    padding: ($typography-v-spacing / 2) 0 !important;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+
+    &::before,
+    &::after {
+        border: solid $caret-size transparent;
+        content: '';
+        height: 0;
+        left: ($caret-size * 2.5);
+        position: absolute;
+        top: -($caret-size * 2);
+        width: 0;
+    }
+
+    &::before {
+        border-color: transparent transparent $grey-keyline-light;
+        border-width: ($caret-size + ($border-stroke * 2));
+        left: ($caret-size * 2.5) - ($border-stroke * 2);
+        top: -(($caret-size * 2) + ($border-stroke * 4));
+    }
+
+    &::after {
+        border-color: transparent transparent $dropdown-background-colour;
+    }
+
+    .nav__item {
+        display: block;
+        margin: 0;
+    }
+
+    .nav__link {
+        padding: ($typography-v-spacing / 2) $typography-v-spacing;
+    }
+}

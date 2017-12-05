@@ -79,6 +79,8 @@ class ToggleElement {
      */
     openElement() {
         addClass(this.element, IS_ACTIVE);
+        this.toggleButtons.forEach(button => addClass(button, IS_ACTIVE));
+        this.openButtons.forEach(button => addClass(button, IS_ACTIVE));
     }
 
     /**
@@ -86,6 +88,8 @@ class ToggleElement {
      */
     closeElement() {
         removeClass(this.element, IS_ACTIVE);
+        this.toggleButtons.forEach(button => removeClass(button, IS_ACTIVE));
+        this.openButtons.forEach(button => removeClass(button, IS_ACTIVE));
     }
 
     /**

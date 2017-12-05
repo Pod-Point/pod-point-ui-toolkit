@@ -104,7 +104,8 @@ $pages: (
     'typeahead',
     'typography',
     'version-updates',
-    'pagination'
+    'pagination',
+    'navbar'
 );
 
 @each $page in $pages {
