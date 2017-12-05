@@ -1,4 +1,4 @@
-// sass-lint:disable no-important, nesting-depth
+// sass-lint:disable nesting-depth
 
 .navbar {
     border-bottom: $border-thin-light;
@@ -17,7 +17,6 @@
 .navbar__nav {
     .nav__link {
         padding: $typography-v-spacing;
-        text-decoration: none;
     }
 
     > .nav__item {
@@ -46,7 +45,7 @@
     background-color: $dropdown-background-colour;
     border: $border-light;
     font-size: $font-size-sm-desktop;
-    padding: ($typography-v-spacing / 2) 0 !important;
+    padding: ($typography-v-spacing / 2) 0 !important; // sass-lint:disable-line no-important
     position: absolute;
     width: 100%;
     z-index: 1;

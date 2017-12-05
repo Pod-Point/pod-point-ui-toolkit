@@ -1,6 +1,5 @@
 .nav {
-    list-style: none;
-    padding: 0;
+    @include remove-list-styles;
 }
 
 .nav__item {
@@ -10,5 +9,6 @@
 }
 
 .nav__link {
+    @include remove-link-styles;
     display: block;
 }
