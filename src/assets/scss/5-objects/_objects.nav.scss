@@ -12,3 +12,12 @@
     @include remove-link-styles;
     display: block;
 }
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    z-index: 1;
+}
