@@ -1,0 +1,29 @@
+.dropdown-menu {
+    background-color: $dropdown-background-colour;
+    border: $border-light;
+    font-size: $font-size-sm-desktop;
+    padding: ($typography-v-spacing / 2) 0 !important; // sass-lint:disable-line no-important
+    width: 100%;
+
+    &::before,
+    &::after {
+        border: solid $caret-size transparent;
+        content: '';
+        height: 0;
+        left: ($caret-size * 2.5);
+        position: absolute;
+        top: -($caret-size * 2);
+        width: 0;
+    }
+
+    &::before {
+        border-color: transparent transparent $grey-keyline-light;
+        border-width: ($caret-size + ($border-stroke * 2));
+        left: ($caret-size * 2.5) - ($border-stroke * 2);
+        top: -(($caret-size * 2) + ($border-stroke * 4));
+    }
+
+    &::after {
+        border-color: transparent transparent $dropdown-background-colour;
+    }
+}

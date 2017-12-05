@@ -1,0 +1,38 @@
+// sass-lint:disable nesting-depth
+
+.navbar {
+    border-bottom: $border-thin-light;
+}
+
+.navbar__brand {
+    display: block;
+    padding: ($typography-v-spacing * .75) 0;
+
+    > img {
+        max-height: $space-xl;
+        padding: 0 $space-xs;
+    }
+}
+
+.navbar__nav {
+    .nav__link {
+        padding: $typography-v-spacing;
+    }
+
+    > .nav__item {
+        &:hover > .nav__link {
+            background-color: $grey-very-light;
+        }
+    }
+}
+
+.dropdown > .nav__link {
+    background: url($css-bg-path+'icons/chevron-down.svg') no-repeat;
+    background-position: 95% center;
+    background-size: $caret-size;
+    padding-right: ($caret-size * 3);
+
+    &.is-active {
+        background-image: url($css-bg-path+'icons/chevron-up.svg');
+    }
+}
