@@ -15,9 +15,15 @@
 
 .navbar__collapse {
     clear: both;
+    display: none;
 
     @include screen-md-min {
         clear: none;
+        display: block;
+    }
+
+    &.is-active {
+        display: block;
     }
 }
 
@@ -40,6 +46,12 @@
     }
 
     > .nav__item {
+        display: block;
+
+        @include screen-md-min {
+            display: inline-block;
+        }
+
         &:hover > .nav__link {
             background-color: $grey-very-light;
         }
