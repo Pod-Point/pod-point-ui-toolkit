@@ -50,3 +50,7 @@ ol {
         padding-left: $list-l-spacing-half;
     }
 }
+
+dd {
+    -webkit-margin-start: 0; // sass-lint:disable-line no-vendor-prefixes
+}
