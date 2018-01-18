@@ -22,8 +22,8 @@
 }
 
 .navbar__brand {
-    float: left;
     display: block;
+    float: left;
     padding: ($typography-v-spacing * .75) 0;
 
     > img {
