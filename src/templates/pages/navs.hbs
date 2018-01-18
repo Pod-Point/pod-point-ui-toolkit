@@ -1,0 +1,48 @@
+<div data-page="navbar" class="demo-page-content">
+
+    {{> demo-sidebar }}
+
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
+            <div class="container">
+                <h2>Navs</h2>
+            </div>
+        </header>
+
+
+        <!-- REQUIRED FILES -->
+        <section id="buttons-required">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Required files</h3>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p>SCSS files required: <code>_components.navs.scss</code></p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- NAVBAR MARKUP -->
+        <section id="navbar-markup">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Tabs</h3>
+
+                    {{> snippet-nav-tabs }}
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <ul class="nav nav--tabs">
+                        <li class="nav__item is-active"><a class="nav__link" href="#">Item 1</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#">Item 2</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#">Item 3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

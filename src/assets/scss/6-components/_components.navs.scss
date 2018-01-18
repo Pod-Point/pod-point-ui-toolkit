@@ -1,0 +1,18 @@
+.nav--tabs {
+    border-bottom: $border-light;
+    padding-bottom: 0;
+
+    > .nav__item {
+        margin-bottom: -($border-stroke);
+
+        &.is-active {
+            background-color: $white;
+            border: $border-light;
+            border-bottom: 0;
+        }
+
+        > .nav__link {
+            padding: $space-sm $space-md;
+        }
+    }
+}
