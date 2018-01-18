@@ -25,12 +25,48 @@
             </div>
         </section>
 
-
-        <!-- NAVBAR MARKUP -->
+        <!-- NAVBAR DEFAULT -->
         <section id="navbar-markup">
             <header class="content-block bg-light-grey">
                 <div class="container">
                     <h3>The markup</h3>
+{{> snippet-navbar }}
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <nav class="navbar">
+                        <div class="container clearfix">
+                            <a class="navbar__brand float-left-md" href="/">Brand</a>
+
+                            <button type="button">
+                                {{> icon-bars }}
+                            </button>
+
+                            <nav id="navbar-collapse">
+                                <ul class="nav navbar__nav float-left-md">
+                                    <li class="nav__item"><a href="#" class="nav__link">Item 1</a></li>
+                                    <li class="nav__item"><a href="#" class="nav__link">Item 2</a></li>
+                                    <li class="nav__item"><a href="#" class="nav__link">Item 3</a></li>
+                                </ul>
+
+                                <ul class="nav navbar__nav float-right-md">
+                                    <li class="nav__item"><a href="#" class="nav__link">Item 4</a></li>
+                                    <li class="nav__item"><a href="#" class="nav__link">Item 5</a></li>
+                                    <li class="nav__item"><a href="#" class="nav__link">Item 6</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- NAVBAR DROPDOWN -->
+        <section id="navbar-markup">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Navbar with dropdown</h3>
 {{> snippet-navbar }}
                 </div>
             </header>
