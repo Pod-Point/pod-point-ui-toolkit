@@ -4,7 +4,25 @@
     border-bottom: $border-thin-light;
 }
 
+.navbar__collapse-toggle {
+    display: block;
+    float: right;
+
+    @include screen-md-min {
+        display: none;
+    }
+}
+
+.navbar__collapse {
+    clear: both;
+
+    @include screen-md-min {
+        clear: none;
+    }
+}
+
 .navbar__brand {
+    float: left;
     display: block;
     padding: ($typography-v-spacing * .75) 0;
 
