@@ -11,6 +11,19 @@
 .nav__link {
     @include remove-link-styles;
     display: block;
+
+    .lang {
+        background: $grey-light;
+        display: inline-block;
+        margin-left: 10px;
+        padding: 8px;
+        text-decoration: none;
+
+        &.active {
+            background: $primary-base;
+            color: $white;
+        }
+    }
 }
 
 .dropdown {
