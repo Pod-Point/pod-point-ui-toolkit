@@ -21,3 +21,20 @@
     position: absolute;
     z-index: 1;
 }
+
+#language-switcher {
+    .nav__link {
+        .lang {
+            text-decoration: none;
+            padding: 8px;
+            margin-left: 10px;
+            background: $grey-light;
+            display: inline-block;
+
+            &.active {
+                background: $primary-base;
+                color: white;
+            }
+        }
+    }
+}
