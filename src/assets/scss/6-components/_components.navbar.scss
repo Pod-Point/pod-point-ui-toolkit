@@ -4,9 +4,58 @@
     border-bottom: $border-thin-light;
 }
 
+.navbar__collapse-toggle {
+    display: block;
+    float: right;
+    padding: ($typography-v-spacing * .75) 0;
+
+    .icon--opened {
+        display: none;
+    }
+
+    .icon--closed {
+        display: inline-block;
+    }
+
+    &.is-active {
+        .icon--opened {
+            display: inline-block;
+        }
+
+        .icon--closed {
+            display: none;
+        }
+    }
+
+    @include screen-md-min {
+        display: none;
+    }
+}
+
+.navbar__collapse {
+    clear: both;
+    display: none;
+    padding-top: $space-sm;
+
+    @include screen-md-min {
+        clear: none;
+        display: block;
+        padding-top: 0;
+    }
+
+    &.is-active {
+        display: block;
+    }
+}
+
 .navbar__brand {
     display: block;
-    padding: ($typography-v-spacing * .75) 0;
+    float: left;
+    padding: $typography-v-spacing;
+
+    @include screen-md-min {
+        margin-right: $space-sm;
+    }
 
     > img {
         max-height: $space-xl;
@@ -15,11 +64,19 @@
 }
 
 .navbar__nav {
+    padding-bottom: 0;
+
     .nav__link {
         padding: $typography-v-spacing;
     }
 
     > .nav__item {
+        display: block;
+
+        @include screen-md-min {
+            display: inline-block;
+        }
+
         &:hover > .nav__link {
             background-color: $grey-very-light;
         }
@@ -27,12 +84,21 @@
 }
 
 .dropdown > .nav__link {
-    background: url($css-bg-path+'icons/chevron-down.svg') no-repeat;
-    background-position: 95% center;
-    background-size: $caret-size;
-    padding-right: ($caret-size * 3);
+    .icon--opened {
+        display: none;
+    }
+
+    .icon--closed {
+        display: inline-block;
+    }
 
     &.is-active {
-        background-image: url($css-bg-path+'icons/chevron-up.svg');
+        .icon--opened {
+            display: inline-block;
+        }
+
+        .icon--closed {
+            display: none;
+        }
     }
 }

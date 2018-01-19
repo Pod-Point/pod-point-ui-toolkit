@@ -25,8 +25,7 @@
             </div>
         </section>
 
-
-        <!-- NAVBAR MARKUP -->
+        <!-- DEFAULT -->
         <section id="navbar-markup">
             <header class="content-block bg-light-grey">
                 <div class="container">
@@ -37,13 +36,54 @@
             <div class="content-block">
                 <div class="container">
                     <nav class="navbar">
-                        <div class="container clearfix">
-                            <a class="navbar__brand float-left-md" href="/">{{> pod-point-logo }}</a>
+                        <div class="clearfix">
+                            <a class="navbar__brand float-left-md" href="/">Brand</a>
 
-                            <ul class="nav navbar__nav float-right-md">
+                            <button class="navbar__collapse-toggle" type="button" data-toggle-el="navbar-collapse">
+                                <i class="icon icon--opened">{{> icon-cross }}</i>
+                                <i class="icon icon--closed">{{> icon-navicon }}</i>
+                                <span class="hidden">Toggle navigation</span>
+                            </button>
+
+                            <nav class="navbar__collapse" id="navbar-collapse" data-js-module="toggleElement">
+                                <ul class="nav navbar__nav float-left-md">
+                                    <li class="nav__item"><a href="#" class="nav__link">Item 1</a></li>
+                                    <li class="nav__item"><a href="#" class="nav__link">Item 2</a></li>
+                                    <li class="nav__item"><a href="#" class="nav__link">Item 3</a></li>
+                                </ul>
+
+                                <ul class="nav navbar__nav float-right-md">
+                                    <li class="nav__item"><a href="#" class="nav__link">Item 4</a></li>
+                                    <li class="nav__item"><a href="#" class="nav__link">Item 5</a></li>
+                                    <li class="nav__item"><a href="#" class="nav__link">Item 6</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- DROPDOWN -->
+        <section id="navbar-markup">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Navbar with dropdown</h3>
+{{> snippet-navbar }}
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <nav class="navbar">
+                        <div class="clearfix">
+                            <a class="navbar__brand float-left-md" href="/">Brand</a>
+
+                            <ul class="nav navbar__nav float-right">
                                 <li class="nav__item dropdown">
                                     <button id="toggle-user-dropdown-menu" class="nav__link" data-toggle-el="user-dropdown-menu">
-                                        Dropdown
+                                        <span class="m-r-xs">Dropdown</span>
+                                        <i class="icon icon--xxs icon--opened">{{> icon-chevron-up }}</i>
+                                        <i class="icon icon--xxs icon--closed">{{> icon-chevron-down }}</i>
                                     </button>
 
                                     <ul data-js-module="toggleElement" class="nav dropdown-menu toggle" id="user-dropdown-menu">
