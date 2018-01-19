@@ -1,0 +1,67 @@
+<div data-page="navs" class="demo-page-content">
+
+    {{> demo-sidebar }}
+
+    <div class="demo-container-with-sidebar">
+        <header class="content-block content-block--strip bg-primary">
+            <div class="container">
+                <h2>Navs</h2>
+            </div>
+        </header>
+
+
+        <!-- REQUIRED FILES -->
+        <section>
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Required files</h3>
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <p>SCSS files required: <code>_components.navs.scss</code></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEFAULT -->
+        <section>
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Default</h3>
+                    <p>The base <code>nav</code> class will turn any list and it's elements into an inline list.</p>
+{{> snippet-nav }}
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <ul class="nav">
+                        <li class="nav__item is-active"><a class="nav__link" href="#">Item 1</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#">Item 2</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#">Item 3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- TABS -->
+        <section id="tabs">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>Tabs</h3>
+
+{{> snippet-nav-tabs }}
+                </div>
+            </header>
+            <div class="content-block">
+                <div class="container">
+                    <ul class="nav nav--tabs">
+                        <li class="nav__item is-active"><a class="nav__link" href="#">Item 1</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#">Item 2</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#">Item 3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
