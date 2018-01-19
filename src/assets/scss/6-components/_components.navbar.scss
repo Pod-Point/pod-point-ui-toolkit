@@ -7,6 +7,25 @@
 .navbar__collapse-toggle {
     display: block;
     float: right;
+    padding: ($typography-v-spacing * .75) 0;
+    
+    .icon--opened {
+        display: none;
+    }
+
+    .icon--closed {
+        display: block;
+    }
+
+    &.is-active {
+        .icon--opened {
+            display: block;
+        }
+
+        .icon--closed {
+            display: none;
+        }
+    }
 
     @include screen-md-min {
         display: none;
@@ -16,10 +35,12 @@
 .navbar__collapse {
     clear: both;
     display: none;
+    padding-top: $space-sm;
 
     @include screen-md-min {
         clear: none;
         display: block;
+        padding-top: 0;
     }
 
     &.is-active {
@@ -31,6 +52,10 @@
     display: block;
     float: left;
     padding: ($typography-v-spacing * .75) 0;
+
+    @include screen-md-min {
+        margin-right: $space-md;
+    }
 
     > img {
         max-height: $space-xl;

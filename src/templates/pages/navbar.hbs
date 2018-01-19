@@ -36,11 +36,13 @@
             <div class="content-block">
                 <div class="container">
                     <nav class="navbar">
-                        <div class="container clearfix">
+                        <div class="clearfix">
                             <a class="navbar__brand float-left-md" href="/">Brand</a>
 
                             <button class="navbar__collapse-toggle" type="button" data-toggle-el="navbar-collapse">
-                                <i class="icon">{{> icon-navicon }}</i>
+                                <i class="icon icon--opened">{{> icon-cross }}</i>
+                                <i class="icon icon--closed">{{> icon-navicon }}</i>
+                                <span class="hidden">Toggle navigation</span>
                             </button>
 
                             <nav class="navbar__collapse" id="navbar-collapse" data-js-module="toggleElement">
@@ -73,10 +75,10 @@
             <div class="content-block">
                 <div class="container">
                     <nav class="navbar">
-                        <div class="container clearfix">
-                            <a class="navbar__brand float-left-md" href="/">{{> pod-point-logo }}</a>
+                        <div class="clearfix">
+                            <a class="navbar__brand float-left-md" href="/">Brand</a>
 
-                            <ul class="nav navbar__nav float-right-md">
+                            <ul class="nav navbar__nav float-right">
                                 <li class="nav__item dropdown">
                                     <button id="toggle-user-dropdown-menu" class="nav__link" data-toggle-el="user-dropdown-menu">
                                         Dropdown
