@@ -22,19 +22,17 @@
     z-index: 1;
 }
 
-#language-switcher {
-    .nav__link {
-        .lang {
-            background: $grey-light;
-            display: inline-block;
-            margin-left: 10px;
-            padding: 8px;
-            text-decoration: none;
+.nav__link {
+    .lang {
+        background: $grey-light;
+        display: inline-block;
+        margin-left: 10px;
+        padding: 8px;
+        text-decoration: none;
 
-            &.active {
-                background: $primary-base;
-                color: $white;
-            }
+        &.active {
+            background: $primary-base;
+            color: $white;
         }
     }
 }
