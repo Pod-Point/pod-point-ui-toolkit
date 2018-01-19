@@ -14,12 +14,12 @@
     }
 
     .icon--closed {
-        display: block;
+        display: inline-block;
     }
 
     &.is-active {
         .icon--opened {
-            display: block;
+            display: inline-block;
         }
 
         .icon--closed {
@@ -51,10 +51,10 @@
 .navbar__brand {
     display: block;
     float: left;
-    padding: ($typography-v-spacing * .75) 0;
+    padding: $typography-v-spacing;
 
     @include screen-md-min {
-        margin-right: $space-md;
+        margin-right: $space-sm;
     }
 
     > img {
@@ -84,12 +84,21 @@
 }
 
 .dropdown > .nav__link {
-    background: url($css-bg-path+'icons/chevron-down.svg') no-repeat;
-    background-position: 95% center;
-    background-size: $caret-size;
-    padding-right: ($caret-size * 3);
+    .icon--opened {
+        display: none;
+    }
+
+    .icon--closed {
+        display: inline-block;
+    }
 
     &.is-active {
-        background-image: url($css-bg-path+'icons/chevron-up.svg');
+        .icon--opened {
+            display: inline-block;
+        }
+
+        .icon--closed {
+            display: none;
+        }
     }
 }
