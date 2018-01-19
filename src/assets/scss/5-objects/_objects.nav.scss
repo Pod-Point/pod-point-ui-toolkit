@@ -25,16 +25,17 @@
 #language-switcher {
     .nav__link {
         .lang {
-            text-decoration: none;
-            padding: 8px;
-            margin-left: 10px;
             background: $grey-light;
             display: inline-block;
+            padding: 8px;
+            text-decoration: none;
+            margin-left: 10px;
 
             &.active {
                 background: $primary-base;
-                color: white;
+                color: $white;
             }
         }
     }
 }
+
