@@ -27,9 +27,9 @@
         .lang {
             background: $grey-light;
             display: inline-block;
+            margin-left: 10px;
             padding: 8px;
             text-decoration: none;
-            margin-left: 10px;
 
             &.active {
                 background: $primary-base;
