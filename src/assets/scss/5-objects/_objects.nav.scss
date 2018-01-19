@@ -11,18 +11,7 @@
 .nav__link {
     @include remove-link-styles;
     display: block;
-}
 
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    position: absolute;
-    z-index: 1;
-}
-
-.nav__link {
     .lang {
         background: $grey-light;
         display: inline-block;
@@ -37,3 +26,11 @@
     }
 }
 
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    z-index: 1;
+}
