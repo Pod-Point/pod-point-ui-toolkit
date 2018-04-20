@@ -3,7 +3,7 @@
     const buttonText = 'That\'s ok with me';
     const noticeText = 'Hello! Our website uses cookies to help us provide you with the best user experience and to' +
         'deliver customised experiences. You can find out more about the cookies we use and your cookie choices,' +
-        'here. If you continue to use our services, we’ll assume you’re ok with this.';
+        '<a href="https://pod-point.com/technical/privacy-policy" target="_blank">here</a>. If you continue to use our services, we’ll assume you’re ok with this.';
 
     /**
      * Sets the cookie accepting the terms.
@@ -40,7 +40,7 @@
      */
     const showNotice = () => {
         const noticeDiv = document.createElement('div');
-        noticeDiv.className = 'alert alert--info';
+        noticeDiv.className = 'alert alert--cookie';
         noticeDiv.innerHTML = noticeText;
 
         const noticeButton = document.createElement('button');
