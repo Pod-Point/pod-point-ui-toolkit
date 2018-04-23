@@ -107,7 +107,8 @@ $pages: (
     'typography',
     'version-updates',
     'pagination',
-    'navbar'
+    'navbar',
+    'cookie-notice',
 );
 
 @each $page in $pages {
