@@ -1,8 +1,8 @@
 (() => {
     const cookieName = 'cookiesAccepted';
     const buttonText = 'That\'s ok with me';
-    const noticeText = 'Hello! Our website uses cookies to help us provide you with the best user experience and to' +
-        'deliver customised experiences. You can find out more about the cookies we use and your cookie choices,' +
+    const noticeText = 'Hello! Our website uses cookies to help us provide you with the best user experience and to ' +
+        'deliver customised experiences. You can find out more about the cookies we use and your cookie choices, ' +
         '<a href="https://pod-point.com/technical/privacy-policy" target="_blank">here</a>. If you continue to use our services, we’ll assume you’re ok with this.';
 
     /**
@@ -40,15 +40,32 @@
      */
     const showNotice = () => {
         const noticeDiv = document.createElement('div');
-        noticeDiv.className = 'alert alert--cookie';
-        noticeDiv.innerHTML = noticeText;
+        noticeDiv.className = 'pos-fix pin-bottom-left width-100 p-a-md bg-dark-grey';
+
+        const rowDiv = document.createElement('div');
+        rowDiv.className = 'row row--v-gutter-xs';
+
+        const rowColMain = document.createElement('div');
+        rowColMain.className = 'row__col row__col-grow';
+
+        const rowColButton = document.createElement('div');
+        rowColButton.className = 'row__col row__col-centre';
 
         const noticeButton = document.createElement('button');
-        noticeButton.className = 'btn btn--tertiary';
+        noticeButton.className = 'btn btn--secondary';
         noticeButton.innerHTML = buttonText;
         noticeButton.onclick = () => removeNotice(noticeDiv);
 
-        noticeDiv.appendChild(noticeButton);
+        const noticeTextP = document.createElement('p');
+        noticeTextP.className = 'p-b-none font-size-sm';
+        noticeTextP.innerHTML = noticeText;
+
+        rowColMain.appendChild(noticeTextP);
+        noticeDiv.appendChild(rowDiv);
+        rowDiv.appendChild(rowColMain);
+        rowDiv.appendChild(rowColButton);
+
+        rowColButton.appendChild(noticeButton);
         document.body.appendChild(noticeDiv);
     };
 
