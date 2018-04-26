@@ -1,0 +1,24 @@
+// =============================================================================
+//  COMPONENTS - COOKIE NOTICE
+// =============================================================================
+
+.cookie {
+    margin: -$grid-gutter-xs;
+
+    @include screen-sm-min {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__col {
+        padding: $grid-gutter-xs;
+    }
+
+    &__col--grow {
+        flex: 1;
+    }
+
+    &__col-centre {
+        align-self: center;
+    }
+}
