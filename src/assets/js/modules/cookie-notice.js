@@ -41,16 +41,16 @@
      */
     const showNotice = () => {
         const noticeDiv = document.createElement('div');
-        noticeDiv.className = 'pos-fix pin-bottom-left width-100 p-a-md bg-dark-grey';
+        noticeDiv.className = 'pos-fix pin-bottom-left width-100 p-a-md bg-transparent-dark-grey';
 
         const rowDiv = document.createElement('div');
-        rowDiv.className = 'row row--v-gutter-xs';
+        rowDiv.className = 'cookie';
 
         const rowColMain = document.createElement('div');
-        rowColMain.className = 'row__col row__col-grow';
+        rowColMain.className = 'cookie__col cookie__col--grow';
 
         const rowColButton = document.createElement('div');
-        rowColButton.className = 'row__col row__col-centre';
+        rowColButton.className = 'cookie__col cookie__col--centre';
 
         const noticeButton = document.createElement('button');
         noticeButton.className = 'btn btn--secondary';
