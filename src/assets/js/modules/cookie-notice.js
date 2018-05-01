@@ -40,7 +40,10 @@ const removeNotice = noticeDiv => {
  */
 const showNotice = () => {
     const noticeDiv = document.createElement('div');
-    noticeDiv.className = 'pos-fix pin-bottom-left width-100 p-a-md bg-transparent-dark-grey';
+    noticeDiv.className = 'pos-fix pin-bottom-left width-100 p-a-md bg-transparent-dark-grey z-index-9999';
+
+    const containerDiv = document.createElement('div');
+    containerDiv.className = 'max-width-content-wide m-centre';
 
     const rowDiv = document.createElement('div');
     rowDiv.className = 'cookie';
@@ -61,7 +64,8 @@ const showNotice = () => {
     noticeTextP.innerHTML = noticeText;
 
     rowColMain.appendChild(noticeTextP);
-    noticeDiv.appendChild(rowDiv);
+    noticeDiv.appendChild(containerDiv);
+    containerDiv.appendChild(rowDiv);
     rowDiv.appendChild(rowColMain);
     rowDiv.appendChild(rowColButton);
 

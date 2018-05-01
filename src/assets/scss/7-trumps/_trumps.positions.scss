@@ -87,6 +87,10 @@
     z-index: 99 !important;
 }
 
+%z-index-9999 {
+    z-index: 9999 !important;
+}
+
 .z-index-1 {
     @extend %z-index-1;
 }
@@ -129,4 +133,8 @@
 
 .z-index-99 {
     @extend %z-index-99;
+}
+
+.z-index-9999 {
+    @extend %z-index-9999;
 }
