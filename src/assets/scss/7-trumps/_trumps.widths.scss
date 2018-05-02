@@ -92,6 +92,10 @@
         max-width: $max-width-content !important;
     }
 
+    &-content-wide {
+        max-width: $max-width-content-wide !important;
+    }
+
     &-text {
         max-width: $max-width-text !important;
     }
