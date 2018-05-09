@@ -3,14 +3,12 @@
 // =============================================================================
 
 .cookie-wrapper {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    @include position(fixed, null null 0 0);
+    background-color: $transparent-dark-grey;
+    color: $white;
+    padding: $space-md;
     width: 100%;
     z-index: 9999;
-    background-color: $transparent-dark-grey;
-    color: white;
-    padding: $space-md;
 }
 
 .cookie-container {
