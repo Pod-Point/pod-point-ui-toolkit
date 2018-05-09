@@ -2,6 +2,20 @@
 //  COMPONENTS - COOKIE NOTICE
 // =============================================================================
 
+.cookie-wrapper {
+    @include position(fixed, null null 0 0);
+    background-color: $transparent-dark-grey;
+    color: $white;
+    padding: $space-md;
+    width: 100%;
+    z-index: 9999;
+}
+
+.cookie-container {
+    margin: 0 auto;
+    max-width: $max-width-content-wide;
+}
+
 .cookie {
     margin: -$grid-gutter-xs;
 
@@ -20,5 +34,10 @@
 
     &__col-centre {
         align-self: center;
+    }
+
+    &__notice {
+        @include font-size-responsive($font-size-sm-mobile, $font-size-sm-desktop);
+        padding-bottom: 0;
     }
 }
