@@ -4,7 +4,7 @@
 
 .cookie-wrapper {
     @include position(fixed, null null 0 0);
-    background-color: $transparent-dark-grey;
+    background-color: $grey-dark;
     color: $white;
     padding: $space-md;
     width: 100%;
@@ -39,5 +39,33 @@
     &__notice {
         @include font-size-responsive($font-size-sm-mobile, $font-size-sm-desktop);
         padding-bottom: 0;
+    }
+
+    &__btn {
+        @include remove-link-styles;
+        @include padding($button-v-padding $button-h-padding-mobile);
+        @include button-colour($grey);
+        border: $border-stroke solid $grey;
+        border-radius: $button-radius;
+        box-sizing: border-box;
+        cursor: pointer;
+        display: inline-block;
+        font-size: $button-font-size;
+        font-weight: $font-weight-bold;
+        letter-spacing: $button-letter-spacing;
+        line-height: $button-line-height;
+        max-width: $button-max-width;
+        min-height: $button-min-height;
+        transition: opacity .2s ease;
+        vertical-align: middle;
+        width: auto;
+
+        @include screen-sm-min {
+            @include padding(null $button-h-padding);
+        }
+
+        &:focus {
+            outline: none;
+        }
     }
 }
