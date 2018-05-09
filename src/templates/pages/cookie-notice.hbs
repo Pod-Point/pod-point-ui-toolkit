@@ -19,8 +19,14 @@
             </header>
             <div class="content-block">
                 <div class="container">
-                    <p>SCSS files required: <code>_components.cookie-notice.scss</code></p>
-                    <p>JS files required: <code>https://github.com/Pod-Point/cookie-notice.js</code></p>
+                    <p>SCSS files required:</p>
+                    <ul class="list--no-style">
+                        <li><code>0-utilities/all</code></li>
+                        <li><code>1-settings/all</code></li>
+                        <li><code>2-tools/all</code></li>
+                        <li><code>6-components/components.buttons</code></li>
+                        <li><code>6-components/components.cookie-notice</code></li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -36,16 +42,16 @@
             <div class="content-block">
                 <div class="container">
                     <p>Below is an example of what the cookie notice snippet will look like.</p>
-                    <p>To include the Cookie Notice snippet, import the javaScript file which also contains the HTML content.</p>
-                    <p>For the styling, the UI Toolkit needs to be included in your project, also importing the <code>_components.cookie-notice.scss</code> file.</p>
+                    <p>The functioning Cookie Notice snippet lives in a separate repo <a href="https://github.com/Pod-Point/cookie-notice.js" target="_blank">here</a>. Please refer to the readme for instructions on how to implement.</p>
+                    <p>For the styling, the above SCSS files are already included in the snippet.</p>
                 </div>
             </div>
 
-            <div class="pos-fix pin-bottom-left width-100 p-a-md bg-transparent-dark-grey z-index-9999">
-                <div class="max-width-content-wide m-centre">
+            <div class="cookie-wrapper">
+                <div class="cookie-container">
                     <div class="cookie">
                         <div class="cookie__col cookie__col--grow">
-                            <p class="p-b-none font-size-sm">Hello! Our website uses cookies to help us provide you with the best user experience and to deliver customised experiences. You can find out more about the cookies we use and your cookie choices, <a href="https://pod-point.com/technical/privacy-policy" target="_blank">here</a>. If you continue to use our services, we’ll assume you’re ok with this.</p>
+                            <p class="cookie__notice">Hello! Our website uses cookies to help us provide you with the best user experience and to deliver customised experiences. You can find out more about the cookies we use and your cookie choices, <a href="https://pod-point.com/technical/privacy-policy" target="_blank">here</a>. If you continue to use our services, we’ll assume you’re ok with this.</p>
                         </div>
                         <div class="cookie__col cookie__col--centre">
                             <button class="btn btn--secondary">That's ok with me</button>
