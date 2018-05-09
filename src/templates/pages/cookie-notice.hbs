@@ -26,12 +26,27 @@
                         <li><code>0-utilities/all</code></li>
                         <li><code>1-settings/all</code></li>
                         <li><code>2-tools/all</code></li>
-                        <li><code>6-components/components.buttons</code></li>
                         <li><code>6-components/components.cookie-notice</code></li>
                     </ul>
-                    <p>A visual example of the Cookie Notice styling is fixed to the bottom of this page.</p>
                 </div>
             </div>
+        </section>
+
+        <!-- THE MARKUP -->
+        <section id="cookie-notice-markup">
+            <header class="content-block bg-light-grey">
+                <div class="container">
+                    <h3>The markup</h3>
+                </div>
+            </header>
+            <div class="content-block m-b-xxl">
+                <div class="container">
+                    <p>A visual example of the Cookie Notice styling is fixed to the bottom of this page.</p>
+                    <p>For reference the markup is outlined below.</p>
+{{> snippet-cookie-notice }}
+                </div>
+            </div>
+
             <div class="cookie-wrapper">
                 <div class="cookie-container">
                     <div class="cookie">
@@ -39,7 +54,7 @@
                             <p class="cookie__notice">Hello! Our website uses cookies to help us provide you with the best user experience and to deliver customised experiences. You can find out more about the cookies we use and your cookie choices, <a href="https://pod-point.com/technical/privacy-policy" target="_blank">here</a>. If you continue to use our services, we’ll assume you’re ok with this.</p>
                         </div>
                         <div class="cookie__col cookie__col--centre">
-                            <button class="btn btn--secondary">That's ok with me</button>
+                            <button class="cookie__btn">That's ok with me</button>
                         </div>
                     </div>
                 </div>
