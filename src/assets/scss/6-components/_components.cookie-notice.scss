@@ -2,6 +2,12 @@
 //  COMPONENTS - COOKIE NOTICE
 // =============================================================================
 
+// Creating equivalent REM values to be pixels (due to some projects using the snippet having different font sizes on the HTML)
+$button-font-size-px: 15px;
+$font-size-sm-mobile-px: 12px;
+$font-size-sm-desktop-px: 14px;
+$button-letter-spacing-px: 1px;
+
 .cookie-wrapper {
     @include position(fixed, null null 0 0);
     background-color: $grey-dark;
@@ -37,7 +43,7 @@
     }
 
     &__notice {
-        @include font-size-responsive($font-size-sm-mobile, $font-size-sm-desktop);
+        @include font-size-responsive($font-size-sm-mobile-px, $font-size-sm-desktop-px);
         padding-bottom: 0;
     }
 
@@ -50,9 +56,9 @@
         box-sizing: border-box;
         cursor: pointer;
         display: inline-block;
-        font-size: $button-font-size;
+        font-size: $button-font-size-px;
         font-weight: $font-weight-bold;
-        letter-spacing: $button-letter-spacing;
+        letter-spacing: $button-letter-spacing-px;
         line-height: $button-line-height;
         max-width: $button-max-width;
         min-height: $button-min-height;
