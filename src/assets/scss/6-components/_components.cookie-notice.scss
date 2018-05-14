@@ -11,6 +11,7 @@ $button-letter-spacing-px: 1px;
 .cookie-wrapper {
     @include position(fixed, null null 0 0);
     background-color: $grey-dark;
+    box-sizing: border-box;
     color: $white;
     padding: $space-md;
     width: 100%;
