@@ -1,4 +1,4 @@
-import { Delegate } from 'dom-delegate';
+import { Delegate } from 'ftdomdelegate';
 import { addClass, removeClass, nodesToArray, hasClass, closest } from '@pod-point/dom-ops';
 
 let instances = [];
@@ -9,9 +9,9 @@ const MOBILE_ONLY = 'accordion--only-mobile';
 class Accordion {
 
     /**
-     * Creates a new accordion element
+     * Creates a new accordion element.
      *
-     * @param {element}
+     * @param {HTMLElement} element
      */
     constructor(element) {
         this.element = element;
@@ -20,7 +20,9 @@ class Accordion {
     }
 
     /**
-     * Binds the event listeners from the elements
+     * Binds the event listeners from the elements.
+     *
+     * @return {void}
      */
     bindEvents() {
         this.listener = new Delegate(this.element);
@@ -33,7 +35,9 @@ class Accordion {
     }
 
     /**
-     * Unbinds the event listeners from the elements
+     * Unbinds the event listeners from the elements.
+     *
+     * @return {void}
      */
     unbindEvents() {
         this.listener.destroy();
@@ -42,7 +46,8 @@ class Accordion {
     /**
      * Toggles the accordion.
      *
-     * @param {element} element to toggle
+     * @param {HTMLElement} element to toggle
+     * @return {void}
      */
     toggleAccordion(element) {
         if (hasClass(element, IS_OPEN)) {

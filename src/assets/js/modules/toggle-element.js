@@ -6,9 +6,10 @@ const IS_ACTIVE = 'is-active';
 class ToggleElement {
 
     /**
-     * Creates a new toggle element
+     * Creates a new toggle element.
      *
-     * @param {element}
+     * @param {HTMLElement} element
+     * @return {void}
      */
     constructor(element) {
         this.element = element;
@@ -29,7 +30,9 @@ class ToggleElement {
     }
 
     /**
-     * Binds the event listeners from the elements
+     * Binds the event listeners from the elements.
+     *
+     * @return {void}
      */
     bindEvents() {
         this.toggleButtons.forEach(toggleButton => {
@@ -55,7 +58,9 @@ class ToggleElement {
     }
 
     /**
-     * Unbinds the event listeners from the elements
+     * Unbinds the event listeners from the elements.
+     *
+     * @return {void}
      */
     unbindEvents() {
         this.toggleListeners.forEach(toggleListener => toggleListener.destroy());
@@ -64,7 +69,9 @@ class ToggleElement {
     }
 
     /**
-     * Toggle element depending if already active or not
+     * Toggle element depending if already active or not.
+     *
+     * @return {void}
      */
     toggleElement() {
         if (hasClass(this.element, IS_ACTIVE)) {
@@ -75,7 +82,9 @@ class ToggleElement {
     }
 
     /**
-     * Handle the element opening
+     * Handle the element opening.
+     *
+     * @return {void}
      */
     openElement() {
         addClass(this.element, IS_ACTIVE);
@@ -84,7 +93,9 @@ class ToggleElement {
     }
 
     /**
-     * Handle the element closing
+     * Handle the element closing.
+     *
+     * @return {void}
      */
     closeElement() {
         removeClass(this.element, IS_ACTIVE);
@@ -93,7 +104,9 @@ class ToggleElement {
     }
 
     /**
-     * Handle the closing of all other elements
+     * Handle the closing of all other elements.
+     *
+     * @return {void}
      */
     closeAllElements() {
         this.allElements.forEach(el => {
