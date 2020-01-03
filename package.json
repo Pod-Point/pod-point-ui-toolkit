@@ -1,6 +1,6 @@
 {
   "name": "@pod-point/pod-point-ui-toolkit",
-  "version": "2.7.5",
+  "version": "2.8.0",
   "description": "A prototyping framework based on the pod point website, that can be used for getting a project off the ground quickly.",
   "author": "Matine Chabrier <matine.chabrier@pod-point.com>",
   "license": "MIT",
