@@ -47,6 +47,11 @@ $button-letter-spacing-px: 1px;
         @include font-size-responsive($font-size-sm-mobile-px, $font-size-sm-desktop-px);
         margin: 0;
         padding-bottom: 0;
+
+        a {
+            color: $white;
+            font-weight: bold;
+        }
     }
 
     &__btn {
