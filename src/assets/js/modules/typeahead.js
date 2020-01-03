@@ -3,7 +3,6 @@ import Choices from 'choices.js';
 let instances = [];
 
 class Typeahead {
-
     /**
      * Typeahead constructor.
      *

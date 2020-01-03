@@ -17,11 +17,13 @@ deploy:
       secure: ZKJRBjH3BkmaBHhzUL9osJ50tyrFL7LTSYVkUBH915PNqhvS2a5P4sH9HnuMi/I7rMT53e6TWRiyZI3aJkFM5pw8aBxd4xCrqPoBK+meLElPjERKtLFRu6ALzQSq/atNAWPNK3eaGSsF7sWr21hMt5ZuZLCpIHYcXuvNOmw+RFjfrSNpzC7akhov2muFxZwd4EyfftqMXeW52RK63rNZY6/bUkOhMdlIrJCTn3fGqQpTNxse/ab8K9S+JJCs0K+3gtR9rS0K+yLRGRjjwIU2RDSCyEPsuwJxWnmJz81lD89iOEnAerBmyRQm24QbjOkBdeHff7GIzT8cOBkyiLrFUYAb4YAdWT+InmMKdFdvMM3FcuRs59XxmEseP1WwmN79K1ewL5iRwsdmvV6FI/9zBnxhmevcKCJ6t9E3udtLGXuuKApUC/2VKwjt4Pp4/OHverKOmHaxnzkoOLl1X9pVW9v8b1mcAalKcoQAtx6tRz6df38JTMGunetnkNmIy45sLjk9GRDwLu3LjC0WcF9YbijNLjBqhbODoezn2DymXdcQ9/WDmoZjKNcctMCddIM74Jt6GMfd2pjdUpoJBy7Ws0biXltBO5qKR3KjN8l5bWHlvANugoR1vfX37EtLXisb/TkDx9pri6lHoIkR3iwvGbkhHTFGJ1wDffJk1m8+7ik=
     on:
       branch: master
+      tags: true
       repo: Pod-Point/pod-point-ui-toolkit
   - provider: pages
     local_dir: dist
     skip_cleanup: true
     on:
       branch: master
+      tags: true
     github_token:
       secure: Jvx2645LTI+5nW29C898GY5FyB8JkqN5Xnp87mjginwm6VuLx5LpqaGGBaI4pkVB0Sz0HYSwHuVRXU6mDYQiJB6DM26P2UC+CJZh7DC9RfADt6RGD6qEjNcU2qaqo0dj/0lppz2MF8VWB5aPafhNGuvcXzqcLttffPWxoymJ3MPKcnkwSCNcSEaPqZVSF1dfXOjRL1lMPEtL38k/nvqbuOHhxRRTtSeoAdeCbEs7j+KQH2QNCDixgIjhK3YQcdo+4rREi0fkEXrb7FagNOycAbrFIpmQKRDzJjdHfIg7K6sVr+xBNDrD1ywDJUtM9bV2HQFs6fuDCnHwCSL4QiisCXZKXuhuGYL2v3VjWsc3z//UX9QHJlvyBCYNJbLaT8M6yeonNtdrZ//KJ0NI15e3VED3HAVBN+o8z4NipfUCr/UWGoUkIO/EsT8/zd1dJzBbGXNq5NQiLWC8DmqIBESJbqdi+21hwFKmD1GAql8CEJ5DrqsUHHbMbNrn8ljdUNBJpafiFkrIz++mdNsaZzXLt/ESV3zh3FW3ksHqJNbrbm5aiseHcrPaOWDQ2TvUgBrvYkxYcraYsgtIEC+53qFKtkaoE2mvPJYSkLCQsa1PT/JuuS3mfgoTlD/rUyBkHqaS55OrnYmn/wl3Ihi5KjUNACi8bEdhsqPbJ1gu1xs3aVw=
