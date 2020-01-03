@@ -3,48 +3,51 @@ import { nodesToArray } from '@pod-point/dom-ops';
 const IS_OPEN = 'is-open';
 
 /**
- * Remove hidden class from element, showing it via CSS
+ * Remove hidden class from element, showing it via CSS.
  *
- * @param {element}
+ * @param {element} element
+ * @return {void}
  */
 export function show(element) {
     element.classList.remove('hidden');
 }
 
 /**
- * Apply hidden class to element, hiding it via CSS
+ * Apply hidden class to element, hiding it via CSS.
  *
- * @param {element}
+ * @param {element} element
+ * @return {void}
  */
 export function hide(element) {
     element.classList.add('hidden');
 }
 
 /**
- * Check if an element is hidden (by CSS)
+ * Check if an element is hidden (by CSS).
  *
- * @param {element}
- * @returns {boolean} is hidden
+ * @param {element} element
+ * @return {Boolean} is hidden
  */
 export function isHidden(element) {
     return element.classList.contains('hidden');
 }
 
 /**
- * Check if an element is visible (isn't hidden by CSS)
+ * Check if an element is visible (isn't hidden by CSS).
  *
- * @param {element}
- * @returns {boolean} is visible
+ * @param {element} element
+ * @return {Boolean} is visible
  */
 export function isVisible(element) {
     return !isHidden(element);
 }
 
 /**
- * Disable or enable button element
+ * Disable or enable button element.
  *
- * @param {element} button
- * @param {boolean} disable
+ * @param {element} element
+ * @param {Boolean} disable
+ * @return {void}
  */
 export function disableOrEnableButton(element, disable) {
     const button = element;
@@ -58,10 +61,11 @@ export function disableOrEnableButton(element, disable) {
 }
 
 /**
- * Add item to cookie
+ * Add item to cookie.
  *
- * @param {string} name of cookie
- * @param {obj} value of cookie
+ * @param {String} name of cookie
+ * @param {Object} value of cookie
+ * @return {void}
  */
 export function addItemToCookie(name, value) {
     const cookie = [`${name}=${JSON.stringify(value)}`];
@@ -69,10 +73,11 @@ export function addItemToCookie(name, value) {
 }
 
 /**
- * Read item from cookie
+ * Read item from cookie.
  *
- * @param {string} name of cookie
- * @returns {obj} result
+ * @param {String} name of cookie
+ * @return {Object} result
+ * @return {void}
  */
 export function readItemFromCookie(name) {
     let result = document.cookie.match(new RegExp(`${name}=([^;]+)`));
@@ -81,9 +86,10 @@ export function readItemFromCookie(name) {
 }
 
 /**
- * Delete item from cookie
+ * Delete item from cookie.
  *
- * @param {string} name of cookie
+ * @param {String} name of cookie
+ * @return {void}
  */
 export function deleteItemFromCookie(name) {
     const domain = window.location.host.toString();
@@ -92,9 +98,10 @@ export function deleteItemFromCookie(name) {
 }
 
 /**
- * Open panel
+ * Open panel.
  *
  * @param {element} panel
+ * @return {void}
  */
 export function openPanel(panel) {
     const panelId = panel.getAttribute('id');
@@ -105,9 +112,10 @@ export function openPanel(panel) {
 }
 
 /**
- * Close panel
+ * Close panel.
  *
  * @param {element} panel
+ * @return {void}
  */
 export function closePanel(panel) {
     const panelId = panel.getAttribute('id');
@@ -118,10 +126,10 @@ export function closePanel(panel) {
 }
 
 /**
- * All radios selected
+ * All radios selected.
  *
- * @param {nodeList} radio wrap elements
- * @return {boolean} all radios have been selected
+ * @param {nodeList} radiosWraps wrap elements
+ * @return {Boolean} all radios have been selected
  */
 export function allRadiosSelected(radiosWraps) {
     const numberOfRadioGroups = nodesToArray(radiosWraps).length;
@@ -131,15 +139,16 @@ export function allRadiosSelected(radiosWraps) {
         const checkedRadios = nodesToArray(radiosWrap.querySelectorAll('input[type="radio"]:checked'));
         if (checkedRadios.length === 1) { numberOfRadiosSelected += 1; }
     });
+
     return (numberOfRadioGroups === numberOfRadiosSelected);
 }
 
 /**
- * A radio contains a class
+ * A radio contains a class.
  *
  * @param {nodeList} radios
- * @param {string} the class
- * @return {boolean} a radio contains the specified class
+ * @param {String} specifiedClass
+ * @return {Boolean} a radio contains the specified class
  */
 export function aRadioContains(radios, specifiedClass) {
     let containsClass = false;
@@ -152,7 +161,7 @@ export function aRadioContains(radios, specifiedClass) {
 }
 
 /**
- * Get random integar
+ * Get random integer.
  *
  * @param {integar} min
  * @param {integar} max
@@ -163,10 +172,10 @@ export function getRandomInt(min, max) {
 }
 
 /**
- * Round number to
+ * Round number to.
  *
- * @param {integar} number
- * @param {integar} number to round to
+ * @param {integar} num
+ * @param {integar} roundTo
  * @return {integar} a number rounded to the specified number
  */
 export function roundNumberTo(num, roundTo) {
@@ -175,22 +184,23 @@ export function roundNumberTo(num, roundTo) {
 }
 
 /**
- * Register an event in order to later on remove the event
+ * Register an event in order to later on remove the event.
  *
- * @param {array} events array
+ * @param {Array} eventsArray
  * @param {element} element
- * @param {string} event name
- * @param {func} listener
+ * @param {String} eventName
+ * @param {function} listener
+ * @return {void}
  */
 export function registerEvent(eventsArray, element, eventName, listener) {
     eventsArray.push({ element, eventName, listener });
 }
 
 /**
- * Remove the events from the events array
+ * Remove the events from the events array.
  *
- * @param {array} events array
- * @param {callback} callback
+ * @param {array} eventsArray
+ * @return {void}
  */
 export function removeEvents(eventsArray) {
     eventsArray.forEach(eventObj => {
