@@ -70,6 +70,7 @@ class ToggleElement {
         if (hasClass(this.element, IS_ACTIVE)) {
             this.closeElement();
         } else {
+            this.closeAllElements();
             this.openElement();
         }
     }
